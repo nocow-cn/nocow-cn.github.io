@@ -1,0 +1,781 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="keywords" content="Code:USACO/lgame/C++" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (中文(简体))" />
+<link title="Creative Commons" type="application/rdf+xml" href="/index.php?title=Code:USACO/lgame/C%2B%2B&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+		<title>NOCOW - Code:USACO/lgame/C++</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins/monobook/main.css?42b"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print" href="/skins/common/commonPrint.css?42b" />
+		<link rel="stylesheet" type="text/css" media="handheld" href="/skins/monobook/handheld.css?42b" />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins/monobook/IE50Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins/monobook/IE55Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins/monobook/IE60Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins/monobook/IE70Fixes.css?42b";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?42b"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">/*<![CDATA[*/
+var skin = "monobook";
+var stylepath = "/skins";
+var wgArticlePath = "/index.php/$1";
+var wgScriptPath = "";
+var wgServer = "http://www.nocow.cn";
+var wgCanonicalNamespace = "Code";
+var wgCanonicalSpecialPageName = false;
+var wgNamespaceNumber = 104;
+var wgPageName = "Code:USACO/lgame/C++";
+var wgTitle = "USACO/lgame/C++";
+var wgArticleId = "2686";
+var wgIsArticle = true;
+var wgUserName = null;
+var wgUserLanguage = "zh-cn";
+var wgContentLanguage = "zh-cn";
+var wgBreakFrames = false;
+var wgCurRevisionId = "14890";
+/*]]>*/</script>
+                
+		<script type="text/javascript" src="/skins/common/wikibits.js?42b"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=-&action=raw&gen=css&maxage=18000";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+			</head>
+<body  class="mediawiki ns-104 ltr page-Code_USACO_lgame_C">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+<div style="text-align:center;font-size:85%;font-weight:bold" id=headlinemessage>如果发现广告等破坏行为，请尽量将条目恢复到较早的版本而不是把相应内容直接删除，谢谢合作。</div>
+<!--div style="text-align:center;font-size:85%;font-weight:bold" id=headlinemessage>NOCOW近期对条目的命名进行了一些整理，一些链接可能失效，为此带来的不便请大家谅解。创建条目时也请遵循新的命名规范，谢谢合作。</div-->
+		<a name="top" id="top"></a>
+				<h1 class="firstHeading">Code:USACO/lgame/C++</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">来自&quot;NOCOW&quot;</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">跳转到: <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>			<!-- start content -->
+			<pre class="cpp"><span style="color: #ff0000; font-style: italic;">/*
+ID:ybojan2
+LANG:C++
+TASK:lgame
+*/</span>
+<span style="color: #339900;">#include &lt;fstream&gt;</span>
+<span style="color: #339900;">#include &lt;string&gt;</span>
+<span style="color: #0000ff;">using</span> <span style="color: #0000ff;">namespace</span> std;
+&nbsp;
+ifstream cin1<span style="color: #000000;">&#40;</span><span style="color: #666666;">&quot;lgame.in&quot;</span><span style="color: #000000;">&#41;</span>;
+ifstream cin2<span style="color: #000000;">&#40;</span><span style="color: #666666;">&quot;lgame.dict&quot;</span><span style="color: #000000;">&#41;</span>;
+ofstream <span style="color: #0000dd;">cout</span><span style="color: #000000;">&#40;</span><span style="color: #666666;">&quot;lgame.out&quot;</span><span style="color: #000000;">&#41;</span>;
+<span style="color: #0000ff;">int</span> main<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>
+<span style="color: #000000;">&#123;</span>
+    string str,dat<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">40001</span><span style="color: #000000;">&#93;</span>;
+    <span style="color: #0000ff;">int</span> maxr=<span style="color: #0000dd;">0</span>,num<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">26</span><span style="color: #000000;">&#93;</span>,temp<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">26</span><span style="color: #000000;">&#93;</span>,tt=<span style="color: #0000dd;">0</span>,sc<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">26</span><span style="color: #000000;">&#93;</span>=<span style="color: #000000;">&#123;</span><span style="color: #0000dd;">2</span>,<span style="color: #0000dd;">5</span>,<span style="color: #0000dd;">4</span>,<span style="color: #0000dd;">4</span>,<span style="color: #0000dd;">1</span>,<span style="color: #0000dd;">6</span>,<span style="color: #0000dd;">5</span>,<span style="color: #0000dd;">5</span>,<span style="color: #0000dd;">1</span>,<span style="color: #0000dd;">7</span>,<span style="color: #0000dd;">6</span>,<span style="color: #0000dd;">3</span>,<span style="color: #0000dd;">5</span>,<span style="color: #0000dd;">2</span>,<span style="color: #0000dd;">3</span>,<span style="color: #0000dd;">5</span>,<span style="color: #0000dd;">7</span>,<span style="color: #0000dd;">2</span>,<span style="color: #0000dd;">1</span>,<span style="color: #0000dd;">2</span>,<span style="color: #0000dd;">4</span>,<span style="color: #0000dd;">6</span>,<span style="color: #0000dd;">6</span>,<span style="color: #0000dd;">7</span>,<span style="color: #0000dd;">5</span>,<span style="color: #0000dd;">7</span><span style="color: #000000;">&#125;</span>;
+    <span style="color: #0000dd;">memset</span><span style="color: #000000;">&#40;</span>num,<span style="color: #0000dd;">0</span>,<span style="color: #0000dd;">sizeof</span><span style="color: #000000;">&#40;</span>num<span style="color: #000000;">&#41;</span><span style="color: #000000;">&#41;</span>;
+    cin1&gt;&gt;str;
+    <span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i=<span style="color: #0000dd;">0</span>;i&lt;str.<span style="color: #00eeff;">length</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;i++<span style="color: #000000;">&#41;</span> num<span style="color: #000000;">&#91;</span>str<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>-<span style="color: #666666;">'a'</span><span style="color: #000000;">&#93;</span>++;
+    cin2&gt;&gt;str;
+    <span style="color: #0000ff;">while</span> <span style="color: #000000;">&#40;</span>str!=<span style="color: #666666;">&quot;.&quot;</span><span style="color: #000000;">&#41;</span>
+    <span style="color: #000000;">&#123;</span>
+          <span style="color: #0000ff;">bool</span> okay=<span style="color: #0000ff;">true</span>;
+          <span style="color: #0000dd;">memset</span><span style="color: #000000;">&#40;</span>temp,<span style="color: #0000dd;">0</span>,<span style="color: #0000dd;">sizeof</span><span style="color: #000000;">&#40;</span>temp<span style="color: #000000;">&#41;</span><span style="color: #000000;">&#41;</span>;
+          <span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i=<span style="color: #0000dd;">0</span>;i&lt;str.<span style="color: #00eeff;">length</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;i++<span style="color: #000000;">&#41;</span> temp<span style="color: #000000;">&#91;</span>str<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>-<span style="color: #666666;">'a'</span><span style="color: #000000;">&#93;</span>++;
+          <span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i=<span style="color: #0000dd;">0</span>;i&lt;<span style="color: #0000dd;">26</span>;i++<span style="color: #000000;">&#41;</span> <span style="color: #0000ff;">if</span> <span style="color: #000000;">&#40;</span>temp<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>&gt;num<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#41;</span><span style="color: #000000;">&#123;</span>
+              okay=<span style="color: #0000ff;">false</span>;break;
+          <span style="color: #000000;">&#125;</span>
+          <span style="color: #0000ff;">if</span> <span style="color: #000000;">&#40;</span>okay<span style="color: #000000;">&#41;</span> dat<span style="color: #000000;">&#91;</span>++tt<span style="color: #000000;">&#93;</span>=str;
+          cin2&gt;&gt;str;
+    <span style="color: #000000;">&#125;</span>
+    dat<span style="color: #000000;">&#91;</span>++tt<span style="color: #000000;">&#93;</span>=<span style="color: #666666;">&quot;&quot;</span>;
+    <span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i=<span style="color: #0000dd;">1</span>;i&lt;tt;i++<span style="color: #000000;">&#41;</span>
+        <span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> j=i<span style="color: #0000dd;">+1</span>;j&lt;=tt;j++<span style="color: #000000;">&#41;</span>
+        <span style="color: #000000;">&#123;</span>
+            <span style="color: #0000dd;">memset</span><span style="color: #000000;">&#40;</span>temp,<span style="color: #0000dd;">0</span>,<span style="color: #0000dd;">sizeof</span><span style="color: #000000;">&#40;</span>temp<span style="color: #000000;">&#41;</span><span style="color: #000000;">&#41;</span>;
+            <span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> k=<span style="color: #0000dd;">0</span>;k&lt;dat<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">length</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;k++<span style="color: #000000;">&#41;</span>
+                temp<span style="color: #000000;">&#91;</span>dat<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>-<span style="color: #666666;">'a'</span><span style="color: #000000;">&#93;</span>++;
+            <span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> k=<span style="color: #0000dd;">0</span>;k&lt;dat<span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">length</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;k++<span style="color: #000000;">&#41;</span>
+                temp<span style="color: #000000;">&#91;</span>dat<span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>-<span style="color: #666666;">'a'</span><span style="color: #000000;">&#93;</span>++;
+            <span style="color: #0000ff;">bool</span> okay=<span style="color: #0000ff;">true</span>;
+            <span style="color: #0000ff;">int</span> sum=<span style="color: #0000dd;">0</span>;
+            <span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> k=<span style="color: #0000dd;">0</span>;k&lt;<span style="color: #0000dd;">26</span>;k++<span style="color: #000000;">&#41;</span>
+                <span style="color: #0000ff;">if</span> <span style="color: #000000;">&#40;</span>temp<span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>&gt;num<span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#41;</span><span style="color: #000000;">&#123;</span>
+                                    okay=<span style="color: #0000ff;">false</span>;
+                                    <span style="color: #0000ff;">break</span>;
+                                    <span style="color: #000000;">&#125;</span>
+            <span style="color: #0000ff;">if</span> <span style="color: #000000;">&#40;</span>!okay<span style="color: #000000;">&#41;</span> <span style="color: #0000ff;">continue</span>;
+            <span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> k=<span style="color: #0000dd;">0</span>;k&lt;<span style="color: #0000dd;">26</span>;k++<span style="color: #000000;">&#41;</span>
+                sum+=sc<span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>*temp<span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>;
+            <span style="color: #0000ff;">if</span> <span style="color: #000000;">&#40;</span>sum&gt;maxr<span style="color: #000000;">&#41;</span> maxr=sum;
+        <span style="color: #000000;">&#125;</span>
+    cout&lt;&lt;maxr&lt;&lt;endl;
+    <span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i=<span style="color: #0000dd;">1</span>;i&lt;tt;i++<span style="color: #000000;">&#41;</span>
+        <span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> j=i<span style="color: #0000dd;">+1</span>;j&lt;=tt;j++<span style="color: #000000;">&#41;</span>
+        <span style="color: #000000;">&#123;</span>
+            <span style="color: #0000dd;">memset</span><span style="color: #000000;">&#40;</span>temp,<span style="color: #0000dd;">0</span>,<span style="color: #0000dd;">sizeof</span><span style="color: #000000;">&#40;</span>temp<span style="color: #000000;">&#41;</span><span style="color: #000000;">&#41;</span>;
+            <span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> k=<span style="color: #0000dd;">0</span>;k&lt;dat<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">length</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;k++<span style="color: #000000;">&#41;</span>
+                temp<span style="color: #000000;">&#91;</span>dat<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>-<span style="color: #666666;">'a'</span><span style="color: #000000;">&#93;</span>++;
+            <span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> k=<span style="color: #0000dd;">0</span>;k&lt;dat<span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">length</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;k++<span style="color: #000000;">&#41;</span>
+                temp<span style="color: #000000;">&#91;</span>dat<span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>-<span style="color: #666666;">'a'</span><span style="color: #000000;">&#93;</span>++;
+            <span style="color: #0000ff;">bool</span> okay=<span style="color: #0000ff;">true</span>;
+            <span style="color: #0000ff;">int</span> sum=<span style="color: #0000dd;">0</span>;
+            <span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> k=<span style="color: #0000dd;">0</span>;k&lt;<span style="color: #0000dd;">26</span>;k++<span style="color: #000000;">&#41;</span>
+                <span style="color: #0000ff;">if</span> <span style="color: #000000;">&#40;</span>temp<span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>&gt;num<span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#41;</span><span style="color: #000000;">&#123;</span>
+                                    okay=<span style="color: #0000ff;">false</span>;
+                                    <span style="color: #0000ff;">break</span>;
+                                    <span style="color: #000000;">&#125;</span>
+            <span style="color: #0000ff;">if</span> <span style="color: #000000;">&#40;</span>!okay<span style="color: #000000;">&#41;</span> <span style="color: #0000ff;">continue</span>;
+            <span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> k=<span style="color: #0000dd;">0</span>;k&lt;<span style="color: #0000dd;">26</span>;k++<span style="color: #000000;">&#41;</span>
+                sum+=sc<span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>*temp<span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>;
+            <span style="color: #0000ff;">if</span> <span style="color: #000000;">&#40;</span>sum==maxr<span style="color: #000000;">&#41;</span> <span style="color: #000000;">&#123;</span>
+                           cout&lt;&lt;dat<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>;
+                           <span style="color: #0000ff;">if</span> <span style="color: #000000;">&#40;</span>dat<span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>!=<span style="color: #666666;">&quot;&quot;</span><span style="color: #000000;">&#41;</span> cout&lt;&lt;<span style="color: #666666;">&quot; &quot;</span>&lt;&lt;dat<span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>;
+                           cout&lt;&lt;endl;
+                           <span style="color: #000000;">&#125;</span>
+        <span style="color: #000000;">&#125;</span>    
+    <span style="color: #0000ff;">return</span> <span style="color: #0000dd;">0</span>;
+<span style="color: #000000;">&#125;</span></pre>
+<pre class="cpp"><span style="color: #ff0000; font-style: italic;">/*
+ID: cmykrgb1
+PROG: lgame
+LANG: C++
+*/</span>
+<span style="color: #ff0000;">//written by CmYkRgB123</span>
+<span style="color: #339900;">#include &lt;iostream&gt;</span>
+<span style="color: #339900;">#include &lt;fstream&gt;</span>
+<span style="color: #0000ff;">using</span> <span style="color: #0000ff;">namespace</span> std;
+ifstream fi<span style="color: #000000;">&#40;</span><span style="color: #666666;">&quot;lgame.in&quot;</span><span style="color: #000000;">&#41;</span>;
+ifstream fd<span style="color: #000000;">&#40;</span><span style="color: #666666;">&quot;lgame.dict&quot;</span><span style="color: #000000;">&#41;</span>;
+ofstream fo<span style="color: #000000;">&#40;</span><span style="color: #666666;">&quot;lgame.out&quot;</span><span style="color: #000000;">&#41;</span>;
+&nbsp;
+<span style="color: #0000ff;">typedef</span> <span style="color: #0000ff;">struct</span>
+<span style="color: #000000;">&#123;</span>
+	<span style="color: #0000ff;">char</span> c<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">7</span><span style="color: #000000;">&#93;</span>;
+	<span style="color: #0000ff;">int</span> len;
+	<span style="color: #0000ff;">int</span> score;
+<span style="color: #000000;">&#125;</span>str;
+&nbsp;
+<span style="color: #0000ff;">typedef</span> <span style="color: #0000ff;">struct</span>
+<span style="color: #000000;">&#123;</span>
+	<span style="color: #0000ff;">char</span> c1<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">7</span><span style="color: #000000;">&#93;</span>,c2<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">7</span><span style="color: #000000;">&#93;</span>;
+	<span style="color: #0000ff;">int</span> len1,len2;
+<span style="color: #000000;">&#125;</span>Tans;
+&nbsp;
+<span style="color: #0000ff;">int</span> uw<span style="color: #000000;">&#91;</span><span style="color: #666666;">'z'</span><span style="color: #0000dd;">+1</span><span style="color: #000000;">&#93;</span>,used<span style="color: #000000;">&#91;</span><span style="color: #666666;">'z'</span><span style="color: #0000dd;">+1</span><span style="color: #000000;">&#93;</span>;
+<span style="color: #0000ff;">int</span> v<span style="color: #000000;">&#91;</span><span style="color: #666666;">'z'</span><span style="color: #0000dd;">+1</span><span style="color: #000000;">&#93;</span>;
+str S<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">40001</span><span style="color: #000000;">&#93;</span>;
+Tans ans<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">50</span><span style="color: #000000;">&#93;</span>;
+<span style="color: #0000ff;">int</span> N=<span style="color: #0000dd;">1</span>,L,acnt;
+<span style="color: #0000ff;">int</span> Ms=<span style="color: #0000dd;">0</span>;
+&nbsp;
+<span style="color: #0000ff;">void</span> init<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>
+<span style="color: #000000;">&#123;</span>
+	<span style="color: #0000ff;">int</span> i;
+	<span style="color: #0000ff;">char</span> c;
+	<span style="color: #0000ff;">bool</span> k;
+	<span style="color: #0000ff;">while</span> <span style="color: #000000;">&#40;</span>!fi.<span style="color: #0000ff;">eof</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span><span style="color: #000000;">&#41;</span>
+	<span style="color: #000000;">&#123;</span>
+		c=fi.<span style="color: #00eeff;">get</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+		uw<span style="color: #000000;">&#91;</span>c<span style="color: #000000;">&#93;</span>++;
+	<span style="color: #000000;">&#125;</span>
+	<span style="color: #0000ff;">while</span> <span style="color: #000000;">&#40;</span>c!=<span style="color: #666666;">'.'</span><span style="color: #000000;">&#41;</span>
+	<span style="color: #000000;">&#123;</span>
+		<span style="color: #0000dd;">memset</span><span style="color: #000000;">&#40;</span>used,<span style="color: #0000dd;">0</span>,<span style="color: #0000dd;">sizeof</span><span style="color: #000000;">&#40;</span>used<span style="color: #000000;">&#41;</span><span style="color: #000000;">&#41;</span>;
+		L++;
+		c=fd.<span style="color: #00eeff;">get</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+		<span style="color: #0000ff;">if</span> <span style="color: #000000;">&#40;</span>c==<span style="color: #666666;">'.'</span><span style="color: #000000;">&#41;</span>
+			<span style="color: #0000ff;">break</span>;
+		k=<span style="color: #0000ff;">true</span>;
+		<span style="color: #0000ff;">while</span> <span style="color: #000000;">&#40;</span>c==<span style="color: #0000dd;">10</span> || c==<span style="color: #0000dd;">13</span><span style="color: #000000;">&#41;</span>	c=fd.<span style="color: #00eeff;">get</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+		S<span style="color: #000000;">&#91;</span>N<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len</span>=<span style="color: #0000dd;">0</span>;
+		<span style="color: #0000ff;">while</span> <span style="color: #000000;">&#40;</span>c!=<span style="color: #0000dd;">10</span> &amp;&amp; c!=<span style="color: #0000dd;">13</span><span style="color: #000000;">&#41;</span>
+		<span style="color: #000000;">&#123;</span>
+			S<span style="color: #000000;">&#91;</span>N<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">c</span><span style="color: #000000;">&#91;</span> S<span style="color: #000000;">&#91;</span>N<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len</span>++ <span style="color: #000000;">&#93;</span>=c;
+			used<span style="color: #000000;">&#91;</span>c<span style="color: #000000;">&#93;</span>++;
+			<span style="color: #0000ff;">if</span> <span style="color: #000000;">&#40;</span>!uw<span style="color: #000000;">&#91;</span>c<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#41;</span>
+				k=<span style="color: #0000ff;">false</span>;
+			c=fd.<span style="color: #00eeff;">get</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+		<span style="color: #000000;">&#125;</span>
+		S<span style="color: #000000;">&#91;</span>N<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">c</span><span style="color: #000000;">&#91;</span> S<span style="color: #000000;">&#91;</span>N<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len</span> <span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">0</span>;
+		<span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span>i=<span style="color: #666666;">'a'</span>;i&lt;=<span style="color: #666666;">'z'</span>;i++<span style="color: #000000;">&#41;</span>
+			<span style="color: #0000ff;">if</span> <span style="color: #000000;">&#40;</span>used<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>&gt;uw<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#41;</span>
+			<span style="color: #000000;">&#123;</span>
+				k=<span style="color: #0000ff;">false</span>;
+				<span style="color: #0000ff;">break</span>;
+			<span style="color: #000000;">&#125;</span>
+		<span style="color: #0000ff;">if</span> <span style="color: #000000;">&#40;</span>k<span style="color: #000000;">&#41;</span>
+			N++;
+	<span style="color: #000000;">&#125;</span>
+	N--;
+	v<span style="color: #000000;">&#91;</span><span style="color: #666666;">'q'</span><span style="color: #000000;">&#93;</span>=v<span style="color: #000000;">&#91;</span><span style="color: #666666;">'j'</span><span style="color: #000000;">&#93;</span>=v<span style="color: #000000;">&#91;</span><span style="color: #666666;">'z'</span><span style="color: #000000;">&#93;</span>=v<span style="color: #000000;">&#91;</span><span style="color: #666666;">'x'</span><span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">7</span>;
+	v<span style="color: #000000;">&#91;</span><span style="color: #666666;">'w'</span><span style="color: #000000;">&#93;</span>=v<span style="color: #000000;">&#91;</span><span style="color: #666666;">'f'</span><span style="color: #000000;">&#93;</span>=v<span style="color: #000000;">&#91;</span><span style="color: #666666;">'k'</span><span style="color: #000000;">&#93;</span>=v<span style="color: #000000;">&#91;</span><span style="color: #666666;">'v'</span><span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">6</span>;
+	v<span style="color: #000000;">&#91;</span><span style="color: #666666;">'y'</span><span style="color: #000000;">&#93;</span>=v<span style="color: #000000;">&#91;</span><span style="color: #666666;">'p'</span><span style="color: #000000;">&#93;</span>=v<span style="color: #000000;">&#91;</span><span style="color: #666666;">'g'</span><span style="color: #000000;">&#93;</span>=v<span style="color: #000000;">&#91;</span><span style="color: #666666;">'h'</span><span style="color: #000000;">&#93;</span>=v<span style="color: #000000;">&#91;</span><span style="color: #666666;">'b'</span><span style="color: #000000;">&#93;</span>=v<span style="color: #000000;">&#91;</span><span style="color: #666666;">'m'</span><span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">5</span>;
+	v<span style="color: #000000;">&#91;</span><span style="color: #666666;">'u'</span><span style="color: #000000;">&#93;</span>=v<span style="color: #000000;">&#91;</span><span style="color: #666666;">'d'</span><span style="color: #000000;">&#93;</span>=v<span style="color: #000000;">&#91;</span><span style="color: #666666;">'c'</span><span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">4</span>;
+	v<span style="color: #000000;">&#91;</span><span style="color: #666666;">'o'</span><span style="color: #000000;">&#93;</span>=v<span style="color: #000000;">&#91;</span><span style="color: #666666;">'l'</span><span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">3</span>;
+	v<span style="color: #000000;">&#91;</span><span style="color: #666666;">'r'</span><span style="color: #000000;">&#93;</span>=v<span style="color: #000000;">&#91;</span><span style="color: #666666;">'t'</span><span style="color: #000000;">&#93;</span>=v<span style="color: #000000;">&#91;</span><span style="color: #666666;">'a'</span><span style="color: #000000;">&#93;</span>=v<span style="color: #000000;">&#91;</span><span style="color: #666666;">'n'</span><span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">2</span>;
+	v<span style="color: #000000;">&#91;</span><span style="color: #666666;">'e'</span><span style="color: #000000;">&#93;</span>=v<span style="color: #000000;">&#91;</span><span style="color: #666666;">'i'</span><span style="color: #000000;">&#93;</span>=v<span style="color: #000000;">&#91;</span><span style="color: #666666;">'s'</span><span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">1</span>;
+<span style="color: #000000;">&#125;</span>
+&nbsp;
+<span style="color: #0000ff;">void</span> findans<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>
+<span style="color: #000000;">&#123;</span>
+	<span style="color: #0000ff;">int</span> i,k,p;
+	<span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span>i=<span style="color: #0000dd;">1</span>;i&lt;=N;i++<span style="color: #000000;">&#41;</span>
+	<span style="color: #000000;">&#123;</span>
+		<span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span>k=<span style="color: #0000dd;">0</span>;k&lt;=S<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len</span><span style="color: #0000dd;">-1</span>;k++<span style="color: #000000;">&#41;</span>
+			S<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">score</span>+=v<span style="color: #000000;">&#91;</span> S<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">c</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span> <span style="color: #000000;">&#93;</span>;
+&nbsp;
+		<span style="color: #0000ff;">if</span> <span style="color: #000000;">&#40;</span>S<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">score</span>&gt;Ms<span style="color: #000000;">&#41;</span>
+		<span style="color: #000000;">&#123;</span>
+			Ms=S<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">score</span>;
+			acnt=<span style="color: #0000dd;">1</span>;
+			<span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span>p=<span style="color: #0000dd;">0</span>;p&lt;=S<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len</span><span style="color: #0000dd;">-1</span>;p++<span style="color: #000000;">&#41;</span>
+				ans<span style="color: #000000;">&#91;</span>acnt<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">c1</span><span style="color: #000000;">&#91;</span>p<span style="color: #000000;">&#93;</span>=S<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">c</span><span style="color: #000000;">&#91;</span>p<span style="color: #000000;">&#93;</span>;
+			ans<span style="color: #000000;">&#91;</span>acnt<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len1</span>=S<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len</span>;
+			ans<span style="color: #000000;">&#91;</span>acnt<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">c1</span><span style="color: #000000;">&#91;</span> ans<span style="color: #000000;">&#91;</span>acnt<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len1</span> <span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">0</span>;
+		<span style="color: #000000;">&#125;</span>
+		<span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span> <span style="color: #000000;">&#40;</span>S<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">score</span>==Ms<span style="color: #000000;">&#41;</span>
+		<span style="color: #000000;">&#123;</span>
+			acnt++;
+			<span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span>p=<span style="color: #0000dd;">0</span>;p&lt;=S<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len</span><span style="color: #0000dd;">-1</span>;p++<span style="color: #000000;">&#41;</span>
+				ans<span style="color: #000000;">&#91;</span>acnt<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">c1</span><span style="color: #000000;">&#91;</span>p<span style="color: #000000;">&#93;</span>=S<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">c</span><span style="color: #000000;">&#91;</span>p<span style="color: #000000;">&#93;</span>;
+			ans<span style="color: #000000;">&#91;</span>acnt<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len1</span>=S<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len</span>;
+			ans<span style="color: #000000;">&#91;</span>acnt<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">c1</span><span style="color: #000000;">&#91;</span> ans<span style="color: #000000;">&#91;</span>acnt<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len1</span> <span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">0</span>;
+		<span style="color: #000000;">&#125;</span>
+	<span style="color: #000000;">&#125;</span>
+<span style="color: #000000;">&#125;</span>
+&nbsp;
+<span style="color: #0000ff;">void</span> findpair<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>
+<span style="color: #000000;">&#123;</span>
+	<span style="color: #0000dd;">memset</span><span style="color: #000000;">&#40;</span>used,<span style="color: #0000dd;">0</span>,<span style="color: #0000dd;">sizeof</span><span style="color: #000000;">&#40;</span>used<span style="color: #000000;">&#41;</span><span style="color: #000000;">&#41;</span>;
+	<span style="color: #0000ff;">int</span> i,j,p;
+	<span style="color: #0000ff;">bool</span> K;
+	<span style="color: #0000ff;">int</span> T;
+	<span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span>i=<span style="color: #0000dd;">1</span>;i&lt;=N<span style="color: #0000dd;">-1</span>;i++<span style="color: #000000;">&#41;</span>
+	<span style="color: #000000;">&#123;</span>
+		<span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span>j=i<span style="color: #0000dd;">+1</span>;j&lt;=N;j++<span style="color: #000000;">&#41;</span>
+		<span style="color: #000000;">&#123;</span>
+			T=S<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">score</span>+S<span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">score</span>;
+			<span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span>p=<span style="color: #0000dd;">0</span>;p&lt;=S<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len</span><span style="color: #0000dd;">-1</span>;p++<span style="color: #000000;">&#41;</span>
+				used<span style="color: #000000;">&#91;</span>S<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">c</span><span style="color: #000000;">&#91;</span>p<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#93;</span>++;
+			<span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span>p=<span style="color: #0000dd;">0</span>;p&lt;=S<span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len</span><span style="color: #0000dd;">-1</span>;p++<span style="color: #000000;">&#41;</span>
+				used<span style="color: #000000;">&#91;</span>S<span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">c</span><span style="color: #000000;">&#91;</span>p<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#93;</span>++;
+			K=<span style="color: #0000ff;">true</span>;
+			<span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span>p=<span style="color: #666666;">'a'</span>;p&lt;=<span style="color: #666666;">'z'</span>;p++<span style="color: #000000;">&#41;</span>
+				<span style="color: #0000ff;">if</span> <span style="color: #000000;">&#40;</span>used<span style="color: #000000;">&#91;</span>p<span style="color: #000000;">&#93;</span>&gt;uw<span style="color: #000000;">&#91;</span>p<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#41;</span>
+				<span style="color: #000000;">&#123;</span>
+					K=<span style="color: #0000ff;">false</span>;
+					<span style="color: #0000ff;">break</span>;
+				<span style="color: #000000;">&#125;</span>
+			<span style="color: #0000dd;">memset</span><span style="color: #000000;">&#40;</span>used,<span style="color: #0000dd;">0</span>,<span style="color: #0000dd;">sizeof</span><span style="color: #000000;">&#40;</span>used<span style="color: #000000;">&#41;</span><span style="color: #000000;">&#41;</span>;
+			<span style="color: #0000ff;">if</span> <span style="color: #000000;">&#40;</span>!K<span style="color: #000000;">&#41;</span> <span style="color: #0000ff;">continue</span>;
+			<span style="color: #0000ff;">if</span> <span style="color: #000000;">&#40;</span>T&gt;Ms<span style="color: #000000;">&#41;</span>
+			<span style="color: #000000;">&#123;</span>
+				Ms=T;
+				acnt=<span style="color: #0000dd;">1</span>;
+				<span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span>p=<span style="color: #0000dd;">0</span>;p&lt;=S<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len</span><span style="color: #0000dd;">-1</span>;p++<span style="color: #000000;">&#41;</span>
+					ans<span style="color: #000000;">&#91;</span>acnt<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">c1</span><span style="color: #000000;">&#91;</span>p<span style="color: #000000;">&#93;</span>=S<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">c</span><span style="color: #000000;">&#91;</span>p<span style="color: #000000;">&#93;</span>;
+				ans<span style="color: #000000;">&#91;</span>acnt<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len1</span>=S<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len</span>;
+				ans<span style="color: #000000;">&#91;</span>acnt<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">c1</span><span style="color: #000000;">&#91;</span> ans<span style="color: #000000;">&#91;</span>acnt<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len1</span> <span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">0</span>;
+				<span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span>p=<span style="color: #0000dd;">0</span>;p&lt;=S<span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len</span><span style="color: #0000dd;">-1</span>;p++<span style="color: #000000;">&#41;</span>
+					ans<span style="color: #000000;">&#91;</span>acnt<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">c2</span><span style="color: #000000;">&#91;</span>p<span style="color: #000000;">&#93;</span>=S<span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">c</span><span style="color: #000000;">&#91;</span>p<span style="color: #000000;">&#93;</span>;
+				ans<span style="color: #000000;">&#91;</span>acnt<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len2</span>=S<span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len</span>;
+				ans<span style="color: #000000;">&#91;</span>acnt<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">c2</span><span style="color: #000000;">&#91;</span> ans<span style="color: #000000;">&#91;</span>acnt<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len2</span> <span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">0</span>;
+			<span style="color: #000000;">&#125;</span>
+			<span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span> <span style="color: #000000;">&#40;</span>T==Ms<span style="color: #000000;">&#41;</span>
+			<span style="color: #000000;">&#123;</span>
+				acnt++;
+				<span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span>p=<span style="color: #0000dd;">0</span>;p&lt;=S<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len</span><span style="color: #0000dd;">-1</span>;p++<span style="color: #000000;">&#41;</span>
+					ans<span style="color: #000000;">&#91;</span>acnt<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">c1</span><span style="color: #000000;">&#91;</span>p<span style="color: #000000;">&#93;</span>=S<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">c</span><span style="color: #000000;">&#91;</span>p<span style="color: #000000;">&#93;</span>;
+				ans<span style="color: #000000;">&#91;</span>acnt<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len1</span>=S<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len</span>;
+				ans<span style="color: #000000;">&#91;</span>acnt<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">c1</span><span style="color: #000000;">&#91;</span> ans<span style="color: #000000;">&#91;</span>acnt<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len1</span> <span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">0</span>;
+				<span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span>p=<span style="color: #0000dd;">0</span>;p&lt;=S<span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len</span><span style="color: #0000dd;">-1</span>;p++<span style="color: #000000;">&#41;</span>
+					ans<span style="color: #000000;">&#91;</span>acnt<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">c2</span><span style="color: #000000;">&#91;</span>p<span style="color: #000000;">&#93;</span>=S<span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">c</span><span style="color: #000000;">&#91;</span>p<span style="color: #000000;">&#93;</span>;
+				ans<span style="color: #000000;">&#91;</span>acnt<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len2</span>=S<span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len</span>;
+				ans<span style="color: #000000;">&#91;</span>acnt<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">c2</span><span style="color: #000000;">&#91;</span> ans<span style="color: #000000;">&#91;</span>acnt<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len2</span> <span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">0</span>;
+			<span style="color: #000000;">&#125;</span>
+		<span style="color: #000000;">&#125;</span>
+	<span style="color: #000000;">&#125;</span>
+<span style="color: #000000;">&#125;</span>
+&nbsp;
+&nbsp;
+<span style="color: #0000ff;">void</span> print<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>
+<span style="color: #000000;">&#123;</span>
+	fo &lt;&lt; Ms &lt;&lt; endl;
+	<span style="color: #0000ff;">int</span> i,j;
+	<span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span>i=<span style="color: #0000dd;">1</span>;i&lt;=acnt;i++<span style="color: #000000;">&#41;</span>
+	<span style="color: #000000;">&#123;</span>
+		<span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span>j=<span style="color: #0000dd;">0</span>;j&lt;=ans<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len1</span><span style="color: #0000dd;">-1</span>;j++<span style="color: #000000;">&#41;</span>
+			fo &lt;&lt; ans<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">c1</span><span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>;
+		<span style="color: #0000ff;">if</span> <span style="color: #000000;">&#40;</span>ans<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len2</span><span style="color: #000000;">&#41;</span>
+		<span style="color: #000000;">&#123;</span>
+			fo &lt;&lt; <span style="color: #666666;">' '</span>;
+			<span style="color: #0000ff;">for</span> <span style="color: #000000;">&#40;</span>j=<span style="color: #0000dd;">0</span>;j&lt;=ans<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">len2</span><span style="color: #0000dd;">-1</span>;j++<span style="color: #000000;">&#41;</span>
+				fo &lt;&lt; ans<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">c2</span><span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>;
+		<span style="color: #000000;">&#125;</span>
+		fo &lt;&lt;endl;
+	<span style="color: #000000;">&#125;</span>
+<span style="color: #000000;">&#125;</span>
+&nbsp;
+<span style="color: #0000ff;">inline</span> <span style="color: #0000ff;">int</span> cmp<span style="color: #000000;">&#40;</span><span style="color: #0000ff;">const</span> <span style="color: #0000ff;">void</span> *a,<span style="color: #0000ff;">const</span> <span style="color: #0000ff;">void</span> *b<span style="color: #000000;">&#41;</span>
+<span style="color: #000000;">&#123;</span>
+	<span style="color: #0000ff;">int</span> k;
+	Tans *A=<span style="color: #000000;">&#40;</span>Tans *<span style="color: #000000;">&#41;</span>a,*B=<span style="color: #000000;">&#40;</span>Tans *<span style="color: #000000;">&#41;</span>b;
+	k=<span style="color: #0000dd;">strcmp</span><span style="color: #000000;">&#40;</span>A-&gt;c1,B-&gt;c1<span style="color: #000000;">&#41;</span>;
+	<span style="color: #0000ff;">if</span> <span style="color: #000000;">&#40;</span>k!=<span style="color: #0000dd;">0</span><span style="color: #000000;">&#41;</span> <span style="color: #0000ff;">return</span> k;
+	k=<span style="color: #0000dd;">strcmp</span><span style="color: #000000;">&#40;</span>A-&gt;c2,B-&gt;c2<span style="color: #000000;">&#41;</span>;
+	<span style="color: #0000ff;">return</span> k;
+<span style="color: #000000;">&#125;</span>
+&nbsp;
+<span style="color: #0000ff;">void</span> sortans<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>
+<span style="color: #000000;">&#123;</span>
+	<span style="color: #0000dd;">qsort</span><span style="color: #000000;">&#40;</span>ans<span style="color: #0000dd;">+1</span>,acnt,<span style="color: #0000dd;">sizeof</span><span style="color: #000000;">&#40;</span>Tans<span style="color: #000000;">&#41;</span>,cmp<span style="color: #000000;">&#41;</span>;
+	print<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+<span style="color: #000000;">&#125;</span>
+&nbsp;
+<span style="color: #0000ff;">int</span> main<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>
+<span style="color: #000000;">&#123;</span>
+	init<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+	findans<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+	findpair<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+	sortans<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+	fi.<span style="color: #00eeff;">close</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+	fd.<span style="color: #00eeff;">close</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+	fo.<span style="color: #00eeff;">close</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+	<span style="color: #0000ff;">return</span> <span style="color: #0000dd;">0</span>;
+<span style="color: #000000;">&#125;</span></pre>
+<pre class="cpp">貌似好理解一点的枚举
+<span style="color: #ff0000; font-style: italic;">/*
+ID:lqp18_31
+PROG:lgame
+LANG:C++
+*/</span>
+<span style="color: #339900;">#include&lt;stdio.h&gt;</span>
+<span style="color: #339900;">#include&lt;string.h&gt;</span>
+<span style="color: #339900;">#include&lt;stdlib.h&gt;</span>
+<span style="color: #0000ff;">FILE</span> *fin=<span style="color: #0000dd;">fopen</span><span style="color: #000000;">&#40;</span><span style="color: #666666;">&quot;lgame.in&quot;</span>,<span style="color: #666666;">&quot;r&quot;</span><span style="color: #000000;">&#41;</span>;
+<span style="color: #0000ff;">FILE</span> *fout=<span style="color: #0000dd;">fopen</span><span style="color: #000000;">&#40;</span><span style="color: #666666;">&quot;lgame.out&quot;</span>,<span style="color: #666666;">&quot;w&quot;</span><span style="color: #000000;">&#41;</span>;
+<span style="color: #0000ff;">char</span> word<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">40002</span><span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">8</span><span style="color: #000000;">&#93;</span>,final<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">8</span><span style="color: #000000;">&#93;</span>;
+<span style="color: #0000ff;">int</span> N,in<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">28</span><span style="color: #000000;">&#93;</span>,value<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">40002</span><span style="color: #000000;">&#93;</span>=<span style="color: #000000;">&#123;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#125;</span>;
+<span style="color: #0000ff;">int</span> ans<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">10000</span><span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">2</span><span style="color: #000000;">&#93;</span>,num,max=<span style="color: #0000dd;">0</span>;
+<span style="color: #0000ff;">const</span> <span style="color: #0000ff;">int</span> v<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">28</span><span style="color: #000000;">&#93;</span>=<span style="color: #000000;">&#123;</span><span style="color: #0000dd;">2</span>,<span style="color: #0000dd;">5</span>,<span style="color: #0000dd;">4</span>,<span style="color: #0000dd;">4</span>,<span style="color: #0000dd;">1</span>,<span style="color: #0000dd;">6</span>,<span style="color: #0000dd;">5</span>,<span style="color: #0000dd;">5</span>,<span style="color: #0000dd;">1</span>,<span style="color: #0000dd;">7</span>,<span style="color: #0000dd;">6</span>,<span style="color: #0000dd;">3</span>,<span style="color: #0000dd;">5</span>,<span style="color: #0000dd;">2</span>,<span style="color: #0000dd;">3</span>,<span style="color: #0000dd;">5</span>,<span style="color: #0000dd;">7</span>,<span style="color: #0000dd;">2</span>,<span style="color: #0000dd;">1</span>,<span style="color: #0000dd;">2</span>,<span style="color: #0000dd;">4</span>,<span style="color: #0000dd;">6</span>,<span style="color: #0000dd;">6</span>,<span style="color: #0000dd;">7</span>,<span style="color: #0000dd;">5</span>,<span style="color: #0000dd;">7</span><span style="color: #000000;">&#125;</span>;
+&nbsp;
+<span style="color: #0000ff;">void</span> init<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>
+<span style="color: #000000;">&#123;</span>
+     <span style="color: #0000ff;">int</span> in2<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">28</span><span style="color: #000000;">&#93;</span>;
+     <span style="color: #0000dd;">fscanf</span><span style="color: #000000;">&#40;</span>fin,<span style="color: #666666;">&quot;%s&quot;</span>,final<span style="color: #000000;">&#41;</span>;
+     <span style="color: #0000dd;">fclose</span><span style="color: #000000;">&#40;</span>fin<span style="color: #000000;">&#41;</span>;
+     <span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i=<span style="color: #0000dd;">0</span>;i&lt;strlen<span style="color: #000000;">&#40;</span>final<span style="color: #000000;">&#41;</span>;i++<span style="color: #000000;">&#41;</span>
+       in<span style="color: #000000;">&#91;</span>final<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>-<span style="color: #666666;">'a'</span><span style="color: #000000;">&#93;</span>++;
+     fin=<span style="color: #0000dd;">fopen</span><span style="color: #000000;">&#40;</span><span style="color: #666666;">&quot;lgame.dict&quot;</span>,<span style="color: #666666;">&quot;r&quot;</span><span style="color: #000000;">&#41;</span>;
+     <span style="color: #0000ff;">while</span><span style="color: #000000;">&#40;</span><span style="color: #0000dd;">1</span><span style="color: #000000;">&#41;</span><span style="color: #000000;">&#123;</span>
+       <span style="color: #0000dd;">memset</span><span style="color: #000000;">&#40;</span>in2,<span style="color: #0000dd;">0</span>,<span style="color: #0000dd;">sizeof</span><span style="color: #000000;">&#40;</span>in2<span style="color: #000000;">&#41;</span><span style="color: #000000;">&#41;</span>;
+       <span style="color: #0000dd;">fscanf</span><span style="color: #000000;">&#40;</span>fin,<span style="color: #666666;">&quot;%s&quot;</span>,word<span style="color: #000000;">&#91;</span>++N<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#41;</span>;
+       <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span><span style="color: #0000dd;">strcmp</span><span style="color: #000000;">&#40;</span>word<span style="color: #000000;">&#91;</span>N<span style="color: #000000;">&#93;</span>,<span style="color: #666666;">&quot;.&quot;</span><span style="color: #000000;">&#41;</span>==<span style="color: #0000dd;">0</span><span style="color: #000000;">&#41;</span> <span style="color: #0000ff;">break</span>;
+       <span style="color: #0000ff;">int</span> tmp=<span style="color: #0000dd;">0</span>;
+       <span style="color: #0000ff;">bool</span> ok=<span style="color: #0000dd;">1</span>;
+       <span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i=<span style="color: #0000dd;">0</span>;i&lt;strlen<span style="color: #000000;">&#40;</span>word<span style="color: #000000;">&#91;</span>N<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#41;</span>;i++<span style="color: #000000;">&#41;</span>
+       <span style="color: #000000;">&#123;</span>
+               in2<span style="color: #000000;">&#91;</span>word<span style="color: #000000;">&#91;</span>N<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>-<span style="color: #666666;">'a'</span><span style="color: #000000;">&#93;</span>++;
+               tmp+=v<span style="color: #000000;">&#91;</span>word<span style="color: #000000;">&#91;</span>N<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>-<span style="color: #666666;">'a'</span><span style="color: #000000;">&#93;</span>;
+               <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>in2<span style="color: #000000;">&#91;</span>word<span style="color: #000000;">&#91;</span>N<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>-<span style="color: #666666;">'a'</span><span style="color: #000000;">&#93;</span>&gt;in<span style="color: #000000;">&#91;</span>word<span style="color: #000000;">&#91;</span>N<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>-<span style="color: #666666;">'a'</span><span style="color: #000000;">&#93;</span><span style="color: #000000;">&#41;</span>
+               <span style="color: #000000;">&#123;</span>
+                     ok=<span style="color: #0000dd;">0</span>;
+                     N--;
+                     <span style="color: #0000ff;">break</span>;
+               <span style="color: #000000;">&#125;</span>
+       <span style="color: #000000;">&#125;</span>
+       <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>ok<span style="color: #000000;">&#41;</span>
+       value<span style="color: #000000;">&#91;</span>N<span style="color: #000000;">&#93;</span>=tmp;
+     <span style="color: #000000;">&#125;</span>
+     N--;
+<span style="color: #000000;">&#125;</span>
+&nbsp;
+<span style="color: #0000ff;">void</span> getre<span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> n1,<span style="color: #0000ff;">int</span> n2<span style="color: #000000;">&#41;</span>
+<span style="color: #000000;">&#123;</span>
+     <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>value<span style="color: #000000;">&#91;</span>n1<span style="color: #000000;">&#93;</span>+value<span style="color: #000000;">&#91;</span>n2<span style="color: #000000;">&#93;</span>&lt;max<span style="color: #000000;">&#41;</span> <span style="color: #0000ff;">return</span>;
+     <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>value<span style="color: #000000;">&#91;</span>n1<span style="color: #000000;">&#93;</span>+value<span style="color: #000000;">&#91;</span>n2<span style="color: #000000;">&#93;</span>&gt;max<span style="color: #000000;">&#41;</span>
+         num=<span style="color: #0000dd;">0</span>;
+     num++;
+     max=value<span style="color: #000000;">&#91;</span>n1<span style="color: #000000;">&#93;</span>+value<span style="color: #000000;">&#91;</span>n2<span style="color: #000000;">&#93;</span>;
+     ans<span style="color: #000000;">&#91;</span>num<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span>=n1;
+     ans<span style="color: #000000;">&#91;</span>num<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">1</span><span style="color: #000000;">&#93;</span>=n2;
+<span style="color: #000000;">&#125;</span>
+&nbsp;
+<span style="color: #0000ff;">bool</span> check<span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> n,<span style="color: #0000ff;">int</span> *in3<span style="color: #000000;">&#41;</span>
+<span style="color: #000000;">&#123;</span>
+     <span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i=<span style="color: #0000dd;">0</span>;i&lt;strlen<span style="color: #000000;">&#40;</span>word<span style="color: #000000;">&#91;</span>n<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#41;</span>;i++<span style="color: #000000;">&#41;</span>
+     <span style="color: #000000;">&#123;</span>
+       in3<span style="color: #000000;">&#91;</span>word<span style="color: #000000;">&#91;</span>n<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>-<span style="color: #666666;">'a'</span><span style="color: #000000;">&#93;</span>--;
+       <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>in3<span style="color: #000000;">&#91;</span>word<span style="color: #000000;">&#91;</span>n<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>-<span style="color: #666666;">'a'</span><span style="color: #000000;">&#93;</span>&lt;<span style="color: #0000dd;">0</span><span style="color: #000000;">&#41;</span> <span style="color: #0000ff;">return</span> <span style="color: #0000dd;">0</span>;
+     <span style="color: #000000;">&#125;</span>
+     <span style="color: #0000ff;">return</span> <span style="color: #0000dd;">1</span>;
+<span style="color: #000000;">&#125;</span>
+&nbsp;
+<span style="color: #0000ff;">void</span> work<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>
+<span style="color: #000000;">&#123;</span>
+     <span style="color: #0000ff;">int</span> in2<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">28</span><span style="color: #000000;">&#93;</span>;
+     <span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i=<span style="color: #0000dd;">1</span>;i&lt;=N;i++<span style="color: #000000;">&#41;</span>
+     <span style="color: #000000;">&#123;</span>
+       <span style="color: #0000ff;">int</span> v=<span style="color: #0000dd;">0</span>;
+       <span style="color: #0000dd;">memcpy</span><span style="color: #000000;">&#40;</span>in2,in,<span style="color: #0000dd;">sizeof</span><span style="color: #000000;">&#40;</span>in<span style="color: #000000;">&#41;</span><span style="color: #000000;">&#41;</span>;
+       <span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> j=<span style="color: #0000dd;">0</span>;j&lt;strlen<span style="color: #000000;">&#40;</span>word<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#41;</span>;j++<span style="color: #000000;">&#41;</span>
+         in2<span style="color: #000000;">&#91;</span>word<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>-<span style="color: #666666;">'a'</span><span style="color: #000000;">&#93;</span>--;
+       getre<span style="color: #000000;">&#40;</span>i,<span style="color: #0000dd;">0</span><span style="color: #000000;">&#41;</span>;
+       <span style="color: #0000ff;">int</span> in3<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">28</span><span style="color: #000000;">&#93;</span>;
+       <span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> j=i;j&lt;=N;j++<span style="color: #000000;">&#41;</span>
+       <span style="color: #000000;">&#123;</span>
+               <span style="color: #0000dd;">memcpy</span><span style="color: #000000;">&#40;</span>in3,in2,<span style="color: #0000dd;">sizeof</span><span style="color: #000000;">&#40;</span>in3<span style="color: #000000;">&#41;</span><span style="color: #000000;">&#41;</span>;
+               <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>!check<span style="color: #000000;">&#40;</span>j,in3<span style="color: #000000;">&#41;</span><span style="color: #000000;">&#41;</span> <span style="color: #0000ff;">continue</span>;
+               getre<span style="color: #000000;">&#40;</span>i,j<span style="color: #000000;">&#41;</span>;
+       <span style="color: #000000;">&#125;</span>
+     <span style="color: #000000;">&#125;</span>
+     <span style="color: #0000dd;">fprintf</span><span style="color: #000000;">&#40;</span>fout,<span style="color: #666666;">&quot;%d<span style="color: #666666; font-weight: bold;">\n</span>&quot;</span>,max<span style="color: #000000;">&#41;</span>;
+     <span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i=<span style="color: #0000dd;">1</span>;i&lt;=num;i++<span style="color: #000000;">&#41;</span>
+     <span style="color: #000000;">&#123;</span>
+             <span style="color: #0000dd;">fprintf</span><span style="color: #000000;">&#40;</span>fout,<span style="color: #666666;">&quot;%s&quot;</span>,word<span style="color: #000000;">&#91;</span>ans<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span><span style="color: #000000;">&#93;</span><span style="color: #000000;">&#41;</span>;
+             <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>ans<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">1</span><span style="color: #000000;">&#93;</span><span style="color: #000000;">&#41;</span>
+               <span style="color: #0000dd;">fprintf</span><span style="color: #000000;">&#40;</span>fout,<span style="color: #666666;">&quot; %s&quot;</span>,word<span style="color: #000000;">&#91;</span>ans<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">1</span><span style="color: #000000;">&#93;</span><span style="color: #000000;">&#93;</span><span style="color: #000000;">&#41;</span>;
+             <span style="color: #0000dd;">fprintf</span><span style="color: #000000;">&#40;</span>fout,<span style="color: #666666;">&quot;<span style="color: #666666; font-weight: bold;">\n</span>&quot;</span><span style="color: #000000;">&#41;</span>;
+     <span style="color: #000000;">&#125;</span>
+<span style="color: #000000;">&#125;</span>
+&nbsp;
+<span style="color: #0000ff;">int</span> main<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>
+<span style="color: #000000;">&#123;</span>
+    init<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+    work<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+    <span style="color: #0000ff;">return</span> <span style="color: #0000dd;">0</span>;
+<span style="color: #000000;">&#125;</span></pre>
+<p>还是面向对象清楚
+</p>
+<pre class="cpp"><span style="color: #ff0000; font-style: italic;">/*
+ID:continu2
+LANG:C++
+PROB:lgame
+*/</span>
+<span style="color: #339900;">#include &lt;fstream&gt;</span>
+<span style="color: #339900;">#include &lt;string.h&gt;</span>
+<span style="color: #339900;">#include &lt;iostream&gt;</span>
+<span style="color: #0000ff;">using</span> <span style="color: #0000ff;">namespace</span> std;
+<span style="color: #0000ff;">const</span> <span style="color: #0000ff;">int</span> v<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">27</span><span style="color: #000000;">&#93;</span>=<span style="color: #000000;">&#123;</span><span style="color: #0000dd;">0</span>,<span style="color: #0000dd;">2</span>,<span style="color: #0000dd;">5</span>,<span style="color: #0000dd;">4</span>,<span style="color: #0000dd;">4</span>,<span style="color: #0000dd;">1</span>,<span style="color: #0000dd;">6</span>,<span style="color: #0000dd;">5</span>,<span style="color: #0000dd;">5</span>,<span style="color: #0000dd;">1</span>,<span style="color: #0000dd;">7</span>,<span style="color: #0000dd;">6</span>,<span style="color: #0000dd;">3</span>,<span style="color: #0000dd;">5</span>,<span style="color: #0000dd;">2</span>,<span style="color: #0000dd;">3</span>,<span style="color: #0000dd;">5</span>,<span style="color: #0000dd;">7</span>,<span style="color: #0000dd;">2</span>,<span style="color: #0000dd;">1</span>,<span style="color: #0000dd;">2</span>,<span style="color: #0000dd;">4</span>,<span style="color: #0000dd;">6</span>,<span style="color: #0000dd;">6</span>,<span style="color: #0000dd;">7</span>,<span style="color: #0000dd;">5</span>,<span style="color: #0000dd;">7</span><span style="color: #000000;">&#125;</span>;
+string dict<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">40001</span><span style="color: #000000;">&#93;</span>;
+string ans<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">40001</span><span style="color: #000000;">&#93;</span>;
+string a;
+<span style="color: #0000ff;">int</span> n=<span style="color: #0000dd;">0</span>;
+<span style="color: #0000ff;">int</span> ans_n=<span style="color: #0000dd;">0</span>;
+<span style="color: #0000ff;">int</span> score<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">40001</span><span style="color: #000000;">&#93;</span>;
+string dict2<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">40001</span><span style="color: #000000;">&#93;</span>;
+<span style="color: #0000ff;">int</span> score2<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">40001</span><span style="color: #000000;">&#93;</span>;
+<span style="color: #0000ff;">int</span> n2=<span style="color: #0000dd;">0</span>;
+<span style="color: #0000ff;">int</span> a_time<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">27</span><span style="color: #000000;">&#93;</span>;
+<span style="color: #0000ff;">int</span> maxium=<span style="color: #0000dd;">0</span>;
+<span style="color: #0000ff;">class</span> PREWORK
+<span style="color: #000000;">&#123;</span>
+	<span style="color: #0000ff;">public</span>:
+	<span style="color: #0000ff;">void</span> read_stdin<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>
+	<span style="color: #000000;">&#123;</span>
+		ifstream fin<span style="color: #000000;">&#40;</span><span style="color: #666666;">&quot;lgame.in&quot;</span><span style="color: #000000;">&#41;</span>;
+		fin&gt;&gt;a;
+		<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i=<span style="color: #0000dd;">0</span>;i&lt;a.<span style="color: #00eeff;">length</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;i++<span style="color: #000000;">&#41;</span>
+		<span style="color: #000000;">&#123;</span>
+			a_time<span style="color: #000000;">&#91;</span>a<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span><span style="color: #0000dd;">-96</span><span style="color: #000000;">&#93;</span>++;
+		<span style="color: #000000;">&#125;</span>
+		fin.<span style="color: #00eeff;">close</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+	<span style="color: #000000;">&#125;</span>
+	<span style="color: #0000ff;">void</span> read_dictin<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>
+	<span style="color: #000000;">&#123;</span>
+		ifstream fin<span style="color: #000000;">&#40;</span><span style="color: #666666;">&quot;lgame.dict&quot;</span><span style="color: #000000;">&#41;</span>;
+		string temp;
+		<span style="color: #0000ff;">int</span> <span style="color: #0000dd;">time</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">27</span><span style="color: #000000;">&#93;</span>;
+		<span style="color: #0000ff;">while</span><span style="color: #000000;">&#40;</span>getline<span style="color: #000000;">&#40;</span>fin,temp<span style="color: #000000;">&#41;</span>&amp;&amp;temp!=<span style="color: #666666;">&quot;.&quot;</span><span style="color: #000000;">&#41;</span>
+		<span style="color: #000000;">&#123;</span>
+			<span style="color: #0000dd;">memset</span><span style="color: #000000;">&#40;</span><span style="color: #0000dd;">time</span>,<span style="color: #0000dd;">0</span>,<span style="color: #0000dd;">sizeof</span><span style="color: #000000;">&#40;</span><span style="color: #0000dd;">time</span><span style="color: #000000;">&#41;</span><span style="color: #000000;">&#41;</span>;
+			<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i=<span style="color: #0000dd;">0</span>;i&lt;temp.<span style="color: #00eeff;">length</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;i++<span style="color: #000000;">&#41;</span>
+				<span style="color: #0000dd;">time</span><span style="color: #000000;">&#91;</span>temp<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span><span style="color: #0000dd;">-96</span><span style="color: #000000;">&#93;</span>++;
+			<span style="color: #0000ff;">bool</span> can=<span style="color: #0000ff;">true</span>;
+			<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i=<span style="color: #0000dd;">1</span>;i&lt;=<span style="color: #0000dd;">26</span>;i++<span style="color: #000000;">&#41;</span>
+			<span style="color: #000000;">&#123;</span>
+				<span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span><span style="color: #0000dd;">time</span><span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>&gt;a_time<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#41;</span>
+				<span style="color: #000000;">&#123;</span>
+					can=<span style="color: #0000ff;">false</span>;
+					<span style="color: #0000ff;">break</span>;
+				<span style="color: #000000;">&#125;</span>
+			<span style="color: #000000;">&#125;</span>
+			<span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>can<span style="color: #000000;">&#41;</span>
+			<span style="color: #000000;">&#123;</span>
+				n++;
+				dict<span style="color: #000000;">&#91;</span>n<span style="color: #000000;">&#93;</span>=temp;
+			<span style="color: #000000;">&#125;</span>
+		<span style="color: #000000;">&#125;</span>
+		fin.<span style="color: #00eeff;">close</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+	<span style="color: #000000;">&#125;</span>
+	<span style="color: #0000ff;">void</span> <span style="color: #0000dd;">qsort</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> l,<span style="color: #0000ff;">int</span> r<span style="color: #000000;">&#41;</span>
+	<span style="color: #000000;">&#123;</span>
+		<span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>l&lt;r<span style="color: #000000;">&#41;</span>
+		<span style="color: #000000;">&#123;</span>
+			<span style="color: #0000ff;">int</span> i=l,j=r;
+			string mid=dict<span style="color: #000000;">&#91;</span><span style="color: #000000;">&#40;</span>l+r<span style="color: #000000;">&#41;</span>/<span style="color: #0000dd;">2</span><span style="color: #000000;">&#93;</span>;
+			<span style="color: #0000ff;">while</span><span style="color: #000000;">&#40;</span>i&lt;=j<span style="color: #000000;">&#41;</span>
+			<span style="color: #000000;">&#123;</span>
+				<span style="color: #0000ff;">while</span><span style="color: #000000;">&#40;</span>dict<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">length</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>&gt;mid.<span style="color: #00eeff;">length</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span><span style="color: #000000;">&#41;</span> i++;
+				<span style="color: #0000ff;">while</span><span style="color: #000000;">&#40;</span>dict<span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">length</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>&lt;mid.<span style="color: #00eeff;">length</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span><span style="color: #000000;">&#41;</span> j--;
+				<span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>i&lt;=j<span style="color: #000000;">&#41;</span>
+				<span style="color: #000000;">&#123;</span>
+					string temp=dict<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>;
+					dict<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>=dict<span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>;
+					dict<span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>=temp;
+					i++,j--;
+				<span style="color: #000000;">&#125;</span>
+			<span style="color: #000000;">&#125;</span>
+			<span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>l&lt;j<span style="color: #000000;">&#41;</span> <span style="color: #0000dd;">qsort</span><span style="color: #000000;">&#40;</span>l,j<span style="color: #000000;">&#41;</span>;
+			<span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>i&lt;r<span style="color: #000000;">&#41;</span> <span style="color: #0000dd;">qsort</span><span style="color: #000000;">&#40;</span>i,r<span style="color: #000000;">&#41;</span>;
+		<span style="color: #000000;">&#125;</span>
+	<span style="color: #000000;">&#125;</span>
+	<span style="color: #0000ff;">int</span> getscore<span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i<span style="color: #000000;">&#41;</span>
+	<span style="color: #000000;">&#123;</span>
+		<span style="color: #0000ff;">int</span> sum=<span style="color: #0000dd;">0</span>;
+		<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> j=<span style="color: #0000dd;">0</span>;j&lt;dict<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">length</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;j++<span style="color: #000000;">&#41;</span>
+			sum+=v<span style="color: #000000;">&#91;</span>dict<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span><span style="color: #0000dd;">-96</span><span style="color: #000000;">&#93;</span>;
+		<span style="color: #0000ff;">return</span> sum;
+	<span style="color: #000000;">&#125;</span>
+	<span style="color: #0000ff;">void</span> work<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>
+	<span style="color: #000000;">&#123;</span>
+		read_stdin<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+		read_dictin<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+		<span style="color: #0000dd;">qsort</span><span style="color: #000000;">&#40;</span><span style="color: #0000dd;">1</span>,n<span style="color: #000000;">&#41;</span>;
+		<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i=<span style="color: #0000dd;">1</span>;i&lt;=n;i++<span style="color: #000000;">&#41;</span>
+			score<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>=getscore<span style="color: #000000;">&#40;</span>i<span style="color: #000000;">&#41;</span>;
+	<span style="color: #000000;">&#125;</span>
+<span style="color: #000000;">&#125;</span>pre_work;
+<span style="color: #ff0000; font-style: italic;">/****************************************************************************/</span>
+<span style="color: #0000ff;">class</span> ANSWER
+<span style="color: #000000;">&#123;</span>
+	<span style="color: #0000ff;">public</span>:
+	<span style="color: #0000ff;">void</span> make<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>
+	<span style="color: #000000;">&#123;</span>
+		<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i=<span style="color: #0000dd;">1</span>;i&lt;=n;i++<span style="color: #000000;">&#41;</span>
+		<span style="color: #000000;">&#123;</span>
+			<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> j=i<span style="color: #0000dd;">+1</span>;j&lt;=n;j++<span style="color: #000000;">&#41;</span>
+			<span style="color: #000000;">&#123;</span>
+				<span style="color: #0000ff;">int</span> <span style="color: #0000dd;">time</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">27</span><span style="color: #000000;">&#93;</span>;
+				<span style="color: #0000dd;">memset</span><span style="color: #000000;">&#40;</span><span style="color: #0000dd;">time</span>,<span style="color: #0000dd;">0</span>,<span style="color: #0000dd;">sizeof</span><span style="color: #000000;">&#40;</span><span style="color: #0000dd;">time</span><span style="color: #000000;">&#41;</span><span style="color: #000000;">&#41;</span>;
+				<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> k=<span style="color: #0000dd;">0</span>;k&lt;dict<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">length</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;k++<span style="color: #000000;">&#41;</span>
+					<span style="color: #0000dd;">time</span><span style="color: #000000;">&#91;</span>dict<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span><span style="color: #0000dd;">-96</span><span style="color: #000000;">&#93;</span>++;
+				<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> k=<span style="color: #0000dd;">0</span>;k&lt;dict<span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">length</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;k++<span style="color: #000000;">&#41;</span>
+					<span style="color: #0000dd;">time</span><span style="color: #000000;">&#91;</span>dict<span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span><span style="color: #0000dd;">-96</span><span style="color: #000000;">&#93;</span>++;
+				<span style="color: #0000ff;">bool</span> can=<span style="color: #0000ff;">true</span>;
+				<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> k=<span style="color: #0000dd;">1</span>;k&lt;=<span style="color: #0000dd;">26</span>;k++<span style="color: #000000;">&#41;</span>
+				<span style="color: #000000;">&#123;</span>
+					<span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span><span style="color: #0000dd;">time</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>&gt;a_time<span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#41;</span> 
+					<span style="color: #000000;">&#123;</span>
+						can=<span style="color: #0000ff;">false</span>;
+						<span style="color: #0000ff;">break</span>;
+					<span style="color: #000000;">&#125;</span>
+				<span style="color: #000000;">&#125;</span>
+				<span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>can<span style="color: #000000;">&#41;</span>
+				<span style="color: #000000;">&#123;</span>
+					n2++;
+					<span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>dict<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>&gt;dict<span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#41;</span>
+						dict2<span style="color: #000000;">&#91;</span>n2<span style="color: #000000;">&#93;</span>=dict<span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>+<span style="color: #666666;">&quot; &quot;</span>+dict<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>;
+					<span style="color: #0000ff;">else</span>
+						dict2<span style="color: #000000;">&#91;</span>n2<span style="color: #000000;">&#93;</span>=dict<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>+<span style="color: #666666;">&quot; &quot;</span>+dict<span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>;
+				<span style="color: #000000;">&#125;</span>
+			<span style="color: #000000;">&#125;</span>
+		<span style="color: #000000;">&#125;</span>
+	<span style="color: #000000;">&#125;</span>
+	<span style="color: #0000ff;">int</span> getscore<span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i<span style="color: #000000;">&#41;</span>
+	<span style="color: #000000;">&#123;</span>
+		<span style="color: #0000ff;">int</span> sum=<span style="color: #0000dd;">0</span>;
+		<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> j=<span style="color: #0000dd;">0</span>;j&lt;dict2<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">length</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;j++<span style="color: #000000;">&#41;</span>
+		<span style="color: #000000;">&#123;</span>
+			<span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>dict2<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>==<span style="color: #666666;">' '</span><span style="color: #000000;">&#41;</span> <span style="color: #0000ff;">continue</span>;
+			sum+=v<span style="color: #000000;">&#91;</span>dict2<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span><span style="color: #0000dd;">-96</span><span style="color: #000000;">&#93;</span>;
+		<span style="color: #000000;">&#125;</span>
+		<span style="color: #0000ff;">return</span> sum;
+	<span style="color: #000000;">&#125;</span>
+	<span style="color: #0000ff;">void</span> work<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>
+	<span style="color: #000000;">&#123;</span>
+		make<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+		<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i=<span style="color: #0000dd;">1</span>;i&lt;=n2;i++<span style="color: #000000;">&#41;</span>
+		<span style="color: #000000;">&#123;</span>
+			score2<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>=getscore<span style="color: #000000;">&#40;</span>i<span style="color: #000000;">&#41;</span>;
+		<span style="color: #000000;">&#125;</span>
+	<span style="color: #000000;">&#125;</span>
+<span style="color: #000000;">&#125;</span>answer;
+<span style="color: #0000ff;">class</span> Finish
+<span style="color: #000000;">&#123;</span>
+	<span style="color: #0000ff;">public</span>:
+	<span style="color: #0000ff;">void</span> find_the_maxium<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>
+	<span style="color: #000000;">&#123;</span>
+		<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i=<span style="color: #0000dd;">1</span>;i&lt;=n;i++<span style="color: #000000;">&#41;</span>
+			<span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>score<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>&gt;maxium<span style="color: #000000;">&#41;</span>
+				maxium=score<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>;
+		<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i=<span style="color: #0000dd;">1</span>;i&lt;=n2;i++<span style="color: #000000;">&#41;</span>
+			<span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>score2<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>&gt;maxium<span style="color: #000000;">&#41;</span>
+				maxium=score2<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>;
+	<span style="color: #000000;">&#125;</span>
+	<span style="color: #0000ff;">void</span> to_get_ans<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>
+	<span style="color: #000000;">&#123;</span>
+		<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i=<span style="color: #0000dd;">1</span>;i&lt;=n;i++<span style="color: #000000;">&#41;</span>
+		<span style="color: #000000;">&#123;</span>
+			<span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>score<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>==maxium<span style="color: #000000;">&#41;</span>
+			<span style="color: #000000;">&#123;</span>
+				ans_n++;
+				ans<span style="color: #000000;">&#91;</span>ans_n<span style="color: #000000;">&#93;</span>=dict<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>;
+			<span style="color: #000000;">&#125;</span>
+		<span style="color: #000000;">&#125;</span>
+		<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i=<span style="color: #0000dd;">1</span>;i&lt;=n2;i++<span style="color: #000000;">&#41;</span>
+		<span style="color: #000000;">&#123;</span>
+			<span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>score2<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>==maxium<span style="color: #000000;">&#41;</span>
+			<span style="color: #000000;">&#123;</span>
+				ans_n++;
+				ans<span style="color: #000000;">&#91;</span>ans_n<span style="color: #000000;">&#93;</span>=dict2<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>;
+			<span style="color: #000000;">&#125;</span>
+		<span style="color: #000000;">&#125;</span>
+	<span style="color: #000000;">&#125;</span>
+	<span style="color: #0000ff;">void</span> <span style="color: #0000dd;">qsort</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> l,<span style="color: #0000ff;">int</span> r<span style="color: #000000;">&#41;</span>
+	<span style="color: #000000;">&#123;</span>
+		<span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>l&lt;r<span style="color: #000000;">&#41;</span>
+		<span style="color: #000000;">&#123;</span>
+			<span style="color: #0000ff;">int</span> i=l,j=r;
+			string mid=ans<span style="color: #000000;">&#91;</span><span style="color: #000000;">&#40;</span>l+r<span style="color: #000000;">&#41;</span>/<span style="color: #0000dd;">2</span><span style="color: #000000;">&#93;</span>;
+			<span style="color: #0000ff;">while</span><span style="color: #000000;">&#40;</span>i&lt;=j<span style="color: #000000;">&#41;</span>
+			<span style="color: #000000;">&#123;</span>
+				<span style="color: #0000ff;">while</span><span style="color: #000000;">&#40;</span>ans<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>&lt;mid<span style="color: #000000;">&#41;</span> i++;
+				<span style="color: #0000ff;">while</span><span style="color: #000000;">&#40;</span>ans<span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>&gt;mid<span style="color: #000000;">&#41;</span> j--;
+				<span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>i&lt;=j<span style="color: #000000;">&#41;</span>
+				<span style="color: #000000;">&#123;</span>
+					string temp=ans<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>;
+					ans<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>=ans<span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>;
+					ans<span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>=temp;
+					i++,j--;
+				<span style="color: #000000;">&#125;</span>
+			<span style="color: #000000;">&#125;</span>
+			<span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>l&lt;j<span style="color: #000000;">&#41;</span> <span style="color: #0000dd;">qsort</span><span style="color: #000000;">&#40;</span>l,j<span style="color: #000000;">&#41;</span>;
+			<span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>i&lt;r<span style="color: #000000;">&#41;</span> <span style="color: #0000dd;">qsort</span><span style="color: #000000;">&#40;</span>i,r<span style="color: #000000;">&#41;</span>;
+		<span style="color: #000000;">&#125;</span>
+	<span style="color: #000000;">&#125;</span>
+	<span style="color: #0000ff;">void</span> work<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>
+	<span style="color: #000000;">&#123;</span>
+		ofstream fout<span style="color: #000000;">&#40;</span><span style="color: #666666;">&quot;lgame.out&quot;</span><span style="color: #000000;">&#41;</span>;
+		find_the_maxium<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+		to_get_ans<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+		<span style="color: #0000dd;">qsort</span><span style="color: #000000;">&#40;</span><span style="color: #0000dd;">1</span>,ans_n<span style="color: #000000;">&#41;</span>;
+		fout&lt;&lt;maxium&lt;&lt;endl;
+		<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i=<span style="color: #0000dd;">1</span>;i&lt;=ans_n;i++<span style="color: #000000;">&#41;</span>
+		<span style="color: #000000;">&#123;</span>
+			<span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>ans<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>!=ans<span style="color: #000000;">&#91;</span>i<span style="color: #0000dd;">+1</span><span style="color: #000000;">&#93;</span><span style="color: #000000;">&#41;</span>
+				fout&lt;&lt;ans<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>&lt;&lt;endl;;
+		<span style="color: #000000;">&#125;</span>
+	<span style="color: #000000;">&#125;</span>
+<span style="color: #000000;">&#125;</span>finish;
+main<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>
+<span style="color: #000000;">&#123;</span>
+	pre_work.<span style="color: #00eeff;">work</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+	answer.<span style="color: #00eeff;">work</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+	finish.<span style="color: #00eeff;">work</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+	<span style="color: #0000ff;">return</span> <span style="color: #0000dd;">0</span>;
+<span style="color: #000000;">&#125;</span></pre>
+
+<!-- Saved in parser cache with key nocow:pcache:idhash:2686-0!1!0!!zh-cn!2 and timestamp 20100713210905 -->
+<div class="printfooter">
+来自"<a href="http://www.nocow.cn/index.php/Code:USACO/lgame/C%2B%2B">http://www.nocow.cn/index.php/Code:USACO/lgame/C%2B%2B</a>"</div>
+						<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+						 <li id="ca-nstab-code" class="selected"><a href="/index.php/Code:USACO/lgame/C%2B%2B">代码</a></li>
+						 <li id="ca-talk" class="new"><a href="/index.php?title=Code_Talk:USACO/lgame/C%2B%2B&amp;action=edit">讨论</a></li>
+						 <li id="ca-edit"><a href="/index.php?title=Code:USACO/lgame/C%2B%2B&amp;action=edit">编辑</a></li>
+						 <li id="ca-history"><a href="/index.php?title=Code:USACO/lgame/C%2B%2B&amp;action=history">历史</a></li>
+				</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=Special:Userlogin&amp;returnto=Code:USACO/lgame/C%2B%2B">登录或创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5" title="首页"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/Special:Recentchanges">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/Special:Random">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/Help:%E5%B8%AE%E5%8A%A9">使用帮助</a></li>
+				<li id="n-sitesupport"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5">帮助我们</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php/Special:Search" id="searchform"><div>
+<input name="ref" type="hidden" value="Code:USACO/lgame/C++">
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="进入" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="搜索" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/Special:Whatlinkshere/Code:USACO/lgame/C%2B%2B">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/Special:Recentchangeslinked/Code:USACO/lgame/C%2B%2B">链出更改</a></li>
+<li id="t-upload"><a href="/index.php/Special:Upload">上传文件</a></li>
+<li id="t-specialpages"><a href="/index.php/Special:Specialpages">特殊页面</a></li>
+				<li id="t-print"><a href="/index.php?title=Code:USACO/lgame/C%2B%2B&amp;printable=yes">可打印版</a></li>				<li id="t-permalink"><a href="/index.php?title=Code:USACO/lgame/C%2B%2B&amp;oldid=14890">永久链接</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt='GNU Free Documentation License 1.2' /></a></div>
+			<ul id="f-list">
+				<li id="viewcount">访问次数: 725次</li>
+				<li id="credits">此页由<a href="/index.php?title=User:Xuenan199&amp;action=edit" class="new" title="User:Xuenan199">薛楠</a>于2009年5月4日, 09:51最后更改. 在<a href="/index.php/User:Barty" title="User:Barty">杨博洋</a> 和 <a href="/index.php/User:CmYkRgB123" title="User:CmYkRgB123">CmYkRgB123</a> 和 NOCOW匿名用户的工作基础上.</li>
+				<li id="copyright">本站内容在<a href="http://www.gnu.org/copyleft/fdl.html" class="external " title="http://www.gnu.org/copyleft/fdl.html" rel="nofollow">GNU Free Documentation License 1.2</a>下发布</li>
+				<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E7%AD%96%E7%95%A5" title="NOCOW:隐私策略">隐私策略</a></li>
+				<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+				<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+				<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by bdezlinux in 1.357 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body></html>

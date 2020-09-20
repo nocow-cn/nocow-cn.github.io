@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>Pascal - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=Pascal&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=Pascal&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Pascal", "wgTitle": "Pascal", "wgCurRevisionId": 36473, "wgArticleId": 4, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Pascal action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">Pascal</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E5.8E.86.E5.8F.B2"><span class="tocnumber">1</span> <span class="toctext">历史</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#.E7.BC.96.E8.AF.91.E5.99.A8"><span class="tocnumber">2</span> <span class="toctext">编译器</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#.E8.B0.83.E8.AF.95"><span class="tocnumber">3</span> <span class="toctext">调试</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#.E9.94.99.E8.AF.AF"><span class="tocnumber">4</span> <span class="toctext">错误</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#IDE"><span class="tocnumber">5</span> <span class="toctext">IDE</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#.E7.A8.8B.E5.BA.8F.E8.AE.BE.E8.AE.A1"><span class="tocnumber">6</span> <span class="toctext">程序设计</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#.E5.9F.BA.E6.9C.AC.E7.9F.A5.E8.AF.86"><span class="tocnumber">6.1</span> <span class="toctext">基本知识</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#.E5.9F.BA.E6.9C.AC.E8.AF.AD.E5.8F.A5"><span class="tocnumber">6.2</span> <span class="toctext">基本语句</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#.E9.80.89.E6.8B.A9.E7.BB.93.E6.9E.84"><span class="tocnumber">6.3</span> <span class="toctext">选择结构</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#.E5.BE.AA.E7.8E.AF.E7.BB.93.E6.9E.84"><span class="tocnumber">6.4</span> <span class="toctext">循环结构</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#.E5.AD.90.E7.A8.8B.E5.BA.8F"><span class="tocnumber">6.5</span> <span class="toctext">子程序</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#.E6.9E.9A.E4.B8.BE.E3.80.81.E5.AD.90.E7.95.8C.E3.80.81.E9.9B.86.E5.90.88.E7.B1.BB.E5.9E.8B"><span class="tocnumber">6.6</span> <span class="toctext">枚举、子界、集合类型</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#.E8.AE.B0.E5.BD.95.E7.B1.BB.E5.9E.8B"><span class="tocnumber">6.7</span> <span class="toctext">记录类型</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#.E6.8C.87.E9.92.88.E7.B1.BB.E5.9E.8B"><span class="tocnumber">6.8</span> <span class="toctext">指针类型</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="#.E5.9B.BE.E5.BD.A2.E6.93.8D.E4.BD.9C"><span class="tocnumber">7</span> <span class="toctext">图形操作</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#.E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81"><span class="tocnumber">8</span> <span class="toctext">参考代码</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98"><span class="tocnumber">9</span> <span class="toctext">常见问题</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#.E4.BC.98.E7.82.B9"><span class="tocnumber">10</span> <span class="toctext">优点</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="#.E7.BC.BA.E7.82.B9"><span class="tocnumber">11</span> <span class="toctext">缺点</span></a></li>
+<li class="toclevel-1 tocsection-20"><a href="#.E7.BB.8F.E9.AA.8C"><span class="tocnumber">12</span> <span class="toctext">经验</span></a></li>
+<li class="toclevel-1 tocsection-21"><a href="#.E5.8F.82.E8.80.83.E8.B5.84.E6.96.99"><span class="tocnumber">13</span> <span class="toctext">参考资料</span></a></li>
+<li class="toclevel-1 tocsection-22"><a href="#.E7.9B.B8.E5.85.B3.E9.93.BE.E6.8E.A5"><span class="tocnumber">14</span> <span class="toctext">相关链接</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="/index.php?title=Pascal&amp;action=edit&amp;section=1" title="编辑段落：历史">编辑</a>]</span> <span class="mw-headline" id=".E5.8E.86.E5.8F.B2">历史</span></h2>
+<p>Pascal在众多语言中算是长辈了，比C要老一点，说起C++么和Pascal比起来就嫩得多了
+</p><p>Pascal的名字是为了纪念数学家帕斯卡，Pascal出自Niklaus Wirth之手，起初是简化Algol用于教学的语言，它早在1971年就被提出，后来成为了主流语言。现在Pascal已经不仅仅是一种专门用于教学的语言，功能也强了许多。但是始终抹不掉最初的目的，所以许多竞赛都可以提交Pascal代码，有许多标程也是Pascal写成的。所以Pascal在OI中还是占有一席之地的，了解Pascal语言也成为了必要。
+</p><p>Pascal是世界上第一个结构化程序设计语言。值得一提的是，Knuth的TeX当初是用Pascal写成的，因为这是当初罕见的易于移植的语言之一。
+</p><p>好了，闲话少说，让我们开始.......
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=Pascal&amp;action=edit&amp;section=2" title="编辑段落：编译器">编辑</a>]</span> <span class="mw-headline" id=".E7.BC.96.E8.AF.91.E5.99.A8">编译器</span></h2>
+<p>Pascal的编译器有很多种，包括很古老版本。现在工业应用上流行的是Borland的编译器(P.S. 这么说其实不准确，Borland现在把这一块整个卖了......)
+</p><p>我们这里主要介绍的是Free Pascal
+</p><p>Free Pascal顾名思义，首先它是自由的（在GPL下发布），官方网站 <a rel="nofollow" class="external free" href="http://www.freepascal.org">http://www.freepascal.org</a>
+</p><p>它是一个32位编译器，支持大数组、Ansistring和Object Pascal等等，功能比TurboPascal强大得多。Freepascal本身只是一个编译器，并不是<a href="/index.php/IDE" title="IDE">IDE</a>，比较有名的基于Freepascal的<a href="/index.php/IDE" title="IDE">IDE</a>有<a href="/index.php/Lazarus" title="Lazarus">lazarus</a>和<a href="/index.php/FPS" title="FPS">FPS</a>。
+</p><p>FreePascal有多个系统的版本，无论是Windows下还是Linux下我们都可以使用FP。
+</p><p>现在OI评测中所用的编译器，大都是FreePascal。由于其有一些独特的语法特性，和一些与标准Pascal有区别的功能，所以在这里强烈建议大家能够实际使用它编译程序，来了解编译器的特性和熟悉编译
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=Pascal&amp;action=edit&amp;section=3" title="编辑段落：调试">编辑</a>]</span> <span class="mw-headline" id=".E8.B0.83.E8.AF.95">调试</span></h2>
+<p>我们这里先主要讲FP，程序编译完了，却没办法调试，这的确是很难过的事情，你可能会说没关系我们有IDE呀。但是万一像Lazaurs一样，不时地就罢工，而且不罢工时候还很不好用，在这种情况下你怎么办呢？
+</p><p>恩GDB，其实几乎可以这么说，有FP的地方就有GDB，Lazaurs也有GDB包含在其中。在windows下可以在Lazaurs或者FP的安装文件夹中可以找到gdb.exe，在linux下如果安装了lazarus或者gdb可以在终端中直接输入gdb进入调试。这个命令行调试器，大家可以很容易地上手，大家有什么不明白的地方也可以用help命令来获得帮助。这不是正题，所以就闲话少说了。 注：如果用命令行编译请加 -g 如 fpc -g helloword.pas
+</p><p>下面是一些gdb的基本命令，供大家参考
+</p>
+<pre> file 装入想要调试的可执行文件.
+ kill 终止正在调试的程序.
+ list 列出产生执行文件的源代码的一部分.
+ next 执行一行源代码但不进入函数内部.
+ step 执行一行源代码而且进入函数内部.
+ run 执行当前被调试的程序
+ quit 终止 gdb
+ watch 使你能监视一个变量的值而不管它何时被改变.
+ break 在代码里设置断点, 这将使程序执行到这里时被挂起.
+ make 使你能不退出 gdb 就可以重新产生可执行文件.
+ shell 使你能不离开 gdb 就执行 UNIX shell 命令.
+ continue 设置断点后运行;
+ set 在调试的时候修改变量数值。
+ display 每运行一步都显示某个变量数值。
+ print 打印某个变量的当前数值。
+</pre>
+<p><br />
+</p>
+<pre> 所有的命令都可以简写,更详细的内容请参见：<a rel="nofollow" class="external text" href="http://fanqiang.chinaunix.net/program/other/2005-03-23/2993.shtml">用GDB调试程序</a>
+</pre>
+<h2><span class="editsection">[<a href="/index.php?title=Pascal&amp;action=edit&amp;section=4" title="编辑段落：错误">编辑</a>]</span> <span class="mw-headline" id=".E9.94.99.E8.AF.AF">错误</span></h2>
+<p>FreePascal的错误一览表：
+<a href="/index.php/FP%E9%94%99%E8%AF%AF%E4%B8%80%E8%A7%88%E8%A1%A8" title="FP错误一览表">FP错误一览表</a>
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=Pascal&amp;action=edit&amp;section=5" title="编辑段落：IDE">编辑</a>]</span> <span class="mw-headline" id="IDE">IDE</span></h2>
+<p><a href="/index.php/Delphi" title="Delphi">Delphi</a> 是Borland最著名的IDE，在当初几乎和VB一起统治了Windows RAD领域，也是罕见的仍在开发的Win32原生代码IDE。
+<a href="/index.php?title=Kylix&amp;action=edit&amp;redlink=1" class="new" title="Kylix（尚未撰写）">Kylix</a> 是Borland Delphi的Linux版本，但由于Borland和Linux社群的一些争吵和内部原因，这个项目夭折了。
+<a href="/index.php/Lazarus" title="Lazarus">Lazarus</a>是仿造Delphi设计的，但并不是十分成熟。
+<br />
+<a href="/index.php?title=FPIDE&amp;action=edit&amp;redlink=1" class="new" title="FPIDE（尚未撰写）">FPIDE</a>/<a href="/index.php/FPS" title="FPS">FPS</a> 是轻量级的IDE。你也可以使用<a href="/index.php/Vim" title="Vim">vim</a>/<a href="/index.php/Emacs" title="Emacs">Emacs</a>这样的常规工具编写Pascal代码，往往也更好用。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=Pascal&amp;action=edit&amp;section=6" title="编辑段落：程序设计">编辑</a>]</span> <span class="mw-headline" id=".E7.A8.8B.E5.BA.8F.E8.AE.BE.E8.AE.A1">程序设计</span></h2>
+<h3><span class="editsection">[<a href="/index.php?title=Pascal&amp;action=edit&amp;section=7" title="编辑段落：基本知识">编辑</a>]</span> <span class="mw-headline" id=".E5.9F.BA.E6.9C.AC.E7.9F.A5.E8.AF.86">基本知识</span></h3>
+<p>程序结构
+</p>
+<pre>   PROGRAM  程序名；
+   LABEL    
+   CONST  &lt;常量标识符&gt; ＝ &lt;常量&gt;；
+   TYPE    
+   VAR  &lt;变量标识符&gt;&#160;: &lt;类型&gt;；    
+   FUNCTION     
+   PROCEDURE   
+   BEGIN
+      语句；
+   END.
+</pre>
+<h3><span class="editsection">[<a href="/index.php?title=Pascal&amp;action=edit&amp;section=8" title="编辑段落：基本语句">编辑</a>]</span> <span class="mw-headline" id=".E5.9F.BA.E6.9C.AC.E8.AF.AD.E5.8F.A5">基本语句</span></h3>
+<p>（1）赋值语句
+</p>
+<pre>   变量:=表达式；
+</pre>
+<p>（2）输入语句
+</p>
+<pre>   read(变量列表)；
+   readln(变量列表)；
+</pre>
+<p>（3）输出
+</p>
+<pre>   write(输出项列表)；
+   writeln(输出项列表)；
+</pre>
+<h3><span class="editsection">[<a href="/index.php?title=Pascal&amp;action=edit&amp;section=9" title="编辑段落：选择结构">编辑</a>]</span> <span class="mw-headline" id=".E9.80.89.E6.8B.A9.E7.BB.93.E6.9E.84">选择结构</span></h3>
+<p>(1) IF语句   
+</p>
+<pre>       IF  &lt;条件&gt;
+           THEN  &lt;语句1&gt;
+           ELSE  &lt;语句2&gt;；
+</pre>
+<p>(2)复合IF语句
+</p>
+<pre>       IF  &lt;条件1&gt;
+           THEN  &lt;语句1&gt;
+           ELSE  IF  &lt;条件2&gt;
+                     THEN  &lt;语句2&gt;
+                     ELSE  &lt;语句3&gt;；
+</pre>
+<p>(3)CASE语句
+</p>
+<pre>       CASE  &lt;表达式&gt;  OF
+          &lt;值表1&gt; ：&lt;语句1&gt;；
+          &lt;值表2&gt; ：&lt;语句2&gt;；
+                 …
+          &lt;值表n&gt; ：&lt;语句n&gt;;
+         else &lt;语句n+1&gt;;
+       END
+</pre>
+<h3><span class="editsection">[<a href="/index.php?title=Pascal&amp;action=edit&amp;section=10" title="编辑段落：循环结构">编辑</a>]</span> <span class="mw-headline" id=".E5.BE.AA.E7.8E.AF.E7.BB.93.E6.9E.84">循环结构</span></h3>
+<p>(1)FOR语句（计数型循环）
+</p>
+<pre>      FOR  &lt;循环变量&gt;&#160;: = &lt;初值&gt; TO（DOWNTO）&lt;终值&gt;   DO
+         &lt;循环体&gt;
+</pre>
+<p>(2)WHILE语句（当型循环）当满足某一条件时进行循环
+</p>
+<pre>      WHILE  &lt;布尔表达式&gt;  DO
+         &lt;循环体&gt;
+</pre>
+<p>(3)REPEAT语句(直到型循环)重复执行循环体，一直到指定的条件为真时为止
+</p>
+<pre>      REPEAT
+        &lt;循环体&gt;
+      UNTIL  &lt;布尔表达式&gt;
+</pre>
+<p>(4)循环中的控制语句
+</p>
+<pre>      Break语句：用于终止循环，无条件的跳转到循环外部去执行。
+      Continue语句：用于终止本次循环，直接跳到下一次循环。
+</pre>
+<h3><span class="editsection">[<a href="/index.php?title=Pascal&amp;action=edit&amp;section=11" title="编辑段落：子程序">编辑</a>]</span> <span class="mw-headline" id=".E5.AD.90.E7.A8.8B.E5.BA.8F">子程序</span></h3>
+<p>(1)函数说明
+</p>
+<pre>      FUNCTION  &lt;函数名&gt;  (&lt;参数表&gt;)&#160;: &lt;函数类型&gt;；
+        &lt;说明部分&gt;；
+      BEGIN
+        &lt;函数体&gt;
+      END；
+</pre>
+<p>(2)函数调用
+</p>
+<pre>      &lt;函数名&gt;  (&lt;实在参数表&gt;)
+</pre>
+<p>(3)过程说明
+</p>
+<pre>      PROCEDURE  &lt;过程名&gt;  (&lt;形式参数表&gt;)；
+        &lt;说明部分&gt;；
+      BEGIN
+        &lt;过程体&gt;
+      END；
+</pre>
+<p>(4)过程调用
+</p>
+<pre>      &lt;过程名&gt;  (&lt;实在参数表&gt;)
+</pre>
+<p>(5)嵌套与递归
+</p>
+<pre>      嵌套：一个函数或过程调用另一个函数或过程
+      递归：函数或过程调用它本身
+</pre>
+<h3><span class="editsection">[<a href="/index.php?title=Pascal&amp;action=edit&amp;section=12" title="编辑段落：枚举、子界、集合类型">编辑</a>]</span> <span class="mw-headline" id=".E6.9E.9A.E4.B8.BE.E3.80.81.E5.AD.90.E7.95.8C.E3.80.81.E9.9B.86.E5.90.88.E7.B1.BB.E5.9E.8B">枚举、子界、集合类型</span></h3>
+<p>(1)枚举类型
+</p>
+<pre>      TYPE
+        &lt;枚举类型标识符&gt; ＝ ( &lt;标识符&gt;，&lt;标识符&gt;，…，&lt;标识符&gt;)；
+      VAR
+        &lt;枚举类型变量表&gt;&#160;: &lt;枚举类型标识符&gt;；
+</pre>
+<p>(2)子界类型
+</p>
+<pre>      TYPE  
+        &lt;子界类型标识符&gt; ＝ &lt;常量1&gt; . . &lt;常量2&gt;；
+      VAR
+        &lt;子界类型变量表&gt;&#160;: &lt;子界类型标识符&gt;；
+</pre>
+<p>(3)集合类型
+</p>
+<pre>      TYPE 
+        &lt;集合类型标识符&gt;  =  SET  OF  &lt;基类型&gt;；
+      VAR
+        &lt;集合类型变量表&gt;&#160;: &lt;集合类型标识符&gt;；
+</pre>
+<h3><span class="editsection">[<a href="/index.php?title=Pascal&amp;action=edit&amp;section=13" title="编辑段落：记录类型">编辑</a>]</span> <span class="mw-headline" id=".E8.AE.B0.E5.BD.95.E7.B1.BB.E5.9E.8B">记录类型</span></h3>
+<p>(1)记录类型定义
+</p>
+<pre>      TYPE 
+        &lt;记录类型标识符&gt; ＝ RECORD
+                               &lt;域标识符表&gt;&#160;: &lt;类型&gt;；
+                               &lt;域标识符表&gt;&#160;: &lt;类型&gt;；
+                                      …
+                               &lt;域标识符表&gt;&#160;: &lt;类型&gt;
+                            END
+      VAR
+        &lt;记录类型变量表&gt;&#160;: &lt;记录类型标识符&gt;；
+</pre>
+<p>(2)记录类型引用
+</p>
+<pre>       ① 直接引用     &lt;记录变量名&gt; . &lt;域标识符&gt;
+       ② 开域语句
+         WITH  &lt;记录变量名&gt;  DO
+            &lt;语句&gt;
+</pre>
+<p>(3)记录数组
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=Pascal&amp;action=edit&amp;section=14" title="编辑段落：指针类型">编辑</a>]</span> <span class="mw-headline" id=".E6.8C.87.E9.92.88.E7.B1.BB.E5.9E.8B">指针类型</span></h3>
+<p>(1)指针类型定义
+</p>
+<pre>      TYPE
+        &lt;指针类型标识符&gt;  =  ^ &lt;结点类型标识符&gt;
+        &lt;结点类型标识符&gt;  ＝ &lt;类型&gt; 
+      VAR
+        &lt;指针类型变量表&gt;&#160;: &lt;指针类型标识符&gt;；
+</pre>
+<p>(2)指针类型引用
+</p>
+<pre>      &lt;指针变量名&gt;  ^
+</pre>
+<p>(3)new语句：分配一个存储单元，并把存储单元的地址赋给指针变量。
+</p>
+<pre>      New ( &lt;指针变量名&gt; )
+</pre>
+<p>(4)dispose语句：释放指针变量所指向的存储单元。
+</p>
+<pre>      Dispose ( &lt;指针变量名&gt; )
+</pre>
+<h2><span class="editsection">[<a href="/index.php?title=Pascal&amp;action=edit&amp;section=15" title="编辑段落：图形操作">编辑</a>]</span> <span class="mw-headline" id=".E5.9B.BE.E5.BD.A2.E6.93.8D.E4.BD.9C">图形操作</span></h2>
+<ul><li><a href="/index.php/%E5%85%B3%E4%BA%8E%E5%9B%BE%E5%BD%A2%E6%93%8D%E4%BD%9C%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86_Pascal" title="关于图形操作的基本知识 Pascal">关于图形操作的基本知识</a>
+</li></ul>
+<h2><span class="editsection">[<a href="/index.php?title=Pascal&amp;action=edit&amp;section=16" title="编辑段落：参考代码">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81">参考代码</span></h2>
+<ul><li><a href="/index.php/Pascal_program" title="Pascal program">部分常见算法pascal标程</a>
+</li></ul>
+<h2><span class="editsection">[<a href="/index.php?title=Pascal&amp;action=edit&amp;section=17" title="编辑段落：常见问题">编辑</a>]</span> <span class="mw-headline" id=".E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98">常见问题</span></h2>
+<ul><li><a href="/index.php/%E5%B8%B8%E7%94%A8%E7%9A%84%E5%87%BD%E6%95%B0%E5%92%8C%E8%BF%87%E7%A8%8B_Pascal" title="常用的函数和过程 Pascal">常用的函数和过程</a>
+</li><li><a href="/index.php/%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%E4%B8%8E%E8%BF%90%E8%A1%8C%E9%94%99%E8%AF%AF%E5%AF%B9%E7%85%A7%E8%A1%A8_Pascal" title="编译错误与运行错误对照表 Pascal">编译错误与运行错误对照表</a>
+</li></ul>
+<h2><span class="editsection">[<a href="/index.php?title=Pascal&amp;action=edit&amp;section=18" title="编辑段落：优点">编辑</a>]</span> <span class="mw-headline" id=".E4.BC.98.E7.82.B9">优点</span></h2>
+<ul><li>语句清晰自然,适合作为教学语言.
+</li><li>标准化程度高,便于移植.
+</li></ul>
+<h2><span class="editsection">[<a href="/index.php?title=Pascal&amp;action=edit&amp;section=19" title="编辑段落：缺点">编辑</a>]</span> <span class="mw-headline" id=".E7.BC.BA.E7.82.B9">缺点</span></h2>
+<ul><li>语句严谨性不高，特别是对大小写
+</li></ul>
+<h2><span class="editsection">[<a href="/index.php?title=Pascal&amp;action=edit&amp;section=20" title="编辑段落：经验">编辑</a>]</span> <span class="mw-headline" id=".E7.BB.8F.E9.AA.8C">经验</span></h2>
+<p>有人解释下程序每句前面为什么要用 TAB 空一下,谢谢!!
+</p>
+<table cellspacing="20" cellpadding="0" width="100%" style="margin:-12px 0;background-color:transparent">
+
+<tr>
+<td style="border:1px dashed gray;background-color:lavender;padding:3px 10px;">
+<p>[[User:Bestinmxd|Bestinmxd]:便于阅读，而且方便调试及检查begin、end等配套。总之很好看啦，也都习惯了。
+</p><p><a href="/index.php/%E7%94%A8%E6%88%B7:Czyhd" title="用户:Czyhd">Czyhd</a>:空格是为了阅读方便,用TAB是因为按一下TAB比按n下空格键容易-_-##
+</p><p><a href="/index.php/%E7%94%A8%E6%88%B7:Sqybi" title="用户:Sqybi">sqybi</a>:我觉得两个空格比TAB麻烦不了多少，而TAB的缩进太大，所以个人认为还是空格好-_-..
+</p><p>pascal的tab的缩进是可以更改的……修改fp.ini文件里的DefaultTabSize= 
+<a href="/index.php/%E7%94%A8%E6%88%B7:Ronice" title="用户:Ronice">Ronice</a> 11:41 2008年2月13日 (CST)
+</p><p><a href="/index.php/%E7%94%A8%E6%88%B7:%E5%B7%AB%E5%B1%B1%E9%9C%8F%E4%BA%91" title="用户:巫山霏云">巫山霏云</a>:我喜欢在pascal里面用tab键,而且是两个空格.不过一般都是用的编辑器里面的用空格代替tab,这样在不同的编辑阅读器里面可以保持格式一致了:)
+</p><p>要看情况，比如noi的kate的tab缩进是自己家的kate的4倍，那就没办法了。 --<a href="/index.php/%E7%94%A8%E6%88%B7:Cosechy" title="用户:Cosechy">Cosechy</a> 18:44 2007年10月2日 (CST)
+</p><p><a href="/index.php?title=%E7%94%A8%E6%88%B7:Thity&amp;action=edit&amp;redlink=1" class="new" title="用户:Thity（尚未撰写）">Thity</a>: Tab在ASCII是一个字符, 相等宽度的Space要占用更多的空间, 而对于编译器, 行首Tab和Space都是可忽略的, 而由于多个Space即为多个ASCII字符, 引起扫描速度较慢, 会降低编译速度. 推荐使用Tab.
+</p><p><a href="/index.php/%E7%94%A8%E6%88%B7:Victorlee129" title="用户:Victorlee129">victorlee129</a>:如果觉得TAB太大，VIM的编辑模式里 set tabstop=2＋set expandtab就行了
+</p><p><a href="/index.php/%E7%94%A8%E6%88%B7:Aflyhorse" title="用户:Aflyhorse">LunarShaddow</a>:可以用Tab键，但在源码里替换为空格，具体如下：在FP里Options-Environment-Editor里取消Use Tab Characters就可以了，这样既保存了Tab的方便性，在其他模式里看上去也一样，但源码会大一些...
+</p><p><a href="/index.php/%E7%94%A8%E6%88%B7:Winlzy" title="用户:Winlzy">Winlzy</a>:大家还有别的经验都多说些啊!
+</p><p><a href="/index.php/%E7%94%A8%E6%88%B7:Lsz" title="用户:Lsz">Lsz</a>:我认为使用自定大小Tab(不是8个空格大小的Tab)不如空格好，因为在别的编辑器上的显示通常是8个空格，
+这样就容易显示混乱。
+</p><p><a href="/index.php/%E7%94%A8%E6%88%B7:Jollwish" title="用户:Jollwish">Jollwish</a>:个人认为还是一个空格比较清爽。
+</p><p><a href="/index.php/%E7%94%A8%E6%88%B7:%E9%B8%A1%E6%98%AF%E6%8B%BF%E6%9D%A5%E5%95%83%E7%9A%84" title="用户:鸡是拿来啃的">鸡是拿来啃的</a>:直接用键盘上下左右搞定空格问题的人飘过……
+</p><p><a href="/index.php/%E7%94%A8%E6%88%B7:%E6%B0%B8%E8%BF%9Cccy" title="用户:永远ccy">永远ccy</a>:果断是用来加快程序速度的
+</p><p><a href="/index.php?title=%E7%94%A8%E6%88%B7:Lsq_oi&amp;action=edit&amp;redlink=1" class="new" title="用户:Lsq oi（尚未撰写）">Lsq_oi</a>:让程序更具机构化
+</p><p><a href="/index.php?title=%E7%94%A8%E6%88%B7:Despair_Afternoons&amp;action=edit&amp;redlink=1" class="new" title="用户:Despair Afternoons（尚未撰写）">Despair_Afternoons</a>:顶一下Jollwish巨神，Mr.Zhang亦支持一个空格！
+</p><p><a href="/index.php?title=%E7%94%A8%E6%88%B7:Yuzj2001&amp;action=edit&amp;redlink=1" class="new" title="用户:Yuzj2001（尚未撰写）">Yuzj2001</a>:便于阅读，便与调试，而且层次分明，让人看起来很清爽的说！！
+</p>
+</td></tr></table>
+<p>汗，难道大家都那么无聊，这些问题居然那么多人讨论。
+无聊是人生最佳状态的说！
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=Pascal&amp;action=edit&amp;section=21" title="编辑段落：参考资料">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E8.80.83.E8.B5.84.E6.96.99">参考资料</span></h2>
+<p>新河中学<a rel="nofollow" class="external free" href="http://www.xhms.com/">http://www.xhms.com/</a>
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=Pascal&amp;action=edit&amp;section=22" title="编辑段落：相关链接">编辑</a>]</span> <span class="mw-headline" id=".E7.9B.B8.E5.85.B3.E9.93.BE.E6.8E.A5">相关链接</span></h2>
+<p><a rel="nofollow" class="external text" href="http://www.freepascal.org/download.var">freepascal官方下载</a>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 90/1000000
+Post-expand include size: 175/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:4-0!*!0!!zh-cn!*!* and timestamp 20170929131731 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=Pascal&amp;oldid=36473">http://www.nocow.cn/index.php?title=Pascal&amp;oldid=36473</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/Pascal" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:Pascal&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=Pascal&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=Pascal&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Pascal" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Pascal" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Pascal" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=Pascal&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=Pascal&amp;oldid=36473" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过35,480次。</li>
+		<li id="credits">本页面由NOCOW用户<a href="/index.php?title=%E7%94%A8%E6%88%B7:Lshzw&amp;action=edit&amp;redlink=1" class="new" title="用户:Lshzw（尚未撰写）">Lshzw</a>于2017年9月21日 (星期四) 16:59做出最后修改。 在<a href="/index.php?title=%E7%94%A8%E6%88%B7:Dark.Time.Rambler(Zero).&amp;action=edit&amp;redlink=1" class="new" title="用户:Dark.Time.Rambler(Zero).（尚未撰写）">林剑雄</a>和<a href="/index.php?title=%E7%94%A8%E6%88%B7:Yuzj2001&amp;action=edit&amp;redlink=1" class="new" title="用户:Yuzj2001（尚未撰写）">George..MYJun</a>、NOCOW用户<a href="/index.php?title=%E7%94%A8%E6%88%B7:Despair_Afternoons&amp;action=edit&amp;redlink=1" class="new" title="用户:Despair Afternoons（尚未撰写）">Despair Afternoons</a>、NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/119.120.7.154" title="特殊:用户贡献/119.120.7.154">119.120.7.154</a>和<a href="/index.php?title=Pascal&amp;action=credits" title="Pascal">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.118 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

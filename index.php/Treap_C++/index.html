@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>Code:Treap/C++ - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="canonical" href="/index.php/Code:Treap/C%2B%2B" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=Code:Treap/C%2B%2B&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=Code:Treap/C%2B%2B&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "Code", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 104, "wgPageName": "Code:Treap/C++", "wgTitle": "Treap/C++", "wgCurRevisionId": 35837, "wgArticleId": 2781, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-104 ns-subject page-Code_Treap_C action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">Code:Treap/C++</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub">(跳转自<a href="/index.php?title=Treap_C%2B%2B&amp;redirect=no" title="Treap C++">Treap C++</a>)</div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co1">//不旋转的treap</span>
+<span class="kw4">struct</span> Node
+<span class="br0">&#123;</span>
+	<span class="kw2">public</span><span class="sy4">:</span>
+		<span class="kw4">int</span> x,y,ran,sum<span class="sy4">;</span>
+		<span class="kw4">int</span> a<span class="sy4">;</span>
+		Node<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>a<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>x<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>y<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>ran<span class="sy1">=</span><span class="kw3">rand</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>sum<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span><span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="sy4">;</span>
+&#160;
+<span class="kw4">struct</span> Treap
+<span class="br0">&#123;</span>
+	<span class="kw2">public</span><span class="sy4">:</span>
+		<span class="kw4">int</span> root,n<span class="sy4">;</span>
+		Node d<span class="br0">&#91;</span>N<span class="br0">&#93;</span><span class="sy4">;</span>
+		<span class="kw4">int</span> merge<span class="br0">&#40;</span><span class="kw4">int</span> x,<span class="kw4">int</span> y<span class="br0">&#41;</span><span class="sy4">;</span>
+		pair<span class="sy1">&lt;</span><span class="kw4">int</span>,<span class="kw4">int</span><span class="sy1">&gt;</span> split<span class="br0">&#40;</span><span class="kw4">int</span> x,<span class="kw4">int</span> y<span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>Tr<span class="sy4">;</span>
+&#160;
+<span class="kw4">int</span> Treap<span class="sy4">::</span><span class="me2">merge</span><span class="br0">&#40;</span><span class="kw4">int</span> x,<span class="kw4">int</span> y<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span><span class="sy3">!</span>x <span class="sy3">||</span> <span class="sy3">!</span>y<span class="br0">&#41;</span><span class="kw1">return</span> x<span class="sy2">+</span>y<span class="sy4">;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>d<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">ran</span><span class="sy1">&gt;</span>d<span class="br0">&#91;</span>y<span class="br0">&#93;</span>.<span class="me1">ran</span><span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		d<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">y</span><span class="sy1">=</span>merge<span class="br0">&#40;</span>d<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">y</span>,y<span class="br0">&#41;</span><span class="sy4">;</span>
+		d<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">sum</span><span class="sy1">=</span>d<span class="br0">&#91;</span>d<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">x</span><span class="br0">&#93;</span>.<span class="me1">sum</span><span class="sy2">+</span>d<span class="br0">&#91;</span>d<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">y</span><span class="br0">&#93;</span>.<span class="me1">sum</span><span class="sy2">+</span><span class="nu0">1</span><span class="sy4">;</span>
+		<span class="kw1">return</span> x<span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	d<span class="br0">&#91;</span>y<span class="br0">&#93;</span>.<span class="me1">x</span><span class="sy1">=</span>merge<span class="br0">&#40;</span>x,d<span class="br0">&#91;</span>y<span class="br0">&#93;</span>.<span class="me1">x</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	d<span class="br0">&#91;</span>y<span class="br0">&#93;</span>.<span class="me1">sum</span><span class="sy1">=</span>d<span class="br0">&#91;</span>d<span class="br0">&#91;</span>y<span class="br0">&#93;</span>.<span class="me1">x</span><span class="br0">&#93;</span>.<span class="me1">sum</span><span class="sy2">+</span>d<span class="br0">&#91;</span>d<span class="br0">&#91;</span>y<span class="br0">&#93;</span>.<span class="me1">y</span><span class="br0">&#93;</span>.<span class="me1">sum</span><span class="sy2">+</span><span class="nu0">1</span><span class="sy4">;</span>
+	<span class="kw1">return</span> y<span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+pair<span class="sy1">&lt;</span><span class="kw4">int</span>,<span class="kw4">int</span><span class="sy1">&gt;</span> Treap<span class="sy4">::</span><span class="me2">split</span><span class="br0">&#40;</span><span class="kw4">int</span> x,<span class="kw4">int</span> y<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span><span class="sy3">!</span>x<span class="br0">&#41;</span><span class="kw1">return</span> mp<span class="br0">&#40;</span><span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>d<span class="br0">&#91;</span>d<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">x</span><span class="br0">&#93;</span>.<span class="me1">sum</span><span class="sy1">&gt;=</span>y<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		pair<span class="sy1">&lt;</span><span class="kw4">int</span>,<span class="kw4">int</span><span class="sy1">&gt;</span> p<span class="sy1">=</span>split<span class="br0">&#40;</span>d<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">x</span>,y<span class="br0">&#41;</span><span class="sy4">;</span>
+		d<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">x</span><span class="sy1">=</span>p.<span class="me1">y</span><span class="sy4">;</span>
+		d<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">sum</span><span class="sy1">=</span>d<span class="br0">&#91;</span>d<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">x</span><span class="br0">&#93;</span>.<span class="me1">sum</span><span class="sy2">+</span>d<span class="br0">&#91;</span>d<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">y</span><span class="br0">&#93;</span>.<span class="me1">sum</span><span class="sy2">+</span><span class="nu0">1</span><span class="sy4">;</span>
+		<span class="kw1">return</span> mp<span class="br0">&#40;</span>p.<span class="me1">x</span>,x<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	pair<span class="sy1">&lt;</span><span class="kw4">int</span>,<span class="kw4">int</span><span class="sy1">&gt;</span> p<span class="sy1">=</span>split<span class="br0">&#40;</span>d<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">y</span>,y<span class="sy2">-</span>d<span class="br0">&#91;</span>d<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">x</span><span class="br0">&#93;</span>.<span class="me1">sum</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	d<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">y</span><span class="sy1">=</span>p.<span class="me1">x</span><span class="sy4">;</span>
+	d<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">sum</span><span class="sy1">=</span>d<span class="br0">&#91;</span>d<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">x</span><span class="br0">&#93;</span>.<span class="me1">sum</span><span class="sy2">+</span>d<span class="br0">&#91;</span>d<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">y</span><span class="br0">&#93;</span>.<span class="me1">sum</span><span class="sy2">+</span><span class="nu0">1</span><span class="sy4">;</span>
+	<span class="kw1">return</span> mp<span class="br0">&#40;</span>x,p.<span class="me1">y</span><span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co1">//Written By CmYkRgB123</span>
+<span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;ctime&gt;</span>
+<span class="co2">#define MAX 100</span>
+&#160;
+<span class="kw2">using</span> <span class="kw2">namespace</span> std<span class="sy4">;</span>
+&#160;
+<span class="kw4">typedef</span> <span class="kw4">struct</span>
+<span class="br0">&#123;</span>
+	<span class="kw4">int</span> l,r,key,fix<span class="sy4">;</span>
+<span class="br0">&#125;</span>node<span class="sy4">;</span>
+&#160;
+<span class="kw2">class</span> treap
+<span class="br0">&#123;</span>
+<span class="kw2">public</span><span class="sy4">:</span>
+	node p<span class="br0">&#91;</span>MAX<span class="br0">&#93;</span><span class="sy4">;</span>
+	<span class="kw4">int</span> size,root<span class="sy4">;</span>
+	treap<span class="br0">&#40;</span><span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		<span class="kw3">srand</span><span class="br0">&#40;</span><span class="kw3">time</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+		size<span class="sy1">=</span><span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span>
+		root<span class="sy1">=</span><span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+&#160;
+	<span class="kw4">void</span> rot_l<span class="br0">&#40;</span><span class="kw4">int</span> <span class="sy3">&amp;</span>x<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		<span class="kw4">int</span> y<span class="sy1">=</span>p<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">r</span><span class="sy4">;</span>
+		p<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">r</span><span class="sy1">=</span>p<span class="br0">&#91;</span>y<span class="br0">&#93;</span>.<span class="me1">l</span><span class="sy4">;</span>
+		p<span class="br0">&#91;</span>y<span class="br0">&#93;</span>.<span class="me1">l</span><span class="sy1">=</span>x<span class="sy4">;</span>
+		x<span class="sy1">=</span>y<span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+&#160;
+	<span class="kw4">void</span> rot_r<span class="br0">&#40;</span><span class="kw4">int</span> <span class="sy3">&amp;</span>x<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		<span class="kw4">int</span> y<span class="sy1">=</span>p<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">l</span><span class="sy4">;</span>
+		p<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">l</span><span class="sy1">=</span>p<span class="br0">&#91;</span>y<span class="br0">&#93;</span>.<span class="me1">r</span><span class="sy4">;</span>
+		p<span class="br0">&#91;</span>y<span class="br0">&#93;</span>.<span class="me1">r</span><span class="sy1">=</span>x<span class="sy4">;</span>
+		x<span class="sy1">=</span>y<span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+&#160;
+	<span class="kw4">void</span> insert<span class="br0">&#40;</span><span class="kw4">int</span> <span class="sy3">&amp;</span>k,<span class="kw4">int</span> tkey<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span>k<span class="sy1">==</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span>
+		<span class="br0">&#123;</span>
+			k<span class="sy1">=</span><span class="sy2">++</span>size<span class="sy4">;</span>
+			p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">l</span><span class="sy1">=</span>p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">r</span><span class="sy1">=</span><span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span>
+			p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">key</span><span class="sy1">=</span>tkey<span class="sy4">;</span>
+			p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">fix</span><span class="sy1">=</span><span class="kw3">rand</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+		<span class="kw1">else</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span>tkey<span class="sy1">&lt;</span>p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">key</span><span class="br0">&#41;</span>
+		<span class="br0">&#123;</span>
+			insert<span class="br0">&#40;</span>p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">l</span>,tkey<span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="kw1">if</span> <span class="br0">&#40;</span>p<span class="br0">&#91;</span> p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">l</span> <span class="br0">&#93;</span>.<span class="me1">fix</span><span class="sy1">&gt;</span>p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">fix</span><span class="br0">&#41;</span>
+				rot_r<span class="br0">&#40;</span>k<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+		<span class="kw1">else</span>
+		<span class="br0">&#123;</span>
+			insert<span class="br0">&#40;</span>p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">r</span>,tkey<span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="kw1">if</span> <span class="br0">&#40;</span>p<span class="br0">&#91;</span> p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">r</span> <span class="br0">&#93;</span>.<span class="me1">fix</span><span class="sy1">&gt;</span>p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">fix</span><span class="br0">&#41;</span>
+				rot_l<span class="br0">&#40;</span>k<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+&#160;
+	<span class="br0">&#125;</span>
+&#160;
+	<span class="kw4">void</span> <span class="kw3">remove</span><span class="br0">&#40;</span><span class="kw4">int</span> <span class="sy3">&amp;</span>k,<span class="kw4">int</span> tkey<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span>k<span class="sy1">==</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="kw1">return</span><span class="sy4">;</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span>tkey<span class="sy1">&lt;</span>p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">key</span><span class="br0">&#41;</span>
+			<span class="kw3">remove</span><span class="br0">&#40;</span>p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">l</span>,tkey<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>tkey<span class="sy1">&gt;</span>p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">key</span><span class="br0">&#41;</span>
+			<span class="kw3">remove</span><span class="br0">&#40;</span>p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">r</span>,tkey<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw1">else</span>
+		<span class="br0">&#123;</span>
+			<span class="kw1">if</span> <span class="br0">&#40;</span>p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">l</span><span class="sy1">==</span><span class="sy2">-</span><span class="nu0">1</span> <span class="sy3">&amp;&amp;</span> p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">r</span><span class="sy1">==</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span>
+				k<span class="sy1">=</span><span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span>
+			<span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">l</span><span class="sy1">==</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span>
+				k<span class="sy1">=</span>p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">r</span><span class="sy4">;</span>
+			<span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">r</span><span class="sy1">==</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span>
+				k<span class="sy1">=</span>p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">l</span><span class="sy4">;</span>
+			<span class="kw1">else</span>
+			<span class="kw1">if</span> <span class="br0">&#40;</span>p<span class="br0">&#91;</span> p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">l</span> <span class="br0">&#93;</span>.<span class="me1">fix</span> <span class="sy1">&lt;</span> p<span class="br0">&#91;</span> p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">r</span> <span class="br0">&#93;</span>.<span class="me1">fix</span><span class="br0">&#41;</span>
+			<span class="br0">&#123;</span>
+				rot_l<span class="br0">&#40;</span>k<span class="br0">&#41;</span><span class="sy4">;</span>
+				<span class="kw3">remove</span><span class="br0">&#40;</span>p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">l</span>,tkey<span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="br0">&#125;</span>
+			<span class="kw1">else</span>
+			<span class="br0">&#123;</span>
+				rot_r<span class="br0">&#40;</span>k<span class="br0">&#41;</span><span class="sy4">;</span>
+				<span class="kw3">remove</span><span class="br0">&#40;</span>p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">r</span>,tkey<span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="br0">&#125;</span>
+		<span class="br0">&#125;</span>
+	<span class="br0">&#125;</span>
+&#160;
+	<span class="kw4">void</span> print<span class="br0">&#40;</span><span class="kw4">int</span> k<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span>p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">l</span><span class="sy3">!</span><span class="sy1">=</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span>
+			print<span class="br0">&#40;</span>p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">l</span><span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw3">cout</span> <span class="sy1">&lt;&lt;</span> p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">key</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;&#160;: &quot;</span> <span class="sy1">&lt;&lt;</span> p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">fix</span> <span class="sy1">&lt;&lt;</span> endl<span class="sy4">;</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span>p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">r</span><span class="sy3">!</span><span class="sy1">=</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span>
+			print<span class="br0">&#40;</span>p<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">r</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="sy4">;</span>
+&#160;
+treap T<span class="sy4">;</span>
+&#160;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+&#160;
+	<span class="kw4">int</span> i<span class="sy4">;</span>
+	<span class="kw1">for</span> <span class="br0">&#40;</span>i<span class="sy1">=</span><span class="nu0">3</span><span class="sy4">;</span>i<span class="sy1">&gt;=</span><span class="nu0">1</span><span class="sy4">;</span>i<span class="sy2">--</span><span class="br0">&#41;</span>
+		T.<span class="me1">insert</span><span class="br0">&#40;</span>T.<span class="me1">root</span>,i<span class="br0">&#41;</span><span class="sy4">;</span>
+	T.<span class="me1">print</span><span class="br0">&#40;</span>T.<span class="me1">root</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw1">for</span> <span class="br0">&#40;</span>i<span class="sy1">=</span><span class="nu0">3</span><span class="sy4">;</span>i<span class="sy1">&gt;=</span><span class="nu0">1</span><span class="sy4">;</span>i<span class="sy2">--</span><span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		<span class="kw3">cout</span> <span class="sy1">&lt;&lt;</span> endl<span class="sy4">;</span>
+		T.<span class="kw3">remove</span><span class="br0">&#40;</span>T.<span class="me1">root</span>,i<span class="br0">&#41;</span><span class="sy4">;</span>
+		T.<span class="me1">print</span><span class="br0">&#40;</span>T.<span class="me1">root</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co1">//使用指针的treap  by zjf</span>
+<span class="co2">#include &lt;time.h&gt;</span>
+<span class="co2">#include &lt;stdlib.h&gt;</span>
+<span class="co2">#include &lt;iostream&gt;</span>
+&#160;
+<span class="kw2">using</span> <span class="kw2">namespace</span> std<span class="sy4">;</span>
+&#160;
+<span class="kw4">typedef</span> <span class="kw4">struct</span> treapnode<span class="sy4">;</span>
+<span class="kw4">typedef</span> <span class="kw4">struct</span> treapnode <span class="sy2">*</span>treap<span class="sy4">;</span>
+&#160;
+<span class="kw4">struct</span> treapnode
+<span class="br0">&#123;</span>
+    <span class="kw4">int</span> key,fix<span class="sy4">;</span>
+    treap left,right<span class="sy4">;</span>
+<span class="br0">&#125;</span><span class="sy4">;</span>
+&#160;
+treap nullnode,root<span class="sy4">;</span>
+&#160;
+<span class="kw4">void</span> initialize<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    nullnode <span class="sy1">=</span> <span class="kw3">new</span> treapnode<span class="sy4">;</span>
+    nullnode<span class="sy2">-</span><span class="sy1">&gt;</span>left <span class="sy1">=</span> nullnode<span class="sy2">-</span><span class="sy1">&gt;</span>right <span class="sy1">=</span> nullnode<span class="sy4">;</span>
+    root<span class="sy1">=</span>nullnode<span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> sigrotl<span class="br0">&#40;</span>treap<span class="sy3">&amp;</span> k1<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    treap k2<span class="sy4">;</span>
+    k2 <span class="sy1">=</span> k1<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="sy4">;</span>
+    k1<span class="sy2">-</span><span class="sy1">&gt;</span>right <span class="sy1">=</span> k2<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="sy4">;</span>
+    k2<span class="sy2">-</span><span class="sy1">&gt;</span>left <span class="sy1">=</span> k1<span class="sy4">;</span>
+    k1 <span class="sy1">=</span> k2<span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> sigrotr<span class="br0">&#40;</span>treap<span class="sy3">&amp;</span> k1<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    treap k2<span class="sy4">;</span>
+    k2 <span class="sy1">=</span> k1<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="sy4">;</span>
+    k1<span class="sy2">-</span><span class="sy1">&gt;</span>left <span class="sy1">=</span> k2<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="sy4">;</span>
+    k2<span class="sy2">-</span><span class="sy1">&gt;</span>right <span class="sy1">=</span> k1<span class="sy4">;</span>
+    k1 <span class="sy1">=</span> k2<span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> insert<span class="br0">&#40;</span>treap<span class="sy3">&amp;</span> t,<span class="kw4">int</span> x<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span>t <span class="sy1">==</span> nullnode<span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        t <span class="sy1">=</span> <span class="kw3">new</span> treapnode<span class="sy4">;</span>
+        t<span class="sy2">-</span><span class="sy1">&gt;</span>left <span class="sy1">=</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>right <span class="sy1">=</span> nullnode<span class="sy4">;</span>
+        t<span class="sy2">-</span><span class="sy1">&gt;</span>key <span class="sy1">=</span> x<span class="sy4">;</span>
+        t<span class="sy2">-</span><span class="sy1">&gt;</span>fix <span class="sy1">=</span> <span class="kw3">rand</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw1">else</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>key <span class="sy1">==</span> x<span class="br0">&#41;</span><span class="kw1">return</span><span class="sy4">;</span>
+    <span class="kw1">else</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span>x <span class="sy1">&lt;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>key<span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        insert<span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>left,x<span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="sy2">-</span><span class="sy1">&gt;</span>fix <span class="sy1">&gt;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>fix<span class="br0">&#41;</span>sigrotr<span class="br0">&#40;</span>t<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw1">else</span>
+    <span class="br0">&#123;</span>
+        insert<span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>right,x<span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="sy2">-</span><span class="sy1">&gt;</span>fix <span class="sy1">&gt;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>fix<span class="br0">&#41;</span>sigrotl<span class="br0">&#40;</span>t<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>    
+&#160;
+<span class="kw4">void</span> <span class="kw3">remove</span><span class="br0">&#40;</span>treap<span class="sy3">&amp;</span> t,<span class="kw4">int</span> x<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span>t <span class="sy1">==</span> nullnode<span class="br0">&#41;</span><span class="kw1">return</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span>x <span class="sy1">&gt;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>key<span class="br0">&#41;</span><span class="kw3">remove</span><span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>right,x<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span>x <span class="sy1">&lt;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>key<span class="br0">&#41;</span><span class="kw3">remove</span><span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>left,x<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">else</span>
+    <span class="br0">&#123;</span>
+        <span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>left <span class="sy1">==</span> nullnode <span class="sy3">&amp;&amp;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>right <span class="sy1">==</span> nullnode<span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+            <span class="kw3">delete</span> t<span class="sy4">;</span>
+            t<span class="sy1">=</span>nullnode<span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+        <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>left <span class="sy1">==</span> nullnode<span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+            treap tmp <span class="sy1">=</span> t<span class="sy4">;</span>
+            t <span class="sy1">=</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="sy4">;</span>
+            <span class="kw3">delete</span> tmp<span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+        <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>right <span class="sy1">==</span> nullnode<span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+            treap tmp <span class="sy1">=</span> t<span class="sy4">;</span>
+            t <span class="sy1">=</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="sy4">;</span>
+            <span class="kw3">delete</span> tmp<span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+        <span class="kw1">else</span>
+        <span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="sy2">-</span><span class="sy1">&gt;</span>fix <span class="sy1">&lt;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="sy2">-</span><span class="sy1">&gt;</span>fix<span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+            sigrotl<span class="br0">&#40;</span>t<span class="br0">&#41;</span><span class="sy4">;</span>
+            <span class="kw3">remove</span><span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>left,x<span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+        <span class="kw1">else</span>
+        <span class="br0">&#123;</span>
+            sigrotr<span class="br0">&#40;</span>t<span class="br0">&#41;</span><span class="sy4">;</span>
+            <span class="kw3">remove</span><span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>right,x<span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+    <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>    
+&#160;
+<span class="kw4">void</span> list<span class="br0">&#40;</span>treap t<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span>t <span class="sy1">==</span> nullnode<span class="br0">&#41;</span><span class="kw1">return</span><span class="sy4">;</span><span class="kw3">cout</span> <span class="sy1">&lt;&lt;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>key <span class="sy1">&lt;&lt;</span> endl<span class="sy4">;</span>
+    list<span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+    list<span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    initialize<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    insert<span class="br0">&#40;</span>root,<span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    insert<span class="br0">&#40;</span>root,<span class="nu0">2</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    insert<span class="br0">&#40;</span>root,<span class="nu0">3</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    insert<span class="br0">&#40;</span>root,<span class="nu0">4</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    insert<span class="br0">&#40;</span>root,<span class="nu0">5</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    list<span class="br0">&#40;</span>root<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw3">system</span><span class="br0">&#40;</span><span class="st0">&quot;pause&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>发一个我的。
+主要是运用了孩子数组c来简化代码。
+并且把null节点的优先级设为inf，方便删除
+By <strong><font color="#FF0000">WJMZBMR</font></strong>..题目是SPOJ的ORDERSET。。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include&lt;cstdio&gt;</span>
+<span class="co2">#include&lt;cstdlib&gt;</span>
+<span class="kw2">using</span> <span class="kw2">namespace</span> std<span class="sy4">;</span>
+<span class="kw4">const</span> <span class="kw4">int</span> inf<span class="sy1">=</span>~0U<span class="sy1">&gt;&gt;</span><span class="nu0">1</span><span class="sy4">;</span>
+<span class="kw2">class</span> treap
+<span class="br0">&#123;</span>
+	<span class="kw4">struct</span> node
+	<span class="br0">&#123;</span>
+		<span class="kw4">int</span> value,key,size<span class="sy4">;</span>
+		node<span class="br0">&#40;</span><span class="kw4">int</span> v,node<span class="sy2">*</span>n<span class="br0">&#41;</span><span class="sy4">:</span>value<span class="br0">&#40;</span>v<span class="br0">&#41;</span>
+		<span class="br0">&#123;</span>c<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy1">=</span>c<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy1">=</span>n<span class="sy4">;</span>size<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>key<span class="sy1">=</span><span class="kw3">rand</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span><span class="br0">&#125;</span>
+		<span class="kw4">void</span> rz<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>size<span class="sy1">=</span>c<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy2">-</span><span class="sy1">&gt;</span>size<span class="sy2">+</span>c<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy2">-</span><span class="sy1">&gt;</span>size<span class="sy2">+</span><span class="nu0">1</span><span class="sy4">;</span><span class="br0">&#125;</span>
+		node<span class="sy2">*</span>c<span class="br0">&#91;</span><span class="nu0">2</span><span class="br0">&#93;</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span><span class="sy2">*</span>root,<span class="sy2">*</span>null<span class="sy4">;</span>
+	<span class="kw4">void</span> rot<span class="br0">&#40;</span>node<span class="sy2">*</span><span class="sy3">&amp;</span>t,<span class="kw4">bool</span> d<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		node<span class="sy2">*</span>c<span class="sy1">=</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>c<span class="br0">&#91;</span>d<span class="br0">&#93;</span><span class="sy4">;</span>
+		t<span class="sy2">-</span><span class="sy1">&gt;</span>c<span class="br0">&#91;</span>d<span class="br0">&#93;</span><span class="sy1">=</span>c<span class="sy2">-</span><span class="sy1">&gt;</span>c<span class="br0">&#91;</span><span class="sy3">!</span>d<span class="br0">&#93;</span><span class="sy4">;</span>
+		c<span class="sy2">-</span><span class="sy1">&gt;</span>c<span class="br0">&#91;</span><span class="sy3">!</span>d<span class="br0">&#93;</span><span class="sy1">=</span>t<span class="sy4">;</span>
+		t<span class="sy2">-</span><span class="sy1">&gt;</span>rz<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>c<span class="sy2">-</span><span class="sy1">&gt;</span>rz<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+		t<span class="sy1">=</span>c<span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw4">void</span> insert<span class="br0">&#40;</span>node<span class="sy2">*</span><span class="sy3">&amp;</span>t,<span class="kw4">int</span> x<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+			<span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy1">==</span>null<span class="br0">&#41;</span>	<span class="br0">&#123;</span>t<span class="sy1">=</span><span class="kw3">new</span> node<span class="br0">&#40;</span>x,null<span class="br0">&#41;</span><span class="sy4">;</span><span class="kw1">return</span><span class="sy4">;</span><span class="br0">&#125;</span>
+			<span class="kw1">if</span><span class="br0">&#40;</span>x<span class="sy1">==</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>value<span class="br0">&#41;</span> <span class="kw1">return</span><span class="sy4">;</span>
+			<span class="kw4">bool</span> d<span class="sy1">=</span>x<span class="sy1">&gt;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>value<span class="sy4">;</span>
+			insert<span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>c<span class="br0">&#91;</span>d<span class="br0">&#93;</span>,x<span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>c<span class="br0">&#91;</span>d<span class="br0">&#93;</span><span class="sy2">-</span><span class="sy1">&gt;</span>key<span class="sy1">&lt;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>key<span class="br0">&#41;</span>
+				rot<span class="br0">&#40;</span>t,d<span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="kw1">else</span>
+				t<span class="sy2">-</span><span class="sy1">&gt;</span>rz<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw4">void</span> Delete<span class="br0">&#40;</span>node<span class="sy2">*</span><span class="sy3">&amp;</span>t,<span class="kw4">int</span> x<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		   <span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy1">==</span>null<span class="br0">&#41;</span> <span class="kw1">return</span><span class="sy4">;</span>
+		   <span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>value<span class="sy1">==</span>x<span class="br0">&#41;</span>
+			<span class="br0">&#123;</span>
+				<span class="kw4">bool</span> d<span class="sy1">=</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>c<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy2">-</span><span class="sy1">&gt;</span>key<span class="sy1">&lt;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>c<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy2">-</span><span class="sy1">&gt;</span>key<span class="sy4">;</span>
+				<span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>c<span class="br0">&#91;</span>d<span class="br0">&#93;</span><span class="sy1">==</span>null<span class="br0">&#41;</span>
+				<span class="br0">&#123;</span>
+					<span class="kw3">delete</span> t<span class="sy4">;</span>
+					t<span class="sy1">=</span>null<span class="sy4">;</span>
+					<span class="kw1">return</span><span class="sy4">;</span>
+				<span class="br0">&#125;</span>
+				rot<span class="br0">&#40;</span>t,d<span class="br0">&#41;</span><span class="sy4">;</span>
+				Delete<span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>c<span class="br0">&#91;</span><span class="sy3">!</span>d<span class="br0">&#93;</span>,x<span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="br0">&#125;</span>
+			<span class="kw1">else</span>
+			<span class="br0">&#123;</span>
+				<span class="kw4">bool</span> d<span class="sy1">=</span>x<span class="sy1">&gt;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>value<span class="sy4">;</span>
+				Delete<span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>c<span class="br0">&#91;</span>d<span class="br0">&#93;</span>,x<span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="br0">&#125;</span>
+			t<span class="sy2">-</span><span class="sy1">&gt;</span>rz<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw4">int</span> select<span class="br0">&#40;</span>node<span class="sy2">*</span>t,<span class="kw4">int</span> k<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		<span class="kw4">int</span> r<span class="sy1">=</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>c<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy2">-</span><span class="sy1">&gt;</span>size<span class="sy4">;</span>
+		<span class="kw1">if</span><span class="br0">&#40;</span>k<span class="sy1">==</span>r<span class="br0">&#41;</span> <span class="kw1">return</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>value<span class="sy4">;</span>
+		<span class="kw1">if</span><span class="br0">&#40;</span>k<span class="sy1">&lt;</span>r<span class="br0">&#41;</span> <span class="kw1">return</span> select<span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>c<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>,k<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw1">return</span> select<span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>c<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span>,k<span class="sy2">-</span>r<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw4">int</span> rank<span class="br0">&#40;</span>node<span class="sy2">*</span>t,<span class="kw4">int</span> x<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		<span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy1">==</span>null<span class="br0">&#41;</span> <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+		<span class="kw4">int</span> r<span class="sy1">=</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>c<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy2">-</span><span class="sy1">&gt;</span>size<span class="sy4">;</span>
+		<span class="kw1">if</span><span class="br0">&#40;</span>x<span class="sy1">==</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>value<span class="br0">&#41;</span> <span class="kw1">return</span> r<span class="sy4">;</span>		
+		<span class="kw1">if</span><span class="br0">&#40;</span>x<span class="sy1">&lt;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>value<span class="br0">&#41;</span> <span class="kw1">return</span> rank<span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>c<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>,x<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw1">return</span> r<span class="sy2">+</span><span class="nu0">1</span><span class="sy2">+</span>rank<span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>c<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span>,x<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw2">public</span><span class="sy4">:</span>
+	treap<span class="br0">&#40;</span><span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		null<span class="sy1">=</span><span class="kw3">new</span> node<span class="br0">&#40;</span><span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span>null<span class="sy2">-</span><span class="sy1">&gt;</span>size<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>null<span class="sy2">-</span><span class="sy1">&gt;</span>key<span class="sy1">=</span>inf<span class="sy4">;</span>
+		root<span class="sy1">=</span>null<span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw4">void</span> ins<span class="br0">&#40;</span><span class="kw4">int</span> x<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		insert<span class="br0">&#40;</span>root,x<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw4">int</span> sel<span class="br0">&#40;</span><span class="kw4">int</span> k<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		<span class="kw1">if</span><span class="br0">&#40;</span>k<span class="sy1">&gt;</span>root<span class="sy2">-</span><span class="sy1">&gt;</span>size<span class="br0">&#41;</span> <span class="kw1">return</span> <span class="sy2">-</span>inf<span class="sy4">;</span>
+		<span class="kw1">return</span> select<span class="br0">&#40;</span>root,k<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw4">int</span> ran<span class="br0">&#40;</span><span class="kw4">int</span> x<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		<span class="kw1">return</span> rank<span class="br0">&#40;</span>root,x<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw4">void</span> del<span class="br0">&#40;</span><span class="kw4">int</span> x<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		Delete<span class="br0">&#40;</span>root,x<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>	
+<span class="br0">&#125;</span>T<span class="sy4">;</span>
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="co1">//freopen(&quot;in&quot;,&quot;r&quot;,stdin);</span>
+	<span class="kw4">int</span> m<span class="sy4">;</span><span class="kw3">scanf</span><span class="br0">&#40;</span><span class="st0">&quot;%d<span class="es1">\n</span>&quot;</span>,<span class="sy3">&amp;</span>m<span class="br0">&#41;</span><span class="sy4">;</span>	
+	<span class="kw4">char</span> t<span class="sy4">;</span><span class="kw4">int</span> x,tmp<span class="sy4">;</span>
+	<span class="kw1">while</span><span class="br0">&#40;</span>m<span class="sy2">--</span><span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		<span class="kw3">scanf</span><span class="br0">&#40;</span><span class="st0">&quot;%c&#160;%d<span class="es1">\n</span>&quot;</span>,<span class="sy3">&amp;</span>t,<span class="sy3">&amp;</span>x<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw1">switch</span><span class="br0">&#40;</span>t<span class="br0">&#41;</span>
+		<span class="br0">&#123;</span>
+			<span class="kw1">case</span> <span class="st0">'I'</span><span class="sy4">:</span>T.<span class="me1">ins</span><span class="br0">&#40;</span>x<span class="br0">&#41;</span><span class="sy4">;</span><span class="kw1">break</span><span class="sy4">;</span>
+			<span class="kw1">case</span> <span class="st0">'D'</span><span class="sy4">:</span>T.<span class="me1">del</span><span class="br0">&#40;</span>x<span class="br0">&#41;</span><span class="sy4">;</span><span class="kw1">break</span><span class="sy4">;</span>
+			<span class="kw1">case</span> <span class="st0">'K'</span><span class="sy4">:</span>tmp<span class="sy1">=</span>T.<span class="me1">sel</span><span class="br0">&#40;</span>x<span class="br0">&#41;</span><span class="sy4">;</span><span class="kw1">if</span><span class="br0">&#40;</span>tmp<span class="sy1">==</span><span class="sy2">-</span>inf<span class="br0">&#41;</span><span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;invalid<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span><span class="kw1">else</span> <span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;%d<span class="es1">\n</span>&quot;</span>,tmp<span class="br0">&#41;</span><span class="sy4">;</span><span class="kw1">break</span><span class="sy4">;</span>
+			<span class="kw1">case</span> <span class="st0">'C'</span><span class="sy4">:</span><span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;%d<span class="es1">\n</span>&quot;</span>,T.<span class="me1">ran</span><span class="br0">&#40;</span>x<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span><span class="kw1">break</span><span class="sy4">;</span>
+		<span class="br0">&#125;</span>		
+	<span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="coMULTI">/*
+  Author: lqhl
+  Problem: HNOI 2004 day1 pet 宠物收养所
+*/</span>
+<span class="co2">#include &lt;cstdlib&gt;</span>
+<span class="co2">#include &lt;fstream&gt;</span>
+<span class="co2">#include &lt;iostream&gt;</span>
+<span class="kw2">using</span> <span class="kw2">namespace</span> std<span class="sy4">;</span>
+&#160;
+<span class="kw4">const</span> <span class="kw4">int</span> INF <span class="sy1">=</span> <span class="nu0">1</span><span class="sy1">&lt;&lt;</span><span class="nu0">30</span><span class="sy4">;</span>
+<span class="kw4">const</span> <span class="kw4">int</span> DIVISOR <span class="sy1">=</span> <span class="nu0">1000000</span><span class="sy4">;</span>
+&#160;
+<span class="kw2">template</span> <span class="sy1">&lt;</span><span class="kw2">class</span> DType<span class="sy1">&gt;</span>
+<span class="kw2">class</span> Treap <span class="br0">&#123;</span>
+	<span class="kw2">private</span><span class="sy4">:</span>
+	<span class="kw4">typedef</span> <span class="kw4">struct</span> node<span class="sy4">;</span>
+	<span class="kw4">typedef</span> <span class="kw4">struct</span> node <span class="sy2">*</span>pnode<span class="sy4">;</span>
+	<span class="kw4">struct</span> node <span class="br0">&#123;</span>
+		DType key<span class="sy4">;</span>
+		<span class="kw4">int</span> count, total<span class="sy4">;</span>
+		pnode left, right<span class="sy4">;</span>
+		<span class="kw4">int</span> priority<span class="sy4">;</span>
+	<span class="br0">&#125;</span><span class="sy4">;</span>
+&#160;
+	pnode null, root<span class="sy4">;</span>
+&#160;
+	<span class="kw4">void</span> left_rotate<span class="br0">&#40;</span>pnode <span class="sy3">&amp;</span>cur<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+		pnode tmp<span class="sy4">;</span>
+		tmp <span class="sy1">=</span> cur<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="sy4">;</span>
+		cur<span class="sy2">-</span><span class="sy1">&gt;</span>left <span class="sy1">=</span> tmp<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="sy4">;</span>
+		tmp<span class="sy2">-</span><span class="sy1">&gt;</span>right <span class="sy1">=</span> cur<span class="sy4">;</span>
+		tmp<span class="sy2">-</span><span class="sy1">&gt;</span>total <span class="sy1">=</span> cur<span class="sy2">-</span><span class="sy1">&gt;</span>total<span class="sy4">;</span>
+		cur<span class="sy2">-</span><span class="sy1">&gt;</span>total <span class="sy1">=</span> cur<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="sy2">-</span><span class="sy1">&gt;</span>total <span class="sy2">+</span> cur<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="sy2">-</span><span class="sy1">&gt;</span>total <span class="sy2">+</span> cur<span class="sy2">-</span><span class="sy1">&gt;</span>count<span class="sy4">;</span>
+		cur <span class="sy1">=</span> tmp<span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+&#160;
+	<span class="kw4">void</span> right_rotate<span class="br0">&#40;</span>pnode <span class="sy3">&amp;</span>cur<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+		pnode tmp<span class="sy4">;</span>
+		tmp <span class="sy1">=</span> cur<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="sy4">;</span>
+		cur<span class="sy2">-</span><span class="sy1">&gt;</span>right <span class="sy1">=</span> tmp<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="sy4">;</span>
+		tmp<span class="sy2">-</span><span class="sy1">&gt;</span>left <span class="sy1">=</span> cur<span class="sy4">;</span>
+		tmp<span class="sy2">-</span><span class="sy1">&gt;</span>total <span class="sy1">=</span> cur<span class="sy2">-</span><span class="sy1">&gt;</span>total<span class="sy4">;</span>
+		cur<span class="sy2">-</span><span class="sy1">&gt;</span>total <span class="sy1">=</span> cur<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="sy2">-</span><span class="sy1">&gt;</span>total <span class="sy2">+</span> cur<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="sy2">-</span><span class="sy1">&gt;</span>total <span class="sy2">+</span> cur<span class="sy2">-</span><span class="sy1">&gt;</span>count<span class="sy4">;</span>
+		cur <span class="sy1">=</span> tmp<span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+&#160;
+	<span class="kw4">void</span> insert_node<span class="br0">&#40;</span>pnode <span class="sy3">&amp;</span>cur, DType key<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span>cur <span class="sy1">==</span> null<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+			cur <span class="sy1">=</span> <span class="kw3">new</span> <span class="kw4">struct</span> node<span class="sy4">;</span>
+			cur<span class="sy2">-</span><span class="sy1">&gt;</span>key <span class="sy1">=</span> key<span class="sy4">;</span>
+			cur<span class="sy2">-</span><span class="sy1">&gt;</span>count <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
+			cur<span class="sy2">-</span><span class="sy1">&gt;</span>total <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
+			cur<span class="sy2">-</span><span class="sy1">&gt;</span>left <span class="sy1">=</span> null<span class="sy4">;</span>
+			cur<span class="sy2">-</span><span class="sy1">&gt;</span>right <span class="sy1">=</span> null<span class="sy4">;</span>
+			cur<span class="sy2">-</span><span class="sy1">&gt;</span>priority <span class="sy1">=</span> <span class="kw3">rand</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+		<span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>key <span class="sy1">&lt;</span> cur<span class="sy2">-</span><span class="sy1">&gt;</span>key<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+			insert_node<span class="br0">&#40;</span>cur<span class="sy2">-</span><span class="sy1">&gt;</span>left, key<span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="kw1">if</span> <span class="br0">&#40;</span>cur<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="sy2">-</span><span class="sy1">&gt;</span>priority <span class="sy1">&lt;</span> cur<span class="sy2">-</span><span class="sy1">&gt;</span>priority<span class="br0">&#41;</span>
+				left_rotate<span class="br0">&#40;</span>cur<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+		<span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>key <span class="sy1">&gt;</span> cur<span class="sy2">-</span><span class="sy1">&gt;</span>key<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+			insert_node<span class="br0">&#40;</span>cur<span class="sy2">-</span><span class="sy1">&gt;</span>right, key<span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="kw1">if</span> <span class="br0">&#40;</span>cur<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="sy2">-</span><span class="sy1">&gt;</span>priority <span class="sy1">&lt;</span> cur<span class="sy2">-</span><span class="sy1">&gt;</span>priority<span class="br0">&#41;</span>
+				right_rotate<span class="br0">&#40;</span>cur<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+		<span class="kw1">else</span>
+			cur<span class="sy2">-</span><span class="sy1">&gt;</span>count<span class="sy2">++</span><span class="sy4">;</span>
+		cur<span class="sy2">-</span><span class="sy1">&gt;</span>total <span class="sy1">=</span> cur<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="sy2">-</span><span class="sy1">&gt;</span>total <span class="sy2">+</span> cur<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="sy2">-</span><span class="sy1">&gt;</span>total <span class="sy2">+</span> cur<span class="sy2">-</span><span class="sy1">&gt;</span>count<span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+&#160;
+	<span class="kw4">void</span> delete_node <span class="br0">&#40;</span>pnode <span class="sy3">&amp;</span>cur, DType key<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span>cur <span class="sy3">!</span><span class="sy1">=</span> null<span class="br0">&#41;</span>
+			<span class="kw1">if</span> <span class="br0">&#40;</span>key <span class="sy1">&lt;</span> cur<span class="sy2">-</span><span class="sy1">&gt;</span>key<span class="br0">&#41;</span>
+				delete_node<span class="br0">&#40;</span>cur<span class="sy2">-</span><span class="sy1">&gt;</span>left, key<span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>key <span class="sy1">&gt;</span> cur<span class="sy2">-</span><span class="sy1">&gt;</span>key<span class="br0">&#41;</span>
+				delete_node<span class="br0">&#40;</span>cur<span class="sy2">-</span><span class="sy1">&gt;</span>right, key<span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>cur<span class="sy2">-</span><span class="sy1">&gt;</span>count <span class="sy1">&gt;</span> <span class="nu0">1</span><span class="br0">&#41;</span>
+				cur<span class="sy2">-</span><span class="sy1">&gt;</span>count<span class="sy2">--</span><span class="sy4">;</span>
+			<span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>cur<span class="sy2">-</span><span class="sy1">&gt;</span>left <span class="sy1">==</span> null<span class="br0">&#41;</span> <span class="sy3">&amp;&amp;</span> <span class="br0">&#40;</span>cur<span class="sy2">-</span><span class="sy1">&gt;</span>right <span class="sy1">==</span> null<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+				<span class="kw3">delete</span> cur<span class="sy4">;</span>
+				cur <span class="sy1">=</span> null<span class="sy4">;</span>
+			<span class="br0">&#125;</span>
+			<span class="kw1">else</span> <span class="br0">&#123;</span>
+				<span class="kw1">if</span> <span class="br0">&#40;</span>cur<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="sy2">-</span><span class="sy1">&gt;</span>priority <span class="sy1">&lt;</span> cur<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="sy2">-</span><span class="sy1">&gt;</span>priority<span class="br0">&#41;</span>
+					left_rotate<span class="br0">&#40;</span>cur<span class="br0">&#41;</span><span class="sy4">;</span>
+				<span class="kw1">else</span>
+					right_rotate<span class="br0">&#40;</span>cur<span class="br0">&#41;</span><span class="sy4">;</span>
+				delete_node<span class="br0">&#40;</span>cur, key<span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="br0">&#125;</span>
+		cur<span class="sy2">-</span><span class="sy1">&gt;</span>total <span class="sy1">=</span> cur<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="sy2">-</span><span class="sy1">&gt;</span>total <span class="sy2">+</span> cur<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="sy2">-</span><span class="sy1">&gt;</span>total <span class="sy2">+</span> cur<span class="sy2">-</span><span class="sy1">&gt;</span>count<span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+&#160;
+	<span class="kw4">void</span> erase<span class="br0">&#40;</span>pnode cur<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span>cur<span class="sy2">-</span><span class="sy1">&gt;</span>left <span class="sy3">!</span><span class="sy1">=</span> null<span class="br0">&#41;</span>
+			erase<span class="br0">&#40;</span>cur<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span>cur<span class="sy2">-</span><span class="sy1">&gt;</span>right <span class="sy3">!</span><span class="sy1">=</span> null<span class="br0">&#41;</span>
+			erase<span class="br0">&#40;</span>cur<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw3">delete</span> cur<span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+&#160;
+	<span class="kw2">public</span><span class="sy4">:</span>
+	Treap <span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+		null <span class="sy1">=</span> <span class="kw3">new</span> <span class="kw4">struct</span> node<span class="sy4">;</span>
+		null<span class="sy2">-</span><span class="sy1">&gt;</span>key <span class="sy1">=</span> INF<span class="sy4">;</span>
+		null<span class="sy2">-</span><span class="sy1">&gt;</span>count <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+		null<span class="sy2">-</span><span class="sy1">&gt;</span>total <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+		null<span class="sy2">-</span><span class="sy1">&gt;</span>left <span class="sy1">=</span> null<span class="sy4">;</span>
+		null<span class="sy2">-</span><span class="sy1">&gt;</span>right <span class="sy1">=</span> null<span class="sy4">;</span>
+		null<span class="sy2">-</span><span class="sy1">&gt;</span>priority <span class="sy1">=</span> INF<span class="sy4">;</span>
+		root <span class="sy1">=</span> null<span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+&#160;
+	~Treap <span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+		erase<span class="br0">&#40;</span>root<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw3">delete</span> null<span class="sy4">;</span>
+		<span class="kw3">delete</span> root<span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+&#160;
+	<span class="kw4">void</span> insert<span class="br0">&#40;</span>DType key<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+		insert_node<span class="br0">&#40;</span>root, key<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+&#160;
+	<span class="kw4">void</span> del<span class="br0">&#40;</span>DType key<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+		delete_node<span class="br0">&#40;</span>root, key<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+&#160;
+	DType find_nearest<span class="br0">&#40;</span>DType key<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+		DType left, right<span class="sy4">;</span>
+		pnode cur<span class="sy4">;</span>
+		cur <span class="sy1">=</span> root<span class="sy4">;</span>
+		left <span class="sy1">=</span> <span class="sy2">-</span>INF<span class="sy4">;</span>
+		right <span class="sy1">=</span> INF<span class="sy4">;</span>
+		<span class="kw1">while</span> <span class="br0">&#40;</span>cur <span class="sy3">!</span><span class="sy1">=</span> null<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+			<span class="kw1">if</span> <span class="br0">&#40;</span>key <span class="sy1">&lt;</span> cur<span class="sy2">-</span><span class="sy1">&gt;</span>key<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+				<span class="kw1">if</span> <span class="br0">&#40;</span>cur<span class="sy2">-</span><span class="sy1">&gt;</span>key <span class="sy1">&lt;</span> right<span class="br0">&#41;</span>
+					right <span class="sy1">=</span> cur<span class="sy2">-</span><span class="sy1">&gt;</span>key<span class="sy4">;</span>
+				cur <span class="sy1">=</span> cur<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="sy4">;</span>
+			<span class="br0">&#125;</span>
+			<span class="kw1">else</span> <span class="br0">&#123;</span>
+				<span class="kw1">if</span> <span class="br0">&#40;</span>cur<span class="sy2">-</span><span class="sy1">&gt;</span>key <span class="sy1">&gt;</span> left<span class="br0">&#41;</span>
+					left <span class="sy1">=</span> cur<span class="sy2">-</span><span class="sy1">&gt;</span>key<span class="sy4">;</span>
+				cur <span class="sy1">=</span> cur<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="sy4">;</span>
+			<span class="br0">&#125;</span>
+		<span class="br0">&#125;</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span>key <span class="sy2">-</span> left <span class="sy1">&lt;=</span> right <span class="sy2">-</span> key<span class="br0">&#41;</span>
+			<span class="kw1">return</span> left<span class="sy4">;</span>
+		<span class="kw1">else</span>
+			<span class="kw1">return</span> right<span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="sy4">;</span>
+&#160;
+Treap <span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> bst<span class="sy4">;</span>
+&#160;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+	<span class="kw4">FILE</span> <span class="sy2">*</span>fin <span class="sy1">=</span> <span class="kw3">fopen</span><span class="br0">&#40;</span><span class="st0">&quot;pet.in&quot;</span>, <span class="st0">&quot;r&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw4">FILE</span> <span class="sy2">*</span>fout <span class="sy1">=</span> <span class="kw3">fopen</span><span class="br0">&#40;</span><span class="st0">&quot;pet.out&quot;</span>, <span class="st0">&quot;w&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw4">int</span> n,
+		kind <span class="sy1">=</span> <span class="nu0">0</span>, ty, num,
+		ans <span class="sy1">=</span> <span class="nu0">0</span>, tmp<span class="sy4">;</span>
+	<span class="kw3">fscanf</span><span class="br0">&#40;</span>fin, <span class="st0">&quot;%d<span class="es1">\n</span>&quot;</span>, <span class="sy3">&amp;</span>n<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> n<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+		<span class="kw3">fscanf</span><span class="br0">&#40;</span>fin, <span class="st0">&quot;%d&#160;%d<span class="es1">\n</span>&quot;</span>, <span class="sy3">&amp;</span>ty, <span class="sy3">&amp;</span>num<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span>ty<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+			<span class="kw1">if</span> <span class="br0">&#40;</span>kind <span class="sy1">&gt;=</span> <span class="nu0">0</span><span class="br0">&#41;</span>
+				bst.<span class="me1">insert</span><span class="br0">&#40;</span>num<span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="kw1">else</span> <span class="br0">&#123;</span>
+				tmp <span class="sy1">=</span> bst.<span class="me1">find_nearest</span><span class="br0">&#40;</span>num<span class="br0">&#41;</span><span class="sy4">;</span>
+				ans <span class="sy2">+</span><span class="sy1">=</span> <span class="kw3">abs</span><span class="br0">&#40;</span>num <span class="sy2">-</span> tmp<span class="br0">&#41;</span><span class="sy4">;</span>
+				ans <span class="sy2">%</span><span class="sy1">=</span> DIVISOR<span class="sy4">;</span>
+				bst.<span class="me1">del</span><span class="br0">&#40;</span>tmp<span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="br0">&#125;</span>
+			kind<span class="sy2">++</span><span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+		<span class="kw1">else</span> <span class="br0">&#123;</span>
+			<span class="kw1">if</span> <span class="br0">&#40;</span>kind <span class="sy1">&lt;=</span> <span class="nu0">0</span><span class="br0">&#41;</span>
+				bst.<span class="me1">insert</span><span class="br0">&#40;</span>num<span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="kw1">else</span> <span class="br0">&#123;</span>
+				tmp <span class="sy1">=</span> bst.<span class="me1">find_nearest</span><span class="br0">&#40;</span>num<span class="br0">&#41;</span><span class="sy4">;</span>
+				ans <span class="sy2">+</span><span class="sy1">=</span> <span class="kw3">abs</span><span class="br0">&#40;</span>num <span class="sy2">-</span> tmp<span class="br0">&#41;</span><span class="sy4">;</span>
+				ans <span class="sy2">%</span><span class="sy1">=</span> DIVISOR<span class="sy4">;</span>
+				bst.<span class="me1">del</span><span class="br0">&#40;</span>tmp<span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="br0">&#125;</span>
+			kind<span class="sy2">--</span><span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw3">fprintf</span><span class="br0">&#40;</span>fout, <span class="st0">&quot;%d<span class="es1">\n</span>&quot;</span>, ans<span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include&lt;iostream&gt;</span>
+<span class="co2">#include&lt;fstream&gt;</span>
+<span class="kw2">using</span> <span class="kw2">namespace</span> std<span class="sy4">;</span>
+<span class="co2">#include&lt;cstdio&gt;</span>
+<span class="co2">#include&lt;cstdlib&gt;</span>
+<span class="co2">#include&lt;cstring&gt;</span>
+<span class="co2">#include&lt;algorithm&gt;</span>
+&#160;
+<span class="kw4">typedef</span> <span class="kw4">struct</span> Node <span class="br0">&#123;</span>
+	<span class="kw4">int</span> key,pri<span class="sy4">;</span>
+	<span class="kw4">struct</span> Node <span class="sy2">*</span>lc, <span class="sy2">*</span>rc<span class="sy4">;</span>
+<span class="br0">&#125;</span> node, <span class="sy2">*</span>treap<span class="sy4">;</span>
+&#160;
+<span class="kw4">int</span> n<span class="sy4">;</span>
+treap root<span class="sy1">=</span><span class="kw2">NULL</span> , h<span class="sy4">;</span>
+&#160;
+<span class="kw4">void</span> zig<span class="br0">&#40;</span>treap <span class="sy3">&amp;</span>t<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+	h <span class="sy1">=</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>lc <span class="sy4">;</span>
+	t<span class="sy2">-</span><span class="sy1">&gt;</span>lc <span class="sy1">=</span> h<span class="sy2">-</span><span class="sy1">&gt;</span>rc <span class="sy4">;</span>
+	h<span class="sy2">-</span><span class="sy1">&gt;</span>rc <span class="sy1">=</span> t <span class="sy4">;</span>
+	t <span class="sy1">=</span> h <span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> zag<span class="br0">&#40;</span>treap <span class="sy3">&amp;</span>t<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+	h <span class="sy1">=</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>rc <span class="sy4">;</span>
+	t<span class="sy2">-</span><span class="sy1">&gt;</span>rc <span class="sy1">=</span> h<span class="sy2">-</span><span class="sy1">&gt;</span>lc <span class="sy4">;</span>
+	h<span class="sy2">-</span><span class="sy1">&gt;</span>lc <span class="sy1">=</span> t <span class="sy4">;</span>
+	t <span class="sy1">=</span> h <span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> ins<span class="br0">&#40;</span>treap <span class="sy3">&amp;</span>t,<span class="kw4">const</span> <span class="kw4">int</span> x<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy1">==</span><span class="kw2">NULL</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+		t<span class="sy1">=</span><span class="kw3">new</span> node<span class="sy4">;</span>
+		t<span class="sy2">-</span><span class="sy1">&gt;</span>key<span class="sy1">=</span>x<span class="sy4">;</span>
+		t<span class="sy2">-</span><span class="sy1">&gt;</span>pri<span class="sy1">=</span><span class="kw3">rand</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+		t<span class="sy2">-</span><span class="sy1">&gt;</span>lc <span class="sy1">=</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>rc <span class="sy1">=</span> <span class="kw2">NULL</span> <span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw1">else</span>
+		<span class="kw1">if</span><span class="br0">&#40;</span> x <span class="sy1">&lt;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>key <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+			ins<span class="br0">&#40;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>lc , x <span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="kw1">if</span><span class="br0">&#40;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>lc<span class="sy2">-</span><span class="sy1">&gt;</span>pri <span class="sy1">&lt;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>pri <span class="br0">&#41;</span>
+				zig<span class="br0">&#40;</span>t<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+		<span class="kw1">else</span> <span class="br0">&#123;</span>
+			ins<span class="br0">&#40;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>rc , x <span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="kw1">if</span><span class="br0">&#40;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>rc<span class="sy2">-</span><span class="sy1">&gt;</span>pri <span class="sy1">&lt;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>pri <span class="br0">&#41;</span>
+				zag<span class="br0">&#40;</span>t<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> del<span class="br0">&#40;</span>treap <span class="sy3">&amp;</span>t,<span class="kw4">const</span> <span class="kw4">int</span> x<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy1">==</span><span class="kw2">NULL</span><span class="br0">&#41;</span> <span class="kw1">return</span><span class="sy4">;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>key <span class="sy1">==</span> x <span class="br0">&#41;</span>
+		<span class="kw1">if</span><span class="br0">&#40;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>lc <span class="sy1">==</span> <span class="kw2">NULL</span> <span class="sy3">&amp;&amp;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>rc <span class="sy1">==</span> <span class="kw2">NULL</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+			<span class="kw3">delete</span> t<span class="sy4">;</span>
+			t<span class="sy1">=</span><span class="kw2">NULL</span><span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+		<span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>lc <span class="sy1">==</span> <span class="kw2">NULL</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+				h<span class="sy1">=</span>t<span class="sy4">;</span>
+				t<span class="sy1">=</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>rc<span class="sy4">;</span>
+				<span class="kw3">delete</span> h<span class="sy4">;</span>
+			 <span class="br0">&#125;</span>
+			 <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>rc <span class="sy1">==</span> <span class="kw2">NULL</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+					h<span class="sy1">=</span>t<span class="sy4">;</span>
+					t<span class="sy1">=</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>lc<span class="sy4">;</span>
+					<span class="kw3">delete</span> h<span class="sy4">;</span>
+				  <span class="br0">&#125;</span>
+				  <span class="kw1">else</span>
+					<span class="kw1">if</span><span class="br0">&#40;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>lc<span class="sy2">-</span><span class="sy1">&gt;</span>pri <span class="sy1">&lt;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>rc<span class="sy2">-</span><span class="sy1">&gt;</span>pri <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+						zig<span class="br0">&#40;</span>t<span class="br0">&#41;</span><span class="sy4">;</span>
+						del<span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>rc,x<span class="br0">&#41;</span><span class="sy4">;</span>
+					<span class="br0">&#125;</span>
+					<span class="kw1">else</span> <span class="br0">&#123;</span>
+						zag<span class="br0">&#40;</span>t<span class="br0">&#41;</span><span class="sy4">;</span>
+						del<span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>lc,x<span class="br0">&#41;</span><span class="sy4">;</span>
+					<span class="br0">&#125;</span>
+	<span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span> x <span class="sy1">&lt;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>key <span class="br0">&#41;</span>
+			del<span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>lc,x<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw1">else</span>
+			del<span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>rc,x<span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> order<span class="br0">&#40;</span>treap t<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy1">==</span><span class="kw2">NULL</span><span class="br0">&#41;</span> <span class="kw1">return</span><span class="sy4">;</span>
+	order<span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>lc<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;&#160;%d&quot;</span>,t<span class="sy2">-</span><span class="sy1">&gt;</span>key<span class="br0">&#41;</span><span class="sy4">;</span>
+	order<span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>rc<span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">bool</span> find<span class="br0">&#40;</span>treap t,<span class="kw4">const</span> <span class="kw4">int</span> x<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span> t <span class="sy1">==</span> <span class="kw2">NULL</span> <span class="br0">&#41;</span>
+		<span class="kw1">return</span> <span class="kw2">false</span><span class="sy4">;</span>
+	<span class="kw1">else</span><span class="sy4">;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>key <span class="sy1">==</span> x <span class="br0">&#41;</span>
+		<span class="kw1">return</span> <span class="kw2">true</span><span class="sy4">;</span>
+	<span class="kw1">else</span>
+		<span class="kw1">if</span><span class="br0">&#40;</span> x <span class="sy1">&lt;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>key <span class="br0">&#41;</span>
+			<span class="kw1">return</span> find<span class="br0">&#40;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>lc, x <span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw1">else</span>
+			<span class="kw1">return</span> find<span class="br0">&#40;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>rc, x <span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> dispose<span class="br0">&#40;</span>treap <span class="sy3">&amp;</span>t<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy1">==</span><span class="kw2">NULL</span><span class="br0">&#41;</span>
+		<span class="kw1">return</span><span class="sy4">;</span>
+	dispose<span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>lc<span class="br0">&#41;</span><span class="sy4">;</span>
+	dispose<span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>rc<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw3">delete</span> t<span class="sy4">;</span>
+	t<span class="sy1">=</span><span class="kw2">NULL</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+	<span class="kw3">scanf</span><span class="br0">&#40;</span><span class="st0">&quot;%d&quot;</span>,<span class="sy3">&amp;</span>n<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw3">srand</span><span class="br0">&#40;</span><span class="nu0">121</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw4">char</span> c<span class="sy4">;</span>
+	<span class="kw4">int</span> a<span class="sy4">;</span>
+	<span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>i<span class="sy1">&lt;=</span>n<span class="sy4">;</span><span class="sy2">++</span>i<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+		<span class="kw1">while</span><span class="br0">&#40;</span> <span class="sy3">!</span> <span class="kw3">isalpha</span><span class="br0">&#40;</span> c <span class="sy1">=</span> <span class="kw3">fgetc</span><span class="br0">&#40;</span><span class="kw2">stdin</span><span class="br0">&#41;</span> <span class="br0">&#41;</span> <span class="br0">&#41;</span> <span class="sy4">;</span>
+		<span class="kw3">scanf</span><span class="br0">&#40;</span><span class="st0">&quot;%d&quot;</span>,<span class="sy3">&amp;</span>a<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw1">if</span><span class="br0">&#40;</span>c<span class="sy1">==</span><span class="st0">'I'</span><span class="br0">&#41;</span>		<span class="co1">//Insert</span>
+			ins<span class="br0">&#40;</span>root,a<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw1">if</span><span class="br0">&#40;</span>c<span class="sy1">==</span><span class="st0">'D'</span><span class="br0">&#41;</span>		<span class="co1">//Delete</span>
+			del<span class="br0">&#40;</span>root,a<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw1">if</span><span class="br0">&#40;</span>c<span class="sy1">==</span><span class="st0">'O'</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>	<span class="co1">//Order</span>
+			order<span class="br0">&#40;</span>root<span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="kw3">puts</span><span class="br0">&#40;</span><span class="st0">&quot;&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+		<span class="kw1">if</span><span class="br0">&#40;</span>c<span class="sy1">==</span><span class="st0">'F'</span><span class="br0">&#41;</span>		<span class="co1">//Find</span>
+			<span class="kw1">if</span><span class="br0">&#40;</span> find<span class="br0">&#40;</span>root,a<span class="br0">&#41;</span> <span class="br0">&#41;</span>
+				<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;%d has been found.<span class="es1">\n</span>&quot;</span>,a<span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="kw1">else</span>
+				<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;%d is not here<span class="es1">\n</span>&quot;</span>,a<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	dispose<span class="br0">&#40;</span>root<span class="br0">&#41;</span><span class="sy4">;</span>		<span class="co1">//Dispose</span>
+	<span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="coMULTI">/* 
+LANG: C++ 
+Author By&#160;: MiYu 
+Program  &#160;: PKU 3481  double queue
+*/</span> 
+<span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;fstream&gt;</span>
+<span class="co2">#include &lt;sstream&gt;</span>
+<span class="co2">#include &lt;algorithm&gt;</span>
+<span class="co2">#include &lt;string&gt;</span>
+<span class="co2">#include &lt;set&gt;</span>
+<span class="co2">#include &lt;map&gt;</span>
+<span class="co2">#include &lt;utility&gt;</span>
+<span class="co2">#include &lt;queue&gt;</span>
+<span class="co2">#include &lt;stack&gt;</span>
+<span class="co2">#include &lt;list&gt;</span>
+<span class="co2">#include &lt;vector&gt;</span>
+<span class="co2">#include &lt;cstdio&gt;</span>
+<span class="co2">#include &lt;cstdlib&gt;</span>
+<span class="co2">#include &lt;cstring&gt;</span>
+<span class="co2">#include &lt;cmath&gt;</span>
+<span class="co2">#include &lt;ctime&gt;</span>
+<span class="kw2">using</span> <span class="kw2">namespace</span> std<span class="sy4">;</span>
+<span class="co2">#define MEM(x,y) memset(x,y,sizeof(x)) </span>
+<span class="kw4">const</span> <span class="kw4">int</span> MaxN <span class="sy1">=</span> <span class="nu0">100010</span><span class="sy4">;</span>
+<span class="kw4">int</span> cnt <span class="sy1">=</span> <span class="nu0">1</span>, rt <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="kw4">struct</span> Treap <span class="br0">&#123;</span>
+       <span class="kw4">int</span> key, val, pri, ch<span class="br0">&#91;</span><span class="nu0">2</span><span class="br0">&#93;</span><span class="sy4">;</span>
+       <span class="kw4">void</span> set <span class="br0">&#40;</span> <span class="kw4">int</span> x, <span class="kw4">int</span> y, <span class="kw4">int</span> z <span class="br0">&#41;</span> <span class="br0">&#123;</span> 
+            key <span class="sy1">=</span> x, val <span class="sy1">=</span> y, pri <span class="sy1">=</span> z, ch<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy1">=</span>ch<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> <span class="br0">&#125;</span>  
+<span class="br0">&#125;</span>T<span class="br0">&#91;</span>MaxN<span class="br0">&#93;</span><span class="sy4">;</span>
+<span class="kw4">void</span> rotate <span class="br0">&#40;</span> <span class="kw4">int</span> <span class="sy3">&amp;</span>x, <span class="kw4">int</span> f <span class="br0">&#41;</span> <span class="br0">&#123;</span>  <span class="co1">// f: 1. 右旋,  0. 左旋 </span>
+     <span class="kw4">int</span> y <span class="sy1">=</span> T<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">ch</span><span class="br0">&#91;</span><span class="sy3">!</span>f<span class="br0">&#93;</span><span class="sy4">;</span>
+     T<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">ch</span><span class="br0">&#91;</span><span class="sy3">!</span>f<span class="br0">&#93;</span> <span class="sy1">=</span> T<span class="br0">&#91;</span>y<span class="br0">&#93;</span>.<span class="me1">ch</span><span class="br0">&#91;</span>f<span class="br0">&#93;</span><span class="sy4">;</span>
+     T<span class="br0">&#91;</span>y<span class="br0">&#93;</span>.<span class="me1">ch</span><span class="br0">&#91;</span>f<span class="br0">&#93;</span> <span class="sy1">=</span> x<span class="sy4">;</span>
+     x <span class="sy1">=</span> y<span class="sy4">;</span>     
+<span class="br0">&#125;</span>
+<span class="kw4">void</span> insert <span class="br0">&#40;</span> <span class="kw4">int</span> <span class="sy3">&amp;</span>x, <span class="kw4">int</span> key, <span class="kw4">int</span> val <span class="br0">&#41;</span> <span class="br0">&#123;</span>  <span class="co1">// 插入元素 </span>
+     <span class="kw1">if</span> <span class="br0">&#40;</span> x <span class="sy1">==</span> <span class="nu0">0</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span> 
+         T<span class="br0">&#91;</span>x <span class="sy1">=</span> cnt <span class="sy2">++</span><span class="br0">&#93;</span>.<span class="me1">set</span> <span class="br0">&#40;</span> key, val, <span class="kw3">rand</span> <span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="sy4">;</span>     
+     <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
+         <span class="kw4">int</span> f <span class="sy1">=</span> key <span class="sy1">&lt;</span> T<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">key</span><span class="sy4">;</span> 
+         insert <span class="br0">&#40;</span> T<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">ch</span><span class="br0">&#91;</span><span class="sy3">!</span>f<span class="br0">&#93;</span>, key, val <span class="br0">&#41;</span><span class="sy4">;</span>
+         <span class="kw1">if</span> <span class="br0">&#40;</span> T<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">pri</span> <span class="sy1">&lt;</span> T<span class="br0">&#91;</span> T<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">ch</span><span class="br0">&#91;</span><span class="sy3">!</span>f<span class="br0">&#93;</span> <span class="br0">&#93;</span>.<span class="me1">pri</span> <span class="br0">&#41;</span> rotate <span class="br0">&#40;</span> x, f <span class="br0">&#41;</span><span class="sy4">;</span>    
+     <span class="br0">&#125;</span>    
+<span class="br0">&#125;</span>
+<span class="kw4">void</span> del <span class="br0">&#40;</span> <span class="kw4">int</span> <span class="sy3">&amp;</span>x, <span class="kw4">int</span> key <span class="br0">&#41;</span> <span class="br0">&#123;</span>  <span class="co1">//删除指定元素值 </span>
+     <span class="kw1">if</span> <span class="br0">&#40;</span> T<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">key</span> <span class="sy1">==</span> key <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+         <span class="kw1">if</span> <span class="br0">&#40;</span> <span class="sy3">!</span>T<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">ch</span><span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span> <span class="sy3">||</span> <span class="sy3">!</span>T<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">ch</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+             <span class="kw1">if</span> <span class="br0">&#40;</span> <span class="sy3">!</span>T<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">ch</span><span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span> <span class="br0">&#41;</span> x <span class="sy1">=</span> T<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">ch</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy4">;</span>
+             <span class="kw1">else</span> x <span class="sy1">=</span> T<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">ch</span><span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy4">;</span>     
+         <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
+             <span class="kw4">int</span> f <span class="sy1">=</span> T<span class="br0">&#91;</span> T<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">ch</span><span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span> <span class="br0">&#93;</span>.<span class="me1">pri</span> <span class="sy1">&gt;</span> T<span class="br0">&#91;</span> T<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">ch</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="br0">&#93;</span>.<span class="me1">pri</span><span class="sy4">;</span>
+             rotate <span class="br0">&#40;</span> x, f <span class="br0">&#41;</span><span class="sy4">;</span>        
+             del <span class="br0">&#40;</span> T<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">ch</span><span class="br0">&#91;</span>f<span class="br0">&#93;</span>, key <span class="br0">&#41;</span><span class="sy4">;</span>
+         <span class="br0">&#125;</span>    
+     <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
+         <span class="kw4">int</span> f <span class="sy1">=</span> T<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">key</span> <span class="sy1">&gt;</span> key<span class="sy4">;</span>
+         del <span class="br0">&#40;</span> T<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">ch</span><span class="br0">&#91;</span><span class="sy3">!</span>f<span class="br0">&#93;</span>, key <span class="br0">&#41;</span><span class="sy4">;</span>       
+     <span class="br0">&#125;</span>     
+<span class="br0">&#125;</span>
+<span class="kw4">int</span> get <span class="br0">&#40;</span> <span class="kw4">int</span> x, <span class="kw4">int</span> f <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw1">while</span> <span class="br0">&#40;</span> T<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">ch</span><span class="br0">&#91;</span>f<span class="br0">&#93;</span> <span class="br0">&#41;</span> x <span class="sy1">=</span> T<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">ch</span><span class="br0">&#91;</span>f<span class="br0">&#93;</span><span class="sy4">;</span>
+    <span class="kw1">return</span> x<span class="sy4">;</span>    
+<span class="br0">&#125;</span>
+<span class="kw2">inline</span> <span class="kw4">bool</span> read<span class="br0">&#40;</span><span class="kw4">int</span> <span class="sy3">&amp;</span>num<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw4">char</span> in<span class="sy4">;</span><span class="kw4">bool</span> IsN<span class="sy1">=</span><span class="kw2">false</span><span class="sy4">;</span>
+        in<span class="sy1">=</span><span class="kw3">getchar</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="kw1">if</span><span class="br0">&#40;</span>in<span class="sy1">==</span><span class="kw2">EOF</span><span class="br0">&#41;</span> <span class="kw1">return</span> <span class="kw2">false</span><span class="sy4">;</span>
+        <span class="kw1">while</span><span class="br0">&#40;</span>in<span class="sy3">!</span><span class="sy1">=</span><span class="st0">'-'</span><span class="sy3">&amp;&amp;</span><span class="br0">&#40;</span>in<span class="sy1">&lt;</span><span class="st0">'0'</span><span class="sy3">||</span>in<span class="sy1">&gt;</span><span class="st0">'9'</span><span class="br0">&#41;</span><span class="br0">&#41;</span> in<span class="sy1">=</span><span class="kw3">getchar</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="kw1">if</span><span class="br0">&#40;</span>in<span class="sy1">==</span><span class="st0">'-'</span><span class="br0">&#41;</span><span class="br0">&#123;</span> IsN<span class="sy1">=</span><span class="kw2">true</span><span class="sy4">;</span>num<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span><span class="br0">&#125;</span> <span class="kw1">else</span> num<span class="sy1">=</span>in<span class="sy2">-</span><span class="st0">'0'</span><span class="sy4">;</span>
+        <span class="kw1">while</span><span class="br0">&#40;</span>in<span class="sy1">=</span><span class="kw3">getchar</span><span class="br0">&#40;</span><span class="br0">&#41;</span>,in<span class="sy1">&gt;=</span><span class="st0">'0'</span><span class="sy3">&amp;&amp;</span>in<span class="sy1">&lt;=</span><span class="st0">'9'</span><span class="br0">&#41;</span> num<span class="sy2">*</span><span class="sy1">=</span><span class="nu0">10</span>,num<span class="sy2">+</span><span class="sy1">=</span>in<span class="sy2">-</span><span class="st0">'0'</span><span class="sy4">;</span> 
+        <span class="kw1">if</span><span class="br0">&#40;</span>IsN<span class="br0">&#41;</span> num<span class="sy1">=</span><span class="sy2">-</span>num<span class="sy4">;</span>
+        <span class="kw1">return</span> <span class="kw2">true</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+<span class="kw4">int</span> main <span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span> 
+    <span class="kw3">srand</span> <span class="br0">&#40;</span> <span class="kw3">time</span> <span class="br0">&#40;</span> <span class="kw2">NULL</span> <span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw4">int</span> N, key, val<span class="sy4">;</span>
+    <span class="kw1">while</span> <span class="br0">&#40;</span> read <span class="br0">&#40;</span> N <span class="br0">&#41;</span>, N <span class="br0">&#41;</span> <span class="br0">&#123;</span> 
+          <span class="kw1">if</span> <span class="br0">&#40;</span> N <span class="sy1">==</span> <span class="nu0">1</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+              read <span class="br0">&#40;</span> val <span class="br0">&#41;</span>, read <span class="br0">&#40;</span> key <span class="br0">&#41;</span><span class="sy4">;</span>
+              insert <span class="br0">&#40;</span> rt, key, val <span class="br0">&#41;</span><span class="sy4">;</span>    
+          <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span> N <span class="sy1">==</span> <span class="nu0">2</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+              <span class="kw4">int</span> x <span class="sy1">=</span> get <span class="br0">&#40;</span> rt, <span class="nu0">1</span> <span class="br0">&#41;</span><span class="sy4">;</span>
+              <span class="kw1">if</span> <span class="br0">&#40;</span> x <span class="br0">&#41;</span> <span class="kw3">printf</span> <span class="br0">&#40;</span> <span class="st0">&quot;%d<span class="es1">\n</span>&quot;</span>, T<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">val</span> <span class="br0">&#41;</span>,del <span class="br0">&#40;</span> rt, T<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">key</span> <span class="br0">&#41;</span><span class="sy4">;</span>      
+              <span class="kw1">else</span> <span class="kw3">puts</span> <span class="br0">&#40;</span> <span class="st0">&quot;0&quot;</span> <span class="br0">&#41;</span><span class="sy4">;</span> 
+          <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span> N <span class="sy1">==</span> <span class="nu0">3</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+              <span class="kw4">int</span> x <span class="sy1">=</span> get <span class="br0">&#40;</span> rt, <span class="nu0">0</span> <span class="br0">&#41;</span><span class="sy4">;</span>
+              <span class="kw1">if</span> <span class="br0">&#40;</span> x <span class="br0">&#41;</span> <span class="kw3">printf</span> <span class="br0">&#40;</span> <span class="st0">&quot;%d<span class="es1">\n</span>&quot;</span>, T<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">val</span> <span class="br0">&#41;</span>,del <span class="br0">&#40;</span> rt, T<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">key</span> <span class="br0">&#41;</span><span class="sy4">;</span> 
+              <span class="kw1">else</span> <span class="kw3">puts</span> <span class="br0">&#40;</span> <span class="st0">&quot;0&quot;</span> <span class="br0">&#41;</span><span class="sy4">;</span>    
+          <span class="br0">&#125;</span>      
+    <span class="br0">&#125;</span> 
+    <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="coMULTI">/* 
+LANG: C++ 
+Author By&#160;: YangZX
+一个以Treap实现的BST模板，支持的操作比较齐全：
+1.void insert(T x) 将x插入平衡树
+2.void erase(T) 将一个x从平衡树中移除
+3.T select(int kth) 返回第k小的元素
+4.void sort(T* arr) 按照从小到大顺序将所有元素输出到arr
+5.int count(T) 返回T在树中的个数
+*/</span> 
+<span class="co2">#include &lt;iostream&gt;</span>
+<span class="kw2">using</span> <span class="kw2">namespace</span> std<span class="sy4">;</span>
+<span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw2">typename</span> T<span class="sy1">&gt;</span>
+<span class="kw2">class</span> BST
+<span class="br0">&#123;</span>
+	<span class="kw2">public</span><span class="sy4">:</span>
+		<span class="kw4">void</span> insert<span class="br0">&#40;</span><span class="kw4">const</span> T<span class="sy3">&amp;</span> x<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw4">void</span> erase<span class="br0">&#40;</span><span class="kw4">const</span> T<span class="sy3">&amp;</span> x<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw4">int</span> count<span class="br0">&#40;</span><span class="kw4">const</span> T<span class="sy3">&amp;</span> x<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw4">const</span> T<span class="sy3">&amp;</span> select<span class="br0">&#40;</span><span class="kw4">int</span> kth<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw4">void</span> sort<span class="br0">&#40;</span>T<span class="sy2">*</span> arr<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw4">int</span> size<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+		BST<span class="br0">&#40;</span><span class="kw4">int</span> n<span class="br0">&#41;</span><span class="sy4">;</span>
+		~BST<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw2">private</span><span class="sy4">:</span>
+		<span class="kw4">typedef</span> <span class="kw4">int</span> Treap<span class="sy4">;</span>
+		<span class="kw4">int</span> newnode<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw4">void</span> SRL<span class="br0">&#40;</span>Treap<span class="sy3">&amp;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw4">void</span> SRR<span class="br0">&#40;</span>Treap<span class="sy3">&amp;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw4">void</span> foreach<span class="br0">&#40;</span>Treap <span class="sy3">&amp;</span>rt, T<span class="sy2">*</span> arr<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw4">const</span> T<span class="sy3">&amp;</span> slt<span class="br0">&#40;</span><span class="kw4">int</span> kth, Treap <span class="sy3">&amp;</span>rt<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw4">int</span> bstcnt<span class="br0">&#40;</span><span class="kw4">const</span> T<span class="sy3">&amp;</span> x, Treap <span class="sy3">&amp;</span>rt<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw4">void</span> ers<span class="br0">&#40;</span><span class="kw4">const</span> T<span class="sy3">&amp;</span>, Treap<span class="sy3">&amp;</span> rt<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw4">void</span> ins<span class="br0">&#40;</span><span class="kw4">const</span> T<span class="sy3">&amp;</span>, Treap<span class="sy3">&amp;</span> rt<span class="br0">&#41;</span><span class="sy4">;</span>
+		Treap rt<span class="sy4">;</span>
+		<span class="kw4">struct</span> node<span class="br0">&#123;</span>
+			Treap L, R<span class="sy4">;</span>
+			T v<span class="sy4">;</span>
+			<span class="kw4">int</span> num, size, prio<span class="sy4">;</span>
+		<span class="br0">&#125;</span><span class="sy2">*</span>Tree<span class="sy4">;</span>
+		<span class="kw4">int</span> cnt, sortcnt<span class="sy4">;</span>
+		<span class="kw4">static</span> <span class="kw4">const</span> <span class="kw4">int</span> MAXPRIO <span class="sy1">=</span> <span class="nu0">1</span> <span class="sy1">&lt;&lt;</span><span class="nu0">28</span><span class="sy4">;</span>
+<span class="br0">&#125;</span><span class="sy4">;</span>
+<span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw2">typename</span> T<span class="sy1">&gt;</span>
+BST<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">BST</span><span class="br0">&#40;</span><span class="kw4">int</span> x<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="kw3">srand</span><span class="br0">&#40;</span><span class="kw3">time</span><span class="br0">&#40;</span><span class="kw2">NULL</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	Tree <span class="sy1">=</span> <span class="kw3">new</span> node<span class="br0">&#91;</span>x<span class="br0">&#93;</span><span class="sy4">;</span>
+	cnt <span class="sy1">=</span> rt <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+	Tree<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>.<span class="me1">prio</span> <span class="sy1">=</span> MAXPRIO<span class="sy4">;</span>
+<span class="br0">&#125;</span>
+<span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw2">typename</span> T<span class="sy1">&gt;</span>
+BST<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span>~BST<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="kw3">delete</span><span class="br0">&#91;</span><span class="br0">&#93;</span> Tree<span class="sy4">;</span>
+<span class="br0">&#125;</span>
+<span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw2">typename</span> T<span class="sy1">&gt;</span>
+<span class="kw4">int</span> BST<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span><span class="sy3">!</span>rt<span class="br0">&#41;</span>
+		<span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+	<span class="kw1">return</span> Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">size</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+<span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw2">typename</span> T<span class="sy1">&gt;</span>
+<span class="kw4">int</span> BST<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">count</span><span class="br0">&#40;</span><span class="kw4">const</span> T<span class="sy3">&amp;</span> x<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	bstcnt<span class="br0">&#40;</span>x, rt<span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+<span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw2">typename</span> T<span class="sy1">&gt;</span>
+<span class="kw4">void</span> BST<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">foreach</span><span class="br0">&#40;</span>Treap <span class="sy3">&amp;</span>rt, T<span class="sy2">*</span> arr<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span><span class="sy3">!</span>rt<span class="br0">&#41;</span>
+		<span class="kw1">return</span><span class="sy4">;</span>
+	foreach<span class="br0">&#40;</span>Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">L</span>, arr<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span> i<span class="sy1">&lt;=</span>Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">num</span><span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span>
+		arr<span class="br0">&#91;</span>sortcnt<span class="sy2">++</span><span class="br0">&#93;</span> <span class="sy1">=</span> Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">v</span><span class="sy4">;</span>
+	foreach<span class="br0">&#40;</span>Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">R</span>, arr<span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+<span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw2">typename</span> T<span class="sy1">&gt;</span>
+<span class="kw4">int</span> BST<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">bstcnt</span><span class="br0">&#40;</span><span class="kw4">const</span> T<span class="sy3">&amp;</span> x, Treap <span class="sy3">&amp;</span>rt<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span><span class="sy3">!</span>rt<span class="br0">&#41;</span>
+		<span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">v</span> <span class="sy1">==</span> x<span class="br0">&#41;</span>
+		<span class="kw1">return</span> Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">num</span><span class="sy4">;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>x <span class="sy1">&lt;</span> Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">v</span><span class="br0">&#41;</span>
+		<span class="kw1">return</span> bstcnt<span class="br0">&#40;</span>x, Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">L</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw1">else</span>
+		<span class="kw1">return</span> bstcnt<span class="br0">&#40;</span>x, Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">R</span><span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+<span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw2">typename</span> T<span class="sy1">&gt;</span>
+<span class="kw4">void</span> BST<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">sort</span><span class="br0">&#40;</span>T<span class="sy2">*</span> a<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	sortcnt <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+	foreach<span class="br0">&#40;</span>rt, a<span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+<span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw2">typename</span> T<span class="sy1">&gt;</span>
+<span class="kw4">int</span> BST<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">newnode</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	Tree<span class="br0">&#91;</span><span class="sy2">++</span>cnt<span class="br0">&#93;</span>.<span class="me1">prio</span> <span class="sy1">=</span> <span class="kw3">rand</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	Tree<span class="br0">&#91;</span>cnt<span class="br0">&#93;</span>.<span class="me1">L</span> <span class="sy1">=</span> Tree<span class="br0">&#91;</span>cnt<span class="br0">&#93;</span>.<span class="me1">R</span> <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+	<span class="kw1">return</span> cnt<span class="sy4">;</span>
+<span class="br0">&#125;</span>
+<span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw2">typename</span> T<span class="sy1">&gt;</span>
+<span class="kw4">const</span> T<span class="sy3">&amp;</span> BST<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">select</span><span class="br0">&#40;</span><span class="kw4">int</span> k<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="kw1">return</span> slt<span class="br0">&#40;</span>k, rt<span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+<span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw2">typename</span> T<span class="sy1">&gt;</span>
+<span class="kw4">const</span> T<span class="sy3">&amp;</span> BST<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">slt</span><span class="br0">&#40;</span><span class="kw4">int</span> k, Treap <span class="sy3">&amp;</span>rt<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>k <span class="sy1">&gt;=</span> Tree<span class="br0">&#91;</span>Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">L</span><span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy2">+</span> <span class="nu0">1</span> <span class="sy3">&amp;&amp;</span> k <span class="sy1">&lt;=</span> Tree<span class="br0">&#91;</span>Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">L</span><span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy2">+</span> Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">num</span><span class="br0">&#41;</span>
+		<span class="kw1">return</span> Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">v</span><span class="sy4">;</span>
+	<span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span>k <span class="sy1">&lt;=</span> Tree<span class="br0">&#91;</span>Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">L</span><span class="br0">&#93;</span>.<span class="me1">size</span><span class="br0">&#41;</span>
+		<span class="kw1">return</span> slt<span class="br0">&#40;</span>k, Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">L</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw1">else</span>
+		<span class="kw1">return</span> slt<span class="br0">&#40;</span>k <span class="sy2">-</span> Tree<span class="br0">&#91;</span>Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">L</span><span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy2">-</span> Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">num</span>, Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">R</span><span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+<span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw2">typename</span> T<span class="sy1">&gt;</span>
+<span class="kw4">void</span> BST<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">insert</span><span class="br0">&#40;</span><span class="kw4">const</span> T<span class="sy3">&amp;</span> x<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	ins<span class="br0">&#40;</span>x, rt<span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+<span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw2">typename</span> T<span class="sy1">&gt;</span>
+<span class="kw4">void</span> BST<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">ins</span><span class="br0">&#40;</span><span class="kw4">const</span> T<span class="sy3">&amp;</span> x, Treap<span class="sy3">&amp;</span> rt<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span><span class="sy3">!</span>rt<span class="br0">&#41;</span><span class="br0">&#123;</span>
+		rt <span class="sy1">=</span> newnode<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+		Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">v</span> <span class="sy1">=</span> x<span class="sy4">;</span>
+		Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">num</span> <span class="sy1">=</span> Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
+		<span class="kw1">return</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">v</span> <span class="sy1">==</span> x<span class="br0">&#41;</span><span class="br0">&#123;</span>
+		Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">num</span><span class="sy2">++</span><span class="sy4">;</span>
+		Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">size</span><span class="sy2">++</span><span class="sy4">;</span>
+		<span class="kw1">return</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span><span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span>x <span class="sy1">&lt;</span> Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">v</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+		ins<span class="br0">&#40;</span>x, Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">L</span><span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw1">if</span><span class="br0">&#40;</span>Tree<span class="br0">&#91;</span>Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">L</span><span class="br0">&#93;</span>.<span class="me1">prio</span> <span class="sy1">&lt;</span> Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">prio</span><span class="br0">&#41;</span>
+			SRL<span class="br0">&#40;</span>rt<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span><span class="kw1">else</span><span class="br0">&#123;</span>
+		ins<span class="br0">&#40;</span>x, Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">R</span><span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw1">if</span><span class="br0">&#40;</span>Tree<span class="br0">&#91;</span>Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">R</span><span class="br0">&#93;</span>.<span class="me1">prio</span> <span class="sy1">&lt;</span> Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">prio</span><span class="br0">&#41;</span>
+			SRR<span class="br0">&#40;</span>rt<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy1">=</span> Tree<span class="br0">&#91;</span>Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">L</span><span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy2">+</span> Tree<span class="br0">&#91;</span>Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">R</span><span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy2">+</span> Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">num</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+<span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw2">typename</span> T<span class="sy1">&gt;</span>
+<span class="kw4">void</span> BST<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">erase</span><span class="br0">&#40;</span><span class="kw4">const</span> T<span class="sy3">&amp;</span> x<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	ers<span class="br0">&#40;</span>x, rt<span class="br0">&#41;</span><span class="sy4">;</span>	
+<span class="br0">&#125;</span>
+<span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw2">typename</span> T<span class="sy1">&gt;</span>
+<span class="kw4">void</span> BST<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">ers</span><span class="br0">&#40;</span><span class="kw4">const</span> T<span class="sy3">&amp;</span> x, Treap <span class="sy3">&amp;</span>rt<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span><span class="sy3">!</span>rt<span class="br0">&#41;</span>
+		<span class="kw1">return</span><span class="sy4">;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">v</span> <span class="sy1">==</span> x <span class="sy3">&amp;&amp;</span> Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">num</span> <span class="sy1">&gt;</span> <span class="nu0">0</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+		Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">num</span><span class="sy2">--</span><span class="sy4">;</span>
+		Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">size</span><span class="sy2">--</span><span class="sy4">;</span>
+		<span class="kw1">return</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span><span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span>Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">v</span> <span class="sy1">==</span> x<span class="br0">&#41;</span>
+		<span class="kw1">return</span><span class="sy4">;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>x <span class="sy1">&lt;</span> Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">v</span><span class="br0">&#41;</span>
+		ers<span class="br0">&#40;</span>x, Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">L</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw1">else</span>
+		ers<span class="br0">&#40;</span>x, Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">R</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy1">=</span> Tree<span class="br0">&#91;</span>Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">L</span><span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy2">+</span> Tree<span class="br0">&#91;</span>Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">R</span><span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy2">+</span> Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">num</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+<span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw2">typename</span> T<span class="sy1">&gt;</span>
+<span class="kw4">void</span> BST<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">SRL</span><span class="br0">&#40;</span>Treap <span class="sy3">&amp;</span>rt<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	Treap L<span class="sy4">;</span>
+	L <span class="sy1">=</span> Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">L</span><span class="sy4">;</span>
+	Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">L</span> <span class="sy1">=</span> Tree<span class="br0">&#91;</span>L<span class="br0">&#93;</span>.<span class="me1">R</span><span class="sy4">;</span>
+	Tree<span class="br0">&#91;</span>L<span class="br0">&#93;</span>.<span class="me1">R</span> <span class="sy1">=</span> rt<span class="sy4">;</span>
+	Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy1">=</span> Tree<span class="br0">&#91;</span>Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">L</span><span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy2">+</span> Tree<span class="br0">&#91;</span>Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">R</span><span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy2">+</span> Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">num</span><span class="sy4">;</span>
+	Tree<span class="br0">&#91;</span>L<span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy1">=</span> Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy2">+</span> Tree<span class="br0">&#91;</span>Tree<span class="br0">&#91;</span>L<span class="br0">&#93;</span>.<span class="me1">L</span><span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy2">+</span> Tree<span class="br0">&#91;</span>L<span class="br0">&#93;</span>.<span class="me1">num</span><span class="sy4">;</span>
+	rt <span class="sy1">=</span> L<span class="sy4">;</span>
+<span class="br0">&#125;</span>
+<span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw2">typename</span> T<span class="sy1">&gt;</span>
+<span class="kw4">void</span> BST<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">SRR</span><span class="br0">&#40;</span>Treap <span class="sy3">&amp;</span>rt<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	Treap R<span class="sy4">;</span>
+	R <span class="sy1">=</span> Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">R</span><span class="sy4">;</span>
+	Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">R</span> <span class="sy1">=</span> Tree<span class="br0">&#91;</span>R<span class="br0">&#93;</span>.<span class="me1">L</span><span class="sy4">;</span>
+	Tree<span class="br0">&#91;</span>R<span class="br0">&#93;</span>.<span class="me1">L</span> <span class="sy1">=</span> rt<span class="sy4">;</span>
+	Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy1">=</span> Tree<span class="br0">&#91;</span>Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">L</span><span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy2">+</span> Tree<span class="br0">&#91;</span>Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">R</span><span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy2">+</span> Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">num</span><span class="sy4">;</span>
+	Tree<span class="br0">&#91;</span>R<span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy1">=</span> Tree<span class="br0">&#91;</span>rt<span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy2">+</span> Tree<span class="br0">&#91;</span>Tree<span class="br0">&#91;</span>R<span class="br0">&#93;</span>.<span class="me1">R</span><span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy2">+</span> Tree<span class="br0">&#91;</span>R<span class="br0">&#93;</span>.<span class="me1">num</span><span class="sy4">;</span>
+	rt <span class="sy1">=</span> R<span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="coMULTI">/*Demo*/</span>
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+&#160;
+	<span class="kw3">cin</span><span class="sy1">&gt;&gt;</span>n<span class="sy1">&gt;&gt;</span>k<span class="sy4">;</span>
+	<span class="kw4">int</span> i, x<span class="sy4">;</span>
+	BST<span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> st<span class="br0">&#40;</span>n<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw1">for</span><span class="br0">&#40;</span>i<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span> i<span class="sy1">&lt;=</span>n<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+		<span class="kw3">cin</span><span class="sy1">&gt;&gt;</span>x<span class="sy4">;</span>
+		st.<span class="me1">insert</span><span class="br0">&#40;</span>x<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span>st.<span class="me1">select</span><span class="br0">&#40;</span>k<span class="br0">&#41;</span><span class="sy1">&lt;&lt;</span>endl<span class="sy4">;</span>
+&#160;
+	<span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="coMULTI">/*
+ * Treap指针-小根堆实现样例程序 for 数算实习
+ * AUTH: Nettle
+ * DATE: 2012.11.7
+ */</span>
+&#160;
+<span class="co2">#include &lt;time.h&gt;</span>
+<span class="co2">#include &lt;stdio.h&gt;</span>
+<span class="co2">#include &lt;stdlib.h&gt;</span>
+<span class="co2">#include &lt;string&gt;</span>
+<span class="co2">#include &lt;iostream&gt;</span>
+<span class="kw2">using</span> <span class="kw2">namespace</span> std<span class="sy4">;</span>
+&#160;
+<span class="kw2">class</span> cTreap <span class="br0">&#123;</span>
+	<span class="coMULTI">/*
+	 * 指针实现Treap
+	 * weight采用小根堆的方式维护
+	 */</span>
+<span class="kw2">private</span><span class="sy4">:</span>
+	<span class="kw4">struct</span> sNode <span class="br0">&#123;</span>																		<span class="co1">// Treap节点</span>
+		<span class="kw4">int</span> data<span class="sy4">;</span>																		<span class="co1">// data域</span>
+		<span class="kw4">int</span> weight<span class="sy4">;</span>																		<span class="co1">// weight域</span>
+		sNode <span class="sy2">*</span>lch, <span class="sy2">*</span>rch<span class="sy4">;</span>																<span class="co1">// 左右儿子的指针</span>
+		sNode<span class="br0">&#40;</span><span class="kw4">int</span> key<span class="br0">&#41;</span><span class="sy4">:</span>data<span class="br0">&#40;</span>key<span class="br0">&#41;</span>, weight<span class="br0">&#40;</span><span class="kw3">rand</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>										<span class="co1">// 构造函数初始化</span>
+			lch <span class="sy1">=</span> rch <span class="sy1">=</span> <span class="kw2">NULL</span><span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+	<span class="br0">&#125;</span><span class="sy4">;</span>
+	<span class="kw4">typedef</span> sNode<span class="sy2">*</span> pNode<span class="sy4">;</span>																<span class="co1">// 定义指针类型</span>
+&#160;
+	pNode root<span class="sy4">;</span>																			<span class="co1">// 根指针</span>
+&#160;
+	<span class="kw4">void</span> leftRotate<span class="br0">&#40;</span>pNode <span class="sy3">&amp;</span>rt<span class="br0">&#41;</span> <span class="br0">&#123;</span>														<span class="co1">// 左旋</span>
+		pNode p <span class="sy1">=</span> rt <span class="sy2">-</span><span class="sy1">&gt;</span> lch<span class="sy4">;</span>
+		rt <span class="sy2">-</span><span class="sy1">&gt;</span> lch <span class="sy1">=</span> p <span class="sy2">-</span><span class="sy1">&gt;</span> rch<span class="sy4">;</span>
+		p <span class="sy2">-</span><span class="sy1">&gt;</span> rch <span class="sy1">=</span> rt<span class="sy4">;</span>
+		rt <span class="sy1">=</span> p<span class="sy4">;</span>
+		<span class="kw1">return</span> <span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+&#160;
+	<span class="kw4">void</span> rightRotate<span class="br0">&#40;</span>pNode <span class="sy3">&amp;</span>rt<span class="br0">&#41;</span> <span class="br0">&#123;</span>														<span class="co1">// 右旋</span>
+		pNode p <span class="sy1">=</span> rt <span class="sy2">-</span><span class="sy1">&gt;</span> rch<span class="sy4">;</span>
+		rt <span class="sy2">-</span><span class="sy1">&gt;</span> rch <span class="sy1">=</span> p <span class="sy2">-</span><span class="sy1">&gt;</span> lch<span class="sy4">;</span>
+		p <span class="sy2">-</span><span class="sy1">&gt;</span> lch <span class="sy1">=</span> rt<span class="sy4">;</span>
+		rt <span class="sy1">=</span> p<span class="sy4">;</span>
+		<span class="kw1">return</span> <span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+&#160;
+	<span class="kw4">void</span> removeAll<span class="br0">&#40;</span>pNode <span class="sy3">&amp;</span>rt<span class="br0">&#41;</span> <span class="br0">&#123;</span>															<span class="co1">// 删除所有节点</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy3">!</span>rt<span class="br0">&#41;</span> <span class="kw1">return</span> <span class="sy4">;</span>
+		removeAll<span class="br0">&#40;</span>rt <span class="sy2">-</span><span class="sy1">&gt;</span> lch<span class="br0">&#41;</span><span class="sy4">;</span>
+		removeAll<span class="br0">&#40;</span>rt <span class="sy2">-</span><span class="sy1">&gt;</span> rch<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw3">delete</span> rt<span class="sy4">;</span>
+		rt <span class="sy1">=</span> <span class="kw2">NULL</span><span class="sy4">;</span>
+		<span class="kw1">return</span> <span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+&#160;
+	<span class="kw4">void</span> insert<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">int</span> key, pNode <span class="sy3">&amp;</span>rt<span class="br0">&#41;</span> <span class="br0">&#123;</span>												<span class="co1">// 递归插入节点</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy3">!</span>rt<span class="br0">&#41;</span> <span class="br0">&#123;</span>																		<span class="co1">// 如果当前节点为空的叶子节点</span>
+			rt <span class="sy1">=</span> <span class="kw3">new</span> sNode<span class="br0">&#40;</span>key<span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="kw1">return</span> <span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span>key <span class="sy1">&lt;</span> rt <span class="sy2">-</span><span class="sy1">&gt;</span> data<span class="br0">&#41;</span> <span class="br0">&#123;</span>															<span class="co1">// 插入值小于当前值，插入左子树</span>
+			insert<span class="br0">&#40;</span>key, rt <span class="sy2">-</span><span class="sy1">&gt;</span> lch<span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="kw1">if</span> <span class="br0">&#40;</span>rt <span class="sy2">-</span><span class="sy1">&gt;</span> lch <span class="sy2">-</span><span class="sy1">&gt;</span> weight <span class="sy1">&lt;</span> rt <span class="sy2">-</span><span class="sy1">&gt;</span> weight<span class="br0">&#41;</span>										<span class="co1">// 维护weight域</span>
+				leftRotate<span class="br0">&#40;</span> rt <span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="br0">&#125;</span>	<span class="kw1">else</span> <span class="br0">&#123;</span>																		<span class="co1">// 插入值大于等于当前值，插入右子树</span>
+			insert<span class="br0">&#40;</span>key, rt <span class="sy2">-</span><span class="sy1">&gt;</span> rch<span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="kw1">if</span> <span class="br0">&#40;</span>rt <span class="sy2">-</span><span class="sy1">&gt;</span> rch <span class="sy2">-</span><span class="sy1">&gt;</span> weight <span class="sy1">&lt;</span> rt <span class="sy2">-</span><span class="sy1">&gt;</span> weight<span class="br0">&#41;</span>										<span class="co1">// 维护weight域</span>
+				rightRotate<span class="br0">&#40;</span> rt <span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+		<span class="kw1">return</span> <span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+&#160;
+	<span class="kw4">void</span> <span class="kw3">remove</span><span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">int</span> key, pNode <span class="sy3">&amp;</span>rt<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy3">!</span>rt<span class="br0">&#41;</span> <span class="kw1">return</span> <span class="sy4">;</span>																<span class="co1">// 如果访问到空节点，删除值不存在</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span>rt <span class="sy2">-</span><span class="sy1">&gt;</span> data <span class="sy1">==</span> key<span class="br0">&#41;</span> <span class="br0">&#123;</span>														<span class="co1">// 当前值为删除值</span>
+			<span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy3">!</span>rt <span class="sy2">-</span><span class="sy1">&gt;</span> lch <span class="sy3">&amp;&amp;</span> <span class="sy3">!</span>rt <span class="sy2">-</span><span class="sy1">&gt;</span> rch<span class="br0">&#41;</span> <span class="br0">&#123;</span>												<span class="co1">// 没有儿子，直接删除</span>
+				<span class="kw3">delete</span> rt<span class="sy4">;</span>
+				rt <span class="sy1">=</span> <span class="kw2">NULL</span><span class="sy4">;</span>
+				<span class="kw1">return</span> <span class="sy4">;</span>
+			<span class="br0">&#125;</span>	
+			<span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy3">!</span>rt <span class="sy2">-</span><span class="sy1">&gt;</span> rch<span class="br0">&#41;</span> <span class="br0">&#123;</span>															<span class="co1">// 只有左儿子，将左儿子旋转到当前位置</span>
+				leftRotate<span class="br0">&#40;</span> rt <span class="br0">&#41;</span><span class="sy4">;</span>
+				<span class="kw3">remove</span><span class="br0">&#40;</span>key, rt <span class="sy2">-</span><span class="sy1">&gt;</span> rch<span class="br0">&#41;</span><span class="sy4">;</span>													<span class="co1">// 继续递归删除</span>
+				<span class="kw1">return</span> <span class="sy4">;</span>
+			<span class="br0">&#125;</span>
+			<span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy3">!</span>rt <span class="sy2">-</span><span class="sy1">&gt;</span> lch<span class="br0">&#41;</span> <span class="br0">&#123;</span>															<span class="co1">// 只有右儿子，将右儿子旋转到当前位置</span>
+				rightRotate<span class="br0">&#40;</span> rt <span class="br0">&#41;</span><span class="sy4">;</span>
+				<span class="kw3">remove</span><span class="br0">&#40;</span>key, rt <span class="sy2">-</span><span class="sy1">&gt;</span> lch<span class="br0">&#41;</span><span class="sy4">;</span>                                                 <span class="co1">// 继续递归删除</span>
+				<span class="kw1">return</span> <span class="sy4">;</span>
+			<span class="br0">&#125;</span>
+			<span class="kw1">if</span> <span class="br0">&#40;</span>rt <span class="sy2">-</span><span class="sy1">&gt;</span> lch <span class="sy2">-</span><span class="sy1">&gt;</span> weight <span class="sy1">&lt;</span> rt <span class="sy2">-</span><span class="sy1">&gt;</span> rch <span class="sy2">-</span><span class="sy1">&gt;</span> weight<span class="br0">&#41;</span> <span class="br0">&#123;</span>							<span class="co1">// 两个儿子都存在，选择权值小的一个</span>
+				leftRotate<span class="br0">&#40;</span> rt <span class="br0">&#41;</span><span class="sy4">;</span>
+				<span class="kw3">remove</span><span class="br0">&#40;</span>key, rt <span class="sy2">-</span><span class="sy1">&gt;</span> rch<span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="br0">&#125;</span>	<span class="kw1">else</span> <span class="br0">&#123;</span>
+				rightRotate<span class="br0">&#40;</span> rt <span class="br0">&#41;</span><span class="sy4">;</span>
+				<span class="kw3">remove</span><span class="br0">&#40;</span>key, rt <span class="sy2">-</span><span class="sy1">&gt;</span> lch<span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="br0">&#125;</span>
+			<span class="kw1">return</span> <span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span>key <span class="sy1">&lt;</span> rt <span class="sy2">-</span><span class="sy1">&gt;</span> data<span class="br0">&#41;</span> <span class="kw3">remove</span><span class="br0">&#40;</span>key, rt <span class="sy2">-</span><span class="sy1">&gt;</span> lch<span class="br0">&#41;</span><span class="sy4">;</span>									<span class="co1">// 若当前值不等于删除值，根据删除值查找子树</span>
+			<span class="kw1">else</span> <span class="kw3">remove</span><span class="br0">&#40;</span>key, rt <span class="sy2">-</span><span class="sy1">&gt;</span> rch<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw1">return</span> <span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+&#160;
+	<span class="kw4">bool</span> quary<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">int</span> key, pNode rt<span class="br0">&#41;</span> <span class="br0">&#123;</span>												<span class="co1">// 查询key值是否在Treap中</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy3">!</span>rt<span class="br0">&#41;</span> <span class="kw1">return</span> <span class="kw2">false</span><span class="sy4">;</span>															<span class="co1">// 查找到空叶子节点，key不存在于Treap</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span>rt <span class="sy2">-</span><span class="sy1">&gt;</span> data <span class="sy1">==</span> key<span class="br0">&#41;</span> <span class="kw1">return</span> <span class="kw2">true</span><span class="sy4">;</span>												<span class="co1">// 查找到目标值</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span>rt <span class="sy2">-</span><span class="sy1">&gt;</span> data <span class="sy1">&lt;</span> key<span class="br0">&#41;</span> <span class="kw1">return</span> quary<span class="br0">&#40;</span>key, rt <span class="sy2">-</span><span class="sy1">&gt;</span> lch<span class="br0">&#41;</span><span class="sy4">;</span>								<span class="co1">// 根据当前值继续二分查找</span>
+			<span class="kw1">else</span> <span class="kw1">return</span> quary<span class="br0">&#40;</span>key, rt <span class="sy2">-</span><span class="sy1">&gt;</span> rch<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+&#160;
+	<span class="kw4">void</span> print<span class="br0">&#40;</span>pNode rt<span class="br0">&#41;</span> <span class="br0">&#123;</span>																<span class="co1">// 使用括号表示法递归打印当前树</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy3">!</span>rt<span class="br0">&#41;</span> <span class="kw1">return</span> <span class="sy4">;</span>
+		<span class="kw3">cout</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;[&quot;</span><span class="sy4">;</span>
+		print<span class="br0">&#40;</span>rt <span class="sy2">-</span><span class="sy1">&gt;</span> lch<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw3">cout</span> <span class="sy1">&lt;&lt;</span> rt <span class="sy2">-</span><span class="sy1">&gt;</span> data <span class="sy1">&lt;&lt;</span> <span class="st0">':'</span> <span class="sy1">&lt;&lt;</span> rt <span class="sy2">-</span><span class="sy1">&gt;</span> weight<span class="sy4">;</span>
+		print<span class="br0">&#40;</span>rt <span class="sy2">-</span><span class="sy1">&gt;</span> rch<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw3">cout</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;]&quot;</span><span class="sy4">;</span>
+		<span class="kw1">return</span> <span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+&#160;
+<span class="kw2">public</span><span class="sy4">:</span>
+	cTreap<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">:</span>root<span class="br0">&#40;</span><span class="kw2">NULL</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>																<span class="co1">// 构造函数，初始化随机器</span>
+		<span class="kw3">srand</span><span class="br0">&#40;</span><span class="kw3">time</span><span class="br0">&#40;</span><span class="kw2">NULL</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	~cTreap<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>																			<span class="co1">// 析构函数</span>
+		removeAll<span class="br0">&#40;</span> root <span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+&#160;
+	<span class="kw4">void</span> insert<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">int</span> key<span class="br0">&#41;</span> <span class="br0">&#123;</span>														<span class="co1">// 插入key值</span>
+		insert<span class="br0">&#40;</span>key, root<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw1">return</span> <span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+&#160;
+	<span class="kw4">void</span> <span class="kw3">remove</span><span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">int</span> key<span class="br0">&#41;</span> <span class="br0">&#123;</span>														<span class="co1">// 删除key值</span>
+		<span class="kw3">remove</span><span class="br0">&#40;</span>key, root<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw1">return</span> <span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+&#160;
+	<span class="kw4">bool</span> quary<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">int</span> key<span class="br0">&#41;</span> <span class="br0">&#123;</span>															<span class="co1">// 查询key值</span>
+		<span class="kw1">return</span> quary<span class="br0">&#40;</span>key, root<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+&#160;
+	<span class="kw4">void</span> print<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>																		<span class="co1">// 打印Treap</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span>root<span class="br0">&#41;</span> print<span class="br0">&#40;</span>root<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw1">else</span> <span class="kw3">cout</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Empty treap&quot;</span><span class="sy4">;</span>
+		<span class="kw3">cout</span> <span class="sy1">&lt;&lt;</span> endl<span class="sy4">;</span>
+		<span class="kw1">return</span> <span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="sy4">;</span>
+&#160;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+	<span class="coMULTI">/*
+	 * Treap样例程序
+	 * 5种指令：
+	 * +-----+-----------------------------------+
+	 * | 格式| 含义                              |
+	 * +-----+-----------------------------------+
+	 * | I x | 向Treap中插入x                    |
+	 * | D x | 删除Treap中的x(有多个x只删除一个) |
+	 * | Q x | 查询x是否在Treap中                |
+	 * | P	 | 括号表示法打印Treap               |
+	 * | E	 | 退出程序                          |
+	 * +-----+-----------------------------------+
+	 */</span>
+	cTreap <span class="sy2">*</span>myTreap <span class="sy1">=</span> <span class="kw3">new</span> cTreap<span class="sy4">;</span>
+	string cmd<span class="sy4">;</span>																			<span class="co1">// 指令</span>
+	<span class="kw4">int</span> key<span class="sy4">;</span>																			<span class="co1">// key值</span>
+	<span class="kw1">do</span> <span class="br0">&#123;</span>
+		<span class="kw3">cin</span> <span class="sy1">&gt;&gt;</span> cmd<span class="sy4">;</span>
+		<span class="kw1">switch</span> <span class="br0">&#40;</span>cmd<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+		<span class="kw1">case</span> <span class="st0">'I'</span><span class="sy4">:</span>
+			<span class="kw3">cin</span> <span class="sy1">&gt;&gt;</span> key<span class="sy4">;</span>
+			myTreap <span class="sy2">-</span><span class="sy1">&gt;</span> insert<span class="br0">&#40;</span>key<span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="kw1">break</span><span class="sy4">;</span>
+		<span class="kw1">case</span> <span class="st0">'D'</span><span class="sy4">:</span>
+			<span class="kw3">cin</span> <span class="sy1">&gt;&gt;</span> key<span class="sy4">;</span>
+			myTreap <span class="sy2">-</span><span class="sy1">&gt;</span> <span class="kw3">remove</span><span class="br0">&#40;</span>key<span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="kw1">break</span><span class="sy4">;</span>
+		<span class="kw1">case</span> <span class="st0">'Q'</span><span class="sy4">:</span>
+			<span class="kw3">cin</span> <span class="sy1">&gt;&gt;</span> key<span class="sy4">;</span>
+			<span class="kw1">if</span> <span class="br0">&#40;</span>myTreap <span class="sy2">-</span><span class="sy1">&gt;</span> quary<span class="br0">&#40;</span>key<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="kw3">cout</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'T'</span> <span class="sy1">&lt;&lt;</span> endl<span class="sy4">;</span>
+			<span class="kw1">else</span> <span class="kw3">cout</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'F'</span> <span class="sy1">&lt;&lt;</span> endl<span class="sy4">;</span>
+			<span class="kw1">break</span><span class="sy4">;</span>
+		<span class="kw1">case</span> <span class="st0">'P'</span><span class="sy4">:</span>
+			myTreap <span class="sy2">-</span><span class="sy1">&gt;</span> print<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="kw1">break</span><span class="sy4">;</span>
+		<span class="kw1">case</span> <span class="st0">'E'</span><span class="sy4">:</span>
+			<span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+	<span class="br0">&#125;</span>	<span class="kw1">while</span> <span class="br0">&#40;</span><span class="kw2">true</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw3">delete</span> myTreap<span class="sy4">;</span>
+    <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 29/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:2781-0!*!*!*!*!*!* and timestamp 20151007054833 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=Code:Treap/C%2B%2B&amp;oldid=35837">http://www.nocow.cn/index.php?title=Code:Treap/C%2B%2B&amp;oldid=35837</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-code" class="selected"><a href="/index.php/Code:Treap/C%2B%2B">代码</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=Code_Talk:Treap/C%2B%2B&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=Code:Treap/C%2B%2B&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=Code:Treap/C%2B%2B&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Treap+C%2B%2B" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Code:Treap/C%2B%2B" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Code:Treap/C%2B%2B" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=Code:Treap/C%2B%2B&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=Code:Treap/C%2B%2B&amp;oldid=35837" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过10,988次。</li>
+		<li id="credits">本页面由NOCOW用户<a href="/index.php?title=%E7%94%A8%E6%88%B7:Hilbert&amp;action=edit&amp;redlink=1" class="new" title="用户:Hilbert（尚未撰写）">Hilbert</a>于2015年7月7日 (星期二) 22:11做出最后修改。 在<a href="/index.php?title=%E7%94%A8%E6%88%B7:Cosechy_movingbot&amp;action=edit&amp;redlink=1" class="new" title="用户:Cosechy movingbot（尚未撰写）">cosechy@gmail.com</a>和<a href="/index.php?title=%E7%94%A8%E6%88%B7:YangZX&amp;action=edit&amp;redlink=1" class="new" title="用户:YangZX（尚未撰写）">杨志轩</a>、NOCOW用户<a href="/index.php?title=%E7%94%A8%E6%88%B7:Cjwssb&amp;action=edit&amp;redlink=1" class="new" title="用户:Cjwssb（尚未撰写）">Cjwssb</a>和<a href="/index.php/%E7%94%A8%E6%88%B7:Nettle99" title="用户:Nettle99">Nettle99</a>和<a href="/index.php?title=Code:Treap/C%2B%2B&amp;action=credits" title="Code:Treap/C++">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.372 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

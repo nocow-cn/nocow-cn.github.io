@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>PHP - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="canonical" href="/index.php/PHP" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=PHP&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=PHP&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "PHP", "wgTitle": "PHP", "wgCurRevisionId": 11597, "wgArticleId": 2807, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["需要关注的页面"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-PHP action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">PHP</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub">(跳转自<a href="/index.php?title=Php&amp;redirect=no" title="Php">Php</a>)</div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><div style="text-align:center;margin:0px auto 10px;display:table"><span style="display:table-cell!important;display:inline-block;border:1px solid black;padding:0px 20px;background-color:gray;color:white"><p style="color:#f33">下面的部分章节<b>可能侵犯了<a href="/index.php/NOCOW:%E7%89%88%E6%9D%83%E9%97%AE%E9%A2%98" title="NOCOW:版权问题"><span style="color:hotpink">版权</span></a></b></p>
+<p>如果已经得到版权所有者许可，请注明<i>来源</i>以及<i>所有者关于版权的声明</i>（如果来源处已经写明可以省略）</p>
+<p>如果<b>不是</b>通过<a href="/index.php/%E5%B8%AE%E5%8A%A9:GFDL" title="帮助:GFDL" class="mw-redirect">GFDL</a>协议发布，请<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%A7%BB%E5%8A%A8%E9%A1%B5%E9%9D%A2/PHP" title="特殊:移动页面/PHP">移动</a>到Article:名字空间，或者加上<b><a href="/index.php/%E6%A8%A1%E6%9D%BF:%E7%89%88%E6%9D%83%E6%89%80%E6%9C%89" title="模板:版权所有">版权所有</a></b>或者<b><a href="/index.php/%E6%A8%A1%E6%9D%BF:CC" title="模板:CC">Copyleft</a></b>模板</p>
+</span></div>
+<p>php 
+</p>
+<pre>目录
+</pre>
+<p>• PHP 
+• PHP的特性 
+• PHP 3与PHP 4 
+• PHP4的优越性 
+• 数据库方面 
+• 多态 
+• PHP的高级OOP技术 
+• PHP5的发展 
+</p><p><br /> 
+</p><p><br />
+</p><p>PHP
+</p><p>PHP，一个嵌套的缩写名称，是英文超级文本预处理语言（PHP:Hypertext Preprocessor）的缩写。PHP 是一种 HTML 内嵌式的语言，PHP与微软的ASP颇有几分相似，都是一种在服务器端执行的嵌入HTML文档的脚本语言，语言的风格有类似于C语言，现在被很多的网站编程人员广泛的运用。PHP 独特的语法混合了 C、Java、Perl 以及 PHP 自创新的语法。它可以比 CGI 或者 Perl 更快速的执行动态网页。用PHP做出的动态页面与其他的编程语言相比，PHP是将程序嵌入到HTML文档中去执行，执行效率比完全生成HTML标记的CGI要高许多；与同样是嵌入HTML文档的脚本语言JavaScript相比，PHP在服务器端执行，充分利用了服务器的性能；PHP执行引擎还会将用户经常访问的PHP程序驻留在内存中，其他用户再一次访问这个程序时就不需要重新编译程序了，只要直接执行内存中的代码就可以了，这也是PHP高效率的体现之一。PHP具有非常强大的功能，所有的CGI或者JavaScript的功能PHP都能实现，而且支持几乎所有流行的数据库以及操作系统。
+</p><p>PHP 最初是1994年Rasmus Lerdorf创建的，刚刚开始只是一个简单的用Perl语言编写的程序，用来统计他自己网站的访问者。后来又用C语言重新编写，包括可以访问数据库。在1995年以Personal Home Page Tools (PHP Tools) 开始对外发表第一个版本，Lerdorf写了一些介绍此程序的文档，并且发布了PHP1.0。在这早期的版本中，提供了访客留言本、访客计数器等简单的功能。以后越来越多的网站使用了PHP，并且强烈要求增加一些特性，比如循环语句和数组变量等等，在新的成员加入开发行列之后，在1995年中，PHP2.0发布了。第二版定名为PHP/FI(Form Interpreter)。PHP/FI加入了对mSQL的支持，从此建立了PHP在动态网页开发上的地位。到了1996年底，有15000个网站使用 PHP/FI；时间到了1997年中，使用PHP/FI的网站数字超过五万个。而在1997年中，开始了第三版的开发计划，开发小组加入了 Zeev Suraski 及 Andi Gutmans，而第三版就定名为PHP3。2000年，PHP4.0又问世了，其中增加了许多新的特性。
+</p><p><br />
+</p><p>PHP的特性
+</p><p>PHP的特性包括：
+</p><p>开放的源代码：所有的PHP源代码事实上都可以得到。
+</p><p>PHP是免费的。
+</p><p>基于服务器端：由于PHP是运行在服务器端的脚本,可以运行在UNIX、LINUX、WINDOWS下。
+</p><p>嵌入HTML：因为PHP可以嵌入HTML语言，所以学习起来并不困难。
+</p><p>简单的语言：PHP坚持脚本语言为主，与Java以C++不同。
+</p><p>效率高：PHP消耗相当少的系统资源。
+</p><p>图像处理：用PHP动态创建图像
+</p><p><br />
+</p><p>PHP 3与PHP 4
+</p><p>【PHP3】
+PHP3跟Apache服务器紧密结合的特性；加上它不断的更新及加入新的功能；而且几乎支持所有主流与非主流数据库；再以它能高速的执行效率，使得PHP在1999年中的使用站点已经超过了150000万。加上它的源代码完全公开，在 Open Source意识抬头的今天，它更是这方面的中流砥柱。不断地有新的函数库加入，以及不停地更新的活力，使得PHP无论在UNIX、LINUX或是Windows的平台上都可以有更多新的功能。它提供丰富的函数，使得在程序设计方面有着更好的支持。 
+</p><p>【PHP4】
+PHP4.0整个脚本程序的核心大幅更动，让程序的执行速度，满足更快的要求。在最佳化之后的效率，已较传统CGI或者ASP等程序有更好的表现。而且还有更强的新功能、更丰富的函数库。无论您接不接受，PHP 都将在 Web CGI 的领域上，掀起巅覆性的革命。对于一位专业的Web Master 而言，它将也是必修课程之一。
+</p><p>PHP 4.0是更有效的，更可靠的动态Web页开发工具，在大多数情况运行比 PHP 3.0要快，其脚本描述更强大并且更复杂, 最显著的特征是速率比的增加。PHP4.0这些优异的性能是PHP 脚本引擎重新设计产生的结果：引擎由 AndiGutmans 和 Zeev Suraski从底层全面重写。PHP4.0 脚本引擎 ——Zend 引擎，使用了一种更有效的编译——执行方式, 而不是PHP 3.0 采用的执行 ——当解析时模型。
+</p><p><br />
+PHP4的优越性
+</p><p>PHP4在3.0版的基础上增加或增强了许多有用的特征，主要如下： 
+</p><p>（1）别名：在PHP4中，可以利用引用为变量赋值，这给编程带来了很大的灵活性。 
+</p><p>（2）扩充了API 模块：PHP 4.0 为扩展的 API 模块的提供了扩展PHP接口模块, 它比旧的 API 版本显著地快。 PHP 模块已有的及最常用的接口多数被转换到使用这个扩展的接口。 
+</p><p>（3）自动资源释放：PHP4增加了引用计数功能，这种新技术的引入使PHP4具有了自动内存管理功能,减轻了开发人员的负担。 
+</p><p>（4）布尔类型：PHP 4.0 支持布尔类型。 
+</p><p>（5）进程生成：在 UNIX 环境下的 PHP 4.0 提供了一个很智能和通用的生成进程, 使用了一种名为基于automake/libtool的系统生成技术。 
+</p><p>（6）COM/DCOM 支持：PHP 4.0 提供 COM/DCOM 支持 ( 仅用于Windows 环境 ) 可以无缝地存取和访问 COM 对象。 
+</p><p>（7）与PHP 3.0 兼容性很好：PHP 4.0 是与 PHP 3.0 代码向后兼容性接近100% 。由于 PHP 4 的改进的体系结构,两者有一些细微的差别，但是大多数人将可能永远不可能遇上这种情况。 
+</p><p>（8）配置：PHP4重新设计和增强了PHP。ini文件,这使得用PHP。ini来配置PHP显得极为容易,这个文件可以在运行时被Apache(unix系统)或由Windows 注册(Windows 环境)。 
+</p><p>（9）加密支持：PHP4实现了完整的加密, 这些加密功能是一个完整的mycrypt库，并且 PHP 4.0 支持哈希函数。Blowfish，TripleDES,MD5,并且SHA1 也是可使用的一些加密算法。 
+</p><p>（10）类型检查：PHP 4.0 支持同一操作符用于评类型检查：===（ 3 等号运算符 ）, 为在两个值和其类型之间作检查。例如, 3  ===3 将视为假 ( 类型是不同的 ), 而 3  ==3 ( 相等判断 ) 将视为真。
+</p><p>（11）FTP 支持：PHP 4.0 支持 FTP 。通常, 你会为通过一个调制解调器连接下载一个大文件提供一个接口。然而, 如果你确实有需要，可以使用PHP 。
+</p><p>（12）PHP4新增函数或功能增强函数：PHP 4.0 新增了许多函数,同时也将许多现有的函数功能进行了增强，以下是一些例子。 array_count_values() eval() foreach() nclude() ob_end_clean() ob_end_flush() ob_get_contents() ob_start() strip_tags() unset() 
+</p><p>（13）here打印：PHP 4.0 的Here打印是与Perl类似的, 尽管完全不相同。Here是打印大容量文章的一个有用的方法,例如在 HTML文件中，不会漏掉任何一个字符，例如目录标记。 
+</p><p>（14）HTTP Session fallback 系统：为 HTTP Session管理的一个 fallback 系统在 PHP 4.0被实现 。缺省情况下，Session标识符由cookies存储。如果没有cookies支持或一项cookies任务失败，Session标识符自动被创建并在 URL 的查询字符串中被携带。 
+</p><p>（15）ISAPI 支持：PHP 4.0 能作为一个个性化的 ISAPI 模块作为 IIS插件 。这比 PHP 3.0 更有效, 它作为一个外部的程序来运行。 
+</p><p>（16）内存：PHP 4.0 能更有效的使用内存, 导致较少的内存占用消耗,这主要归功于引用计数技术的实现。 
+</p><p>（17）其他类成员函数：在 PHP 4.0 你能在成员函数本身的作用域或全局范围内调用其他类的成员函数。例如,你能用一个子函数覆盖父函数,并在子函数中调用父函数。 
+</p><p>（18）多维数组：在 PHP 4.0 ，利用GET，POST,Cookies的进行的数据传输支持多维数组。 
+</p><p>（19）个性化的 HTTP Session支持：HTTP Session处理, 包括 fallback 系统管理，在 PHP 4.0被它的新库函数实现 。在版本 3.0 中处理Session要求使用 PHPLIB 和第三方的库函数, 它比把Session直接地由 PHP 支持慢了许多。 
+</p><p>（20）个性化的 Java 支持：PHP 4.0 支持和java的交互。这种个性化的Java 支持为PHP 在 Java 对象上创建和使用方法提供一个简单并且有效的工具。 
+</p><p>21）对象和数嵌套组：PHP 4.0 实现了功能更加强大的对象, 移去了 PHP 3.0存在的种种句法限制。对象能在数组以内被嵌套并且反过来也如此, 可以根据你的需要实现嵌套。 
+</p><p>（22）面向对象的编程：PHP 4.0 为面向对象的编程和构造类及对象提供扩展的功能和新特征。PHP4实现了对象重载,引用技术等新技术。 
+</p><p>（23）对象重载支持：对象重载语法允许第三方的基于面向对象的类库使用 PHP4 的面向对象的特征存取他们自身的功能。使用这个特征的一个 COM 模块已经被实现了。 
+</p><p>（24）输出缓冲支持：PHP 提供了一个输出缓冲函数集合。输出缓冲支持允许你写包裹函数功能压缩缓冲区。在 PHP4 的输出缓冲支持允许 HTML 头信息存放, 无论 HTML的正文是否输出。头信息( (header(), content type, and cookies ) 不采用缓冲 。 
+</p><p>（25）增加了PCRE 库：PHP 4.0 包括一个 Perl 兼容的正则表达式 (PCRE ) 库, 和正常regex库一起与 PHP 绑定。split 和replace PCRE 功能被支持。PCRE 和 Perl 正规表达式之间有一些细微差别。
+</p><p>（26）PHP.ini 文件：PHP.ini文件在 PHP4.0 被重新设计, 使用的 PHP 的配置PHP.ini是更容易并且更有效的。全部文件能被Apache 在运行时间操作 ( 在 Apache环境 下 ) 或由 Windows 注册表 ( 在 Windows 下面 ) 。被加入PHP.ini文件的配置指令自动地在所有相关的模块中被支持。
+</p><p>（27）引用计数：PHP 4.0 为系统中的每个数值提供了引用计数, 包括资源。一旦一个资源不再被任何变量引用，它自动地被释放以节省内存资源。利用这个特征的最明显的例子一个内置SQL查询的循环语句。在PHP 3.0中 ，每次递归另外的 SQL 结果集合重复申请内存，直到脚本执行完毕,这些结果集合占用的内存才被释放。 
+</p><p>（28）支持引用：通过引用可以改变一个变量的值。
+</p><p>（29）函数的运行时绑定：PHP 4.0 的运行时间绑定功能允许你在他们被声明以前调用, 无论声明是否在代码以后或是在运行时间。 
+</p><p>（30）类的运行时信息：PHP 4.0 支持在运行时刻存取下列类信息：一个对象的类名，一个对象的父类的类名字，以及对象函数所在的名字。
+</p><p>（31）服务器抽象层：为支持Web服务器提供了增强型 SAPI ( 服务器 API ) 接口,是 PHP 4。0 不可分的一部分。这个服务器抽象层,提供了通用的WEB服务器接口支持,支持多线程WEB服务器,为大多数的WEB服务器提供透明的支持, 这些服务器包括 Apache ,IIS ( ISAPI ), 以及 AOL 服务器。
+</p><p>（32）语法的点亮显示：PHP 4.0 语法的点亮显示允许开发者看见源代码而不是脚本, 这个功能比PHP 3。0中的更有效。它跑得更快，更执行得更好，并且产生更紧凑的HTML代码。
+（33）由引用改变变量的值：PHP 4.0 由引用支持可变的赋值, “关联”的2个变量之中个的任何一个的值被改变,另外的变量的值同样被改变,这类似与C中的指针类型。 
+</p><p>（34）在引用字符串中的变量引用：PHP 4.0 增强了在引用字符串中的变量引用。
+</p><p><br />
+</p><p>数据库方面
+</p><p>PHP 在数据库方面的丰富支持，也是它迅速走红的原因之一，它支持下列的数据库或是数据文件： 
+</p><p>· Adabas D 
+· DBA 
+· dBase 
+· dbm 
+· filePro 
+· Informix 
+· InterBase 
+· mSQL 
+· Microsoft SQL Server 
+· MySQL 
+· Solid 
+· Sybase 
+· ODBC 
+· Oracle 8 
+· Oracle 
+· PostgreSQL 
+</p><p>而在 Internet 上它也支持了相当多的通讯协议 (protocol)，包括了与电子邮件相关的 IMAP, POP3；网管系统 SNMP；网络新闻 NNTP；帐号共用 NIS；全球信息网 HTTP 及 Apache 服务器；目录协议 LDAP 以及其它网络的相关函数。 
+</p><p>除此之外，用 PHP 写出来的 Web 后端 CGI 程序，可以很轻易的移植到不同的操作系统上。例如，先以 Linux 架的网站，在系统负荷过高时，可以快速地将整个系统移到 SUN 工作站上，不用重新编译 CGI 程序。面对快速发展的 Internet，这是长期规划的最好选择。
+</p><p>变数类型:
+PHP有好多种变数; 主要有这些：
+- 数字 (integer - 例: 32)
+- 布林值 (boolean - 例: TRUE)
+- 字串 (string - 例: 'a string of text')
+- NULL
+- 资源（resource）
+- 阵列 (array - 例: arrayname[2])
+</p><p>语法:
+</p><p>语法有三种: 
+//comment
+/* comment */
+</p>
+<ol><li> comment
+</li></ol>
+<p>基本的 "Control Structures":
+</p>
+<ul><li> if ... else
+</li></ul>
+<pre>    if (condition == true)&#160;;
+</pre>
+<ul><li> if ... else then
+</li></ul>
+<pre>    if (condition == true) 
+    else if (condition2 == true)&#160;;
+</pre>
+<p>一个PHP实例:
+</p><p>&lt;html&gt;
+</p>
+<pre>    &lt;head&gt;
+         &lt;title&gt;First program&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+         &lt;?php
+              echo "hello world";
+        &#160;?&gt;
+    &lt;/body&gt;
+</pre>
+<p>&lt;/html&gt;
+</p><p>请看:
+php官方网站：www.php.net
+php对面向对象的支持
+面向对象编程的概念： 
+　　不同的作者之间说法可能不一样，但是一个OOP语言必须有以下几方面： 
+　　抽象数据类型和信息封装 
+　　继承 
+　　多态 
+　　在PHP中是通过类来完成封装的： 
+</p><p>　　&lt;?php 
+　　class Something { 
+　　// 在OOP类中，通常第一个字符为大写 
+　　var $x; 
+　　function setX($v) { 
+　　// 方法开始为小写单词，然后使用大写字母来分隔单词，例如getValueOfArea() 
+　　$this-&gt;x=$v; 
+　　} 
+</p><p>　　function getX() { 
+　　return $this-&gt;x; 
+　　} 
+　　} 
+</p><p>　　当然你可以按自己的喜好进行定义，但最好保持一种标准，这样会更有效。数据成员在类中使用"var"声明来定义，在给数据成员赋值之前，它们是没有类型的。一个数据成员可以是一个整数，一个数组，一个相关数组(associative array)或者是一个对象。方法在类中被定义成函数形式，在方法中访问类成员变量时，你应该使用$this-&gt;name，否则对一个方法来说，它只能是局部变量。 
+</p><p>　　使用new操作符来创建一个对象： 
+　　$obj=new Something; 
+</p><p>　　然后你可以使用成员函数通过： 
+</p><p>　　$obj-&gt;setX(5); 
+　　$see=$obj-&gt;getX(); 
+</p><p>　　在这个例子中，setX成员函数将5赋值给对象的成员变量x(不是类的)，然后getX返回它的值5。可以象：$obj-&gt;x=6那样通过类引用方式来存取数据成员，这不是一个很好的OOP习惯。我强烈建议通过方法来存取成员变量。如果你把成员变量看成是不可处理的，并且只通过对象句柄来使用方法，你将是一个好的OOP程序员。不幸的是，PHP不支持声明私有成员变量，所以不良代码在PHP中也是允许的。继承在PHP中很容易实现，只要使用extend关键字。 
+</p><p>　　&lt;?php 
+　　class Another extends Something { 
+　　var $y; 
+</p><p>　　function setY($v) { 
+　　$this-&gt;y=$v; 
+　　} 
+</p><p>　　function getY() { 
+　　return $this-&gt;y; 
+　　} 
+</p><p>　　} 
+</p><p>　　"Another"类的对象现在拥有了父类(Something)的全部的数据成员及方法，而且还加上了自己的数据成员和方法。 
+</p><p>　　你可以使用 
+　　$obj2=new Something; 
+　　$obj2-&gt;setX(6); 
+　　$obj2-&gt;setY(7); 
+</p><p>　　PHP现在还不支持多重继承，所以你不能从两个或两个以上类派生出新的类来。你可以在派生类中重定义一个方法，如果我们在"Another"类中重定义了getX方法，我们就不能使 用"Something"中的getX方法了。如果你在派生类中声明了一个与基派同名的数据成员，那么当你处理它时， 它将“隐藏”基类的数据成员。 
+</p><p>　　你可以在你的类中定义构造函数。构造函数是一个与类名同名的方法，当你创建一个类的对象时会被调用，例如： 
+</p><p>　　&lt;?php 
+　　class Something { 
+　　var $x; 
+</p><p>　　function Something($y) { 
+　　$this-&gt;x=$y; 
+　　} 
+</p><p>　　function setX($v) { 
+　　$this-&gt;x=$v; 
+　　} 
+</p><p>　　function getX() { 
+　　return $this-&gt;x; 
+　　} 
+</p><p>　　} 
+</p><p>　　所以你可以创建一个对象，通过： 
+　　$obj=new Something(6); 
+</p><p>　　构造函数会自动地把6赋值给数据变量x。构造函数和方法都是普通的PHP函数，所以你可以使用缺省参数。 
+</p><p>　　function Something($x="3",$y="5") 
+</p><p>　　接着： 
+</p><p>　　$obj=new Something(); // x=3 and y=5 
+　　$obj=new Something(8); // x=8 and y=5 
+　　$obj=new Something(8,9); // x=8 and y=9 
+</p><p>　　缺省参数使用C++的方式，所以你不能忽略Y的值，而给X一个缺省参数，参数是从左到右赋值的，如果传入的参数少于要求的参数时，其作的将使用缺省参数。 
+</p><p>　　当一个派生类的对象被创建时，只有它的构造函数被调用，父类的构造函数没被调用，如果你想调用基类的构造函数，你必须要在派生类的构造函数中显示调用。可以这样做是因为在派生类中所有父类的方法都是可用的。 
+</p><p>　　&lt;?php 
+　　function Another() { 
+　　$this-&gt;y=5; 
+　　$this-&gt;Something(); 
+　　//显示调用基类构造函数 
+</p><p>　　} 
+</p><p>　　OOP的一个很好的机制是使用抽象类。抽象类是不能实例化，只能提供给派生类一个接口。设计者通常使用抽象类来强迫程序员从基类派生，这样可以确保新的类包含一些期待的功能。在PHP中没有标准的方法，但是：如果你需要这个特性，可以通过定义基类，并在它的构造函数后加上"die" 的调用，这样就可以保证基类是不可实例化的，现在在每一个方法(接口)后面加上"die" 语句，所以，如果一个程序员在派生类中没有覆盖方法，将引发一个错误。而且因为PHP 是无类型的，你可能需要确认一个对象是来自于你的基类的派生类，那么在基类中增加一个方法来实义类的身份(返回某种标识id)，并且在你接收到一个对象参数时校验这个值。当然，如果一个邪恶不好的程序员在派生类中覆盖了这个方法，这种方法就不起作用了，不过一般问题多发现在懒惰的程序员身上，而不是邪恶的程序员。 
+</p><p>　　当然，能够让基类对程序员无法看到是很好的，只要将接口打印出来做他们的工作就可以了。在PHP中没有析构函数。 
+</p><p>　　重载(与覆盖不同)在PHP中不支持。在OOP中，你可以重载一个方法来实现两个或重多的方法具有相同的名字，但是有不同数量或类型的参数(这要看语言)。PHP 是一种松散类型的语言，所以通过类型重载不起作用，然而通过参数的个数不同来重载也不起作用。 
+</p><p>　　有时在OOP中重载构造函数非常好，这样你可以通过不同的方法创建对象(传递不同数量的参数)。在PHP中实现它的技巧是： 
+</p><p>　　&lt;?php 
+</p><p>　　class Myclass { 
+　　function Myclass() { 
+　　$name="Myclass".func_num_args(); 
+　　$this-&gt;$name(); 
+　　//注意$this-&gt;name()一般是错误的，但是在这里$name是一个将被调用方法的名字 
+</p><p>　　} 
+</p><p>　　function Myclass1($x) { 
+　　code; 
+　　} 
+</p><p>　　function Myclass2($x,$y) { 
+　　code; 
+　　} 
+</p><p>　　} 
+</p><p>　　通过在类中的额外的处理，使用这个类对用户是透明的： 
+</p><p>　　$obj1=new Myclass('1'); //将调用Myclass1 
+　　$obj2=new Myclass('1','2'); //将调用Myclass2 
+</p><p>　　有时这个非常好用。 
+</p><p><br />
+</p><p>多态
+</p><p><br />
+　　多态是对象的一种能力，它可以在运行时刻根据传递的对象参数，决定调用哪一个对象的方法。例如，如果你有一个figure的类，它定义了一个draw的方法。并且派生了circle和rectangle 类，在派生类中你覆盖了draw方法，你可能还有一个函数，它希望使用一个参数x，并且可以调用$x-&gt;draw() 。如果你有多态性，调用哪个draw方法就依赖于你传递给这个函数的对象类型。 
+</p><p>　　多态性在象PHP这样的解释语言(想象一下一个C++编译器生成这样的代码，你应该调用哪一个方法？你也不知道你拥有的对象是什么类型的，好，这不是重点)是非常容易和自然的。所以PHP当然支持多态性。 
+</p><p>　　&lt;?php 
+</p><p>　　function niceDrawing($x) { 
+　　//假设这是Board类的一个方法 
+　　$x-&gt;draw(); 
+　　} 
+</p><p>　　$obj=new Circle(3,187); 
+　　$obj2=new Rectangle(4,5); 
+　　$board-&gt;niceDrawing($obj); 
+</p><p>　　//将调用Circle的draw方法 
+</p><p>　　$board-&gt;niceDrawing($obj2); 
+</p><p>　　//将调用Rectangle的draw方法 
+</p><p>　　用PHP进行面向对象编程 
+</p><p>　　一些"纯化论者(purists)"可能会说PHP不是一个真正的面向对象的语言，这是事实。PHP 是一个混合型语言，你可以使用OOP，也可以使用传统的过程化编程。然而，对于大型项目，你可能想/需要在PHP 中使用纯的OOP去声明类，而且在你的项目只用对象和类。 
+</p><p>　　随着项目越来越大，使用OOP可能会有帮助，OOP代码很容易维护，容易理解和重用。这些就是软件工程的基础。在基于web的项目中应用这些概念就成为将来网站成功的关键。 
+</p><p>　
+</p><p>PHP的高级OOP技术
+</p><p><br />
+　　在看过基本的OOP概念后，我就可以向你展示更高级的技术： 
+</p><p>　　序列化(Serializing) 
+</p><p>　　PHP不支持永久对象，在OOP中永久对象是可以在多个应用的引用中保持状态和功能的对象，这意味着拥有将对象保存到一个文件或数据库中的能力，而且可以在以后装入对象。这就是所谓的序列化机制。PHP 拥有序列化方法，它可以通过对象进行调用，序列化方法可以返回对象的字符串表示。然而，序列化只保存了对象的成员数据而不包话方法。 
+</p><p>　　在PHP4中，如果你将对象序列化到字符串$s中，然后释放对象，接着反序列化对象到$obj，你可以继续使用对象的方法！我不建议这样去做，因为(a)文档中没有保证这种行为在以后的版本中仍然可以使用。(b) 这个可能导致一种误解，在你把一个序列化后的版本保存到磁盘并退出脚本时。当以后运行这个脚本时，你不能期待着在反序列化一个对象时，对象的方法也会在那里，因为字符串表示根本就不包括方法。 
+</p><p>　　总而言之，PHP 进行序列化对于保存对象的成员变量非常有用。(你也可以将相关数组和数组序列化到一个文件中)。 
+</p><p>　　例子&#160;: 
+</p><p>　　&lt;?php 
+</p><p>　　$obj=new Classfoo(); 
+</p><p>　　$str=serialize($obj); 
+</p><p>　　//保存$str到磁盘上 
+</p><p>　　//几个月以后 
+</p><p>　　//从磁盘中装入str 
+</p><p>　　$obj2=unserialize($str) 
+</p><p>　　你恢复了成员数据，但是不包括方法(根据文档所说)。这导致了只能通过类似于使用$obj2-&gt;x来存取成员变量(你没有别的方法！)的唯一办法，所以不要在家里试它。 
+</p><p>　　有一些办法可以解决这个问题，我把它留着，因为对这篇简洁的文章来说，他们太不好。我会很高兴地欢迎在PHP的后续版本中有全序列化的特性。 
+</p><p>　　使用类进行数据存储PHP和OOP一件非常好的事情就是，你可以很容易地定义一个类来操作某件事情，并且无论何时你想用的时候都可以调用相应的类。假设你有一个HTML表单，用户可以通过选择产品ID号来选择一个产品。在数据库中有产品的信息，你想把产品显示出来，显示它的价格等等。你拥有不同类型的产品，并且同一个动作可能对不同的产品具有不同的意思。例如，显示一个声音可能意味着播放它，但是对于其它种类的产品可能意味着显示一个存在数据库中的图片。你可以使用OOP或PHP来减少编码并提高质量： 
+</p><p>　　定义一个产品的类，定义它应该有的方法(例如：显示)，然后定义对每一种类型的产品的类，从产品类派后出来(SoundItem类，ViewableItem类，等等)，覆盖在产品类中的方法，使它们按你的想法动作。 
+</p><p>　　根据数据库中每一种产品的类型(type)字段给类命名，一个典型的产品表可能有(id, type, price, description, 等等字段)...然后在处理脚本中，你可以从数据库中取出type值，然后实例化一个名为type的对象： 
+</p><p>　　&lt;?php 
+</p><p>　　$obj=new $type(); 
+</p><p>　　$obj-&gt;action(); 
+</p><p>　　这是PHP的一个非常好的特性，你可以不用考虑对象的类型，调用$obj的显示方法或其它的方法。使用这个技术，你不需要修改脚本去增加一个新类型的对象，只是增加一个处理它的类。 
+</p><p>　　这个功能很强大，只要定义方法，而不去考虑所有对象的类型，在不同的类中按不同的方法实现它们，然后在主脚本中对任意对象使用它们，没有if...else，也不需要两个程序员，只有高兴。 
+</p><p>　　现在你同意编程是容易的，维护是便宜的，可重用是真的吗？ 
+</p><p>　　如果你管理一组程序员，分配工作就是很简单的了，每个人可能负责一个类型的对象和处理它的类。 
+</p><p>　　可以通过这个技术实现国际化，根据用户所选的语言字段应用相应的类就可以了，等等。 
+</p><p>　　拷贝和克隆 
+</p><p>　　当你创建一个$obj的对象时，你可以通过$obj2=$obj来拷贝对象，新的对象是$obj的一个拷贝(不是一个引用)，所以它具有$obj在当时的状态。有时候，你不想这样，你只是想生成一个象obj类一样的一个新的对象，可以通过使用new语句来调用类的构造函数。在PHP中也可以通过序列化，和一个基类来实现，但所有的其它类都要从基类派生出来。 
+</p><p>　　进入危险区域 
+</p><p>　　当你序列化一个对象，你会得到某种格式的字符串，如果你感兴趣，你可以调究它，其中，字符串中有类的名字(太好了！)，你可以把它取出来，象： 
+</p><p>　　&lt;?php 
+　　$herring=serialize($obj); 
+　　$vec=explode(':',$herring); 
+　　$nam=str_replace("\"",<i>,$vec[2]); </i>
+</p><p>　　所以假设你创建了一个"Universe"的类，并且强制所有的类都必须从universe扩展，你可以在universe 中定义一个clone的方法，如下： 
+</p><p>　　&lt;?php 
+　　class Universe { 
+　　function clone() { 
+　　$herring=serialize($this); 
+　　$vec=explode(':',$herring); 
+　　$nam=str_replace("\"",<i>,$vec[2]); </i>
+　　$ret=new $nam; 
+　　return $ret; 
+　　} 
+　　} 
+</p><p>　　//然后 
+</p><p>　　$obj=new Something(); 
+　　//从Universe扩展 
+　　$other=$obj-&gt;clone(); 
+</p><p>　　你所得到的是一个新的Something类的对象，它同使用new方法，调用构造函数创建出的对象一样。我不知道这个对你是否有用，但是Universe类可以知道派生类的名字是一个好的经验。想象是唯一的限制。
+</p>
+<pre>   &lt;?php echo date("Y-m-d H:i:s");?&gt;这个语句就是写入当前的时间。
+</pre>
+<p><br />
+PHP5的发展
+</p>
+<pre>     尽管PHP4的发展是如此迅猛，但较之于其他流行的开发语言还是缺乏一些关键的功能特性，比如，PHP4中的面向对象功能并不完善，也无法实现异常（Exception）的捕捉与处理。因此在一些特殊问题的处理上还是捉襟见肘的。
+</pre>
+<p>2004年7月，PHP5正式版本的发布，标志着一个全新的PHP时代的到来。它的核心是第二代Zend引擎，并引入了对全新的PECL模块的支持。PHP5的最大特点是引入了面向对象的全部机制，并且保留了向下的兼容性。程序员不必再编写缺乏功能性的类，并且能够以多种方法实现类的保护。另外，在对象的集成等方面也不再存在问题。使用PHP5引进了类型提示和异常处理机制，能更有效的处理和避免错误的发生。
+在不断更新的同时，PHP5依然保留对旧有的PHP4程序可以运行于PHP5的平台上而不会出现较大问题。随着MySQL数据库的发展，PHP5还绑定了新的MySQLi扩展模块，它提供了一些更加有效的方法和实用工具用于处理数据库操作。PHP5添加了面向对象的PDO模块，提供了另外一种数据库操作的方案，统一数据库操作的API。PHP5提供了数据库引擎SQLite扩展，直接用这个扩展就可以创建和使用SQLite数据库。这些方法大都以面向对象的方式实现，同时也极大地提高了基于数据库的Web项目的执行速度。
+另外，PHP5中还改进了创建动态图片的功能，目前能够支持多种图片格式（如PNG、GIF、TTIF、JPGE等）。PHP5以及内置了对GD2库的支持，因此安装GD2库（主要指UNIX系统中）也不再是件难事，这使得处理图像十分简单和高效。
+大多数Web程序开发者依然将XML作为一个彻底的简单数据库使用。PHP5中也采用了一系列简单易用、功能强大的方法处理XML文档。
+</p>
+<pre>   PHP5.2.0增加了JSON函数，更好的支持ajax。
+</pre>
+<p>今天，已经有包括Yahoo.com和Amazon.com等在内的数百万网站，以及众多的开发人员和编程爱好者正在使用PHP。从最初的PHP/FI到现在的PHP5，PHP的发展是及其迅猛的，其未来的发展前景也必定令人瞩目。
+</p><p><br />
+php的最新版本是5.2.5(2007-11-08更新) 
+php的官方网站：<a rel="nofollow" class="external free" href="http://www.php.net/">http://www.php.net/</a>
+</p><p>PHP：PHP是一种开放源代码的脚本编程语言。主要用于Web服务器的服务器端应用程序，用于动态网页设计，是一种嵌入HTML页面中的脚本语言。
+php时间：&lt;?php echo date()?&gt;
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 8/1000000
+Post-expand include size: 764/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:2807-0!*!0!*!*!*!* and timestamp 20150502093816 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=PHP&amp;oldid=11597">http://www.nocow.cn/index.php?title=PHP&amp;oldid=11597</a>”</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="特殊:页面分类">1个分类</a>: <ul><li><a href="/index.php/%E5%88%86%E7%B1%BB:%E9%9C%80%E8%A6%81%E5%85%B3%E6%B3%A8%E7%9A%84%E9%A1%B5%E9%9D%A2" title="分类:需要关注的页面">需要关注的页面</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/PHP" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:PHP&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=PHP&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=PHP&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Php" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/PHP" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/PHP" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=PHP&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=PHP&amp;oldid=11597" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过3,402次。</li>
+		<li id="credits">本页面由<a href="/index.php/%E7%94%A8%E6%88%B7:Cosechy" title="用户:Cosechy">yh</a>于2008年7月23日 (星期三) 00:04做出最后修改。 在<a href="/index.php?title=%E7%94%A8%E6%88%B7:Ymxdx&amp;action=edit&amp;redlink=1" class="new" title="用户:Ymxdx（尚未撰写）">丁骁</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.225 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

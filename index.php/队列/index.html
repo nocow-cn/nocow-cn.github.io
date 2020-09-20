@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>队列 - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=%E9%98%9F%E5%88%97&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=%E9%98%9F%E5%88%97&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "队列", "wgTitle": "队列", "wgCurRevisionId": 35382, "wgArticleId": 77, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["需要关注的页面", "线性表"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-队列 action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">队列</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><div style="text-align:center;margin:0px auto 10px;display:table"><span style="display:table-cell!important;display:inline-block;border:1px solid black;padding:0px 20px;background-color:gray;color:white"><p style="color:#f33">下面的部分章节<b>可能侵犯了<a href="/index.php/NOCOW:%E7%89%88%E6%9D%83%E9%97%AE%E9%A2%98" title="NOCOW:版权问题"><span style="color:hotpink">版权</span></a></b></p>
+<p>如果已经得到版权所有者许可，请注明<i>来源</i>以及<i>所有者关于版权的声明</i>（如果来源处已经写明可以省略）</p>
+<p>如果<b>不是</b>通过<a href="/index.php/%E5%B8%AE%E5%8A%A9:GFDL" title="帮助:GFDL" class="mw-redirect">GFDL</a>协议发布，请<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%A7%BB%E5%8A%A8%E9%A1%B5%E9%9D%A2/%E9%98%9F%E5%88%97" title="特殊:移动页面/队列">移动</a>到Article:名字空间，或者加上<b><a href="/index.php/%E6%A8%A1%E6%9D%BF:%E7%89%88%E6%9D%83%E6%89%80%E6%9C%89" title="模板:版权所有">版权所有</a></b>或者<b><a href="/index.php/%E6%A8%A1%E6%9D%BF:CC" title="模板:CC">Copyleft</a></b>模板</p>
+</span></div>
+<p><b>队列</b>（<b>queue</b>）在计算机科学中，是一种先进先出的线性表。和栈相反，它只允许在表的一端进行插入，而在表的另一端删除元素。队列是一种特殊的线性表，它只允许在表的前端（front）进行删除操作，而在表的后端（rear）进行插入操作。进行插入操作的端称为队尾，进行删除操作的端称为队头。队列中没有元素时，称为空队列。队列具有先进先出（FIFO）的特点。队列空的条件： front = rear队列满的条件： rear = MAXSIZE 
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E4.BB.8B.E7.BB.8D"><span class="tocnumber">1</span> <span class="toctext">介绍</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#.E7.AE.97.E6.B3.95.E4.BB.8B.E7.BB.8D"><span class="tocnumber">2</span> <span class="toctext">算法介绍</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#.E7.AE.97.E6.B3.95.E5.BA.94.E7.94.A8"><span class="tocnumber">3</span> <span class="toctext">算法应用</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#.E5.AE.9E.E7.8E.B0.E4.BE.8B.E5.AD.90"><span class="tocnumber">4</span> <span class="toctext">实现例子</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#.E5.BC.95.E7.94.A8"><span class="tocnumber">5</span> <span class="toctext">引用</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#.E7.9B.B8.E5.85.B3.E6.9D.A1.E7.9B.AE"><span class="tocnumber">6</span> <span class="toctext">相关条目</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="/index.php?title=%E9%98%9F%E5%88%97&amp;action=edit&amp;section=1" title="编辑段落：介绍">编辑</a>]</span> <span class="mw-headline" id=".E4.BB.8B.E7.BB.8D">介绍</span></h2>
+<p>队列可以用数组Q[1…ｍ]来存储，数组的上界ｍ即是队列所容许的最大容量。在队列的运算中需设两个指针：head：队头指针，指向实际队头元素的前一个位置tail：队尾指针，指向实际队尾元素所在的位置一般情况下，两个指针的初值设为０，这时队列为空，没有元素。画出了一个由６个元素构成的队列，数组定义Q[1…10]。Q(i) i=3,4,5,6,7,8头指针head＝2，尾指针tail＝8。队列中拥有的元素个数为:L=tail-head现要让排头的元素出队，则需将头指针加１。即head=head+1这时头指针向上移动一个位置，指向Q(3)，表示Q(3)已出队。如果想让一个新元素入队，则需尾指针向上移动一个位置。即tail=tail+1这时Q(9)入队。当队尾已经处理在最上面时，即tail=10，如果还要执行入队操作，则要发生"上溢"，但实际上队列中还有三个空位置，所以这种溢出称为"假溢出"。
+</p>
+<dl><dd>克服假溢出的方法有两种。一种是将队列中的所有元素均向低地址区移动，显然这种方法是很浪费时间的；另一种方法是将数组存储区看成是一个首尾相接的环形区域。当存放到n地址后，下一个地址就"翻转"为１。在结构上采用这种技巧来存储的队列称为循环队列
+</dd></dl>
+<h2><span class="editsection">[<a href="/index.php?title=%E9%98%9F%E5%88%97&amp;action=edit&amp;section=2" title="编辑段落：算法介绍">编辑</a>]</span> <span class="mw-headline" id=".E7.AE.97.E6.B3.95.E4.BB.8B.E7.BB.8D"> 算法介绍</span></h2>
+<p>循环队的入队算法如下：
+</p>
+<ol><li>tail=tail+1；
+</li><li>若tail=n+1，则tail=1；
+</li><li>若head=tail尾指针与头指针重合了，表示元素已装满队列， 则作上溢出错处理；
+</li><li>否则，Q(tail)=X，结束（X为新入出元素）。
+</li></ol>
+<p>队列和<a href="/index.php/%E6%A0%88" title="栈">栈</a>一样，有着非常广泛的应用。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=%E9%98%9F%E5%88%97&amp;action=edit&amp;section=3" title="编辑段落：算法应用">编辑</a>]</span> <span class="mw-headline" id=".E7.AE.97.E6.B3.95.E5.BA.94.E7.94.A8"> 算法应用</span></h2>
+<p>主要应用在广度优先搜索（或称宽度优先搜索）算法中。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=%E9%98%9F%E5%88%97&amp;action=edit&amp;section=4" title="编辑段落：实现例子">编辑</a>]</span> <span class="mw-headline" id=".E5.AE.9E.E7.8E.B0.E4.BE.8B.E5.AD.90"> 实现例子 </span></h2>
+<p>C++ 模板循环队列
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw2">template</span><span class="sy1">&lt;</span>classname T, <span class="kw4">int</span> SIZE<span class="sy1">&gt;</span>
+<span class="kw2">class</span> Queue <span class="br0">&#123;</span>
+<span class="kw2">public</span><span class="sy4">:</span>
+  Queue<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">:</span> qh<span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>, qr<span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="br0">&#123;</span><span class="br0">&#125;</span>
+  <span class="kw4">void</span> push<span class="br0">&#40;</span>T val<span class="br0">&#41;</span> <span class="br0">&#123;</span> _arr<span class="br0">&#91;</span>qr<span class="sy2">++%</span>SIZE<span class="br0">&#93;</span> <span class="sy1">=</span> val<span class="sy4">;</span> <span class="br0">&#125;</span>
+  T pop<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> _arr<span class="br0">&#123;</span>qh<span class="sy2">++%</span>SIZE<span class="br0">&#125;</span><span class="sy4">;</span> <span class="br0">&#125;</span>
+  <span class="kw4">bool</span> is_empty<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> qr<span class="sy1">==</span>qh<span class="sy4">;</span> <span class="br0">&#125;</span>
+  <span class="kw4">int</span> size<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> qr<span class="sy2">-</span>qh<span class="sy4">;</span> <span class="br0">&#125;</span>
+<span class="kw2">private</span><span class="sy4">:</span>
+  T _arr<span class="br0">&#91;</span>SIZE<span class="br0">&#93;</span><span class="sy4">;</span>
+  <span class="kw4">int</span> qh, qr<span class="sy4">;</span>
+<span class="br0">&#125;</span><span class="sy4">;</span></pre></div></div>
+<h2><span class="editsection">[<a href="/index.php?title=%E9%98%9F%E5%88%97&amp;action=edit&amp;section=5" title="编辑段落：引用">编辑</a>]</span> <span class="mw-headline" id=".E5.BC.95.E7.94.A8">引用</span></h2>
+<ul><li><a rel="nofollow" class="external text" href="http://www.baidu.com">baidu</a>
+</li></ul>
+<h2><span class="editsection">[<a href="/index.php?title=%E9%98%9F%E5%88%97&amp;action=edit&amp;section=6" title="编辑段落：相关条目">编辑</a>]</span> <span class="mw-headline" id=".E7.9B.B8.E5.85.B3.E6.9D.A1.E7.9B.AE">相关条目</span></h2>
+<ul><li><a href="/index.php/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97" title="优先队列">优先队列</a>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 40/1000000
+Post-expand include size: 770/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:77-0!*!0!!zh-cn!*!* and timestamp 20170808224806 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=%E9%98%9F%E5%88%97&amp;oldid=35382">http://www.nocow.cn/index.php?title=%E9%98%9F%E5%88%97&amp;oldid=35382</a>”</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="特殊:页面分类">2个分类</a>: <ul><li><a href="/index.php/%E5%88%86%E7%B1%BB:%E9%9C%80%E8%A6%81%E5%85%B3%E6%B3%A8%E7%9A%84%E9%A1%B5%E9%9D%A2" title="分类:需要关注的页面">需要关注的页面</a></li><li><a href="/index.php/%E5%88%86%E7%B1%BB:%E7%BA%BF%E6%80%A7%E8%A1%A8" title="分类:线性表">线性表</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/%E9%98%9F%E5%88%97" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:%E9%98%9F%E5%88%97&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=%E9%98%9F%E5%88%97&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=%E9%98%9F%E5%88%97&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=%E9%98%9F%E5%88%97" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/%E9%98%9F%E5%88%97" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/%E9%98%9F%E5%88%97" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=%E9%98%9F%E5%88%97&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=%E9%98%9F%E5%88%97&amp;oldid=35382" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过12,106次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/54.173.35.129" title="特殊:用户贡献/54.173.35.129">54.173.35.129</a>于2014年10月25日 (星期六) 01:49做出最后修改。 在<a href="/index.php/%E7%94%A8%E6%88%B7:Cosechy" title="用户:Cosechy">yh</a>和<a href="/index.php?title=%E7%94%A8%E6%88%B7:Dreamcast&amp;action=edit&amp;redlink=1" class="new" title="用户:Dreamcast（尚未撰写）">程晨</a>、NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/116.231.84.38" title="特殊:用户贡献/116.231.84.38">116.231.84.38</a>和<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/71.227.154.60" title="特殊:用户贡献/71.227.154.60">71.227.154.60</a>和<a href="/index.php?title=%E9%98%9F%E5%88%97&amp;action=credits" title="队列">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.202 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>广度优先搜索 - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="canonical" href="/index.php/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "广度优先搜索", "wgTitle": "广度优先搜索", "wgCurRevisionId": 23679, "wgArticleId": 21, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["图论"], "wgBreakFrames": false, "wgRestrictionEdit": ["autoconfirmed"], "wgRestrictionMove": ["autoconfirmed"]});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for pascal
+ * CSS class: source-pascal, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.pascal.source-pascal .de1, .pascal.source-pascal .de2 {}
+.pascal.source-pascal  {font-family:monospace;}
+.pascal.source-pascal .imp {font-weight: bold; color: red;}
+.pascal.source-pascal li, .pascal.source-pascal .li1 {font-weight: normal; vertical-align:top;}
+.pascal.source-pascal .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.pascal.source-pascal .li2 {font-weight: bold; vertical-align:top;}
+.pascal.source-pascal .kw1 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw2 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw3 {color: #000066;}
+.pascal.source-pascal .kw4 {color: #000066; font-weight: bold;}
+.pascal.source-pascal .co1 {color: #666666; font-style: italic;}
+.pascal.source-pascal .coMULTI {color: #666666; font-style: italic;}
+.pascal.source-pascal .es0 {color: #000099; font-weight: bold;}
+.pascal.source-pascal .es_h {color: #000099; font-weight: bold;}
+.pascal.source-pascal .br0 {color: #009900;}
+.pascal.source-pascal .sy0 {color: #339933;}
+.pascal.source-pascal .st0 {color: #ff0000;}
+.pascal.source-pascal .st_h {color: #ff0000;}
+.pascal.source-pascal .nu0 {color: #cc66cc;}
+.pascal.source-pascal .me1 {color: #0066ee;}
+.pascal.source-pascal .ln-xtra, .pascal.source-pascal li.ln-xtra, .pascal.source-pascal div.ln-xtra {background-color: #ffc;}
+.pascal.source-pascal span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-广度优先搜索 action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">广度优先搜索</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub">(跳转自<a href="/index.php?title=%E5%AE%BD%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2&amp;redirect=no" title="宽度优先搜索">宽度优先搜索</a>)</div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E4.BB.8B.E7.BB.8D"><span class="tocnumber">1</span> <span class="toctext">介绍</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#.E7.AE.97.E6.B3.95.E5.AE.9E.E4.BE.8B.EF.BC.9A"><span class="tocnumber">2</span> <span class="toctext">算法实例：</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#.E9.99.84.EF.BC.9A.E5.8F.8C.E5.90.91.E5.B9.BF.E5.BA.A6.E4.BC.98.E5.85.88.E6.90.9C.E7.B4.A2"><span class="tocnumber">3</span> <span class="toctext">附：双向广度优先搜索</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#.E7.AE.97.E6.B3.95.E4.BB.8B.E7.BB.8D"><span class="tocnumber">4</span> <span class="toctext">算法介绍</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id=".E4.BB.8B.E7.BB.8D"> <b>介绍</b> </span></h2>
+<hr />
+<p><b>广度优先搜索法（BFS）</b>
+</p>
+<pre>在深度优先搜索算法中，是深度越大的结点越先得到扩展。如果在搜索中把算法改为按结点的层次进行搜索， 
+本层的结点  没有搜索处理完时，不能对下层结点进行处理，即深度越小的结点越先得到扩展，也就是说先产生 
+的结点先得以扩展处，  这种搜索算法称为广度优先搜索法。英语中用Breadth-First-Search表示，所以我们 
+也把广度优先搜索法简称为BFS。
+</pre>
+<p>广度优先搜索基本算法：
+</p><p>1）从某个顶点出发开始访问，被访问的顶点作相应的标记，并输出访问顶点号；
+</p><p>2）从被访问的顶点出发，依次搜索与该顶点有边的关联的所有未被访问的邻接点，并作相应的标记。
+</p><p>3）再依次根据2）中所有被访问的邻接点，访问与这些邻接点相关的所有未被访问的邻接点，直到所有顶点被访问为止。
+</p><p>【算法过程】 
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="kw1">program</span> bfs;
+<span class="kw1">var</span>
+  head<span class="sy0">,</span>tail<span class="sy0">,</span>i<span class="sy0">:</span><span class="kw4">longint</span>;
+  a<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">0</span>..<span class="me1">max</span><span class="br0">&#93;</span> <span class="kw1">of</span> 结点;
+<span class="kw1">begin</span>
+  赋值初始结点a<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>
+  head<span class="sy0">:=-</span><span class="nu0">1</span>;
+  tail<span class="sy0">:=</span><span class="nu0">1</span>;
+  <span class="kw1">repeat</span>
+    inc<span class="br0">&#40;</span>head<span class="br0">&#41;</span>; <span class="co1">//提取一个没有访问过的结点。</span>
+     <span class="kw1">if</span> <span class="br0">&#40;</span>当前结点有子结点<span class="br0">&#41;</span> <span class="kw1">then</span>
+    <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> 最大可扩展结点数 <span class="kw1">do</span><span class="co1">//扩展当前结点的每个子结点 </span>
+       <span class="kw1">if</span> <span class="br0">&#40;</span>该子结点并没有出现过<span class="br0">&#41;</span> <span class="kw1">then</span>
+      <span class="kw1">begin</span>
+        inc<span class="br0">&#40;</span>tail<span class="br0">&#41;</span>;
+        a<span class="br0">&#91;</span>tail<span class="br0">&#93;</span><span class="sy0">:=</span>新结点 
+       <span class="kw1">end</span>;
+  <span class="kw1">until</span> head<span class="sy0">=</span>tail；<span class="co1">//所有结点已生成。</span>
+<span class="kw1">end</span>.</pre></div></div>
+<p>(ABOVE FROM <a rel="nofollow" class="external free" href="http://noip.tanghu.net/aosai/shuanfa/024.htm">http://noip.tanghu.net/aosai/shuanfa/024.htm</a>)
+</p>
+<hr />
+<h2> <span class="mw-headline" id=".E7.AE.97.E6.B3.95.E5.AE.9E.E4.BE.8B.EF.BC.9A"> 算法实例： </span></h2>
+<hr />
+<p><br />
+</p><p>问题描述：
+有A，B，C三个桶，容量分别为3L，7L，10L。现C桶有10L水。要求在水只能在桶间转移的前提下，使得C桶与B桶平分10L水。求最简洁操作。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="kw1">program</span> BFS;
+<span class="kw1">const</span>
+	v<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">1</span>..<span class="nu0">3</span><span class="br0">&#93;</span> <span class="kw1">of</span> <span class="kw4">integer</span><span class="sy0">=</span> <span class="br0">&#40;</span><span class="nu0">3</span><span class="sy0">,</span><span class="nu0">7</span><span class="sy0">,</span><span class="nu0">10</span><span class="br0">&#41;</span>; <span class="co1">//三种桶的容量。</span>
+<span class="kw1">type</span>
+	node<span class="sy0">=</span><span class="kw4">record</span>
+		l<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">1</span>..<span class="nu0">3</span><span class="br0">&#93;</span> <span class="kw1">of</span> <span class="kw4">longint</span>;<span class="co1">//三个水桶。</span>
+		p<span class="sy0">:</span><span class="kw4">longint</span>;<span class="co1">//每个结点的父结点。</span>
+	     <span class="kw1">end</span>;
+<span class="kw1">var</span>
+	i<span class="sy0">,</span>j<span class="sy0">,</span>head<span class="sy0">,</span>tail<span class="sy0">:</span><span class="kw4">longint</span>;
+	t<span class="sy0">:</span><span class="kw4">boolean</span>; <span class="co1">//找到目标的标志。</span>
+	a<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">0</span>..<span class="nu0">100</span><span class="br0">&#93;</span> <span class="kw1">of</span> node;
+&#160;
+<span class="kw1">procedure</span> init;
+<span class="kw1">var</span>
+	i<span class="sy0">,</span>j<span class="sy0">:</span><span class="kw4">longint</span>;
+<span class="kw1">begin</span>
+	fillchar<span class="br0">&#40;</span>a<span class="sy0">,</span>sizeof<span class="br0">&#40;</span>a<span class="br0">&#41;</span><span class="sy0">,</span><span class="nu0">0</span><span class="br0">&#41;</span>;
+	t<span class="sy0">:=</span><span class="kw2">false</span>;
+	a<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>.<span class="me1">l</span><span class="br0">&#91;</span><span class="nu0">3</span><span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">10</span>;
+	head<span class="sy0">:=-</span><span class="nu0">1</span>;
+	tail<span class="sy0">:=</span><span class="nu0">0</span>;
+<span class="kw1">end</span>;
+&#160;
+<span class="kw1">procedure</span> pour<span class="br0">&#40;</span>x<span class="sy0">,</span>y<span class="sy0">:</span><span class="kw4">longint</span><span class="br0">&#41;</span>;
+<span class="kw1">var</span>
+	i<span class="sy0">,</span>j<span class="sy0">:</span><span class="kw4">longint</span>;
+<span class="kw1">begin</span>
+	<span class="kw1">if</span> <span class="br0">&#40;</span>a<span class="br0">&#91;</span>head<span class="br0">&#93;</span>.<span class="me1">l</span><span class="br0">&#91;</span>x<span class="br0">&#93;</span><span class="sy0">=</span><span class="nu0">0</span><span class="br0">&#41;</span> <span class="kw1">or</span> t <span class="kw1">then</span> exit;
+&#160;
+	inc<span class="br0">&#40;</span>tail<span class="br0">&#41;</span>;
+	a<span class="br0">&#91;</span>tail<span class="br0">&#93;</span><span class="sy0">:=</span>a<span class="br0">&#91;</span>head<span class="br0">&#93;</span>;
+	a<span class="br0">&#91;</span>tail<span class="br0">&#93;</span>.<span class="me1">p</span><span class="sy0">:=</span>head;
+&#160;
+	<span class="kw1">if</span> a<span class="br0">&#91;</span>tail<span class="br0">&#93;</span>.<span class="me1">l</span><span class="br0">&#91;</span>x<span class="br0">&#93;</span>&gt;v<span class="br0">&#91;</span>y<span class="br0">&#93;</span><span class="sy0">-</span>a<span class="br0">&#91;</span>tail<span class="br0">&#93;</span>.<span class="me1">l</span><span class="br0">&#91;</span>y<span class="br0">&#93;</span> <span class="kw1">then</span>
+	<span class="kw1">begin</span>
+		dec<span class="br0">&#40;</span>a<span class="br0">&#91;</span>tail<span class="br0">&#93;</span>.<span class="me1">l</span><span class="br0">&#91;</span>x<span class="br0">&#93;</span><span class="sy0">,</span>v<span class="br0">&#91;</span>y<span class="br0">&#93;</span><span class="sy0">-</span>a<span class="br0">&#91;</span>tail<span class="br0">&#93;</span>.<span class="me1">l</span><span class="br0">&#91;</span>y<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+		a<span class="br0">&#91;</span>tail<span class="br0">&#93;</span>.<span class="me1">l</span><span class="br0">&#91;</span>y<span class="br0">&#93;</span><span class="sy0">:=</span>v<span class="br0">&#91;</span>y<span class="br0">&#93;</span>;
+        <span class="kw1">end</span> <span class="kw1">else</span>
+	<span class="kw1">begin</span>
+		inc<span class="br0">&#40;</span>a<span class="br0">&#91;</span>tail<span class="br0">&#93;</span>.<span class="me1">l</span><span class="br0">&#91;</span>y<span class="br0">&#93;</span><span class="sy0">,</span>a<span class="br0">&#91;</span>tail<span class="br0">&#93;</span>.<span class="me1">l</span><span class="br0">&#91;</span>x<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+                a<span class="br0">&#91;</span>tail<span class="br0">&#93;</span>.<span class="me1">l</span><span class="br0">&#91;</span>x<span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">0</span>;
+	<span class="kw1">end</span>;
+	<span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">0</span> <span class="kw1">to</span> tail<span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">do</span> <span class="co1">//检查该状态是否出现过，是的话删除。</span>
+        <span class="kw1">begin</span>
+		<span class="kw1">if</span> a<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">=</span>a<span class="br0">&#91;</span>tail<span class="br0">&#93;</span> <span class="kw1">then</span>
+		<span class="kw1">begin</span>
+			dec<span class="br0">&#40;</span>tail<span class="br0">&#41;</span>;
+			exit;
+		<span class="kw1">end</span>;
+	<span class="kw1">end</span>;
+       <span class="kw1">if</span> a<span class="br0">&#91;</span>tail<span class="br0">&#93;</span>.<span class="me1">l</span><span class="br0">&#91;</span><span class="nu0">3</span><span class="br0">&#93;</span><span class="sy0">=</span><span class="nu0">5</span> <span class="kw1">then</span> t<span class="sy0">:=</span><span class="kw2">true</span>;
+<span class="kw1">end</span>;
+&#160;
+<span class="kw1">procedure</span> main;
+<span class="kw1">var</span>
+	i<span class="sy0">,</span>j<span class="sy0">:</span><span class="kw4">longint</span>;
+<span class="kw1">begin</span>
+	<span class="kw1">repeat</span>
+		inc<span class="br0">&#40;</span>head<span class="br0">&#41;</span>;
+		pour<span class="br0">&#40;</span><span class="nu0">1</span><span class="sy0">,</span><span class="nu0">2</span><span class="br0">&#41;</span>; <span class="co1">//pour函数的作用是尝试把x桶里的水倒入y桶，看能不能产生新的状态。</span>
+		pour<span class="br0">&#40;</span><span class="nu0">2</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+		pour<span class="br0">&#40;</span><span class="nu0">1</span><span class="sy0">,</span><span class="nu0">3</span><span class="br0">&#41;</span>;
+		pour<span class="br0">&#40;</span><span class="nu0">3</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+		pour<span class="br0">&#40;</span><span class="nu0">2</span><span class="sy0">,</span><span class="nu0">3</span><span class="br0">&#41;</span>;
+		pour<span class="br0">&#40;</span><span class="nu0">3</span><span class="sy0">,</span><span class="nu0">2</span><span class="br0">&#41;</span>;
+	<span class="kw1">until</span> <span class="br0">&#40;</span>a<span class="br0">&#91;</span>tail<span class="br0">&#93;</span>.<span class="me1">l</span><span class="br0">&#91;</span><span class="nu0">3</span><span class="br0">&#93;</span><span class="sy0">=</span><span class="nu0">5</span><span class="br0">&#41;</span> <span class="kw1">or</span> <span class="br0">&#40;</span>tail<span class="sy0">=</span><span class="nu0">100</span><span class="br0">&#41;</span>; <span class="co1">//当找到目标或者已经超出预定的搜索范围的时候退出。</span>
+<span class="kw1">end</span>;
+&#160;
+<span class="kw1">procedure</span> print;
+<span class="kw1">var</span>
+	c<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">1</span>..<span class="nu0">100</span><span class="br0">&#93;</span> <span class="kw1">of</span> <span class="kw4">longint</span>;
+	i<span class="sy0">,</span>j<span class="sy0">:</span><span class="kw4">longint</span>;
+<span class="kw1">begin</span>
+	i<span class="sy0">:=</span><span class="nu0">0</span>;
+	<span class="kw1">while</span> a<span class="br0">&#91;</span>tail<span class="br0">&#93;</span>.<span class="me1">p</span>&lt;&gt;<span class="nu0">0</span> <span class="kw1">do</span>
+	<span class="kw1">begin</span>
+		inc<span class="br0">&#40;</span>i<span class="br0">&#41;</span>;
+		c<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">:=</span>tail;
+		tail<span class="sy0">:=</span>a<span class="br0">&#91;</span>tail<span class="br0">&#93;</span>.<span class="me1">p</span>;
+	<span class="kw1">end</span>;
+	<span class="kw1">for</span> j<span class="sy0">:=</span>i <span class="kw1">downto</span> <span class="nu0">1</span> <span class="kw1">do</span> <span class="kw3">writeln</span><span class="br0">&#40;</span>a<span class="br0">&#91;</span>c<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="br0">&#93;</span>.<span class="me1">l</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">' '</span><span class="sy0">,</span>a<span class="br0">&#91;</span>c<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="br0">&#93;</span>.<span class="me1">l</span><span class="br0">&#91;</span><span class="nu0">2</span><span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">' '</span><span class="sy0">,</span>a<span class="br0">&#91;</span>c<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="br0">&#93;</span>.<span class="me1">l</span><span class="br0">&#91;</span><span class="nu0">3</span><span class="br0">&#93;</span><span class="br0">&#41;</span>;
+<span class="kw1">end</span>;
+&#160;
+<span class="kw1">begin</span>
+	init;
+	main;
+	print;
+<span class="kw1">end</span>.</pre></div></div>
+<hr />
+<h2> <span class="mw-headline" id=".E9.99.84.EF.BC.9A.E5.8F.8C.E5.90.91.E5.B9.BF.E5.BA.A6.E4.BC.98.E5.85.88.E6.90.9C.E7.B4.A2"> 附：双向广度优先搜索 </span></h2>
+<hr />
+<p><br />
+<b>双向广度优先搜索（BIBFS）</b>是指搜索沿两个方向同时进行：
+</p>
+<pre>正向搜索：从初始结点向目标结点方向的搜索；
+逆向搜索：从目标结点向初始结点方向搜索；
+</pre>
+<p>双向广度优先搜索的数据结构要比单向的广度优先搜索复杂一些。由于双向广度优先搜索在搜索的过程中形成两棵方向相反的解答树，因此必
+</p><p>须设置四张表：
+</p>
+<pre>OPEN0表，CLOSE0表——储存正向搜索中产生的待扩展以及已扩展的结点
+OPEN1表，CLOSE1表——储存逆向搜索中产生的待扩展以及已扩展的结点
+</pre>
+<p>其中设置CL[0，0]，OP[0，0]，CL[1，0]，OP[1，0]为指针。
+</p>
+<hr />
+<h2> <span class="mw-headline" id=".E7.AE.97.E6.B3.95.E4.BB.8B.E7.BB.8D"> 算法介绍 </span></h2>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="kw1">procedure</span> print<span class="br0">&#40;</span>st<span class="sy0">,</span>k<span class="sy0">:</span><span class="kw4">integer</span><span class="br0">&#41;</span>;
+<span class="kw1">begin</span>
+	<span class="kw1">if</span> k&lt;&gt;<span class="nu0">1</span> <span class="kw1">then</span>
+	<span class="kw1">begin</span>
+		<span class="kw1">if</span> st<span class="sy0">=</span><span class="nu0">1</span> <span class="kw1">then</span> 输出list<span class="br0">&#91;</span>st<span class="sy0">,</span>k<span class="br0">&#93;</span>.<span class="me1">state</span> <span class="co1">//逆向搜索,按 f 指针输出 list[1,k]...list[1,1]路径</span>
+		print<span class="br0">&#40;</span>st<span class="sy0">,</span>list<span class="br0">&#91;</span>st<span class="sy0">,</span>k<span class="br0">&#93;</span>.<span class="me1">f</span><span class="br0">&#41;</span>;
+		<span class="kw1">if</span> st<span class="sy0">=</span><span class="nu0">0</span> <span class="kw1">then</span> 输出list<span class="br0">&#91;</span>st<span class="sy0">,</span>k<span class="br0">&#93;</span>.<span class="me1">state</span> <span class="co1">//正向搜索,输出 list[0,k]...list[0,1]</span>
+	<span class="kw1">end</span>;
+<span class="kw1">end</span>;
+&#160;
+<span class="kw1">procedure</span> check<span class="br0">&#40;</span>st<span class="sy0">:</span><span class="nu0">0</span>..<span class="nu0">1</span><span class="br0">&#41;</span>;
+<span class="kw1">var</span>
+	i<span class="sy0">:</span><span class="kw4">integer</span>;
+<span class="kw1">begin</span>
+	<span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> op<span class="br0">&#91;</span><span class="nu0">1</span>.<span class="me1">st</span><span class="br0">&#93;</span><span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">do</span> <span class="co1">//检查 st 相反方向扩展的每一个结点。</span>
+		<span class="kw1">if</span> list<span class="br0">&#91;</span>st<span class="sy0">,</span>op<span class="br0">&#91;</span><span class="nu0">1</span>.<span class="me1">st</span><span class="br0">&#93;</span><span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">then</span>
+			<span class="kw1">if</span> list<span class="br0">&#91;</span>st<span class="sy0">,</span>op<span class="br0">&#91;</span>st<span class="br0">&#93;</span><span class="br0">&#93;</span>.<span class="me1">state</span>相交于list<span class="br0">&#91;</span><span class="nu0">1</span><span class="sy0">-</span>st<span class="sy0">,</span>i<span class="br0">&#93;</span>.<span class="me1">state</span> <span class="kw1">then</span>
+			<span class="kw1">begin</span>
+				<span class="kw1">if</span> st<span class="sy0">=</span><span class="nu0">0</span> <span class="kw1">then</span>
+				<span class="kw1">begin</span> 
+					print<span class="br0">&#40;</span>o<span class="sy0">,</span>op<span class="br0">&#91;</span>st<span class="br0">&#93;</span><span class="br0">&#41;</span>; <span class="co1">//当前为正方向,则先输出 list[0..1]..list[0,op[st]],然后输出list[1,i]..list[1,1]</span>
+					print<span class="br0">&#40;</span><span class="nu0">1</span><span class="sy0">,</span>i<span class="br0">&#41;</span>;
+				<span class="kw1">end</span> <span class="kw1">else</span>
+				<span class="kw1">begin</span>
+					print<span class="br0">&#91;</span><span class="nu0">0</span><span class="sy0">,</span>i<span class="br0">&#93;</span>;<span class="co1">//当前为逆方向。</span>
+					print<span class="br0">&#91;</span><span class="nu0">1</span><span class="sy0">,</span>op<span class="br0">&#91;</span>st<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+				<span class="kw1">end</span>;
+				halt;
+			<span class="kw1">end</span>;
+<span class="kw1">end</span>;
+&#160;
+<span class="kw1">procedure</span> expand<span class="br0">&#40;</span>st<span class="sy0">:</span><span class="nu0">0</span>..<span class="nu0">1</span><span class="br0">&#41;</span>;
+<span class="kw1">begin</span>
+	q<span class="sy0">:=</span>list<span class="br0">&#40;</span>st<span class="sy0">,</span>cl<span class="br0">&#91;</span>st<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+	<span class="kw1">while</span> <span class="br0">&#40;</span>q结点可以扩展<span class="br0">&#41;</span> <span class="kw3">and</span> <span class="br0">&#40;</span>op<span class="br0">&#91;</span>st<span class="br0">&#93;</span>&lt;maxn<span class="br0">&#41;</span> <span class="kw1">do</span>
+	<span class="kw1">begin</span>
+		沿 st 方向扩展出 q 的子结点 qt.<span class="me1">state</span>;
+		list<span class="br0">&#91;</span>st<span class="sy0">,</span>op<span class="br0">&#91;</span>st<span class="br0">&#93;</span><span class="br0">&#93;</span>.<span class="me1">state</span><span class="sy0">:=</span>qt.<span class="me1">state</span>;
+		list<span class="br0">&#91;</span>st<span class="sy0">,</span>op<span class="br0">&#91;</span>st<span class="br0">&#93;</span><span class="br0">&#93;</span>.<span class="me1">father</span><span class="sy0">:=</span>cl<span class="br0">&#91;</span>st<span class="br0">&#93;</span>;
+		check<span class="br0">&#40;</span>st<span class="br0">&#41;</span>;<span class="co1">//两个方向搜索相交于qt则输出。</span>
+		op<span class="br0">&#91;</span>st<span class="br0">&#93;</span><span class="sy0">:=</span>sp<span class="br0">&#91;</span>st<span class="br0">&#93;</span><span class="sy0">+</span><span class="nu0">1</span>;
+	<span class="kw1">end</span>;
+	cl<span class="br0">&#91;</span>st<span class="br0">&#93;</span><span class="sy0">:=</span>cl<span class="br0">&#91;</span>st<span class="br0">&#93;</span><span class="sy0">+</span><span class="nu0">1</span>
+<span class="kw1">end</span>;
+&#160;
+<span class="kw1">begin</span>
+	list<span class="br0">&#91;</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">:=</span>起始状态;
+	list<span class="br0">&#91;</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#93;</span>.<span class="me1">father</span><span class="sy0">:=</span><span class="nu0">0</span>;
+	op<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">=</span><span class="nu0">2</span>;
+	cl<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">1</span>;
+	list<span class="br0">&#91;</span><span class="nu0">1</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">:=</span>目标状态;
+	list<span class="br0">&#91;</span><span class="nu0">1</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#93;</span>.<span class="me1">father</span><span class="sy0">:=</span><span class="nu0">0</span>;
+	op<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">=</span><span class="nu0">2</span>;
+	cl<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">1</span>;
+&#160;
+	<span class="kw1">while</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>op<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>&lt;<span class="sy0">=</span>maxn<span class="br0">&#41;</span> <span class="kw3">and</span> <span class="br0">&#40;</span>cl<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>&lt;op<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="kw1">or</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>op<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span>&lt;<span class="sy0">=</span>maxn<span class="br0">&#41;</span> <span class="kw3">and</span> <span class="br0">&#40;</span>cl<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span>&lt;op<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="kw1">do</span> <span class="kw1">if</span> op<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>&lt;op<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="kw1">then</span> expand<span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>
+												       <span class="kw1">else</span> expand<span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+<span class="kw1">end</span>.</pre></div></div>
+<div style="margin:15px auto 20px;border:1px solid #c3c3c3;background-color:#f5f5f5;-moz-border-radius:7px;padding:0px;"><div style="background:#c3c3c3;padding-left:10px;-moz-border-radius-topleft:5px;-moz-border-radius-topright:5px;display:block!important;display:block;display:inline-block!ie">
+<div style="float:right"><a rel="nofollow" class="external text" href="http://www.nocow.cn/index.php?title=%E6%A8%A1%E6%9D%BF:%E5%9B%BE%E8%AE%BA&amp;action=edit">[编辑]</a></div> <b><a href="/index.php/%E5%9B%BE%E8%AE%BA" title="图论">图论</a>及<a href="/index.php/%E5%9B%BE%E8%AE%BA" title="图论">图论算法</a></b></div>
+<div style="padding:5px 20px">
+<p><b><a href="/index.php/%E5%9B%BE" title="图">图</a></b> - <b><a href="/index.php/%E6%9C%89%E5%90%91%E5%9B%BE" title="有向图">有向图</a></b> - <b><a href="/index.php/%E6%97%A0%E5%90%91%E5%9B%BE" title="无向图">无向图</a></b> - <b><a href="/index.php/%E8%BF%9E%E9%80%9A%E5%9B%BE" title="连通图">连通图</a></b> - <b><a href="/index.php/%E5%BC%BA%E8%BF%9E%E9%80%9A%E5%9B%BE" title="强连通图">强连通图</a></b> - <b><a href="/index.php/%E5%AE%8C%E5%85%A8%E5%9B%BE" title="完全图">完全图</a></b> - <b><a href="/index.php/%E7%A8%80%E7%96%8F%E5%9B%BE" title="稀疏图">稀疏图</a></b> - <b><a href="/index.php/%E9%9B%B6%E5%9B%BE" title="零图">零图</a></b> - <b><a href="/index.php/%E6%A0%91" title="树">树</a></b> - <b><a href="/index.php/%E7%BD%91%E7%BB%9C%E6%B5%81" title="网络流">网络</a></b>
+</p><p><b>基本<a href="/index.php/%E9%81%8D%E5%8E%86" title="遍历">遍历</a>算法：</b><a href="/index.php/%E5%AE%BD%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2" title="宽度优先搜索" class="mw-redirect">宽度优先搜索</a> - <a href="/index.php/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2" title="深度优先搜索">深度优先搜索</a> - <a href="/index.php/A*" title="A*">A*</a> - <b><a href="/index.php/%E5%B9%B6%E6%9F%A5%E9%9B%86" title="并查集">并查集</a>求<a href="/index.php/%E8%BF%9E%E9%80%9A%E5%88%86%E6%94%AF" title="连通分支">连通分支</a></b> - <b><a href="/index.php/Flood_Fill" title="Flood Fill">Flood Fill</a></b>
+</p><p><b><a href="/index.php/%E6%9C%80%E7%9F%AD%E8%B7%AF" title="最短路" class="mw-redirect">最短路</a>：</b><a href="/index.php/Dijkstra%E7%AE%97%E6%B3%95" title="Dijkstra算法">Dijkstra</a> - <a href="/index.php/Bellman-Ford%E7%AE%97%E6%B3%95" title="Bellman-Ford算法">Bellman-Ford</a>（<a href="/index.php/SPFA" title="SPFA" class="mw-redirect">SPFA</a>） - <a href="/index.php/Floyd-Warshall%E7%AE%97%E6%B3%95" title="Floyd-Warshall算法">Floyd-Warshall</a> - <a href="/index.php/Johnson%E7%AE%97%E6%B3%95" title="Johnson算法">Johnson算法</a>
+</p><p><b><a href="/index.php/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91" title="最小生成树">最小生成树</a>：</b><a href="/index.php/Prim%E7%AE%97%E6%B3%95" title="Prim算法">Prim</a> - <a href="/index.php/Kruskal%E7%AE%97%E6%B3%95" title="Kruskal算法">Kruskal</a>
+</p><p><b><a href="/index.php/%E5%BC%BA%E8%BF%9E%E9%80%9A%E5%88%86%E6%94%AF" title="强连通分支">强连通分支</a>：</b><a href="/index.php/Kosaraju%E7%AE%97%E6%B3%95" title="Kosaraju算法">Kosaraju</a> - <a href="/index.php/Gabow%E7%AE%97%E6%B3%95" title="Gabow算法">Gabow</a> - <a href="/index.php/Tarjan%E7%AE%97%E6%B3%95" title="Tarjan算法">Tarjan</a>
+</p><p><b><a href="/index.php/%E7%BD%91%E7%BB%9C%E6%B5%81" title="网络流">网络流</a>：</b><a href="/index.php?title=%E5%A2%9E%E5%B9%BF%E8%B7%AF%E6%B3%95&amp;action=edit&amp;redlink=1" class="new" title="增广路法（尚未撰写）">增广路法</a>（<a href="/index.php/Ford-Fulkerson%E7%AE%97%E6%B3%95" title="Ford-Fulkerson算法" class="mw-redirect">Ford-Fulkerson</a>，<a href="/index.php/Edmonds-Karp%E7%AE%97%E6%B3%95" title="Edmonds-Karp算法">Edmonds-Karp</a>，<a href="/index.php/Dinic%E7%AE%97%E6%B3%95" title="Dinic算法">Dinic</a>） - <a href="/index.php/%E9%A2%84%E6%B5%81%E6%8E%A8%E8%BF%9B%E7%AE%97%E6%B3%95" title="预流推进算法">预流推进</a> - <a href="/index.php/Relabel-to-front" title="Relabel-to-front">Relabel-to-front</a>
+</p><p><b>图<a href="/index.php/%E5%8C%B9%E9%85%8D" title="匹配">匹配</a> - <a href="/index.php/%E4%BA%8C%E5%88%86%E5%9B%BE%E5%8C%B9%E9%85%8D" title="二分图匹配">二分图匹配</a>：</b><a href="/index.php/%E5%8C%88%E7%89%99%E5%88%A9%E7%AE%97%E6%B3%95" title="匈牙利算法">匈牙利算法</a> - <a href="/index.php/Kuhn-Munkres%E7%AE%97%E6%B3%95" title="Kuhn-Munkres算法">Kuhn-Munkres</a> - <a href="/index.php/Edmonds%27_Blossom-Contraction" title="Edmonds' Blossom-Contraction">Edmonds' Blossom-Contraction</a>
+</p>
+</div></div>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 46/1000000
+Post-expand include size: 1718/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:21-0!*!0!!zh-cn!*!* and timestamp 20170323152537 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2&amp;oldid=23679">http://www.nocow.cn/index.php?title=%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2&amp;oldid=23679</a>”</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="特殊:页面分类">1个分类</a>: <ul><li><a href="/index.php/%E5%88%86%E7%B1%BB:%E5%9B%BE%E8%AE%BA" title="分类:图论">图论</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk"><a href="/index.php/%E8%AE%A8%E8%AE%BA:%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-viewsource"><a href="/index.php?title=%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2&amp;action=edit" title="本页面已被保护。你可以查看其源代码。 [e]" accesskey="e">查看源代码</a></li>
+				<li id="ca-history"><a href="/index.php?title=%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=%E5%AE%BD%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2&amp;oldid=23679" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过18,797次。</li>
+		<li id="credits">本页面由NOCOW用户<a href="/index.php/%E7%94%A8%E6%88%B7:Cotton" title="用户:Cotton">Cotton</a>于2010年11月20日 (星期六) 20:12做出最后修改。 在<a href="/index.php/%E7%94%A8%E6%88%B7:Ymfoi" title="用户:Ymfoi">ymf</a>、NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/222.212.103.64" title="特殊:用户贡献/222.212.103.64">222.212.103.64</a>、<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/212.117.187.10" title="特殊:用户贡献/212.117.187.10">212.117.187.10</a>和<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/95.169.190.71" title="特殊:用户贡献/95.169.190.71">95.169.190.71</a>和<a href="/index.php?title=%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2&amp;action=credits" title="广度优先搜索">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.182 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

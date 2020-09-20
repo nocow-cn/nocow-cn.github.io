@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>Size Balanced Tree - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="canonical" href="/index.php/Size_Balanced_Tree" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=Size_Balanced_Tree&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=Size_Balanced_Tree&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Size_Balanced_Tree", "wgTitle": "Size Balanced Tree", "wgCurRevisionId": 35865, "wgArticleId": 919, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Size_Balanced_Tree action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">Size Balanced Tree</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub">(跳转自<a href="/index.php?title=SBT&amp;redirect=no" title="SBT">SBT</a>)</div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><p><b>Size Balanced Tree</b>(<b>SBT</b>)是一种<a href="/index.php/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91" title="平衡二叉查找树" class="mw-redirect">平衡二叉查找树</a>。它的论文由中国广东中山纪念中学的陈启峰于2006年底完成，并在Winter Camp 2007中发表。由于SBT的拼写很容易找到中文谐音，它常被中国的<a href="/index.php/OIer" title="OIer">OIer</a>们戏称为“傻X树”、“Super BT”等。但它的性能并不SB，编写起来也并不BT。恰恰相反，SBT易于实现，且据陈启峰论文中所言，“这是目前为止速度最快的高级<a href="/index.php/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91" title="二叉搜索树">二叉搜索树</a>”。它能在O(logn)的时间内完成所有<a href="/index.php/BST" title="BST" class="mw-redirect">BST</a>的相关操作。而且由于SBT赖以保持平衡的是Size域而不是其他“无用”的域，它可以很方便地实现动态顺序统计中的select和rank。
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E6.80.A7.E8.B4.A8"><span class="tocnumber">1</span> <span class="toctext">性质</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#.E6.97.8B.E8.BD.AC"><span class="tocnumber">2</span> <span class="toctext">旋转</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#.E5.B7.A6.E6.97.8B.E8.BD.AC"><span class="tocnumber">2.1</span> <span class="toctext">左旋转</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#.E5.8F.B3.E6.97.8B.E8.BD.AC"><span class="tocnumber">2.2</span> <span class="toctext">右旋转</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#.E4.BF.9D.E6.8C.81.E6.80.A7.E8.B4.A8.28Maintain.29"><span class="tocnumber">3</span> <span class="toctext">保持性质(Maintain)</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#.E5.9F.BA.E6.9C.AC.E6.93.8D.E4.BD.9C"><span class="tocnumber">4</span> <span class="toctext">基本操作</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#.E6.9F.A5.E6.89.BE"><span class="tocnumber">4.1</span> <span class="toctext">查找</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#.E5.8F.96.E5.A4.A7.2F.E5.8F.96.E5.B0.8F"><span class="tocnumber">4.2</span> <span class="toctext">取大/取小</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#.E5.90.8E.E7.BB.A7"><span class="tocnumber">4.3</span> <span class="toctext">后继</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#.E5.89.8D.E8.B6.8B"><span class="tocnumber">4.4</span> <span class="toctext">前趋</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#.E6.8F.92.E5.85.A5"><span class="tocnumber">4.5</span> <span class="toctext">插入</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#.E5.88.A0.E9.99.A4"><span class="tocnumber">4.6</span> <span class="toctext">删除</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#.E5.8A.A8.E6.80.81.E9.A1.BA.E5.BA.8F.E7.BB.9F.E8.AE.A1.E6.93.8D.E4.BD.9C"><span class="tocnumber">5</span> <span class="toctext">动态顺序统计操作</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="#.E6.A3.80.E7.B4.A2.E5.85.B7.E6.9C.89.E7.BB.99.E5.AE.9A.E6.8E.92.E5.BA.8F.E7.9A.84.E5.85.83.E7.B4.A0"><span class="tocnumber">5.1</span> <span class="toctext">检索具有给定排序的元素</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#.E6.B1.82.E5.85.83.E7.B4.A0.E7.9A.84.E7.A7.A9"><span class="tocnumber">5.2</span> <span class="toctext">求元素的秩</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#.E6.80.A7.E8.83.BD.E5.88.86.E6.9E.90"><span class="tocnumber">6</span> <span class="toctext">性能分析</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#.E6.BA.90.E7.A0.81"><span class="tocnumber">7</span> <span class="toctext">源码</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#.E5.8F.82.E8.80.83.E8.B5.84.E6.96.99"><span class="tocnumber">8</span> <span class="toctext">参考资料</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="#.E4.BE.8B.E9.A2.98:NOI2004.E9.83.81.E9.97.B7.E7.9A.84.E5.87.BA.E7.BA.B3.E5.91.98"><span class="tocnumber">9</span> <span class="toctext">例题:NOI2004郁闷的出纳员</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="/index.php?title=Size_Balanced_Tree&amp;action=edit&amp;section=1" title="编辑段落：性质">编辑</a>]</span> <span class="mw-headline" id=".E6.80.A7.E8.B4.A8">性质</span></h2>
+<p>Size Balanced Tree（SBT）是一种通过大小（Size）域来保持平衡的二叉搜索树，它也因此得名。它总是满足：<br />
+对于SBT的每一个结点 t：<br />
+</p>
+<ol><li>性质(a) s[right[t]] ≥ s[left[left[t]]]，s[left[right[t]]]
+</li><li>性质(b) s[left[t]] ≥ s[right[left[t]]]，s[right[right[t]]]
+</li></ol>
+<p>即每棵子树的大小不小于其兄弟的子树大小。<br /><br />
+</p>
+<center><a href="/index.php/%E6%96%87%E4%BB%B6:Sbt1.PNG" class="image"><img alt="Sbt1.PNG" src="/images/6/67/Sbt1.PNG" width="258" height="167" /></a><br />图1</center>
+<p>如图（圈代表结点，三角代表SBT，下同）：
+</p>
+<ol><li>s[R] ≥ s[A]，s[B]
+</li><li>s[L] ≥ s[C]，s[D]
+</li></ol>
+<h2><span class="editsection">[<a href="/index.php?title=Size_Balanced_Tree&amp;action=edit&amp;section=2" title="编辑段落：旋转">编辑</a>]</span> <span class="mw-headline" id=".E6.97.8B.E8.BD.AC">旋转</span></h2>
+<p>SBT的旋转（Rotations）与其他许多高级BST相同。它是下面提到的Maintain操作的基础。<br /><br />
+</p>
+<center><a href="/index.php/%E6%96%87%E4%BB%B6:Sbt2.PNG" class="image"><img alt="Sbt2.PNG" src="/images/2/25/Sbt2.PNG" width="575" height="191" /></a><br />图2</center>
+<h3><span class="editsection">[<a href="/index.php?title=Size_Balanced_Tree&amp;action=edit&amp;section=3" title="编辑段落：左旋转">编辑</a>]</span> <span class="mw-headline" id=".E5.B7.A6.E6.97.8B.E8.BD.AC">左旋转</span></h3>
+<pre>
+Left-Rotate (t)
+
+1     k ← right[t]
+2     right[t] ← left[k]
+3     left[k] ← t
+4     s[k] ← s[t]
+5     s[t] ← s[left[t]] + s[right[t]] + 1
+6     t ← k
+</pre>
+<h3><span class="editsection">[<a href="/index.php?title=Size_Balanced_Tree&amp;action=edit&amp;section=4" title="编辑段落：右旋转">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.B3.E6.97.8B.E8.BD.AC">右旋转</span></h3>
+<pre>
+Right-Rotate(t)
+
+1     k ← left[t]
+2     left[t] ← right[k]
+3     right[k] ← t
+4     s[k] ← s[t]
+5     s[t] ← s[left[t]] + s[right[t]] + 1
+6     t ← k
+</pre>
+<h2><span class="editsection">[<a href="/index.php?title=Size_Balanced_Tree&amp;action=edit&amp;section=5" title="编辑段落：保持性质(Maintain)">编辑</a>]</span> <span class="mw-headline" id=".E4.BF.9D.E6.8C.81.E6.80.A7.E8.B4.A8.28Maintain.29">保持性质(Maintain)</span></h2>
+<p>当我们插入或删除一个结点后，SBT的大小就发生了改变。这种改变有可能导致性质(a)或(b)被破坏。这时，我们需要用<strong>Maintain</strong>操作来修复这棵树。<strong>Maintain</strong>操作是SBT中最具活力的一个独特过程；Maintain(T)用于修复以T为根的 SBT。调用Maintain(T)的前提条件是T的子树都已经是SBT了。<br />我们需要讨论的有4种情况。由于性质a和性质b是对称的，所以我们仅仅详细的讨论性质a。<br />
+</p>
+<ol><li><strong>第一种情况：s[left[left[t]]&gt;s[right[t]]</strong><center><a href="/index.php/%E6%96%87%E4%BB%B6:Sbt1.PNG" class="image"><img alt="Sbt1.PNG" src="/images/6/67/Sbt1.PNG" width="258" height="167" /></a><br />图3（同图1）</center>如图3，执行完Insert(left[t],v)后发生S[A]&gt;S[R]，我们可以执行以下的指令来修复SBT：
+<ol><li>首先执行Right-Ratote(t)，这个操作让图3变成图4；<center><a href="/index.php/%E6%96%87%E4%BB%B6:Sbt4.PNG" class="image"><img alt="Sbt4.PNG" src="/images/1/12/Sbt4.PNG" width="223" height="251" /></a><br />图4</center>
+</li><li>在这之后，有时候这棵树还仍然不是一棵SBT，因为 s[C]&gt;s[B] 或者 s[D]&gt;s[B] 也是可能发生的。所以就有必要继续调用Maintain(T)。
+</li><li>结点L的右子树有可能被连续调整，因为有可能由于性质的破坏需要再一次运行Maintain(L)。<br /><br />
+</li></ol>
+</li><li><strong>第二种情况：s[right[left[t]]&gt;s[right[t]]</strong><center><a href="/index.php/%E6%96%87%E4%BB%B6:Sbt5.PNG" class="image"><img alt="Sbt5.PNG" src="/images/c/c6/Sbt5.PNG" width="258" height="219" /></a><br />图5</center>在执行完Insert(left[t],v)后发生s[B]&gt;s[R]，如图5，这种调整要比情况1复杂一些。我们可以执行下面的操作来修复：
+<ol><li>在执行完Left-Ratote(L)后，图5就会变成下面图6那样了。<center><a href="/index.php/%E6%96%87%E4%BB%B6:Sbt6.PNG" class="image"><img alt="Sbt6.PNG" src="/images/0/0b/Sbt6.PNG" width="286" height="219" /></a><br />图6</center>
+</li><li>然后执行Right-Ratote(T)，最后的结果就会由图6转变成为下面的图7。<center><a href="/index.php/%E6%96%87%E4%BB%B6:Sbt7.PNG" class="image"><img alt="Sbt7.PNG" src="/images/6/63/Sbt7.PNG" width="295" height="219" /></a><br />图7</center>
+</li><li>在第1步和第2步过后，整棵树就变得非常不可预料了。万幸的是，在图7中，子树A、E、F和R仍就是SBT，所以我们可以调用Maintain(L)和Maintain(T)来修复结点B的子树。
+</li><li>在第3步之后，子树都已经是SBT了，但是在结点B上还可能不满足性质a或性质b，因此我们需要再一次调用Maintain(B)。<br /><br />
+</li></ol>
+</li><li><strong>第三种情况：s[right[right[t]]&gt;s[left[t]]</strong><br />与情况1对称。
+</li><li><strong>第四种情况：s[left[right[t]]&gt;s[left[t]]</strong><br />与情况2对称。
+</li></ol>
+<p><br /><br />通过前面的分析，很容易写出一个普通的Maintain。
+</p>
+<pre>
+Maintain (t)
+
+01     If s[left[left[t]]&gt;s[right[t]] then    //case1
+02          Right-Rotate(t)
+03          Maintain(right[t])
+04          Maintain(t)
+05          Exit
+06     If s[right[left[t]]&gt;s[right[t]] then   //case2
+07          Left-Rotate(left[t])
+08          Right-Rotate(t)
+09          Maintain(left[t])
+10          Maintain(right[t])
+11          Maintain(t)
+12          Exit
+13     If s[right[right[t]]&gt;s[left[t]] then   //case1'
+14          Left-Rotate(t)
+15          Maintain(left[t])
+16          Maintain(t)
+17          Exit
+18     If s[left[right[t]]&gt;s[left[t]] then    //case2'
+19          Right-Rotate(right[t])
+20          Left-Rotate(t)
+21          Maintain(left[t])
+22          Maintain(right[t])
+23          Maintain(t)
+</pre>
+<p><br />前面的标准过程的伪代码有一点复杂和缓慢。通常我们可以保证性质a和性质b的满足，因此我们只需要检查情况1和情况2或者情况3和情况4，这样可以提高速度。所以在那种情况下，我们需要增加一个布尔（boolean）型变量：flag，来避免毫无意义的判断。如果flag是false，那么检查情况1和情况2；否则检查情况3和情况4。
+<pre>
+Maintain (t,flag)
+
+01     If flag=false then
+02          If s[left[left[t]]&gt;s[right[t]] then      //case1
+03               Right-Rotate(t)
+04          Else
+05               If s[right[left[t]]&gt;s[right[t]] then   //case2
+06                    Left-Rotate(left[t])
+07                     Right-Rotate(t)
+08          Else                                   //needn’t repair
+09               Exit
+10     Else
+11          If s[right[right[t]]&gt;s[left[t]] then      //case1'
+12               Left-Rotate(t)
+13          Else
+14               If s[left[right[t]]&gt;s[left[t]] then     //case2'
+15                    Right-Rotate(right[t])
+16                    Left-Rotate(t)
+17          Else                                    //needn’t repair
+18               Exit
+19     Maintain(left[t],false)                     //repair the left subtree
+20     Maintain(right[t],true)                     //repair the right subtree
+21     Maintain(t,false)                           //repair the whole tree
+22     Maintain(t,true)                            //repair the whole tree
+</pre>
+<p>为什么Maintain(left[t],true)和Maintain(right[t],false)被省略了呢？您可以在陈启峰论文第六部分的分析中找到答案。<br />其他可以从论文中获得的信息：每次SBT后树的总深度递减的证明；Maintain的平摊运行时间是O(1)的证明（也就是说你不必担心Maintain这个递归过程是否会永不停止）等。<br /><br />
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=Size_Balanced_Tree&amp;action=edit&amp;section=6" title="编辑段落：基本操作">编辑</a>]</span> <span class="mw-headline" id=".E5.9F.BA.E6.9C.AC.E6.93.8D.E4.BD.9C">基本操作</span></h2>
+<h3><span class="editsection">[<a href="/index.php?title=Size_Balanced_Tree&amp;action=edit&amp;section=7" title="编辑段落：查找">编辑</a>]</span> <span class="mw-headline" id=".E6.9F.A5.E6.89.BE">查找</span></h3>
+<p>SBT的查找操作与普通BST完全相同。下面的过程将返回指向目标节点的指针。
+</p>
+<pre>
+Search(x,k)
+
+1     if x=NULL or k=key[x] //找到了目标节点或目标节点不存在则返回x
+2        then return x
+3     if k&lt;key[x]
+4        then return Search(left[x],k)
+5     else return Search(right[x],k)
+</pre>
+<h3><span class="editsection">[<a href="/index.php?title=Size_Balanced_Tree&amp;action=edit&amp;section=8" title="编辑段落：取大/取小">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.96.E5.A4.A7.2F.E5.8F.96.E5.B0.8F">取大/取小</span></h3>
+<p>由于SBT本身已经维护了size，因此这两项可用Select操作完成。
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=Size_Balanced_Tree&amp;action=edit&amp;section=9" title="编辑段落：后继">编辑</a>]</span> <span class="mw-headline" id=".E5.90.8E.E7.BB.A7">后继</span></h3>
+<p>SBT的后继操作与普通BST完全相同。
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=Size_Balanced_Tree&amp;action=edit&amp;section=10" title="编辑段落：前趋">编辑</a>]</span> <span class="mw-headline" id=".E5.89.8D.E8.B6.8B">前趋</span></h3>
+<p>SBT的前趋操作与普通BST完全相同。它与上面的后继操作对称。
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=Size_Balanced_Tree&amp;action=edit&amp;section=11" title="编辑段落：插入">编辑</a>]</span> <span class="mw-headline" id=".E6.8F.92.E5.85.A5">插入</span></h3>
+<p>SBT的插入操作很简单。它仅仅比普通BST的多出了一个Maintain操作和对s的简单维护。下面这个过程将一个节点v插入SBT中。
+</p>
+<pre>
+Insert (t,v)
+
+1     If t=0 then
+2        t ← v
+3     Else
+4        s[t] ← s[t]+1
+5         If v&lt;key[t] then
+6              Insert(left[t],v)
+7         Else
+8              Insert(right[t],v)
+9     Maintain(t,v≥key[t])
+</pre>
+<h3><span class="editsection">[<a href="/index.php?title=Size_Balanced_Tree&amp;action=edit&amp;section=12" title="编辑段落：删除">编辑</a>]</span> <span class="mw-headline" id=".E5.88.A0.E9.99.A4">删除</span></h3>
+<p>与普通维护size域的BST删除相同。<br />
+关于无需Maintain的说明by sqybi：<br />在删除之前，可以保证整棵树是一棵SBT。当删除之后，虽然不能保证这棵树还是SBT，但是这时整棵树的最大深度并没有改变，所以时间复杂度也不会增加。这时，Maintain就显得是多余的了。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=Size_Balanced_Tree&amp;action=edit&amp;section=13" title="编辑段落：动态顺序统计操作">编辑</a>]</span> <span class="mw-headline" id=".E5.8A.A8.E6.80.81.E9.A1.BA.E5.BA.8F.E7.BB.9F.E8.AE.A1.E6.93.8D.E4.BD.9C">动态顺序统计操作</span></h2>
+<p>由于SBT本来就是靠着size域来维持平衡的，当我们进行动态顺序统计操作时，我们就无需去“额外”维护一个size域来进行数据结构的扩张。这样，以下操作就与其他高级BST扩张后的动态顺序统计操作完全一样了。
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=Size_Balanced_Tree&amp;action=edit&amp;section=14" title="编辑段落：检索具有给定排序的元素">编辑</a>]</span> <span class="mw-headline" id=".E6.A3.80.E7.B4.A2.E5.85.B7.E6.9C.89.E7.BB.99.E5.AE.9A.E6.8E.92.E5.BA.8F.E7.9A.84.E5.85.83.E7.B4.A0">检索具有给定排序的元素</span></h3>
+<p>下面这个过程将返回一个指向以x为根的子树中包含第i小关键字的节点的指针。
+</p>
+<pre>
+Select(x,i)
+
+1     r ← size[left[x]] + 1
+2     if(i=r)
+3          then return x
+4     else if i&lt;r
+5          then return Select(left[x],i)
+6     else return Select(right[x],i-r)
+</pre>
+<h3><span class="editsection">[<a href="/index.php?title=Size_Balanced_Tree&amp;action=edit&amp;section=15" title="编辑段落：求元素的秩">编辑</a>]</span> <span class="mw-headline" id=".E6.B1.82.E5.85.83.E7.B4.A0.E7.9A.84.E7.A7.A9">求元素的秩</span></h3>
+<p>SBT的rank操作与普通BST完全相同。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=Size_Balanced_Tree&amp;action=edit&amp;section=16" title="编辑段落：性能分析">编辑</a>]</span> <span class="mw-headline" id=".E6.80.A7.E8.83.BD.E5.88.86.E6.9E.90">性能分析</span></h2>
+<p>SBT的高度是O(logn)，Maintain是O(1)，所有主要操作都是O(logn)。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=Size_Balanced_Tree&amp;action=edit&amp;section=17" title="编辑段落：源码">编辑</a>]</span> <span class="mw-headline" id=".E6.BA.90.E7.A0.81">源码</span></h2>
+<p><a href="/index.php/Code:SBT_C" title="Code:SBT C" class="mw-redirect">C</a><br />
+<a href="/index.php/Code:SBT_C%2B%2B" title="Code:SBT C++">C++</a><br />
+<a href="/index.php/Code:SBT_Pascal" title="Code:SBT Pascal" class="mw-redirect">Pascal</a><br />
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=Size_Balanced_Tree&amp;action=edit&amp;section=18" title="编辑段落：参考资料">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E8.80.83.E8.B5.84.E6.96.99">参考资料</span></h2>
+<ul><li>[Size Balanced Tree], 陈启峰
+</li><li><a rel="nofollow" class="external text" href="http://combooleaf.blog.hexun.com/8039549_d.html">Size Balanced Tree</a>, 陈启峰, Translated by BambooLeaf
+</li><li><a href="/index.php/Introduction_to_Algorithms" title="Introduction to Algorithms" class="mw-redirect">Introduction to Algorithms</a>
+</li></ul>
+<h2><span class="editsection">[<a href="/index.php?title=Size_Balanced_Tree&amp;action=edit&amp;section=19" title="编辑段落：例题:NOI2004郁闷的出纳员">编辑</a>]</span> <span class="mw-headline" id=".E4.BE.8B.E9.A2.98:NOI2004.E9.83.81.E9.97.B7.E7.9A.84.E5.87.BA.E7.BA.B3.E5.91.98">例题:NOI2004郁闷的出纳员</span></h2>
+<p>【问题描述】 
+</p><p>OIER公司是一家大型专业化软件公司，有着数以万计的员工。作为一名出纳员，我的任务之一便是统计每位员工的工资。这本来是一份不错的工作，但是令人郁闷的是，我们的老板反复无常，经常调整员工的工资。如果他心情好，就可能把每位员工的工资加上一个相同的量。反之，如果心情不好，就可能把他们的工资扣除一个相同的量。我真不知道除了调工资他还做什么其它事情。
+</p><p>工资的频繁调整很让员工反感，尤其是集体扣除工资的时候，一旦某位员工发现自己的工资已经低于了合同规定的工资下界，他就会立刻气愤地离开公司，并且再也不会回来了。每位员工的工资下界都是统一规定的。每当一个人离开公司，我就要从电脑中把他的工资档案删去，同样，每当公司招聘了一位新员工，我就得为他新建一个工资档案。 
+</p><p>老板经常到我这边来询问工资情况，他并不问具体某位员工的工资情况，而是问现在工资第k多的员工拿多少工资。每当这时，我就不得不对数万个员工进行一次漫长的排序，然后告诉他答案。 
+</p><p>好了，现在你已经对我的工作了解不少了。正如你猜的那样，我想请你编一个工资统计程序。怎么样，不是很困难吧？ 
+</p><p>【输入文件】 
+</p><p>cashier.in第一行有两个非负整数n和min。n表示下面有多少条命令，min表示工资下界。 
+</p><p>接下来的n行，每行表示一条命令。命令可以是以下四种之一： 
+</p>
+<pre>
+名称 格式 作用 
+I命令 I_k 新建一个工资档案，初始工资为k。如果某员工的初始工资低于工资下界，他将立刻离开公司。 
+A命令 A_k 把每位员工的工资加上k 
+S命令 S_k 把每位员工的工资扣除k 
+F命令 F_k 查询第k多的工资 
+</pre>
+<p>_（下划线）表示一个空格，I命令、A命令、S命令中的k是一个非负整数，F命令中的k是一个正整数。 
+</p><p>在初始时，可以认为公司里一个员工也没有。 
+</p><p>【输出文件】 
+</p><p>输出文件cashier.out的行数为F命令的条数加一。 
+</p><p>对于每条F命令，你的程序要输出一行，仅包含一个整数，为当前工资第k多的员工所拿的工资数，如果k大于目前员工的数目，则输出-1。 
+</p><p>输出文件的最后一行包含一个整数，为离开公司的员工的总数。 
+</p><p>【样例输入】 
+</p>
+<pre>
+9 10 
+I 60 
+I 70 
+S 50 
+F 2 
+I 30 
+S 15 
+A 5 
+F 1 
+F 2 
+</pre>
+<p>【样例输出】 
+</p>
+<pre>
+10 
+20 
+-1 
+2 
+</pre>
+<p>【约定】
+</p><p>I命令的条数不超过100000 
+</p><p>A命令和S命令的总条数不超过100 
+</p><p>F命令的条数不超过100000 
+</p><p>每次工资调整的调整量不超过1000 
+</p><p>新员工的工资不超过100000
+</p><p><br />
+数组实现的 Size Balanced Tree
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"> <span class="co2">#include &lt;fstream&gt;</span>
+&#160;
+ <span class="kw2">using</span> <span class="kw2">namespace</span> std<span class="sy4">;</span>
+&#160;
+ ifstream fin<span class="br0">&#40;</span><span class="st0">&quot;cashier.in&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span> 
+ ofstream fout<span class="br0">&#40;</span><span class="st0">&quot;cashier.out&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span> 
+ <span class="kw4">const</span> <span class="kw4">unsigned</span> <span class="kw4">int</span> MAX_N<span class="sy1">=</span><span class="nu0">100001</span><span class="sy4">;</span> 
+ <span class="kw4">int</span> ZUISHAO<span class="sy4">;</span>     <span class="co1">//最低工资 </span>
+ <span class="kw4">int</span> ADD_PAY<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> 
+ <span class="kw4">unsigned</span> <span class="kw4">int</span> C_NUM<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> 
+ <span class="kw4">int</span> front <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> 
+ <span class="kw4">struct</span> node 
+ <span class="br0">&#123;</span> 
+   <span class="kw4">int</span> key<span class="sy4">;</span> 
+   <span class="kw4">int</span> size, llink, rlink<span class="sy4">;</span> 
+ <span class="br0">&#125;</span>OIER<span class="br0">&#91;</span>MAX_N<span class="br0">&#93;</span><span class="sy4">;</span> 
+ <span class="kw4">void</span> LeftRotate<span class="br0">&#40;</span><span class="kw4">int</span> <span class="sy3">&amp;</span>x<span class="br0">&#41;</span><span class="co1">//左旋 </span>
+ <span class="br0">&#123;</span> 
+   <span class="kw4">int</span> y <span class="sy1">=</span> OIER<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">rlink</span><span class="sy4">;</span> 
+   <span class="kw1">if</span> <span class="br0">&#40;</span>y <span class="sy1">==</span> <span class="nu0">0</span><span class="br0">&#41;</span> <span class="kw1">return</span><span class="sy4">;</span> 
+   OIER<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">rlink</span> <span class="sy1">=</span> OIER<span class="br0">&#91;</span>y<span class="br0">&#93;</span>.<span class="me1">llink</span><span class="sy4">;</span> 
+   OIER<span class="br0">&#91;</span>y<span class="br0">&#93;</span>.<span class="me1">llink</span> <span class="sy1">=</span> x<span class="sy4">;</span> 
+   OIER<span class="br0">&#91;</span>y<span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy1">=</span> OIER<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">size</span><span class="sy4">;</span> 
+   OIER<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy1">=</span> OIER<span class="br0">&#91;</span>OIER<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">llink</span><span class="br0">&#93;</span>.<span class="me1">size</span><span class="sy2">+</span>OIER<span class="br0">&#91;</span>OIER<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">rlink</span><span class="br0">&#93;</span>.<span class="me1">size</span><span class="sy2">+</span><span class="nu0">1</span><span class="sy4">;</span> 
+   x <span class="sy1">=</span> y<span class="sy4">;</span> 
+ <span class="br0">&#125;</span> 
+ <span class="kw4">void</span> RightRotate<span class="br0">&#40;</span><span class="kw4">int</span> <span class="sy3">&amp;</span>x<span class="br0">&#41;</span><span class="co1">//右旋 </span>
+ <span class="br0">&#123;</span> 
+   <span class="kw4">int</span> y <span class="sy1">=</span> OIER<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">llink</span><span class="sy4">;</span> 
+   <span class="kw1">if</span> <span class="br0">&#40;</span>y <span class="sy1">==</span> <span class="nu0">0</span><span class="br0">&#41;</span> <span class="kw1">return</span><span class="sy4">;</span> 
+   OIER<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">llink</span> <span class="sy1">=</span> OIER<span class="br0">&#91;</span>y<span class="br0">&#93;</span>.<span class="me1">rlink</span><span class="sy4">;</span> 
+   OIER<span class="br0">&#91;</span>y<span class="br0">&#93;</span>.<span class="me1">rlink</span> <span class="sy1">=</span> x<span class="sy4">;</span> 
+   OIER<span class="br0">&#91;</span>y<span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy1">=</span> OIER<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">size</span><span class="sy4">;</span> 
+   OIER<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy1">=</span> OIER<span class="br0">&#91;</span>OIER<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">llink</span><span class="br0">&#93;</span>.<span class="me1">size</span><span class="sy2">+</span>OIER<span class="br0">&#91;</span>OIER<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">rlink</span><span class="br0">&#93;</span>.<span class="me1">size</span><span class="sy2">+</span><span class="nu0">1</span><span class="sy4">;</span> 
+   x <span class="sy1">=</span> y<span class="sy4">;</span> 
+ <span class="br0">&#125;</span> 
+ <span class="kw4">void</span> Maintain<span class="br0">&#40;</span><span class="kw4">int</span> <span class="sy3">&amp;</span>root, <span class="kw4">bool</span> flag<span class="br0">&#41;</span><span class="co1">//维护 SBT 树 </span>
+ <span class="br0">&#123;</span> 
+   <span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy3">!</span>root<span class="br0">&#41;</span> <span class="kw1">return</span><span class="sy4">;</span> 
+   <span class="kw1">if</span> <span class="br0">&#40;</span>flag<span class="br0">&#41;</span> 
+   <span class="br0">&#123;</span> 
+       <span class="kw1">if</span><span class="br0">&#40;</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">llink</span> <span class="sy3">&amp;&amp;</span> OIER<span class="br0">&#91;</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">llink</span><span class="br0">&#93;</span>.<span class="me1">llink</span> 
+           <span class="sy3">&amp;&amp;</span> <span class="br0">&#40;</span><span class="sy3">!</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">rlink</span> <span class="sy3">||</span> OIER<span class="br0">&#91;</span>OIER<span class="br0">&#91;</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">llink</span><span class="br0">&#93;</span>.<span class="me1">llink</span><span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy1">&gt;</span> OIER<span class="br0">&#91;</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">rlink</span><span class="br0">&#93;</span>.<span class="me1">size</span><span class="br0">&#41;</span><span class="br0">&#41;</span> 
+           RightRotate<span class="br0">&#40;</span>root<span class="br0">&#41;</span><span class="sy4">;</span> 
+       <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">llink</span> <span class="sy3">&amp;&amp;</span> OIER<span class="br0">&#91;</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">llink</span><span class="br0">&#93;</span>.<span class="me1">rlink</span> 
+           <span class="sy3">&amp;&amp;</span> <span class="br0">&#40;</span><span class="sy3">!</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">rlink</span> <span class="sy3">||</span> OIER<span class="br0">&#91;</span>OIER<span class="br0">&#91;</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">llink</span><span class="br0">&#93;</span>.<span class="me1">rlink</span><span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy1">&gt;</span> OIER<span class="br0">&#91;</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">rlink</span><span class="br0">&#93;</span>.<span class="me1">size</span><span class="br0">&#41;</span><span class="br0">&#41;</span> 
+       <span class="br0">&#123;</span> 
+           LeftRotate<span class="br0">&#40;</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">llink</span><span class="br0">&#41;</span><span class="sy4">;</span> 
+           RightRotate<span class="br0">&#40;</span>root<span class="br0">&#41;</span><span class="sy4">;</span> 
+       <span class="br0">&#125;</span> 
+       <span class="kw1">else</span> <span class="kw1">return</span><span class="sy4">;</span> 
+   <span class="br0">&#125;</span> 
+   <span class="kw1">else</span> 
+   <span class="br0">&#123;</span> 
+       <span class="kw1">if</span> <span class="br0">&#40;</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">rlink</span> <span class="sy3">&amp;&amp;</span> OIER<span class="br0">&#91;</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">rlink</span><span class="br0">&#93;</span>.<span class="me1">rlink</span> 
+           <span class="sy3">&amp;&amp;</span> <span class="br0">&#40;</span><span class="sy3">!</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">llink</span> <span class="sy3">||</span> OIER<span class="br0">&#91;</span>OIER<span class="br0">&#91;</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">rlink</span><span class="br0">&#93;</span>.<span class="me1">rlink</span><span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy1">&gt;</span> OIER<span class="br0">&#91;</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">llink</span><span class="br0">&#93;</span>.<span class="me1">size</span><span class="br0">&#41;</span><span class="br0">&#41;</span> 
+           LeftRotate<span class="br0">&#40;</span>root<span class="br0">&#41;</span><span class="sy4">;</span> 
+       <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">rlink</span> <span class="sy3">&amp;&amp;</span> OIER<span class="br0">&#91;</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">rlink</span><span class="br0">&#93;</span>.<span class="me1">llink</span> 
+           <span class="sy3">&amp;&amp;</span> <span class="br0">&#40;</span><span class="sy3">!</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">llink</span> <span class="sy3">||</span> OIER<span class="br0">&#91;</span>OIER<span class="br0">&#91;</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">rlink</span><span class="br0">&#93;</span>.<span class="me1">llink</span><span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy1">&gt;</span> OIER<span class="br0">&#91;</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">llink</span><span class="br0">&#93;</span>.<span class="me1">size</span><span class="br0">&#41;</span><span class="br0">&#41;</span> 
+       <span class="br0">&#123;</span> 
+           RightRotate<span class="br0">&#40;</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">rlink</span><span class="br0">&#41;</span><span class="sy4">;</span> 
+           LeftRotate<span class="br0">&#40;</span>root<span class="br0">&#41;</span><span class="sy4">;</span> 
+       <span class="br0">&#125;</span> 
+       <span class="kw1">else</span> <span class="kw1">return</span><span class="sy4">;</span> 
+   <span class="br0">&#125;</span> 
+   Maintain<span class="br0">&#40;</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">llink</span>, <span class="kw2">true</span><span class="br0">&#41;</span><span class="sy4">;</span> 
+   Maintain<span class="br0">&#40;</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">rlink</span>, <span class="kw2">false</span><span class="br0">&#41;</span><span class="sy4">;</span> 
+   Maintain<span class="br0">&#40;</span>root, <span class="kw2">true</span><span class="br0">&#41;</span><span class="sy4">;</span> 
+   Maintain<span class="br0">&#40;</span>root, <span class="kw2">false</span><span class="br0">&#41;</span><span class="sy4">;</span> 
+ <span class="br0">&#125;</span> 
+ <span class="kw4">void</span> Insert<span class="br0">&#40;</span><span class="kw4">int</span> <span class="sy3">&amp;</span>root, <span class="kw4">int</span> x<span class="br0">&#41;</span><span class="co1">//插入关键字 x </span>
+ <span class="br0">&#123;</span> 
+   <span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy3">!</span>root<span class="br0">&#41;</span> 
+   <span class="br0">&#123;</span> 
+       root <span class="sy1">=</span> <span class="sy2">++</span>front<span class="sy4">;</span> 
+       OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">key</span> <span class="sy1">=</span> x<span class="sy4">;</span> 
+       OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">size</span> <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> 
+   <span class="br0">&#125;</span> 
+   <span class="kw1">else</span> 
+   <span class="br0">&#123;</span> 
+       <span class="sy2">++</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">size</span><span class="sy4">;</span> 
+       Insert<span class="br0">&#40;</span>x <span class="sy1">&lt;=</span> OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">key</span> <span class="sy4">?</span> OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">llink</span> <span class="sy4">:</span> OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">rlink</span>, x<span class="br0">&#41;</span><span class="sy4">;</span> 
+       Maintain<span class="br0">&#40;</span>root, x <span class="sy1">&lt;=</span> OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">key</span><span class="br0">&#41;</span><span class="sy4">;</span> 
+   <span class="br0">&#125;</span> 
+ <span class="br0">&#125;</span> 
+ <span class="kw4">int</span> Delete<span class="br0">&#40;</span><span class="kw4">int</span> <span class="sy3">&amp;</span>root<span class="br0">&#41;</span><span class="co1">//删除 </span>
+ <span class="br0">&#123;</span> 
+    <span class="kw4">int</span> t<span class="sy1">=</span><span class="nu0">0</span>,sum<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> 
+    <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy3">!</span>root<span class="br0">&#41;</span> <span class="kw1">return</span> root<span class="sy4">;</span> 
+    <span class="kw1">if</span><span class="br0">&#40;</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">key</span><span class="sy2">+</span>ADD_PAY<span class="sy1">&lt;</span>ZUISHAO<span class="br0">&#41;</span> <span class="br0">&#123;</span> 
+ sum<span class="sy2">+</span><span class="sy1">=</span>OIER<span class="br0">&#91;</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">llink</span><span class="br0">&#93;</span>.<span class="me1">size</span><span class="sy2">+</span><span class="nu0">1</span><span class="sy4">;</span> 
+ OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">size</span><span class="sy2">-</span><span class="sy1">=</span>sum<span class="sy4">;</span> 
+ OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">llink</span><span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> 
+ t<span class="sy1">=</span>Delete<span class="br0">&#40;</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">rlink</span><span class="br0">&#41;</span><span class="sy4">;</span> 
+ sum<span class="sy2">+</span><span class="sy1">=</span>t<span class="sy4">;</span> 
+ OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">size</span><span class="sy2">-</span><span class="sy1">=</span>t<span class="sy4">;</span> 
+    OIER<span class="br0">&#91;</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">rlink</span><span class="br0">&#93;</span>.<span class="me1">size</span><span class="sy1">=</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">size</span><span class="sy4">;</span> 
+ root<span class="sy1">=</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">rlink</span><span class="sy4">;</span> 
+ <span class="br0">&#125;</span> 
+    <span class="kw1">else</span> <span class="br0">&#123;</span> 
+         t<span class="sy1">=</span>Delete<span class="br0">&#40;</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">llink</span><span class="br0">&#41;</span><span class="sy4">;</span> 
+         sum<span class="sy1">=</span>t<span class="sy4">;</span> 
+         OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">size</span><span class="sy2">-</span><span class="sy1">=</span>t<span class="sy4">;</span> 
+         <span class="br0">&#125;</span> 
+    <span class="kw1">return</span> sum<span class="sy4">;</span> 
+ <span class="br0">&#125;</span>       
+ <span class="kw4">int</span> Select<span class="br0">&#40;</span><span class="kw4">int</span> R, <span class="kw4">int</span> x<span class="br0">&#41;</span><span class="co1">//返回第 x 大的元素 </span>
+ <span class="br0">&#123;</span> 
+   <span class="kw1">if</span><span class="br0">&#40;</span>OIER<span class="br0">&#91;</span>R<span class="br0">&#93;</span>.<span class="me1">rlink</span><span class="sy1">==</span><span class="nu0">0</span><span class="br0">&#41;</span>OIER<span class="br0">&#91;</span>OIER<span class="br0">&#91;</span>R<span class="br0">&#93;</span>.<span class="me1">rlink</span><span class="br0">&#93;</span>.<span class="me1">size</span><span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> 
+   <span class="kw4">int</span> r <span class="sy1">=</span> OIER<span class="br0">&#91;</span>OIER<span class="br0">&#91;</span>R<span class="br0">&#93;</span>.<span class="me1">rlink</span><span class="br0">&#93;</span>.<span class="me1">size</span><span class="sy2">+</span><span class="nu0">1</span><span class="sy4">;</span> 
+   <span class="kw1">if</span> <span class="br0">&#40;</span>x<span class="sy1">&lt;</span>r<span class="br0">&#41;</span> <span class="kw1">return</span> Select<span class="br0">&#40;</span>OIER<span class="br0">&#91;</span>R<span class="br0">&#93;</span>.<span class="me1">rlink</span>, x<span class="br0">&#41;</span><span class="sy4">;</span> 
+   <span class="kw1">else</span> 
+   <span class="kw1">if</span> <span class="br0">&#40;</span>x<span class="sy1">&gt;</span>r<span class="br0">&#41;</span> <span class="kw1">return</span> Select<span class="br0">&#40;</span>OIER<span class="br0">&#91;</span>R<span class="br0">&#93;</span>.<span class="me1">llink</span>, x<span class="sy2">-</span>r<span class="br0">&#41;</span><span class="sy4">;</span> 
+   <span class="kw1">if</span><span class="br0">&#40;</span>x<span class="sy1">==</span>r<span class="br0">&#41;</span> <span class="kw1">return</span> OIER<span class="br0">&#91;</span>R<span class="br0">&#93;</span>.<span class="me1">key</span><span class="sy4">;</span> 
+   <span class="br0">&#125;</span> 
+&#160;
+ <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="kw4">void</span><span class="br0">&#41;</span> 
+ <span class="br0">&#123;</span> 
+   <span class="kw4">unsigned</span> <span class="kw4">int</span> N<span class="sy4">;</span> 
+   <span class="kw4">char</span> command<span class="sy4">;</span> 
+   <span class="kw4">int</span> pay,root<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> 
+   <span class="kw4">int</span> i<span class="sy4">;</span> 
+   fin<span class="sy1">&gt;&gt;</span>N<span class="sy1">&gt;&gt;</span>ZUISHAO<span class="sy4">;</span> 
+   <span class="kw1">for</span><span class="br0">&#40;</span>i<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>i<span class="sy1">&lt;=</span>N<span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span> 
+      <span class="br0">&#123;</span> 
+         fin<span class="sy1">&gt;&gt;</span>command<span class="sy1">&gt;&gt;</span>pay<span class="sy4">;</span> 
+         <span class="kw1">if</span><span class="br0">&#40;</span>command<span class="sy1">==</span><span class="st0">'I'</span><span class="br0">&#41;</span><span class="br0">&#123;</span> 
+                 <span class="kw1">if</span><span class="br0">&#40;</span>pay<span class="sy1">&gt;=</span>ZUISHAO<span class="br0">&#41;</span>Insert<span class="br0">&#40;</span>root,pay<span class="sy2">-</span>ADD_PAY<span class="br0">&#41;</span><span class="sy4">;</span>                                               
+                          <span class="br0">&#125;</span> 
+         <span class="kw1">if</span><span class="br0">&#40;</span>command<span class="sy1">==</span><span class="st0">'F'</span><span class="br0">&#41;</span><span class="br0">&#123;</span> 
+                          <span class="kw1">if</span><span class="br0">&#40;</span>pay<span class="sy1">&gt;</span>OIER<span class="br0">&#91;</span>root<span class="br0">&#93;</span>.<span class="me1">size</span><span class="br0">&#41;</span> fout<span class="sy1">&lt;&lt;</span><span class="sy2">-</span><span class="nu0">1</span><span class="sy1">&lt;&lt;</span>endl<span class="sy4">;</span> 
+                          <span class="kw1">else</span>   fout<span class="sy1">&lt;&lt;</span>Select<span class="br0">&#40;</span>root, pay<span class="br0">&#41;</span><span class="sy2">+</span>ADD_PAY<span class="sy1">&lt;&lt;</span>endl<span class="sy4">;</span> 
+                          <span class="br0">&#125;</span> 
+         <span class="kw1">if</span><span class="br0">&#40;</span>command<span class="sy1">==</span><span class="st0">'A'</span><span class="br0">&#41;</span>ADD_PAY<span class="sy2">+</span><span class="sy1">=</span>pay<span class="sy4">;</span> 
+         <span class="kw1">if</span><span class="br0">&#40;</span>command<span class="sy1">==</span><span class="st0">'S'</span><span class="br0">&#41;</span><span class="br0">&#123;</span> 
+                          ADD_PAY<span class="sy2">-</span><span class="sy1">=</span>pay<span class="sy4">;</span> 
+                          C_NUM<span class="sy2">+</span><span class="sy1">=</span>Delete<span class="br0">&#40;</span>root<span class="br0">&#41;</span><span class="sy4">;</span> 
+                          <span class="br0">&#125;</span> 
+        <span class="br0">&#125;</span> 
+    fout<span class="sy1">&lt;&lt;</span>C_NUM<span class="sy1">&lt;&lt;</span>endl<span class="sy4">;</span> 
+   <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+  <span class="br0">&#125;</span></pre></div></div></p>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 150/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:919-0!*!0!!zh-cn!2!* and timestamp 20151007054658 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=Size_Balanced_Tree&amp;oldid=35865">http://www.nocow.cn/index.php?title=Size_Balanced_Tree&amp;oldid=35865</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/Size_Balanced_Tree" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk"><a href="/index.php/%E8%AE%A8%E8%AE%BA:Size_Balanced_Tree" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=Size_Balanced_Tree&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=Size_Balanced_Tree&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=SBT" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Size_Balanced_Tree" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Size_Balanced_Tree" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=Size_Balanced_Tree&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=Size_Balanced_Tree&amp;oldid=35865" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过64,394次。</li>
+		<li id="credits">本页面由<a href="/index.php?title=%E7%94%A8%E6%88%B7:Tobe&amp;action=edit&amp;redlink=1" class="new" title="用户:Tobe（尚未撰写）">马一舟</a>于2015年7月11日 (星期六) 15:07做出最后修改。 在<a href="/index.php?title=%E7%94%A8%E6%88%B7:Cosechy_movingbot&amp;action=edit&amp;redlink=1" class="new" title="用户:Cosechy movingbot（尚未撰写）">cosechy@gmail.com</a>、NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/111.161.1.224" title="特殊:用户贡献/111.161.1.224">111.161.1.224</a>、<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/58.20.232.105" title="特殊:用户贡献/58.20.232.105">58.20.232.105</a>和<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/61.141.0.212" title="特殊:用户贡献/61.141.0.212">61.141.0.212</a>和<a href="/index.php?title=Size_Balanced_Tree&amp;action=credits" title="Size Balanced Tree">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.159 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

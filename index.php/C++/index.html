@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>C++ - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=C%2B%2B&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=C%2B%2B&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "C++", "wgTitle": "C++", "wgCurRevisionId": 35228, "wgArticleId": 6, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-C action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">C++</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><p><b>C++</b>是一种使用非常广泛的计算机程式设计语言。C++是一种<a href="/index.php?title=%E9%9D%99%E6%80%81%E8%B5%84%E6%96%99%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%9F%A5&amp;action=edit&amp;redlink=1" class="new" title="静态资料类型检查（尚未撰写）">静态资料类型检查</a>的，支援<a href="/index.php?title=%E5%A4%9A%E9%87%8D%E7%BC%96%E7%A8%8B%E8%8C%83%E5%BC%8F&amp;action=edit&amp;redlink=1" class="new" title="多重编程范式（尚未撰写）">多范型</a>的通用<a href="/index.php?title=%E7%A8%8B%E5%BC%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80&amp;action=edit&amp;redlink=1" class="new" title="程式设计语言（尚未撰写）">程式设计语言</a>。它支援<a href="/index.php?title=%E7%A8%8B%E5%BA%8F%E5%8C%96%E7%A8%8B%E5%BC%8F%E8%AE%BE%E8%AE%A1&amp;action=edit&amp;redlink=1" class="new" title="程序化程式设计（尚未撰写）">程序化程式设计</a>、<a href="/index.php?title=%E8%B5%84%E6%96%99%E6%8A%BD%E8%B1%A1%E5%8C%96&amp;action=edit&amp;redlink=1" class="new" title="资料抽象化（尚未撰写）">资料抽象化</a>、<a href="/index.php?title=%E7%89%A9%E4%BB%B6%E5%AF%BC%E5%90%91%E7%A8%8B%E5%BC%8F%E8%AE%BE%E8%AE%A1&amp;action=edit&amp;redlink=1" class="new" title="物件导向程式设计（尚未撰写）">物件导向程式设计</a>、<a href="/index.php?title=%E6%B3%9B%E5%9E%8B%E7%A8%8B%E5%BC%8F%E8%AE%BE%E8%AE%A1&amp;action=edit&amp;redlink=1" class="new" title="泛型程式设计（尚未撰写）">泛型程式设计</a>等多种程式设计风格。
+</p><p><a href="/index.php?title=%E8%B4%9D%E5%B0%94%E5%AE%9E%E9%AA%8C%E5%AE%A4&amp;action=edit&amp;redlink=1" class="new" title="贝尔实验室（尚未撰写）">贝尔实验室</a>的<a href="/index.php?title=%E6%AF%94%E9%9B%85%E5%B0%BC%C2%B7%E6%96%AF%E7%89%B9%E5%8A%B3%E6%96%AF%E7%89%B9%E9%B2%81%E6%99%AE&amp;action=edit&amp;redlink=1" class="new" title="比雅尼·斯特劳斯特鲁普（尚未撰写）">比雅尼·斯特劳斯特鲁普</a>博士在<a href="/index.php?title=20%E4%B8%96%E7%BA%AA&amp;action=edit&amp;redlink=1" class="new" title="20世纪（尚未撰写）">20世纪</a><a href="/index.php?title=1980%E5%B9%B4%E4%BB%A3&amp;action=edit&amp;redlink=1" class="new" title="1980年代（尚未撰写）">80年代</a>发明并实现了C++（最初这种语言被称作「C with Classes」）。一开始C++是作为<a href="/index.php/C%E8%AF%AD%E8%A8%80" title="C语言">C语言</a>的增强版出现的，从给C语言增加类别开始，不断的增加新特性。<a href="/index.php?title=%E8%99%9A%E5%87%BD%E6%95%B0&amp;action=edit&amp;redlink=1" class="new" title="虚函数（尚未撰写）">虚函数</a>（virtual function）、<a href="/index.php?title=%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD&amp;action=edit&amp;redlink=1" class="new" title="运算符重载（尚未撰写）">运算符重载</a>（operator overloading）、<a href="/index.php?title=%E5%A4%9A%E9%87%8D%E7%BB%A7%E6%89%BF&amp;action=edit&amp;redlink=1" class="new" title="多重继承（尚未撰写）">多重继承</a>（multiple inheritance）、<a href="/index.php?title=%E6%A8%A1%E6%9D%BF_(C%2B%2B)&amp;action=edit&amp;redlink=1" class="new" title="模板 (C++)（尚未撰写）">模板 (C++)</a>（template）、<a href="/index.php?title=%E5%BC%82%E5%B8%B8&amp;action=edit&amp;redlink=1" class="new" title="异常（尚未撰写）">异常</a>（exception）、<a href="/index.php?title=RTTI&amp;action=edit&amp;redlink=1" class="new" title="RTTI（尚未撰写）">RTTI</a>、<a href="/index.php?title=%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4&amp;action=edit&amp;redlink=1" class="new" title="命名空间（尚未撰写）">命名空间</a>（name space）逐渐纳入标准。<a href="/index.php?title=1998%E5%B9%B4&amp;action=edit&amp;redlink=1" class="new" title="1998年（尚未撰写）">1998年</a><a href="/index.php?title=%E5%9B%BD%E9%99%85%E6%A0%87%E5%87%86%E5%8C%96%E7%BB%84%E7%BB%87&amp;action=edit&amp;redlink=1" class="new" title="国际标准化组织（尚未撰写）">国际标准化组织</a>（ISO）颁布了C++程式设计语言的国际标准ISO/IEC 14882-1998。遗憾的是，由于C++语言过于复杂，以及他经历了常年的变更，直到现在（<a href="/index.php?title=2004%E5%B9%B4&amp;action=edit&amp;redlink=1" class="new" title="2004年（尚未撰写）">2004年</a>）只有少数几个编译器完全符合这个标准。
+</p><p>另外，就目前学习C++而言，可以认为它是一门独立的语言；它并不依赖C语言，我们可以完全不学C语言，而直接学习C++。根据《C++编程思想》（<i>Thinking in C++</i>）一书所评述的，C++与C的效率往往相差在正负5%之间。所以有人认为在大多数场合中，C++完全可以取代C语言。
+</p><p>C++语言发展大概可以分为三个阶段：第一阶段从80年代到1995年。这一阶段C++语言基本上是传统类型上的<a href="/index.php?title=%E7%89%A9%E4%BB%B6%E5%AF%BC%E5%90%91&amp;action=edit&amp;redlink=1" class="new" title="物件导向（尚未撰写）">物件导向</a>语言，并且凭借着接近C语言的效率，在工业界使用的开发语言中占据了相当大份额；第二阶段从1995年到2000年，这一阶段由于<a href="/index.php?title=%E6%A0%87%E5%87%86%E6%A8%A1%E6%9D%BF%E5%BA%93&amp;action=edit&amp;redlink=1" class="new" title="标准模板库（尚未撰写）">标准模板库</a>(STL)和后来的<a href="/index.php?title=Boost&amp;action=edit&amp;redlink=1" class="new" title="Boost（尚未撰写）">Boost</a>等程式库的出现，<a href="/index.php?title=%E6%B3%9B%E5%9E%8B%E7%A8%8B%E5%BC%8F%E8%AE%BE%E8%AE%A1&amp;action=edit&amp;redlink=1" class="new" title="泛型程式设计（尚未撰写）">泛型程式设计</a>在C++中占据了越来越多的比重性。当然，同时由於<a href="/index.php/Java" title="Java">Java</a>、<a href="/index.php?title=%EF%BC%A3%EF%BC%83&amp;action=edit&amp;redlink=1" class="new" title="Ｃ＃（尚未撰写）">C#</a>等语言的出现和硬体价格的大规模下降，C++受到了一定的冲击；第三阶段从<a href="/index.php?title=2000%E5%B9%B4&amp;action=edit&amp;redlink=1" class="new" title="2000年（尚未撰写）">2000年</a>至今，由於以<a href="/index.php?title=Loki&amp;action=edit&amp;redlink=1" class="new" title="Loki（尚未撰写）">Loki</a>、<a href="/index.php?title=MPL&amp;action=edit&amp;redlink=1" class="new" title="MPL（尚未撰写）">MPL</a>等程式库为代表的<a href="/index.php?title=%E4%BA%A7%E7%94%9F%E5%BC%8F%E7%BC%96%E7%A8%8B&amp;action=edit&amp;redlink=1" class="new" title="产生式编程（尚未撰写）">产生式编程</a>和<a href="/index.php?title=%E6%A8%A1%E6%9D%BF%E5%85%83%E7%BC%96%E7%A8%8B&amp;action=edit&amp;redlink=1" class="new" title="模板元编程（尚未撰写）">模板元编程</a>的出现，C++出现了发展历史上又一个新的高峰，这些新技术的出现以及和原有技术的融合，使C++已经成为当今主流程式设计语言中最复杂的一员。
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E5.8F.91.E5.B1.95.E5.8E.86.E5.8F.B2"><span class="tocnumber">1</span> <span class="toctext">发展历史</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#C.2B.2B.E5.90.8D.E5.AD.97.E7.9A.84.E7.94.B1.E6.9D.A5"><span class="tocnumber">1.1</span> <span class="toctext">C++名字的由来</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#.E6.9C.AA.E6.9D.A5.E5.8F.91.E5.B1.95"><span class="tocnumber">1.2</span> <span class="toctext">未来发展</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#.E8.AE.BE.E8.AE.A1.E5.8E.9F.E5.88.99"><span class="tocnumber">2</span> <span class="toctext">设计原则</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#.E6.A0.87.E5.87.86.E7.A8.8B.E5.BC.8F.E5.BA.93"><span class="tocnumber">3</span> <span class="toctext">标准程式库</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#C.2B.2B.E4.B8.AD.E7.9A.84.E7.89.B9.E8.89.B2"><span class="tocnumber">4</span> <span class="toctext">C++中的特色</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#.E4.B8.8EC.E4.B8.8D.E7.9B.B8.E5.AE.B9.E4.B9.8B.E5.A4.84"><span class="tocnumber">5</span> <span class="toctext">与C不相容之处</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#C.2B.2B.E7.9A.84Hello_World.E7.A8.8B.E5.BA.8F"><span class="tocnumber">6</span> <span class="toctext">C++的Hello World程序</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#.E8.AF.AD.E8.A8.80.E7.89.B9.E6.80.A7"><span class="tocnumber">7</span> <span class="toctext">语言特性</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#.E8.BF.90.E7.AE.97.E5.AD.90"><span class="tocnumber">7.1</span> <span class="toctext">运算子</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#.E9.A2.84.E5.A4.84.E7.90.86.E5.99.A8"><span class="tocnumber">7.2</span> <span class="toctext">预处理器</span></a>
+<ul>
+<li class="toclevel-3 tocsection-12"><a href="#.E9.A2.84.E5.A4.84.E7.90.86.E5.99.A8.E6.8C.87.E4.BB.A4.E5.92.8C.E5.B7.A8.E9.9B.86"><span class="tocnumber">7.2.1</span> <span class="toctext">预处理器指令和巨集</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-13"><a href="#.E6.A8.A1.E6.9D.BF"><span class="tocnumber">7.3</span> <span class="toctext">模板</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#.E7.89.A9.E4.BB.B6"><span class="tocnumber">7.4</span> <span class="toctext">物件</span></a>
+<ul>
+<li class="toclevel-3 tocsection-15"><a href="#.E5.B0.81.E8.A3.85"><span class="tocnumber">7.4.1</span> <span class="toctext">封装</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="#.E7.BB.A7.E6.89.BF"><span class="tocnumber">7.4.2</span> <span class="toctext">继承</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-17"><a href="#.E5.A4.9A.E6.80.81"><span class="tocnumber">7.5</span> <span class="toctext">多态</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="#.E5.88.86.E6.9E.90.E5.92.8C.E5.A4.84.E7.90.86C.2B.2B.E5.8E.9F.E5.A7.8B.E7.A0.81"><span class="tocnumber">8</span> <span class="toctext">分析和处理C++原始码</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="#.E9.97.AE.E9.A2.98.E4.B8.8E.E4.BA.89.E8.AE.BA"><span class="tocnumber">9</span> <span class="toctext">问题与争论</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="#.E4.B8.AD.E6.96.87.E6.9C.AF.E8.AF.AD.E9.97.AE.E9.A2.98"><span class="tocnumber">9.1</span> <span class="toctext">中文术语问题</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-21"><a href="#.E4.BD.BF.E7.94.A8.E8.80.85.E4.BA.BA.E6.95.B0"><span class="tocnumber">10</span> <span class="toctext">使用者人数</span></a></li>
+<li class="toclevel-1 tocsection-22"><a href="#.E5.8F.82.E9.98.85"><span class="tocnumber">11</span> <span class="toctext">参阅</span></a></li>
+<li class="toclevel-1 tocsection-23"><a href="#.E5.A4.96.E9.83.A8.E8.BF.9E.E7.BB.93"><span class="tocnumber">12</span> <span class="toctext">外部连结</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="/index.php?title=C%2B%2B&amp;action=edit&amp;section=1" title="编辑段落：发展历史">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.91.E5.B1.95.E5.8E.86.E5.8F.B2">发展历史</span></h2>
+<p>Stroustrup工作起于1979年的<i>C with Classes</i>。这个构思起源于 Stroustrup 做博士论文时的一些程式撰写经验。他发现<a href="/index.php?title=Simula&amp;action=edit&amp;redlink=1" class="new" title="Simula（尚未撰写）">Simula</a>具备很利於大型软体开发的特点，但Simula的执行速度太慢，无法对现实需求发挥功效；<a href="/index.php?title=BCPL&amp;action=edit&amp;redlink=1" class="new" title="BCPL（尚未撰写）">BCPL</a>虽快得多，但它过於低阶的特性，使其不适於大型软体的开发。当Stroustrup开始在<a href="/index.php?title=Bell_Labs&amp;action=edit&amp;redlink=1" class="new" title="Bell Labs（尚未撰写）">贝尔实验室</a>工作时，他有分析<a href="/index.php?title=Unix&amp;action=edit&amp;redlink=1" class="new" title="Unix（尚未撰写）">UNIX</a><a href="/index.php?title=%E6%A0%B8%E5%BF%83&amp;action=edit&amp;redlink=1" class="new" title="核心（尚未撰写）">核心</a>关於<a href="/index.php?title=%E5%88%86%E6%95%A3%E5%BC%8F%E8%AE%A1%E7%AE%97&amp;action=edit&amp;redlink=1" class="new" title="分散式计算（尚未撰写）">分散式计算</a>的问题。回想起他的博士论文经验，Stroustrup开始为C语言增强一些类似Simula的特点。之所以选择C，是因为它适於各种用途、快速和可移植性。除了<a href="/index.php/C" title="C" class="mw-redirect">C</a>和<a href="/index.php?title=Simula&amp;action=edit&amp;redlink=1" class="new" title="Simula（尚未撰写）">Simula</a>之外，同时也从其它语言中取得灵感，如<a href="/index.php?title=ALGOL_68&amp;action=edit&amp;redlink=1" class="new" title="ALGOL 68（尚未撰写）">ALGOL 68</a>、<a href="/index.php?title=Ada&amp;action=edit&amp;redlink=1" class="new" title="Ada（尚未撰写）">Ada</a>、<a href="/index.php?title=CLU&amp;action=edit&amp;redlink=1" class="new" title="CLU（尚未撰写）">CLU</a>以及<a href="/index.php?title=ML&amp;action=edit&amp;redlink=1" class="new" title="ML（尚未撰写）">ML</a>。刚开始时，类别、衍生类别、储存类型检查、内联和预设参数特性，都是透过<a href="/index.php?title=Cfront&amp;action=edit&amp;redlink=1" class="new" title="Cfront（尚未撰写）">Cfront</a>引入C语言之中。1985年10月出现了第一个商业化发布。
+</p><p>1983年，C with Classes改命名为C++。加入了新的特性，其中包括<a href="/index.php?title=%E8%99%9A%E5%87%BD%E6%95%B0&amp;action=edit&amp;redlink=1" class="new" title="虚函数（尚未撰写）">虚疑函式</a>、函式名和运算子重载、参考、常数、使用者可控制的自由空间储存区控制、改良的类型检查，以及新的双斜线(//)单行注解风格。1985年，发布第一版《C++程式设计语言》，提供一个重点的语言参考，至此还不是官方标准。1989年，发布了Release 2.0。引入了多重继承、抽象类别、静态成员函式、<a href="/index.php?title=%E5%B8%B8%E6%95%B0%E6%88%90%E5%91%98%E5%87%BD%E5%BC%8F&amp;action=edit&amp;redlink=1" class="new" title="常数成员函式（尚未撰写）">常数成员函式</a>，以及成员保护。1990年，出版了<i>The Annotated C++ Reference Manual</i>。这本书後来成为标准化的基础。稍後还引入了<a href="/index.php?title=%E6%A8%A1%E6%9D%BF&amp;action=edit&amp;redlink=1" class="new" title="模板（尚未撰写）">模板</a>、<a href="/index.php?title=%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86&amp;action=edit&amp;redlink=1" class="new" title="异常处理（尚未撰写）">异常处理</a>、<a href="/index.php?title=%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4&amp;action=edit&amp;redlink=1" class="new" title="命名空间（尚未撰写）">命名空间</a>、新的<a href="/index.php?title=%E5%BC%BA%E5%88%B6%E8%BD%AC%E5%9E%8B&amp;action=edit&amp;redlink=1" class="new" title="强制转型（尚未撰写）">强制转型</a>，以及<a href="/index.php?title=%E5%B8%83%E6%9E%97%E7%B1%BB%E5%9E%8B&amp;action=edit&amp;redlink=1" class="new" title="布林类型（尚未撰写）">布林类型</a>。
+</p><p>随着C++语言的演变，也逐渐演化出相应的标准程式库。最先加进C++标准函式库的是串流I/O程式库，其用以取代传统的C函式，如<a href="/index.php?title=Printf&amp;action=edit&amp;redlink=1" class="new" title="Printf（尚未撰写）">printf</a>和<a href="/index.php?title=Scanf&amp;action=edit&amp;redlink=1" class="new" title="Scanf（尚未撰写）">scanf</a>。随後所引入的程式库中最重要的便是<a href="/index.php?title=%E6%A0%87%E5%87%86%E6%A8%A1%E6%9D%BF%E5%BA%93&amp;action=edit&amp;redlink=1" class="new" title="标准模板库（尚未撰写）">标准模板库</a>，简称STL。
+</p><p>多年後，一个联合的<a href="/index.php?title=American_National_Standards_Institute&amp;action=edit&amp;redlink=1" class="new" title="American National Standards Institute（尚未撰写）">ANSI</a>-<a href="/index.php?title=International_Organization_for_Standardization&amp;action=edit&amp;redlink=1" class="new" title="International Organization for Standardization（尚未撰写）">ISO</a>委员会於1998年对C++标准化(<i><a href="/index.php?title=ISO/IEC_14882&amp;action=edit&amp;redlink=1" class="new" title="ISO/IEC 14882（尚未撰写）">ISO/IEC 14882</a>:1998</i>)。在官方释出1998标准的若干年後，委员会处理缺陷报告，并於2003年发布一个C++标准的修正版本。2005年，一份名为<b><a href="/index.php?title=Technical_Report_1&amp;action=edit&amp;redlink=1" class="new" title="Technical Report 1（尚未撰写）">Library Technical Report 1</a></b>（简称TR1）的技术报告释出。虽然还不是官方标准的一部分，不过它所提供的几个扩展可望成为下一版C++标准的一部分。几乎所有目前仍在维护的C++编译器皆已支援TR1。
+</p><p>虽然C++免专利，但标准文件本身并不是免费的。
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=C%2B%2B&amp;action=edit&amp;section=2" title="编辑段落：C++名字的由来">编辑</a>]</span> <span class="mw-headline" id="C.2B.2B.E5.90.8D.E5.AD.97.E7.9A.84.E7.94.B1.E6.9D.A5">C++名字的由来</span></h3>
+<p>C++这个名字是<a href="/index.php?title=Rick_Mascitti&amp;action=edit&amp;redlink=1" class="new" title="Rick Mascitti（尚未撰写）">Rick Mascitti</a>於1983年中所建议的，并于1983年12月首次使用。更早以前，尚在研究阶段的发展中语言曾被称为「new C」，之後是「C with Classes」。在<a href="/index.php?title=%E7%94%B5%E8%84%91%E7%A7%91%E5%AD%A6&amp;action=edit&amp;redlink=1" class="new" title="电脑科学（尚未撰写）">电脑科学</a>中，C++仍被称为C语言的上层结构。它最後得名於C语言中的「++」运算子（其对<a href="/index.php?title=%E5%8F%98%E6%95%B0&amp;action=edit&amp;redlink=1" class="new" title="变数（尚未撰写）">变数</a>的<a href="/index.php?title=%E5%80%BC&amp;action=edit&amp;redlink=1" class="new" title="值（尚未撰写）">值</a>进行递增）。而且在共同的<a href="/index.php?title=%E5%91%BD%E5%90%8D%E7%BA%A6%E5%AE%9A&amp;action=edit&amp;redlink=1" class="new" title="命名约定（尚未撰写）">命名约定</a>中，使用「+」以表示增强的程式。Stroustrup说：「这个名字象徵着源自於C语言变化的自然演进」。<a href="/index.php?title=ABCL/c%2B&amp;action=edit&amp;redlink=1" class="new" title="ABCL/c+（尚未撰写）">C+</a>是一个和C/C++无关的早期程式语言。
+</p><p>Stroustrup addressed the origin of the name in the <a href="/index.php?title=Preface&amp;action=edit&amp;redlink=1" class="new" title="Preface（尚未撰写）">preface</a> of later editions of his book, <i><a href="/index.php?title=The_C%2B%2B_Programming_Language&amp;action=edit&amp;redlink=1" class="new" title="The C++ Programming Language（尚未撰写）">The C++ Programming Language</a></i>, adding that "C++" might be inferred from the appendix of <a href="/index.php?title=George_Orwell&amp;action=edit&amp;redlink=1" class="new" title="George Orwell（尚未撰写）">George Orwell</a>'s <i><a href="/index.php?title=Nineteen_Eighty-Four&amp;action=edit&amp;redlink=1" class="new" title="Nineteen Eighty-Four（尚未撰写）">Nineteen Eighty-Four</a></i>.  Of the three segments of the fictional language <a href="/index.php?title=Newspeak&amp;action=edit&amp;redlink=1" class="new" title="Newspeak（尚未撰写）">Newspeak</a>, the "C vocabulary" is the one dedicated to technical terms and <a href="/index.php?title=Jargon&amp;action=edit&amp;redlink=1" class="new" title="Jargon（尚未撰写）">jargon</a>.  "Doubleplus" is the <a href="/index.php?title=Superlative&amp;action=edit&amp;redlink=1" class="new" title="Superlative（尚未撰写）">superlative</a> modifier for Newspeak adjectives.  Thus, "C++" might hold the meaning "most extremely technical or jargonous" in Newspeak.
+</p><p><a href="/index.php?title=Rick_Mascitti&amp;action=edit&amp;redlink=1" class="new" title="Rick Mascitti（尚未撰写）">Rick Mascitti</a>在1992年被非正式地问起名字的由来，他表示这是在半开玩笑中说出的。他从没想过C++会成为这门语言的正式名字。
+</p><p>有一个关于C++名字的笑话是，当你使用后缀++时，附加只发生在运算之後（因此，它应该是++C，而不是C++）。
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=C%2B%2B&amp;action=edit&amp;section=3" title="编辑段落：未来发展">编辑</a>]</span> <span class="mw-headline" id=".E6.9C.AA.E6.9D.A5.E5.8F.91.E5.B1.95">未来发展</span></h3>
+<p>C++ continues to evolve to meet future requirements.  One group in particular, <a href="/index.php?title=Boost_C%2B%2B_Libraries&amp;action=edit&amp;redlink=1" class="new" title="Boost C++ Libraries（尚未撰写）">Boost.org</a>, works to make the most of C++ in its current form and advises the C++ standards committee as to which features work well and which need improving. Current work indicates that C++ will capitalize on its multi-paradigm nature more and more. The work at Boost, for example, is greatly expanding C++'s functional and <a href="/index.php?title=Metaprogramming_(programming)&amp;action=edit&amp;redlink=1" class="new" title="Metaprogramming (programming)（尚未撰写）">metaprogramming</a> capabilities. A new version of the C++ standard is currently being worked on, entitled <a href="/index.php?title=C%2B%2B0x&amp;action=edit&amp;redlink=1" class="new" title="C++0x（尚未撰写）">C++0x</a> (denoting the fact it is expected to be released before 2010) which will include a number of new features.
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=C%2B%2B&amp;action=edit&amp;section=4" title="编辑段落：设计原则">编辑</a>]</span> <span class="mw-headline" id=".E8.AE.BE.E8.AE.A1.E5.8E.9F.E5.88.99">设计原则</span></h2>
+<p>在《C++语言的设计和演化》(1994)中，Bjarne Stroustrup描述了他在设计C++时，所使用的一些原则。知道这些原则有助于理解C++为何会是现在这个样子。以下总结了一些原则，详尽的内容可参阅《C++语言的设计和演化》：
+</p>
+<ul><li> C++设计成<a href="/index.php?title=%E9%9D%99%E6%80%81%E7%B1%BB%E5%9E%8B&amp;action=edit&amp;redlink=1" class="new" title="静态类型（尚未撰写）">静态类型</a>、和C同样高效且可移植的多用途<a href="/index.php?title=%E7%A8%8B%E5%BC%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80&amp;action=edit&amp;redlink=1" class="new" title="程式设计语言（尚未撰写）">程式设计语言</a>。
+</li><li> C++设计成直接的和广泛的支援多种程式设计风格（<a href="/index.php?title=%E7%A8%8B%E5%BA%8F%E5%8C%96%E7%A8%8B%E5%BC%8F%E8%AE%BE%E8%AE%A1&amp;action=edit&amp;redlink=1" class="new" title="程序化程式设计（尚未撰写）">程序化程式设计</a>、<a href="/index.php?title=%E8%B5%84%E6%96%99%E6%8A%BD%E8%B1%A1%E5%8C%96&amp;action=edit&amp;redlink=1" class="new" title="资料抽象化（尚未撰写）">资料抽象化</a>、<a href="/index.php?title=%E7%89%A9%E4%BB%B6%E5%AF%BC%E5%90%91%E7%A8%8B%E5%BC%8F%E8%AE%BE%E8%AE%A1&amp;action=edit&amp;redlink=1" class="new" title="物件导向程式设计（尚未撰写）">物件导向程式设计</a>、<a href="/index.php?title=%E6%B3%9B%E5%9E%8B%E7%A8%8B%E5%BC%8F%E8%AE%BE%E8%AE%A1&amp;action=edit&amp;redlink=1" class="new" title="泛型程式设计（尚未撰写）">泛型程式设计</a>）。
+</li><li> C++设计成给程式设计者更多的选择，即使可能导致程式设计者选择错误。
+</li><li> C++设计成尽可能与C相容，籍此提供一个从C到C++的平滑过渡。
+</li><li> C++避免平台限定或没有普遍用途的特性。
+</li><li> C++不使用会带来额外开销的特性。
+</li><li> C++设计成无需复杂的程式设计环境。
+</li></ul>
+<p>Stanley B. Lippman describes various models in his in-depth book <i>"Inside the C++ Object Model"</i> (1996) for how compilers may convert C++ program statements into an in-memory layout. Compiler vendors are free to implement the standard in their own manner.  Lippman worked on implementing and maintaining <a href="/index.php?title=Cfront&amp;action=edit&amp;redlink=1" class="new" title="Cfront（尚未撰写）">Cfront</a>, the original C++ implementation at Bell Labs.
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=C%2B%2B&amp;action=edit&amp;section=5" title="编辑段落：标准程式库">编辑</a>]</span> <span class="mw-headline" id=".E6.A0.87.E5.87.86.E7.A8.8B.E5.BC.8F.E5.BA.93">标准程式库</span></h2>
+<p>1998的C++<a href="/index.php?title=Standardization&amp;action=edit&amp;redlink=1" class="new" title="Standardization（尚未撰写）">标准</a>分为两个部分︰<a href="/index.php?title=%E6%A0%B8%E5%BF%83%E8%AF%AD%E8%A8%80&amp;action=edit&amp;redlink=1" class="new" title="核心语言（尚未撰写）">核心语言</a>和<a href="/index.php?title=C%2B%2B%E6%A0%87%E5%87%86%E7%A8%8B%E5%BC%8F%E5%BA%93&amp;action=edit&amp;redlink=1" class="new" title="C++标准程式库（尚未撰写）">C++标准程式库</a>；後者包含了大部分<a href="/index.php?title=%E6%A0%87%E5%87%86%E6%A8%A1%E6%9D%BF%E5%BA%93&amp;action=edit&amp;redlink=1" class="new" title="标准模板库（尚未撰写）">标准模板库</a>和C标准程式库的稍加修改版本。存在许多不属於标准部分的C++程式库，且使用外部连结，程式库甚至可以用<a href="/index.php/C" title="C" class="mw-redirect">C</a>撰写。
+</p><p><a href="/index.php?title=C%2B%2B%E6%A0%87%E5%87%86%E7%A8%8B%E5%BC%8F%E5%BA%93&amp;action=edit&amp;redlink=1" class="new" title="C++标准程式库（尚未撰写）">C++标准程式库</a>充分吸收了C标准程式库，并佐以少许的修改，使其与C++良好的运作。另一个大型的程式库部分，是以<a href="/index.php?title=%E6%A0%87%E5%87%86%E6%A8%A1%E6%9D%BF%E5%BA%93&amp;action=edit&amp;redlink=1" class="new" title="标准模板库（尚未撰写）">标准模板库</a>(STL)为基础。它提供了实用的工具，如<a href="/index.php?title=Container&amp;action=edit&amp;redlink=1" class="new" title="Container（尚未撰写）">容器</a>（如︰<a href="/index.php?title=Array&amp;action=edit&amp;redlink=1" class="new" title="Array（尚未撰写）">向量</a>和<a href="/index.php?title=Linked_list&amp;action=edit&amp;redlink=1" class="new" title="Linked list（尚未撰写）">链表</a>），<a href="/index.php?title=Iterator&amp;action=edit&amp;redlink=1" class="new" title="Iterator（尚未撰写）">迭代器</a>（一般化<a href="/index.php?title=Pointer&amp;action=edit&amp;redlink=1" class="new" title="Pointer（尚未撰写）">指标</a>）提供容器以类似阵列的存取方式，以及<a href="/index.php?title=%E6%BC%94%E7%AE%97%E6%B3%95&amp;action=edit&amp;redlink=1" class="new" title="演算法（尚未撰写）">演算法</a>进行搜寻和排序的运算。此外还提供了(multi)map（<a href="/index.php?title=Associative_array&amp;action=edit&amp;redlink=1" class="new" title="Associative array（尚未撰写）">关联阵列</a>）和(multi)set，它们都使用相容的界面。因此，以下成为可能，使用模板撰写泛型演算法，它可以和任何容器或在任何以迭代器定义的序列上运作。如同C，使用<code>#include</code><a href="/index.php?title=Directive_(programming)&amp;action=edit&amp;redlink=1" class="new" title="Directive (programming)（尚未撰写）">指令</a>包含<a href="/index.php?title=%E6%A0%87%E5%87%86%E8%A1%A8%E5%A4%B4&amp;action=edit&amp;redlink=1" class="new" title="标准表头（尚未撰写）">标准表头</a>，即可存取<a href="/index.php?title=%E7%A8%8B%E5%BC%8F%E5%BA%93&amp;action=edit&amp;redlink=1" class="new" title="程式库（尚未撰写）">程式库</a>里的功能。C++提供69个标准表头，其中19个不再赞成使用。
+</p><p>使用标准库（例如︰使用<code>std::vector</code>或<code>std::string</code>来取代C风格的阵列）有助於导向更安全和更灵活的软体。
+</p><p><a href="/index.php?title=STL&amp;action=edit&amp;redlink=1" class="new" title="STL（尚未撰写）">STL</a>在纳入C++标准以前，是来自<a href="/index.php?title=Hewlett-Packard&amp;action=edit&amp;redlink=1" class="new" title="Hewlett-Packard（尚未撰写）">HP</a>和後来的<a href="/index.php?title=Silicon_Graphics&amp;action=edit&amp;redlink=1" class="new" title="Silicon Graphics（尚未撰写）">SGI</a>的第三方程式库，标准中并未称之为「STL」，它只是标准库中的一部分，但仍有许多人使用这个名称，以别於其它的标准库（输入/输出串流、国际化、诊断、C程式库子集，等等）。
+</p><p>Most C++ compilers provide an implementation of the C++ standard library, including the STL. Compiler-independent implementations of the STL, such as <a rel="nofollow" class="external text" href="http://stlport.sf.net">STLPort</a>, also exist. Other projects also produce various custom implementations of the C++ standard library and the STL with various design goals.
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=C%2B%2B&amp;action=edit&amp;section=6" title="编辑段落：C++中的特色">编辑</a>]</span> <span class="mw-headline" id="C.2B.2B.E4.B8.AD.E7.9A.84.E7.89.B9.E8.89.B2">C++中的特色</span></h2>
+<p>和C语言相比，C++引入了更多的特性，包括︰陈述性宣告，类似函式的强制转型，new/delete运算子，布林类型，参考类型，预设参数，函式重载，命名空间，类别（包括所有和类别相关的特性，如继承、成员函式、虚拟函式、抽象类别和建构子），运算子重载，模板，<code>::</code>运算子，异常处理和执行时期识别。
+</p><p>和普遍认为的相反，C++不是第一个引入const关键字的。Const是在正式引入C语言不久之後，才被C++采用。
+</p><p>C++在某些案例中（见下「与C不相容之处」），进行比C还要多的类型检查。
+</p><p>以「<code>//</code>」起始作为注解起源自C的前身<a href="/index.php?title=BCPL&amp;action=edit&amp;redlink=1" class="new" title="BCPL（尚未撰写）">BCPL</a>，而後被重新引入到C++。
+</p><p>C++的一些特性，C不久之後也采用了，包括在for回圈中宣告，C++风格的注解（使用<code>//</code>符号，和<code>inline</code>，虽然C99定义的<code>inline</code>关键字与C++的定义不相容。不过，<a href="/index.php?title=C_(programming_language)&amp;action=edit&amp;redlink=1" class="new" title="C (programming language)（尚未撰写）">C99</a>也引入了不存在於C++的特性，如︰<a href="/index.php?title=Variadic_macro&amp;action=edit&amp;redlink=1" class="new" title="Variadic macro（尚未撰写）">variadic macro</a>s，和以阵列作为参数的较佳处理；某些C++编译器可能实作若干特性，以作为扩展，但其余部分并不符合现存的C++特性）
+</p><p>一个常见的混淆其实只是一个微妙的术语问题︰由於它的演化来自C，在C++中的术语<i>物件</i>和C语言一样是意味着<i>记忆体区域</i>，而不是<i>类别实体</i>，在其它绝大多数的<a href="/index.php?title=%E7%89%A9%E4%BB%B6%E5%AF%BC%E5%90%91&amp;action=edit&amp;redlink=1" class="new" title="物件导向（尚未撰写）">物件导向</a>语言也是如此。举例来说，在C和C++中，语句<code>int i;</code>定义一个<code>int</code>类型的物件，这就是变数的值<code>i</code>将在赋值时，所存入的记忆体区域。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=C%2B%2B&amp;action=edit&amp;section=7" title="编辑段落：与C不相容之处">编辑</a>]</span> <span class="mw-headline" id=".E4.B8.8EC.E4.B8.8D.E7.9B.B8.E5.AE.B9.E4.B9.8B.E5.A4.84">与C不相容之处</span></h2>
+<p><a href="/index.php?title=%E6%A8%A1%E6%9D%BF:Details&amp;action=edit&amp;redlink=1" class="new" title="模板:Details（尚未撰写）">模板:Details</a>
+</p><p>C++一般被认为是C的超集，但这并不严谨。大部分的C代码可以很轻易的在C++中正确编译，但仍有少数差异，导致某些有效的C代码在C++中失效，或者在C++中有不同的行为。
+</p><p>也许最常见的差异是，C允许从<code>void*</code>隐式转换到其它的指标类型，但C++不允许。下列是有效的C代码︰
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> <span class="sy2">*</span>i <span class="sy1">=</span> <span class="kw3">malloc</span><span class="br0">&#40;</span><span class="kw3">sizeof</span><span class="br0">&#40;</span><span class="kw4">int</span><span class="br0">&#41;</span> <span class="sy2">*</span> <span class="nu0">5</span><span class="br0">&#41;</span><span class="sy4">;</span>     <span class="coMULTI">/* 从 void* 隐式转换为 int* */</span></pre></div></div>
+<p>但要使其在C和C++<i>两者</i>皆能运作，就需要使用显示转换︰
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> <span class="sy2">*</span>i <span class="sy1">=</span> <span class="br0">&#40;</span><span class="kw4">int</span> <span class="sy2">*</span><span class="br0">&#41;</span> <span class="kw3">malloc</span><span class="br0">&#40;</span><span class="kw3">sizeof</span><span class="br0">&#40;</span><span class="kw4">int</span><span class="br0">&#41;</span> <span class="sy2">*</span> <span class="nu0">5</span><span class="br0">&#41;</span><span class="sy4">;</span></pre></div></div>
+<p>另一个常见的可移植问题是，C++定义了很多的新关键字，如<code>new</code>和<code>class</code>，它们在C程式中，是可以作为识别字（例︰变数名）的。
+</p><p>在最新的C标准(C99)中去除了一些不相容之处，目前也支援了C++的特性，如<code>//</code>注解，以及在代码中混合宣告。不过C99也纳入几个和C++冲突的新特性（如︰可变长度阵列、原生复数类型和复合逐字常数），所以语言的分岐可能还是大过合并。
+</p><p>若要混用C和C++的代码，则所有在C++中呼叫的C代码，必须放在<code>extern "C" { /* C代码 */ }</code>之内。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=C%2B%2B&amp;action=edit&amp;section=8" title="编辑段落：C++的Hello World程序">编辑</a>]</span> <span class="mw-headline" id="C.2B.2B.E7.9A.84Hello_World.E7.A8.8B.E5.BA.8F">C++的Hello World程序</span></h2>
+<p>在使用兼容C89标准（也称为ANSI C）的编译器时，下面这个程序显示“Hello, world!”然后结束运行：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+&#160;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    std<span class="sy4">::</span><span class="kw3">cout</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Hello, world!<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>在使用兼容C99标准（ISO/IEC 14882-1998）的编译器时，下面的程序也是可以的：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+&#160;
+<span class="kw2">using</span> <span class="kw2">namespace</span> std<span class="sy4">;</span>
+&#160;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    <span class="kw3">cout</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Hello, world!&quot;</span> <span class="sy1">&lt;&lt;</span> endl<span class="sy4">;</span>
+    <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>根据ISO C++的规定，main函数的形式只能是
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    ...
+<span class="br0">&#125;</span></pre></div></div>
+<p>以及
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> main<span class="br0">&#40;</span><span class="kw4">int</span> argc,<span class="kw4">char</span> <span class="sy2">*</span> argv<span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    ...
+<span class="br0">&#125;</span></pre></div></div>
+<p>尽管如此，但在大部份编译器上，
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">void</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+     ....
+<span class="br0">&#125;</span></pre></div></div>
+<p>也被支持。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include&lt;iostream.h&gt;</span>
+<span class="kw4">void</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span><span class="st0">&quot;Hello, world!&quot;</span> <span class="sy1">&lt;&lt;</span> endl<span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h2><span class="editsection">[<a href="/index.php?title=C%2B%2B&amp;action=edit&amp;section=9" title="编辑段落：语言特性">编辑</a>]</span> <span class="mw-headline" id=".E8.AF.AD.E8.A8.80.E7.89.B9.E6.80.A7">语言特性</span></h2>
+<h3><span class="editsection">[<a href="/index.php?title=C%2B%2B&amp;action=edit&amp;section=10" title="编辑段落：运算子">编辑</a>]</span> <span class="mw-headline" id=".E8.BF.90.E7.AE.97.E5.AD.90">运算子</span></h3>
+<h3><span class="editsection">[<a href="/index.php?title=C%2B%2B&amp;action=edit&amp;section=11" title="编辑段落：预处理器">编辑</a>]</span> <span class="mw-headline" id=".E9.A2.84.E5.A4.84.E7.90.86.E5.99.A8">预处理器</span></h3>
+<p>C++主要有三个编译阶段︰预处理、转译成物件码和连结（最後的两个阶段一般才视之为真正的「编译」）。在第一阶段，预处理，会将<i>预处理器指令</i>替换成原始码，然後送到下一个编译阶段。
+</p>
+<h4><span class="editsection">[<a href="/index.php?title=C%2B%2B&amp;action=edit&amp;section=12" title="编辑段落：预处理器指令和巨集">编辑</a>]</span> <span class="mw-headline" id=".E9.A2.84.E5.A4.84.E7.90.86.E5.99.A8.E6.8C.87.E4.BB.A4.E5.92.8C.E5.B7.A8.E9.9B.86">预处理器指令和巨集</span></h4>
+<p>预处理指令的运作方式是根据使用者定义的规则，简单的把记号字元序列置换成其它的记号字元序列。它们进行<a href="/index.php?title=%E5%B7%A8%E9%9B%86%E7%BD%AE%E6%8D%A2&amp;action=edit&amp;redlink=1" class="new" title="巨集置换（尚未撰写）">巨集置换</a>、含入其它的档案（由底层至高阶的特性，例如包含模组/包/单元/元件）、条件式编译和条件式含入。例如：
+</p>
+<pre>#define PI 3.1415926535897932384626433832795028841971693993751
+</pre>
+<p>每次在原始码中出现的<code>PI</code>，将会替换为<code>3.1415926535897932384626433832795028841971693993751</code>。另一个普遍的例子是
+</p>
+<pre>#include &lt;iostream&gt;
+</pre>
+<p>它从标准库表头<code>iostream</code>含入（汇入）所有的符号。除了以上提到的常用指令以外，还有几个额外的预处理器指令，可以用来控制编译流程，条件式含入或排除代码区块等等。
+</p>
+<dl><dd><i>参阅<a href="/index.php?title=%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8&amp;action=edit&amp;redlink=1" class="new" title="预处理器（尚未撰写）">预处理器</a>和<a href="/index.php?title=C%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8&amp;action=edit&amp;redlink=1" class="new" title="C预处理器（尚未撰写）">C预处理器</a></i>
+</dd></dl>
+<h3><span class="editsection">[<a href="/index.php?title=C%2B%2B&amp;action=edit&amp;section=13" title="编辑段落：模板">编辑</a>]</span> <span class="mw-headline" id=".E6.A8.A1.E6.9D.BF">模板</span></h3>
+<h3><span class="editsection">[<a href="/index.php?title=C%2B%2B&amp;action=edit&amp;section=14" title="编辑段落：物件">编辑</a>]</span> <span class="mw-headline" id=".E7.89.A9.E4.BB.B6">物件</span></h3>
+<h4><span class="editsection">[<a href="/index.php?title=C%2B%2B&amp;action=edit&amp;section=15" title="编辑段落：封装">编辑</a>]</span> <span class="mw-headline" id=".E5.B0.81.E8.A3.85">封装</span></h4>
+<h4><span class="editsection">[<a href="/index.php?title=C%2B%2B&amp;action=edit&amp;section=16" title="编辑段落：继承">编辑</a>]</span> <span class="mw-headline" id=".E7.BB.A7.E6.89.BF">继承</span></h4>
+<h3><span class="editsection">[<a href="/index.php?title=C%2B%2B&amp;action=edit&amp;section=17" title="编辑段落：多态">编辑</a>]</span> <span class="mw-headline" id=".E5.A4.9A.E6.80.81">多态</span></h3>
+<h2><span class="editsection">[<a href="/index.php?title=C%2B%2B&amp;action=edit&amp;section=18" title="编辑段落：分析和处理C++原始码">编辑</a>]</span> <span class="mw-headline" id=".E5.88.86.E6.9E.90.E5.92.8C.E5.A4.84.E7.90.86C.2B.2B.E5.8E.9F.E5.A7.8B.E7.A0.81">分析和处理C++原始码</span></h2>
+<h2><span class="editsection">[<a href="/index.php?title=C%2B%2B&amp;action=edit&amp;section=19" title="编辑段落：问题与争论">编辑</a>]</span> <span class="mw-headline" id=".E9.97.AE.E9.A2.98.E4.B8.8E.E4.BA.89.E8.AE.BA">问题与争论</span></h2>
+<h3><span class="editsection">[<a href="/index.php?title=C%2B%2B&amp;action=edit&amp;section=20" title="编辑段落：中文术语问题">编辑</a>]</span> <span class="mw-headline" id=".E4.B8.AD.E6.96.87.E6.9C.AF.E8.AF.AD.E9.97.AE.E9.A2.98">中文术语问题</span></h3>
+<h2><span class="editsection">[<a href="/index.php?title=C%2B%2B&amp;action=edit&amp;section=21" title="编辑段落：使用者人数">编辑</a>]</span> <span class="mw-headline" id=".E4.BD.BF.E7.94.A8.E8.80.85.E4.BA.BA.E6.95.B0">使用者人数</span></h2>
+<p>Stroustrup最初在《C++语言的设计和演化》一书中所提及的使用者爆炸性增长的资料为︰
+</p>
+<table width="80%" align="center" border="0">
+<tr>
+<td> <b>年份</b>
+</td>
+<td> <b>估计使用者人数</b>
+</td></tr>
+<tr>
+<td> 1979
+</td>
+<td> 1
+</td></tr>
+<tr>
+<td> 1980
+</td>
+<td> 16
+</td></tr>
+<tr>
+<td> 1981
+</td>
+<td> 38
+</td></tr>
+<tr>
+<td> 1982
+</td>
+<td> 85
+</td></tr>
+<tr>
+<td> 1983
+</td>
+<td>&#160;?? + 2
+</td></tr>
+<tr>
+<td> 1984
+</td>
+<td>&#160;?? + 50
+</td></tr>
+<tr>
+<td> 1985
+</td>
+<td> 500
+</td></tr>
+<tr>
+<td> 1986
+</td>
+<td> 2000
+</td></tr>
+<tr>
+<td> 1987
+</td>
+<td> 4000
+</td></tr>
+<tr>
+<td> 1988
+</td>
+<td> 15000
+</td></tr>
+<tr>
+<td> 1989
+</td>
+<td> 50000
+</td></tr>
+<tr>
+<td> 1990
+</td>
+<td> 150000
+</td></tr>
+<tr>
+<td> 1991
+</td>
+<td> 400000
+</td></tr></table>
+<p>而作出「在这12年里，C++使用者人数大约每七个月半增加一倍」的结论，并成为许多C++相关文件必引的一段话。然而，时至今日新语言层出不穷，使用者人数已不太可能以如此速度增长。
+</p><p>分析机构EvansData定期对开发人员展开调查，其调查结果与Stroustrup提出的C++正在扩张的说法相违背。EvansData的资料显示，以C++为工具的开发人员在整个开发界所占的比例由1998年春天的76%下降至2004年秋的46%。
+</p><p>Forrester最新的调查显示，C++、微软VisualBasic和Java是众多公司产品体系的首选语言。对100家公司的调查显示，C/C++、VisualBasic和Java在产品体系中的使用比例分别是59%、61%和66%。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=C%2B%2B&amp;action=edit&amp;section=22" title="编辑段落：参阅">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E9.98.85">参阅</span></h2>
+<ul><li><a href="/index.php?title=C%2B%2B%E6%89%98%E7%AE%A1%E6%89%A9%E5%B1%95&amp;action=edit&amp;redlink=1" class="new" title="C++托管扩展（尚未撰写）">C++托管扩展</a>
+</li><li><a href="/index.php?title=C%2B%2B/CLI&amp;action=edit&amp;redlink=1" class="new" title="C++/CLI（尚未撰写）">C++/CLI</a>
+</li><li><a href="/index.php/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E8%AF%BE%E7%A8%8B%E5%88%97%E8%A1%A8" title="计算机科学课程列表">计算机科学课程列表</a>
+</li></ul>
+<h2><span class="editsection">[<a href="/index.php?title=C%2B%2B&amp;action=edit&amp;section=23" title="编辑段落：外部连结">编辑</a>]</span> <span class="mw-headline" id=".E5.A4.96.E9.83.A8.E8.BF.9E.E7.BB.93">外部连结</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="http://cpp.ga-la.com">蚂蚁的C/C++标准编程</a>
+</li><li> <a rel="nofollow" class="external text" href="http://www.research.att.com/~bs/homepage.html">Bjarne Stroustrup's homepage</a>
+</li><li> <a rel="nofollow" class="external text" href="http://www.mindview.net/Books/TICPP/ThinkingInCPP2e.html">Thinking in C++ 2nd Edition by Bruce Eckel</a>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 166/1000000
+Post-expand include size: 19/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:6-0!*!0!!zh-cn!*!* and timestamp 20150502093622 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=C%2B%2B&amp;oldid=35228">http://www.nocow.cn/index.php?title=C%2B%2B&amp;oldid=35228</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/C%2B%2B" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk"><a href="/index.php/%E8%AE%A8%E8%AE%BA:C%2B%2B" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=C%2B%2B&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=C%2B%2B&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=C%2B%2B" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/C%2B%2B" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/C%2B%2B" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=C%2B%2B&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=C%2B%2B&amp;oldid=35228" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过9,920次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/204.236.235.245" title="特殊:用户贡献/204.236.235.245">204.236.235.245</a>于2014年9月17日 (星期三) 23:50做出最后修改。 在<a href="/index.php?title=%E7%94%A8%E6%88%B7:Zhouzhou&amp;action=edit&amp;redlink=1" class="new" title="用户:Zhouzhou（尚未撰写）">周冬强</a>、<a href="/index.php/%E7%94%A8%E6%88%B7:Rchard" title="用户:Rchard">Richard Zhang</a>、<a href="/index.php/%E7%94%A8%E6%88%B7:Cosechy" title="用户:Cosechy">yh</a>和<a href="/index.php?title=%E7%94%A8%E6%88%B7:Nlysht&amp;action=edit&amp;redlink=1" class="new" title="用户:Nlysht（尚未撰写）">RuiCong</a>和<a href="/index.php?title=C%2B%2B&amp;action=credits" title="C++">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.332 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

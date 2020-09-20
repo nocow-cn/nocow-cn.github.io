@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>USACO/kimbits - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=USACO/kimbits&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=USACO/kimbits&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "USACO/kimbits", "wgTitle": "USACO/kimbits", "wgCurRevisionId": 36385, "wgArticleId": 389, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for pascal
+ * CSS class: source-pascal, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.pascal.source-pascal .de1, .pascal.source-pascal .de2 {}
+.pascal.source-pascal  {font-family:monospace;}
+.pascal.source-pascal .imp {font-weight: bold; color: red;}
+.pascal.source-pascal li, .pascal.source-pascal .li1 {font-weight: normal; vertical-align:top;}
+.pascal.source-pascal .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.pascal.source-pascal .li2 {font-weight: bold; vertical-align:top;}
+.pascal.source-pascal .kw1 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw2 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw3 {color: #000066;}
+.pascal.source-pascal .kw4 {color: #000066; font-weight: bold;}
+.pascal.source-pascal .co1 {color: #666666; font-style: italic;}
+.pascal.source-pascal .coMULTI {color: #666666; font-style: italic;}
+.pascal.source-pascal .es0 {color: #000099; font-weight: bold;}
+.pascal.source-pascal .es_h {color: #000099; font-weight: bold;}
+.pascal.source-pascal .br0 {color: #009900;}
+.pascal.source-pascal .sy0 {color: #339933;}
+.pascal.source-pascal .st0 {color: #ff0000;}
+.pascal.source-pascal .st_h {color: #ff0000;}
+.pascal.source-pascal .nu0 {color: #cc66cc;}
+.pascal.source-pascal .me1 {color: #0066ee;}
+.pascal.source-pascal .ln-xtra, .pascal.source-pascal li.ln-xtra, .pascal.source-pascal div.ln-xtra {background-color: #ffc;}
+.pascal.source-pascal span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-USACO_kimbits action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">USACO/kimbits</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="/index.php/USACO" title="USACO">USACO</a></span></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E5.88.86.E6.9E.90"><span class="tocnumber">1</span> <span class="toctext">分析</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#.E5.AE.98.E6.96.B9.E9.A2.98.E8.A7.A3"><span class="tocnumber">1.1</span> <span class="toctext">官方题解</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#.E6.B3.A8.E6.84.8F"><span class="tocnumber">1.2</span> <span class="toctext">注意</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#.E5.8A.A8.E6.80.81.E8.A7.84.E5.88.92"><span class="tocnumber">1.3</span> <span class="toctext">动态规划</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#.E4.BC.98.E5.8C.96"><span class="tocnumber">1.4</span> <span class="toctext">优化</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#.E6.90.9C.E7.B4.A2.2B.E5.89.AA.E6.9E.9D"><span class="tocnumber">1.5</span> <span class="toctext">搜索+剪枝</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#.E5.89.AA.E6.9E.9D2"><span class="tocnumber">1.6</span> <span class="toctext">剪枝2</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#.EF.BC.88.E9.AB.98.E6.95.88.E6.96.B9.E6.B3.95.EF.BC.89.E7.9B.B4.E6.8E.A5.E8.AE.A1.E7.AE.97.E7.BB.84.E5.90.88.E6.95.B0.EF.BC.8C.E5.BF.AB.E9.80.9F.E7.BC.A9.E5.B0.8F.E6.90.9C.E7.B4.A2.E8.8C.83.E5.9B.B4"><span class="tocnumber">1.7</span> <span class="toctext">（高效方法）直接计算组合数，快速缩小搜索范围</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#.E6.89.BE.E8.A7.84.E5.BE.8B"><span class="tocnumber">1.8</span> <span class="toctext">找规律</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#.E8.A7.84.E5.BE.8B2"><span class="tocnumber">2</span> <span class="toctext">规律2</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#.E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81"><span class="tocnumber">3</span> <span class="toctext">参考代码</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/kimbits&amp;action=edit&amp;section=1" title="编辑段落：分析">编辑</a>]</span> <span class="mw-headline" id=".E5.88.86.E6.9E.90">分析</span></h2>
+<h3><span class="editsection">[<a href="/index.php?title=USACO/kimbits&amp;action=edit&amp;section=2" title="编辑段落：官方题解">编辑</a>]</span> <span class="mw-headline" id=".E5.AE.98.E6.96.B9.E9.A2.98.E8.A7.A3">官方题解</span></h3>
+<p>假设我们知道如何计算含有给定个数的二进制0和1的集合大小。也就是说，假设我们有一个函数sizeofset(n,m)返回含有至多m个1的n位二进制数的集合大小。
+</p><p>然后我们可以如下解决这个问题，我们在寻找至多m个1的n位二进制数的集合的第i个元素。这个集合有两部分，开始于0的和开始于1的。有sizeofset(n-1, m)个数以0开始且至多有m个'1',有sizeofset(n-1,m-1)个数以1开始并且至多有m-1个'1'。
+</p><p>所以如果这个序号(i)比sizeofset(n-1,m)小，题目所求的数出现在开始于0的那部分，不然的话，它以一个'1'开始。
+</p><p>由"printbits"实现的递归算法很合适
+</p><p>所剩的唯一困难是计算"sizeofset",我们可以用上面描述的特征使用动态规划解决这个问题。
+	sizeofset(n, m) = sizeofset(n-1, m) + sizeofset(n-1, m-1)
+</p><p>并且对于所有m,sizeofset(0, m) = 1.我们使用double来存储大小，但这矫枉过正了，因为重写的问题只要求31位而不是32位。
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=USACO/kimbits&amp;action=edit&amp;section=3" title="编辑段落：注意">编辑</a>]</span> <span class="mw-headline" id=".E6.B3.A8.E6.84.8F">注意</span></h3>
+<p>此题虽简单，但有一个坑：最大的I可达到2147483648，超出32bit signed int范围！大家要谨防被坑。。。（从坑里刚爬出来的某人如是说）
+</p>
+<hr />
+<p>同意，此坑毫无意义，差评！
+</p>
+<hr />
+<p>同意，刚好大1，神坑，差评！
+</p>
+<hr />
+<p>同意，深坑，不玩了，差评！
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=USACO/kimbits&amp;action=edit&amp;section=4" title="编辑段落：动态规划">编辑</a>]</span> <span class="mw-headline" id=".E5.8A.A8.E6.80.81.E8.A7.84.E5.88.92">动态规划</span></h3>
+<p>设长度为j的01串，1的个数不大于k的个数为f[j,k]
+</p><p>方程：f[j,k]=f[j-1,k]+f[j-1,k-1];   //分别表示在当前位加上0和加上1时的两种状况
+</p><p>边界：f[j,0]=1,f[0,j]=1;f[j,k](k&gt;j)=f[j,j]
+</p><p>这样我们得到了所有的f[j,k](j,k∈Z, j,k&gt;0),需要做的就是据此构造出所求字符串.
+</p><p>设所求串为S,假设S的位中最高位的1在自右向左第K+1位，那么必然满足F[K,L]&lt; I,F[K+1,L] &gt;=I,这样的K是唯一的。所以S的第一个1在从右至左第K+1位.因为有F[K,L]个串第K+1位上为0，所以所求的第I个数的后K位就应该是满足"位数为K且串中1不超过L-1个"这个条件的第I-F[K,L]个数。
+</p><p>于是我们得到这样的算法:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="kw1">for</span> K<span class="sy0">:=</span>n<span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">downto</span> <span class="nu0">0</span> <span class="kw1">do</span> <span class="co1">//题目保证有解，所以f[N,L]&gt;I</span>
+  <span class="kw1">if</span> F<span class="br0">&#91;</span>K<span class="sy0">,</span>L<span class="br0">&#93;</span>&lt;I <span class="kw1">then</span>
+  <span class="kw1">begin</span>
+    s<span class="br0">&#91;</span>N<span class="sy0">-</span>K<span class="br0">&#93;</span><span class="sy0">:=</span><span class="st_h">'1'</span>;
+    dec<span class="br0">&#40;</span>I<span class="sy0">,</span>F<span class="br0">&#91;</span>K<span class="sy0">,</span>L<span class="br0">&#93;</span><span class="br0">&#41;</span>;<span class="coMULTI">{第K+1位是1，所以I减去第K+1位是0的串的个数}</span>
+    dec<span class="br0">&#40;</span>L<span class="br0">&#41;</span>;
+  <span class="kw1">end</span>;
+<span class="co1">//注意I可能为2147483648th element ,所以用无符号整形存储I。F在F[32][32]为2147483648。所以F要用int64。</span></pre></div></div>
+<pre>注(C++)：
+d[i][j]表示长度为i，1的个数至多为j的二进制数量
+边界：d[i][0]=1;(任何位没有至多0个1的情况只有一种0000000....)d[0][i]=1;(主要是为了在递推的过程中,长度为1,1个数至多j的二进制转移正确。（长度为1的情况下，只有0,1两种）)
+d[i][j]=d[i-1][j]+d[i-1][j-1]分别有第i位为1，0两种情况。//前者是第i位为0的情况下，后者为第i位为1的情况
+打印解得原理：
+有转移方程可以知道，I&gt;d[i-1][L]的情况时候，必定存在d[i-1][j-1]的情况，此时我们确定第i位必定为1，所以减去第i位为0,长度为i的情况 剩下的就是第i位为1的情况 
+
+比如找3位，1个数不超过3个，的第7个二进制 数 
+000
+001
+010
+011
+减掉上面的 ，第三位为0的情况 剩下的是： 
+100
+101
+110
+111
+减去的上面部分  7-4=3；剩下4种第3位为1的情况，则下面讨论的其实是： 
+00
+01
+10
+11
+转移到这了 重复这样的步骤（求2位，1个数不超过3-1=2个，第3位二进制数），就能确定第2位第1位了  
+————————————————————————————————————————————来自一名想了一天没看懂，第二天终于看懂的蒟蒻的想法..补充..
+ 
+ 
+</pre>
+<h3><span class="editsection">[<a href="/index.php?title=USACO/kimbits&amp;action=edit&amp;section=5" title="编辑段落：优化">编辑</a>]</span> <span class="mw-headline" id=".E4.BC.98.E5.8C.96">优化</span></h3>
+<p>其实从基本的组合原理出发，我们可以推出F[j,k]的表达式:F[j,k]=C[j,0]+C[j,1]+C[j,2]+...+C[j,k].这里C[i,j]表示从i个元素中取j的组合数
+因为C[m,n]=C[m-1,n-1]+C[m-1,n],可得
+</p><p>F[j,k]=C[j-1,0]+C[j-1,0]+C[j-1,1]+...+C[j-1,K]+C[j-1,k-1]+C[j-1,K]
+</p><p>=2*(C[j-1,0]+C[j-1,1]+...+C[j-1,k-1])+C[j-1,K]
+</p><p>=2*F[j-1,k-1]+C[j-1,k]
+</p><p>这样我们就可以用一个递归程序求解该问题.
+</p><p>用<img class="tex" alt="F[j-1,k-1]=\frac{(F[j,k]-C[j-1,k])}{2}" src="/images/math/7/a/8/7a847e6d5d8ba606a1b62f28a7ee352a.png" />,我们首先可以仅用O(N)的时间就可以计算出F(j,L)的值,并记录C(j,L).若需添"1",则可由上式计算出F(J-1,L-1)的值,并用O(1)的时间将C(J,L)改进为C(J-1,L-1);若只需添"0",则可先计算出C(J-1,L)的值,再将F(J,L)改进为F(J-1,L),也是O(1)的时间.
+因此我们只需要保留C,F,N,M,K,I等少量临时变量,空间复杂度为常数级,且可以在O(N)的时间内计算出解,非常优化.
+</p><p>(还有C[I,J]与C[I-1,J],C[I,J-1]之间的O(1)改进方法,参见程序3,自己推也很容易)
+</p><p><i>(这是LF大牛提出的方法,并通过了USACO的数据,参见PASCAL程序3)</i>
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=USACO/kimbits&amp;action=edit&amp;section=6" title="编辑段落：搜索+剪枝">编辑</a>]</span> <span class="mw-headline" id=".E6.90.9C.E7.B4.A2.2B.E5.89.AA.E6.9E.9D">搜索+剪枝</span></h3>
+<p>如果暴搜的话，第十个点就会超时。
+</p><p>这里要小小地加上一个位运算里的剪枝（假设i从0开始递增，符合条件的话temp+1）：
+</p><p>p为i当前的1的个数，则!(i&amp;((1LL&lt;&lt;(n-p))-1))为真的话，就是i后边连续的0个数大于等于p，然后在判断一下
+</p><p>(temp+(1LL&lt;&lt;(n-p))&lt;k)
+</p><p>如果为true，则i和temp都加上(1LL&lt;&lt;(n-p))，否则结果就是i+k-temp-1，转化成二进制后输出就行了。
+</p><p>效率还算可以，最后三个点都是0.00s过了，最慢的是0.055。
+</p><p>不过要会用Matrix67的分治法求1的个数，然后明白那个剪枝还要有一点位运算的基础
+</p><p>详细见echooat1的C++程序
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=USACO/kimbits&amp;action=edit&amp;section=7" title="编辑段落：剪枝2">编辑</a>]</span> <span class="mw-headline" id=".E5.89.AA.E6.9E.9D2">剪枝2</span></h3>
+<p>若 p&gt;N 则可以跳过所有与i最后一个1之前相等的数,因为其p都是大于N的。找最后一个1可用i&amp;(i^(i-1)) （见M67）。即：
+</p>
+<pre>  i+=(i&amp;(i^(i-1)))-1;
+</pre>
+<p>加上上面的剪枝最慢的一个点 0.027 s,其它全部0.00s。
+详见skyxxzc1的代码。
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=USACO/kimbits&amp;action=edit&amp;section=8" title="编辑段落：（高效方法）直接计算组合数，快速缩小搜索范围">编辑</a>]</span> <span class="mw-headline" id=".EF.BC.88.E9.AB.98.E6.95.88.E6.96.B9.E6.B3.95.EF.BC.89.E7.9B.B4.E6.8E.A5.E8.AE.A1.E7.AE.97.E7.BB.84.E5.90.88.E6.95.B0.EF.BC.8C.E5.BF.AB.E9.80.9F.E7.BC.A9.E5.B0.8F.E6.90.9C.E7.B4.A2.E8.8C.83.E5.9B.B4">（高效方法）直接计算组合数，快速缩小搜索范围</span></h3>
+<pre>     ------消逝者-------
+</pre>
+<p>和二分有些类似。。。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">首先分段：<span class="br0">&#40;</span>xxx代表前面若干个<span class="nu0">0</span>）
+xxxxx0
+xxxxx1
+<span class="sy2">----</span>前面这两个可以单独处理<span class="sy2">----</span>
+xxxx10
+xxx100
+xx1000  <span class="co1">//比如搜到在这一段内，子问题就是1000。</span>
+x10000
+<span class="nu0">100000</span></pre></div></div>
+<p>通过计算组合数C[1后面的位数][K]((0&lt;=K&lt;=剩余可用1的个数)&amp;&amp;(K&lt;=1后面的位数))可以直接得出每一段所包含的组合数总和。
+然后重上到下（见上面分段图）每段依次加起来，确定在某一段范围内后，更新I=I-累加到前面一段的个数，缩小范围，用到1的话把剩余可用1的数量减一，就是变成一个新的子问题，再递归同样处理子问题即可。
+组合数可以提前计算，计算方法取对数化简变连加即可，这里为了加速又因为表很小，直接打表。
+详情见C++代码
+</p>
+<hr />
+<p>楼上好大一张表。。
+</p><p>先求出n bit的数含有'1'个数为L的个数（和杨辉三角差一点）
+</p>
+<pre>        L&#160;: 1 | 2 | 3 | 4 | 5 | ...
+     1 bit: 2 | 0 | 0 | ...
+     2 bit: 1 | 1 | 0 | ...
+     3 bit: 1 | 2 | 1 | ...
+     ...
+</pre>
+<p>然后再求出<b>前</b>n bit的数含有'1'个数不大于L的个数（先自上到下再从左到右叠加）
+</p>
+<pre>        L&#160;: 1 | 2 | 3 | 4 | 5 | ...
+     1 bit: 2 | 2 | 2 | 2 | ...
+     2 bit: 3 | 4 | 4 | 4 | ...
+     3 bit: 4 | 7 | 8 | 8 | ...
+     4 bit: 5 | 11 | ...
+     ...
+   
+</pre>
+<p>有了这个表再递归查询时间复杂度为O(NlogI)..
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=USACO/kimbits&amp;action=edit&amp;section=9" title="编辑段落：找规律">编辑</a>]</span> <span class="mw-headline" id=".E6.89.BE.E8.A7.84.E5.BE.8B">找规律</span></h3>
+<p>列出以下的规律，你会发现很有规律
+</p><p><br />
+二进制数大小 —— 含有1的位数
+</p><p><br />
+1-1  —— 1
+</p><p><br />
+2-3   ——         1 2
+</p><p><br />
+4-7       ——     1 2 2 3
+</p><p><br />
+8-15     ——      1 2 2 3   2 3 3 4
+</p><p><br />
+16-31     ——     1 2 2 3   2 3 3 4   2 3 3 4   3 4 4 5
+</p><p><br />
+32-63     ——     1 2 2 3   2 3 3 4   2 3 3 4   3 4 4 5   2 3 3 4   3 4 4 5   3 4 4 5   4 5 5 6
+</p><p><br />
+很有规律……
+</p><p><br />
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/kimbits&amp;action=edit&amp;section=10" title="编辑段落：规律2">编辑</a>]</span> <span class="mw-headline" id=".E8.A7.84.E5.BE.8B2">规律2</span></h2>
+<p>用杨辉三角计算组合数这么二的问题在这里就不说了==！~！
+下面来发一个一步一步推出解的方法
+求出C（n,m）n和m都是50，也就是所求出i&lt;=n&amp;&amp;j&lt;=m的所有组合数
+下面本人来说一个方法
+</p><p>用样例说吧
+5 3 19
+也就是说先确定第一位
+</p><p>如果第一个是0，也就是说后四个取 1到3 个
+long long t = 组合数累加(= _ =)!~!
+在这里t是15
+最后算出19是大于15的也就是说第一位肯定是1
+所以这个序列肯定是序列开头是1的第4个（小学减法）
+如果是1就把m--
+以此类推……
+</p><p>此方法相当强大全部零秒秒杀
+</p><p>杨辉三角的写法按照我这个
+</p>
+<pre>   c[0][0] = 1;
+   for(int i = 1; i &lt;= 50; i ++)
+   {
+       for(int j = 0; j &lt;= 50; j ++)
+       {
+           c[i][j] = c[i - 1][j] + c[i - 1][j - 1];
+       }
+   }
+</pre>
+<p>零也有用
+因为最后的时候你是可以选零的
+我习惯把long long 写成LL
+(LL大法好)
+</p><p>void solve()
+{
+</p>
+<pre>   for(int i = 1; i &lt;= N; i ++)
+   {
+       if(L == 0) {cout &lt;&lt; "0";continue;}
+       LL u = 0;
+       for(int j = 0; j &lt;= L; j ++)
+       {
+           u += c[N - i][j];
+       }
+       if(I &lt;= u) {cout &lt;&lt; "0";}
+       else
+       {
+           cout &lt;&lt; "1";
+           L --;
+           I -= u;
+       }
+   }
+   return;
+</pre>
+<p>}
+</p><p>说句话这个东西也可以用在搜索里，就不用什么位运算优化了
+</p><p><br />
+by 七哥
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/kimbits&amp;action=edit&amp;section=11" title="编辑段落：参考代码">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81">参考代码</span></h2>
+<p><a href="/index.php/Code:USACO/kimbits/C" title="Code:USACO/kimbits/C">C</a>
+</p><p><a href="/index.php/Code:USACO/kimbits/C%2B%2B" title="Code:USACO/kimbits/C++">C++</a>
+</p><p><a href="/index.php/Code:USACO/kimbits/Pascal" title="Code:USACO/kimbits/Pascal">Pascal</a>
+</p><p><a href="/index.php/Code:USACO/kimbits/Java" title="Code:USACO/kimbits/Java">Java</a>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 69/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:389-0!1!0!!zh-cn!*!* and timestamp 20170806103724 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=USACO/kimbits&amp;oldid=36385">http://www.nocow.cn/index.php?title=USACO/kimbits&amp;oldid=36385</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/USACO/kimbits" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:USACO/kimbits&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=USACO/kimbits&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=USACO/kimbits&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=USACO%2Fkimbits" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/USACO/kimbits" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/USACO/kimbits" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=USACO/kimbits&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=USACO/kimbits&amp;oldid=36385" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过25,543次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/54.173.35.129" title="特殊:用户贡献/54.173.35.129">54.173.35.129</a>于2017年8月4日 (星期五) 10:49做出最后修改。 在NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/60.191.188.186" title="特殊:用户贡献/60.191.188.186">60.191.188.186</a>、<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/58.249.112.50" title="特殊:用户贡献/58.249.112.50">58.249.112.50</a>、<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/121.9.250.3" title="特殊:用户贡献/121.9.250.3">121.9.250.3</a>和<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/101.75.139.16" title="特殊:用户贡献/101.75.139.16">101.75.139.16</a>和<a href="/index.php?title=USACO/kimbits&amp;action=credits" title="USACO/kimbits">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.220 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

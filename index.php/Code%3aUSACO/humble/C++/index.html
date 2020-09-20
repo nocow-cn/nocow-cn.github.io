@@ -1,0 +1,605 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="keywords" content="Code:USACO/humble/C++,Nettle99" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (中文(简体))" />
+<link title="Creative Commons" type="application/rdf+xml" href="/index.php?title=Code:USACO/humble/C%2B%2B&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+		<title>NOCOW - Code:USACO/humble/C++</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins/monobook/main.css?42b"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print" href="/skins/common/commonPrint.css?42b" />
+		<link rel="stylesheet" type="text/css" media="handheld" href="/skins/monobook/handheld.css?42b" />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins/monobook/IE50Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins/monobook/IE55Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins/monobook/IE60Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins/monobook/IE70Fixes.css?42b";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?42b"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">/*<![CDATA[*/
+var skin = "monobook";
+var stylepath = "/skins";
+var wgArticlePath = "/index.php/$1";
+var wgScriptPath = "";
+var wgServer = "http://www.nocow.cn";
+var wgCanonicalNamespace = "Code";
+var wgCanonicalSpecialPageName = false;
+var wgNamespaceNumber = 104;
+var wgPageName = "Code:USACO/humble/C++";
+var wgTitle = "USACO/humble/C++";
+var wgArticleId = "3123";
+var wgIsArticle = true;
+var wgUserName = null;
+var wgUserLanguage = "zh-cn";
+var wgContentLanguage = "zh-cn";
+var wgBreakFrames = false;
+var wgCurRevisionId = "22184";
+/*]]>*/</script>
+                
+		<script type="text/javascript" src="/skins/common/wikibits.js?42b"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=-&action=raw&gen=css&maxage=18000";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+			</head>
+<body  class="mediawiki ns-104 ltr page-Code_USACO_humble_C">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+<div style="text-align:center;font-size:85%;font-weight:bold" id=headlinemessage>
+<div>如果发现广告等破坏行为，请尽量将条目恢复到较早的版本而不是把相应内容直接删除，谢谢合作。</div>
+<!--div>NOCOW近期对条目的命名进行了一些整理，一些链接可能失效，为此带来的不便请大家谅解。创建条目时也请遵循新的命名规范，谢谢合作。</div-->
+</div>
+		<a name="top" id="top"></a>
+				<h1 class="firstHeading">Code:USACO/humble/C++</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">来自&quot;NOCOW&quot;</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">跳转到: <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>			<!-- start content -->
+			<pre class="c"><span style="color: #808080; font-style: italic;">/*
+ID:ybojan2
+LANG:C++
+TASK:humble
+*/</span>
+&nbsp;
+<span style="color: #339933;">#include &lt;iostream&gt;</span>
+<span style="color: #339933;">#include &lt;fstream&gt;</span>
+&nbsp;
+using namespace std;
+&nbsp;
+<span style="color: #993333;">int</span> main<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+    ifstream fin<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;humble.in&quot;</span><span style="color: #66cc66;">&#41;</span>;
+    ofstream fout<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;humble.out&quot;</span><span style="color: #66cc66;">&#41;</span>;
+&nbsp;
+    <span style="color: #993333;">int</span> k,n,p<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">101</span><span style="color: #66cc66;">&#93;</span>,num<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">100001</span><span style="color: #66cc66;">&#93;</span>,s<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">101</span><span style="color: #66cc66;">&#93;</span>;
+    fin&gt;&gt;k&gt;&gt;n;
+    <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> i=<span style="color: #cc66cc;">1</span>;i&lt;=k;i++<span style="color: #66cc66;">&#41;</span>
+        fin&gt;&gt;s<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>;
+    <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> i=<span style="color: #cc66cc;">1</span>;i&lt;=k;i++<span style="color: #66cc66;">&#41;</span>
+        p<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>=<span style="color: #cc66cc;">-1</span>;
+    num<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>=<span style="color: #cc66cc;">1</span>;
+    <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> i=<span style="color: #cc66cc;">1</span>;i&lt;=n;i++<span style="color: #66cc66;">&#41;</span>
+    <span style="color: #66cc66;">&#123;</span>
+&nbsp;
+        <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span>;;<span style="color: #66cc66;">&#41;</span>
+        <span style="color: #66cc66;">&#123;</span>
+            <span style="color: #993333;">int</span> min=<span style="color: #cc66cc;">2147483647</span>,x;
+            <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> j=<span style="color: #cc66cc;">1</span>;j&lt;=k;j++<span style="color: #66cc66;">&#41;</span>
+                <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>num<span style="color: #66cc66;">&#91;</span>p<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span><span style="color: #cc66cc;">+1</span><span style="color: #66cc66;">&#93;</span>*s<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span>&lt;min<span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#123;</span>
+                                         min=num<span style="color: #66cc66;">&#91;</span>p<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span><span style="color: #cc66cc;">+1</span><span style="color: #66cc66;">&#93;</span>*s<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span>;
+                                         x=j;
+                                         <span style="color: #66cc66;">&#125;</span>
+            p<span style="color: #66cc66;">&#91;</span>x<span style="color: #66cc66;">&#93;</span>++;
+            num<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>=min;
+            <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>num<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>!=num<span style="color: #66cc66;">&#91;</span>i<span style="color: #cc66cc;">-1</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span> <span style="color: #000000; font-weight: bold;">break</span>;
+        <span style="color: #66cc66;">&#125;</span>
+    <span style="color: #66cc66;">&#125;</span>
+    fout&lt;&lt;num<span style="color: #66cc66;">&#91;</span>n<span style="color: #66cc66;">&#93;</span>&lt;&lt;endl;
+    <span style="color: #b1b100;">return</span> <span style="color: #cc66cc;">0</span>;
+<span style="color: #66cc66;">&#125;</span></pre>
+<pre class="c"><span style="color: #808080; font-style: italic;">/*
+ID: MasterRay
+LANG: C++
+TASK: humble
+*/</span>
+&nbsp;
+<span style="color: #339933;">#include &lt;stdio.h&gt;</span>
+&nbsp;
+<span style="color: #993333;">int</span> s<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">100001</span><span style="color: #66cc66;">&#93;</span>;
+<span style="color: #993333;">struct</span> node <span style="color: #66cc66;">&#123;</span><span style="color: #993333;">int</span> num, pointer; <span style="color: #66cc66;">&#125;</span> a<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">100</span><span style="color: #66cc66;">&#93;</span>;
+&nbsp;
+<span style="color: #993333;">int</span> main<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+	<span style="color: #993333;">int</span> k, n;
+	freopen<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;humble.in&quot;</span>, <span style="color: #ff0000;">&quot;r&quot;</span>, stdin<span style="color: #66cc66;">&#41;</span>;
+	freopen<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;humble.out&quot;</span>, <span style="color: #ff0000;">&quot;w&quot;</span>, stdout<span style="color: #66cc66;">&#41;</span>;
+	scanf<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;%d%d&quot;</span>, &amp;k, &amp;n<span style="color: #66cc66;">&#41;</span>;
+	<span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> i = <span style="color: #cc66cc;">0</span>; i &lt; k; ++i<span style="color: #66cc66;">&#41;</span>
+		scanf<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;%d&quot;</span>, &amp;a<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">num</span><span style="color: #66cc66;">&#41;</span>; <span style="color: #808080; font-style: italic;">//a[i].pointer = 0;</span>
+	s<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span> = <span style="color: #cc66cc;">1</span>;
+	<span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> i = <span style="color: #cc66cc;">1</span>; i &lt;= n; ++i<span style="color: #66cc66;">&#41;</span>
+	<span style="color: #66cc66;">&#123;</span>
+		<span style="color: #993333;">int</span> min_value = a<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">num*s</span><span style="color: #66cc66;">&#91;</span>a<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">pointer</span><span style="color: #66cc66;">&#93;</span>, u = <span style="color: #cc66cc;">0</span>;
+		<span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> j = <span style="color: #cc66cc;">1</span>; j &lt; k; ++j<span style="color: #66cc66;">&#41;</span>
+			<span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>a<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">num*s</span><span style="color: #66cc66;">&#91;</span>a<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">pointer</span><span style="color: #66cc66;">&#93;</span> &lt; min_value<span style="color: #66cc66;">&#41;</span>
+				min_value = a<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">num*s</span><span style="color: #66cc66;">&#91;</span>a<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">pointer</span><span style="color: #66cc66;">&#93;</span>, u = j;
+		s<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span> = min_value;
+		++a<span style="color: #66cc66;">&#91;</span>u<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">pointer</span>;
+		<span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> j = <span style="color: #cc66cc;">0</span>; j &lt; k; ++j<span style="color: #66cc66;">&#41;</span>
+			<span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>a<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">num*s</span><span style="color: #66cc66;">&#91;</span>a<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">pointer</span><span style="color: #66cc66;">&#93;</span> == min_value<span style="color: #66cc66;">&#41;</span>
+				++a<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">pointer</span>;
+	<span style="color: #66cc66;">&#125;</span>
+	<a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span style="color: #000066;">printf</span></a><span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;%d<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span>, s<span style="color: #66cc66;">&#91;</span>n<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+<span style="color: #66cc66;">&#125;</span></pre>
+<pre class="c"><span style="color: #808080; font-style: italic;">/*
+ID:nettle99
+PROG:humble
+LANG:C++
+*/</span>
+&nbsp;
+<span style="color: #339933;">#include &lt;cstdio&gt;</span>
+<span style="color: #339933;">#define MAXL 100001</span>
+<span style="color: #339933;">#define MAXK 101</span>
+<span style="color: #339933;">#define SMA 1</span>
+<span style="color: #339933;">#define BIG -1</span>
+&nbsp;
+FILE *fin = fopen<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;humble.in&quot;</span>, <span style="color: #ff0000;">&quot;r&quot;</span><span style="color: #66cc66;">&#41;</span>;
+FILE *fout = fopen<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;humble.out&quot;</span>, <span style="color: #ff0000;">&quot;w&quot;</span><span style="color: #66cc66;">&#41;</span>;
+&nbsp;
+<span style="color: #993333;">struct</span> node
+<span style="color: #66cc66;">&#123;</span>
+  <span style="color: #993333;">int</span> data;
+  <span style="color: #993333;">short</span> n;
+<span style="color: #66cc66;">&#125;</span> small<span style="color: #66cc66;">&#91;</span>MAXL * <span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>;
+&nbsp;
+<span style="color: #993333;">int</span> big<span style="color: #66cc66;">&#91;</span>MAXL<span style="color: #66cc66;">&#93;</span>, N, K, num<span style="color: #66cc66;">&#91;</span>MAXK<span style="color: #66cc66;">&#93;</span>, Max<span style="color: #66cc66;">&#91;</span>MAXK<span style="color: #66cc66;">&#93;</span>;
+&nbsp;
+<span style="color: #993333;">void</span> swap<span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> &amp;a, <span style="color: #993333;">int</span> &amp;b<span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+<span style="color: #993333;">int</span> box;
+  box = a; a = b; b = box;
+  <span style="color: #b1b100;">return</span>&nbsp;;
+<span style="color: #66cc66;">&#125;</span>
+&nbsp;
+<span style="color: #993333;">void</span> swap<span style="color: #66cc66;">&#40;</span>node &amp;a, node &amp;b<span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+node box;
+  box = a; a = b; b = box;
+  <span style="color: #b1b100;">return</span>&nbsp;;
+<span style="color: #66cc66;">&#125;</span>
+&nbsp;
+<span style="color: #993333;">void</span> sort<span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> i, <span style="color: #993333;">int</span> x<span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+  <span style="color: #b1b100;">while</span> <span style="color: #66cc66;">&#40;</span>x &lt; num<span style="color: #66cc66;">&#91;</span>i - <span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span> &amp;&amp; i &gt; <span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span>
+    num<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span> = num<span style="color: #66cc66;">&#91;</span>i - <span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>, i--;
+  num<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span> = x;
+  <span style="color: #b1b100;">return</span>&nbsp;;
+<span style="color: #66cc66;">&#125;</span>
+&nbsp;
+<span style="color: #993333;">void</span> Init<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+<span style="color: #993333;">int</span> x;
+  fscanf<span style="color: #66cc66;">&#40;</span>fin, <span style="color: #ff0000;">&quot;%d%d&quot;</span>, &amp;K, &amp;N<span style="color: #66cc66;">&#41;</span>;
+  <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> i = <span style="color: #cc66cc;">1</span>; i &lt;= K; i++<span style="color: #66cc66;">&#41;</span>
+    <span style="color: #66cc66;">&#123;</span>
+      fscanf<span style="color: #66cc66;">&#40;</span>fin, <span style="color: #ff0000;">&quot;%d&quot;</span>, &amp;x<span style="color: #66cc66;">&#41;</span>;
+      sort<span style="color: #66cc66;">&#40;</span>i, x<span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #66cc66;">&#125;</span>
+  <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> i = <span style="color: #cc66cc;">1</span>; i &lt;= K; i++<span style="color: #66cc66;">&#41;</span>
+    Max<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span> = <span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">1</span> &lt;&lt; <span style="color: #cc66cc;">30</span><span style="color: #66cc66;">&#41;</span> / num<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span> * <span style="color: #cc66cc;">2</span>;
+  <span style="color: #b1b100;">return</span>&nbsp;;
+<span style="color: #66cc66;">&#125;</span>
+&nbsp;
+<span style="color: #993333;">int</span> bn, sn;
+&nbsp;
+<span style="color: #993333;">void</span> BotUp<span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> key<span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+<span style="color: #993333;">int</span> t = <span style="color: #66cc66;">&#40;</span>key == SMA<span style="color: #66cc66;">&#41;</span>&nbsp;? sn&nbsp;: bn;
+  <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>key == SMA<span style="color: #66cc66;">&#41;</span>
+    <span style="color: #b1b100;">while</span> <span style="color: #66cc66;">&#40;</span>t &gt; <span style="color: #cc66cc;">1</span> &amp;&amp; small<span style="color: #66cc66;">&#91;</span>t<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">data</span> &lt; small<span style="color: #66cc66;">&#91;</span><span style="color: #66cc66;">&#40;</span>t &gt;&gt; <span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">data</span><span style="color: #66cc66;">&#41;</span>
+      <span style="color: #66cc66;">&#123;</span>
+        swap<span style="color: #66cc66;">&#40;</span>small<span style="color: #66cc66;">&#91;</span>t<span style="color: #66cc66;">&#93;</span>, small<span style="color: #66cc66;">&#91;</span><span style="color: #66cc66;">&#40;</span>t &gt;&gt; <span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+        t = t &gt;&gt; <span style="color: #cc66cc;">1</span>;
+      <span style="color: #66cc66;">&#125;</span>
+  <span style="color: #b1b100;">else</span>
+    <span style="color: #b1b100;">while</span> <span style="color: #66cc66;">&#40;</span>t &gt; <span style="color: #cc66cc;">1</span> &amp;&amp; big<span style="color: #66cc66;">&#91;</span>t<span style="color: #66cc66;">&#93;</span> &gt; big<span style="color: #66cc66;">&#91;</span><span style="color: #66cc66;">&#40;</span>t &gt;&gt; <span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>
+      <span style="color: #66cc66;">&#123;</span>
+        swap<span style="color: #66cc66;">&#40;</span>big<span style="color: #66cc66;">&#91;</span>t<span style="color: #66cc66;">&#93;</span>, big<span style="color: #66cc66;">&#91;</span><span style="color: #66cc66;">&#40;</span>t &gt;&gt; <span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+        t = t &gt;&gt; <span style="color: #cc66cc;">1</span>;
+      <span style="color: #66cc66;">&#125;</span>
+  <span style="color: #b1b100;">return</span>&nbsp;;
+<span style="color: #66cc66;">&#125;</span>
+&nbsp;
+<span style="color: #993333;">void</span> TopDown<span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> key<span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+<span style="color: #993333;">int</span> l = <span style="color: #66cc66;">&#40;</span>key == SMA<span style="color: #66cc66;">&#41;</span>&nbsp;? sn&nbsp;: bn, t = <span style="color: #cc66cc;">1</span>, p, p1, p2;
+  l = l &gt;&gt; <span style="color: #cc66cc;">1</span>;
+  <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>key == SMA<span style="color: #66cc66;">&#41;</span>
+    <span style="color: #b1b100;">while</span> <span style="color: #66cc66;">&#40;</span>t &lt;= l<span style="color: #66cc66;">&#41;</span>
+      <span style="color: #66cc66;">&#123;</span>
+        p1 = t * <span style="color: #cc66cc;">2</span>;
+        p2 = p1 + <span style="color: #cc66cc;">1</span>;
+        <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>p2 &gt; sn<span style="color: #66cc66;">&#41;</span>
+          <span style="color: #66cc66;">&#123;</span>
+            <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>small<span style="color: #66cc66;">&#91;</span>p1<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">data</span> &lt; small<span style="color: #66cc66;">&#91;</span>t<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">data</span><span style="color: #66cc66;">&#41;</span> <span style="color: #66cc66;">&#123;</span> swap<span style="color: #66cc66;">&#40;</span>small<span style="color: #66cc66;">&#91;</span>p1<span style="color: #66cc66;">&#93;</span>, small<span style="color: #66cc66;">&#91;</span>t<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>; t = p1;<span style="color: #66cc66;">&#125;</span>
+              <span style="color: #b1b100;">else</span> <span style="color: #000000; font-weight: bold;">break</span>;
+          <span style="color: #66cc66;">&#125;</span>
+        <span style="color: #b1b100;">else</span>
+          <span style="color: #66cc66;">&#123;</span>
+            p = small<span style="color: #66cc66;">&#91;</span>p1<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">data</span> &lt; small<span style="color: #66cc66;">&#91;</span>p2<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">data</span>&nbsp;? p1&nbsp;: p2;
+            <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>small<span style="color: #66cc66;">&#91;</span>p<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">data</span> &lt; small<span style="color: #66cc66;">&#91;</span>t<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">data</span><span style="color: #66cc66;">&#41;</span>
+              swap<span style="color: #66cc66;">&#40;</span>small<span style="color: #66cc66;">&#91;</span>p<span style="color: #66cc66;">&#93;</span>, small<span style="color: #66cc66;">&#91;</span>t<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+            <span style="color: #b1b100;">else</span> <span style="color: #000000; font-weight: bold;">break</span>;
+            t = p;
+          <span style="color: #66cc66;">&#125;</span>
+      <span style="color: #66cc66;">&#125;</span>
+  <span style="color: #b1b100;">else</span>
+    <span style="color: #b1b100;">while</span> <span style="color: #66cc66;">&#40;</span>t &lt;= l<span style="color: #66cc66;">&#41;</span>
+      <span style="color: #66cc66;">&#123;</span>
+        p1 = t * <span style="color: #cc66cc;">2</span>;
+        p2 = p1 + <span style="color: #cc66cc;">1</span>;
+        <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>p2 &gt; bn<span style="color: #66cc66;">&#41;</span>
+          <span style="color: #66cc66;">&#123;</span>
+            <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>big<span style="color: #66cc66;">&#91;</span>p1<span style="color: #66cc66;">&#93;</span> &gt; big<span style="color: #66cc66;">&#91;</span>t<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span> <span style="color: #66cc66;">&#123;</span> swap<span style="color: #66cc66;">&#40;</span>big<span style="color: #66cc66;">&#91;</span>p1<span style="color: #66cc66;">&#93;</span>, big<span style="color: #66cc66;">&#91;</span>t<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>; t = p1;<span style="color: #66cc66;">&#125;</span>
+              <span style="color: #b1b100;">else</span> <span style="color: #000000; font-weight: bold;">break</span>;
+          <span style="color: #66cc66;">&#125;</span>
+        <span style="color: #b1b100;">else</span>
+          <span style="color: #66cc66;">&#123;</span>
+            p = big<span style="color: #66cc66;">&#91;</span>p1<span style="color: #66cc66;">&#93;</span> &gt; big<span style="color: #66cc66;">&#91;</span>p2<span style="color: #66cc66;">&#93;</span>&nbsp;? p1&nbsp;: p2;
+            <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>big<span style="color: #66cc66;">&#91;</span>p<span style="color: #66cc66;">&#93;</span> &gt; big<span style="color: #66cc66;">&#91;</span>t<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>
+              swap<span style="color: #66cc66;">&#40;</span>big<span style="color: #66cc66;">&#91;</span>p<span style="color: #66cc66;">&#93;</span>, big<span style="color: #66cc66;">&#91;</span>t<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+            <span style="color: #b1b100;">else</span> <span style="color: #000000; font-weight: bold;">break</span>;
+            t = p;
+          <span style="color: #66cc66;">&#125;</span>
+      <span style="color: #66cc66;">&#125;</span>
+  <span style="color: #b1b100;">return</span>&nbsp;;
+<span style="color: #66cc66;">&#125;</span>
+&nbsp;
+<span style="color: #993333;">void</span> TopUp<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+  small<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">data</span> = small<span style="color: #66cc66;">&#91;</span>sn<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">data</span>;
+  small<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">n</span> = small<span style="color: #66cc66;">&#91;</span>sn<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">n</span>;
+  sn--;
+  TopDown<span style="color: #66cc66;">&#40;</span>SMA<span style="color: #66cc66;">&#41;</span>;
+  <span style="color: #b1b100;">return</span>&nbsp;;
+<span style="color: #66cc66;">&#125;</span>
+&nbsp;
+<span style="color: #993333;">void</span> Doit<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+  bn = <span style="color: #cc66cc;">1</span>, sn = <span style="color: #cc66cc;">2</span>;
+  big<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span> = num<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>;
+  small<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">data</span> = <span style="color: #cc66cc;">1</span>, small<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">n</span> = <span style="color: #cc66cc;">2</span>;
+  small<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">data</span> = num<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>, small<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">n</span> = <span style="color: #cc66cc;">1</span>;
+<span style="color: #993333;">int</span> v, n, tmp;
+  <span style="color: #b1b100;">while</span> <span style="color: #66cc66;">&#40;</span>sn<span style="color: #66cc66;">&#41;</span>
+    <span style="color: #66cc66;">&#123;</span>
+      <span style="color: #b1b100;">while</span> <span style="color: #66cc66;">&#40;</span>small<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">data</span> &gt; big<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span> &amp;&amp; sn<span style="color: #66cc66;">&#41;</span> TopUp<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>;
+      <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>!sn<span style="color: #66cc66;">&#41;</span> <span style="color: #000000; font-weight: bold;">break</span>;
+      v = small<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">data</span>, n = small<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">n</span>;
+      <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> i = n; i &lt;= K; i++<span style="color: #66cc66;">&#41;</span>
+        <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>v &lt; Max<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>
+          <span style="color: #66cc66;">&#123;</span>
+            tmp = v * num<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>;
+            <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>bn &lt; N<span style="color: #66cc66;">&#41;</span>
+              <span style="color: #66cc66;">&#123;</span>
+                big<span style="color: #66cc66;">&#91;</span>++bn<span style="color: #66cc66;">&#93;</span> = tmp;
+                BotUp<span style="color: #66cc66;">&#40;</span>BIG<span style="color: #66cc66;">&#41;</span>;
+              <span style="color: #66cc66;">&#125;</span>
+            <span style="color: #b1b100;">else</span>
+              <span style="color: #66cc66;">&#123;</span>
+                <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>tmp &gt;= big<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span> <span style="color: #000000; font-weight: bold;">break</span>;
+                big<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span> = tmp;
+                TopDown<span style="color: #66cc66;">&#40;</span>BIG<span style="color: #66cc66;">&#41;</span>;
+              <span style="color: #66cc66;">&#125;</span>
+            <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>tmp &lt; big<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span> || bn &lt; N<span style="color: #66cc66;">&#41;</span>
+              <span style="color: #66cc66;">&#123;</span>
+                small<span style="color: #66cc66;">&#91;</span>++sn<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">data</span> = tmp, small<span style="color: #66cc66;">&#91;</span>sn<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">n</span> = i;
+                BotUp<span style="color: #66cc66;">&#40;</span>SMA<span style="color: #66cc66;">&#41;</span>;
+              <span style="color: #66cc66;">&#125;</span>
+          <span style="color: #66cc66;">&#125;</span>
+      TopUp<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #66cc66;">&#125;</span>
+  fprintf<span style="color: #66cc66;">&#40;</span>fout, <span style="color: #ff0000;">&quot;%d<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span>, big<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+  <span style="color: #b1b100;">return</span>&nbsp;;
+<span style="color: #66cc66;">&#125;</span>
+&nbsp;
+<span style="color: #993333;">int</span> main<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+  Init<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>;
+  Doit<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>;
+  <span style="color: #b1b100;">return</span> <span style="color: #cc66cc;">0</span>;
+<span style="color: #66cc66;">&#125;</span></pre>
+<p>2个二叉堆优化，所以程序比较冗长但速度还是比较快的
+</p>
+<pre>  Test 1: TEST OK [0.011 secs, 4804 KB]
+  Test 2: TEST OK [0.000 secs, 4804 KB]
+  Test 3: TEST OK [0.000 secs, 4804 KB]
+  Test 4: TEST OK [0.011 secs, 4804 KB]
+  Test 5: TEST OK [0.022 secs, 4800 KB]
+  Test 6: TEST OK [0.065 secs, 4800 KB]
+  Test 7: TEST OK [0.011 secs, 4804 KB]
+  Test 8: TEST OK [0.032 secs, 4804 KB]
+  Test 9: TEST OK [0.000 secs, 4804 KB]
+  Test 10: TEST OK [0.011 secs, 4804 KB]
+  Test 11: TEST OK [0.000 secs, 4800 KB]
+  Test 12: TEST OK [0.108 secs, 4804 KB]
+</pre>
+<p><br />
+</p>
+--<a href="/index.php/User:Nettle99" title="User:Nettle99">Nettle99</a> 14:30 2009年1月30日 (CST)<hr />
+<pre class="c"><span style="color: #808080; font-style: italic;">/*
+ID: 62251381
+LANG: C++
+PROG: humble
+*/</span>
+&nbsp;
+<span style="color: #339933;">#include &lt;iostream&gt;</span>
+<span style="color: #339933;">#include &lt;queue&gt;</span>
+<span style="color: #339933;">#include &lt;cstdio&gt;</span>
+<span style="color: #339933;">#include &lt;vector&gt;</span>
+<span style="color: #339933;">#include &lt;algorithm&gt;</span>
+<span style="color: #339933;">#include &lt;set&gt;</span>
+<span style="color: #339933;">#include &lt;climits&gt;</span>
+using namespace std;
+&nbsp;
+priority_queue&lt;int&gt; q;
+vector&lt;int&gt; s;
+set&lt;int&gt; vised;
+<span style="color: #993333;">int</span> k;
+&nbsp;
+<span style="color: #993333;">void</span> dfs<span style="color: #66cc66;">&#40;</span><span style="color: #993333;">long</span> <span style="color: #993333;">long</span> a, <span style="color: #993333;">int</span> n<span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+	<span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>a&nbsp;!= <span style="color: #cc66cc;">1</span> &amp;&amp; vised.<span style="color: #202020;">find</span><span style="color: #66cc66;">&#40;</span>a<span style="color: #66cc66;">&#41;</span> == vised.<span style="color: #202020;">end</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span>
+	<span style="color: #66cc66;">&#123;</span>
+		<span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>q.<span style="color: #202020;">size</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span> &lt; k || a &lt; q.<span style="color: #202020;">top</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span>
+		<span style="color: #66cc66;">&#123;</span>
+			vised.<span style="color: #202020;">insert</span><span style="color: #66cc66;">&#40;</span>a<span style="color: #66cc66;">&#41;</span>;
+			q.<span style="color: #202020;">push</span><span style="color: #66cc66;">&#40;</span>a<span style="color: #66cc66;">&#41;</span>;
+		<span style="color: #66cc66;">&#125;</span>
+		<span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>q.<span style="color: #202020;">size</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span> &gt; k<span style="color: #66cc66;">&#41;</span>
+			q.<span style="color: #202020;">pop</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>;
+	<span style="color: #66cc66;">&#125;</span>
+&nbsp;
+	<span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>n == s.<span style="color: #202020;">size</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">return</span>&nbsp;;
+&nbsp;
+	<span style="color: #b1b100;">while</span><span style="color: #66cc66;">&#40;</span>a &lt; INT_MAX<span style="color: #66cc66;">&#41;</span>
+	<span style="color: #66cc66;">&#123;</span>
+		<span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>q.<span style="color: #202020;">size</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span> == k &amp;&amp; a &gt; q.<span style="color: #202020;">top</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span> <span style="color: #000000; font-weight: bold;">break</span>;
+		dfs<span style="color: #66cc66;">&#40;</span>a, n + <span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span>;
+		a *= s<span style="color: #66cc66;">&#91;</span>n<span style="color: #66cc66;">&#93;</span>;
+	<span style="color: #66cc66;">&#125;</span>
+<span style="color: #66cc66;">&#125;</span>
+&nbsp;
+<span style="color: #993333;">int</span> main<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+	<span style="color: #993333;">int</span> n;
+	freopen<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;humble.in&quot;</span>, <span style="color: #ff0000;">&quot;r&quot;</span>, stdin<span style="color: #66cc66;">&#41;</span>;
+	freopen<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;humble.out&quot;</span>, <span style="color: #ff0000;">&quot;w&quot;</span>, stdout<span style="color: #66cc66;">&#41;</span>;
+&nbsp;
+	cin &gt;&gt; n &gt;&gt; k;
+	<span style="color: #b1b100;">for</span><span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> i = <span style="color: #cc66cc;">0</span>; i &lt; n; i++<span style="color: #66cc66;">&#41;</span>
+	<span style="color: #66cc66;">&#123;</span>
+		<span style="color: #993333;">int</span> a;
+		cin &gt;&gt; a;
+		s.<span style="color: #202020;">push_back</span><span style="color: #66cc66;">&#40;</span>a<span style="color: #66cc66;">&#41;</span>;
+	<span style="color: #66cc66;">&#125;</span>
+	dfs<span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">1</span>, <span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#41;</span>;
+	<a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span style="color: #000066;">cout</span></a> &lt;&lt; q.<span style="color: #202020;">top</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span> &lt;&lt; endl;
+&nbsp;
+	<span style="color: #b1b100;">return</span> <span style="color: #cc66cc;">0</span>;
+<span style="color: #66cc66;">&#125;</span>
+DFS+priority_queue+set
+   Test <span style="color: #cc66cc;">1</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.011</span> secs, <span style="color: #cc66cc;">2936</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">2</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.000</span> secs, <span style="color: #cc66cc;">2936</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">3</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.000</span> secs, <span style="color: #cc66cc;">2936</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">4</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.032</span> secs, <span style="color: #cc66cc;">2936</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">5</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.043</span> secs, <span style="color: #cc66cc;">3620</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">6</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.184</span> secs, <span style="color: #cc66cc;">5336</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">7</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.086</span> secs, <span style="color: #cc66cc;">4016</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">8</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.054</span> secs, <span style="color: #cc66cc;">3752</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">9</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.000</span> secs, <span style="color: #cc66cc;">2936</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">10</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.000</span> secs, <span style="color: #cc66cc;">2936</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">11</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.000</span> secs, <span style="color: #cc66cc;">2936</span> KB<span style="color: #66cc66;">&#93;</span></pre>
+<pre class="c">利用set每次存储可能下次被加到后面的humble数，
+set的size总是和K 的size相同，初始化的时候，把
+K放进去，以后每次选K中第i项 对应的set中的乘积
+添加到humble后面之后，要在set中添加第i项对应的
+下一个乘积.. 
+<span style="color: #808080; font-style: italic;">/*
+ID:dingyag1
+LANG:C++
+TASK:humble
+*/</span>
+&nbsp;
+<span style="color: #339933;">#include &lt;stdio.h&gt;</span>
+<span style="color: #339933;">#include &lt;iostream&gt;</span>
+<span style="color: #339933;">#include &lt;algorithm&gt;</span>
+<span style="color: #339933;">#include &lt;set&gt;</span>
+using namespace std;
+&nbsp;
+<span style="color: #993333;">long</span> humble<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">100001</span><span style="color: #66cc66;">&#93;</span>,S<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">101</span><span style="color: #66cc66;">&#93;</span>;
+<span style="color: #993333;">int</span> len,nS;
+&nbsp;
+class item
+<span style="color: #66cc66;">&#123;</span>
+public:
+	<span style="color: #993333;">long</span> a,b,r;
+<span style="color: #66cc66;">&#125;</span>;
+&nbsp;
+bool operator &lt; <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">const</span> item &amp; m, <span style="color: #993333;">const</span> item &amp; n<span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+	<span style="color: #b1b100;">return</span> m.<span style="color: #202020;">r</span>&lt;n.<span style="color: #202020;">r</span>;
+<span style="color: #66cc66;">&#125;</span>
+&nbsp;
+set&lt;item&gt; waiting;
+&nbsp;
+bool find<span style="color: #66cc66;">&#40;</span><span style="color: #993333;">long</span>  r<span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+	set&lt;item&gt;::<span style="color: #202020;">iterator</span> it=waiting.<span style="color: #202020;">begin</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>;
+	<span style="color: #b1b100;">while</span> <span style="color: #66cc66;">&#40;</span>it!=waiting.<span style="color: #202020;">end</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span>
+	<span style="color: #66cc66;">&#123;</span>
+		<span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>it-&gt;r==r<span style="color: #66cc66;">&#41;</span>
+		<span style="color: #66cc66;">&#123;</span>
+			<span style="color: #b1b100;">return</span> <span style="color: #000000; font-weight: bold;">true</span>;
+		<span style="color: #66cc66;">&#125;</span>
+		++it;
+	<span style="color: #66cc66;">&#125;</span>
+	<span style="color: #b1b100;">return</span> <span style="color: #000000; font-weight: bold;">false</span>;
+<span style="color: #66cc66;">&#125;</span>
+&nbsp;
+<span style="color: #993333;">int</span> main<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+	freopen<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;humble.in&quot;</span>,<span style="color: #ff0000;">&quot;r&quot;</span>,stdin<span style="color: #66cc66;">&#41;</span>;
+	freopen<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;humble.out&quot;</span>,<span style="color: #ff0000;">&quot;w&quot;</span>,stdout<span style="color: #66cc66;">&#41;</span>;
+&nbsp;
+	<span style="color: #993333;">int</span> N,i,j,k;
+	item itm;
+&nbsp;
+	cin&gt;&gt;nS&gt;&gt;N;
+&nbsp;
+	<span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span>i=<span style="color: #cc66cc;">0</span>;i&lt;nS;++i<span style="color: #66cc66;">&#41;</span>
+	<span style="color: #66cc66;">&#123;</span>
+		cin&gt;&gt;S<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>;
+	<span style="color: #66cc66;">&#125;</span>
+&nbsp;
+<span style="color: #808080; font-style: italic;">//init  waiting	</span>
+	<span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span>i=<span style="color: #cc66cc;">0</span>;i&lt;nS;++i<span style="color: #66cc66;">&#41;</span>
+	<span style="color: #66cc66;">&#123;</span>
+		itm.<span style="color: #202020;">a</span>=i;
+		itm.<span style="color: #202020;">b</span>=<span style="color: #cc66cc;">-1</span>;
+		itm.<span style="color: #202020;">r</span>=S<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>;
+		waiting.<span style="color: #202020;">insert</span><span style="color: #66cc66;">&#40;</span>itm<span style="color: #66cc66;">&#41;</span>;
+	<span style="color: #66cc66;">&#125;</span>
+	i=<span style="color: #cc66cc;">0</span>;
+	len=<span style="color: #cc66cc;">0</span>;
+	<span style="color: #b1b100;">while</span> <span style="color: #66cc66;">&#40;</span>i!=N<span style="color: #66cc66;">&#41;</span>
+	<span style="color: #66cc66;">&#123;</span>
+		itm=*waiting.<span style="color: #202020;">begin</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>;
+		humble<span style="color: #66cc66;">&#91;</span>len++<span style="color: #66cc66;">&#93;</span>=itm.<span style="color: #202020;">r</span>;
+		waiting.<span style="color: #202020;">erase</span><span style="color: #66cc66;">&#40;</span>waiting.<span style="color: #202020;">begin</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span>;
+		<span style="color: #808080; font-style: italic;">//======</span>
+&nbsp;
+		<span style="color: #b1b100;">while</span><span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span>
+		<span style="color: #66cc66;">&#123;</span>
+			itm.<span style="color: #202020;">b</span>+=<span style="color: #cc66cc;">1</span>;
+			itm.<span style="color: #202020;">r</span>=S<span style="color: #66cc66;">&#91;</span>itm.<span style="color: #202020;">a</span><span style="color: #66cc66;">&#93;</span>*humble<span style="color: #66cc66;">&#91;</span>itm.<span style="color: #202020;">b</span><span style="color: #66cc66;">&#93;</span>;
+			<span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#40;</span><span style="color: #993333;">double</span><span style="color: #66cc66;">&#41;</span>S<span style="color: #66cc66;">&#91;</span>itm.<span style="color: #202020;">a</span><span style="color: #66cc66;">&#93;</span>*humble<span style="color: #66cc66;">&#91;</span>itm.<span style="color: #202020;">b</span><span style="color: #66cc66;">&#93;</span>&gt;humble<span style="color: #66cc66;">&#91;</span>len<span style="color: #cc66cc;">-1</span><span style="color: #66cc66;">&#93;</span> &amp;&amp;&nbsp;!find<span style="color: #66cc66;">&#40;</span>itm.<span style="color: #202020;">r</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span>
+			<span style="color: #66cc66;">&#123;</span>
+				waiting.<span style="color: #202020;">insert</span><span style="color: #66cc66;">&#40;</span>itm<span style="color: #66cc66;">&#41;</span>;
+				<span style="color: #000000; font-weight: bold;">break</span>;
+			<span style="color: #66cc66;">&#125;</span>
+		<span style="color: #66cc66;">&#125;</span>
+&nbsp;
+		++i;
+	<span style="color: #66cc66;">&#125;</span>
+&nbsp;
+	cout&lt;&lt;humble<span style="color: #66cc66;">&#91;</span>N<span style="color: #cc66cc;">-1</span><span style="color: #66cc66;">&#93;</span>&lt;&lt;endl;
+	<span style="color: #b1b100;">return</span> <span style="color: #cc66cc;">0</span>;
+<span style="color: #66cc66;">&#125;</span></pre>
+
+<!-- Saved in parser cache with key nocow:pcache:idhash:3123-0!1!0!!zh-cn!2 and timestamp 20101206015825 -->
+<div class="printfooter">
+来自"<a href="http://www.nocow.cn/index.php/Code:USACO/humble/C%2B%2B">http://www.nocow.cn/index.php/Code:USACO/humble/C%2B%2B</a>"</div>
+						<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+						 <li id="ca-nstab-code" class="selected"><a href="/index.php/Code:USACO/humble/C%2B%2B">代码</a></li>
+						 <li id="ca-talk" class="new"><a href="/index.php?title=Code_Talk:USACO/humble/C%2B%2B&amp;action=edit">讨论</a></li>
+						 <li id="ca-edit"><a href="/index.php?title=Code:USACO/humble/C%2B%2B&amp;action=edit">编辑</a></li>
+						 <li id="ca-history"><a href="/index.php?title=Code:USACO/humble/C%2B%2B&amp;action=history">历史</a></li>
+				</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=Special:Userlogin&amp;returnto=Code:USACO/humble/C%2B%2B">登录或创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5" title="首页"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/Special:Recentchanges">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/Special:Random">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/Help:%E5%B8%AE%E5%8A%A9">使用帮助</a></li>
+				<li id="n-sitesupport"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5">帮助我们</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php/Special:Search" id="searchform"><div>
+<input name="ref" type="hidden" value="Code:USACO/humble/C++">
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="进入" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="搜索" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/Special:Whatlinkshere/Code:USACO/humble/C%2B%2B">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/Special:Recentchangeslinked/Code:USACO/humble/C%2B%2B">链出更改</a></li>
+<li id="t-upload"><a href="/index.php/Special:Upload">上传文件</a></li>
+<li id="t-specialpages"><a href="/index.php/Special:Specialpages">特殊页面</a></li>
+				<li id="t-print"><a href="/index.php?title=Code:USACO/humble/C%2B%2B&amp;printable=yes">可打印版</a></li>				<li id="t-permalink"><a href="/index.php?title=Code:USACO/humble/C%2B%2B&amp;oldid=22184">永久链接</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt='GNU Free Documentation License 1.2' /></a></div>
+			<ul id="f-list">
+				<li id="viewcount">访问次数: 1,046次</li>
+				<li id="credits">此页由NOCOW匿名用户于2010年8月9日, 17:21最后更改. 在<a href="/index.php/User:Barty" title="User:Barty">杨博洋</a> 和 NOCOW用户<a href="/index.php?title=User:ShingRay&amp;action=edit" class="new" title="User:ShingRay">ShingRay</a> 和 <a href="/index.php/User:Nettle99" title="User:Nettle99">Nettle99</a>的工作基础上.</li>
+				<li id="copyright">本站内容在<a href="http://www.gnu.org/copyleft/fdl.html" class="external " title="http://www.gnu.org/copyleft/fdl.html" rel="nofollow">GNU Free Documentation License 1.2</a>下发布</li>
+				<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E7%AD%96%E7%95%A5" title="NOCOW:隐私策略">隐私策略</a></li>
+				<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+				<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+				<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by bdezlinux in 0.622 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body></html>

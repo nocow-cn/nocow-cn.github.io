@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>USACO/job - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=USACO/job&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=USACO/job&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "USACO/job", "wgTitle": "USACO/job", "wgCurRevisionId": 36186, "wgArticleId": 1163, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["版权无争议的内容", "USACO Chapter 4"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-USACO_job action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">USACO/job</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="/index.php/USACO" title="USACO">USACO</a></span></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E9.A2.98.E7.9B.AE.E8.AF.B4.E6.98.8E"><span class="tocnumber">1</span> <span class="toctext">题目说明</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#USACO_Training"><span class="tocnumber">2</span> <span class="toctext">USACO Training</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#.3D.E9.97.AE.E9.A2.98.E5.88.86.E6.9E.90"><span class="tocnumber">3</span> <span class="toctext">=问题分析</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#.E9.97.AE.E9.A2.98.E8.AF.81.E6.98.8E"><span class="tocnumber">3.1</span> <span class="toctext">问题证明</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#.E8.8C.83.E4.BE.8B.E7.A8.8B.E5.BA.8F"><span class="tocnumber">3.2</span> <span class="toctext">范例程序</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#USACO_Contest"><span class="tocnumber">4</span> <span class="toctext">USACO Contest</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/job&amp;action=edit&amp;section=1" title="编辑段落：题目说明">编辑</a>]</span> <span class="mw-headline" id=".E9.A2.98.E7.9B.AE.E8.AF.B4.E6.98.8E"> 题目说明 </span></h2>
+<p>job在USACO上有Training以及Contest各一题，请大家注意区分。
+</p>
+<h1><span class="editsection">[<a href="/index.php?title=USACO/job&amp;action=edit&amp;section=2" title="编辑段落：USACO Training">编辑</a>]</span> <span class="mw-headline" id="USACO_Training"> USACO Training </span></h1>
+<pre> 这篇文章可以证实是由NOCOW用户原创，不存在任何版权争议。
+ 本文作者同意以<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL" class="mw-redirect">GNU FDL</a>、<a href="/index.php/NOCOW:CC-by-sa" title="NOCOW:CC-by-sa">CC-by-sa</a>和<a href="/index.php/NOCOW:GNU_LGPL" title="NOCOW:GNU LGPL">GNU LGPL</a>（如果适用）三种版权发布此文章（不包括翻译文章中属于原始所有者的部分版权）。
+ 如果你修改了这篇文章并且不同意用GNU FDL以外的版权发布，可以换一个<a href="/index.php/%E5%88%86%E7%B1%BB:%E7%89%88%E6%9D%83%E6%A8%A1%E6%9D%BF" title="分类:版权模板">版权模板</a>或者移除此模板。
+</pre>
+<dl><dd>这是<a href="/index.php/USACO" title="USACO" class="mw-redirect">USACO</a> <a href="/index.php/USACO_Chapter_4#Chapter_4.2" title="USACO Chapter 4" class="mw-redirect">Chapter 4 .2</a>中的OI题目<b>Job Processing</b>的<b>介绍及题解</b>，参见 <a href="/index.php/Translate:USACO/job" title="Translate:USACO/job">翻译</a>，<a href="/index.php/Code:USACO/job/C" title="Code:USACO/job/C">C语言代码</a>，<a href="/index.php/Code:USACO/job/C%2B%2B" title="Code:USACO/job/C++">C++语言代码</a>，<a href="/index.php/Code:USACO/job/Pascal" title="Code:USACO/job/Pascal">Pascal语言代码</a>。
+</dd></dl>
+<p><br />
+</p>
+<h1><span class="editsection">[<a href="/index.php?title=USACO/job&amp;action=edit&amp;section=3" title="编辑段落：=问题分析">编辑</a>]</span> <span class="mw-headline" id=".3D.E9.97.AE.E9.A2.98.E5.88.86.E6.9E.90">=问题分析</span></h1>
+<p>第一问直接贪心就行了。
+第二问可以直接按照对称的方法得到解。即a[i]对应b[n+1-i]。
+证明略。提示：利用单调性
+</p><p>楼上的分析太简略了不好理解。
+我们令delay[A][i]表示第i个A型机器的延时，显然，初始时所有delay[A]为0。
+然后对于所有的工件，我们选取delay[A][i]+machine[A][i](machine[A][i]表示第i个A型机器的加工用时）最小，也就是能在最快时间内完工的机器加工。更新delay[A][i]=delay[A][i]+machine[A][i]（这样这个机器就进入新的一轮加工中）。
+在此过程中，我们用cost[A][j]记录A操作加工出第j个零件的用时。
+用同样的方法求出delay[B][i]，cost[B][j]。
+</p><p>对于A操作的最短用时，显然就是cost[A]中的最大值。
+</p><p>因为我们在求解过程中是一个工件一个工件地送去加工，每次把一个工件送给用时最短的机器加工，那么显然有cost[A][1]&lt;=cost[A][2]...&lt;=cost[A][n]，同样适用于cost[B]。为了使B操作的用时最少，我们应该把A先加工出来的工件给B中加工最久的，即：
+cost[A][1]-&gt;cost[B][n],cost[A][2]-&gt;cost[B][n-1]......cost[A][i]-&gt;cost[B][n-i+1](Why?)(Because A的工序是与B首尾对应的，即A的第一个交给B的倒数第一个，即第n个，A的第i个交给B的倒数第i个，即第n-i+1个）
+那么 max(cost[A][i]+cost[B][n-i+1])  i=1,2,3,4...n就是B操作的最短用时。
+</p><p>补充，要是M1,M2很大，可以用堆去维护。
+</p><p>其实二分答案更为方便，分别对操作a和操作b的完成时间二分答案
+</p>
+<hr />
+<p>看了各位大牛的解释之后，我是坐在马桶上冥思苦想，想到屁股出血，终于差不多想通了：
+注意到A产生的工件不一定是需要马上送给B来处理的。只要B可以在最后时限前处理好这些工件就行。
+那么我们反演时间，想象B的工作不是组装成品，而是逆时间轴运转，分解成品成为工件，那么cost[A]其实给出了B做拆解工作的时间约束。也就是说，假设B在T时间开始拆，那么最早拆完的那个工件在时间轴上要比A最晚交付的晚。依次，就可以得到上面的算法。   = = 太敬仰你们了。。。。
+交了代码之后发现usaco题解里面说的和我这里说的一样。。。匿了。。。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/job&amp;action=edit&amp;section=4" title="编辑段落：问题证明">编辑</a>]</span> <span class="mw-headline" id=".E9.97.AE.E9.A2.98.E8.AF.81.E6.98.8E">问题证明</span></h2>
+<p>by true(cai 教的)
+</p><p>现在来证明为什么在第一步最优的前提下能得出第二步最优:
+假设在A已经最优的前提下,可以把一个零件拿出放到另一个A的机器上,使得B最后的结果比当前好,那么假设这两台A机器为A1,A2,对应的两台B机器为B1,B2.对应的时间有分别是a1,a2,b1,b2.且a2&gt;=a1,b2&gt;=b1,a2/2&lt;=a1&lt;=a2,b2/2&lt;=b1&lt;=b2.
+那么原来A最优时的结果应该是max1{a1+b2,a2+b1},而现在如果把A的一个机器(假设是A2)的零件放到了A1上,那么现在的最优值就为
+max2{a1+a2+b1,b2},现在只要证明max1恒&lt;=max2就可以了,分四种情况证明:
+一:
+</p>
+<pre>假设:
+     a2+b1&gt;=a1+b2,
+     b2&gt;=a1+a2+b1
+     且b2&lt;a2+b1.    
+证明:
+     由a2+b1&gt;=a1+b2  =&gt;   a2+b1&gt;=b2  (1)
+     由b2&gt;=a1+a2+b1  =&gt;   a2+b1&lt;=b2  (2)
+     综合(1)(2)可知  a2+b1=b2 与假设矛盾.
+</pre>
+<p>二:
+</p>
+<pre>假设:
+     a2+b1&gt;=a1+b2,
+     a1+a2+b1&gt;=b2
+     且a1+a2+b1&lt;a2+b1  &lt;&lt;=  显然不成立
+</pre>
+<p>三:
+</p>
+<pre>假设:
+     a1+b2&gt;=a2+b1, (1)
+     b2&gt;=a1+a2+b1
+     且b2&lt;a1+b2  (4)
+证明：
+   由b2&gt;=a1+a2+b1  =&gt;  b2-a1&gt;=a2+b1  (2)
+  （1）+（2）  =〉 b2&gt;=a2+b1  (3)
+   (3)(4)矛盾。
+</pre>
+<p>四： 
+</p>
+<pre>假设：
+      a1+b2&gt;=a2+b1,   （1）
+      a1+a2+b1&gt;=b2    （2）
+    且a1+a2+b1&lt;a1+b2  （3）
+证明：
+     现在对不等式进行一种等价变换，在不影响(1)(2)不等式符号和a1+b2,a1+a2+b1的差的
+     前提下,来试图证明不等式（3）是不可能的
+    让a1=a2,则(1)==&gt;&gt;  a2+b2&gt;=a2+b1
+                (2)==&gt;&gt;  2a2+b1&gt;=b2
+                (3)==&gt;&gt;  2a2+b1&lt;a2+b2
+    
+   观察(2),(3),应为a2&gt;=0，所以显然是不可能同时成立的，所以问题得证。
+</pre>
+<p>即：
+</p>
+<pre>在A为最优的前提下一定能够造出一个问题二也是最优的解。
+</pre>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/job&amp;action=edit&amp;section=5" title="编辑段落：范例程序">编辑</a>]</span> <span class="mw-headline" id=".E8.8C.83.E4.BE.8B.E7.A8.8B.E5.BA.8F">范例程序</span></h2>
+<ul><li><a href="/index.php/Code:USACO/job/Pascal" title="Code:USACO/job/Pascal">Pascal程序代码</a>
+</li><li><a href="/index.php/Code:USACO/job/C%2B%2B" title="Code:USACO/job/C++">C++程序代码</a>
+</li><li><a href="/index.php/Code:USACO/job/C" title="Code:USACO/job/C">C程序代码</a>
+</li></ul>
+<h1><span class="editsection">[<a href="/index.php?title=USACO/job&amp;action=edit&amp;section=6" title="编辑段落：USACO Contest">编辑</a>]</span> <span class="mw-headline" id="USACO_Contest"> USACO Contest </span></h1>
+<p>Problem 2 工作安排 [Richard Peng, 2008]
+</p><p>Farmer John 有太多的工作要做啊！！！！！！！！为了让农场高效运转，他必须靠他的工作赚钱，每项工作花一个单位时间。
+他的工作日从0时刻开始，有1000000000个单位时间（！）。在任一时刻，他都可以选择编号1~N的N(1 &lt;= N &lt;= 100000)项工作中的任意一项工作来完成。
+因为他在每个单位时间里只能做一个工作，而每项工作又有一个截止日期，所以他很难有时间完成所有N个工作，虽然还是有可能。
+对于第i个工作，有一个截止时间D_i(1 &lt;= D_i &lt;= 1000000000)，如果他可以完成这个工作，那么他可以获利P_i( 1&lt;=P_i&lt;=1000000000 ).
+在给定的工作利润和截止时间下，FJ能够获得的利润最大为多少呢？答案可能会超过32位整型。
+</p><p>题目名称： job
+</p><p>输入格式
+</p>
+<pre>第1行：一个整数N.
+第2~N+1行：第i+1行有两个用空格分开的整数：D_i和P_i.
+</pre>
+<p>样例输入 (job.in):
+</p>
+<pre>3
+2 10
+1 5
+1 7
+</pre>
+<p>输出格式:
+</p>
+<pre>输出一行，里面有一个整数，表示最大获利值。
+</pre>
+<p>样例输出 (job.out):
+</p>
+<pre>17
+</pre>
+<p>样例解释：
+</p>
+<pre>第1个单位时间完成第3个工作(1,7)，然后在第2个单位时间完成第1个工作(2,10)以达到最大利润
+</pre>
+<!-- 
+NewPP limit report
+Preprocessor node count: 74/1000000
+Post-expand include size: 856/2097152 bytes
+Template argument size: 69/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:1163-0!*!0!!zh-cn!*!* and timestamp 20170806224343 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=USACO/job&amp;oldid=36186">http://www.nocow.cn/index.php?title=USACO/job&amp;oldid=36186</a>”</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="特殊:页面分类">2个分类</a>: <ul><li><a href="/index.php/%E5%88%86%E7%B1%BB:%E7%89%88%E6%9D%83%E6%97%A0%E4%BA%89%E8%AE%AE%E7%9A%84%E5%86%85%E5%AE%B9" title="分类:版权无争议的内容">版权无争议的内容</a></li><li><a href="/index.php/%E5%88%86%E7%B1%BB:USACO_Chapter_4" title="分类:USACO Chapter 4">USACO Chapter 4</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/USACO/job" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:USACO/job&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=USACO/job&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=USACO/job&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=USACO%2Fjob" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/USACO/job" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/USACO/job" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=USACO/job&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=USACO/job&amp;oldid=36186" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过15,144次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/54.173.35.129" title="特殊:用户贡献/54.173.35.129">54.173.35.129</a>于2017年7月6日 (星期四) 20:00做出最后修改。 在<a href="/index.php/%E7%94%A8%E6%88%B7:H1111202" title="用户:H1111202">哈哈火</a>、NOCOW用户<a href="/index.php/%E7%94%A8%E6%88%B7:0902queen" title="用户:0902queen">0902queen</a>和<a href="/index.php?title=%E7%94%A8%E6%88%B7:Kuxuandelang&amp;action=edit&amp;redlink=1" class="new" title="用户:Kuxuandelang（尚未撰写）">Kuxuandelang</a>、NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/54.240.196.169" title="特殊:用户贡献/54.240.196.169">54.240.196.169</a>和<a href="/index.php?title=USACO/job&amp;action=credits" title="USACO/job">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.173 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

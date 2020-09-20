@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>USACO/humble - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=USACO/humble&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=USACO/humble&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "USACO/humble", "wgTitle": "USACO/humble", "wgCurRevisionId": 36367, "wgArticleId": 374, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-USACO_humble action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">USACO/humble</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="/index.php/USACO" title="USACO">USACO</a></span></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E6.96.B9.E6.B3.95.E4.B8.80"><span class="tocnumber">1</span> <span class="toctext">方法一</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#.E6.96.B9.E6.B3.95.E4.BA.8C"><span class="tocnumber">2</span> <span class="toctext">方法二</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#.E6.96.B9.E6.B3.95.E4.B8.89"><span class="tocnumber">3</span> <span class="toctext">方法三</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#.E5.81.87.E6.83.B3.E4.B8.AD.E7.9A.84.E6.96.B9.E6.B3.95"><span class="tocnumber">4</span> <span class="toctext">假想中的方法</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#.E9.9D.9E.E5.B8.B8.E7.A6.BB.E8.B0.B1.E5.92.8C.E8.8F.9C.E9.B8.9F.E6.80.A7.E8.B4.A8.E7.9A.84.E6.96.B9.E6.B3.955.EF.BC.88.E4.BD.86.E5.AE.83.E7.9A.84.E7.A1.AE.E6.9C.89.E4.B8.80.E4.BA.9B.E6.95.88.E6.9E.9C.EF.BC.8C.E8.B5.B7.E7.A0.81AC.E4.BA.86.EF.BC.89"><span class="tocnumber">5</span> <span class="toctext">非常离谱和菜鸟性质的方法5（但它的确有一些效果，起码AC了）</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#.E6.96.B9.E6.B3.95.E5.85.AD"><span class="tocnumber">6</span> <span class="toctext">方法六</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#.E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81"><span class="tocnumber">7</span> <span class="toctext">参考代码</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#.E5.BC.95.E7.94.A8"><span class="tocnumber">8</span> <span class="toctext">引用</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/humble&amp;action=edit&amp;section=1" title="编辑段落：方法一">编辑</a>]</span> <span class="mw-headline" id=".E6.96.B9.E6.B3.95.E4.B8.80">方法一</span></h2>
+<p>官方题解 by Russ Cox
+译 by 逆铭
+</p><p>我们在数组hum中计算出前n个丑数。为了实现起来更简单，我们把1也作为一个丑数，算法也要因此略微调整一下。
+</p><p><br />
+当我们已知前k个丑数，想得到第k+1个，我们可以这样做：
+</p><p><br />
+对于每个质数p
+	寻找最小的丑数h
+	  使得 h * p 比上一个丑数大
+</p><p>取我们找到的 h * p 中最小的一个：它就是下一个丑数
+为了使搜索更快，我们可以为每个质数维护一个索引“pindex”表示每个质数已经乘到了哪个丑数，每次都从那里开始，而不是再从头再来。
+(官方源码参见参考代码-C)
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/humble&amp;action=edit&amp;section=2" title="编辑段落：方法二">编辑</a>]</span> <span class="mw-headline" id=".E6.96.B9.E6.B3.95.E4.BA.8C"> 方法二 </span></h2>
+<p>这道题可以用BFS+Treap来做。但这里的BFS不使用队列来扩展，而是用Treap来扩展。
+</p><p>建一个Treap保存已经得到的数，从小到大每次从堆中取出一个数，用它和集合中的质数相乘，查找判断它是否重复.如果没有重复，那么将它插入到Treap中。直到产生了n个数，那么再往后扩展一位，得到的第n个数既为所求的结果。时间复杂度：BFS扩展为O(N),查第k大为O(logN)判重为O(logN),插入为O(logN),因此总的复杂度为O(NlogN)
+</p>
+<hr />
+<p>有谁用宽搜的方法写的..我的思路是每次从堆中取一个...然后从质数集合里扫一遍....
+虽然不能保证新扩展出的数的顺序...但很类似Astar...第n个开始扩展的节点可以确定
+复杂度应该为 nklogn
+可惜内存不够开....       ..小岛
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/humble&amp;action=edit&amp;section=3" title="编辑段落：方法三">编辑</a>]</span> <span class="mw-headline" id=".E6.96.B9.E6.B3.95.E4.B8.89"> 方法三 </span></h2>
+<p>这道题目可以直接应用STL中的priority_queue来做，复杂度为O(NKlogN),对于第i小的数，扩充它能得到的所有新元素并插入priority_queue中，然后pop第ｉ小的数。时间没问题，但是空间会爆，当然只对于最后一个数据，我最后一个数据在自己机子上RUN完后，骗过去的，USACO上分配内存太小! 
+</p><p><b>以上内存不够的问题：可以用最大最小堆，当队列里元素个数大于n就可以把最大的数删掉了。</b>（但是我写的很残，TLE，无语。）
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/humble&amp;action=edit&amp;section=4" title="编辑段落：假想中的方法">编辑</a>]</span> <span class="mw-headline" id=".E5.81.87.E6.83.B3.E4.B8.AD.E7.9A.84.E6.96.B9.E6.B3.95"> 假想中的方法 </span></h2>
+<p>读入数据数组a，然后对二取对数，存为数组b，然后把问题转化成装箱问题（求第n种b能组出的和，找出第n种），貌似需要离散化、位运算，我刚学，不懂，哪位神牛能帮我探究一下可行性？囧了,刚才试了一下,发现(ln(maxlongint)-ln(maxlongint-1))*maxlongint&lt;1,也就是说当数达到一定程度的时候就无法精确到一了,我是发展不了我的创意了,谁能帮忙? ps一句,我是为了说这个方法才注册的,我是个小人物,我没有什么好办法用程序实现,新手不要尝试. 
+</p><p>方法3可以的吧，因为只有前N个才是有用的 
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">       <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> num<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> 
+           <span class="kw1">if</span> <span class="br0">&#40;</span>a<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">&lt;=</span> m <span class="sy2">/</span> x<span class="br0">&#41;</span> a<span class="br0">&#91;</span>num<span class="sy2">++</span><span class="br0">&#93;</span> <span class="sy1">=</span> a<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy2">*</span> x<span class="sy4">;</span>
+       sort<span class="br0">&#40;</span>a, a <span class="sy2">+</span> num<span class="br0">&#41;</span><span class="sy4">;</span>
+       <span class="kw1">if</span> <span class="br0">&#40;</span>num <span class="sy1">&gt;</span> n <span class="sy2">+</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+           num <span class="sy1">=</span> n <span class="sy2">+</span> <span class="nu0">1</span><span class="sy4">;</span>
+           m <span class="sy1">=</span> a<span class="br0">&#91;</span>n<span class="br0">&#93;</span><span class="sy4">;</span>
+       <span class="br0">&#125;</span></pre></div></div>
+<p>我这种很戳，最后一个0.9多
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/humble&amp;action=edit&amp;section=5" title="编辑段落：非常离谱和菜鸟性质的方法5（但它的确有一些效果，起码AC了）">编辑</a>]</span> <span class="mw-headline" id=".E9.9D.9E.E5.B8.B8.E7.A6.BB.E8.B0.B1.E5.92.8C.E8.8F.9C.E9.B8.9F.E6.80.A7.E8.B4.A8.E7.9A.84.E6.96.B9.E6.B3.955.EF.BC.88.E4.BD.86.E5.AE.83.E7.9A.84.E7.A1.AE.E6.9C.89.E4.B8.80.E4.BA.9B.E6.95.88.E6.9E.9C.EF.BC.8C.E8.B5.B7.E7.A0.81AC.E4.BA.86.EF.BC.89"> 非常离谱和菜鸟性质的方法5（但它的确有一些效果，起码AC了） </span></h2>
+<p>USACO难得地把数据给得弱了——除了最后一个点素数量很大，其余的点素数量量都不大，&lt;=10。
+</p><p>素数量不大的点，其在一定范围内丑数分布会相对密布，之后非常稀疏，如果有7个素数，1万以内有近1000个丑数，15万以内有3000个，408万内有10000多个，超过5*10^6之后，每10万个数中有20~50个丑数；素数量大的反而相对过于密布。（其实这比较符合我们的主观预感）
+</p><p>先列出菜鸟们能想到的所有办法：
+</p><p>1、对每个数进行暴力检查
+</p><p><b>（以下的构造的具体实现方法（定义）为：</b>
+</p><p><b>按从小到大的顺序，对每一个确认是丑数的数，乘上每一个质数，记录下来）</b>
+</p><p>2、构造每一个有效的数，当做开boolean数组的背包题（The Longest Prefix）来记录。
+</p><p>3、
+</p><p>原始：构造每一个有效的数，直接放到数组中。（缺点：查重很慢）
+</p><p>优化：构造每一个有效的数，用类似hash的链地址法来记录（数组模拟，取div一个10^5数量级的数作为其特征码，取mod相同的大数得到的数作为存到数组里的数）。
+</p><p>对于素数量小，且丑数值小于一定值（我取的大约有5*10^6）的数，我们可以只使用第2种构造方法。
+</p><p>对于素数量小，但是待求丑数值超过一定值的数，需要把2、3两种方法结合起来。（如果只使用第3种，除非用指针，否则MLE不可避免；但是，指针实际情况下差错太难了）
+</p><p>对于素数量大的情况，我们很高兴的看到，待求丑数值不大（最后一个点待求值只有30万不到，因为素数量大了，丑数密布，第100000个也不够大），那就直接用第1种暴力检查方法。【警告：不要用第二种或第三种！因为素数过多，而且丑数密布，上面的构造法只能因生成太多过大数和重复数而被拽慢了】
+</p><p>然后时间对菜鸟来说还是很令人满意的：
+</p>
+<pre>  Test 5: TEST OK [0.108 secs, 15640 KB]
+  Test 6: TEST OK [0.594 secs, 15640 KB]（小素数量的最大点）
+  Test 7: TEST OK [0.189 secs, 15640 KB]
+  Test 8: TEST OK [0.108 secs, 15640 KB]
+  Test 12: TEST OK [0.351 secs, 15640 KB]（大素数量，100个的点）
+</pre>
+<p>其实这种方法回头看看总体说说容易，具体实现就有一定的挑战性了（最后写了120行左右，还有一些很难看的语句）。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/humble&amp;action=edit&amp;section=6" title="编辑段落：方法六">编辑</a>]</span> <span class="mw-headline" id=".E6.96.B9.E6.B3.95.E5.85.AD"> 方法六 </span></h2>
+<p>这题楼上N层全都想复杂了 根本不需要那么多步骤 直接一个set搞定
+每个数乘一边set内全部humble number
+如果 size 比n大 删掉最后一个数据
+如果当前humble number 比set最后一个大 那么break;
+全写出来不过40行 只有最后一个点0.2s 其他全都是 0.0*s 秒杀的
+代码见 ID: useset
+</p><p>这道题我想了很多，只认同O(nk log n)的解法，但是最后一组数据超时，同上面骗过去以后，发现usaco数据中一个有趣的现象，所有的质数都是从2开始连续递增！！，这样造成的结果就是那些每次添加不止一个数据的算法也能通过.
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/humble&amp;action=edit&amp;section=7" title="编辑段落：参考代码">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81">参考代码</span></h2>
+<p><a href="/index.php/Code:USACO/humble/C" title="Code:USACO/humble/C">C</a>
+</p><p><a href="/index.php/Code:USACO/humble/C%2B%2B" title="Code:USACO/humble/C++">C++</a>
+</p><p><a href="/index.php/Code:USACO/humble/Pascal" title="Code:USACO/humble/Pascal">pascal</a>
+</p><p><a href="/index.php/Code:USACO/humble/Java" title="Code:USACO/humble/Java">Java</a>
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/humble&amp;action=edit&amp;section=8" title="编辑段落：引用">编辑</a>]</span> <span class="mw-headline" id=".E5.BC.95.E7.94.A8">引用</span></h2>
+<p><a rel="nofollow" class="external autonumber" href="http://h.thec.cn/starforever/">[1]</a>
+</p><p><a rel="nofollow" class="external autonumber" href="http://train.usaco.org/">[2]</a>
+</p><p>其实STL写法，加一个优化就可以不超空间了，如果生成的数多于N，新生成的数如果比SET里的最大值大，直接break，（P先排序）（最大点一万多K，0.5多秒）
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 40/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:374-0!*!0!!zh-cn!*!* and timestamp 20170806222520 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=USACO/humble&amp;oldid=36367">http://www.nocow.cn/index.php?title=USACO/humble&amp;oldid=36367</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/USACO/humble" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:USACO/humble&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=USACO/humble&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=USACO/humble&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=USACO%2Fhumble" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/USACO/humble" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/USACO/humble" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=USACO/humble&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=USACO/humble&amp;oldid=36367" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过21,776次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/54.173.35.129" title="特殊:用户贡献/54.173.35.129">54.173.35.129</a>于2017年8月1日 (星期二) 18:58做出最后修改。 在<a href="/index.php?title=%E7%94%A8%E6%88%B7:Myg&amp;action=edit&amp;redlink=1" class="new" title="用户:Myg（尚未撰写）">莫一过</a>、NOCOW用户<a href="/index.php/%E7%94%A8%E6%88%B7:Yts1999" title="用户:Yts1999">Yts1999</a>、NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/222.247.48.69" title="特殊:用户贡献/222.247.48.69">222.247.48.69</a>和<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/61.141.0.202" title="特殊:用户贡献/61.141.0.202">61.141.0.202</a>和<a href="/index.php?title=USACO/humble&amp;action=credits" title="USACO/humble">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.210 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

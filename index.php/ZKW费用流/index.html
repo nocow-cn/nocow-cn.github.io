@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>ZKW费用流 - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=ZKW%E8%B4%B9%E7%94%A8%E6%B5%81&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=ZKW%E8%B4%B9%E7%94%A8%E6%B5%81&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "ZKW费用流", "wgTitle": "ZKW费用流", "wgCurRevisionId": 34252, "wgArticleId": 6694, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-ZKW费用流 action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">ZKW费用流</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><p>摘自zkw的博客zkw费用流，版权所有。 <a rel="nofollow" class="external free" href="http://www.artofproblemsolving.com/blog/54262">http://www.artofproblemsolving.com/blog/54262</a>
+</p><p><br />
+</p><p>1. 网络流的一些基本概念 点击阅读
+</p><p>　　很多同学建立过网络流模型做题目, 也学过了各种算法, 但是对于基本的概念反而说不清楚. 虽然不同的模型在具体叫法上可能不相同, 但是不同叫法对应的思想是一致的. 下面的讨论力求规范, 个别地方可能需要对通常的叫法加以澄清.
+</p><p>　　求解可行流: 给定一个网络流图, 初始时每个节点不一定平衡 (每个节点可以有盈余或不足), 每条边的流量可以有上下界, 每条边的当前流量可以不满足上下界约束. 可行流求解中没有源和汇的概念, 算法的目的是寻找一个可以使所有节点都能平衡, 所有边都能满足流量约束的方案, 同时可能附加有最小费用的条件 (最小费用可行流).
+</p><p>　　求解最大流: 给定一个网络流图, 其中有两个特殊的节点称为源和汇. 除源和汇之外, 给定的每个节点一定平衡. 源可以产生无限大的流量, 汇可以吸收无限大的流量. 标准的最大流模型, 初始解一定是可行的 (例如, 所有边流量均为零), 因此边上不能有下界. 算法的目的是寻找一个从源到汇流量最大的方案, 同时不破坏可行约束, 并可能附加有最小费用的条件 (最小费用最大流).
+</p><p>　　扩展的最大流: 在有上下界或有节点盈余的网络流图中求解最大流. 实际上包括两部分, 先是消除下界, 消除盈余, 可能还需要消除不满足最优条件的流量 (最小费用流), 找到一个可行流, 再进一步得到最大流. 因此这里我们的转化似乎是从最大流转化为可行流再变回最大流, 但其实质是将一个过程 (扩展的最大流) 变为了两个过程 (可行流 + 最大流).
+</p><p>　　以上概念同时适用于最小费用流.
+</p><p><br />
+2. 最小费用流的各种转化 点击阅读
+</p><p>　　不少同学认为消圈算法比增广路算法使用面广, 可以有负边, 负圈, 每个点都能有盈余亏空等等. 实际上增广路算法也一样可以有负边, 负圈, 上下界等等, 且一般来说速度快于消圈算法.
+　　以下讨论中  为盈余量,  为费用,  为容量.
+</p><p>　　1.最小费用(可行)流  最小费用最大流
+　　建立超级源  和超级汇  , 对顶点 , 若  添加边 , 若  添加边 , 之后求从  到  的最小费用最大流, 如果流量等于 , 就存在可行流, 残量网络已在原图上求出.
+</p><p>　　2.最小费用最大流  最小费用(可行)流
+　　连边 , 所有点  有 , 然后直接求.
+</p><p>　　3.最小费用(可行)流中负权边的消除
+　　直接将负权边满流.
+</p><p>　　4.最小费用最大流中负权边的消除
+　　先连边 , 使用 (3.) 中的方法消除负权边, 使用 (1.) 中的方法求出最小费用 (可行) 流, 之后距离标号不变, 再求最小费用最大流; 注意此时增广费用不能机械使用源点的标号——应该是源点汇点标号之差.
+</p><p><br />
+3. 费用流中的负边和负圈 点击阅读
+</p><p>　　在费用流的求解中难免会遇到负边和负圈的问题. 对于消圈算法, 负圈就是算法本身的一部分; 但对于增广路算法, 负圈是我们所不愿意看到的. 鉴于竞赛中使用消圈算法将带来严重的效率问题, 我们必须探索使用增广路算法处理费用流负边和负圈的方法.
+</p><p>　　对于单纯的负边, 如果这些负边没有组成负圈, 可以使用重赋权技术来处理, 即通过对每个节点合适的顶标, 使得 Reduced Cost 非负. 这个顶标通常可以使用到汇点的距离, 修改之后的边权变为 . 根据流量平衡条件, 容易根据这个新的费用算出原费用, 同时可以证明这样的重赋权不改变最优解. 这样做的代价是一次 SPFA 操作, 时间耗费是相对较小的.
+</p><p>　　如果存在负圈, SPFA 算法将不会终止. 很多同学使用人为的限制条件使其终止, 这是错误的. 举一个例子: 源点和汇点均为孤立点, 图中另外存在一个负费用, 正容量的圈. 不管怎样初始标号, 仅凭增广无法消除这个负圈, 从而得不到最优解 (根据最小费用最大流的定义, 要在所有最大流 (流量都为 ) 中寻找一个费用最小的方案). 也许你会说这个例子太过极端, 但是也很容易构造出其他一些例子, 说明不处理负圈, 或者简单地对算法打补丁并不能解决本质问题.
+</p><p>　　解决方法就是将所有负费用的边强制满流, 称为“退流”操作. 这样做之后我们破坏了平衡条件, 但满足了最优条件. 之后我们可以先求可行流, 再求最大流, 其间一直维持最优条件, 并逐步解决平衡条件, 最大流条件等问题. 这也就是 (2.) 中提到的方法. 这个方法可以消除所有负权边 (在 Reduced Cost 意义下), 同时正确处理所有负圈问题. 那么, 这个方法的速度如何呢?
+</p><p>　　费用流相关的图大致可以分为两类, 一类图侧重于费用, 即总的流量不大, 如 Two Shortest (只有 ), KaKa's Matrix Travels 等. 较为通用的强制满流方法在这类图上表现不佳, 原因是原本的流量较小而负费用较多, 经过转化的图在可行流求解阶段流量与原流量相比很大, 严重影响速度. 另一方面, 这类图往往有深刻的最短路背景, 从而不会出现负圈, 可以使用 SPFA 重赋权. 另一类图侧重于流量, 即边的费用相差不大, 如 employee, 最优图像的求解. 这种图中流量不小而负费用相对有限 (也可以稍大, 关键是前者), 经过转化增加的流量可以很快完成计算, 因此强制满流方法就没有问题.
+</p><p>　　另外, 不同的建图方式有可能造成不同的模型. 在 employee 这道题中, 如果建图时从每个点向后连边, 从前向后运行最小费用最大流, 这时的算法就只有负边, 没有负圈. 而如果从每个点向前连边, 在整个图上求最小费用平衡流, 就会有负圈出现. 但是这里并没有本质区别: 将第二种模型中的所有向前连的边强制满流即可得到第一种模型, 如果将其他的负边也强制满流还能得到一个完全没有负边的模型. 大家可能也猜到了, 这几种模型在速度上相去不远, 毕竟根据我们刚才的讨论, 增加的流量在算法的执行中不占主要地位.
+</p><p><br />
+4. 最小费用流的“zkw算法” 点击阅读
+</p><p>　　最小费用流在 OI 竞赛中应当算是比较偏门的内容, 但是 NOI2008 中 employee 的突然出现确实让许多人包括 zkw 自己措手不及. 可怜的 zkw 当时想出了最小费用流模型, 可是他从来没有实现过, 所以不敢写, 此题 0 分. zkw 现在对费用流的心得是: 虽然理论上难, 但是写一个能 AC 题的费用流还算简单. 先贴一个我写的 costflow 程序: 只有不到 70 行, 费用流比最大流还好写～
+</p><p>　　点击查看程序代码
+Code:
+</p>
+<ol><li>include &lt;cstdio&gt;
+</li><li>include &lt;cstring&gt;
+</li></ol>
+<p>using namespace std;
+const int maxint=~0U&gt;&gt;1;
+</p><p>int n,m,pi1,cost=0;
+bool v[550];
+struct etype
+{
+</p>
+<pre>   int t,c,u;
+   etype *next,*pair;
+   etype(){}
+   etype(int t_,int c_,int u_,etype* next_):
+       t(t_),c(c_),u(u_),next(next_){}
+   void* operator new(unsigned,void* p){return p;}
+</pre>
+<p>} *e[550];
+</p><p>int aug(int no,int m)
+{
+</p>
+<pre>   if(no==n)return cost+=pi1*m,m;
+   v[no]=true;
+   int l=m;
+   for(etype *i=e[no];i;i=i-&gt;next)
+       if(i-&gt;u &amp;&amp;&#160;!i-&gt;c &amp;&amp;&#160;!v[i-&gt;t])
+       {
+           int d=aug(i-&gt;t,l<i>u?l:i-&gt;u);
+           i-&gt;u-=d,i-&gt;pair-&gt;u+=d,l-=d;
+           if(!l)return m;
+       }
+   return m-l;
+</pre>
+<p>}
+</p><p>bool modlabel()
+{
+</p>
+<pre>   int d=maxint;
+   for(int i=1;i&lt;=n;++i)if(v[i])
+       for(etype *j=e[i];j;j=j-&gt;next)
+           if(j-&gt;u &amp;&amp;&#160;!v[j-&gt;t] &amp;&amp; j-&gt;c&lt;d)d=j-&gt;c;
+   if(d==maxint)return false;
+   for(int i=1;i&lt;=n;++i)if(v[i])
+       for(etype *j=e[i];j;j=j-&gt;next)
+           j-&gt;c-=d,j-&gt;pair-&gt;c+=d;
+   pi1 += d;
+   return true;
+</pre>
+<p>}
+</p><p>int main()
+{
+</p>
+<pre>   freopen("costflow.in","r",stdin);
+   freopen("costflow.out","w",stdout);
+   scanf("%d&#160;%d",&amp;n,&amp;m);
+   etype *Pe=new etype[m+m];
+   while(m--)
+   {
+       int s,t,c,u;
+       scanf("%d%d%d%d",&amp;s,&amp;t,&amp;u,&amp;c);
+       e[s]=new(Pe++)etype(t, c,u,e[s]);
+       e[t]=new(Pe++)etype(s,-c,0,e[t]);
+       e[s]-&gt;pair=e[t];
+       e[t]-&gt;pair=e[s];
+   }
+   do do memset(v,0,sizeof(v));
+   while(aug(1,maxint));
+   while(modlabel());
+   printf("%d\n",cost);
+   return 0;
+</pre>
+<p>}
+</p><p><br />
+</p><p>　　这里使用的是连续最短路算法. 最短路算法? 为什么程序里没有 SPFA? Dijkstra? 且慢, 先让我们回顾一下图论中最短路算法中的距离标号. 定义  为点  的距离标号, 任何一个最短路算法保证, 算法结束时对任意指向顶点  、从顶点  出发的边满足  (条件1), 且对于每个  存在一个  使得等号成立 (条件2). 换句话说, 任何一个满足以上两个条件的算法都可以叫做最短路, 而不仅仅是 SPFA、Dijkstra, 算法结束后, 恰在最短路上的边满足 .
+</p><p>　　在最小费用流的计算中, 我们每次沿  的路径增广后都不会破坏条件 1, 但是可能破坏了条件 2. 不满足条件 2 的后果是什么呢? 使我们找不到每条边都满足  新的增广路. 只好每次增广后使用 Dijkstra, SPFA 等等算法重新计算新的满足条件 2 的距离标号. 这无疑是一种浪费. KM 算法中我们可以修改不断修改可行顶标, 不断扩大可行子图, 这里也同样, 我们可以在始终满足条件 1 的距离标号上不断修改, 直到可以继续增广 (满足条件 2).
+</p><p>　　回顾一下 KM 算法修改顶标的方法. 根据最后一次寻找交错路不成功的 DFS, 找到  , 左边的点增加  , 右边的点减少  . 这里也一样, 根据最后一次寻找增广路不成功的 DFS, 找到  , 所有访问过的点距离标号增加 . 可以证明, 这样不会破坏性质 1, 而且至少有一条新的边进入了  的子图.
+</p><p>　　算法的步骤就是初始标号设为  , 不断增广, 如果不能增广, 修改标号继续增广, 直到彻底不能增广: 源点的标号已经被加到了  . 注意: 在程序中所有的 cost 均表示的是 reduced cost, 即 . 另外, 这个算法不能直接用于有任何负权边的图. 更不能用于负权圈的情况. 有关这两种情况的处理, 参见 (2.) 和 (3.) 中的说明.
+</p><p>　　这样我们得到了一个简单的算法, 只需要增广, 改标号, 各自只有 7 行, 不需要 BFS, 队列, SPFA, 编程复杂度很低. 由于实际的增广都是沿最短路进行的, 所以理论时间复杂度与使用 SPFA 等等方法的连续最短路算法一致, 但节省了 SPFA 或者 Dijkstra 的运算时间. 实测发现这种算法常数很小, 速度较快, employee 这道题所有数据加在一起耗时都在 2s 之内.
+</p><p><br />
+5. “zkw” 费用流算法在哪些图上慢 点击阅读
+</p><p>　　实践中, 上面的这个算法非常奇怪. 在某一些图上, 算法速度非常快, 另一些图上却比纯 SPFA 增广的算法慢. 不少同学经过实测总结的结果是稠密图上比较快, 稀疏图上比较慢, 但也不尽然. 这里我从理论上分析一下, 究竟这个算法用于哪些图可以得到理想的效果.
+</p><p>　　先分析算法的增广流程. 和 SPFA 直接算法相比, 由于同属于沿最短路增广的算法, 实际进行的增流操作并没有太多的区别, 每次的增流路径也大同小异. 因此不考虑多路增广时, 增广次数应该基本相同. 运行时间上主要的差异应当在于如何寻找增流路径的部分.
+</p><p>　　那么 zkw 算法的优势在于哪里呢? 与 SPFA 相比, KM 的重标号方式明显在速度上占优, 每次只是一个对边的扫描操作而已. 而 SPFA 需要维护较为复杂的标号和队列操作, 同时为了修正标号, 需要不止一次地访问某些节点, 速度会慢不少. 另外, 在 zkw 算法中, 增广是多路进行的, 同时可能在一次重标号后进行多次增广. 这个特点可以在许多路径都费用相同的时候派上用场, 进一步减少了重标号的时间耗费.
+</p><p>　　下面想一想 zkw 算法的劣势, 也就是 KM 重标号方式存在的问题. KM 重标号的主要问题就是, 不保证经过一次重标号之后能够存在增广路. 最差情况下, 一次只能在零权网络中增加一条边而已. 这时算法就会反复重标号, 反复尝试增广而次次不能增广, 陷入弄巧成拙的境地.
+</p><p>　　接下来要说什么, 大家可能已经猜到了. 对于最终流量较大, 而费用取值范围不大的图, 或者是增广路径比较短的图 (如二分图), zkw 算法都会比较快. 原因是充分发挥优势. 比如流多说明可以同一费用反复增广, 费用窄说明不用改太多距离标号就会有新增广路, 增广路径短可以显著改善最坏情况, 因为即使每次就只增加一条边也可以很快凑成最短路. 如果恰恰相反, 流量不大, 费用不小, 增广路还较长, 就不适合 zkw 算法了.
+</p><p>　　不适合怎么办? 继续向下看.
+</p><p><br />
+6. 最小费用流的原始对偶 (Primal-Dual) 算法 点击阅读
+</p><p>　　最小费用流的直接 SPFA 算法和前面说的 KM 重标号算法, 各自都有一些情况非常慢. 这里要写的就是一个所谓的“新算法” (其实非常经典), 融合两者优势.
+</p><p>　　先从 zkw 算法的本质开始. 细心的同学已经注意到了, 算法的主要过程就是反复交替进行最短路和最大流的计算. 具体地说, 每一次增广过程就是在零权网络中找一个最大流增广, 而重标号过程就是找到一组新的可行的距离标号. 既然如此, 最大流和最短路就完全可以用其他方法来替换. 这种交替进行最短路和最大流计算用来求得最小费用最大流的算法, 其实就是非常经典的原始对偶算法.
+</p><p>　　费用流的算法大致分为两种, 一种是经典的解法, 如消圈, 增广路, 原始对偶等等, 特点是步步为营, 维持可行性或者最优性其中之一, 再不断对另一方面作出改进. 另一种就比较现代一些, 典型的例子是松弛算法和网络单纯形, 由于放松了对求解过程中解的限制条件, 使得其速度远远超过经典解法, 同时也增加了编程难度和理解障碍. 下面要说的原始对偶算法, 速度自然不可能比松弛和网络单纯形快, 但应该是经典解法中的佼佼者了.
+</p><p>　　先考虑最短路算法的选择. 在流大, 费用小, 距离短的图上, KM 重标号就可以取得不错的效果, 但是 SPFA 在另外的图上就很有优势.
+</p><p>　　再考虑最大流算法的选择. 最朴素的 SPFA 暴力增广中根本就不维护距离标号, 这里隐含地使用了一个单路增广. 在 zkw 费用流的算法里, 这里使用的是多路增广. 是不是有必要用更高级的网络流算法呢? 经过实际测试, 除非在特别稠密的图上, 否则效果一般. 原因是可增广的流量并不是很大, 如果去维护 SAP 的顶标反而增加了不少开销, 预流推进亦然.
+</p><p>　　总结一下, 折中的选择就是使用 Small Label First 优化
+<a rel="nofollow" class="external free" href="http://www.artofproblemsolving.com/blog/54264">http://www.artofproblemsolving.com/blog/54264</a> 
+的 SPFA 来维护 zkw 算法中的距离标号, 保留多路增广. 注意, 除了第一次之外, SPFA 算法都工作在一个所有边均为正权的图上 (Reduced cost 意义下), 这是和不维护顶标直接 SPFA 的不同之处, 也是原来 zkw 算法的精神所在. 也正因为如此, 这里的 SPFA 甚至可以用 Dijkstra 替换.
+</p><p>　　这个特殊的原始对偶算法在稠密二分费用小的图上不敌原来的 zkw 算法, 但远远胜过暴力 SPFA. 在另外的图上, 对两者都是稳胜. 比暴力 SPFA 快原因是, 多路增广, 同时使用了 Reduced Cost 缩小了费用范围, 从而利于 SPFA 算法的工作 (需要的松弛次数减少), 而且使用 Reduced Cost 后不再有负边, 使 SLF 的优化落到了实处 (回忆: SLF 优化只有当所有边均为正的时候才能发挥出最佳效果), 甚至允许用 Dijkstra 来完成后面的工作. 比 zkw 算法快的原因是, 在流小费用大距离长的图上, 一次性把距离标号改对往往比反复调整更有效率.
+</p><p>　　最后是代码, 这次的例子是 POJ 3680 zkw Accepted 216K 360MS. 另外还有一个 POJ 3422, 是原来的 zkw 算法不擅长的一个例子, 这种方法只用 47MS, 代码大同小异, 就不放在这里了.
+</p><p>　　点击查看程序代码
+Code:
+</p>
+<ol><li>include &lt;cstdio&gt;
+</li><li>include &lt;cstring&gt;
+</li><li>include &lt;deque&gt;
+</li><li>include &lt;algorithm&gt;
+</li></ol>
+<p>using namespace std;
+</p><p>const int V=440, E=V*2, maxint=0x3F3F3F3F;
+</p><p>struct etype
+{
+</p>
+<pre>   int t, c, u;
+   etype *next, *pair;
+   etype() {}
+   etype(int T, int C, int U, etype* N): t(T), c(C), u(U), next(N) {}
+   void* operator new(unsigned, void* p){return p;}
+</pre>
+<p>} *e[V], Te[E+E], *Pe;
+</p><p>int S, T, n, piS, cost;
+bool v[V];
+</p><p>void addedge(int s, int t, int c, int u)
+{
+</p>
+<pre>   e[s] = new(Pe++) etype(t, +c, u, e[s]);
+   e[t] = new(Pe++) etype(s, -c, 0, e[t]);
+   e[s]-&gt;pair = e[t];
+   e[t]-&gt;pair = e[s];
+</pre>
+<p>}
+</p><p>int aug(int no, int m)
+{
+</p>
+<pre>   if (no == T) return cost += piS * m, m;
+   v[no] = true;
+   int l = m;
+   for (etype *i = e[no]; i; i = i-&gt;next)
+       if (i-&gt;u &amp;&amp;&#160;!i-&gt;c &amp;&amp;&#160;!v[i-&gt;t])
+       {
+           int d = aug(i-&gt;t, l &lt; i-&gt;u&#160;? l&#160;: i-&gt;u);
+           i-&gt;u -= d, i-&gt;pair-&gt;u += d, l -= d;
+           if (!l) return m;
+       }
+   return m - l;
+</pre>
+<p>}
+</p><p>bool modlabel()
+{
+</p>
+<pre>   static int d[V]; memset(d, 0x3F, sizeof(d)); d[T] = 0;
+   static deque&lt;int&gt; Q; Q.push_back(T);
+   while(Q.size())
+   {
+       int dt, no = Q.front(); Q.pop_front();
+       for(etype *i = e[no]; i; i = i-&gt;next)
+           if(i-&gt;pair-&gt;u &amp;&amp; (dt = d[no] - i-&gt;c) &lt; d[i-&gt;t])
+               (d[i-&gt;t] = dt) &lt;= d[Q.size()&#160;? Q.front()&#160;: 0]
+                  &#160;? Q.push_front(i-&gt;t)&#160;: Q.push_back(i-&gt;t);
+   }
+   for(int i = 0; i &lt; n; ++i)
+       for(etype *j = e[i]; j; j = j-&gt;next)
+           j-&gt;c += d[j-&gt;t] - d[i];
+   piS += d[S];
+   return d[S] &lt; maxint;
+</pre>
+<p>}
+</p><p>int ab[V], *pab[V], w[V];
+</p><p>struct lt
+{
+</p>
+<pre>   bool operator()(int* p1,int* p2) {return *p1 &lt; *p2;}
+</pre>
+<p>};
+</p><p>int main()
+{
+</p>
+<pre>   int t;
+   scanf("%d",&amp;t);
+   while(t--)
+   {
+       memset(e,0,sizeof(e));
+       Pe = Te;
+       static int m, k;
+      scanf("%d&#160;%d", &amp;m, &amp;k);
+       int abz = 0;
+       for(int i = 0; i &lt; m; ++i)
+       {
+           scanf("%d", pab[abz] = &amp;ab[abz]), abz++;
+           scanf("%d", pab[abz] = &amp;ab[abz]), abz++;
+           scanf("%d", &amp;w[i]);
+       }
+       sort(&amp;pab[0], &amp;pab[abz], lt());
+       int c=0xDEADBEEF; n=0;
+       for(int i = 0; i &lt; abz; ++i)
+       {
+           if(c&#160;!= *pab[i]) c = *pab[i], ++n;
+           *pab[i] = n;
+       }
+       ++n, S = 0, T = n++;
+       for(int i = 0; i &lt; T; ++i) addedge(i, i+1, 0, k);
+       for(int i = 0; i &lt; m; ++i) addedge(ab[i+i], ab[i+i+1], -w[i], 1);
+       piS = cost = 0;
+       while(modlabel())
+           do memset(v, 0, sizeof(v));
+           while(aug(S, maxint));
+       printf("%d\n", -cost);
+   }
+   return 0;
+</pre>
+<p>}</i>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 2/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:6694-0!*!*!*!*!*!* and timestamp 20170804112135 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=ZKW%E8%B4%B9%E7%94%A8%E6%B5%81&amp;oldid=34252">http://www.nocow.cn/index.php?title=ZKW%E8%B4%B9%E7%94%A8%E6%B5%81&amp;oldid=34252</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/ZKW%E8%B4%B9%E7%94%A8%E6%B5%81" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:ZKW%E8%B4%B9%E7%94%A8%E6%B5%81&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=ZKW%E8%B4%B9%E7%94%A8%E6%B5%81&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=ZKW%E8%B4%B9%E7%94%A8%E6%B5%81&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=ZKW%E8%B4%B9%E7%94%A8%E6%B5%81" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/ZKW%E8%B4%B9%E7%94%A8%E6%B5%81" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/ZKW%E8%B4%B9%E7%94%A8%E6%B5%81" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=ZKW%E8%B4%B9%E7%94%A8%E6%B5%81&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=ZKW%E8%B4%B9%E7%94%A8%E6%B5%81&amp;oldid=34252" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过2,009次。</li>
+		<li id="credits">本页面由NOCOW用户<a href="/index.php?title=%E7%94%A8%E6%88%B7:Fanzhirui&amp;action=edit&amp;redlink=1" class="new" title="用户:Fanzhirui（尚未撰写）">Fanzhirui</a>于2014年2月10日 (星期一) 10:30做出最后修改。 </li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.155 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

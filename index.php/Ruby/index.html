@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>Ruby - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=Ruby&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=Ruby&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Ruby", "wgTitle": "Ruby", "wgCurRevisionId": 3801, "wgArticleId": 669, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for ruby
+ * CSS class: source-ruby, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.ruby.source-ruby .de1, .ruby.source-ruby .de2 {}
+.ruby.source-ruby  {font-family:monospace;}
+.ruby.source-ruby .imp {font-weight: bold; color: red;}
+.ruby.source-ruby li, .ruby.source-ruby .li1 {font-weight: normal; vertical-align:top;}
+.ruby.source-ruby .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.ruby.source-ruby .li2 {font-weight: bold; vertical-align:top;}
+.ruby.source-ruby .kw1 {color:#9966CC; font-weight:bold;}
+.ruby.source-ruby .kw2 {color:#0000FF; font-weight:bold;}
+.ruby.source-ruby .kw3 {color:#CC0066; font-weight:bold;}
+.ruby.source-ruby .kw4 {color:#CC00FF; font-weight:bold;}
+.ruby.source-ruby .co1 {color:#008000; font-style:italic;}
+.ruby.source-ruby .co4 {color: #cc0000; font-style: italic;}
+.ruby.source-ruby .coMULTI {color:#000080; font-style:italic;}
+.ruby.source-ruby .es0 {color:#000099;}
+.ruby.source-ruby .br0 {color:#006600; font-weight:bold;}
+.ruby.source-ruby .sy0 {color:#006600; font-weight:bold;}
+.ruby.source-ruby .st0 {color:#996600;}
+.ruby.source-ruby .nu0 {color:#006666;}
+.ruby.source-ruby .me1 {color:#9900CC;}
+.ruby.source-ruby .re0 {color:#ff6633; font-weight:bold;}
+.ruby.source-ruby .re1 {color:#0066ff; font-weight:bold;}
+.ruby.source-ruby .re2 {color:#6666ff; font-weight:bold;}
+.ruby.source-ruby .re3 {color:#ff3333; font-weight:bold;}
+.ruby.source-ruby .ln-xtra, .ruby.source-ruby li.ln-xtra, .ruby.source-ruby div.ln-xtra {background-color: #ffc;}
+.ruby.source-ruby span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Ruby action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">Ruby</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><p><b>Ruby</b>，一种为简单快捷<a href="/index.php?title=%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1&amp;action=edit&amp;redlink=1" class="new" title="面向对象（尚未撰写）">面向对象</a>编程（面向对象程序设计）而创的<a href="/index.php?title=%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80&amp;action=edit&amp;redlink=1" class="new" title="脚本语言（尚未撰写）">脚本语言</a>，由日本人松本行弘（まつもとゆきひろ，英译：Yukihiro Matsumoto，外号matz）开发，遵守<a href="/index.php?title=GPL&amp;action=edit&amp;redlink=1" class="new" title="GPL（尚未撰写）">GPL</a>协议和<a rel="nofollow" class="external text" href="http://www.ruby-lang.org/en/LICENSE.txt">Ruby License</a>。Ruby的作者认为Ruby &gt; (<a href="/index.php?title=Smalltalk&amp;action=edit&amp;redlink=1" class="new" title="Smalltalk（尚未撰写）">Smalltalk</a> + <a href="/index.php/Perl" title="Perl">Perl</a>) / 2，表示Ruby是一个语法像<a href="/index.php?title=Smalltalk&amp;action=edit&amp;redlink=1" class="new" title="Smalltalk（尚未撰写）">Smalltalk</a>一样完全<a href="/index.php?title=%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1&amp;action=edit&amp;redlink=1" class="new" title="面向对象（尚未撰写）">面向对象</a>、<a href="/index.php?title=%E8%84%9A%E6%9C%AC%E6%89%A7%E8%A1%8C&amp;action=edit&amp;redlink=1" class="new" title="脚本执行（尚未撰写）">脚本执行</a>、又有<a href="/index.php/Perl" title="Perl">Perl</a>强大的<a href="/index.php?title=%E6%96%87%E5%AD%97%E5%A4%84%E7%90%86&amp;action=edit&amp;redlink=1" class="new" title="文字处理（尚未撰写）">文字处理</a>功能的<a href="/index.php?title=%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80&amp;action=edit&amp;redlink=1" class="new" title="编程语言（尚未撰写）">编程语言</a>。其他特色包括：
+</p>
+<ul><li><a href="/index.php?title=%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD&amp;action=edit&amp;redlink=1" class="new" title="运算符重载（尚未撰写）">运算符重载</a>
+</li><li><a href="/index.php?title=%E8%87%AA%E5%8A%A8%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6&amp;action=edit&amp;redlink=1" class="new" title="自动垃圾回收（尚未撰写）">自动垃圾回收</a>
+</li><li><a href="/index.php?title=%E5%BC%B1%E7%B1%BB%E5%9E%8B&amp;action=edit&amp;redlink=1" class="new" title="弱类型（尚未撰写）">弱类型</a>（动态类型 | 标量变量）
+</li><li>变量无需声明 (不必事先宣告变量)
+</li><li>在Windows上，加载<a href="/index.php?title=DLL&amp;action=edit&amp;redlink=1" class="new" title="DLL（尚未撰写）">DLL</a>
+</li><li>巨大的标准<a href="/index.php?title=%E5%BA%93&amp;action=edit&amp;redlink=1" class="new" title="库（尚未撰写）">库</a>(函式库；Library)
+</li></ul>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E4.BB.8B.E7.BB.8D"><span class="tocnumber">1</span> <span class="toctext">介绍</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#.E5.8E.86.E5.8F.B2"><span class="tocnumber">1.1</span> <span class="toctext">历史</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Ruby_.E7.9A.84.E7.90.86.E5.BF.B5"><span class="tocnumber">1.2</span> <span class="toctext">Ruby 的理念</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Semantics"><span class="tocnumber">1.3</span> <span class="toctext">Semantics</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Ruby.E7.9A.84Hello_World.E7.A8.8B.E5.BA.8F"><span class="tocnumber">2</span> <span class="toctext">Ruby的Hello World程序</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Ruby_.E7.9A.84.E7.89.B9.E7.82.B9"><span class="tocnumber">2.1</span> <span class="toctext">Ruby 的特点</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#.E7.94.A8Ruby.E6.9D.A5.E5.86.99.E7.A8.8B.E5.BA.8F"><span class="tocnumber">3</span> <span class="toctext">用Ruby来写程序</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#JRuby"><span class="tocnumber">4</span> <span class="toctext">JRuby</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#.E8.AF.84.E4.BB.B7"><span class="tocnumber">5</span> <span class="toctext">评价</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#.E5.8F.82.E8.A7.81"><span class="tocnumber">6</span> <span class="toctext">参见</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#.E5.A4.96.E9.83.A8.E9.8F.88.E7.B5.90"><span class="tocnumber">7</span> <span class="toctext">外部鏈結</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="/index.php?title=Ruby&amp;action=edit&amp;section=1" title="编辑段落：介绍">编辑</a>]</span> <span class="mw-headline" id=".E4.BB.8B.E7.BB.8D">介绍</span></h2>
+<h3><span class="editsection">[<a href="/index.php?title=Ruby&amp;action=edit&amp;section=2" title="编辑段落：历史">编辑</a>]</span> <span class="mw-headline" id=".E5.8E.86.E5.8F.B2">历史</span></h3>
+<p>Ruby的作者于1993年2月24日开始编写Ruby，直至1995年12月才正式公开发布于fj（新闻组）。之所以称为Ruby，是因为<a href="/index.php/Perl" title="Perl">Perl</a>的发音与6月的诞生石pearl（珍珠）相同，因此Ruby以7月的诞生石ruby（红宝石）命名。
+</p><p>Ruby明显比其他类似的编程语言（如Perl或<a href="/index.php/Python" title="Python">Python</a>）年轻，又因为Ruby是日本人发明的，所以早期的非日文资料和程序都比较贫乏，所以现在在网上仍然可以找到Ruby的资料太少之类的批评。约于2000年，Ruby开始进入美国，英文的资料开始发展。
+</p><p>Ruby现在的稳定版本是1.8.6（2007年3月12日发布）。
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=Ruby&amp;action=edit&amp;section=3" title="编辑段落：Ruby 的理念">编辑</a>]</span> <span class="mw-headline" id="Ruby_.E7.9A.84.E7.90.86.E5.BF.B5">Ruby 的理念</span></h3>
+<p>减少编程时候的不必要的琐碎时间，令编写程序的人高兴，是设计 Ruby 语言的 Matz 的一个首要的考虑；其次是良好的界面设计。他强调系统设计必须强调人性化，而不是一味从机器的角度设想。
+</p>
+<dl><dd><i>人们特别是电脑工程师们，常常从机器着想。他们认为：“这样做，机器就能运行的更快；这样做，机器运行效率更高；这样做，机器就会怎样怎样怎样。”实际上，我们需要从人的角度考虑问题，人们怎样编写程序或者怎样使用机器上应用程序。我们是主人，他们是仆人。</i>
+</dd></dl>
+<p>遵循上述的理念，Ruby 语言通常非常直观，按照编程人认为它应该的方式运行。
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=Ruby&amp;action=edit&amp;section=4" title="编辑段落：Semantics">编辑</a>]</span> <span class="mw-headline" id="Semantics">Semantics</span></h3>
+<p>Ruby 是完全<a href="/index.php?title=%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1&amp;action=edit&amp;redlink=1" class="new" title="面向对象（尚未撰写）">面向对象</a>的：任何一点数据都是对象，包括在其他语言中的<a href="/index.php?title=%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B&amp;action=edit&amp;redlink=1" class="new" title="基本类型（尚未撰写）">基本类型</a>（比如：整数，布尔逻辑值），每个<a href="/index.php?title=%E8%BF%87%E7%A8%8B&amp;action=edit&amp;redlink=1" class="new" title="过程（尚未撰写）">过程</a>或<a href="/index.php?title=%E5%87%BD%E6%95%B0&amp;action=edit&amp;redlink=1" class="new" title="函数（尚未撰写）">函数</a>都是<a href="/index.php?title=%E6%96%B9%E6%B3%95&amp;action=edit&amp;redlink=1" class="new" title="方法（尚未撰写）">方法</a>。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=Ruby&amp;action=edit&amp;section=5" title="编辑段落：Ruby的Hello World程序">编辑</a>]</span> <span class="mw-headline" id="Ruby.E7.9A.84Hello_World.E7.A8.8B.E5.BA.8F">Ruby的<a href="/index.php/Hello_World" title="Hello World">Hello World程序</a></span></h2>
+<p>下面是一个在标准输出设备上输出<a href="/index.php/Hello_World" title="Hello World">Hello World</a>的简单程序，这种程序通常作为开始学习编程语言时的第一个程序：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="ruby source-ruby"><pre class="de1"><span class="co1">#!/usr/bin/env ruby</span>
+<span class="kw3">puts</span> <span class="st0">&quot;Hello, world!&quot;</span></pre></div></div>
+<h3><span class="editsection">[<a href="/index.php?title=Ruby&amp;action=edit&amp;section=6" title="编辑段落：Ruby 的特点">编辑</a>]</span> <span class="mw-headline" id="Ruby_.E7.9A.84.E7.89.B9.E7.82.B9">Ruby 的特点</span></h3>
+<ul><li>完全面向对象
+</li></ul>
+<p>在Ruby语言中，任何东西都是对象，包括其他语言中的基本数据类型，比如整数
+</p>
+<ul><li>变量没有类型
+</li></ul>
+<p>Ruby的变量可以保有任何类型的数据。
+</p>
+<ul><li>任何东西都有值
+</li></ul>
+<p>不管是数学或者逻辑表达式还是一个语句，都有值
+</p>
+<ul><li>变量命名规则
+</li></ul>
+<p>Ruby的<a href="/index.php?title=%E5%8F%98%E9%87%8F&amp;action=edit&amp;redlink=1" class="new" title="变量（尚未撰写）">变量</a>有以下几种：
+</p>
+<dl><dd><ul><li>一般小写字母、底线开头：<a href="/index.php?title=%E5%8F%98%E9%87%8F&amp;action=edit&amp;redlink=1" class="new" title="变量（尚未撰写）">变量</a> (Variable) 
+</li><li>$开头：<a href="/index.php?title=%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F&amp;action=edit&amp;redlink=1" class="new" title="全局变量（尚未撰写）">全局变量</a> (Global variable) 
+</li><li>@开头：实体变量, <a href="/index.php?title=%E5%AE%9E%E4%BE%8B%E5%8F%98%E9%87%8F&amp;action=edit&amp;redlink=1" class="new" title="实例变量（尚未撰写）">实例变量</a> (Instance variable) 
+</li><li>@@开头：类别变量, <a href="/index.php?title=%E7%B1%BB%E5%8F%98%E9%87%8F&amp;action=edit&amp;redlink=1" class="new" title="类变量（尚未撰写）">类变量</a> (Class variable) 
+</li><li>大写字母开头：<a href="/index.php?title=%E5%B8%B8%E6%95%B0&amp;action=edit&amp;redlink=1" class="new" title="常数（尚未撰写）">常数</a> (Constant) 
+</li></ul>
+</dd></dl>
+<ul><li>已经定义的类可以在运行时修改
+</li></ul>
+<p>Ruby是动态语言，你可以在程序中修改先前定义过的类。 也可以在某个类的实例中定义该实例特有的方法，这叫做单立方法。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="ruby source-ruby"><pre class="de1"><span class="kw1">class</span> MyClass
+  <span class="kw1">def</span> the_method
+    <span class="st0">&quot;general method&quot;</span>
+  <span class="kw1">end</span>
+<span class="kw1">end</span>
+&#160;
+mc = MyClass.<span class="me1">new</span>
+<span class="kw1">def</span> mc.<span class="me1">the_method</span>
+  <span class="st0">&quot;special for this instance.&quot;</span>
+<span class="kw1">end</span>
+&#160;
+mc.<span class="me1">the_method</span></pre></div></div>
+<h2><span class="editsection">[<a href="/index.php?title=Ruby&amp;action=edit&amp;section=7" title="编辑段落：用Ruby来写程序">编辑</a>]</span> <span class="mw-headline" id=".E7.94.A8Ruby.E6.9D.A5.E5.86.99.E7.A8.8B.E5.BA.8F">用Ruby来写程序</span></h2>
+<ul><li><a href="/index.php?title=Ruby%E5%85%A5%E9%97%A8&amp;action=edit&amp;redlink=1" class="new" title="Ruby入门（尚未撰写）">Ruby入门</a>
+</li><li><a href="/index.php/Ruby/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86" title="Ruby/字符串处理">字符串处理</a>
+</li></ul>
+<h2><span class="editsection">[<a href="/index.php?title=Ruby&amp;action=edit&amp;section=8" title="编辑段落：JRuby">编辑</a>]</span> <span class="mw-headline" id="JRuby">JRuby</span></h2>
+<p>JRuby，类似<a href="/index.php/Python" title="Python">Python</a>的<a href="/index.php?title=Jython&amp;action=edit&amp;redlink=1" class="new" title="Jython（尚未撰写）">Jython</a>，一个可于<a href="/index.php/Java" title="Java">Java</a>上执行Ruby的语言，支援Java的接口和类别。最新发布版为0.9.8（2007-3-6），与Ruby 1.8.4兼容。它的官方网站为jruby.codehaus.org。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=Ruby&amp;action=edit&amp;section=9" title="编辑段落：评价">编辑</a>]</span> <span class="mw-headline" id=".E8.AF.84.E4.BB.B7">评价</span></h2>
+<h2><span class="editsection">[<a href="/index.php?title=Ruby&amp;action=edit&amp;section=10" title="编辑段落：参见">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E8.A7.81">参见</span></h2>
+<ul><li><a href="/index.php/Python" title="Python">Python</a>（经常和Ruby比较） 
+</li><li><a href="/index.php/Perl" title="Perl">Perl</a>
+</li><li><a href="/index.php?title=Smalltalk&amp;action=edit&amp;redlink=1" class="new" title="Smalltalk（尚未撰写）">Smalltalk</a>
+</li><li><a href="/index.php?title=Ruby_on_Rails&amp;action=edit&amp;redlink=1" class="new" title="Ruby on Rails（尚未撰写）">Ruby on Rails</a>：一个MVC的快速网站开发应用框架。 
+</li></ul>
+<h2><span class="editsection">[<a href="/index.php?title=Ruby&amp;action=edit&amp;section=11" title="编辑段落：外部鏈結">编辑</a>]</span> <span class="mw-headline" id=".E5.A4.96.E9.83.A8.E9.8F.88.E7.B5.90">外部鏈結</span></h2>
+<ul><li>来自<a rel="nofollow" class="external text" href="http://http://zh.wikipedia.org/">维基百科</a>中的<a rel="nofollow" class="external text" href="http://zh.wikipedia.org/wiki/Ruby">Ruby</a>，使用<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL" class="mw-redirect">GFDL</a>版权发布。
+</li><li> <a rel="nofollow" class="external text" href="http://rubycn.ce-lab.net/">Ruby的官方网站</a>（中文）
+</li><li> <a rel="nofollow" class="external text" href="http://www.ruby-lang.org/">Ruby的官方网站</a>（英文）
+</li><li> <a rel="nofollow" class="external text" href="http://www.rubygarden.org/">Ruby Garden</a>
+</li><li> <a rel="nofollow" class="external text" href="http://www.rubycentral.com/book/">书籍<i>Programming Ruby</i></a>
+</li><li> <a rel="nofollow" class="external text" href="http://raa.ruby-lang.org/">Ruby Application Archive</a>
+</li><li> <a rel="nofollow" class="external text" href="http://rubyforge.org/">RubyForge</a>，提供一个类似<a href="/index.php/SourceForge" title="SourceForge">SourceForge</a>和Freshmeat的环境给用Ruby或给Ruby写的工具
+</li><li> <a rel="nofollow" class="external text" href="http://ruby-doc.org/">Ruby Documentation project</a>
+</li><li> <a rel="nofollow" class="external text" href="http://www.ruby-forum.org/bb/">Ruby Forum</a>
+</li></ul>
+<p>中文資源︰
+</p>
+<ul><li> <a rel="nofollow" class="external text" href="http://www.ruby.oss.tw/">台湾Ruby使用者社群</a>
+</li><li> <a rel="nofollow" class="external text" href="http://www.ruby.oss.tw/phpbb">台湾Ruby使用者社群讨论区</a>
+</li><li> <a rel="nofollow" class="external text" href="http://zh.wikibooks.org/wiki/Programming:Ruby">Programming Ruby的中文Wikibooks</a> (還在翻譯)
+</li><li> <a rel="nofollow" class="external text" href="http://polarpolar.infor.org/doc/rubydoc/intro.htm">Ruby编程语言精粹实用入门指南</a>
+</li><li> <a rel="nofollow" class="external text" href="http://blog.csdn.net/eiffelqiu/">eiffelqiu的专栏</a>，含一些和Ruby有关的文章翻译
+</li><li> <a rel="nofollow" class="external text" href="http://ruby.blogthing.com">红宝石志</a>
+</li><li> <a rel="nofollow" class="external text" href="http://blog.itpub.net/liubin">liubin的关于Ruby的blog，更新较快</a>
+</li><li> <a rel="nofollow" class="external text" href="http://andrewhocoo.blogspot.com/">AnW do |x| end 的 blog</a>
+</li><li> <a rel="nofollow" class="external text" href="http://willh.org/cfc/wiki/">台灣 Ruby 使用者的 wiki</a>
+</li><li> <a rel="nofollow" class="external text" href="http://jackei.cnblogs.com/category/51793.html">使用基于 Ruby 的 Web 自动化测试框架 Watir 进行Web 应用测试</a>（简体中文）
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 61/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:669-0!*!0!!zh-cn!*!* and timestamp 20150502090710 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=Ruby&amp;oldid=3801">http://www.nocow.cn/index.php?title=Ruby&amp;oldid=3801</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/Ruby" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:Ruby&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=Ruby&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=Ruby&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Ruby" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Ruby" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Ruby" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=Ruby&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=Ruby&amp;oldid=3801" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过4,701次。</li>
+		<li id="credits">本页面由<a href="/index.php/%E7%94%A8%E6%88%B7:Cosechy" title="用户:Cosechy">yh</a>于2007年6月12日 (星期二) 23:20做出最后修改。 在<a href="/index.php/%E7%94%A8%E6%88%B7:Tangtong" title="用户:Tangtong">Cu</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.100 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

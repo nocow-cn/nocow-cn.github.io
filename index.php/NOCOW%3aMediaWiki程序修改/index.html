@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>NOCOW:MediaWiki程序修改 - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=NOCOW:MediaWiki%E7%A8%8B%E5%BA%8F%E4%BF%AE%E6%94%B9&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=NOCOW:MediaWiki%E7%A8%8B%E5%BA%8F%E4%BF%AE%E6%94%B9&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "Project", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 4, "wgPageName": "NOCOW:MediaWiki程序修改", "wgTitle": "MediaWiki程序修改", "wgCurRevisionId": 15110, "wgArticleId": 1035, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["NOCOW站务"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for php
+ * CSS class: source-php, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.php.source-php .de1, .php.source-php .de2 {}
+.php.source-php  {font-family:monospace;}
+.php.source-php .imp {font-weight: bold; color: red;}
+.php.source-php li, .php.source-php .li1 {font-weight: normal; vertical-align:top;}
+.php.source-php .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.php.source-php .li2 {font-weight: bold; vertical-align:top;}
+.php.source-php .kw1 {color: #b1b100;}
+.php.source-php .kw2 {color: #000000; font-weight: bold;}
+.php.source-php .kw3 {color: #990000;}
+.php.source-php .kw4 {color: #009900; font-weight: bold;}
+.php.source-php .co1 {color: #666666; font-style: italic;}
+.php.source-php .co2 {color: #666666; font-style: italic;}
+.php.source-php .co3 {color: #0000cc; font-style: italic;}
+.php.source-php .co4 {color: #009933; font-style: italic;}
+.php.source-php .coMULTI {color: #666666; font-style: italic;}
+.php.source-php .es0 {color: #000099; font-weight: bold;}
+.php.source-php .es1 {color: #000099; font-weight: bold;}
+.php.source-php .es2 {color: #660099; font-weight: bold;}
+.php.source-php .es3 {color: #660099; font-weight: bold;}
+.php.source-php .es4 {color: #006699; font-weight: bold;}
+.php.source-php .es5 {color: #006699; font-weight: bold; font-style: italic;}
+.php.source-php .es6 {color: #009933; font-weight: bold;}
+.php.source-php .es_h {color: #000099; font-weight: bold;}
+.php.source-php .br0 {color: #009900;}
+.php.source-php .sy0 {color: #339933;}
+.php.source-php .sy1 {color: #000000; font-weight: bold;}
+.php.source-php .st0 {color: #0000ff;}
+.php.source-php .st_h {color: #0000ff;}
+.php.source-php .nu0 {color: #cc66cc;}
+.php.source-php .nu8 {color: #208080;}
+.php.source-php .nu12 {color: #208080;}
+.php.source-php .nu19 {color:#800080;}
+.php.source-php .me1 {color: #004000;}
+.php.source-php .me2 {color: #004000;}
+.php.source-php .re0 {color: #000088;}
+.php.source-php .ln-xtra, .php.source-php li.ln-xtra, .php.source-php div.ln-xtra {background-color: #ffc;}
+.php.source-php span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-4 ns-subject page-NOCOW_MediaWiki程序修改 action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">NOCOW:MediaWiki程序修改</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><p>现在MediaWiki的程序很多地方需要修改，以适应NOCOW的需要。
+</p><p>一些内容如下，按重要性排序：
+</p>
+<ul><li>在全部页面中隐藏子页面，并把子页面数量注在主页面后面。另外左边的工具箱应该有一个查看自页面的链接，没有被主页面或其他子页面链接的子页面也应该注在主页面下面（链接可以用特殊方式隐藏）。这个功能应当设成可选的。
+</li><li>将分类用于所有的条目，或者说所有的条目都可以作为分类，不管名字空间是什么。这个一可以快速解决Article:的整理问题（归类到其所讲的内容），二是可以增加个人页面的私人分类，而不污染主要的分类空间，不过这个说不定可以用User开头的分类解决（既然可以有用户分类）。
+</li><li>给予个人保护自己个人页面的权力。这主要是为了避免一些不必要的检查，还有对重要言论的误会。保护不是强制的。另外也应该可以将一个页面的子页面（包括任何新建的子页面，不包括特殊解保护的）递归保护。另外也应该能查看一个页面及其所有子页面的修改。
+</li><li>重写showhide插件。
+</li><li>增加insert插件，把插入的内容直接转移到自己的个人页，并保护。要考虑到权限和编辑冲突等问题。
+</li><li>个人身份验证，可以用一些不可直接实现的javascript效果实现，或者把这些信息显示在工具箱的下面。
+</li><li>rss导出，包括分类、链出更改等页面的。
+</li><li>修改页面css的支持，注意避免一些hack，最好支持这样：{a {xxx:xxx} li a {xxx:yyy}}!important。
+</li><li>通过名字空间:直接搜索或者列出名字空间的内容。
+</li><li>引用特殊页面。
+</li></ul>
+<p>要是还有什么需要的，欢迎大家在这里添加。
+</p><p>如果谁比较熟悉php或者mediawiki的结构，或者对此有兴趣，欢迎加入，请在这里留言。 --<a href="/index.php/%E7%94%A8%E6%88%B7:Cosechy" title="用户:Cosechy">Cosechy</a> 07:09 2007年6月25日 (CST)
+</p><p>关于这件事的问题，可以在这里回复，对mediawiki程序的讨论去<a href="/index.php?title=NOCOW_talk:Mediawiki%E7%A8%8B%E5%BA%8F%E4%BF%AE%E6%94%B9&amp;action=edit&amp;redlink=1" class="new" title="NOCOW talk:Mediawiki程序修改（尚未撰写）">这里</a>吧。 --<a href="/index.php/%E7%94%A8%E6%88%B7:Cosechy" title="用户:Cosechy">Cosechy</a> 07:09 2007年6月25日 (CST)
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=NOCOW:MediaWiki%E7%A8%8B%E5%BA%8F%E4%BF%AE%E6%94%B9&amp;action=edit&amp;section=1" title="编辑段落：搜索框修改">编辑</a>]</span> <span class="mw-headline" id=".E6.90.9C.E7.B4.A2.E6.A1.86.E4.BF.AE.E6.94.B9">搜索框修改</span></h3>
+<p>11:26 2008年3月9日 (CST)
+</p><p>简单的修改了一下左边搜索框的“进入”功能，如下：
+</p>
+<ol><li>查找当前页面的子页面，如果存在则直接进入（下同），比如在<a href="/index.php/USACO/nuggets" title="USACO/nuggets">USACO/nuggets</a>输入Pascal进入<a href="/index.php/USACO/nuggets/Pascal" title="USACO/nuggets/Pascal" class="mw-redirect">USACO/nuggets/Pascal</a>，可以在前面加./忽略下面的条件，比如./Pascal。
+</li><li>如果最后一个字符是冒号，查找所输入的名字空间中和当前页面同名的页面，比如在<a href="/index.php/USACO/nuggets" title="USACO/nuggets">USACO/nuggets</a>输入Translate:进入<a href="/index.php/Translate:USACO/nuggets" title="Translate:USACO/nuggets">Translate:USACO/nuggets</a>。
+</li><li>查找和当前页面同一级（路径和名字空间）的页面，比如在<a href="/index.php/USACO/nuggets" title="USACO/nuggets">USACO/nuggets</a>输入ride进入<a href="/index.php/USACO/ride" title="USACO/ride">USACO/ride</a>，可以在前面加冒号跳过查找子页面和条件，比如:ride。
+</li><li>如果第一个字符是点，用类似路径的方法处理，但是分隔符将是点（还有点问题）。
+</li><li>如果输入的内容以/开头，或者在除了首尾的地方有冒号而且开头不是./或者:，忽略以上几条。
+</li><li>为了安全考虑，特殊页面暂时没有打开这些功能，但是在<a href="/index.php?title=Logout&amp;action=edit&amp;redlink=1" class="new" title="Logout（尚未撰写）">Logout</a>输入Special:还是会有效果，请尽量不要这么用。
+</li><li>本功能只适用于“进入”功能，对搜索、内链和地址栏直接输入没有效果。
+</li><li>本功能目前只在默认的MonoBook界面里有效。
+</li></ol>
+<p><b>代码：</b>
+</p>
+<ul><li>include/SpecialSearch.php SpecialSearch::goResult 第六行开始加入：
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="php source-php"><pre class="de1">                <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">==</span><span class="st_h">'/'</span><span class="br0">&#41;</span>
+                        <span class="re0">$term</span><span class="sy0">=</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span>
+                <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy0">!</span><span class="kw3">array_key_exists</span><span class="br0">&#40;</span><span class="st_h">'ref'</span><span class="sy0">,</span><span class="re0">$_GET</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+                <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">2</span><span class="br0">&#41;</span><span class="sy0">==</span><span class="st_h">'./'</span><span class="br0">&#41;</span>
+                        <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy0">!</span><span class="kw3">is_null</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">=</span>SearchEngine<span class="sy0">::</span><span class="me2">getNearMatch</span><span class="br0">&#40;</span><span class="re0">$_GET</span><span class="br0">&#91;</span><span class="st_h">'ref'</span><span class="br0">&#93;</span><span class="sy0">.</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><span class="re0">$wgOut</span><span class="sy0">-&gt;</span><span class="me1">redirect</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">-&gt;</span><span class="me1">getFullURL</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><span class="kw1">return</span><span class="sy0">;</span><span class="br0">&#125;</span>
+                        <span class="kw1">else</span><span class="sy0">;</span>
+                <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">,-</span><span class="nu0">1</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">==</span><span class="st_h">':'</span><span class="br0">&#41;</span>
+                        <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy0">!</span><span class="kw3">is_null</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">=</span>SearchEngine<span class="sy0">::</span><span class="me2">getNearMatch</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">.</span><span class="re0">$_GET</span><span class="br0">&#91;</span><span class="st_h">'ref'</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><span class="re0">$wgOut</span><span class="sy0">-&gt;</span><span class="me1">redirect</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">-&gt;</span><span class="me1">getFullURL</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><span class="kw1">return</span><span class="sy0">;</span><span class="br0">&#125;</span>
+                        <span class="kw1">else</span><span class="sy0">;</span>
+                <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw3">strpos</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">,</span><span class="st_h">':'</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+                <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">==</span><span class="st_h">'.'</span><span class="sy0">&amp;&amp;!</span><span class="kw3">is_null</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">=</span>SearchEngine<span class="sy0">::</span><span class="me2">getNearMatch</span><span class="br0">&#40;</span><span class="re0">$_GET</span><span class="br0">&#91;</span><span class="st_h">'ref'</span><span class="br0">&#93;</span><span class="sy0">.</span><span class="re0">$term</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><span class="re0">$wgOut</span><span class="sy0">-&gt;</span><span class="me1">redirect</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">-&gt;</span><span class="me1">getFullURL</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><span class="kw1">return</span><span class="sy0">;</span><span class="br0">&#125;</span>
+                <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">!=</span><span class="st_h">':'</span><span class="sy0">||</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">=</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span>and <span class="kw4">false</span><span class="br0">&#41;</span>and<span class="sy0">!</span><span class="kw3">is_null</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">=</span>SearchEngine<span class="sy0">::</span><span class="me2">getNearMatch</span><span class="br0">&#40;</span><span class="re0">$_GET</span><span class="br0">&#91;</span><span class="st_h">'ref'</span><span class="br0">&#93;</span><span class="sy0">.</span><span class="st_h">'/'</span><span class="sy0">.</span><span class="re0">$term</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><span class="re0">$wgOut</span><span class="sy0">-&gt;</span><span class="me1">redirect</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">-&gt;</span><span class="me1">getFullURL</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><span class="kw1">return</span><span class="sy0">;</span><span class="br0">&#125;</span>
+                <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw3">is_int</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">=</span><span class="kw3">strpos</span><span class="br0">&#40;</span><span class="re0">$_GET</span><span class="br0">&#91;</span><span class="st_h">'ref'</span><span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">'/'</span><span class="br0">&#41;</span><span class="br0">&#41;</span>and<span class="sy0">!</span><span class="kw3">is_null</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">=</span>SearchEngine<span class="sy0">::</span><span class="me2">getNearMatch</span><span class="br0">&#40;</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$_GET</span><span class="br0">&#91;</span><span class="st_h">'ref'</span><span class="br0">&#93;</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="re0">$t</span><span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">.</span><span class="re0">$term</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><span class="re0">$wgOut</span><span class="sy0">-&gt;</span><span class="me1">redirect</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">-&gt;</span><span class="me1">getFullURL</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><span class="kw1">return</span><span class="sy0">;</span><span class="br0">&#125;</span>
+                <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw3">is_int</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">=</span><span class="kw3">strpos</span><span class="br0">&#40;</span><span class="re0">$_GET</span><span class="br0">&#91;</span><span class="st_h">'ref'</span><span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">':'</span><span class="br0">&#41;</span><span class="br0">&#41;</span>and<span class="sy0">!</span><span class="kw3">is_null</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">=</span>SearchEngine<span class="sy0">::</span><span class="me2">getNearMatch</span><span class="br0">&#40;</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$_GET</span><span class="br0">&#91;</span><span class="st_h">'ref'</span><span class="br0">&#93;</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="re0">$t</span><span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">.</span><span class="re0">$term</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><span class="re0">$wgOut</span><span class="sy0">-&gt;</span><span class="me1">redirect</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">-&gt;</span><span class="me1">getFullURL</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><span class="kw1">return</span><span class="sy0">;</span><span class="br0">&#125;</span></pre></div></div>
+<ul><li>include/Skin.php Skin::makeGlobalVariablesScript 修改一行：
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="php source-php"><pre class="de1">			<span class="st_h">'wgPageName'</span> <span class="sy0">=&gt;</span> <span class="re0">$GLOBALS</span><span class="br0">&#91;</span><span class="st_h">'yh_temp_ref'</span><span class="br0">&#93;</span><span class="sy0">=</span><span class="re0">$wgTitle</span><span class="sy0">-&gt;</span><span class="me1">getPrefixedDBKey</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">,</span></pre></div></div>
+<p>不知道为什么在MonoBook.php里直接调用$GLOBALS['wgTitle']-&gt;getPrefixedDBKey()不管用
+</p>
+<ul><li>skin/MonoBook.php MonoBookTemplate::excute div#searchBody form#searchform
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="php source-php"><pre class="de1"><span class="kw2">&lt;?php</span> <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$GLOBALS</span><span class="br0">&#91;</span><span class="st_h">'yh_temp_ref'</span><span class="br0">&#93;</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">8</span><span class="br0">&#41;</span><span class="sy0">!=</span><span class="st_h">'Special:'</span><span class="br0">&#41;</span><span class="br0">&#123;</span> <span class="sy1">?&gt;</span>&lt;input name=&quot;ref&quot; type=&quot;hidden&quot; value=&quot;<span class="kw2">&lt;?php</span> <span class="kw1">echo</span> <span class="re0">$GLOBALS</span><span class="br0">&#91;</span><span class="st_h">'yh_temp_ref'</span><span class="br0">&#93;</span><span class="sy0">;</span> <span class="sy1">?&gt;</span>&quot;&gt;
+<span class="kw2">&lt;?php</span> <span class="br0">&#125;</span> <span class="sy1">?&gt;</span></pre></div></div>
+<p>有什么问题和建议请与<a href="/index.php/%E7%94%A8%E6%88%B7:Cosechy" title="用户:Cosechy">User:Cosechy</a>联系，或者在这里提出。
+</p>
+<hr />
+<p>21:13 2008年3月12日 (CST)
+</p><p>之前又修改了一下程序，没有马上帖出来
+</p><p>代码如下：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="php source-php"><pre class="de1">                <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">==</span><span class="st_h">'/'</span><span class="br0">&#41;</span>
+                        <span class="re0">$term</span><span class="sy0">=</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span>
+                <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy0">!</span><span class="kw3">array_key_exists</span><span class="br0">&#40;</span><span class="st_h">'ref'</span><span class="sy0">,</span><span class="re0">$_GET</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+                <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">2</span><span class="br0">&#41;</span><span class="sy0">==</span><span class="st_h">'./'</span><span class="br0">&#41;</span>
+                        <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy0">!</span><span class="kw3">is_null</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">=</span>SearchEngine<span class="sy0">::</span><span class="me2">getNearMatch</span><span class="br0">&#40;</span><span class="re0">$_GET</span><span class="br0">&#91;</span><span class="st_h">'ref'</span><span class="br0">&#93;</span><span class="sy0">.</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><span class="re0">$wgOut</span><span class="sy0">-&gt;</span><span class="me1">redirect</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">-&gt;</span><span class="me1">getFullURL</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><span class="kw1">return</span><span class="sy0">;</span><span class="br0">&#125;</span>
+                        <span class="kw1">else</span><span class="sy0">;</span>
+                <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">,-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">==</span><span class="st_h">':'</span><span class="br0">&#41;</span>
+                        <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy0">!</span><span class="kw3">is_null</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">=</span>SearchEngine<span class="sy0">::</span><span class="me2">getNearMatch</span><span class="br0">&#40;</span><span class="re0">$tt</span><span class="sy0">=</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">.</span><span class="br0">&#40;</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">=</span><span class="kw3">strpos</span><span class="br0">&#40;</span><span class="re0">$_GET</span><span class="br0">&#91;</span><span class="st_h">'ref'</span><span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">':'</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">===</span><span class="kw4">false</span>?<span class="st_h">':'</span><span class="sy0">.</span><span class="re0">$_GET</span><span class="br0">&#91;</span><span class="st_h">'ref'</span><span class="br0">&#93;</span><span class="sy0">:</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$_GET</span><span class="br0">&#91;</span><span class="st_h">'ref'</span><span class="br0">&#93;</span><span class="sy0">,</span><span class="re0">$t</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><span class="re0">$wgOut</span><span class="sy0">-&gt;</span><span class="me1">redirect</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">-&gt;</span><span class="me1">getFullURL</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><span class="kw1">return</span><span class="sy0">;</span><span class="br0">&#125;</span>
+                        <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw3">is_int</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">=</span><span class="kw3">strrpos</span><span class="br0">&#40;</span><span class="re0">$tt</span><span class="sy0">,</span><span class="st_h">'.'</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">&amp;&amp;!</span><span class="kw3">is_null</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">=</span>SearchEngine<span class="sy0">::</span><span class="me2">getNearMatch</span><span class="br0">&#40;</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$tt</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="re0">$t</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><span class="re0">$wgOut</span><span class="sy0">-&gt;</span><span class="me1">redirect</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">-&gt;</span><span class="me1">getFullURL</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><span class="kw1">return</span><span class="sy0">;</span><span class="br0">&#125;</span>
+                        <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw3">is_int</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">=</span><span class="kw3">strrpos</span><span class="br0">&#40;</span><span class="re0">$tt</span><span class="sy0">,</span><span class="st_h">'/'</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">&amp;&amp;!</span><span class="kw3">is_null</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">=</span>SearchEngine<span class="sy0">::</span><span class="me2">getNearMatch</span><span class="br0">&#40;</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$tt</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="re0">$t</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><span class="re0">$wgOut</span><span class="sy0">-&gt;</span><span class="me1">redirect</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">-&gt;</span><span class="me1">getFullURL</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><span class="kw1">return</span><span class="sy0">;</span><span class="br0">&#125;</span>
+                        <span class="kw1">else</span><span class="sy0">;</span>
+                <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">2</span><span class="br0">&#41;</span><span class="sy0">==</span><span class="st_h">':/'</span><span class="br0">&#41;</span>
+                        <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy0">!</span><span class="kw3">is_null</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">=</span>SearchEngine<span class="sy0">::</span><span class="me2">getNearMatch</span><span class="br0">&#40;</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$_GET</span><span class="br0">&#91;</span><span class="st_h">'ref'</span><span class="br0">&#93;</span><span class="sy0">,</span><span class="kw3">strpos</span><span class="br0">&#40;</span><span class="re0">$_GET</span><span class="br0">&#91;</span><span class="st_h">'ref'</span><span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">':'</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">.</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><span class="re0">$wgOut</span><span class="sy0">-&gt;</span><span class="me1">redirect</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">-&gt;</span><span class="me1">getFullURL</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><span class="kw1">return</span><span class="sy0">;</span><span class="br0">&#125;</span>
+                        <span class="kw1">else</span><span class="sy0">;</span>
+                <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">2</span><span class="br0">&#41;</span><span class="sy0">==</span><span class="st_h">':.'</span><span class="br0">&#41;</span>
+                        <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy0">!</span><span class="kw3">is_null</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">=</span>SearchEngine<span class="sy0">::</span><span class="me2">getNearMatch</span><span class="br0">&#40;</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$_GET</span><span class="br0">&#91;</span><span class="st_h">'ref'</span><span class="br0">&#93;</span><span class="sy0">,</span><span class="kw3">strpos</span><span class="br0">&#40;</span><span class="re0">$_GET</span><span class="br0">&#91;</span><span class="st_h">'ref'</span><span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">'.'</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">.</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><span class="re0">$wgOut</span><span class="sy0">-&gt;</span><span class="me1">redirect</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">-&gt;</span><span class="me1">getFullURL</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><span class="kw1">return</span><span class="sy0">;</span><span class="br0">&#125;</span>
+                        <span class="kw1">else</span><span class="sy0">;</span>
+                <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">=</span><span class="kw3">strpos</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">,</span><span class="st_h">':'</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+                        <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">,</span><span class="re0">$t</span><span class="sy0">+</span><span class="nu0">1</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">==</span><span class="st_h">'/'</span><span class="br0">&#41;</span>
+                                <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy0">!</span><span class="kw3">is_null</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">=</span>SearchEngine<span class="sy0">::</span><span class="me2">getNearMatch</span><span class="br0">&#40;</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="re0">$t</span><span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">.</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$_GET</span><span class="br0">&#91;</span><span class="st_h">'ref'</span><span class="br0">&#93;</span><span class="sy0">,</span><span class="br0">&#40;</span><span class="re0">$tt</span><span class="sy0">=</span><span class="kw3">strpos</span><span class="br0">&#40;</span><span class="re0">$_GET</span><span class="br0">&#91;</span><span class="st_h">'ref'</span><span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">':'</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">+</span><span class="kw3">is_int</span><span class="br0">&#40;</span><span class="re0">$tt</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">.</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">,</span><span class="re0">$t</span><span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><span class="re0">$wgOut</span><span class="sy0">-&gt;</span><span class="me1">redirect</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">-&gt;</span><span class="me1">getFullURL</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><span class="kw1">return</span><span class="sy0">;</span><span class="br0">&#125;</span>
+                                <span class="kw1">else</span><span class="sy0">;</span>
+                        <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">,</span><span class="re0">$t</span><span class="sy0">+</span><span class="nu0">1</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">==</span><span class="st_h">'.'</span><span class="br0">&#41;</span>
+                                <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy0">!</span><span class="kw3">is_null</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">=</span>SearchEngine<span class="sy0">::</span><span class="me2">getNearMatch</span><span class="br0">&#40;</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="re0">$t</span><span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">.</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$_GET</span><span class="br0">&#91;</span><span class="st_h">'ref'</span><span class="br0">&#93;</span><span class="sy0">,</span><span class="br0">&#40;</span><span class="re0">$tt</span><span class="sy0">=</span><span class="kw3">strpos</span><span class="br0">&#40;</span><span class="re0">$_GET</span><span class="br0">&#91;</span><span class="st_h">'ref'</span><span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">'.'</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">+</span><span class="kw3">is_int</span><span class="br0">&#40;</span><span class="re0">$tt</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">.</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">,</span><span class="re0">$t</span><span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><span class="re0">$wgOut</span><span class="sy0">-&gt;</span><span class="me1">redirect</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">-&gt;</span><span class="me1">getFullURL</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><span class="kw1">return</span><span class="sy0">;</span><span class="br0">&#125;</span>
+                                <span class="kw1">else</span><span class="sy0">;</span>
+                        <span class="kw1">else</span><span class="sy0">;</span>
+                <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">==</span><span class="st_h">'.'</span><span class="sy0">&amp;&amp;!</span><span class="kw3">is_null</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">=</span>SearchEngine<span class="sy0">::</span><span class="me2">getNearMatch</span><span class="br0">&#40;</span><span class="re0">$_GET</span><span class="br0">&#91;</span><span class="st_h">'ref'</span><span class="br0">&#93;</span><span class="sy0">.</span><span class="re0">$term</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><span class="re0">$wgOut</span><span class="sy0">-&gt;</span><span class="me1">redirect</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">-&gt;</span><span class="me1">getFullURL</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><span class="kw1">return</span><span class="sy0">;</span><span class="br0">&#125;</span>
+                <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">!=</span><span class="st_h">':'</span><span class="sy0">||</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">=</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$term</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span>and <span class="kw4">false</span><span class="br0">&#41;</span>and<span class="sy0">!</span><span class="kw3">is_null</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">=</span>SearchEngine<span class="sy0">::</span><span class="me2">getNearMatch</span><span class="br0">&#40;</span><span class="re0">$_GET</span><span class="br0">&#91;</span><span class="st_h">'ref'</span><span class="br0">&#93;</span><span class="sy0">.</span><span class="st_h">'/'</span><span class="sy0">.</span><span class="re0">$term</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><span class="re0">$wgOut</span><span class="sy0">-&gt;</span><span class="me1">redirect</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">-&gt;</span><span class="me1">getFullURL</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><span class="kw1">return</span><span class="sy0">;</span><span class="br0">&#125;</span>
+                <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw3">is_int</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">=</span><span class="kw3">strrpos</span><span class="br0">&#40;</span><span class="re0">$_GET</span><span class="br0">&#91;</span><span class="st_h">'ref'</span><span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">'/'</span><span class="br0">&#41;</span><span class="br0">&#41;</span>and<span class="sy0">!</span><span class="kw3">is_null</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">=</span>SearchEngine<span class="sy0">::</span><span class="me2">getNearMatch</span><span class="br0">&#40;</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$_GET</span><span class="br0">&#91;</span><span class="st_h">'ref'</span><span class="br0">&#93;</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="re0">$t</span><span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">.</span><span class="re0">$term</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><span class="re0">$wgOut</span><span class="sy0">-&gt;</span><span class="me1">redirect</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">-&gt;</span><span class="me1">getFullURL</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><span class="kw1">return</span><span class="sy0">;</span><span class="br0">&#125;</span>
+                <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw3">is_int</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">=</span><span class="kw3">strrpos</span><span class="br0">&#40;</span><span class="re0">$_GET</span><span class="br0">&#91;</span><span class="st_h">'ref'</span><span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">':'</span><span class="br0">&#41;</span><span class="br0">&#41;</span>and<span class="sy0">!</span><span class="kw3">is_null</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">=</span>SearchEngine<span class="sy0">::</span><span class="me2">getNearMatch</span><span class="br0">&#40;</span><span class="kw3">substr</span><span class="br0">&#40;</span><span class="re0">$_GET</span><span class="br0">&#91;</span><span class="st_h">'ref'</span><span class="br0">&#93;</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="re0">$t</span><span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">.</span><span class="re0">$term</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><span class="re0">$wgOut</span><span class="sy0">-&gt;</span><span class="me1">redirect</span><span class="br0">&#40;</span><span class="re0">$t</span><span class="sy0">-&gt;</span><span class="me1">getFullURL</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><span class="kw1">return</span><span class="sy0">;</span><span class="br0">&#125;</span></pre></div></div>
+<p>修正了一些bug，增加了前两条同时使用的功能。如果搜索内容中有:/，会查询前面的名字空间里以后面的内容为名字的子页面。含有:.的情况类似。
+</p><p>查了一下mediawiki的文档，在搜索功能修改之前，注册比较早的用户可以在<a href="/index.php/%E7%89%B9%E6%AE%8A:%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE" title="特殊:参数设置">Special:Preferences</a>的搜索结果设定里选择默认的搜索名字空间，新注册用户自动使用一个修改好的设置。
+</p><p>如果有问题或者希望帮助进行修改可以联系<a href="/index.php/%E7%94%A8%E6%88%B7:Cosechy" title="用户:Cosechy">User:Cosechy</a>。
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 15/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:1035-0!*!0!*!*!*!* and timestamp 20160416005514 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=NOCOW:MediaWiki%E7%A8%8B%E5%BA%8F%E4%BF%AE%E6%94%B9&amp;oldid=15110">http://www.nocow.cn/index.php?title=NOCOW:MediaWiki%E7%A8%8B%E5%BA%8F%E4%BF%AE%E6%94%B9&amp;oldid=15110</a>”</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="特殊:页面分类">1个分类</a>: <ul><li><a href="/index.php/%E5%88%86%E7%B1%BB:NOCOW%E7%AB%99%E5%8A%A1" title="分类:NOCOW站务">NOCOW站务</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-project" class="selected"><a href="/index.php/NOCOW:MediaWiki%E7%A8%8B%E5%BA%8F%E4%BF%AE%E6%94%B9" title="查看计划页面 [a]" accesskey="a">项目页面</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=NOCOW%E8%AE%A8%E8%AE%BA:MediaWiki%E7%A8%8B%E5%BA%8F%E4%BF%AE%E6%94%B9&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=NOCOW:MediaWiki%E7%A8%8B%E5%BA%8F%E4%BF%AE%E6%94%B9&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=NOCOW:MediaWiki%E7%A8%8B%E5%BA%8F%E4%BF%AE%E6%94%B9&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=NOCOW%3AMediaWiki%E7%A8%8B%E5%BA%8F%E4%BF%AE%E6%94%B9" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/NOCOW:MediaWiki%E7%A8%8B%E5%BA%8F%E4%BF%AE%E6%94%B9" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/NOCOW:MediaWiki%E7%A8%8B%E5%BA%8F%E4%BF%AE%E6%94%B9" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=NOCOW:MediaWiki%E7%A8%8B%E5%BA%8F%E4%BF%AE%E6%94%B9&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=NOCOW:MediaWiki%E7%A8%8B%E5%BA%8F%E4%BF%AE%E6%94%B9&amp;oldid=15110" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过10,680次。</li>
+		<li id="credits">本页面由<a href="/index.php/%E7%94%A8%E6%88%B7:Cosechy" title="用户:Cosechy">yh</a>于2009年5月27日 (星期三) 21:17做出最后修改。 在NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/70.85.223.250" title="特殊:用户贡献/70.85.223.250">70.85.223.250</a>、<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/121.167.218.198" title="特殊:用户贡献/121.167.218.198">121.167.218.198</a>、<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/63.236.116.94" title="特殊:用户贡献/63.236.116.94">63.236.116.94</a>和<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/124.237.148.91" title="特殊:用户贡献/124.237.148.91">124.237.148.91</a>和<a href="/index.php?title=NOCOW:MediaWiki%E7%A8%8B%E5%BA%8F%E4%BF%AE%E6%94%B9&amp;action=credits" title="NOCOW:MediaWiki程序修改">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.509 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

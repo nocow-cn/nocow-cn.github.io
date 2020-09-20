@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>USACO/rectbarn - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=USACO/rectbarn&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=USACO/rectbarn&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "USACO/rectbarn", "wgTitle": "USACO/rectbarn", "wgCurRevisionId": 34896, "wgArticleId": 1179, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["版权无争议的内容", "USACO Chapter 6"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-USACO_rectbarn action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">USACO/rectbarn</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="/index.php/USACO" title="USACO">USACO</a></span></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><pre> 这篇文章可以证实是由NOCOW用户原创，不存在任何版权争议。
+ 本文作者同意以<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL" class="mw-redirect">GNU FDL</a>、<a href="/index.php/NOCOW:CC-by-sa" title="NOCOW:CC-by-sa">CC-by-sa</a>和<a href="/index.php/NOCOW:GNU_LGPL" title="NOCOW:GNU LGPL">GNU LGPL</a>（如果适用）三种版权发布此文章（不包括翻译文章中属于原始所有者的部分版权）。
+ 如果你修改了这篇文章并且不同意用GNU FDL以外的版权发布，可以换一个<a href="/index.php/%E5%88%86%E7%B1%BB:%E7%89%88%E6%9D%83%E6%A8%A1%E6%9D%BF" title="分类:版权模板">版权模板</a>或者移除此模板。
+</pre>
+<dl><dd>这是<a href="/index.php/USACO" title="USACO" class="mw-redirect">USACO</a> <a href="/index.php/USACO_Chapter_6#Chapter_6.1" title="USACO Chapter 6" class="mw-redirect">Chapter 6 .1</a>中的OI题目<b>A Rectangular Barn</b>的<b>介绍及题解</b>，参见 <a href="/index.php/Translate:USACO/rectbarn" title="Translate:USACO/rectbarn">翻译</a>，<a href="/index.php/Code:USACO/rectbarn/C" title="Code:USACO/rectbarn/C">C语言代码</a>，<a href="/index.php/Code:USACO/rectbarn/C%2B%2B" title="Code:USACO/rectbarn/C++">C++语言代码</a>，<a href="/index.php/Code:USACO/rectbarn/Pascal" title="Code:USACO/rectbarn/Pascal">Pascal语言代码</a>。
+</dd></dl>
+<p><br />
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E9.97.AE.E9.A2.98.E5.88.86.E6.9E.90"><span class="tocnumber">1</span> <span class="toctext">问题分析</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#.E7.AE.97.E6.B3.95"><span class="tocnumber">2</span> <span class="toctext">算法</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#DP"><span class="tocnumber">2.1</span> <span class="toctext">DP</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#.E6.9E.9A.E4.B8.BE"><span class="tocnumber">2.2</span> <span class="toctext">枚举</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#.E6.9E.81.E5.A4.A7.E5.8C.96.E6.80.9D.E6.83.B3"><span class="tocnumber">2.3</span> <span class="toctext">极大化思想</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#.E8.B7.AF.E5.BE.84.E5.8E.8B.E7.BC.A9"><span class="tocnumber">2.4</span> <span class="toctext">路径压缩</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#.E6.9C.80.E5.A4.A7.E5.AD.90.E7.9F.A9.E5.BD.A2"><span class="tocnumber">3</span> <span class="toctext">最大子矩形</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#.E7.94.A8.E6.A0.88.E5.AE.9E.E7.8E.B0.E6.AF.94.E8.BE.83.E5.A5.BD"><span class="tocnumber">3.1</span> <span class="toctext">用栈实现比较好</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#.E5.8F.A6.E4.B8.80.E7.A7.8D.E6.80.9D.E8.B7.AF"><span class="tocnumber">3.2</span> <span class="toctext">另一种思路</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#.E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81"><span class="tocnumber">4</span> <span class="toctext">参考代码</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/rectbarn&amp;action=edit&amp;section=1" title="编辑段落：问题分析">编辑</a>]</span> <span class="mw-headline" id=".E9.97.AE.E9.A2.98.E5.88.86.E6.9E.90">问题分析</span></h2>
+<p>本题是求一个没有损坏区域的最大子矩阵。显然要用DP来做。
+当然，由于本题是矩形，所以big barn的方法就无法用到这里了。
+现在我们换一种思路。
+如果找到一个点，把这个点向上、左、右三个方向扩展，那么统计扩展出来的尽可能大的矩形就行了。看起来这种算法的时间复杂度很高，这也正是DP的用处——解决大量重复子问题。否则这样的算法就成了枚举了。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/rectbarn&amp;action=edit&amp;section=2" title="编辑段落：算法">编辑</a>]</span> <span class="mw-headline" id=".E7.AE.97.E6.B3.95">算法</span></h2>
+<h3><span class="editsection">[<a href="/index.php?title=USACO/rectbarn&amp;action=edit&amp;section=3" title="编辑段落：DP">编辑</a>]</span> <span class="mw-headline" id="DP">DP</span></h3>
+<p>设h[i,j]为点(i,j)向上方扩展的最大高度，l[i,j]为(i,h[i,j])这条线段向左边扩展的最长距离，r[i,j]为(i,h[i,j])向右边扩展的最长距离。
+转移方程：
+<a href="/index.php/%E6%96%87%E4%BB%B6:Usaco_rectbarn.JPG" class="image"><img alt="Usaco rectbarn.JPG" src="/images/7/77/Usaco_rectbarn.JPG" width="313" height="128" /></a>
+</p><p>其中，tl表示点(i,j)向左扩展的最大距离，tr表示点(i,j)向右扩展的最大距离。
+</p><p>实现的时候有一个技巧：不用把整个图用一个二维数组表示出来，因为损坏点是很稀疏的。直接用一个数组保存点的坐标，然后离散化一下，这样可以很方便地找到每行的最长无损坏区间，这个区间内的所有点的数据都可以在O(1)时间内计算出来。用这种方法可以节省很多空间。
+上述算法时间复杂度为O(RC)，空间复杂度为O(max(p,r,c))。
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=USACO/rectbarn&amp;action=edit&amp;section=4" title="编辑段落：枚举">编辑</a>]</span> <span class="mw-headline" id=".E6.9E.9A.E4.B8.BE">枚举</span></h3>
+<p>本题应该是利用极大矩阵思路，即求出所有的矩阵，然后找到最大值，而此题的关键就是怎样找所有的矩阵.
+</p><p>显然此题我们应该找到一种效率高于O(n^2*logn)的算法，要不然会超时。
+</p><p>上面的算法效率比较高，usaco上最后一个测试数据用了0.588s
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=USACO/rectbarn&amp;action=edit&amp;section=5" title="编辑段落：极大化思想">编辑</a>]</span> <span class="mw-headline" id=".E6.9E.81.E5.A4.A7.E5.8C.96.E6.80.9D.E6.83.B3">极大化思想</span></h3>
+<p>参见2003年国家集训队，王知昆论文。复杂度O（N^2)。
+</p><p>ps:路人走过。话说这个复杂度不应该是O(NM)的吗？论文中还有一个适合稀疏图的O(S^2)方法呢，不过不适合这题……
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=USACO/rectbarn&amp;action=edit&amp;section=6" title="编辑段落：路径压缩">编辑</a>]</span> <span class="mw-headline" id=".E8.B7.AF.E5.BE.84.E5.8E.8B.E7.BC.A9">路径压缩</span></h3>
+<p>注意USACO的内存限制比较严格,需要用滚动数组.
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/rectbarn&amp;action=edit&amp;section=7" title="编辑段落：最大子矩形">编辑</a>]</span> <span class="mw-headline" id=".E6.9C.80.E5.A4.A7.E5.AD.90.E7.9F.A9.E5.BD.A2">最大子矩形</span></h2>
+<p>这道题初看很想Big Barn，我也尝试用类似的方法做，后来发现这条路走不通。
+重新考虑:
+对于任意一个矩形，如果它的四边都不能继续扩展（碰到边界或坏点），则此矩形为极大矩形。
+显然，所求的最大矩形一定是极大矩形。
+对于任意一个点(i,j)，我们向上找到一个坏点或边界(k,j)，得到线段(k,j)-(i,j)，我们把线段向左右两边扩展，直到不能扩展为止。
+此时得到的矩形在上边和左右两边都不能扩展了。
+我们只要枚举每个点(i,j)，计算它依照上述方法扩展的矩形的面积，取其中最大的一个就是所求。
+考虑动态规划：
+设h[i,j]表示点(i,j)向上扩展的最大距离，l[i,j]，r[i,j]分别表示所得线段向左右扩展的最大距离，此时矩形的面积
+</p>
+<pre>S=h[i,j]×(l[i,j]+r[i,j]-1)。
+h[i,j]=h[i-1,j]+1               (i,j)是好点
+ 0                               (i,j)是坏点 
+l[i,j]=min(l[i-1,j],tl[i,j])    (i,j)是好点
+ ∞                                   (i,j)是坏点 
+r[i,j]=min(r[i-1,j],tr[i,j])    (i,j)是好点
+ ∞                                   (i,j)是坏点
+</pre>
+<p>其中tl[i,j]，tr[i,j]分别是(i,j)向左右扩展的最大距离。
+时间复杂度是O(RC)。
+根据状态转移方程的特点，我们只需要用一维数组记录状态即可，空间复杂度是O(max(R,C))。
+参考文献：《浅谈用极大化思想解决最大子矩形问题》，作者：王知昆。
+</p>
+<pre> by--wh硕
+</pre>
+<h3><span class="editsection">[<a href="/index.php?title=USACO/rectbarn&amp;action=edit&amp;section=8" title="编辑段落：用栈实现比较好">编辑</a>]</span> <span class="mw-headline" id=".E7.94.A8.E6.A0.88.E5.AE.9E.E7.8E.B0.E6.AF.94.E8.BE.83.E5.A5.BD">用栈实现比较好</span></h3>
+<p>保证栈的单调性，退栈的时候进行计算  ——by pty
+</p><p><br />
+</p>
+<hr />
+<h3><span class="editsection">[<a href="/index.php?title=USACO/rectbarn&amp;action=edit&amp;section=9" title="编辑段落：另一种思路">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.A6.E4.B8.80.E7.A7.8D.E6.80.9D.E8.B7.AF">另一种思路</span></h3>
+<p>我看到这道题，想到了一种O(NM^2)的算法。假设一条扫描线从上到下扫描，对于每一行，我们枚举这一行上的每个点，计算出以这个点为子矩阵的左下角所能形成的所有矩形的面积。具体实现时，对于第i列维护一个域Up[i]，表示当前行的第i个点向上最多延伸i个单位。则Up[i] = Up[i -　1] + 1(if i hasn't been damaged); otherwise, Up[i] = 0.这样，可以在O(M)的时间内计算出这一行所有点的Up值。于是，在枚举得到左下角i后,我们枚举j为矩阵的右下角，则此时矩阵面积Area = (j - i + 1) * min(Up[i]..Up[j]). 后者可以在j向右延伸时顺便更新。这样，我们便得到了一个O(NM^2)的算法了。然而，这个算法只通过了前7个点，我们还需要进一步的剪枝。
+我想到了3个剪枝(实际上只添加了3句话)，达到了这样的效果：
+Executing...
+</p>
+<pre>  Test 1: TEST OK [0.000 secs, 3284 KB]
+  Test 2: TEST OK [0.000 secs, 3284 KB]
+  Test 3: TEST OK [0.011 secs, 3284 KB]
+  Test 4: TEST OK [0.011 secs, 3284 KB]
+  Test 5: TEST OK [0.022 secs, 3284 KB]
+  Test 6: TEST OK [0.032 secs, 3284 KB]
+  Test 7: TEST OK [0.108 secs, 3284 KB]
+  Test 8: TEST OK [0.572 secs, 3284 KB]
+  Test 9: TEST OK [0.875 secs, 3284 KB]
+  Test 10: TEST OK [0.886 secs, 3284 KB]
+</pre>
+<p>a.最优性剪枝：当我们枚举左下角i时，if (Up[i] *(m - i + 1) &lt;= BestAnsNow) continue;
+</p><p>b.避免浪费性剪枝：维护一个域(bool)Start[i]表示第i列作为起点是否有意义。显然，if (Up[i-1] &gt;= Up[i]) 那么，枚举第i个点就已经不可能是最优解了。
+</p><p>c.避免重复性剪枝：仔细观察发现，如果我们在计算以i为起点，枚举到j时，出现了Up[j] &lt;= Up[i-1]的情况，那么就没有必 要接着向右延伸而可以直接break了（我相信大家都能明白，就不解释了）。
+通过这几个小优化，就可以通过了，代码也不长（其实，我觉得这道题主要是考快排），参见c++程序(abcde-11)。
+</p>
+<pre>            by Ever_ljq
+</pre>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/rectbarn&amp;action=edit&amp;section=10" title="编辑段落：参考代码">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81">参考代码</span></h2>
+<p><a href="/index.php/Code:USACO/rectbarn/C" title="Code:USACO/rectbarn/C">C</a>
+</p><p><a href="/index.php/Code:USACO/rectbarn/C%2B%2B" title="Code:USACO/rectbarn/C++">C++</a>
+</p><p><a href="/index.php/Code:USACO/rectbarn/Pascal" title="Code:USACO/rectbarn/Pascal">Pascal</a>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 90/1000000
+Post-expand include size: 900/2097152 bytes
+Template argument size: 73/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:1179-0!*!0!!zh-cn!2!* and timestamp 20170806230616 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=USACO/rectbarn&amp;oldid=34896">http://www.nocow.cn/index.php?title=USACO/rectbarn&amp;oldid=34896</a>”</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="特殊:页面分类">2个分类</a>: <ul><li><a href="/index.php/%E5%88%86%E7%B1%BB:%E7%89%88%E6%9D%83%E6%97%A0%E4%BA%89%E8%AE%AE%E7%9A%84%E5%86%85%E5%AE%B9" title="分类:版权无争议的内容">版权无争议的内容</a></li><li><a href="/index.php?title=%E5%88%86%E7%B1%BB:USACO_Chapter_6&amp;action=edit&amp;redlink=1" class="new" title="分类:USACO Chapter 6（尚未撰写）">USACO Chapter 6</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/USACO/rectbarn" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:USACO/rectbarn&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=USACO/rectbarn&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=USACO/rectbarn&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=USACO%2Frectbarn" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/USACO/rectbarn" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/USACO/rectbarn" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=USACO/rectbarn&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=USACO/rectbarn&amp;oldid=34896" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过15,233次。</li>
+		<li id="credits">本页面由NOCOW用户<a href="/index.php/%E7%94%A8%E6%88%B7:Yts1999" title="用户:Yts1999">Yts1999</a>于2014年6月13日 (星期五) 23:34做出最后修改。 在<a href="/index.php?title=%E7%94%A8%E6%88%B7:Ever_ljq&amp;action=edit&amp;redlink=1" class="new" title="用户:Ever ljq（尚未撰写）">ljq</a>、NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/218.77.114.11" title="特殊:用户贡献/218.77.114.11">218.77.114.11</a>、<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/222.240.180.18" title="特殊:用户贡献/222.240.180.18">222.240.180.18</a>和<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/61.187.64.124" title="特殊:用户贡献/61.187.64.124">61.187.64.124</a>和<a href="/index.php?title=USACO/rectbarn&amp;action=credits" title="USACO/rectbarn">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.201 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

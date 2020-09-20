@@ -1,0 +1,385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="keywords" content="USACO Training,TEXT: Binary Numbers,TEXT: Complete Search,TEXT: Data Structures,TEXT: Dynamic Programming,USACO,USACO/agrinet,USACO/ariprog,USACO/barn1,USACO/beads,USACO/betsy" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (中文(简体))" />
+<link title="Creative Commons" type="application/rdf+xml" href="/index.php?title=USACO_Training&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+		<title>NOCOW - USACO Training</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins/monobook/main.css?42b"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print" href="/skins/common/commonPrint.css?42b" />
+		<link rel="stylesheet" type="text/css" media="handheld" href="/skins/monobook/handheld.css?42b" />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins/monobook/IE50Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins/monobook/IE55Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins/monobook/IE60Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins/monobook/IE70Fixes.css?42b";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?42b"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">/*<![CDATA[*/
+var skin = "monobook";
+var stylepath = "/skins";
+var wgArticlePath = "/index.php/$1";
+var wgScriptPath = "";
+var wgServer = "http://www.nocow.cn";
+var wgCanonicalNamespace = "";
+var wgCanonicalSpecialPageName = false;
+var wgNamespaceNumber = 0;
+var wgPageName = "USACO_Training";
+var wgTitle = "USACO Training";
+var wgArticleId = "92";
+var wgIsArticle = true;
+var wgUserName = null;
+var wgUserLanguage = "zh-cn";
+var wgContentLanguage = "zh-cn";
+var wgBreakFrames = false;
+var wgCurRevisionId = "23072";
+/*]]>*/</script>
+                
+		<script type="text/javascript" src="/skins/common/wikibits.js?42b"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=-&action=raw&gen=css&maxage=18000";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+			</head>
+<body  class="mediawiki ns-0 ltr page-USACO_Training">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+<div style="text-align:center;font-size:85%;font-weight:bold" id=headlinemessage>
+<div>如果发现广告等破坏行为，请尽量将条目恢复到较早的版本而不是把相应内容直接删除，谢谢合作。</div>
+<!--div>NOCOW近期对条目的命名进行了一些整理，一些链接可能失效，为此带来的不便请大家谅解。创建条目时也请遵循新的命名规范，谢谢合作。</div-->
+</div>
+		<a name="top" id="top"></a>
+				<h1 class="firstHeading">USACO Training</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">来自&quot;NOCOW&quot;</h3>
+			<div id="contentSub">(跳转自<a href="/index.php?title=USACO_Chapter_6&amp;redirect=no" title="USACO Chapter 6">USACO Chapter 6</a>)</div>
+									<div id="jump-to-nav">跳转到: <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>			<!-- start content -->
+			<p>&lt;&lt;<a href="/index.php/USACO" title="USACO">USACO</a>
+<b>关于USACO Training</b>
+</p>
+<hr />
+<p>每一个题目都分题目翻译和题解。
+</p>
+<ul><li><b>由于广告问题，编辑本页时请在摘要的开头写上“<b style="color:red">asd::</b>”（红字部分），谢谢合作。</b> --<a href="/index.php/User:Cosechy" title="User:Cosechy">Cosechy</a> 11:19 2008年9月25日 (CST)
+</li></ul>
+<table id="toc" class="toc" summary="目录"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Chapter1"><span class="tocnumber">1</span> <span class="toctext">Chapter1</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Section_1.1"><span class="tocnumber">1.1</span> <span class="toctext">Section 1.1</span></a></li>
+<li class="toclevel-2"><a href="#Section_1.2"><span class="tocnumber">1.2</span> <span class="toctext">Section 1.2</span></a></li>
+<li class="toclevel-2"><a href="#Section_1.3"><span class="tocnumber">1.3</span> <span class="toctext">Section 1.3</span></a></li>
+<li class="toclevel-2"><a href="#Section_1.4"><span class="tocnumber">1.4</span> <span class="toctext">Section 1.4</span></a></li>
+<li class="toclevel-2"><a href="#Section_1.5"><span class="tocnumber">1.5</span> <span class="toctext">Section 1.5</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Chapter2"><span class="tocnumber">2</span> <span class="toctext">Chapter2</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Section_2.1"><span class="tocnumber">2.1</span> <span class="toctext">Section 2.1</span></a></li>
+<li class="toclevel-2"><a href="#Section_2.2"><span class="tocnumber">2.2</span> <span class="toctext">Section 2.2</span></a></li>
+<li class="toclevel-2"><a href="#Section_2.3"><span class="tocnumber">2.3</span> <span class="toctext">Section 2.3</span></a></li>
+<li class="toclevel-2"><a href="#Section_2.4"><span class="tocnumber">2.4</span> <span class="toctext">Section 2.4</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Chapter3"><span class="tocnumber">3</span> <span class="toctext">Chapter3</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Section_3.1"><span class="tocnumber">3.1</span> <span class="toctext">Section 3.1</span></a></li>
+<li class="toclevel-2"><a href="#Section_3.2"><span class="tocnumber">3.2</span> <span class="toctext">Section 3.2</span></a></li>
+<li class="toclevel-2"><a href="#Section_3.3"><span class="tocnumber">3.3</span> <span class="toctext">Section 3.3</span></a></li>
+<li class="toclevel-2"><a href="#Section_3.4"><span class="tocnumber">3.4</span> <span class="toctext">Section 3.4</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Chapter4"><span class="tocnumber">4</span> <span class="toctext">Chapter4</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Section_4.1"><span class="tocnumber">4.1</span> <span class="toctext">Section 4.1</span></a></li>
+<li class="toclevel-2"><a href="#Section_4.2"><span class="tocnumber">4.2</span> <span class="toctext">Section 4.2</span></a></li>
+<li class="toclevel-2"><a href="#Section_4.3"><span class="tocnumber">4.3</span> <span class="toctext">Section 4.3</span></a></li>
+<li class="toclevel-2"><a href="#Section_4.4"><span class="tocnumber">4.4</span> <span class="toctext">Section 4.4</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Chapter5"><span class="tocnumber">5</span> <span class="toctext">Chapter5</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Section_5.1"><span class="tocnumber">5.1</span> <span class="toctext">Section 5.1</span></a></li>
+<li class="toclevel-2"><a href="#Section_5.2"><span class="tocnumber">5.2</span> <span class="toctext">Section 5.2</span></a></li>
+<li class="toclevel-2"><a href="#Section_5.3"><span class="tocnumber">5.3</span> <span class="toctext">Section 5.3</span></a></li>
+<li class="toclevel-2"><a href="#Section_5.4"><span class="tocnumber">5.4</span> <span class="toctext">Section 5.4</span></a></li>
+<li class="toclevel-2"><a href="#Section_5.5"><span class="tocnumber">5.5</span> <span class="toctext">Section 5.5</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Chapter6"><span class="tocnumber">6</span> <span class="toctext">Chapter6</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Section_6.1"><span class="tocnumber">6.1</span> <span class="toctext">Section 6.1</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "显示"; var tocHideText = "隐藏"; showTocToggle(); } </script>
+<a name="Chapter1"></a><h2><span class="editsection">[<a href="/index.php?title=USACO_Training&amp;action=edit&amp;section=1" title="编辑段落: Chapter1">编辑</a>]</span> <span class="mw-headline"><a href="/index.php/USACO:Chapter1" title="USACO:Chapter1">Chapter1</a></span></h2>
+<a name="Section_1.1"></a><h4><span class="editsection">[<a href="/index.php?title=USACO_Training&amp;action=edit&amp;section=2" title="编辑段落: Section 1.1">编辑</a>]</span> <span class="mw-headline">Section 1.1</span></h4>
+<ul><li>Your Ride Is Here (ride) (<a href="/index.php/Translate:USACO/ride" title="Translate:USACO/ride">翻译</a>)(<a href="/index.php/USACO/ride" title="USACO/ride">题解</a>)
+</li><li>Greedy Gift Givers (gift1) (<a href="/index.php/Translate:USACO/gift1" title="Translate:USACO/gift1">翻译</a>)(<a href="/index.php/USACO/gift1" title="USACO/gift1">题解</a>)
+</li><li>Friday the Thirteenth (friday) (<a href="/index.php/Translate:USACO/friday" title="Translate:USACO/friday">翻译</a>)(<a href="/index.php/USACO/friday" title="USACO/friday">题解</a>)
+</li><li>Broken Necklace (beads) (<a href="/index.php/Translate:USACO/beads" title="Translate:USACO/beads">翻译</a>)(<a href="/index.php/USACO/beads" title="USACO/beads">题解</a>)
+</li></ul>
+<a name="Section_1.2"></a><h4><span class="editsection">[<a href="/index.php?title=USACO_Training&amp;action=edit&amp;section=3" title="编辑段落: Section 1.2">编辑</a>]</span> <span class="mw-headline">Section 1.2</span></h4>
+<p><a href="/index.php/TEXT:_Complete_Search" title="TEXT: Complete Search">TEXT: Complete Search</a>
+</p>
+<ul><li>Milking Cows (milk2)(<a href="/index.php/Translate:USACO/milk2" title="Translate:USACO/milk2">翻译</a>)(<a href="/index.php/USACO/milk2" title="USACO/milk2">题解</a>)
+</li><li>Transformations (transform)(<a href="/index.php/Translate:USACO/transform" title="Translate:USACO/transform">翻译</a>)(<a href="/index.php/USACO/transform" title="USACO/transform">题解</a>)
+</li><li>Name That Number (namenum)(<a href="/index.php/Translate:USACO/namenum" title="Translate:USACO/namenum">翻译</a>)(<a href="/index.php/USACO/namenum" title="USACO/namenum">题解</a>)
+</li><li>Palindromic Squares (palsquare)(<a href="/index.php/Translate:USACO/palsquare" title="Translate:USACO/palsquare">翻译</a>)(<a href="/index.php/USACO/palsquare" title="USACO/palsquare">题解</a>)
+</li><li>Dual Palindromes (dualpal)(<a href="/index.php/Translate:USACO/dualpal" title="Translate:USACO/dualpal">翻译</a>)(<a href="/index.php/USACO/dualpal" title="USACO/dualpal">题解</a>)
+</li></ul>
+<a name="Section_1.3"></a><h4><span class="editsection">[<a href="/index.php?title=USACO_Training&amp;action=edit&amp;section=4" title="编辑段落: Section 1.3">编辑</a>]</span> <span class="mw-headline">Section 1.3</span></h4>
+<ul><li>Mixing Milk (milk)(<a href="/index.php/Translate:USACO/milk" title="Translate:USACO/milk">翻译</a>)(<a href="/index.php/USACO/milk" title="USACO/milk">题解</a>)
+</li><li>Barn Repair (barn1)(<a href="/index.php/Translate:USACO/barn1" title="Translate:USACO/barn1">翻译</a>)(<a href="/index.php/USACO/barn1" title="USACO/barn1">题解</a>)
+</li><li>Calf Flac (calfflac)(<a href="/index.php/Translate:USACO/calfflac" title="Translate:USACO/calfflac">翻译</a>)(<a href="/index.php/USACO/calfflac" title="USACO/calfflac">题解</a>)
+</li><li>Prime Cryptarithm (crypt1)(<a href="/index.php/Translate:USACO/crypt1" title="Translate:USACO/crypt1">翻译</a>)(<a href="/index.php/USACO/crypt1" title="USACO/crypt1">题解</a>)
+</li></ul>
+<a name="Section_1.4"></a><h4><span class="editsection">[<a href="/index.php?title=USACO_Training&amp;action=edit&amp;section=5" title="编辑段落: Section 1.4">编辑</a>]</span> <span class="mw-headline">Section 1.4</span></h4>
+<ul><li>Packing Rectangles (packrec)(<a href="/index.php/Translate:USACO/packrec" title="Translate:USACO/packrec">翻译</a>)(<a href="/index.php/USACO/packrec" title="USACO/packrec">题解</a>)
+</li><li>The Clocks (clocks)(<a href="/index.php/Translate:USACO/clocks" title="Translate:USACO/clocks">翻译</a>)(<a href="/index.php/USACO/clocks" title="USACO/clocks">题解</a>)
+</li><li>Arithmetic Progressions (ariprog)(<a href="/index.php/Translate:USACO/ariprog" title="Translate:USACO/ariprog">翻译</a>)(<a href="/index.php/USACO/ariprog" title="USACO/ariprog">题解</a>)
+</li><li>Mother's Milk (milk3)(<a href="/index.php/Translate:USACO/milk3" title="Translate:USACO/milk3">翻译</a>)(<a href="/index.php/USACO/milk3" title="USACO/milk3">题解</a>)
+</li></ul>
+<a name="Section_1.5"></a><h4><span class="editsection">[<a href="/index.php?title=USACO_Training&amp;action=edit&amp;section=6" title="编辑段落: Section 1.5">编辑</a>]</span> <span class="mw-headline">Section 1.5</span></h4>
+<p><a href="/index.php/TEXT:_Binary_Numbers" title="TEXT: Binary Numbers">TEXT: Binary Numbers</a>
+</p>
+<ul><li>Number Triangles (numtri)(<a href="/index.php/Translate:USACO/numtri" title="Translate:USACO/numtri">翻译</a>)(<a href="/index.php/USACO/numtri" title="USACO/numtri">题解</a>)
+</li><li>Prime Palindromes (pprime)(<a href="/index.php/Translate:USACO/pprime" title="Translate:USACO/pprime">翻译</a>)(<a href="/index.php/USACO/pprime" title="USACO/pprime">题解</a>)
+</li><li>SuperPrime Rib (sprime)(<a href="/index.php/Translate:USACO/sprime" title="Translate:USACO/sprime">翻译</a>)(<a href="/index.php/USACO/sprime" title="USACO/sprime">题解</a>)
+</li><li>Checker Challenge (checker)(<a href="/index.php/Translate:USACO/checker" title="Translate:USACO/checker">翻译</a>)(<a href="/index.php/USACO/checker" title="USACO/checker">题解</a>)
+</li></ul>
+<a name="Chapter2"></a><h2><span class="editsection">[<a href="/index.php?title=USACO_Training&amp;action=edit&amp;section=7" title="编辑段落: Chapter2">编辑</a>]</span> <span class="mw-headline"><a href="/index.php/USACO:Chapter2" title="USACO:Chapter2">Chapter2</a></span></h2>
+<a name="Section_2.1"></a><h4><span class="editsection">[<a href="/index.php?title=USACO_Training&amp;action=edit&amp;section=8" title="编辑段落: Section 2.1">编辑</a>]</span> <span class="mw-headline">Section 2.1</span></h4>
+<ul><li>The Castle (castle) (<a href="/index.php/Translate:USACO/castle" title="Translate:USACO/castle">翻译</a>)(<a href="/index.php/USACO/castle" title="USACO/castle">题解</a>)
+</li><li>Ordered Fractions (frac1) (<a href="/index.php/Translate:USACO/frac1" title="Translate:USACO/frac1">翻译</a>)(<a href="/index.php/USACO/frac1" title="USACO/frac1">题解</a>)
+</li><li>Sorting A Three-Valued Sequence (sort3) (<a href="/index.php/Translate:USACO/sort3" title="Translate:USACO/sort3">翻译</a>)(<a href="/index.php/USACO/sort3" title="USACO/sort3">题解</a>)
+</li><li>Healthy Holsteins (holstein) (<a href="/index.php/Translate:USACO/holstein" title="Translate:USACO/holstein">翻译</a>)(<a href="/index.php/USACO/holstein" title="USACO/holstein">题解</a>)
+</li><li>Hamming Codes (hamming) (<a href="/index.php/Translate:USACO/hamming" title="Translate:USACO/hamming">翻译</a>)(<a href="/index.php/USACO/hamming" title="USACO/hamming">题解</a>)
+</li></ul>
+<a name="Section_2.2"></a><h4><span class="editsection">[<a href="/index.php?title=USACO_Training&amp;action=edit&amp;section=9" title="编辑段落: Section 2.2">编辑</a>]</span> <span class="mw-headline">Section 2.2</span></h4>
+<ul><li><a href="/index.php/TEXT:_Data_Structures" title="TEXT: Data Structures">TEXT: Data Structures</a>
+</li><li><a href="/index.php/TEXT:_Dynamic_Programming" title="TEXT: Dynamic Programming">TEXT: Dynamic Programming</a>
+</li><li>Preface Numbering (preface) (<a href="/index.php/Translate:USACO/preface" title="Translate:USACO/preface">翻译</a>)(<a href="/index.php/USACO/preface" title="USACO/preface">题解</a>)
+</li><li>Subset Sums (subset) (<a href="/index.php/Translate:USACO/subset" title="Translate:USACO/subset">翻译</a>)(<a href="/index.php/USACO/subset" title="USACO/subset">题解</a>)
+</li><li>Runaround Numbers (runround) (<a href="/index.php/Translate:USACO/runround" title="Translate:USACO/runround">翻译</a>)(<a href="/index.php/USACO/runround" title="USACO/runround">题解</a>)
+</li><li>Party Lamps (lamps) (<a href="/index.php/Translate:USACO/lamps" title="Translate:USACO/lamps">翻译</a>)(<a href="/index.php/USACO/lamps" title="USACO/lamps">题解</a>)
+</li></ul>
+<a name="Section_2.3"></a><h4><span class="editsection">[<a href="/index.php?title=USACO_Training&amp;action=edit&amp;section=10" title="编辑段落: Section 2.3">编辑</a>]</span> <span class="mw-headline">Section 2.3</span></h4>
+<ul><li>The Longest Prefix (prefix) (<a href="/index.php/Translate:USACO/prefix" title="Translate:USACO/prefix">翻译</a>)(<a href="/index.php/USACO/prefix" title="USACO/prefix">题解</a>)
+</li><li>Cow Pedigrees (nocows) (<a href="/index.php/Translate:USACO/nocows" title="Translate:USACO/nocows">翻译</a>)(<a href="/index.php/USACO/nocows" title="USACO/nocows">题解</a>)
+</li><li>Zero Sum (zerosum) (<a href="/index.php/Translate:USACO/zerosum" title="Translate:USACO/zerosum">翻译</a>)(<a href="/index.php/USACO/zerosum" title="USACO/zerosum">题解</a>)
+</li><li>Money Systems (money) (<a href="/index.php/Translate:USACO/money" title="Translate:USACO/money">翻译</a>)(<a href="/index.php/USACO/money" title="USACO/money">题解</a>)
+</li><li>Controlling Companies (concom) (<a href="/index.php/Translate:USACO/concom" title="Translate:USACO/concom">翻译</a>)(<a href="/index.php/USACO/concom" title="USACO/concom">题解</a>)
+</li></ul>
+<a name="Section_2.4"></a><h4><span class="editsection">[<a href="/index.php?title=USACO_Training&amp;action=edit&amp;section=11" title="编辑段落: Section 2.4">编辑</a>]</span> <span class="mw-headline">Section 2.4</span></h4>
+<ul><li>The Tamworth Two (ttwo) (<a href="/index.php/Translate:USACO/ttwo" title="Translate:USACO/ttwo">翻译</a>)(<a href="/index.php/USACO/ttwo" title="USACO/ttwo">题解</a>)
+</li><li>Overfencing (maze1) (<a href="/index.php/Translate:USACO/maze1" title="Translate:USACO/maze1">翻译</a>)(<a href="/index.php/USACO/maze1" title="USACO/maze1">题解</a>)
+</li><li>Cow Tours (cowtour) (<a href="/index.php/Translate:USACO/cowtour" title="Translate:USACO/cowtour">翻译</a>)(<a href="/index.php/USACO/cowtour" title="USACO/cowtour">题解</a>)
+</li><li>Bessie Come Home (comehome) (<a href="/index.php/Translate:USACO/comehome" title="Translate:USACO/comehome">翻译</a>)(<a href="/index.php/USACO/comehome" title="USACO/comehome">题解</a>)
+</li><li>Fractions to Decimals (fracdec) (<a href="/index.php/Translate:USACO/fracdec" title="Translate:USACO/fracdec">翻译</a>)(<a href="/index.php/USACO/fracdec" title="USACO/fracdec">题解</a>)
+</li></ul>
+<a name="Chapter3"></a><h2><span class="editsection">[<a href="/index.php?title=USACO_Training&amp;action=edit&amp;section=12" title="编辑段落: Chapter3">编辑</a>]</span> <span class="mw-headline"><a href="/index.php?title=USACO:Chapter3&amp;action=edit" class="new" title="USACO:Chapter3">Chapter3</a></span></h2>
+<a name="Section_3.1"></a><h4><span class="editsection">[<a href="/index.php?title=USACO_Training&amp;action=edit&amp;section=13" title="编辑段落: Section 3.1">编辑</a>]</span> <span class="mw-headline">Section 3.1</span></h4>
+<ul><li>Agri-Net (agrinet)(<a href="/index.php/Translate:USACO/agrinet" title="Translate:USACO/agrinet">翻译</a>)(<a href="/index.php/USACO/agrinet" title="USACO/agrinet">题解</a>)
+</li><li>Score Inflation (inflate) (<a href="/index.php/Translate:USACO/inflate" title="Translate:USACO/inflate">翻译</a>)(<a href="/index.php/USACO/inflate" title="USACO/inflate">题解</a>)
+</li><li>Humble Numbers (humble) (<a href="/index.php/Translate:USACO/humble" title="Translate:USACO/humble">翻译</a>)(<a href="/index.php/USACO/humble" title="USACO/humble">题解</a>)
+</li><li>Shaping Regions (rect1) (<a href="/index.php/Translate:USACO/rect1" title="Translate:USACO/rect1">翻译</a>)(<a href="/index.php/USACO/rect1" title="USACO/rect1">题解</a>)
+</li><li>Contact (contact) (<a href="/index.php/Translate:USACO/contact" title="Translate:USACO/contact">翻译</a>)(<a href="/index.php/USACO/contact" title="USACO/contact">题解</a>)
+</li><li>Stamps (stamps) (<a href="/index.php/Translate:USACO/stamps" title="Translate:USACO/stamps">翻译</a>)(<a href="/index.php/USACO/stamps" title="USACO/stamps">题解</a>)
+</li></ul>
+<a name="Section_3.2"></a><h4><span class="editsection">[<a href="/index.php?title=USACO_Training&amp;action=edit&amp;section=14" title="编辑段落: Section 3.2">编辑</a>]</span> <span class="mw-headline">Section 3.2</span></h4>
+<ul><li>TEXT:<a href="/index.php/Translate:USACO/Knapsack_Problems" title="Translate:USACO/Knapsack Problems">Knapsack Problems  翻译</a>
+</li><li>Factorials (fact4) (<a href="/index.php/Translate:USACO/fact4" title="Translate:USACO/fact4">翻译</a>)(<a href="/index.php/USACO/fact4" title="USACO/fact4">题解</a>)
+</li><li>Stringsobits (kimbits) (<a href="/index.php/Translate:USACO/kimbits" title="Translate:USACO/kimbits">翻译</a>)(<a href="/index.php/USACO/kimbits" title="USACO/kimbits">题解</a>)
+</li><li>Spinning Wheels (spin) (<a href="/index.php/Translate:USACO/spin" title="Translate:USACO/spin">翻译</a>)(<a href="/index.php/USACO/spin" title="USACO/spin">题解</a>)
+</li><li>Feed Ratios (ratios) (<a href="/index.php/Translate:USACO/ratios" title="Translate:USACO/ratios">翻译</a>)(<a href="/index.php/USACO/ratios" title="USACO/ratios">题解</a>)
+</li><li>Magic Squares (msquare) (<a href="/index.php/Translate:USACO/msquare" title="Translate:USACO/msquare">翻译</a>)(<a href="/index.php/USACO/msquare" title="USACO/msquare">题解</a>)
+</li><li>Sweet Butter (butter) (<a href="/index.php/Translate:USACO/butter" title="Translate:USACO/butter">翻译</a>)(<a href="/index.php/USACO/butter" title="USACO/butter">题解</a>)
+</li></ul>
+<a name="Section_3.3"></a><h4><span class="editsection">[<a href="/index.php?title=USACO_Training&amp;action=edit&amp;section=15" title="编辑段落: Section 3.3">编辑</a>]</span> <span class="mw-headline">Section 3.3</span></h4>
+<p><a href="/index.php/Translate:USACO/EulerianTour" title="Translate:USACO/EulerianTour">Translate:USACO/EulerianTour</a>
+</p>
+<ul><li>Riding The Fences (fence) (<a href="/index.php/Translate:USACO/fence" title="Translate:USACO/fence">翻译</a>)(<a href="/index.php/USACO/fence" title="USACO/fence">题解</a>)
+</li><li>Shopping Offers (shopping) (<a href="/index.php/Translate:USACO/shopping" title="Translate:USACO/shopping">翻译</a>)(<a href="/index.php/USACO/shopping" title="USACO/shopping">题解</a>)
+</li><li>Camelot (camelot) (<a href="/index.php/Translate:USACO/camelot" title="Translate:USACO/camelot">翻译</a>)(<a href="/index.php/USACO/camelot" title="USACO/camelot">题解</a>)
+</li><li>Home on the Range (range) (<a href="/index.php/Translate:USACO/range" title="Translate:USACO/range">翻译</a>)(<a href="/index.php/USACO/range" title="USACO/range">题解</a>)
+</li><li>A Game (game1) (<a href="/index.php/Translate:USACO/game1" title="Translate:USACO/game1">翻译</a>)(<a href="/index.php/USACO/game1" title="USACO/game1">题解</a>)
+</li></ul>
+<a name="Section_3.4"></a><h4><span class="editsection">[<a href="/index.php?title=USACO_Training&amp;action=edit&amp;section=16" title="编辑段落: Section 3.4">编辑</a>]</span> <span class="mw-headline">Section 3.4</span></h4>
+<ul><li>TEXT:<a href="/index.php/Translate:USACO/Computational_Geometry" title="Translate:USACO/Computational Geometry">Computational Geometry  翻译</a>
+</li><li>Closed Fences (fence4) (<a href="/index.php/Translate:USACO/fence4" title="Translate:USACO/fence4">翻译</a>)(<a href="/index.php/USACO/fence4" title="USACO/fence4">题解</a>)
+</li><li>American Heritage (heritage) (<a href="/index.php/Translate:USACO/heritage" title="Translate:USACO/heritage">翻译</a>)(<a href="/index.php/USACO/heritage" title="USACO/heritage">题解</a>)
+</li><li>Electric Fence (fence9) (<a href="/index.php/Translate:USACO/fence9" title="Translate:USACO/fence9">翻译</a>)(<a href="/index.php/USACO/fence9" title="USACO/fence9">题解</a>)
+</li><li>Raucous Rockers (rockers) (<a href="/index.php/Translate:USACO/rockers" title="Translate:USACO/rockers">翻译</a>)(<a href="/index.php/USACO/rockers" title="USACO/rockers">题解</a>)
+</li></ul>
+<a name="Chapter4"></a><h2><span class="editsection">[<a href="/index.php?title=USACO_Training&amp;action=edit&amp;section=17" title="编辑段落: Chapter4">编辑</a>]</span> <span class="mw-headline"><a href="/index.php?title=USACO:Chapter4&amp;action=edit" class="new" title="USACO:Chapter4">Chapter4</a></span></h2>
+<a name="Section_4.1"></a><h4><span class="editsection">[<a href="/index.php?title=USACO_Training&amp;action=edit&amp;section=18" title="编辑段落: Section 4.1">编辑</a>]</span> <span class="mw-headline">Section 4.1</span></h4>
+<ul><li>Beef McNuggets (nuggets) (<a href="/index.php/Translate:USACO/nuggets" title="Translate:USACO/nuggets">翻译</a>)(<a href="/index.php/USACO/nuggets" title="USACO/nuggets">题解</a>)
+</li><li>Fence Rails (fence8) (<a href="/index.php/Translate:USACO/fence8" title="Translate:USACO/fence8">翻译</a>)(<a href="/index.php/USACO/fence8" title="USACO/fence8">题解</a>)
+</li><li>Fence Loops (fence6) (<a href="/index.php/Translate:USACO/fence6" title="Translate:USACO/fence6">翻译</a>)(<a href="/index.php/USACO/fence6" title="USACO/fence6">题解</a>)
+</li><li>Cryptcowgraphy (cryptcow) (<a href="/index.php/Translate:USACO/cryptcow" title="Translate:USACO/cryptcow">翻译</a>)(<a href="/index.php/USACO/cryptcow" title="USACO/cryptcow">题解</a>)
+</li></ul>
+<a name="Section_4.2"></a><h4><span class="editsection">[<a href="/index.php?title=USACO_Training&amp;action=edit&amp;section=19" title="编辑段落: Section 4.2">编辑</a>]</span> <span class="mw-headline">Section 4.2</span></h4>
+<ul><li>TEXT:<a href="/index.php/Translate:USACO/NetworkFlow" title="Translate:USACO/NetworkFlow">"Network Flow" Algorithms 翻译</a>
+</li><li>Drainage Ditches (ditch) (<a href="/index.php/Translate:USACO/ditch" title="Translate:USACO/ditch">翻译</a>)(<a href="/index.php/USACO/ditch" title="USACO/ditch">题解</a>)
+</li><li>The Perfect Stall (stall4) (<a href="/index.php/Translate:USACO/stall4" title="Translate:USACO/stall4">翻译</a>)(<a href="/index.php/USACO/stall4" title="USACO/stall4">题解</a>)
+</li><li>Job Processing (job) (<a href="/index.php/Translate:USACO/job" title="Translate:USACO/job">翻译</a>)(<a href="/index.php/USACO/job" title="USACO/job">题解</a>)
+</li><li>Cowcycles (cowcycle) (<a href="/index.php/Translate:USACO/cowcycle" title="Translate:USACO/cowcycle">翻译</a>)(<a href="/index.php/USACO/cowcycle" title="USACO/cowcycle">题解</a>)
+</li></ul>
+<a name="Section_4.3"></a><h4><span class="editsection">[<a href="/index.php?title=USACO_Training&amp;action=edit&amp;section=20" title="编辑段落: Section 4.3">编辑</a>]</span> <span class="mw-headline">Section 4.3</span></h4>
+<ul><li>Buy Low, Buy Lower (buylow) (<a href="/index.php/Translate:USACO/buylow" title="Translate:USACO/buylow">翻译</a>)(<a href="/index.php/USACO/buylow" title="USACO/buylow">题解</a>)
+</li><li>The Primes (prime3) (<a href="/index.php/Translate:USACO/prime3" title="Translate:USACO/prime3">翻译</a>)(<a href="/index.php/USACO/prime3" title="USACO/prime3">题解</a>)
+</li><li>Street Race (race3) (<a href="/index.php/Translate:USACO/race3" title="Translate:USACO/race3">翻译</a>)(<a href="/index.php/USACO/race3" title="USACO/race3">题解</a>)
+</li><li>Letter Game (lgame) (<a href="/index.php/Translate:USACO/lgame" title="Translate:USACO/lgame">翻译</a>)(<a href="/index.php/USACO/lgame" title="USACO/lgame">题解</a>)
+</li></ul>
+<a name="Section_4.4"></a><h4><span class="editsection">[<a href="/index.php?title=USACO_Training&amp;action=edit&amp;section=21" title="编辑段落: Section 4.4">编辑</a>]</span> <span class="mw-headline">Section 4.4</span></h4>
+<ul><li>Shuttle Puzzle (shuttle)(<a href="/index.php/Translate:USACO/shuttle" title="Translate:USACO/shuttle">翻译</a>)(<a href="/index.php/USACO/shuttle" title="USACO/shuttle">题解</a>)
+</li><li>Pollutant Control (milk6) (<a href="/index.php/Translate:USACO/milk6" title="Translate:USACO/milk6">翻译</a>)(<a href="/index.php/USACO/milk6" title="USACO/milk6">题解</a>)
+</li><li>Frame Up (frameup) (<a href="/index.php/Translate:USACO/frameup" title="Translate:USACO/frameup">翻译</a>)(<a href="/index.php/USACO/frameup" title="USACO/frameup">题解</a>)
+</li></ul>
+<a name="Chapter5"></a><h2><span class="editsection">[<a href="/index.php?title=USACO_Training&amp;action=edit&amp;section=22" title="编辑段落: Chapter5">编辑</a>]</span> <span class="mw-headline"><a href="/index.php?title=USACO:Chapter5&amp;action=edit" class="new" title="USACO:Chapter5">Chapter5</a></span></h2>
+<a name="Section_5.1"></a><h4><span class="editsection">[<a href="/index.php?title=USACO_Training&amp;action=edit&amp;section=23" title="编辑段落: Section 5.1">编辑</a>]</span> <span class="mw-headline">Section 5.1</span></h4>
+<ul><li>TEXT:<a href="/index.php/Translate:USACO/ConvexHulls" title="Translate:USACO/ConvexHulls">Convex Hulls 翻译</a>
+</li><li>Fencing the Cows (fc) (<a href="/index.php/Translate:USACO/fc" title="Translate:USACO/fc">翻译</a>)(<a href="/index.php/USACO/fc" title="USACO/fc">题解</a>)
+</li><li>Starry Night (starry) (<a href="/index.php/Translate:USACO/starry" title="Translate:USACO/starry">翻译</a>)(<a href="/index.php/USACO/starry" title="USACO/starry">题解</a>)
+</li><li>Musical Themes (theme) (<a href="/index.php/Translate:USACO/theme" title="Translate:USACO/theme">翻译</a>)(<a href="/index.php/USACO/theme" title="USACO/theme">题解</a>)
+</li></ul>
+<a name="Section_5.2"></a><h4><span class="editsection">[<a href="/index.php?title=USACO_Training&amp;action=edit&amp;section=24" title="编辑段落: Section 5.2">编辑</a>]</span> <span class="mw-headline">Section 5.2</span></h4>
+<ul><li>Snail Trail (snail) (<a href="/index.php/Translate:USACO/snail" title="Translate:USACO/snail">翻译</a>)(<a href="/index.php/USACO/snail" title="USACO/snail">题解</a>)
+</li><li>Electric Fences (fence3) (<a href="/index.php/Translate:USACO/fence3" title="Translate:USACO/fence3">翻译</a>)(<a href="/index.php/USACO/fence3" title="USACO/fence3">题解</a>)
+</li><li>Wisconsin Squares (wissqu) (<a href="/index.php/Translate:USACO/wissqu" title="Translate:USACO/wissqu">翻译</a>)(<a href="/index.php/USACO/wissqu" title="USACO/wissqu">题解</a>)
+</li></ul>
+<a name="Section_5.3"></a><h4><span class="editsection">[<a href="/index.php?title=USACO_Training&amp;action=edit&amp;section=25" title="编辑段落: Section 5.3">编辑</a>]</span> <span class="mw-headline">Section 5.3</span></h4>
+<ul><li>TEXT:<a href="/index.php/Translate:USACO/HeuristicSearch" title="Translate:USACO/HeuristicSearch">Heuristic Search 翻译</a>
+</li><li>Milk Measuring (milk4) (<a href="/index.php/Translate:USACO/milk4" title="Translate:USACO/milk4">翻译</a>)(<a href="/index.php/USACO/milk4" title="USACO/milk4">题解</a>)
+</li><li>Window Area (window) (<a href="/index.php/Translate:USACO/window" title="Translate:USACO/window">翻译</a>)(<a href="/index.php/USACO/window" title="USACO/window">题解</a>)
+</li><li>Network of Schools (schlnet) (<a href="/index.php/Translate:USACO/schlnet" title="Translate:USACO/schlnet">翻译</a>)(<a href="/index.php/USACO/schlnet" title="USACO/schlnet">题解</a>)
+</li><li>Big Barn (bigbrn) (<a href="/index.php/Translate:USACO/bigbrn" title="Translate:USACO/bigbrn">翻译</a>)(<a href="/index.php/USACO/bigbrn" title="USACO/bigbrn">题解</a>)
+</li></ul>
+<a name="Section_5.4"></a><h4><span class="editsection">[<a href="/index.php?title=USACO_Training&amp;action=edit&amp;section=26" title="编辑段落: Section 5.4">编辑</a>]</span> <span class="mw-headline">Section 5.4</span></h4>
+<ul><li>All Latin Squares (latin) (<a href="/index.php/Translate:USACO/latin" title="Translate:USACO/latin">翻译</a>)(<a href="/index.php/USACO/latin" title="USACO/latin">题解</a>)
+</li><li>Canada Tour (tour) (<a href="/index.php/Translate:USACO/tour" title="Translate:USACO/tour">翻译</a>)(<a href="/index.php/USACO/tour" title="USACO/tour">题解</a>)
+</li><li>Character Recognition (charrec) (<a href="/index.php/Translate:USACO/charrec" title="Translate:USACO/charrec">翻译</a>)(<a href="/index.php/USACO/charrec" title="USACO/charrec">题解</a>)
+</li><li>Betsy's Tour (betsy) (<a href="/index.php/Translate:USACO/betsy" title="Translate:USACO/betsy">翻译</a>)(<a href="/index.php/USACO/betsy" title="USACO/betsy">题解</a>)
+</li><li>TeleCowmunication (telecow) (<a href="/index.php/Translate:USACO/telecow" title="Translate:USACO/telecow">翻译</a>)(<a href="/index.php/USACO/telecow" title="USACO/telecow">题解</a>)
+</li></ul>
+<a name="Section_5.5"></a><h4><span class="editsection">[<a href="/index.php?title=USACO_Training&amp;action=edit&amp;section=27" title="编辑段落: Section 5.5">编辑</a>]</span> <span class="mw-headline">Section 5.5</span></h4>
+<ul><li>Picture (picture) (<a href="/index.php/Translate:USACO/picture" title="Translate:USACO/picture">翻译</a>)(<a href="/index.php/USACO/picture" title="USACO/picture">题解</a>)
+</li><li>Hidden Passwords (hidden) (<a href="/index.php/Translate:USACO/hidden" title="Translate:USACO/hidden">翻译</a>)(<a href="/index.php/USACO/hidden" title="USACO/hidden">题解</a>)
+</li><li>Two Five (twofive) (<a href="/index.php/Translate:USACO/twofive" title="Translate:USACO/twofive">翻译</a>)(<a href="/index.php/USACO/twofive" title="USACO/twofive">题解</a>)
+</li></ul>
+<a name="Chapter6"></a><h2><span class="editsection">[<a href="/index.php?title=USACO_Training&amp;action=edit&amp;section=28" title="编辑段落: Chapter6">编辑</a>]</span> <span class="mw-headline"><a href="/index.php?title=USACO:Chapter6&amp;action=edit" class="new" title="USACO:Chapter6">Chapter6</a></span></h2>
+<a name="Section_6.1"></a><h4><span class="editsection">[<a href="/index.php?title=USACO_Training&amp;action=edit&amp;section=29" title="编辑段落: Section 6.1">编辑</a>]</span> <span class="mw-headline">Section 6.1</span></h4>
+<ul><li>Postal Vans (vans) (<a href="/index.php/Translate:USACO/vans" title="Translate:USACO/vans">翻译</a>)(<a href="/index.php/USACO/vans" title="USACO/vans">题解</a>)
+</li><li>A Rectangular Barn (rectbarn) (<a href="/index.php/Translate:USACO/rectbarn" title="Translate:USACO/rectbarn">翻译</a>)(<a href="/index.php/USACO/rectbarn" title="USACO/rectbarn">题解</a>)
+</li><li>Cow XOR (cowxor) (<a href="/index.php/Translate:USACO/cowxor" title="Translate:USACO/cowxor">翻译</a>)(<a href="/index.php/USACO/cowxor" title="USACO/cowxor">题解</a>)
+</li></ul>
+
+<!-- Saved in parser cache with key nocow:pcache:idhash:92-0!1!0!!zh-cn!2 and timestamp 20110105101315 -->
+<div class="printfooter">
+来自"<a href="http://www.nocow.cn/index.php/USACO_Training">http://www.nocow.cn/index.php/USACO_Training</a>"</div>
+						<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+						 <li id="ca-nstab-main" class="selected"><a href="/index.php/USACO_Training">条目</a></li>
+						 <li id="ca-talk"><a href="/index.php/Talk:USACO_Training">讨论</a></li>
+						 <li id="ca-edit"><a href="/index.php?title=USACO_Training&amp;action=edit">编辑</a></li>
+						 <li id="ca-history"><a href="/index.php?title=USACO_Training&amp;action=history">历史</a></li>
+				</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=Special:Userlogin&amp;returnto=USACO_Training">登录或创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5" title="首页"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/Special:Recentchanges">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/Special:Random">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/Help:%E5%B8%AE%E5%8A%A9">使用帮助</a></li>
+				<li id="n-sitesupport"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5">帮助我们</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php/Special:Search" id="searchform"><div>
+<input name="ref" type="hidden" value="USACO_Training">
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="进入" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="搜索" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/Special:Whatlinkshere/USACO_Training">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/Special:Recentchangeslinked/USACO_Training">链出更改</a></li>
+<li id="t-upload"><a href="/index.php/Special:Upload">上传文件</a></li>
+<li id="t-specialpages"><a href="/index.php/Special:Specialpages">特殊页面</a></li>
+				<li id="t-print"><a href="/index.php?title=USACO_Training&amp;printable=yes">可打印版</a></li>				<li id="t-permalink"><a href="/index.php?title=USACO_Training&amp;oldid=23072">永久链接</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt='GNU Free Documentation License 1.2' /></a></div>
+			<ul id="f-list">
+				<li id="viewcount">访问次数: 556,336次</li>
+				<li id="credits">此页由NOCOW匿名用户于2010年10月20日, 13:58最后更改. 在<a href="/index.php/User:SK" title="User:SK">北落师门</a>, <a href="/index.php/User:%E5%9C%A3%E5%A8%81%E5%BB%89" title="User:圣威廉">刘源</a>, <a href="/index.php/User:Jollwish" title="User:Jollwish">Jol</a> 和 <a href="/index.php/User:Gnaggnoyil" title="User:Gnaggnoyil">SuperBrother</a> 和 <a href="/index.php?title=USACO_Training&amp;action=credits" title="USACO Training">其他</a>的工作基础上.</li>
+				<li id="copyright">本站内容在<a href="http://www.gnu.org/copyleft/fdl.html" class="external " title="http://www.gnu.org/copyleft/fdl.html" rel="nofollow">GNU Free Documentation License 1.2</a>下发布</li>
+				<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E7%AD%96%E7%95%A5" title="NOCOW:隐私策略">隐私策略</a></li>
+				<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+				<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+				<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by bdezlinux in 0.618 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body></html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>网络流 - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="canonical" href="/index.php/%E7%BD%91%E7%BB%9C%E6%B5%81" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=%E7%BD%91%E7%BB%9C%E6%B5%81&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=%E7%BD%91%E7%BB%9C%E6%B5%81&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "网络流", "wgTitle": "网络流", "wgCurRevisionId": 36005, "wgArticleId": 30, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["图论"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-网络流 action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">网络流</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub">(跳转自<a href="/index.php?title=Ford-Fulkerson%E7%AE%97%E6%B3%95&amp;redirect=no" title="Ford-Fulkerson算法">Ford-Fulkerson算法</a>)</div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><p><strong class="selflink">网络流</strong>（network flows）是图论中的一种理论与方法，研究网络上的一类最优化问题 。
+</p>
+<ul><li>1955年 ，T.E. 哈里斯在研究铁路最大通量时首先提出在一个给定的网络上寻求两点间最大运输量的问题。1956年，L.R. 福特和 D.R. 富尔克森等人给出了解决这类问题的算法，从而建立了网络流理论。所谓网络或容量网络指的是一个连通的赋权有向图 D＝ （V、E、C） ， 其中V 是该图的顶点集，E是有向边(即弧)集，C是弧上的容量。此外顶点集中包括一个起点和一个终点。网络上的流就是由起点流向终点的可行流，这是定义在网络上的非负函数，它一方面受到容量的限制，另一方面除去起点和终点以外，在所有中途点要求保持流入量和流出量是平衡的。
+</li></ul>
+<ul><li>最大流理论是由福特和富尔克森于 1956 年创立的 ，他们指出最大流的流值等于最小割(截集)的容量这个重要的事实，并根据这一原理设计了用标号法求最大流的方法，后来又有人加以改进，使得求解最大流的方法更加丰富和完善 。最大流问题的研究密切了图论和运筹学，特别是与线性规划的联系，开辟了图论应用的新途径。 
+</li></ul>
+<ul><li>最大流问题仅注意网络流的流通能力，没有考虑流通的费用。实际上费用因素是很重要的。例如在交通运输问题中，往往要求在完成运输任务的前提下，寻求一个使总运输费用最省的运输方案，这就是最小费用流问题。如果只考虑单位货物的运输费用，那么这个问题就变成最短路问题。由此可见，最短路问题是最小费用流问题的基础。现已有一系列求最短路的成功方法。最小费用流(或最小费用最大流)问题 ，可以交替使用求解最大流和最短路两种方法，通过迭代得到解决。 
+</li></ul>
+<ul><li>目前网络流的理论和应用在不断发展，出现了具有增益的流、多终端流、多商品流以及网络流的分解与合成等新课题。网络流的应用已遍及通讯、运输、电力、工程规划、任务分派、设备更新以及计算机辅助设计等众多领域。 
+</li></ul>
+<hr />
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E4.BD.BF.E7.94.A8.E6.9D.A1.E4.BB.B6.26.E8.8C.83.E5.9B.B4"><span class="tocnumber">1</span> <span class="toctext">使用条件&amp;范围</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#.E7.AE.97.E6.B3.95.E6.8F.8F.E8.BF.B0"><span class="tocnumber">2</span> <span class="toctext">算法描述</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#.E6.97.B6.E9.97.B4.E5.A4.8D.E6.9D.82.E5.BA.A6"><span class="tocnumber">3</span> <span class="toctext">时间复杂度</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#.E6.94.B9.E8.BF.9B.E5.92.8C.E4.BC.98.E5.8C.96"><span class="tocnumber">4</span> <span class="toctext">改进和优化</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#dinic"><span class="tocnumber">4.1</span> <span class="toctext">dinic</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Relable_to_front"><span class="tocnumber">4.2</span> <span class="toctext">Relable_to_front</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#SAP"><span class="tocnumber">4.3</span> <span class="toctext">SAP</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#.E5.AE.9E.E7.8E.B0"><span class="tocnumber">5</span> <span class="toctext">实现</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#Edmonds-Karp_.E7.AE.97.E6.B3.95"><span class="tocnumber">5.1</span> <span class="toctext">Edmonds-Karp 算法</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#.E7.BB.83.E4.B9.A0.E9.A2.98.E7.9B.AE"><span class="tocnumber">6</span> <span class="toctext">练习题目</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#.E5.BC.95.E7.94.A8.26.E5.8F.82.E8.80.83"><span class="tocnumber">7</span> <span class="toctext">引用&amp;参考</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#.E9.93.BE.E6.8E.A5"><span class="tocnumber">8</span> <span class="toctext">链接</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="/index.php?title=%E7%BD%91%E7%BB%9C%E6%B5%81&amp;action=edit&amp;section=1" title="编辑段落：使用条件&amp;范围">编辑</a>]</span> <span class="mw-headline" id=".E4.BD.BF.E7.94.A8.E6.9D.A1.E4.BB.B6.26.E8.8C.83.E5.9B.B4">使用条件&amp;范围</span></h2>
+<p>网络流
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=%E7%BD%91%E7%BB%9C%E6%B5%81&amp;action=edit&amp;section=2" title="编辑段落：算法描述">编辑</a>]</span> <span class="mw-headline" id=".E7.AE.97.E6.B3.95.E6.8F.8F.E8.BF.B0">算法描述</span></h2>
+<p><b>最大流问题</b>
+最大流问题就是求总流量最大的可行流. 它是一个特殊的线性规划问题. 但是利用图的特点，解决这个问题较之线性规划的
+一般解法要方便、快捷、直观得多.
+</p>
+<hr />
+<p>相关定义
+</p>
+<pre>定义1. 设有一个有向连通图G(V, A), 在V中指定一点称为源点s, 和另一点称为汇点t, 其余的称为中间点. 弧(arc)集
+A中每条弧 (i,j) 上有非负数cij 称为这弧的容量, 记容量集为c= {cij}, 称这样的图为一个网络. 记为G=(V,A,c). 
+(注：当(i,j)不是弧时 cij=0.)
+</pre>
+<pre>定义2.在弧集A上的弧(i,j) 定义一非负数fij，称为弧(i,j)上的流量，流量的集合f={fij}称为网络的一个流.
+</pre>
+<pre>定义3. 满足下列条件的流称为可行流：
+1. 容量限制条件， 所有的弧的流量fij不大于弧的容量cij.
+2. 平衡条件，对所有的中间点，流入的流量和等于流出的流量和; 发点流出的总流量F等于流进收点的总流量F.
+</pre>
+<pre>定义4. 当一弧的流量等于弧的容量时，称该弧为饱和弧，当一弧的流量小于弧的容量时，称该弧为不饱和弧. 流量等于零
+的弧称为零流弧，流量大于零的弧称为非零流弧.
+</pre>
+<pre>定义5. 若W是一条从发点到收点的有向道(walk)，规定从发点到收点的方向为道的方向. 道上与W的方向相同的弧叫前向
+弧，道W上的前向弧的全体记为A+, 道上与W的方向相反的叫后向弧. 后向弧的全体记为A-. 
+</pre>
+<pre>定义6. 设f 是一个可行流，W是发点到收点的一条有向道，如果W满足下列条件，称之为关于可行流f的一条可增广道
+(又称可扩道)：
+1. 每条前向弧是非饱和弧，
+2. 每条后向弧是非零流弧.
+</pre>
+<pre>可增广道的实际意义是：沿着这条道可以调整道上弧的流量，使得道上的每条前向弧增加一流量d，每条后向弧减少同一流
+量d，使得所得的流仍是可行流，但使总流量F增加d. 
+</pre>
+<pre>定理 1. 可行流f*是最大流当且仅当不存在关于f*的可增广道.
+</pre>
+<pre>定义7： 设容量网络G=(V,A,c)的顶点集V是两个不交的部分S, S’的併集,使得发点在S中，收点在S’中. 若A’是A的
+最小的子集，使得G中去掉A’后成为两个不相交的子图G1(S,A1)，G2(S’,A2),分别以S, S’为顶点集，则称A’是关于
+(S,S’)的割集，记为A’=(S,S’). 割集A’中所有始点在S，终点在S’的弧的容量之和称为割集(S,S’)的割集容量，
+记为C(S,S’). 对于不同的S和S’就有不同的割集，其中割集容量最小的割集称为容量网络G的最小割集(简称最小割).
+</pre>
+<pre>定理2. 容量网络的最大流不大于任一割集的割集容量.
+</pre>
+<pre>(最大流--最小割)定理3. 容量网络的最大流等于最小割的割集容量.
+</pre>
+<p><b>求最大流的标号法(Ford-Fulkerson算法)：</b>
+设已有一个可行流(如零流)
+</p>
+<pre>(1) 给发点标号(0,+，d(s)), d(s)=Inf, 这时发点是已标号但未检查的点，其余的点是未标号的点.
+(2) 若被标号的点都已检查过，这时的可行流就是最大流. 最小割(S*,S*’)中的S*就是已标号(且已检查)的点集. 
+  最大流的总流量等于从源出发的所有流量的和. 退出.
+(3) 任取一个被标号但未检查的点i,  找所有与点i邻接但未标号的点j，使满足以下两条件之一： 
+ (a)若弧(i,j)上, fij&lt;cij, 则给j点标号(i, +，d(j)), 其中d(j)=min(d(i), cij-fij),
+ (b)若弧(j,i)上，fji&gt;0, 则给j点标号(i, -，d(j)), 其中d(j)=min(d(i), fji), 
+ (c) 若收点n没有被标号，对i点的标记中+，- 号加圈，表示i点已检查。转(2). 否则令j=n. 进入以下调整过程
+(4) 若j点的标记为正, 即(i,+ ,d(j)), 令fij=fij+d(n), 否则fji=fji-d(n)
+(5) 若j=1, 去掉全部标记, 转(1), 否则转(4).
+</pre>
+<h2><span class="editsection">[<a href="/index.php?title=%E7%BD%91%E7%BB%9C%E6%B5%81&amp;action=edit&amp;section=3" title="编辑段落：时间复杂度">编辑</a>]</span> <span class="mw-headline" id=".E6.97.B6.E9.97.B4.E5.A4.8D.E6.9D.82.E5.BA.A6">时间复杂度</span></h2>
+<p>(V代表点,E代表边)
+</p><p>Ford-Fulkerson:O(<span class="texhtml" dir="ltr"><i>V</i><i>E</i><sup>2</sup></span>);
+</p><p>Preflow-Push:O(<span class="texhtml" dir="ltr"><i>V</i><sup>2</sup><i>E</i></span>);
+</p><p>Relable-to-front:O(<span class="texhtml" dir="ltr"><i>V</i><sup>3</sup></span>);
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=%E7%BD%91%E7%BB%9C%E6%B5%81&amp;action=edit&amp;section=4" title="编辑段落：改进和优化">编辑</a>]</span> <span class="mw-headline" id=".E6.94.B9.E8.BF.9B.E5.92.8C.E4.BC.98.E5.8C.96">改进和优化</span></h2>
+<h3><span class="editsection">[<a href="/index.php?title=%E7%BD%91%E7%BB%9C%E6%B5%81&amp;action=edit&amp;section=5" title="编辑段落：dinic">编辑</a>]</span> <span class="mw-headline" id="dinic"><a href="/index.php/Dinic" title="Dinic" class="mw-redirect">dinic</a></span></h3>
+<h3><span class="editsection">[<a href="/index.php?title=%E7%BD%91%E7%BB%9C%E6%B5%81&amp;action=edit&amp;section=6" title="编辑段落：Relable to front">编辑</a>]</span> <span class="mw-headline" id="Relable_to_front"><a href="/index.php/Relable_to_front" title="Relable to front" class="mw-redirect">Relable_to_front</a></span></h3>
+<h3><span class="editsection">[<a href="/index.php?title=%E7%BD%91%E7%BB%9C%E6%B5%81&amp;action=edit&amp;section=7" title="编辑段落：SAP">编辑</a>]</span> <span class="mw-headline" id="SAP"><a href="/index.php/SAP" title="SAP">SAP</a></span></h3>
+<h2><span class="editsection">[<a href="/index.php?title=%E7%BD%91%E7%BB%9C%E6%B5%81&amp;action=edit&amp;section=8" title="编辑段落：实现">编辑</a>]</span> <span class="mw-headline" id=".E5.AE.9E.E7.8E.B0">实现</span></h2>
+<h3><span class="editsection">[<a href="/index.php?title=%E7%BD%91%E7%BB%9C%E6%B5%81&amp;action=edit&amp;section=9" title="编辑段落：Edmonds-Karp 算法">编辑</a>]</span> <span class="mw-headline" id="Edmonds-Karp_.E7.AE.97.E6.B3.95">Edmonds-Karp 算法</span></h3>
+<p>建立在Ford-Fulkerson方法上的增广路算法,与一般的Ford-Fulkerson算法不同的是,它用广度搜索实现对增广路的寻找.
+代码如下:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co1">//Buffalo_NGJ</span>
+<span class="kw4">int</span> n<span class="sy4">;</span>
+<span class="kw4">long</span> <span class="kw4">int</span> c<span class="br0">&#91;</span><span class="nu0">128</span><span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">128</span><span class="br0">&#93;</span><span class="sy4">;</span>
+<span class="kw4">long</span> maxflow<span class="br0">&#40;</span><span class="kw4">int</span> s, <span class="kw4">int</span> t<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    <span class="kw4">int</span> p, q, queue<span class="br0">&#91;</span><span class="nu0">128</span><span class="br0">&#93;</span>, u, v, pre<span class="br0">&#91;</span><span class="nu0">128</span><span class="br0">&#93;</span><span class="sy4">;</span>
+    <span class="kw4">long</span> <span class="kw4">int</span> flow, aug<span class="sy4">;</span>
+    flow <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+    <span class="kw1">while</span><span class="br0">&#40;</span><span class="kw2">true</span><span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        <span class="kw3">memset</span><span class="br0">&#40;</span>pre, <span class="sy2">-</span><span class="nu0">1</span>, <span class="kw3">sizeof</span><span class="br0">&#40;</span>pre<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="kw1">for</span><span class="br0">&#40;</span>queue<span class="br0">&#91;</span>p <span class="sy1">=</span> q <span class="sy1">=</span> <span class="nu0">0</span><span class="br0">&#93;</span> <span class="sy1">=</span> s<span class="sy4">;</span> p <span class="sy1">&lt;=</span> q<span class="sy4">;</span> p<span class="sy2">++</span><span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+            u <span class="sy1">=</span> queue<span class="br0">&#91;</span>p<span class="br0">&#93;</span><span class="sy4">;</span>
+            <span class="kw1">for</span><span class="br0">&#40;</span>v <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> <span class="br0">&#40;</span>v <span class="sy1">&lt;</span> n<span class="br0">&#41;</span> <span class="sy3">&amp;&amp;</span> <span class="br0">&#40;</span>pre<span class="br0">&#91;</span>t<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="sy1">&lt;</span> <span class="nu0">0</span><span class="sy4">;</span> v<span class="sy2">++</span><span class="br0">&#41;</span>
+            <span class="br0">&#123;</span>
+                <span class="kw1">if</span><span class="br0">&#40;</span><span class="br0">&#40;</span>c<span class="br0">&#91;</span>u<span class="br0">&#93;</span><span class="br0">&#91;</span>v<span class="br0">&#93;</span> <span class="sy1">&gt;</span> <span class="nu0">0</span><span class="br0">&#41;</span> <span class="sy3">&amp;&amp;</span> <span class="br0">&#40;</span>pre<span class="br0">&#91;</span>v<span class="br0">&#93;</span> <span class="sy1">&lt;</span> <span class="nu0">0</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+                <span class="br0">&#123;</span>
+                    pre<span class="br0">&#91;</span>v<span class="br0">&#93;</span> <span class="sy1">=</span> u<span class="sy4">;</span>
+                    queue<span class="br0">&#91;</span><span class="sy2">++</span>q<span class="br0">&#93;</span> <span class="sy1">=</span> v<span class="sy4">;</span>
+                <span class="br0">&#125;</span>
+            <span class="br0">&#125;</span>
+            <span class="kw1">if</span><span class="br0">&#40;</span>pre<span class="br0">&#91;</span>t<span class="br0">&#93;</span> <span class="sy1">&gt;=</span> <span class="nu0">0</span><span class="br0">&#41;</span>
+            <span class="br0">&#123;</span>
+                <span class="kw1">break</span><span class="sy4">;</span>
+            <span class="br0">&#125;</span>
+        <span class="br0">&#125;</span>
+        <span class="kw1">if</span><span class="br0">&#40;</span>pre<span class="br0">&#91;</span>t<span class="br0">&#93;</span> <span class="sy1">&lt;</span> <span class="nu0">0</span><span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+            <span class="kw1">break</span><span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+        aug <span class="sy1">=</span> <span class="nu12">0x7fff</span><span class="sy4">;</span>
+        <span class="kw1">for</span><span class="br0">&#40;</span>u <span class="sy1">=</span> pre<span class="br0">&#91;</span>v <span class="sy1">=</span> t<span class="br0">&#93;</span><span class="sy4">;</span> v <span class="sy3">!</span><span class="sy1">=</span> s<span class="sy4">;</span> <span class="br0">&#40;</span>v <span class="sy1">=</span> u<span class="br0">&#41;</span>, <span class="br0">&#40;</span>u<span class="sy1">=</span>pre<span class="br0">&#91;</span>u<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+            <span class="kw1">if</span><span class="br0">&#40;</span>c<span class="br0">&#91;</span>u<span class="br0">&#93;</span><span class="br0">&#91;</span>v<span class="br0">&#93;</span> <span class="sy1">&lt;</span> aug<span class="br0">&#41;</span>
+            <span class="br0">&#123;</span>
+                aug <span class="sy1">=</span> c<span class="br0">&#91;</span>u<span class="br0">&#93;</span><span class="br0">&#91;</span>v<span class="br0">&#93;</span><span class="sy4">;</span>
+            <span class="br0">&#125;</span>
+        <span class="br0">&#125;</span>
+        <span class="kw1">for</span><span class="br0">&#40;</span>u <span class="sy1">=</span> pre<span class="br0">&#91;</span>v <span class="sy1">=</span> t<span class="br0">&#93;</span><span class="sy4">;</span> v <span class="sy3">!</span><span class="sy1">=</span> s<span class="sy4">;</span> <span class="br0">&#40;</span>v <span class="sy1">=</span> u<span class="br0">&#41;</span>, <span class="br0">&#40;</span>u <span class="sy1">=</span> pre<span class="br0">&#91;</span>u<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+            c<span class="br0">&#91;</span>u<span class="br0">&#93;</span><span class="br0">&#91;</span>v<span class="br0">&#93;</span> <span class="sy2">-</span><span class="sy1">=</span> aug<span class="sy4">;</span>
+            c<span class="br0">&#91;</span>v<span class="br0">&#93;</span><span class="br0">&#91;</span>u<span class="br0">&#93;</span> <span class="sy2">+</span><span class="sy1">=</span> aug<span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+        flow <span class="sy2">+</span><span class="sy1">=</span> aug<span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw1">return</span> flow<span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h2><span class="editsection">[<a href="/index.php?title=%E7%BD%91%E7%BB%9C%E6%B5%81&amp;action=edit&amp;section=10" title="编辑段落：练习题目">编辑</a>]</span> <span class="mw-headline" id=".E7.BB.83.E4.B9.A0.E9.A2.98.E7.9B.AE">练习题目</span></h2>
+<ol><li>NOI2006 Day2 profit
+</li><li><a href="/index.php/Translate:USACO/ditch" title="Translate:USACO/ditch">Translate:USACO/ditch</a>
+</li><li>ruvtex.cn - CmYkRgB123 Online Grading System - 11 运输问题1
+</li></ol>
+<h2><span class="editsection">[<a href="/index.php?title=%E7%BD%91%E7%BB%9C%E6%B5%81&amp;action=edit&amp;section=11" title="编辑段落：引用&amp;参考">编辑</a>]</span> <span class="mw-headline" id=".E5.BC.95.E7.94.A8.26.E5.8F.82.E8.80.83">引用&amp;参考</span></h2>
+<h2><span class="editsection">[<a href="/index.php?title=%E7%BD%91%E7%BB%9C%E6%B5%81&amp;action=edit&amp;section=12" title="编辑段落：链接">编辑</a>]</span> <span class="mw-headline" id=".E9.93.BE.E6.8E.A5">链接</span></h2>
+<div style="margin:15px auto 20px;border:1px solid #c3c3c3;background-color:#f5f5f5;-moz-border-radius:7px;padding:0px;"><div style="background:#c3c3c3;padding-left:10px;-moz-border-radius-topleft:5px;-moz-border-radius-topright:5px;display:block!important;display:block;display:inline-block!ie">
+<div style="float:right"><a rel="nofollow" class="external text" href="http://www.nocow.cn/index.php?title=%E6%A8%A1%E6%9D%BF:%E5%9B%BE%E8%AE%BA&amp;action=edit">[编辑]</a></div> <b><a href="/index.php/%E5%9B%BE%E8%AE%BA" title="图论">图论</a>及<a href="/index.php/%E5%9B%BE%E8%AE%BA" title="图论">图论算法</a></b></div>
+<div style="padding:5px 20px">
+<p><b><a href="/index.php/%E5%9B%BE" title="图">图</a></b> - <b><a href="/index.php/%E6%9C%89%E5%90%91%E5%9B%BE" title="有向图">有向图</a></b> - <b><a href="/index.php/%E6%97%A0%E5%90%91%E5%9B%BE" title="无向图">无向图</a></b> - <b><a href="/index.php/%E8%BF%9E%E9%80%9A%E5%9B%BE" title="连通图">连通图</a></b> - <b><a href="/index.php/%E5%BC%BA%E8%BF%9E%E9%80%9A%E5%9B%BE" title="强连通图">强连通图</a></b> - <b><a href="/index.php/%E5%AE%8C%E5%85%A8%E5%9B%BE" title="完全图">完全图</a></b> - <b><a href="/index.php/%E7%A8%80%E7%96%8F%E5%9B%BE" title="稀疏图">稀疏图</a></b> - <b><a href="/index.php/%E9%9B%B6%E5%9B%BE" title="零图">零图</a></b> - <b><a href="/index.php/%E6%A0%91" title="树">树</a></b> - <b><strong class="selflink">网络</strong></b>
+</p><p><b>基本<a href="/index.php/%E9%81%8D%E5%8E%86" title="遍历">遍历</a>算法：</b><a href="/index.php/%E5%AE%BD%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2" title="宽度优先搜索" class="mw-redirect">宽度优先搜索</a> - <a href="/index.php/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2" title="深度优先搜索">深度优先搜索</a> - <a href="/index.php/A*" title="A*">A*</a> - <b><a href="/index.php/%E5%B9%B6%E6%9F%A5%E9%9B%86" title="并查集">并查集</a>求<a href="/index.php/%E8%BF%9E%E9%80%9A%E5%88%86%E6%94%AF" title="连通分支">连通分支</a></b> - <b><a href="/index.php/Flood_Fill" title="Flood Fill">Flood Fill</a></b>
+</p><p><b><a href="/index.php/%E6%9C%80%E7%9F%AD%E8%B7%AF" title="最短路" class="mw-redirect">最短路</a>：</b><a href="/index.php/Dijkstra%E7%AE%97%E6%B3%95" title="Dijkstra算法">Dijkstra</a> - <a href="/index.php/Bellman-Ford%E7%AE%97%E6%B3%95" title="Bellman-Ford算法">Bellman-Ford</a>（<a href="/index.php/SPFA" title="SPFA" class="mw-redirect">SPFA</a>） - <a href="/index.php/Floyd-Warshall%E7%AE%97%E6%B3%95" title="Floyd-Warshall算法">Floyd-Warshall</a> - <a href="/index.php/Johnson%E7%AE%97%E6%B3%95" title="Johnson算法">Johnson算法</a>
+</p><p><b><a href="/index.php/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91" title="最小生成树">最小生成树</a>：</b><a href="/index.php/Prim%E7%AE%97%E6%B3%95" title="Prim算法">Prim</a> - <a href="/index.php/Kruskal%E7%AE%97%E6%B3%95" title="Kruskal算法">Kruskal</a>
+</p><p><b><a href="/index.php/%E5%BC%BA%E8%BF%9E%E9%80%9A%E5%88%86%E6%94%AF" title="强连通分支">强连通分支</a>：</b><a href="/index.php/Kosaraju%E7%AE%97%E6%B3%95" title="Kosaraju算法">Kosaraju</a> - <a href="/index.php/Gabow%E7%AE%97%E6%B3%95" title="Gabow算法">Gabow</a> - <a href="/index.php/Tarjan%E7%AE%97%E6%B3%95" title="Tarjan算法">Tarjan</a>
+</p><p><b><strong class="selflink">网络流</strong>：</b><a href="/index.php?title=%E5%A2%9E%E5%B9%BF%E8%B7%AF%E6%B3%95&amp;action=edit&amp;redlink=1" class="new" title="增广路法（尚未撰写）">增广路法</a>（<a href="/index.php/Ford-Fulkerson%E7%AE%97%E6%B3%95" title="Ford-Fulkerson算法" class="mw-redirect">Ford-Fulkerson</a>，<a href="/index.php/Edmonds-Karp%E7%AE%97%E6%B3%95" title="Edmonds-Karp算法">Edmonds-Karp</a>，<a href="/index.php/Dinic%E7%AE%97%E6%B3%95" title="Dinic算法">Dinic</a>） - <a href="/index.php/%E9%A2%84%E6%B5%81%E6%8E%A8%E8%BF%9B%E7%AE%97%E6%B3%95" title="预流推进算法">预流推进</a> - <a href="/index.php/Relabel-to-front" title="Relabel-to-front">Relabel-to-front</a>
+</p><p><b>图<a href="/index.php/%E5%8C%B9%E9%85%8D" title="匹配">匹配</a> - <a href="/index.php/%E4%BA%8C%E5%88%86%E5%9B%BE%E5%8C%B9%E9%85%8D" title="二分图匹配">二分图匹配</a>：</b><a href="/index.php/%E5%8C%88%E7%89%99%E5%88%A9%E7%AE%97%E6%B3%95" title="匈牙利算法">匈牙利算法</a> - <a href="/index.php/Kuhn-Munkres%E7%AE%97%E6%B3%95" title="Kuhn-Munkres算法">Kuhn-Munkres</a> - <a href="/index.php/Edmonds%27_Blossom-Contraction" title="Edmonds' Blossom-Contraction">Edmonds' Blossom-Contraction</a>
+</p>
+</div></div>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 94/1000000
+Post-expand include size: 1718/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:30-0!1!0!!zh-cn!*!* and timestamp 20170319034135 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=%E7%BD%91%E7%BB%9C%E6%B5%81&amp;oldid=36005">http://www.nocow.cn/index.php?title=%E7%BD%91%E7%BB%9C%E6%B5%81&amp;oldid=36005</a>”</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="特殊:页面分类">1个分类</a>: <ul><li><a href="/index.php/%E5%88%86%E7%B1%BB:%E5%9B%BE%E8%AE%BA" title="分类:图论">图论</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/%E7%BD%91%E7%BB%9C%E6%B5%81" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:%E7%BD%91%E7%BB%9C%E6%B5%81&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=%E7%BD%91%E7%BB%9C%E6%B5%81&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=%E7%BD%91%E7%BB%9C%E6%B5%81&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Ford-Fulkerson%E7%AE%97%E6%B3%95" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/%E7%BD%91%E7%BB%9C%E6%B5%81" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/%E7%BD%91%E7%BB%9C%E6%B5%81" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=%E7%BD%91%E7%BB%9C%E6%B5%81&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=%E7%BD%91%E7%BB%9C%E6%B5%81&amp;oldid=36005" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过36,465次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/52.4.48.181" title="特殊:用户贡献/52.4.48.181">52.4.48.181</a>于2016年7月13日 (星期三) 09:31做出最后修改。 在<a href="/index.php?title=%E7%94%A8%E6%88%B7:Cosechy_movingbot&amp;action=edit&amp;redlink=1" class="new" title="用户:Cosechy movingbot（尚未撰写）">cosechy@gmail.com</a>、NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/222.139.215.243" title="特殊:用户贡献/222.139.215.243">222.139.215.243</a>、<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/211.87.227.24" title="特殊:用户贡献/211.87.227.24">211.87.227.24</a>和<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/123.126.50.182" title="特殊:用户贡献/123.126.50.182">123.126.50.182</a>和<a href="/index.php?title=%E7%BD%91%E7%BB%9C%E6%B5%81&amp;action=credits" title="网络流">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.074 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

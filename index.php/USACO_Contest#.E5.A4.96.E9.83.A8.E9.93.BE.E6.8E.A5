@@ -1,0 +1,1025 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="keywords" content="USACO Contest,USACO:acng,USACO:badhair,USACO:bigsq,USACO:block,USACO:brand3,USACO:cowfood,USACO:cowtag,USACO:guess,USACO:lineup,USACO:moat" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (中文(简体))" />
+<link title="Creative Commons" type="application/rdf+xml" href="/index.php?title=USACO_Contest&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+		<title>NOCOW - USACO Contest</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins/monobook/main.css?42b"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print" href="/skins/common/commonPrint.css?42b" />
+		<link rel="stylesheet" type="text/css" media="handheld" href="/skins/monobook/handheld.css?42b" />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins/monobook/IE50Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins/monobook/IE55Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins/monobook/IE60Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins/monobook/IE70Fixes.css?42b";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?42b"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">/*<![CDATA[*/
+var skin = "monobook";
+var stylepath = "/skins";
+var wgArticlePath = "/index.php/$1";
+var wgScriptPath = "";
+var wgServer = "http://www.nocow.cn";
+var wgCanonicalNamespace = "";
+var wgCanonicalSpecialPageName = false;
+var wgNamespaceNumber = 0;
+var wgPageName = "USACO_Contest";
+var wgTitle = "USACO Contest";
+var wgArticleId = "568";
+var wgIsArticle = true;
+var wgUserName = null;
+var wgUserLanguage = "zh-cn";
+var wgContentLanguage = "zh-cn";
+var wgBreakFrames = false;
+var wgCurRevisionId = "5315";
+/*]]>*/</script>
+                
+		<script type="text/javascript" src="/skins/common/wikibits.js?42b"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=-&action=raw&gen=css&maxage=18000";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+			</head>
+<body  class="mediawiki ns-0 ltr page-USACO_Contest">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 class="firstHeading">USACO Contest</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">来自&quot;NOCOW&quot;</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">跳转到: <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>			<!-- start content -->
+			<p>USA Computing Olympiad Monthly Competition
+</p><p><br />
+</p>
+<table id="toc" class="toc" summary="目录"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#2006-2007"><span class="tocnumber">1</span> <span class="toctext">2006-2007</span></a>
+<ul>
+<li class="toclevel-2"><a href="#April.28Open.29"><span class="tocnumber">1.1</span> <span class="toctext">April(Open)</span></a></li>
+<li class="toclevel-2"><a href="#March"><span class="tocnumber">1.2</span> <span class="toctext">March</span></a></li>
+<li class="toclevel-2"><a href="#February"><span class="tocnumber">1.3</span> <span class="toctext">February</span></a></li>
+<li class="toclevel-2"><a href="#January"><span class="tocnumber">1.4</span> <span class="toctext">January</span></a></li>
+<li class="toclevel-2"><a href="#December"><span class="tocnumber">1.5</span> <span class="toctext">December</span></a></li>
+<li class="toclevel-2"><a href="#November"><span class="tocnumber">1.6</span> <span class="toctext">November</span></a></li>
+<li class="toclevel-2"><a href="#October.28Qualification.29"><span class="tocnumber">1.7</span> <span class="toctext">October(Qualification)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#2005-2006"><span class="tocnumber">2</span> <span class="toctext">2005-2006</span></a>
+<ul>
+<li class="toclevel-2"><a href="#April.28Open.29_2"><span class="tocnumber">2.1</span> <span class="toctext">April(Open)</span></a></li>
+<li class="toclevel-2"><a href="#March_2"><span class="tocnumber">2.2</span> <span class="toctext">March</span></a></li>
+<li class="toclevel-2"><a href="#Feberary"><span class="tocnumber">2.3</span> <span class="toctext">Feberary</span></a></li>
+<li class="toclevel-2"><a href="#January_2"><span class="tocnumber">2.4</span> <span class="toctext">January</span></a></li>
+<li class="toclevel-2"><a href="#December_2"><span class="tocnumber">2.5</span> <span class="toctext">December</span></a></li>
+<li class="toclevel-2"><a href="#November_2"><span class="tocnumber">2.6</span> <span class="toctext">November</span></a></li>
+<li class="toclevel-2"><a href="#October"><span class="tocnumber">2.7</span> <span class="toctext">October</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#2004-2005"><span class="tocnumber">3</span> <span class="toctext">2004-2005</span></a>
+<ul>
+<li class="toclevel-2"><a href="#April.28Open.29_3"><span class="tocnumber">3.1</span> <span class="toctext">April(Open)</span></a></li>
+<li class="toclevel-2"><a href="#March_3"><span class="tocnumber">3.2</span> <span class="toctext">March</span></a></li>
+<li class="toclevel-2"><a href="#February_2"><span class="tocnumber">3.3</span> <span class="toctext">February</span></a></li>
+<li class="toclevel-2"><a href="#January_3"><span class="tocnumber">3.4</span> <span class="toctext">January</span></a></li>
+<li class="toclevel-2"><a href="#December_3"><span class="tocnumber">3.5</span> <span class="toctext">December</span></a></li>
+<li class="toclevel-2"><a href="#November.28Qualification.29"><span class="tocnumber">3.6</span> <span class="toctext">November(Qualification)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#2003-2004"><span class="tocnumber">4</span> <span class="toctext">2003-2004</span></a>
+<ul>
+<li class="toclevel-2"><a href="#April.28Open.29_4"><span class="tocnumber">4.1</span> <span class="toctext">April(Open)</span></a></li>
+<li class="toclevel-2"><a href="#March_4"><span class="tocnumber">4.2</span> <span class="toctext">March</span></a></li>
+<li class="toclevel-2"><a href="#February_3"><span class="tocnumber">4.3</span> <span class="toctext">February</span></a></li>
+<li class="toclevel-2"><a href="#December_4"><span class="tocnumber">4.4</span> <span class="toctext">December</span></a></li>
+<li class="toclevel-2"><a href="#November_3"><span class="tocnumber">4.5</span> <span class="toctext">November</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#2002-2003"><span class="tocnumber">5</span> <span class="toctext">2002-2003</span></a>
+<ul>
+<li class="toclevel-2"><a href="#April.28Open.29_5"><span class="tocnumber">5.1</span> <span class="toctext">April(Open)</span></a></li>
+<li class="toclevel-2"><a href="#March_5"><span class="tocnumber">5.2</span> <span class="toctext">March</span></a></li>
+<li class="toclevel-2"><a href="#February_4"><span class="tocnumber">5.3</span> <span class="toctext">February</span></a></li>
+<li class="toclevel-2"><a href="#December_5"><span class="tocnumber">5.4</span> <span class="toctext">December</span></a></li>
+<li class="toclevel-2"><a href="#April.28Open.29_6"><span class="tocnumber">5.5</span> <span class="toctext">April(Open)</span></a></li>
+<li class="toclevel-2"><a href="#March_6"><span class="tocnumber">5.6</span> <span class="toctext">March</span></a></li>
+<li class="toclevel-2"><a href="#February_5"><span class="tocnumber">5.7</span> <span class="toctext">February</span></a></li>
+<li class="toclevel-2"><a href="#January.28Winter.29"><span class="tocnumber">5.8</span> <span class="toctext">January(Winter)</span></a></li>
+<li class="toclevel-2"><a href="#November.28Fall.29"><span class="tocnumber">5.9</span> <span class="toctext">November(Fall)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#2001-2002"><span class="tocnumber">6</span> <span class="toctext">2001-2002</span></a>
+<ul>
+<li class="toclevel-2"><a href="#April.28Open.29_7"><span class="tocnumber">6.1</span> <span class="toctext">April(Open)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.E5.A4.96.E9.83.A8.E9.93.BE.E6.8E.A5"><span class="tocnumber">7</span> <span class="toctext">外部链接</span></a></li>
+</ul>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "显示"; var tocHideText = "隐藏"; showTocToggle(); } </script>
+<a name="2006-2007"></a><h2><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=1" title="编辑段落: 2006-2007">编辑</a>]</span> <span class="mw-headline">2006-2007</span></h2>
+<a name="April.28Open.29"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=2" title="编辑段落: April(Open)">编辑</a>]</span> <span class="mw-headline">April(Open)</span></h3>
+<ul><li>GOLD
+<ul><li>Cheapest Palindrome(cheappal)
+</li><li>Dining(dining)
+</li><li>connect
+</li></ul>
+</li><li>SILVER
+<ul><li>horizon
+</li><li>catchcow
+</li><li>fliptile
+</li></ul>
+</li><li>BRONZE
+<ul><li>solitair
+</li><li>flowers
+</li><li>count
+</li><li>bparty
+</li></ul>
+</li></ul>
+<a name="March"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=3" title="编辑段落: March">编辑</a>]</span> <span class="mw-headline">March</span></h3>
+<ul><li>GOLD
+<ul><li>lineup
+</li><li>ranking
+</li><li>cowturn
+</li></ul>
+</li><li>SILVER
+<ul><li>traffic
+</li><li>balance
+</li><li>expense
+</li></ul>
+</li><li>BRONZE
+<ul><li>fireshow
+</li><li>latin
+</li><li>round
+</li></ul>
+</li></ul>
+<a name="February"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=4" title="编辑段落: February">编辑</a>]</span> <span class="mw-headline">February</span></h3>
+<ul><li>GOLD
+<ul><li>newbarn
+</li><li>csort
+</li><li>lilypad
+</li></ul>
+</li><li>SILVER
+<ul><li>The Cow Lexicon(lexicon)
+</li><li>Silver Lilypad Pond(silvlily)
+</li><li>Silver Cow Party(sparty)
+</li></ul>
+</li><li>BRONZE
+<ul><li>Cow Yahtzee(cowyotz)
+</li><li>Bronze Lilypad Pond(bronlily)
+</li><li>Buy One Get One Free(buyfree)
+</li></ul>
+</li></ul>
+<a name="January"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=5" title="编辑段落: January">编辑</a>]</span> <span class="mw-headline">January</span></h3>
+<ul><li>GOLD
+<ul><li>lineupg
+</li><li>psolve
+</li><li>schul
+</li></ul>
+</li><li>SILVER
+<ul><li>flowers
+</li><li>tallest
+</li><li>lineup
+</li></ul>
+</li><li>BRONZE
+<ul><li>qprime
+</li><li>change
+</li><li>btwr
+</li></ul>
+</li></ul>
+<a name="December"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=6" title="编辑段落: December">编辑</a>]</span> <span class="mw-headline">December</span></h3>
+<ul><li>GOLD
+<ul><li>Wormholes(wormhole)
+</li><li>The Fewest Coins(fewcoins)
+</li><li>Milk Patterns(patterns)
+</li></ul>
+</li><li>SILVER
+<ul><li>Cow Picnic(picnic)
+</li><li>Cow Roller Coaster(coaster)
+</li><li>River Hopscotch(jump)
+</li></ul>
+</li><li>BRONZE
+<ul><li>Wonderprime Brands(wpb)
+</li><li>The Eating Puzzle(eatpuz)
+</li><li>Dream Counting(dream)
+</li></ul>
+</li></ul>
+<a name="November"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=7" title="编辑段落: November">编辑</a>]</span> <span class="mw-headline">November</span></h3>
+<ul><li>GOLD
+<ul><li><a href="/index.php/USACO:plank" title="USACO:plank">Fence Repair(plank)</a>(<a href="/index.php?title=USACO:plank_analysis&amp;action=edit" class="new" title="USACO:plank analysis">题解</a>)
+</li><li><a href="/index.php/USACO:cowfood" title="USACO:cowfood">Corn Fields(cowfood)</a>(<a href="/index.php?title=USACO:cowfood_analysis&amp;action=edit" class="new" title="USACO:cowfood analysis">题解</a>)
+</li><li><a href="/index.php/USACO:block" title="USACO:block">Roadblocks(block)</a>(<a href="/index.php?title=USACO:block_analysis&amp;action=edit" class="new" title="USACO:block analysis">题解</a>)
+</li></ul>
+</li></ul>
+<ul><li>SILVER
+<ul><li><a href="/index.php/USACO:badhair" title="USACO:badhair">Bad Hair Day(badhair)</a>(<a href="/index.php?title=USACO:badhair_analysis&amp;action=edit" class="new" title="USACO:badhair analysis">题解</a>)
+</li><li><a href="/index.php/USACO:bigsq" title="USACO:bigsq">Big Square(bigsq)</a>(<a href="/index.php?title=USACO:bigsq_analysis&amp;action=edit" class="new" title="USACO:bigsq analysis">题解</a>)
+</li><li><a href="/index.php/USACO:rndnum" title="USACO:rndnum">Round Numbers(rndnum)</a>(<a href="/index.php?title=USACO:rndnum_analysis&amp;action=edit" class="new" title="USACO:rndnum analysis">题解</a>)
+</li></ul>
+</li><li>BRONZE
+<ul><li><a href="/index.php/USACO:brand3" title="USACO:brand3">New Cow Brands(brand3)</a>(<a href="/index.php?title=USACO:brand3_analysis&amp;action=edit" class="new" title="USACO:brand3 analysis">题解</a>)
+</li><li><a href="/index.php/USACO:scrbl" title="USACO:scrbl">Word Games(scrbl)</a>(<a href="/index.php?title=USACO:scrbl_analysis&amp;action=edit" class="new" title="USACO:scrbl analysis">题解</a>)
+</li><li><a href="/index.php/USACO:cowtag" title="USACO:cowtag">Serious Cow Tag(cowtag)</a>(<a href="/index.php?title=USACO:cowtag_analysis&amp;action=edit" class="new" title="USACO:cowtag analysis">题解</a>)
+</li></ul>
+</li></ul>
+<a name="October.28Qualification.29"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=8" title="编辑段落: October(Qualification)">编辑</a>]</span> <span class="mw-headline">October(Qualification)</span></h3>
+<ul><li>GOLD
+<ul><li><a href="/index.php/USACO:acng" title="USACO:acng">Another Cow Number Game(acng)</a>(<a href="/index.php?title=USACO:acng_analysis&amp;action=edit" class="new" title="USACO:acng analysis">题解</a>)
+</li><li><a href="/index.php/USACO:guess" title="USACO:guess">Guess My Number(guess)</a>(<a href="/index.php?title=USACO:guess_analysis&amp;action=edit" class="new" title="USACO:guess analysis">题解</a>)
+</li><li><a href="/index.php/USACO:skate" title="USACO:skate">Cows on Skates(skate)</a>(<a href="/index.php?title=USACO:skate_analysis&amp;action=edit" class="new" title="USACO:skate analysis">题解</a>)
+</li><li><a href="/index.php/USACO:pie1" title="USACO:pie1">Cow Pie Treasures(pie1)</a>(<a href="/index.php?title=USACO:pie1_analysis&amp;action=edit" class="new" title="USACO:pie1 analysis">题解</a>)
+</li><li><a href="/index.php/USACO:lineup" title="USACO:lineup">Hungry Cows(lineup)</a>(<a href="/index.php?title=USACO:lineup_analysis&amp;action=edit" class="new" title="USACO:lineup analysis">题解</a>)
+</li><li><a href="/index.php/USACO:moat" title="USACO:moat">Building the Moat(moat)</a>(<a href="/index.php?title=USACO:moat_analysis&amp;action=edit" class="new" title="USACO:moat analysis">题解</a>)
+</li></ul>
+</li></ul>
+<a name="2005-2006"></a><h2><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=9" title="编辑段落: 2005-2006">编辑</a>]</span> <span class="mw-headline">2005-2006</span></h2>
+<a name="April.28Open.29_2"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=10" title="编辑段落: April(Open)">编辑</a>]</span> <span class="mw-headline">April(Open)</span></h3>
+<a name="March_2"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=11" title="编辑段落: March">编辑</a>]</span> <span class="mw-headline">March</span></h3>
+<a name="Feberary"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=12" title="编辑段落: Feberary">编辑</a>]</span> <span class="mw-headline">Feberary</span></h3>
+<ul><li>GOLD
+<ul><li>Treats for the Cows(trt)
+</li><li>Backward Digit Sums(bdsum)
+</li><li>Cellphones(cell)
+</li><li>Steady Cow Assignment(stead)
+</li></ul>
+</li></ul>
+<a name="January_2"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=13" title="编辑段落: January">编辑</a>]</span> <span class="mw-headline">January</span></h3>
+<ul><li>Gold
+<ul><li>Balanced Lineup(lineupg)
+</li><li>Problem Solving(psolve)
+</li><li>Cow School(schul)
+</li></ul>
+</li></ul>
+<a name="December_2"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=14" title="编辑段落: December">编辑</a>]</span> <span class="mw-headline">December</span></h3>
+<ul><li>Gold
+<ul><li>Cow Patterns(cpattern)
+</li><li>Barn Expansion(expand)
+</li><li>Layout(layout)
+</li></ul>
+</li></ul>
+<ul><li>Silver
+<ul><li>Knights of Ni(ni)
+</li><li>Cleaning Shifts(clean)
+</li><li>Scales(scales0
+</li></ul>
+</li></ul>
+<ul><li>Bronze
+<ul><li>Parkside's Triangle(pktri1)
+</li><li>Alignment of the Planets(align)
+</li><li>Finding Bovine Roots(roots)
+</li><li>Cow Bowling(bowl)
+</li></ul>
+</li></ul>
+<a name="November_2"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=15" title="编辑段落: November">编辑</a>]</span> <span class="mw-headline">November</span></h3>
+<ul><li>Gold
+<ul><li>Asteroids(asteroid)
+</li><li>Grazing on the Run(ontherun)
+</li><li>Walk the Talk(twalk)
+</li></ul>
+</li></ul>
+<ul><li>Silver
+<ul><li>City skyline(skyline)
+</li><li>Cow Acrobats(acrobat)
+</li><li>Ant Counting(ants)
+</li></ul>
+</li></ul>
+<ul><li>Bronze
+<ul><li>Securing the Barn(passwd)
+</li><li>Hopscotch(numgrid)
+</li><li>Satellite Photographs(satpix)
+</li></ul>
+</li></ul>
+<a name="October"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=16" title="编辑段落: October">编辑</a>]</span> <span class="mw-headline">October</span></h3>
+<ul><li>Gold
+<ul><li>Skiing(cowski)
+</li><li>Flying Right(flight)
+</li></ul>
+</li></ul>
+<ul><li>Silver
+<ul><li>Close Encounter(nearfr)
+</li><li>Allowance(allow)
+</li></ul>
+</li></ul>
+<ul><li>Bronze
+<ul><li>Bovine Birthday(bday)
+</li><li>Max Factor(bigfact)
+</li></ul>
+</li></ul>
+<a name="2004-2005"></a><h2><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=17" title="编辑段落: 2004-2005">编辑</a>]</span> <span class="mw-headline">2004-2005</span></h2>
+<a name="April.28Open.29_3"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=18" title="编辑段落: April(Open)">编辑</a>]</span> <span class="mw-headline">April(Open)</span></h3>
+<ul><li>Gold
+<ul><li>Lazy Cows(lazy)
+</li><li>Expedition(exp)
+</li><li>Around the world(around)
+</li><li>Landscaping(peaks)
+</li></ul>
+</li></ul>
+<ul><li>Silver
+<ul><li>Waves(waves)
+</li><li>Navigating the City(navcit)
+</li><li>Disease Manangement(disease)
+</li><li>Muddy roads(mud)
+</li></ul>
+</li></ul>
+<ul><li>Bronze
+<ul><li>Countable Numbers(cnums)
+</li><li>Long Division(ldiv)
+</li><li>Boggled Cows(boggle)
+</li><li>Acrophobic cows(accow)
+</li></ul>
+</li></ul>
+<a name="March_3"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=19" title="编辑段落: March">编辑</a>]</span> <span class="mw-headline">March</span></h3>
+<ul><li>Gold
+<ul><li>Ombrophobic Bovines(ombro)
+</li><li>Space Elevator(elevator)
+</li><li>Yogurt factory(yogfac)
+</li></ul>
+</li></ul>
+<ul><li>Silver
+<ul><li>Yogurt factory(yogurt)
+</li><li>Checking an Alibi(alibi)
+</li><li>Out of Hay(outofhay)
+</li></ul>
+</li></ul>
+<ul><li>Bronze
+<ul><li>DNA strings(dna)
+</li><li>Palindromes(pal)
+</li><li>Negative Powers of Two(nptwo)
+</li></ul>
+</li></ul>
+<a name="February_2"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=20" title="编辑段落: February">编辑</a>]</span> <span class="mw-headline">February</span></h3>
+<ul><li>Gold
+<ul><li>Jersey Politics(jpol)
+</li><li>Secret Milking Machine(secret)
+</li><li>Aggressive cows(aggr)
+</li></ul>
+</li></ul>
+<ul><li>Silver
+<ul><li>Part Acquisition(acquire)
+</li><li>Rigging the Bovine Election(cowrig)
+</li><li>Feed Accounting(fcount)
+</li></ul>
+</li></ul>
+<ul><li>Bronze
+<ul><li>Powers of Two(ptwo)
+</li><li>Cow Similarity(likecow)
+</li><li>Linear Sequences(lseq)
+</li><li>No Linear Sequences(nls)
+</li></ul>
+</li></ul>
+<a name="January_3"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=21" title="编辑段落: January">编辑</a>]</span> <span class="mw-headline">January</span></h3>
+<ul><li>Gold
+<ul><li>Muddy Fields(cover)
+</li><li>The Wedding Juicer(juice)
+</li><li>Naptime(naptime)
+</li></ul>
+</li></ul>
+<ul><li>Silver
+<ul><li>Sumsets(sumset)
+</li><li>Watchcow(watchcow)
+</li><li>Moo Volume(volume)
+</li></ul>
+</li></ul>
+<ul><li>Bronze
+<ul><li>Binary Numbers(binnum)
+</li><li>Bank Balance(bankbal)
+</li><li>Satellite Photo(satel)
+</li><li>Plate Stacking(plates)
+</li></ul>
+</li></ul>
+<a name="December_3"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=22" title="编辑段落: December">编辑</a>]</span> <span class="mw-headline">December</span></h3>
+<ul><li>Gold
+<ul><li>Dividing the Path(divide)
+</li><li>Fence Obstacle Course(obstacle)
+</li><li>Cow Ski Area(skiarea)
+</li></ul>
+</li></ul>
+<ul><li>Silver
+<ul><li>Cleaning Shifts(cleaning)
+</li><li>Bad Cowtractors(cowtract)
+</li><li>Tree Cutting(treecut)
+</li></ul>
+</li></ul>
+<ul><li>Bronze
+<ul><li>Long Multiplication(mpy)
+</li><li>Crossword Puzzles(xword)
+</li><li>Physics Phlunkie(scino)
+</li><li>Money(money)
+</li></ul>
+</li></ul>
+<a name="November.28Qualification.29"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=23" title="编辑段落: November(Qualification)">编辑</a>]</span> <span class="mw-headline">November(Qualification)</span></h3>
+<ul><li>Gold
+<ul><li>Apple Catching(bcatch)
+</li><li>Lake Counting(lkcount)
+</li><li>Til the Cows Come Home(cowhome)
+</li><li>Who's in the Middle(middle)
+</li><li>Bull Math(bullmath)
+</li><li>Bank Interest(bankint)
+</li></ul>
+</li></ul>
+<a name="2003-2004"></a><h2><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=24" title="编辑段落: 2003-2004">编辑</a>]</span> <span class="mw-headline">2003-2004</span></h2>
+<a name="April.28Open.29_4"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=25" title="编辑段落: April(Open)">编辑</a>]</span> <span class="mw-headline">April(Open)</span></h3>
+<ul><li>Green
+<ul><li>Cube Stacking(cubes)
+</li><li>The Cow Lineup(lineup)
+</li><li>MooFest(moofest)
+</li><li>Turning in Homework(turnin)
+</li></ul>
+</li></ul>
+<ul><li>Orange
+<ul><li>Cave Cows 1(cavecow1)
+</li><li>Cave Cows 2(cavecow2)
+</li><li>Cave Cows 3(cavecow3)
+</li><li>Cave Cows 4(cavecow4)
+</li></ul>
+</li></ul>
+<ul><li>Blue
+<ul><li>Barrels of Feed(barrels)
+</li><li>Elimination Game(elimgame)
+</li><li>Fence Enclosures(enclosures)
+</li><li>Line Up the Cows(line)
+</li></ul>
+</li></ul>
+<a name="March_4"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=26" title="编辑段落: March">编辑</a>]</span> <span class="mw-headline">March</span></h3>
+<ul><li>Green
+<ul><li>Moo University - Team Tryouts(tryout)
+</li><li>Moo University - Emergency Pizza Order(pizza)
+</li><li>Moo University -- Financial Aid(finance)
+</li></ul>
+</li></ul>
+<ul><li>Orange
+<ul><li>Lying Livestock(liecow)
+</li><li>Special Serial Numbers(serial)
+</li><li>Paranoid Cows(paranoid)
+</li></ul>
+</li></ul>
+<a name="February_3"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=27" title="编辑段落: February">编辑</a>]</span> <span class="mw-headline">February</span></h3>
+<ul><li>Green
+<ul><li>Navigation Nightmare(navigate)
+</li><li>Cow Marathon(marathon)
+</li><li>Distance Queries(dquery)
+</li><li>Distance Statistics(dstats)
+</li></ul>
+</li></ul>
+<ul><li>Orange
+<ul><li>Breeding(breeding)
+</li><li>The Big Game(thegame)
+</li><li>Farmer John's View(fjview)
+</li><li>Pesky Parentheses(parens)
+</li></ul>
+</li></ul>
+<ul><li>Blue
+<ul><li>Cow Word Games(wordgame)
+</li><li>Bovine Ballroom Dancing(ballroom)
+</li><li>Automatic Fence Gate(gate)
+</li><li>The Middle Squares(midsq)
+</li></ul>
+</li></ul>
+<a name="December_4"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=28" title="编辑段落: December">编辑</a>]</span> <span class="mw-headline">December</span></h3>
+<ul><li>Green
+<ul><li>Rain Cover(cover)
+</li><li>Elite Eating(elite)
+</li><li>Spring Vacation(sprbrk)
+</li><li>Cow Queueing(cowq)
+</li></ul>
+</li></ul>
+<a name="November_3"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=29" title="编辑段落: November">编辑</a>]</span> <span class="mw-headline">November</span></h3>
+<ul><li>Green
+<ul><li>Cow Exhibition(smrtfun)
+</li><li>Milking Grid(mgrid)
+</li><li>Popular Cows(popular)
+</li><li>Beauty Contest(msworld)
+</li></ul>
+</li></ul>
+<a name="2002-2003"></a><h2><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=30" title="编辑段落: 2002-2003">编辑</a>]</span> <span class="mw-headline">2002-2003</span></h2>
+<a name="April.28Open.29_5"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=31" title="编辑段落: April(Open)">编辑</a>]</span> <span class="mw-headline">April(Open)</span></h3>
+<ul><li>Green
+</li></ul>
+<hr />
+<pre>                          GREEN PROBLEMS
+</pre>
+<hr />
+<pre>                 Four problems numbered 1 through 4
+</pre>
+<hr />
+<ul><li><ul><li>Cowpals(cowpal)
+</li></ul>
+</li></ul>
+<p>PROBLEM 1: Cowpals [Romanian Olympiad, via Stroe, 2002]
+</p><p>As in all human societies, the cows have friends, too. A new cow,
+Clara, has joined Farmer John's farm.  Clara sees that the N (1 &lt;= N
+&lt;= 3000) cows already on the farm have partitioned themselves into
+sets of friends.
+</p><p>Each cow belongs to exactly one set of friends. Each cow in a set is
+a friend of every other cow in the same set and no cow outside the
+set.
+</p><p>Clara wants to be friends with some of the cows but does not know how
+to identify the various sets of friends.  Farmer John has agreed to
+help Clara by answering questions that are all of the same form: "Who
+are the friends of cows A, B, ..., and Z?" FJ will answer such
+questions with the list of all cows who are friends of any of the cows
+in the query.
+</p><p>Your task is to help Clara determine the groups of friends by
+disturbing FJ with the smallest possible number of queries.
+</p><p>Write an interactive (i.e., 'reactive') program that reads and writes
+to standard input and output respectively.  Begin by reading a line
+that contains nothing but a single integer, N, the total number of
+cows.
+</p><p>After this, your program should print lines to stdout with a 'query' or,
+when the solution has been determined, a 'solution'.  Each queries is an
+N digit binary string:
+</p><p>bbbbb...b
+</p><p>in which each b is a '0' or a '1'.  The '1's in the query are the cows
+for whom the friend-list is desired.  Consider a query for the friends
+of five cows from a herd of 12 cows:
+</p><p>001001001011
+</p><p>This query means, "Please tell me all the friends of cows 3, 6, 9,
+11, and 12".
+</p><p>For each query, read in a 'response' line of the same format. A
+response to the above query might be:
+</p><p>111001001111
+</p><p>Which means cows 1, 2, 3, 6, 9, 10, 11, and 12 are friends with at
+least one of cows 3, 6, 9, 11, and 12 from the query.  Of course, a
+cow is always a friend with itself.
+</p><p>When your program has determined the entire list of friend sets, it
+should write a line that summarizes those sets by telling their sizes
+with one or more space-separated integers presented in sorted order,
+smallest number first:
+</p><p>solution S1 S2 ... Sx
+</p><p>A sample of a solution might be:
+</p><p>solution 1 1 2 8
+</p><p>[though this solution might or might not apply to the query and
+response above].
+</p><p>Your solution will receive points based upon its optimality.  Full
+marks will be awarded for solutions that match the minimum number of
+queries of all solutions submitted.  Proportionally fewer points will
+be awarded to inferior solutions.  Solutions that do not determine a
+valid friendset or require too many queries will receive no credit.
+</p><p>REACTIVE PROGRAM GRADING REQUIREMENTS:
+</p><p>C/C++ stdio Programmers:  Use "fflush(stdout);" to send your output to the grader.
+</p><p>C/C++ fstream Programmers:  "... &lt;&lt; endl &lt;&lt; flush;" to send your output to the
+</p>
+<pre>      grader.
+</pre>
+<p>Pascal Programmers: No special operations are required.
+</p><p>PROBLEM NAME: cowpal
+</p><p>SAMPLE INPUT/OUTPUT:
+</p><p>Program            Program
+writes             reads
+</p>
+<pre>                   5
+</pre>
+<p>10001
+</p>
+<pre>                   10101
+</pre>
+<p>01010
+</p>
+<pre>                   01010
+</pre>
+<p>00100
+</p>
+<pre>                   10100
+</pre>
+<p>00001
+</p>
+<pre>                   00001
+</pre>
+<p>00010
+</p>
+<pre>                   01010
+</pre>
+<p>solution 1 2 2
+</p><p>EXPLANATION
+</p><p>The sets of cow friends were:  {1, 3}, {2, 4}, and {5}. The program probed
+for this set using these queries and receiving these replies:
+</p>
+<pre>    Q: friends of {1,5}?     A: {1,3,5}
+    Q: friends of {2,4}?     A: {2,4}
+    Q: friends of {3}?       A: {1,3}
+    Q: friends of {5}?       A: {5}
+    Q: friends of {2}?       A: {2,4}
+</pre>
+<p>and then deduced the answer, counted the set members, sorted the results
+and responded with the proper answer: 1 2 2.
+</p><p><br />
+</p>
+<ul><li><ul><li>Mountain Walking(mtwalk)
+</li></ul>
+</li></ul>
+<p>PROBLEM 2: Mountain Walking [Jan Kuipers, 2003]
+</p><p>Farmer John and Bessie the cow have embarked on one of those 'active'
+vacations. They spend entire days walking in the mountains and then,
+at the end of the day, they tire and return to their vacation cabin.
+</p><p>Since climbing requires a lot of energy and they are already tired,
+they wish to return to the cabin using a path that has the least
+difference between its highest and lowest elevations, no matter how
+long that path is. Help FJ find this easy-to-traverse path.
+</p><p>The map of the mountains is given by an N x N (2 &lt;= N &lt;= 100) matrix
+of integer elevations (0 &lt;= any elevation &lt;= 110) FJ and Bessie are
+currently at the upper left position (row 1, column 1) and the cabin
+is at the lower right (row N, column N).  They can travel right, left,
+toward the top, or toward the bottom of the grid.  They can not travel
+on a diagonal.
+</p><p>PROBLEM NAME: mtwalk
+</p><p>INPUT FORMAT:
+</p>
+<ul><li> Line 1: The single integer, N
+</li></ul>
+<ul><li> Lines 2..N+1: Each line contains N integers, each of which specifies
+</li></ul>
+<pre>       a square's height. Line 2 contains the first (top) row of the
+       grid; line 3 contains the second row, and so on.  The first
+       number on the line corresponds to the first (left) column of
+       the grid, and so on.
+</pre>
+<p>SAMPLE INPUT (file mtwalk.in):
+</p><p>5
+1 1 3 6 8
+1 2 2 5 5
+4 4 0 3 3
+8 0 2 3 4
+4 3 0 2 1
+</p><p>OUTPUT FORMAT:
+</p>
+<ul><li> Line 1: An integer that is the minimal height difference on the
+</li></ul>
+<pre>       optimal path.
+</pre>
+<p>SAMPLE OUTPUT (file mtwalk.out):
+</p><p>2
+</p><p>OUTPUT DETAILS:
+</p><p>xx...   Taking the path shown here, the minimum height is 0 and the 
+.xx..   maximum is 2, so the difference is 2.
+..x..
+..x..
+..xxx
+</p>
+<ul><li><ul><li>Millenium Leapcow(leap2)
+</li></ul>
+</li></ul>
+<p>PROBLEM 3: Millenium Leapcow [via Nikolay Valtchanov, from Bulgaria '01, 2003]
+</p><p>The cows have revised their game of leapcow.  They now play in the
+middle of a huge pasture upon which they have marked a grid that bears
+a remarkable resemblance to a chessboard of N rows and N columns (3
+&lt;= N &lt;= 365).
+</p><p>Here's how they set up the board for the new leapcow game:
+</p>
+<ul><li> First, the cows obtain N x N squares of paper.  They write the
+</li></ul>
+<pre> integers from 1 through N x N, one number on each piece of paper.
+</pre>
+<ul><li> Second, the 'number cow' places the papers on the N x N squares in
+</li></ul>
+<pre> an order of her choosing.
+</pre>
+<p>Each of the remaining cows then tries to maximize her score in the
+game.
+</p>
+<ul><li> First, she chooses a starting square and notes its number.
+</li></ul>
+<ul><li> Then, she makes a 'knight' move (like the knight on a chess board)
+</li></ul>
+<pre> to a square with a higher number.  If she's particularly strong,
+ she leaps to the that square; otherwise she walks.
+</pre>
+<ul><li> She continues to make 'knight' moves to higher numbered squares
+</li></ul>
+<pre> until no more moves are possible.
+</pre>
+<p>Each square visited by the 'knight' earns the competitor a single
+point.  The cow with the most points wins the game.
+</p><p>Help the cows figure out the best possible way to play the game.
+</p><p>PROBLEM NAME: leap2
+</p><p>INPUT FORMAT:
+</p>
+<ul><li> Line 1: A single integer: the size of the board
+</li></ul>
+<ul><li> Lines 2.. ...: These lines contain space-separated integers that tell
+</li></ul>
+<pre>       the contents of the chessboard.  The first set of lines
+       (starting at the second line of the input file) represents the
+       first row on the chessboard; the next set of lines represents
+       the next row, and so on.  To keep the input lines of
+       reasonable length, when N &gt; 15, a row is broken into
+       successive lines of 15 numbers and a potentially shorter line
+       to finish up a row.  Each new row begins on its own line.
+</pre>
+<p>SAMPLE INPUT (file leap2.in):
+</p><p>4
+1 3 2 16
+4 10 6 7
+8 11 5 12
+9 13 14 15
+</p><p>OUTPUT FORMAT:
+</p>
+<ul><li> Line 1: A single integer that is the winning cow's score; call it W.
+</li></ul>
+<ul><li> Lines 2..W+1: Output, one per line, the integers that are the
+</li></ul>
+<pre>       starting square, the next square the winning cow visits, and
+       so on through the last square. If a winning cow can choose
+       more than one path, show the path that would be the 'smallest'
+       if the paths were sorted by comparing their respective 'square
+       numbers'.
+</pre>
+<p>SAMPLE OUTPUT (file leap2.out):
+</p><p>7
+2
+4
+5
+9
+10
+12
+13
+</p><p>OUTPUT DETAILS:
+</p><p>The longest tour consists of the moves 2 to 4, 4 to 5, 5 to 9, 9 to
+10, 10 to 12, 12 to 13 and has length of 7 squares.
+</p><p><br />
+</p>
+<hr />
+<p>PROBLEM 4: Optimal Milking [Mihai Stroe, 2002]
+</p><p>FJ has moved his K (1 &lt;= K &lt;= 30) milking machines out into the cow
+pastures among the C (1 &lt;= C &lt;= 200) cows.  A set of paths of various
+lengths runs among the cows and the milking machines.  The milking machine
+locations are named by ID numbers 1..K; the cow locations are named by ID
+numbers K+1..K+C.
+</p><p>Each milking point can "process" at most M (1 &lt;= M &lt;= 15) cows each day.
+</p><p>Write a program to find an assignment for each cow to some milking
+machine so that the distance the furthest-walking cow travels is
+minimized (and, of course, the milking machines are not overutilized).
+At least one legal assignment is possible for all input data sets.
+Cows can traverse several paths on the way to their milking machine.
+</p><p>PROBLEM NAME: milking
+</p><p>INPUT FORMAT:
+</p>
+<ul><li> Line 1: A single line with three space-separated integers: K, C, and
+</li></ul>
+<pre>       M.
+</pre>
+<ul><li> Lines 2.. ...: Each of these K+C lines of K+C space-separated
+</li></ul>
+<pre>       integers describes the distances between pairs of various
+       entities. The input forms a symmetric matrix.  Line 2 tells
+       the distances from milking machine 1 to each of the other
+       entities; line 3 tells the distances from machine 2 to each of
+       the other entities, and so on.  Distances of entities directly
+       connected by a path are positive integers no larger than 200. 
+       Entities not directly connected by a path have a distance of
+       0.  The distance from an entity to itself (i.e., all numbers
+       on the diagonal) is also given as 0.  To keep the input lines
+       of reasonable length, when K+C &gt; 15, a row is broken into
+       successive lines of 15 numbers and a potentially shorter line
+       to finish up a row.  Each new row begins on its own line.
+</pre>
+<p>SAMPLE INPUT (file milking.in):
+</p><p>2 3 2
+0 3 2 1 1
+3 0 3 2 0
+2 3 0 1 0
+1 2 1 0 2
+1 0 0 2 0
+</p><p>OUTPUT FORMAT:
+</p><p>A single line with a single integer that is the minimum possible total
+</p>
+<pre>distance for the furthest walking cow.
+</pre>
+<p>SAMPLE OUTPUT (file milking.out):
+</p><p>2
+</p><p>OUTPUT DETAILS:
+</p><p>Assign cow 1 to milk machine 1 (dist=2), cow 2 to machine 2 (dist=2) and 
+cow 3 to machine 1 (dist=1). The maximum distance is then 2.
+</p>
+<ul><li><ul><li>Optimal Milking(milking)
+</li></ul>
+</li></ul>
+<ul><li>Orange
+<ul><li>Bale Figures(bales2)
+</li><li>Jumping Cows Harry Wiggins(jumpcow)
+</li><li>Lost Cows(lost)
+</li><li>Bovine Math Geniuses(icecrm)
+</li></ul>
+</li></ul>
+<a name="March_5"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=32" title="编辑段落: March">编辑</a>]</span> <span class="mw-headline">March</span></h3>
+<ul><li>Green
+<ul><li>TwoFour(twofour)
+</li><li>Best Cow Fences(cowfnc)
+</li><li>Cornfields(cornfld)
+</li></ul>
+</li></ul>
+<ul><li>Orange
+<ul><li>Six Degrees of Cowvin Bacon(bacon)
+</li><li>Herd Sums(hsums)
+</li><li>Message Decowding(decode)
+</li></ul>
+</li></ul>
+<a name="February_4"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=33" title="编辑段落: February">编辑</a>]</span> <span class="mw-headline">February</span></h3>
+<ul><li>Green
+<ul><li>Cow Math(cowmath)
+</li><li>Cow Imposters(impster)
+</li><li>Traffic Lights(traffic)
+</li><li>Farm Tour(tour)
+</li></ul>
+</li></ul>
+<ul><li>Orange
+<ul><li>Vertical Histogram(vhist)
+</li><li>Number Triangles(numtri)
+</li><li>Cowties(cowties)
+</li><li>Travel Games(travgm)
+</li></ul>
+</li></ul>
+<a name="December_5"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=34" title="编辑段落: December">编辑</a>]</span> <span class="mw-headline">December</span></h3>
+<ul><li>Orange
+<ul><li>The Collatz Code(collatz)
+</li><li>Cow Fibonacci Numbers(cowfib)
+</li><li>Shopping Spree(shop)
+</li></ul>
+</li></ul>
+<a name="April.28Open.29_6"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=35" title="编辑段落: April(Open)">编辑</a>]</span> <span class="mw-headline">April(Open)</span></h3>
+<ul><li>Green 
+<ul><li>Mountain Majesties(majesty)
+</li><li>Secret Milk Pipes(secret)
+</li><li>Circus Tickets(tix)
+</li><li>Life Cycle(life)
+</li></ul>
+</li></ul>
+<ul><li>Orange
+<ul><li>Wiggle Numbers(wiggle)
+</li><li>Life Cycle(life2)
+</li><li>Superwords(suword)
+</li><li>Cow Words(words)
+</li><li>Cow Brainiacs(brain)
+</li></ul>
+</li></ul>
+<a name="March_6"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=36" title="编辑段落: March">编辑</a>]</span> <span class="mw-headline">March</span></h3>
+<ul><li>Green
+<ul><li>Hypnotic Milk Improvement(hypno)
+</li><li>Happy Cows(happy)
+</li><li>Unary Cow Counting(ucc)
+</li></ul>
+</li></ul>
+<ul><li>Orange 
+<ul><li>Dairy Route(route)
+</li><li>Calf Numbers(calfnum)
+</li><li>Hide and Seek(hdseek)
+</li></ul>
+</li></ul>
+<a name="February_5"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=37" title="编辑段落: February">编辑</a>]</span> <span class="mw-headline">February</span></h3>
+<ul><li>Green
+<ul><li>Fiber Communications(fiber)
+</li><li>Power Hungry Cows(power)
+</li><li>Cow Cycling(cycling)
+</li><li>Rebuilding Roads(roads)
+</li><li>Triangular Pastures(pasture)
+</li></ul>
+</li></ul>
+<ul><li>Orange 
+<ul><li>Chores(chores)
+</li><li>Dessert(dessert)
+</li><li>Extra Krunch(krunch)
+</li><li>BUY LOW, BUY LOWER(buylow)
+</li></ul>
+</li></ul>
+<a name="January.28Winter.29"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=38" title="编辑段落: January(Winter)">编辑</a>]</span> <span class="mw-headline">January(Winter)</span></h3>
+<ul><li>Green
+<ul><li>Pasture Fences(pasture)
+</li><li>New Years Party(party)
+</li><li>Strolling Cows(stroll)
+</li><li>Grazing Sets(grazeset)
+</li></ul>
+</li></ul>
+<ul><li>Orange
+<ul><li>Factorial Power(fact)
+</li><li>Friday the Thirteenth(friday)
+</li><li>Beef McNuggets(nuggets)
+</li><li>Calf Flac(calfflac)
+</li></ul>
+</li></ul>
+<a name="November.28Fall.29"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=39" title="编辑段落: November(Fall)">编辑</a>]</span> <span class="mw-headline">November(Fall)</span></h3>
+<ul><li>Green
+<ul><li>Cow Dominoes(cowdom)
+</li><li>Cow Plumbing(plumb)
+</li><li>Dinner Time(dinner)
+</li><li>Cowese(prefix)
+</li></ul>
+</li></ul>
+<ul><li>Orange
+<ul><li>power<sup>[需要证实]</sup>(power)
+</li><li>Dictionary Numbers(dictnum)
+</li><li>Hungry Cows(hunger)
+</li><li>Cow Shuffle(shuffle)
+</li><li>Negative Powers(neg)
+</li></ul>
+</li></ul>
+<a name="2001-2002"></a><h2><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=40" title="编辑段落: 2001-2002">编辑</a>]</span> <span class="mw-headline">2001-2002</span></h2>
+<a name="April.28Open.29_7"></a><h3><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=41" title="编辑段落: April(Open)">编辑</a>]</span> <span class="mw-headline">April(Open)</span></h3>
+<ul><li>Green
+<ul><li>Cow Relays(relay)
+</li><li>Earthquake(quake)
+</li><li>Cow Sorting(sort)
+</li><li>Cow Signs(sign)
+</li><li>Trapped in the Well(well)
+</li></ul>
+</li></ul>
+<a name=".E5.A4.96.E9.83.A8.E9.93.BE.E6.8E.A5"></a><h2><span class="editsection">[<a href="/index.php?title=USACO_Contest&amp;action=edit&amp;section=42" title="编辑段落: 外部链接">编辑</a>]</span> <span class="mw-headline">外部链接</span></h2>
+<ul><li><a href="http://infoman.musala.com/usaco/main.html" class="external free" title="http://infoman.musala.com/usaco/main.html" rel="nofollow">http://infoman.musala.com/usaco/main.html</a>，部分英文题目。
+</li><li><a href="http://oldweb.uwp.edu/academic/mathematics/usaco/index.htm" class="external text" title="http://oldweb.uwp.edu/academic/mathematics/usaco/index.htm" rel="nofollow">USACO官方网站</a>，可以找到部分旧的题目。
+</li><li><a href="http://ace.delos.com/ioigate" class="external text" title="http://ace.delos.com/ioigate" rel="nofollow">USACO Contest官方网站</a>
+</li><li>USACO每次竞赛的成绩及数据、题解会发布在<a href="http://ace.delos.com" class="external text" title="http://ace.delos.com" rel="nofollow">ace.delos.com</a>，USACO不会在网页上公布过去的竞赛的具体地址，但是命名是有规律的，例如2004年2月的竞赛相关内容就在<a href="http://ace.delos.com/FEB04" class="external free" title="http://ace.delos.com/FEB04" rel="nofollow">http://ace.delos.com/FEB04</a>
+</li></ul>
+
+<!-- Saved in parser cache with key nocow:pcache:idhash:568-0!1!0!!zh-cn!2 and timestamp 20080125025443 -->
+<div class="printfooter">
+来自"<a href="http://www.nocow.cn/index.php/USACO_Contest">http://www.nocow.cn/index.php/USACO_Contest</a>"</div>
+						<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+						 <li id="ca-nstab-main" class="selected"><a href="/index.php/USACO_Contest">条目</a></li>
+						 <li id="ca-talk"><a href="/index.php/Talk:USACO_Contest">讨论</a></li>
+						 <li id="ca-edit"><a href="/index.php?title=USACO_Contest&amp;action=edit">编辑</a></li>
+						 <li id="ca-history"><a href="/index.php?title=USACO_Contest&amp;action=history">历史</a></li>
+				</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=Special:Userlogin&amp;returnto=USACO_Contest">登录或创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5" title="首页"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/Special:Recentchanges">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/Special:Random">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/Help:%E5%B8%AE%E5%8A%A9">使用帮助</a></li>
+				<li id="n-sitesupport"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5">资助本站</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="进入" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="搜索" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/Special:Whatlinkshere/USACO_Contest">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/Special:Recentchangeslinked/USACO_Contest">链出更改</a></li>
+<li id="t-upload"><a href="/index.php/Special:Upload">上传文件</a></li>
+<li id="t-specialpages"><a href="/index.php/Special:Specialpages">特殊页面</a></li>
+				<li id="t-print"><a href="/index.php?title=USACO_Contest&amp;printable=yes">可打印版</a></li>				<li id="t-permalink"><a href="/index.php?title=USACO_Contest&amp;oldid=5315">永久链接</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt='GNU Free Documentation License 1.2' /></a></div>
+			<ul id="f-list">
+				<li id="viewcount">访问次数: 3,801次</li>
+				<li id="credits">此页由NOCOW匿名用户于2007年8月4日, 11:52最后更改. 在<a href="/index.php?title=User:Chnlkw&amp;action=edit" class="new" title="User:Chnlkw">李恺威</a> 和 <a href="/index.php/User:Exile" title="User:Exile">Exile</a>, NOCOW用户<a href="/index.php/User:Atst" title="User:Atst">Atst</a> 和 <a href="/index.php/User:Cdwind" title="User:Cdwind">Cdwind</a> 和 <a href="/index.php?title=USACO_Contest&amp;action=credits" title="USACO Contest">其他</a>的工作基础上.</li>
+				<li id="copyright">本站内容在<a href="http://www.gnu.org/copyleft/fdl.html" class="external " title="http://www.gnu.org/copyleft/fdl.html" rel="nofollow">GNU Free Documentation License 1.2</a>下发布</li>
+				<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E7%AD%96%E7%95%A5" title="NOCOW:隐私策略">隐私策略</a></li>
+				<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+				<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by bdezlinux in 0.465 secs. --></body></html>

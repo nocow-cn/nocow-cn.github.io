@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>哈夫曼树 - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "哈夫曼树", "wgTitle": "哈夫曼树", "wgCurRevisionId": 31819, "wgArticleId": 43, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-哈夫曼树 action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">哈夫曼树</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E4.BB.8B.E7.BB.8D"><span class="tocnumber">1</span> <span class="toctext">介绍</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#.E5.93.88.E5.A4.AB.E6.9B.BC.E7.BC.96.E7.A0.81"><span class="tocnumber">1.1</span> <span class="toctext">哈夫曼编码</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#.E5.93.88.E5.A4.AB.E6.9B.BC.E6.A0.91"><span class="tocnumber">1.2</span> <span class="toctext">哈夫曼树</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#.E5.AE.9A.E4.B9.89ADT"><span class="tocnumber">2</span> <span class="toctext">定义ADT</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#.E6.94.B9.E8.BF.9B.E5.92.8C.E4.BC.98.E5.8C.96"><span class="tocnumber">3</span> <span class="toctext">改进和优化</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#.E5.AE.9E.E7.8E.B0"><span class="tocnumber">4</span> <span class="toctext">实现</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#.E5.BA.94.E7.94.A8.E5.92.8C.E7.BB.83.E4.B9.A0"><span class="tocnumber">5</span> <span class="toctext">应用和练习</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#.E5.BC.95.E7.94.A8"><span class="tocnumber">6</span> <span class="toctext">引用</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#.E9.93.BE.E6.8E.A5"><span class="tocnumber">7</span> <span class="toctext">链接</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="/index.php?title=%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91&amp;action=edit&amp;section=1" title="编辑段落：介绍">编辑</a>]</span> <span class="mw-headline" id=".E4.BB.8B.E7.BB.8D">介绍</span></h2>
+<h3><span class="editsection">[<a href="/index.php?title=%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91&amp;action=edit&amp;section=2" title="编辑段落：哈夫曼编码">编辑</a>]</span> <span class="mw-headline" id=".E5.93.88.E5.A4.AB.E6.9B.BC.E7.BC.96.E7.A0.81">哈夫曼编码</span></h3>
+<p><b>哈夫曼编码(Huffman Coding)</b>是一种编码方式，以哈夫曼树─即最优二叉树，带权路径长度最小的二叉树，经常应用于数据压缩。 在计算机信息处理中，“哈夫曼编码”是一种一致性编码法（又称"熵编码法"），用于数据的无损耗压缩。这一术语是指使用一张特殊的编码表将源字符（例如某文件中的一个符号）进行编码。这张编码表的特殊之处在于，它是根据每一个源字符出现的估算概率而建立起来的（出现概率高的字符使用较短的编码，反之出现概率低的则使用较长的编码，这便使编码之后的字符串的平均期望长度降低，从而达到无损压缩数据的目的）。这种方法是由David.A.Huffman发展起来的。
+</p><p>例如，在英文中，e的出现概率很高，而z的出现概率则最低。当利用哈夫曼编码对一篇英文进行压缩时，e极有可能用一个位(bit)来表示，而z则可能花去25个位（不是26）。用普通的表示方法时，每个英文字母均占用一个字节（byte），即8个位。二者相比，e使用了一般编码的1/8的长度，z则使用了3倍多。倘若我们能实现对于英文中各个字母出现概率的较准确的估算，就可以大幅度提高无损压缩的比例。
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91&amp;action=edit&amp;section=3" title="编辑段落：哈夫曼树">编辑</a>]</span> <span class="mw-headline" id=".E5.93.88.E5.A4.AB.E6.9B.BC.E6.A0.91">哈夫曼树</span></h3>
+<p>在一般的数据结构的书中，树的那章后面，著者一般都会介绍一下哈夫曼(HUFFMAN)树和哈夫曼编码。哈夫曼编码是哈夫曼树的一个应用。哈夫曼编码应用广泛，如JPEG中就应用了哈夫曼编码。 
+</p><p>首先介绍什么是哈夫曼树。哈夫曼树又称最优二叉树，是一种带权路径长度最短的二叉树。所谓树的带权路径长度，就是树中所有的叶结点的权值乘上其到根结点的路径长度（若根结点为0层，叶结点到根结点的路径长度为叶结点的层数）。树的带权路径长度记为WPL=(W1*L1+W2*L2+W3*L3+...+Wn*Ln)，N个权值Wi(i=1,2,...n)构成一棵有N个叶结点的二叉树，相应的叶结点的路径长度为Li(i=1,2,...n)。可以证明哈夫曼树的WPL是最小的。
+</p><p>哈夫曼在上世纪五十年代初就提出这种编码时，根据字符出现的概率来构造平均长度最短的编码。它是一种变长的编码。在编码中，若各码字长度严格按照码字所对应符号出现概率的大小的逆序排列，则编码的平均长度是最小的。（注：码字即为符号经哈夫曼编码后得到的编码，其长度是因符号出现的概率而不同，所以说哈夫曼编码是变长的编码。）
+</p><p>然而怎样构造一棵哈夫曼树呢？最具有一般规律的构造方法就是哈夫曼算法。一般的数据结构的书中都可以找到其描述：
+</p>
+<pre>一、对给定的n个权值{W1,W2,W3,...,Wi,...,Wn}构成n棵二叉树的初始集合F={T1,T2,T3,...,Ti,...,Tn}，其中
+每棵二叉树Ti中只有一个权值为Wi的根结点，它的左右子树均为空。（为方便在计算机上实现算法，一般还要求以Ti的权
+值Wi的升序排列。）
+二、在F中选取两棵根结点权值最小的树作为新构造的二叉树的左右子树，新二叉树的根结点的权值为其左右子树的根结点
+的权值之和。
+三、从F中删除这两棵树，并把这棵新的二叉树同样以升序排列加入到集合F中。
+四、重复二和三两步，直到集合F中只有一棵二叉树为止。
+</pre>
+<h2><span class="editsection">[<a href="/index.php?title=%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91&amp;action=edit&amp;section=4" title="编辑段落：定义ADT">编辑</a>]</span> <span class="mw-headline" id=".E5.AE.9A.E4.B9.89ADT">定义ADT</span></h2>
+<pre>用C语言实现上述算法，可用静态的二叉树或动态的二叉树。若用动态的二叉树可用以下数据结构：
+</pre>
+<pre>struct tree{
+float weight; /*权值*/
+union{
+char leaf; /*叶结点信息字符*/
+struct tree *left; /*树的左点*/ 
+};
+struct tree *right; /*树的右结点*/
+};
+struct forest{ /*F集合，以链表形式表示*/
+struct tree *ti; /* F中的树*/
+struct forest *next; /* 下一个结点*/
+};
+</pre>
+<h2><span class="editsection">[<a href="/index.php?title=%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91&amp;action=edit&amp;section=5" title="编辑段落：改进和优化">编辑</a>]</span> <span class="mw-headline" id=".E6.94.B9.E8.BF.9B.E5.92.8C.E4.BC.98.E5.8C.96">改进和优化</span></h2>
+<h2><span class="editsection">[<a href="/index.php?title=%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91&amp;action=edit&amp;section=6" title="编辑段落：实现">编辑</a>]</span> <span class="mw-headline" id=".E5.AE.9E.E7.8E.B0">实现</span></h2>
+<p>例：若字母A，B，Z，C出现的概率为：0.71,0.54,0.28,0.43；则相应的权值为：71，54，28，43。
+构造好哈夫曼树后，就可根据哈夫曼树进行编码。例如：上面的字符根据其出现的概率作为权值构造一棵哈夫曼树后，经哈夫曼编码得到的对应的码值。只要使用同一棵哈夫曼树，就可把编码还原成原来那组字符。显然哈夫曼编码是前缀编码，即任一个字符的编码都不是另一个字符的编码的前缀，否则，编码就不能进行翻译。例如：a,b,c,d的编码为：0，10，101，11，对于编码串：1010就可翻译为bb或ca，因为b的编码是c的编码的前缀。刚才进行哈夫曼编码的规则是从根结点到叶结点（包含原信息）的路径，向左孩子前进编码为0，向右孩子前进编码为1，当然你也可以反过来规定。
+</p><p>这种编码方法是静态的哈夫曼编码，它对需要编码的数据进行两遍扫描：第一遍统计原数据中各字符出现的频率，利用得到的频率值创建哈夫曼树，并必须把树的信息保存起来，即把字符0-255(2^8=256)的频率值以2-4BYTES的长度顺序存储起来，（用4Bytes的长度存储频率值，频率值的表示范围为0--2^32-1，这已足够表示大文件中字符出现的频率了）以便解压时创建同样的哈夫曼树进行解压；第二遍则根据第一遍扫描得到的哈夫曼树进行编码，并把编码后得到的码字存储起来。 静态哈夫曼编码方法有一些缺点：一、对于过短的文件进行编码的意义不大，因为光以4BYTES的长度存储哈夫曼树的信息就需1024Bytes的存储空间；二、进行哈夫曼编码，存储编码信息时，若用与通讯网络，就会引起较大的延时；三、对较大的文件进行编码时，频繁的磁盘读写访问会降低数据编码的速度。
+</p><p>因此，后来有人提出了一种动态的哈夫曼编码方法。动态哈夫曼编码使用一棵动态变化的哈夫曼树，对第t+1个字符的编码是根据原始数据中前t个字符得到的哈夫曼树来进行的，编码和解码使用相同的初始哈夫曼树，每处理完一个字符，编码和解码使用相同的方法修改哈夫曼树，所以没有必要为解码而保存哈夫曼树的信息。编码和解码一个字符所需的时间与该字符的编码长度成正比，所以动态哈夫曼编码可实时进行。动态哈夫曼编码比静态哈夫曼编码复杂的多，有兴趣的读者可参考有关数据结构与算法的书籍。
+</p><p>前面提到的JPEG中用到了哈夫曼编码，并不是说JPEG就只用哈夫曼编码就可以了，而是一幅图片经过多个步骤后得到它的一列数值，对这些数值进行哈夫曼编码，以便存储或传输。哈夫曼编码方法比较易懂，大家可以根据它的编码方法，自己编写哈夫曼编码和解码的程序。
+</p>
+<pre>//哈夫曼树和~编码的存储表示 
+typedef struct{ 
+unsigned int weight;//权值 
+unsigned int parent,lchild,rchild; 
+}HTNode, *HuffmanTree;//动态分配数组存储哈夫曼树 
+typedef char * *HuffmanCode;//动态分配数组存储哈夫曼编码表     
+void HoffmanCoding(HuffmanTree &amp;HT,HuffmanCode &amp;HC,int *w,int n){ 
+//w存放n个字符的权值(均&gt;0),构造哈夫曼树HT,并求出n个字符的哈夫曼编码HC 
+if (n&lt;=1) return; 
+m=2*n-1; 
+HT=(HuffmanTree) malloc ((m+1)*sizeof(HTNode));//0号单元未采用 
+for (p=HT,i=1;i&lt;=n;++i,++p,++w) *p={*w,0,0,0}; 
+for (;i&lt;=m;++i;++p) *p={0,0,0,0} 
+for (i=n+1;i&lt;=m;++i){//建哈夫曼树 
+//在HT[1..i-1]选择parent为0且weight最小的两个结点编号分别为s1,s2 
+Select(HT,i-1,s1,s2); 
+HT[s1].parent=i;HT[s2].parent=i; 
+HT[i].lchild=s1;Ht[i].rchild=s2; 
+HT[i].weight=HT[s1].weight+HT[s2].weight; 
+ } 
+//从叶子到根逆向求每个字符的哈夫曼编码 
+HC=(HuffmanCode)malloc((n+1)*sizeof(char *));//分配n个字符编码的头指针向量 
+cd=(char *)malloc(n*sizeof(char));//分配求编码的工作空间 
+cd[n-1]="\0";//编码结束符 
+for (i=1;i&lt;=n;++i){//逐个字符求哈夫曼编码 
+start=n-1;//编码结束符位置 
+for (c=i,f=HT[i].parent;f!=0;c=f,f=HT[f].parent)//从叶子逆向向根求编码 
+if (HT[f].lchild==c) cd[--start]="0"; 
+else cd[--start]="1"; 
+HC[i]=(char *)malloc((n-start)*sizeof(char));//为第i个字符编码分配空间 
+strcpy(HC[i],&amp;cd[start]);//从cd复制编码(串)到HC 
+} 
+free(cd);//释放工作空间 
+}//HuffmanCoding
+(above from <a rel="nofollow" class="external free" href="http://www.baidu.com.cn">http://www.baidu.com.cn</a>)  
+</pre>
+<p>PS:这一章我本人不是很满意，希望那位能重新写一个更好的。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91&amp;action=edit&amp;section=7" title="编辑段落：应用和练习">编辑</a>]</span> <span class="mw-headline" id=".E5.BA.94.E7.94.A8.E5.92.8C.E7.BB.83.E4.B9.A0">应用和练习</span></h2>
+<p>练习：基于CUDA技术的GPU实现
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91&amp;action=edit&amp;section=8" title="编辑段落：引用">编辑</a>]</span> <span class="mw-headline" id=".E5.BC.95.E7.94.A8">引用</span></h2>
+<h2><span class="editsection">[<a href="/index.php?title=%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91&amp;action=edit&amp;section=9" title="编辑段落：链接">编辑</a>]</span> <span class="mw-headline" id=".E9.93.BE.E6.8E.A5">链接</span></h2>
+<ul><li>部分内容来自<a rel="nofollow" class="external text" href="http://zh.wikipedia.org/wiki/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91">维基百科</a>，使用GFDL发布
+</li><li><b>部分内容可能是侵权的</b>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 34/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:43-0!*!*!!zh-cn!*!* and timestamp 20170807030340 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91&amp;oldid=31819">http://www.nocow.cn/index.php?title=%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91&amp;oldid=31819</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91&amp;oldid=31819" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过7,383次。</li>
+		<li id="credits">本页面由<a href="/index.php?title=%E7%94%A8%E6%88%B7:Zxok365&amp;action=edit&amp;redlink=1" class="new" title="用户:Zxok365（尚未撰写）">章暄</a>于2012年10月26日 (星期五) 21:56做出最后修改。 在<a href="/index.php/%E7%94%A8%E6%88%B7:Cosechy" title="用户:Cosechy">yh</a>、NOCOW用户<a href="/index.php?title=%E7%94%A8%E6%88%B7:Ioscomet&amp;action=edit&amp;redlink=1" class="new" title="用户:Ioscomet（尚未撰写）">Ioscomet</a>和<a href="/index.php?title=%E7%94%A8%E6%88%B7:Basky&amp;action=edit&amp;redlink=1" class="new" title="用户:Basky（尚未撰写）">Basky</a>、NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/222.222.183.78" title="特殊:用户贡献/222.222.183.78">222.222.183.78</a>和<a href="/index.php?title=%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91&amp;action=credits" title="哈夫曼树">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.081 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

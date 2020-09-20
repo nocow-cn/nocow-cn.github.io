@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>Code:SBT/C - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="canonical" href="/index.php/Code:SBT/C" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=Code:SBT/C&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=Code:SBT/C&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "Code", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 104, "wgPageName": "Code:SBT/C", "wgTitle": "SBT/C", "wgCurRevisionId": 29646, "wgArticleId": 991, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for c
+ * CSS class: source-c, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.c.source-c .de1, .c.source-c .de2 {}
+.c.source-c  {font-family:monospace;}
+.c.source-c .imp {font-weight: bold; color: red;}
+.c.source-c li, .c.source-c .li1 {font-weight: normal; vertical-align:top;}
+.c.source-c .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.c.source-c .li2 {font-weight: bold; vertical-align:top;}
+.c.source-c .kw1 {color: #b1b100;}
+.c.source-c .kw2 {color: #000000; font-weight: bold;}
+.c.source-c .kw3 {color: #000066;}
+.c.source-c .kw4 {color: #993333;}
+.c.source-c .co1 {color: #666666; font-style: italic;}
+.c.source-c .co2 {color: #339933;}
+.c.source-c .coMULTI {color: #808080; font-style: italic;}
+.c.source-c .es0 {color: #000099; font-weight: bold;}
+.c.source-c .es1 {color: #000099; font-weight: bold;}
+.c.source-c .es2 {color: #660099; font-weight: bold;}
+.c.source-c .es3 {color: #660099; font-weight: bold;}
+.c.source-c .es4 {color: #660099; font-weight: bold;}
+.c.source-c .es5 {color: #006699; font-weight: bold;}
+.c.source-c .br0 {color: #009900;}
+.c.source-c .sy0 {color: #339933;}
+.c.source-c .st0 {color: #ff0000;}
+.c.source-c .nu0 {color: #0000dd;}
+.c.source-c .nu6 {color: #208080;}
+.c.source-c .nu8 {color: #208080;}
+.c.source-c .nu12 {color: #208080;}
+.c.source-c .nu16 {color:#800080;}
+.c.source-c .nu17 {color:#800080;}
+.c.source-c .nu18 {color:#800080;}
+.c.source-c .nu19 {color:#800080;}
+.c.source-c .me1 {color: #202020;}
+.c.source-c .me2 {color: #202020;}
+.c.source-c .ln-xtra, .c.source-c li.ln-xtra, .c.source-c div.ln-xtra {background-color: #ffc;}
+.c.source-c span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-104 ns-subject page-Code_SBT_C action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">Code:SBT/C</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub">(跳转自<a href="/index.php?title=Code:SBT_C&amp;redirect=no" title="Code:SBT C">Code:SBT C</a>)</div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="coMULTI">/****************************************
+*          SBT.cc
+*
+*    Mon Jun 14 16:57:48 2007
+*    Copyright  2007  巨菜逆铭
+* 
+******************************************/</span>
+&#160;
+<span class="co1">//————BST的储存结构————</span>
+<span class="kw4">typedef</span> <span class="kw4">struct</span> SBTNode<span class="br0">&#123;</span>
+  SBTNode <span class="sy0">*</span>left<span class="sy0">,*</span>right<span class="sy0">;</span>
+  <span class="kw4">long</span> key<span class="sy0">;</span>  <span class="co1">//这里省略了卫星数据域</span>
+  <span class="kw4">unsigned</span> <span class="kw4">long</span> size<span class="sy0">;</span>
+  SBTNode<span class="br0">&#40;</span><span class="kw4">long</span> _key<span class="br0">&#41;</span><span class="br0">&#123;</span>  <span class="co1">//构造函数：未考虑卫星数据</span>
+    left<span class="sy0">=</span>right<span class="sy0">=</span>NULL<span class="sy0">;</span>
+    size<span class="sy0">=</span><span class="nu0">1</span><span class="sy0">;</span>
+    key<span class="sy0">=</span>_key<span class="sy0">;</span>
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>SBTNode<span class="sy0">,</span> <span class="sy0">*</span>SBTree<span class="sy0">;</span>
+&#160;
+<span class="co1">//————SBT基本操作函数原型说明————</span>
+SBTNode <span class="sy0">*</span>SBT_Search<span class="br0">&#40;</span>SBTree T<span class="sy0">,</span><span class="kw4">long</span> key<span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="co1">//在T中中寻找关键字为key的结点</span>
+  <span class="co1">//若能找到则返回指向它的指针，否则返回NULL</span>
+<span class="kw4">void</span> SBT_Insert<span class="br0">&#40;</span>SBTree <span class="sy0">&amp;</span>T<span class="sy0">,</span> SBTNode <span class="sy0">*</span>x<span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="co1">//将节点x插入树中</span>
+  <span class="co1">//初始要求x的left和right域为NULL，size域为1</span>
+SBTNode <span class="sy0">*</span>SBT_Delete<span class="br0">&#40;</span>SBTree <span class="sy0">&amp;</span>T<span class="sy0">,</span> <span class="kw4">long</span> key<span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="co1">//从以T为根的SBT中删除一个关键字为v的结点并返回其指针</span>
+  <span class="co1">//如果树中没有一个这样的结点，删除搜索到的最后一个结点并返回其指针</span>
+SBTNode <span class="sy0">*</span>SBT_Pred<span class="br0">&#40;</span>SBTree T<span class="sy0">,</span> <span class="kw4">long</span> key<span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="co1">//返回指向关键字为key的节点在T的中序遍历中的直接前趋的指针</span>
+  <span class="co1">//要求T中必须有关键字为key的节点</span>
+SBTNode <span class="sy0">*</span>SBT_Succ<span class="br0">&#40;</span>SBTree T<span class="sy0">,</span><span class="kw4">long</span> key<span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="co1">//返回指向关键字为key的节点在T的中序遍历中的直接后继的指针</span>
+  <span class="co1">//要求T中必须有关键字为key的节点</span>
+SBTNode <span class="sy0">*</span>SBT_Select<span class="br0">&#40;</span>SBTree T<span class="sy0">,</span> <span class="kw4">unsigned</span> <span class="kw4">long</span> i<span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="co1">//从树T中找到关键字第i小的结点并返回其指针</span>
+<span class="kw4">unsigned</span> <span class="kw4">long</span> SBT_Rank<span class="br0">&#40;</span>SBTree T<span class="sy0">,</span> <span class="kw4">long</span> key<span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="co1">//返回关键字为key的节点在树T中的秩</span>
+  <span class="co1">//若不存在此节点则返回0</span>
+&#160;
+<span class="co1">//————SBT的修复操作————</span>
+<span class="kw2">inline</span> <span class="kw4">void</span> SBT_LeftRotate<span class="br0">&#40;</span>SBTree <span class="sy0">&amp;</span>x<span class="br0">&#41;</span><span class="br0">&#123;</span>
+  <span class="co1">//左旋</span>
+  SBTNode <span class="sy0">*</span>y<span class="sy0">=</span>x<span class="sy0">-&gt;</span>right<span class="sy0">;</span>
+  <span class="kw3">assert</span><span class="br0">&#40;</span>y<span class="sy0">!=</span>NULL<span class="br0">&#41;</span><span class="sy0">;</span>
+  x<span class="sy0">-&gt;</span>right<span class="sy0">=</span>y<span class="sy0">-&gt;</span>left<span class="sy0">;</span>
+  y<span class="sy0">-&gt;</span>left<span class="sy0">=</span>x<span class="sy0">;</span>
+  y<span class="sy0">-&gt;</span>size<span class="sy0">=</span>x<span class="sy0">-&gt;</span>size<span class="sy0">;</span>
+  x<span class="sy0">-&gt;</span>size<span class="sy0">=</span><span class="br0">&#40;</span><span class="sy0">!</span>x<span class="sy0">-&gt;</span>left<span class="sy0">?</span><span class="nu0">0</span><span class="sy0">:</span>x<span class="sy0">-&gt;</span>left<span class="sy0">-&gt;</span>size<span class="br0">&#41;</span>
+    <span class="sy0">+</span><span class="br0">&#40;</span><span class="sy0">!</span>x<span class="sy0">-&gt;</span>right<span class="sy0">?</span><span class="nu0">0</span><span class="sy0">:</span>x<span class="sy0">-&gt;</span>right<span class="sy0">-&gt;</span>size<span class="br0">&#41;</span><span class="sy0">+</span><span class="nu0">1</span><span class="sy0">;</span>
+  x<span class="sy0">=</span>y<span class="sy0">;</span>
+<span class="br0">&#125;</span>
+<span class="kw2">inline</span> <span class="kw4">void</span> SBT_RightRotate<span class="br0">&#40;</span>SBTree <span class="sy0">&amp;</span>x<span class="br0">&#41;</span><span class="br0">&#123;</span>
+  <span class="co1">//右旋</span>
+  SBTNode <span class="sy0">*</span>y <span class="sy0">=</span> x<span class="sy0">-&gt;</span>left<span class="sy0">;</span>
+  <span class="kw3">assert</span><span class="br0">&#40;</span>y<span class="sy0">!=</span>NULL<span class="br0">&#41;</span><span class="sy0">;</span>
+  x<span class="sy0">-&gt;</span>left<span class="sy0">=</span>y<span class="sy0">-&gt;</span>right<span class="sy0">;</span>
+  y<span class="sy0">-&gt;</span>right<span class="sy0">=</span>x<span class="sy0">;</span>
+  y<span class="sy0">-&gt;</span>size<span class="sy0">=</span>x<span class="sy0">-&gt;</span>size<span class="sy0">;</span>
+  x<span class="sy0">-&gt;</span>size<span class="sy0">=</span><span class="br0">&#40;</span><span class="sy0">!</span>x<span class="sy0">-&gt;</span>left<span class="sy0">?</span><span class="nu0">0</span><span class="sy0">:</span>x<span class="sy0">-&gt;</span>left<span class="sy0">-&gt;</span>size<span class="br0">&#41;</span>
+    <span class="sy0">+</span><span class="br0">&#40;</span><span class="sy0">!</span>x<span class="sy0">-&gt;</span>right<span class="sy0">?</span><span class="nu0">0</span><span class="sy0">:</span>x<span class="sy0">-&gt;</span>right<span class="sy0">-&gt;</span>size<span class="br0">&#41;</span><span class="sy0">+</span><span class="nu0">1</span><span class="sy0">;</span>
+  x<span class="sy0">=</span>y<span class="sy0">;</span>
+<span class="br0">&#125;</span>
+<span class="kw4">void</span> SBT_Maintain<span class="br0">&#40;</span>SBTree <span class="sy0">&amp;</span>T<span class="sy0">,</span>bool flag<span class="br0">&#41;</span><span class="br0">&#123;</span>
+  <span class="co1">//维护操作的核心：保持</span>
+  <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy0">!</span>T<span class="br0">&#41;</span>  <span class="kw1">return</span><span class="sy0">;</span>  <span class="co1">//空树无需Maintain</span>
+  <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy0">!</span>flag<span class="br0">&#41;</span><span class="br0">&#123;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span> T<span class="sy0">-&gt;</span>left<span class="sy0">&amp;&amp;</span>T<span class="sy0">-&gt;</span>left<span class="sy0">-&gt;</span>left
+      <span class="sy0">&amp;&amp;</span><span class="br0">&#40;</span><span class="sy0">!</span>T<span class="sy0">-&gt;</span>right<span class="sy0">||</span>T<span class="sy0">-&gt;</span>left<span class="sy0">-&gt;</span>left<span class="sy0">-&gt;</span>size <span class="sy0">&gt;</span> T<span class="sy0">-&gt;</span>right<span class="sy0">-&gt;</span>size<span class="br0">&#41;</span> <span class="br0">&#41;</span>  <span class="co1">//情况1</span>
+      SBT_RightRotate<span class="br0">&#40;</span>T<span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span> T<span class="sy0">-&gt;</span>left<span class="sy0">&amp;&amp;</span>T<span class="sy0">-&gt;</span>left<span class="sy0">-&gt;</span>right
+      <span class="sy0">&amp;&amp;</span><span class="br0">&#40;</span><span class="sy0">!</span>T<span class="sy0">-&gt;</span>right<span class="sy0">||</span>T<span class="sy0">-&gt;</span>left<span class="sy0">-&gt;</span>right<span class="sy0">-&gt;</span>size <span class="sy0">&gt;</span> T<span class="sy0">-&gt;</span>right<span class="sy0">-&gt;</span>size<span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="br0">&#123;</span>  <span class="co1">//情况2</span>
+      SBT_LeftRotate<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>left<span class="br0">&#41;</span><span class="sy0">;</span>
+      SBT_RightRotate<span class="br0">&#40;</span>T<span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw1">else</span> <span class="kw1">return</span><span class="sy0">;</span>  <span class="co1">//无需修复</span>
+  <span class="br0">&#125;</span>
+  <span class="kw1">else</span><span class="br0">&#123;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span> T<span class="sy0">-&gt;</span>right<span class="sy0">&amp;&amp;</span>T<span class="sy0">-&gt;</span>right<span class="sy0">-&gt;</span>right
+      <span class="sy0">&amp;&amp;</span><span class="br0">&#40;</span><span class="sy0">!</span>T<span class="sy0">-&gt;</span>left<span class="sy0">||</span>T<span class="sy0">-&gt;</span>right<span class="sy0">-&gt;</span>right<span class="sy0">-&gt;</span>size <span class="sy0">&gt;</span> T<span class="sy0">-&gt;</span>left<span class="sy0">-&gt;</span>size<span class="br0">&#41;</span> <span class="br0">&#41;</span>  <span class="co1">//情况1'</span>
+      SBT_LeftRotate<span class="br0">&#40;</span>T<span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span> T<span class="sy0">-&gt;</span>right <span class="sy0">&amp;&amp;</span> T<span class="sy0">-&gt;</span>right<span class="sy0">-&gt;</span>left
+      <span class="sy0">&amp;&amp;</span><span class="br0">&#40;</span><span class="sy0">!</span>T<span class="sy0">-&gt;</span>left<span class="sy0">||</span>T<span class="sy0">-&gt;</span>right<span class="sy0">-&gt;</span>left<span class="sy0">-&gt;</span>size <span class="sy0">&gt;</span> T<span class="sy0">-&gt;</span>left<span class="sy0">-&gt;</span>size<span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="br0">&#123;</span>  <span class="co1">//情况2'</span>
+      SBT_RightRotate<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>right<span class="br0">&#41;</span><span class="sy0">;</span>
+      SBT_LeftRotate<span class="br0">&#40;</span>T<span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw1">else</span> <span class="kw1">return</span><span class="sy0">;</span><span class="co1">//无需修复</span>
+  <span class="br0">&#125;</span>
+  SBT_Maintain<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>left<span class="sy0">,</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>  <span class="co1">//修复左子树</span>
+  SBT_Maintain<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>right<span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span>  <span class="co1">//修复右子树</span>
+  SBT_Maintain<span class="br0">&#40;</span>T<span class="sy0">,</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>  <span class="co1">//修复整棵树</span>
+  SBT_Maintain<span class="br0">&#40;</span>T<span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="co1">//————SBT基本操作的算法描述————</span>
+SBTNode <span class="sy0">*</span>SBT_Search<span class="br0">&#40;</span>SBTree T<span class="sy0">,</span><span class="kw4">long</span> key<span class="br0">&#41;</span><span class="br0">&#123;</span>
+  <span class="co1">//在T中中寻找关键字为key的结点</span>
+  <span class="co1">//若能找到则返回指向它的指针，否则返回NULL</span>
+  <span class="kw1">return</span> <span class="sy0">!</span>T<span class="sy0">||</span>T<span class="sy0">-&gt;</span>key<span class="sy0">==</span>key<span class="sy0">?</span>T<span class="sy0">:</span>SBT_Search<span class="br0">&#40;</span>key<span class="sy0">&lt;</span>T<span class="sy0">-&gt;</span>key<span class="sy0">?</span>T<span class="sy0">-&gt;</span>left<span class="sy0">:</span>T<span class="sy0">-&gt;</span>right<span class="sy0">,</span>key<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+<span class="kw4">void</span> SBT_Insert<span class="br0">&#40;</span>SBTree <span class="sy0">&amp;</span>T<span class="sy0">,</span> SBTNode <span class="sy0">*</span>x<span class="br0">&#41;</span><span class="br0">&#123;</span>
+  <span class="co1">//将节点x插入树中</span>
+  <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy0">!</span>T<span class="br0">&#41;</span>  T<span class="sy0">=</span>x<span class="sy0">;</span>
+  <span class="kw1">else</span><span class="br0">&#123;</span>
+    T<span class="sy0">-&gt;</span>size<span class="sy0">++;</span>
+    SBT_Insert<span class="br0">&#40;</span>x<span class="sy0">-&gt;</span>key<span class="sy0">&lt;=</span>T<span class="sy0">-&gt;</span>key<span class="sy0">?</span>T<span class="sy0">-&gt;</span>left<span class="sy0">:</span>T<span class="sy0">-&gt;</span>right<span class="sy0">,</span>x<span class="br0">&#41;</span><span class="sy0">;</span>
+    SBT_Maintain<span class="br0">&#40;</span>T<span class="sy0">,</span>x<span class="sy0">-&gt;</span>key<span class="sy0">&gt;</span>T<span class="sy0">-&gt;</span>key<span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+SBTNode <span class="sy0">*</span>SBT_Delete<span class="br0">&#40;</span>SBTree <span class="sy0">&amp;</span>T<span class="sy0">,</span> <span class="kw4">long</span> key<span class="br0">&#41;</span><span class="br0">&#123;</span>
+  <span class="co1">//从以T为根的SBT中删除一个关键字为key的结点并返回“实际”被删除结点的指针</span>
+  <span class="co1">//如果树中没有一个这样的结点，删除搜索到的最后一个结点并返回其指针</span>
+  <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy0">!</span>T<span class="br0">&#41;</span>  <span class="kw1">return</span> NULL<span class="sy0">;</span>
+  T<span class="sy0">-&gt;</span>size<span class="sy0">--;</span>
+  <span class="kw1">if</span><span class="br0">&#40;</span>key<span class="sy0">==</span>T<span class="sy0">-&gt;</span>key<span class="sy0">||</span>key<span class="sy0">&lt;</span>T<span class="sy0">-&gt;</span>key<span class="sy0">&amp;&amp;!</span>T<span class="sy0">-&gt;</span>left<span class="sy0">||</span>key<span class="sy0">&gt;</span>T<span class="sy0">-&gt;</span>key<span class="sy0">&amp;&amp;!</span>T<span class="sy0">-&gt;</span>right<span class="br0">&#41;</span>
+  <span class="br0">&#123;</span>
+    SBTNode <span class="sy0">*</span>del<span class="sy0">;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy0">!</span>T<span class="sy0">-&gt;</span>left<span class="sy0">||!</span>T<span class="sy0">-&gt;</span>right<span class="br0">&#41;</span><span class="br0">&#123;</span>
+      del<span class="sy0">=</span>T<span class="sy0">;</span>
+      T<span class="sy0">=</span><span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>left<span class="sy0">?</span>T<span class="sy0">-&gt;</span>left<span class="sy0">:</span>T<span class="sy0">-&gt;</span>right<span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw1">else</span><span class="br0">&#123;</span>
+      del<span class="sy0">=</span>SBT_Delete<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>right<span class="sy0">,</span>key<span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span>
+      T<span class="sy0">-&gt;</span>key<span class="sy0">=</span>del<span class="sy0">-&gt;</span>key<span class="sy0">;</span>  <span class="co1">//若有卫星数据也需复制</span>
+    <span class="br0">&#125;</span>
+    <span class="kw1">return</span> del<span class="sy0">;</span>
+  <span class="br0">&#125;</span>
+  <span class="kw1">else</span> <span class="kw1">return</span> SBT_Delete<span class="br0">&#40;</span>key<span class="sy0">&lt;</span>T<span class="sy0">-&gt;</span>key<span class="sy0">?</span>T<span class="sy0">-&gt;</span>left<span class="sy0">:</span>T<span class="sy0">-&gt;</span>right<span class="sy0">,</span>key<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+SBTNode <span class="sy0">*</span>SBT_Pred<span class="br0">&#40;</span>SBTree T<span class="sy0">,</span> <span class="kw4">long</span> key<span class="br0">&#41;</span><span class="br0">&#123;</span>
+  <span class="co1">//返回指向拥有比key小的最大关键字的节点的指针</span>
+  <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy0">!</span>T<span class="br0">&#41;</span>  <span class="kw1">return</span> NULL<span class="sy0">;</span>
+  <span class="kw1">if</span><span class="br0">&#40;</span>key<span class="sy0">&lt;=</span>T<span class="sy0">-&gt;</span>key<span class="br0">&#41;</span>  <span class="kw1">return</span> SBT_Pred<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>left<span class="sy0">,</span>key<span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="kw1">else</span><span class="br0">&#123;</span>
+    SBTNode <span class="sy0">*</span>pred<span class="sy0">=</span>SBT_Pred<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>right<span class="sy0">,</span>key<span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw1">return</span> <span class="br0">&#40;</span><span class="sy0">!</span>pred<span class="sy0">?</span>T<span class="sy0">:</span>pred<span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+SBTNode <span class="sy0">*</span>SBT_Succ<span class="br0">&#40;</span>SBTree T<span class="sy0">,</span><span class="kw4">long</span> key<span class="br0">&#41;</span><span class="br0">&#123;</span>
+  <span class="co1">//返回指向拥有比key大的最小关键字的节点的指针</span>
+  <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy0">!</span>T<span class="br0">&#41;</span>  <span class="kw1">return</span> NULL<span class="sy0">;</span>
+  <span class="kw1">if</span><span class="br0">&#40;</span>key<span class="sy0">&gt;=</span>T<span class="sy0">-&gt;</span>key<span class="br0">&#41;</span>  <span class="kw1">return</span> SBT_Succ<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>right<span class="sy0">,</span>key<span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="kw1">else</span><span class="br0">&#123;</span>
+    SBTNode <span class="sy0">*</span>succ<span class="sy0">=</span> SBT_Succ<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>left<span class="sy0">,</span>key<span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw1">return</span><span class="br0">&#40;</span><span class="sy0">!</span>succ<span class="sy0">?</span>T<span class="sy0">:</span>succ<span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+SBTNode <span class="sy0">*</span>SBT_Select<span class="br0">&#40;</span>SBTree T<span class="sy0">,</span> <span class="kw4">unsigned</span> <span class="kw4">long</span> i<span class="br0">&#41;</span><span class="br0">&#123;</span>
+  <span class="co1">//从树T中找到关键字第i小的结点并返回其指针</span>
+  <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy0">!</span>T<span class="sy0">||</span>i<span class="sy0">&gt;</span>T<span class="sy0">-&gt;</span>size<span class="br0">&#41;</span>  <span class="kw1">return</span> NULL<span class="sy0">;</span>
+  <span class="kw4">unsigned</span> <span class="kw4">long</span> r <span class="sy0">=</span> <span class="br0">&#40;</span><span class="sy0">!</span>T<span class="sy0">-&gt;</span>left<span class="sy0">?</span><span class="nu0">0</span><span class="sy0">:</span>T<span class="sy0">-&gt;</span>left<span class="sy0">-&gt;</span>size<span class="br0">&#41;</span><span class="sy0">+</span><span class="nu0">1</span><span class="sy0">;</span>
+  <span class="kw1">if</span><span class="br0">&#40;</span>i<span class="sy0">==</span>r<span class="br0">&#41;</span>  <span class="kw1">return</span> T<span class="sy0">;</span>
+  <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span>i<span class="sy0">&lt;</span>r<span class="br0">&#41;</span>  <span class="kw1">return</span> SBT_Select<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>left<span class="sy0">,</span>i<span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="kw1">else</span> <span class="kw1">return</span> SBT_Select<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>right<span class="sy0">,</span>i<span class="sy0">-</span>r<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+<span class="kw4">unsigned</span> <span class="kw4">long</span> SBT_Rank<span class="br0">&#40;</span>SBTree T<span class="sy0">,</span> <span class="kw4">long</span> key<span class="br0">&#41;</span><span class="br0">&#123;</span>
+  <span class="co1">//返回关键字为key的节点在树T中的秩</span>
+  <span class="co1">//若不存在此节点则返回0</span>
+  <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy0">!</span>T<span class="br0">&#41;</span>  <span class="kw1">return</span> <span class="nu0">0</span><span class="sy0">;</span>
+  <span class="kw1">if</span><span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>key<span class="sy0">==</span>key<span class="br0">&#41;</span>  <span class="kw1">return</span> <span class="br0">&#40;</span><span class="sy0">!</span>T<span class="sy0">-&gt;</span>left<span class="sy0">?</span><span class="nu0">0</span><span class="sy0">:</span>T<span class="sy0">-&gt;</span>left<span class="sy0">-&gt;</span>size<span class="br0">&#41;</span><span class="sy0">+</span><span class="nu0">1</span><span class="sy0">;</span>
+  <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span>key<span class="sy0">&lt;</span>T<span class="sy0">-&gt;</span>key<span class="br0">&#41;</span>  <span class="kw1">return</span> SBT_Rank<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>left<span class="sy0">,</span>key<span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="kw1">else</span><span class="br0">&#123;</span>
+    <span class="kw4">unsigned</span> <span class="kw4">long</span> r<span class="sy0">=</span>SBT_Rank<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>right<span class="sy0">,</span>key<span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw1">return</span> r<span class="sy0">==</span><span class="nu0">0</span><span class="sy0">?</span><span class="nu0">0</span><span class="sy0">:</span>r<span class="sy0">+</span><span class="br0">&#40;</span><span class="sy0">!</span>T<span class="sy0">-&gt;</span>left<span class="sy0">?</span><span class="nu0">0</span><span class="sy0">:</span>T<span class="sy0">-&gt;</span>left<span class="sy0">-&gt;</span>size<span class="br0">&#41;</span><span class="sy0">+</span><span class="nu0">1</span><span class="sy0">;</span>
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<hr />
+<p>下面是一个根据上面的版本修改得来的更简练的版本，代码实际长度约90行：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="coMULTI">/****************************************
+*              SBT.cc
+*
+*      Mon Jun 18 12:17:48 2007
+*     Copyright  2007  巨菜逆铭
+* 
+******************************************/</span>
+&#160;
+<span class="co1">//————SBT的储存结构————</span>
+<span class="kw4">struct</span> SBTNode<span class="br0">&#123;</span>
+   SBTNode <span class="sy0">*</span>ch<span class="br0">&#91;</span><span class="nu0">2</span><span class="br0">&#93;</span><span class="sy0">,*</span>p<span class="sy0">;</span>   <span class="co1">//ch[0]、ch[1]分别为左右孩子，p为双亲</span>
+   <span class="kw4">long</span> key<span class="sy0">;</span>   <span class="co1">//这里省略了卫星数据域</span>
+   <span class="kw4">unsigned</span> <span class="kw4">long</span> size<span class="sy0">;</span>
+   SBTNode<span class="br0">&#40;</span><span class="kw4">long</span> _key<span class="sy0">,</span><span class="kw4">unsigned</span> <span class="kw4">long</span> _size<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>NIL<span class="sy0">=</span>SBTNode<span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="kw4">typedef</span> SBTNode <span class="sy0">*</span>SBTree<span class="sy0">;</span>
+SBTNode<span class="sy0">::</span><span class="me2">SBTNode</span><span class="br0">&#40;</span><span class="kw4">long</span> _key<span class="sy0">,</span><span class="kw4">unsigned</span> <span class="kw4">long</span> _size<span class="sy0">=</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#123;</span> <span class="co1">//构造函数：未考虑卫星数据</span>
+   ch<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">=</span>ch<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">=</span>p<span class="sy0">=&amp;</span>NIL<span class="sy0">;</span>
+   size<span class="sy0">=</span>_size<span class="sy0">;</span>
+   key<span class="sy0">=</span>_key<span class="sy0">;</span>
+<span class="br0">&#125;</span> 
+&#160;
+<span class="co1">//————SBT基本操作函数原型说明————</span>
+SBTNode <span class="sy0">*</span>SBT_Search<span class="br0">&#40;</span>SBTree T<span class="sy0">,</span><span class="kw4">long</span> key<span class="br0">&#41;</span><span class="sy0">;</span>
+   <span class="co1">//在T中中寻找关键字为key的结点</span>
+   <span class="co1">//若能找到则返回指向它的指针，否则返回NULL</span>
+<span class="kw4">void</span> SBT_Insert<span class="br0">&#40;</span>SBTree <span class="sy0">&amp;</span>T<span class="sy0">,</span> SBTNode<span class="sy0">*</span> x<span class="br0">&#41;</span><span class="sy0">;</span>
+   <span class="co1">//将节点x插入树中</span>
+SBTNode <span class="sy0">*</span>SBT_Delete<span class="br0">&#40;</span>SBTree <span class="sy0">&amp;</span>T<span class="sy0">,</span> <span class="kw4">long</span> key<span class="br0">&#41;</span><span class="sy0">;</span>
+   <span class="co1">//从以T为根的SBT中删除一个关键字为key的结点并返回“实际”被删除结点的指针</span>
+   <span class="co1">//如果树中没有一个这样的结点，删除搜索到的最后一个结点并返回其指针</span>
+SBTNode <span class="sy0">*</span>SBT_Pred<span class="br0">&#40;</span>SBTree T<span class="sy0">,</span> <span class="kw4">long</span> key<span class="br0">&#41;</span><span class="sy0">;</span>
+   <span class="co1">//返回指向关键字为key的节点在T的中序遍历中的直接前趋的指针</span>
+   <span class="co1">//要求T中必须有关键字为key的节点</span>
+SBTNode <span class="sy0">*</span>SBT_Succ<span class="br0">&#40;</span>SBTree T<span class="sy0">,</span><span class="kw4">long</span> key<span class="br0">&#41;</span><span class="sy0">;</span>
+   <span class="co1">//返回指向关键字为key的节点在T的中序遍历中的直接后继的指针</span>
+   <span class="co1">//要求T中必须有关键字为key的节点</span>
+SBTNode <span class="sy0">*</span>SBT_Select<span class="br0">&#40;</span>SBTree T<span class="sy0">,</span> <span class="kw4">unsigned</span> <span class="kw4">long</span> i<span class="br0">&#41;</span><span class="sy0">;</span>
+   <span class="co1">//从树T中找到关键字第i小的结点并返回其指针</span>
+<span class="kw4">unsigned</span> <span class="kw4">long</span> SBT_Rank<span class="br0">&#40;</span>SBTree T<span class="sy0">,</span> <span class="kw4">long</span> key<span class="br0">&#41;</span><span class="sy0">;</span>
+   <span class="co1">//返回关键字为key的节点在树T中的秩</span>
+   <span class="co1">//若不存在此节点则返回0</span>
+&#160;
+&#160;
+<span class="co1">//————SBT的修复操作————</span>
+<span class="kw2">inline</span> <span class="kw4">void</span> SBT_Rotate<span class="br0">&#40;</span>SBTree <span class="sy0">&amp;</span>x<span class="sy0">,</span> bool flag<span class="br0">&#41;</span><span class="br0">&#123;</span>
+   <span class="co1">//旋转：flag==0为左旋，否则为右旋</span>
+   SBTNode <span class="sy0">*</span>y<span class="sy0">=</span>x<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="sy0">!</span>flag<span class="br0">&#93;</span><span class="sy0">;</span>
+   x<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="sy0">!</span>flag<span class="br0">&#93;</span><span class="sy0">=</span>y<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span>flag<span class="br0">&#93;</span><span class="sy0">;</span>
+   <span class="kw1">if</span><span class="br0">&#40;</span>y<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span>flag<span class="br0">&#93;</span><span class="sy0">!=&amp;</span>NIL<span class="br0">&#41;</span>   y<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span>flag<span class="br0">&#93;</span><span class="sy0">-&gt;</span>p<span class="sy0">=</span>x<span class="sy0">;</span>   <span class="co1">//维护p</span>
+   y<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span>flag<span class="br0">&#93;</span><span class="sy0">=</span>x<span class="sy0">;</span>
+   y<span class="sy0">-&gt;</span>p<span class="sy0">=</span>x<span class="sy0">-&gt;</span>p<span class="sy0">;</span>   <span class="co1">//维护p</span>
+   x<span class="sy0">-&gt;</span>p<span class="sy0">=</span>y<span class="sy0">;</span>   <span class="co1">//维护p</span>
+   y<span class="sy0">-&gt;</span>size<span class="sy0">=</span>x<span class="sy0">-&gt;</span>size<span class="sy0">;</span>
+   x<span class="sy0">-&gt;</span>size<span class="sy0">=</span>x<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">-&gt;</span>size<span class="sy0">+</span>x<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">-&gt;</span>size<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">;</span>
+   x<span class="sy0">=</span>y<span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+&#160;
+<span class="kw4">void</span> SBT_Maintain<span class="br0">&#40;</span>SBTree <span class="sy0">&amp;</span>T<span class="sy0">,</span>bool flag<span class="br0">&#41;</span><span class="br0">&#123;</span>
+   <span class="co1">//维护操作的核心：保持</span>
+   <span class="kw1">if</span><span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span>flag<span class="br0">&#93;</span><span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span>flag<span class="br0">&#93;</span><span class="sy0">-&gt;</span>size<span class="sy0">&gt;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="sy0">!</span>flag<span class="br0">&#93;</span><span class="sy0">-&gt;</span>size<span class="br0">&#41;</span>   <span class="co1">//情况1</span>
+      SBT_Rotate<span class="br0">&#40;</span>T<span class="sy0">,!</span>flag<span class="br0">&#41;</span><span class="sy0">;</span>
+   <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span>flag<span class="br0">&#93;</span><span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="sy0">!</span>flag<span class="br0">&#93;</span><span class="sy0">-&gt;</span>size<span class="sy0">&gt;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="sy0">!</span>flag<span class="br0">&#93;</span><span class="sy0">-&gt;</span>size<span class="br0">&#41;</span><span class="br0">&#123;</span> <span class="co1">//情况2</span>
+      SBT_Rotate<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span>flag<span class="br0">&#93;</span><span class="sy0">,</span>flag<span class="br0">&#41;</span><span class="sy0">;</span>
+      SBT_Rotate<span class="br0">&#40;</span>T<span class="sy0">,!</span>flag<span class="br0">&#41;</span><span class="sy0">;</span>
+   <span class="br0">&#125;</span>
+   <span class="kw1">else</span> <span class="kw1">return</span><span class="sy0">;</span>   <span class="co1">//无需修复</span>
+   SBT_Maintain<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">,</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>   <span class="co1">//修复左子树</span>
+   SBT_Maintain<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span>   <span class="co1">//修复右子树</span>
+   SBT_Maintain<span class="br0">&#40;</span>T<span class="sy0">,</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>   <span class="co1">//修复整棵树</span>
+   SBT_Maintain<span class="br0">&#40;</span>T<span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+&#160;
+<span class="co1">//————SBT基本操作的算法描述————</span>
+SBTNode <span class="sy0">*</span>SBT_Search<span class="br0">&#40;</span>SBTree T<span class="sy0">,</span><span class="kw4">long</span> key<span class="br0">&#41;</span><span class="br0">&#123;</span>
+   <span class="co1">//在T中中寻找关键字为key的结点</span>
+   <span class="co1">//若能找到则返回指向它的指针，否则返回NULL</span>
+   <span class="kw1">return</span> T<span class="sy0">==&amp;</span>NIL<span class="sy0">||</span>T<span class="sy0">-&gt;</span>key<span class="sy0">==</span>key<span class="sy0">?</span>T<span class="sy0">:</span>SBT_Search<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span>key<span class="sy0">&gt;</span>T<span class="sy0">-&gt;</span>key<span class="br0">&#93;</span><span class="sy0">,</span>key<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> SBT_Insert<span class="br0">&#40;</span>SBTree <span class="sy0">&amp;</span>T<span class="sy0">,</span> SBTNode<span class="sy0">*</span> x<span class="br0">&#41;</span><span class="br0">&#123;</span>
+   <span class="co1">//将节点x插入树中</span>
+   <span class="kw1">if</span><span class="br0">&#40;</span>T<span class="sy0">==&amp;</span>NIL<span class="br0">&#41;</span>   T<span class="sy0">=</span>x<span class="sy0">;</span>
+   <span class="kw1">else</span><span class="br0">&#123;</span>
+      T<span class="sy0">-&gt;</span>size<span class="sy0">++;</span>
+      x<span class="sy0">-&gt;</span>p<span class="sy0">=</span>T<span class="sy0">;</span>   <span class="co1">//维护p</span>
+      SBT_Insert<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span>x<span class="sy0">-&gt;</span>key<span class="sy0">&gt;</span>T<span class="sy0">-&gt;</span>key<span class="br0">&#93;</span><span class="sy0">,</span>x<span class="br0">&#41;</span><span class="sy0">;</span>
+      SBT_Maintain<span class="br0">&#40;</span>T<span class="sy0">,</span>x<span class="sy0">-&gt;</span>key<span class="sy0">&gt;</span>T<span class="sy0">-&gt;</span>key<span class="br0">&#41;</span><span class="sy0">;</span>
+   <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+SBTNode <span class="sy0">*</span>SBT_Delete<span class="br0">&#40;</span>SBTree <span class="sy0">&amp;</span>T<span class="sy0">,</span> <span class="kw4">long</span> key<span class="br0">&#41;</span><span class="br0">&#123;</span>
+   <span class="co1">//从以T为根的SBT中删除一个关键字为key的结点并返回“实际”被删除结点的指针</span>
+   <span class="co1">//如果树中没有一个这样的结点，删除搜索到的最后一个结点并返回其指针</span>
+   <span class="kw1">if</span><span class="br0">&#40;</span>T<span class="sy0">==&amp;</span>NIL<span class="br0">&#41;</span>   <span class="kw1">return</span> <span class="sy0">&amp;</span>NIL<span class="sy0">;</span>
+   T<span class="sy0">-&gt;</span>size<span class="sy0">--;</span>
+   <span class="kw1">if</span><span class="br0">&#40;</span>key<span class="sy0">==</span>T<span class="sy0">-&gt;</span>key<span class="sy0">||</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span>T<span class="sy0">-&gt;</span>key<span class="sy0">&lt;</span>key<span class="br0">&#93;</span><span class="sy0">==&amp;</span>NIL<span class="br0">&#41;</span><span class="br0">&#123;</span>
+      SBTNode <span class="sy0">*</span>toDel<span class="sy0">;</span>
+      <span class="kw1">if</span><span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">==&amp;</span>NIL<span class="sy0">||</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">==&amp;</span>NIL<span class="br0">&#41;</span><span class="br0">&#123;</span>
+         toDel<span class="sy0">=</span>T<span class="sy0">;</span>
+         SBTNode <span class="sy0">*</span>ch <span class="sy0">=</span> T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">!=&amp;</span>NIL<span class="br0">&#93;</span><span class="sy0">;</span>
+         <span class="kw1">if</span><span class="br0">&#40;</span>ch<span class="sy0">!=&amp;</span>NIL<span class="br0">&#41;</span>   ch<span class="sy0">-&gt;</span>p<span class="sy0">=</span>T<span class="sy0">-&gt;</span>p<span class="sy0">;</span>   <span class="co1">//维护p</span>
+         T<span class="sy0">=</span>ch<span class="sy0">;</span>
+      <span class="br0">&#125;</span>
+      <span class="kw1">else</span><span class="br0">&#123;</span>
+         toDel<span class="sy0">=</span>SBT_Delete<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">,</span>key<span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span>
+         T<span class="sy0">-&gt;</span>key<span class="sy0">=</span>toDel<span class="sy0">-&gt;</span>key<span class="sy0">;</span>   <span class="co1">//若有卫星数据也需复制</span>
+      <span class="br0">&#125;</span>
+      <span class="kw1">return</span> toDel<span class="sy0">;</span>
+   <span class="br0">&#125;</span>
+   <span class="kw1">else</span> <span class="kw1">return</span> SBT_Delete<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span>key<span class="sy0">&gt;</span>T<span class="sy0">-&gt;</span>key<span class="br0">&#93;</span><span class="sy0">,</span>key<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+SBTNode <span class="sy0">*</span>SBT_Pred<span class="br0">&#40;</span>SBTree T<span class="sy0">,</span> <span class="kw4">long</span> key<span class="br0">&#41;</span><span class="br0">&#123;</span>
+   <span class="co1">//返回指向拥有比key小的最大关键字的节点的指针</span>
+   <span class="kw1">if</span><span class="br0">&#40;</span>T<span class="sy0">==&amp;</span>NIL<span class="br0">&#41;</span>   <span class="kw1">return</span> <span class="sy0">&amp;</span>NIL<span class="sy0">;</span>
+   <span class="kw1">if</span><span class="br0">&#40;</span>key<span class="sy0">&lt;=</span>T<span class="sy0">-&gt;</span>key<span class="br0">&#41;</span>   <span class="kw1">return</span> SBT_Pred<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">,</span>key<span class="br0">&#41;</span><span class="sy0">;</span>
+   <span class="kw1">else</span><span class="br0">&#123;</span>
+      SBTNode <span class="sy0">*</span>pred<span class="sy0">=</span>SBT_Pred<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">,</span>key<span class="br0">&#41;</span><span class="sy0">;</span>
+      <span class="kw1">return</span> <span class="br0">&#40;</span>pred<span class="sy0">!=&amp;</span>NIL<span class="sy0">?</span>pred<span class="sy0">:</span>T<span class="br0">&#41;</span><span class="sy0">;</span>
+   <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+SBTNode <span class="sy0">*</span>SBT_Succ<span class="br0">&#40;</span>SBTree T<span class="sy0">,</span><span class="kw4">long</span> key<span class="br0">&#41;</span><span class="br0">&#123;</span>
+   <span class="co1">//返回指向拥有比key大的最小关键字的节点的指针</span>
+   <span class="kw1">if</span><span class="br0">&#40;</span>T<span class="sy0">==&amp;</span>NIL<span class="br0">&#41;</span>   <span class="kw1">return</span> <span class="sy0">&amp;</span>NIL<span class="sy0">;</span>
+   <span class="kw1">if</span><span class="br0">&#40;</span>key<span class="sy0">&gt;=</span>T<span class="sy0">-&gt;</span>key<span class="br0">&#41;</span>   <span class="kw1">return</span> SBT_Succ<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">,</span>key<span class="br0">&#41;</span><span class="sy0">;</span>
+   <span class="kw1">else</span><span class="br0">&#123;</span>
+      SBTNode <span class="sy0">*</span>succ<span class="sy0">=</span> SBT_Succ<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">,</span>key<span class="br0">&#41;</span><span class="sy0">;</span>
+      <span class="kw1">return</span><span class="br0">&#40;</span>succ<span class="sy0">!=&amp;</span>NIL<span class="sy0">?</span>succ<span class="sy0">:</span>T<span class="br0">&#41;</span><span class="sy0">;</span>
+   <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+SBTNode <span class="sy0">*</span>SBT_Select<span class="br0">&#40;</span>SBTree T<span class="sy0">,</span> <span class="kw4">unsigned</span> <span class="kw4">long</span> i<span class="br0">&#41;</span><span class="br0">&#123;</span>
+   <span class="co1">//从树T中找到关键字第i小的结点并返回其指针</span>
+   <span class="kw1">if</span><span class="br0">&#40;</span>i<span class="sy0">&gt;</span>T<span class="sy0">-&gt;</span>size<span class="br0">&#41;</span>   <span class="kw1">return</span> <span class="sy0">&amp;</span>NIL<span class="sy0">;</span>
+   <span class="kw4">unsigned</span> <span class="kw4">long</span> r <span class="sy0">=</span> T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">-&gt;</span>size<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">;</span>
+   <span class="kw1">if</span><span class="br0">&#40;</span>i<span class="sy0">==</span>r<span class="br0">&#41;</span>   <span class="kw1">return</span> T<span class="sy0">;</span>
+   <span class="kw1">else</span> <span class="kw1">return</span> SBT_Select<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span>i<span class="sy0">&gt;</span>r<span class="br0">&#93;</span><span class="sy0">,</span>i<span class="sy0">&gt;</span>r<span class="sy0">?</span>i<span class="sy0">-</span>r<span class="sy0">:</span>i<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+<span class="kw4">unsigned</span> <span class="kw4">long</span> SBT_Rank<span class="br0">&#40;</span>SBTree T<span class="sy0">,</span> <span class="kw4">long</span> key<span class="br0">&#41;</span><span class="br0">&#123;</span>
+   <span class="co1">//返回关键字为key的节点在树T中的秩</span>
+   <span class="co1">//若不存在此节点则返回0</span>
+   <span class="kw1">if</span><span class="br0">&#40;</span>T<span class="sy0">==&amp;</span>NIL<span class="br0">&#41;</span>   <span class="kw1">return</span> <span class="nu0">0</span><span class="sy0">;</span>
+   <span class="kw1">if</span><span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>key<span class="sy0">==</span>key<span class="br0">&#41;</span>   <span class="kw1">return</span> T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">-&gt;</span>size<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">;</span>
+   <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span>key<span class="sy0">&lt;</span>T<span class="sy0">-&gt;</span>key<span class="br0">&#41;</span>   <span class="kw1">return</span> SBT_Rank<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">,</span>key<span class="br0">&#41;</span><span class="sy0">;</span>
+   <span class="kw1">else</span><span class="br0">&#123;</span>
+      <span class="kw4">unsigned</span> <span class="kw4">long</span> r<span class="sy0">=</span>SBT_Rank<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">,</span>key<span class="br0">&#41;</span><span class="sy0">;</span>
+      <span class="kw1">return</span> r<span class="sy0">==</span><span class="nu0">0</span><span class="sy0">?</span><span class="nu0">0</span><span class="sy0">:</span>r<span class="sy0">+</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">-&gt;</span>size<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">;</span>
+   <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<hr />
+<p>下面是一个根据上面的版本修改得来的版本，代码实际长度未统计：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="coMULTI">/****************************************
+*              SBT.cpp
+*
+*     2008-11-17 17:06:02 Fixed a bug in function SBT_Delete, it's now be test.
+*     2008-11-15 16:34:19 Give a new versin SBT_Delete that we don't need to using key-1.
+*     Any problem contact yonggangluo@hotmail.com
+*     Copyright  2008  Yonggang Luo base on 巨菜逆铭
+*
+******************************************/</span>
+<span class="co2">#include &lt;string.h&gt;</span>
+<span class="co2">#include &lt;iostream&gt;</span>
+<span class="kw4">typedef</span> <span class="kw4">int32_t</span> key_t<span class="sy0">;</span>
+<span class="kw4">struct</span> SBTNode <span class="br0">&#123;</span>
+    SBTNode <span class="sy0">*</span>p<span class="sy0">,*</span>ch<span class="br0">&#91;</span><span class="nu0">2</span><span class="br0">&#93;</span><span class="sy0">;</span> <span class="co1">///ch[0]、ch[1]分别为左右孩子，p为双亲</span>
+    <span class="kw4">size_t</span> size<span class="sy0">;</span>
+    key_t key<span class="sy0">;</span><span class="co1">///这里省略了卫星数据域</span>
+    SBTNode<span class="br0">&#40;</span>key_t _key<span class="sy0">,</span><span class="kw4">size_t</span> _size<span class="br0">&#41;</span><span class="sy0">;</span><span class="co1">///构造函数：未考虑卫星数据</span>
+<span class="br0">&#125;</span>NULL_NODE<span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="kw4">typedef</span> SBTNode <span class="sy0">*</span>SBTree<span class="sy0">;</span>
+SBTree NULL_TREE <span class="sy0">=</span> <span class="sy0">&amp;</span>NULL_NODE<span class="sy0">;</span>
+SBTNode<span class="sy0">::</span><span class="me2">SBTNode</span><span class="br0">&#40;</span>key_t _key<span class="sy0">,</span> <span class="kw4">size_t</span> _size<span class="sy0">=</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    p<span class="sy0">=</span>ch<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">=</span>ch<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">=</span> NULL_TREE<span class="sy0">;</span>
+    key<span class="sy0">=</span>_key<span class="sy0">,</span> size<span class="sy0">=</span>_size<span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+bool cmp<span class="br0">&#40;</span>key_t x<span class="sy0">,</span> key_t y<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="co1">//————SBT的旋转操作————</span>
+<span class="kw2">inline</span> <span class="kw4">void</span> SBT_Rotate<span class="br0">&#40;</span>SBTree <span class="sy0">&amp;</span>x<span class="sy0">,</span> bool flag<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="co1">//flag: 0为将左子节点移到根, 1为将右子节点移到根</span>
+    SBTree sub<span class="sy0">=</span>x<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span>flag<span class="br0">&#93;</span><span class="sy0">,</span> <span class="sy0">&amp;</span>leaf <span class="sy0">=</span> sub<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="sy0">!</span>flag<span class="br0">&#93;</span><span class="sy0">;</span>
+    x<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span>flag<span class="br0">&#93;</span> <span class="sy0">=</span> leaf<span class="sy0">;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>leaf<span class="sy0">!=</span>NULL_TREE<span class="br0">&#41;</span> leaf<span class="sy0">-&gt;</span>p <span class="sy0">=</span> x<span class="sy0">;</span> <span class="coMULTI">/*设置双亲p*/</span>
+    sub<span class="sy0">-&gt;</span>p <span class="sy0">=</span> x<span class="sy0">-&gt;</span>p<span class="sy0">;</span> <span class="coMULTI">/*设置双亲p*/</span>
+    x<span class="sy0">-&gt;</span>p <span class="sy0">=</span> sub<span class="sy0">;</span> <span class="coMULTI">/*设置双亲p*/</span>
+    leaf <span class="sy0">=</span> x<span class="sy0">;</span>
+    sub<span class="sy0">-&gt;</span>size <span class="sy0">=</span> x<span class="sy0">-&gt;</span>size<span class="sy0">;</span>
+    x<span class="sy0">-&gt;</span>size <span class="sy0">=</span> x<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">-&gt;</span>size <span class="sy0">+</span> x<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">-&gt;</span>size <span class="sy0">+</span><span class="nu0">1</span><span class="sy0">;</span>
+    x <span class="sy0">=</span> sub<span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="co1">//————SBT的维护操作————</span>
+<span class="kw4">void</span> SBT_Maintain<span class="br0">&#40;</span>SBTree <span class="sy0">&amp;</span>T<span class="sy0">,</span>bool flag<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span>flag<span class="br0">&#93;</span><span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="sy0">!</span>flag<span class="br0">&#93;</span><span class="sy0">-&gt;</span>size <span class="sy0">&gt;</span> T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="sy0">!</span>flag<span class="br0">&#93;</span><span class="sy0">-&gt;</span>size<span class="br0">&#41;</span> SBT_Rotate<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span>flag<span class="br0">&#93;</span><span class="sy0">,</span> <span class="sy0">!</span>flag<span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span>flag<span class="br0">&#93;</span><span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span>flag<span class="br0">&#93;</span><span class="sy0">-&gt;</span>size <span class="sy0">&lt;=</span> T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="sy0">!</span>flag<span class="br0">&#93;</span><span class="sy0">-&gt;</span>size<span class="br0">&#41;</span> <span class="kw1">return</span><span class="sy0">;</span>
+    SBT_Rotate<span class="br0">&#40;</span>T<span class="sy0">,</span> flag<span class="br0">&#41;</span><span class="sy0">;</span>
+    SBT_Maintain<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">,</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>   <span class="co1">//修复左子树</span>
+    SBT_Maintain<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span>   <span class="co1">//修复右子树</span>
+    SBT_Maintain<span class="br0">&#40;</span>T<span class="sy0">,</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>          <span class="co1">//修复整棵树</span>
+    SBT_Maintain<span class="br0">&#40;</span>T<span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="co1">//————SBT的插入操作————</span>
+<span class="kw4">void</span> SBT_Insert<span class="br0">&#40;</span>SBTree <span class="sy0">&amp;</span>T<span class="sy0">,</span> SBTNode<span class="sy0">*</span> x<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="co1">//将节点x插入树中</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>T<span class="sy0">!=</span>NULL_TREE<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="sy0">++</span>T<span class="sy0">-&gt;</span>size<span class="sy0">;</span>
+        x<span class="sy0">-&gt;</span>p <span class="sy0">=</span>T<span class="sy0">;</span> <span class="coMULTI">/*设置双亲p*/</span>
+        SBT_Insert<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span>cmp<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>key<span class="sy0">,</span> x<span class="sy0">-&gt;</span>key<span class="br0">&#41;</span><span class="br0">&#93;</span><span class="sy0">,</span> x<span class="br0">&#41;</span><span class="sy0">;</span>
+        SBT_Maintain<span class="br0">&#40;</span>T<span class="sy0">,</span> cmp<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>key<span class="sy0">,</span> x<span class="sy0">-&gt;</span>key<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>  <span class="coMULTI">/* here  must be verify*/</span>
+    <span class="br0">&#125;</span> <span class="kw1">else</span> T<span class="sy0">=</span>x<span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="co1">//————SBT的查找————</span>
+SBTree <span class="sy0">&amp;</span>SBT_Search<span class="br0">&#40;</span>SBTree <span class="sy0">*</span>T<span class="sy0">,</span> key_t key<span class="sy0">,</span> <span class="kw4">int</span> resize<span class="sy0">=</span><span class="nu0">0</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="co1">//在T中中寻找关键字为key的结点</span>
+    <span class="co1">//若能找到则返回指向它的指针，否则返回NULL_TREE</span>
+    <span class="kw1">while</span> <span class="br0">&#40;</span><span class="sy0">*</span>T<span class="sy0">!=</span>NULL_TREE <span class="sy0">&amp;&amp;</span> <span class="br0">&#40;</span><span class="sy0">*</span>T<span class="br0">&#41;</span><span class="sy0">-&gt;</span>key<span class="sy0">!=</span>key<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="br0">&#40;</span><span class="sy0">*</span>T<span class="br0">&#41;</span><span class="sy0">-&gt;</span>size <span class="sy0">+=</span> resize<span class="sy0">;</span>
+        T<span class="sy0">=&amp;</span><span class="br0">&#40;</span><span class="br0">&#40;</span><span class="sy0">*</span>T<span class="br0">&#41;</span><span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span>cmp<span class="br0">&#40;</span><span class="br0">&#40;</span><span class="sy0">*</span>T<span class="br0">&#41;</span><span class="sy0">-&gt;</span>key<span class="sy0">,</span> key<span class="br0">&#41;</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw1">return</span> <span class="sy0">*</span>T<span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="co1">//————SBT的极值————</span>
+SBTree <span class="sy0">&amp;</span>SBT_Extremum<span class="br0">&#40;</span>SBTree <span class="sy0">*</span>T<span class="sy0">,</span> bool maximum <span class="sy0">=</span> <span class="kw2">true</span><span class="sy0">,</span> <span class="kw4">int</span> resize<span class="sy0">=</span><span class="nu0">0</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="coMULTI">/*返回一棵树的极值 */</span>
+    <span class="kw1">while</span> <span class="br0">&#40;</span><span class="br0">&#40;</span><span class="sy0">*</span>T<span class="br0">&#41;</span><span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span>maximum<span class="br0">&#93;</span><span class="sy0">!=</span>NULL_TREE<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="br0">&#40;</span><span class="sy0">*</span>T<span class="br0">&#41;</span><span class="sy0">-&gt;</span>size <span class="sy0">+=</span> resize<span class="sy0">;</span>
+        T<span class="sy0">=&amp;</span><span class="br0">&#40;</span><span class="sy0">*</span>T<span class="br0">&#41;</span><span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span>maximum<span class="br0">&#93;</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw1">return</span> <span class="sy0">*</span>T<span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="coMULTI">/*删除一棵树的根节点，并返回被删节点*/</span>
+SBTNode <span class="sy0">*</span>SBT_Delete<span class="br0">&#40;</span>SBTree <span class="sy0">&amp;</span>T<span class="br0">&#41;</span><span class="br0">&#123;</span>
+    <span class="sy0">--</span>T<span class="sy0">-&gt;</span>size<span class="sy0">;</span> <span class="co1">///维护size</span>
+    <span class="kw4">int</span> flag <span class="sy0">=</span> T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">==</span>NULL_TREE <span class="sy0">||</span> T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">==</span>NULL_TREE<span class="sy0">;</span>
+    SBTree <span class="sy0">*</span>P <span class="sy0">=</span> flag <span class="sy0">?</span> <span class="sy0">&amp;</span>T<span class="sy0">:&amp;</span>SBT_Extremum<span class="br0">&#40;</span><span class="sy0">&amp;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">///如果T有两棵子树，那么我们就先删T的后继</span>
+    SBTree D<span class="sy0">=*</span>P<span class="sy0">;</span><span class="co1">///D用来保存 真正 被删的节点</span>
+    <span class="sy0">*</span>P<span class="sy0">=</span>D<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span>D<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">==</span>NULL_TREE<span class="br0">&#93;</span><span class="sy0">;</span> <span class="co1">///把被删节点设为此节点的其中一个儿子</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy0">*</span>P<span class="sy0">!=</span>NULL_TREE<span class="br0">&#41;</span> <span class="br0">&#40;</span><span class="sy0">*</span>P<span class="br0">&#41;</span><span class="sy0">-&gt;</span>p <span class="sy0">=</span> D<span class="sy0">-&gt;</span>p<span class="sy0">;</span> <span class="co1">//设置双亲p</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>flag<span class="br0">&#41;</span> <span class="kw1">return</span> D<span class="sy0">;</span> <span class="co1">///如果 flag，则T是真正应当被删的节点，故直接返回D，否则继续处理D</span>
+    T<span class="sy0">-&gt;</span>key <span class="sy0">=</span> D<span class="sy0">-&gt;</span>key<span class="sy0">;</span><span class="co1">///简单替换</span>
+    <span class="coMULTI">/*std::swap(T, D);///本质替换
+    memcpy(T, D, sizeof(*T)-sizeof(T-&gt;key)); //把关系复制过去
+    if (T-&gt;ch[0]!=NULL_TREE) T-&gt;ch[0]-&gt;p = T; //设置双亲p
+    if (T-&gt;ch[1]!=NULL_TREE) T-&gt;ch[1]-&gt;p = T; //设置双亲p
+    */</span>
+    <span class="kw1">return</span> D<span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="co1">//————SBT的删除————</span>
+SBTNode <span class="sy0">*</span>SBT_Delete<span class="br0">&#40;</span>SBTree <span class="sy0">&amp;</span>T<span class="sy0">,</span> key_t key<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="co1">//如果树中没有一个这样的结点，则返回 NULL_TREE</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>SBT_Search<span class="br0">&#40;</span><span class="sy0">&amp;</span>T<span class="sy0">,</span> key<span class="br0">&#41;</span> <span class="sy0">==</span> NULL_TREE<span class="br0">&#41;</span> <span class="kw1">return</span> NULL_TREE<span class="sy0">;</span> <span class="coMULTI">/*表示key不在树中**/</span>
+    <span class="kw1">return</span> SBT_Delete<span class="br0">&#40;</span>SBT_Search<span class="br0">&#40;</span><span class="sy0">&amp;</span>T<span class="sy0">,</span> key<span class="sy0">,</span> <span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="coMULTI">/*RP 就是指向待删子树的指针*/</span>
+<span class="br0">&#125;</span>
+&#160;
+SBTree <span class="sy0">&amp;</span>SBT_Near<span class="br0">&#40;</span>SBTree <span class="sy0">&amp;</span>T<span class="sy0">,</span> key_t key<span class="sy0">,</span> bool flag<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+	<span class="co1">///flag: 0 前驱&#160;;  1 后继</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>T<span class="sy0">==</span>NULL_TREE<span class="br0">&#41;</span>  <span class="kw1">return</span> T<span class="sy0">;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>key<span class="sy0">==</span>T<span class="sy0">-&gt;</span>key <span class="sy0">||</span> cmp<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>key<span class="sy0">,</span> key<span class="br0">&#41;</span><span class="sy0">==</span>flag <span class="br0">&#41;</span> <span class="kw1">return</span> SBT_Near<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span>flag<span class="br0">&#93;</span><span class="sy0">,</span>key<span class="sy0">,</span> flag<span class="br0">&#41;</span><span class="sy0">;</span>
+    SBTree <span class="sy0">&amp;</span>near<span class="sy0">=</span>SBT_Near<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="sy0">!</span>flag<span class="br0">&#93;</span><span class="sy0">,</span>key<span class="sy0">,</span> flag<span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw1">return</span> near<span class="sy0">!=</span>NULL_TREE <span class="sy0">?</span> near<span class="sy0">:</span>T<span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="co1">//————SBT的选取第i个元素————</span>
+SBTree SBT_Select<span class="br0">&#40;</span>SBTree T<span class="sy0">,</span> <span class="kw4">size_t</span> i<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="co1">///从树T中找到关键字第i的结点并返回其指针,从1开始计数，如果没有就返回NULL_TREE</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>i <span class="sy0">&gt;</span> T<span class="sy0">-&gt;</span>size<span class="br0">&#41;</span> <span class="kw1">return</span> NULL_TREE<span class="sy0">;</span>
+    <span class="kw4">size_t</span> r <span class="sy0">=</span> T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">-&gt;</span>size<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">;</span>
+    <span class="kw1">return</span> i<span class="sy0">==</span>r <span class="sy0">?</span> T<span class="sy0">:</span>SBT_Select<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span>i<span class="sy0">&gt;</span>r<span class="br0">&#93;</span><span class="sy0">,</span> i<span class="sy0">&gt;</span>r<span class="sy0">?</span>i<span class="sy0">-</span>r<span class="sy0">:</span>i<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="co1">//————SBT的给定节点是第几个元素————</span>
+<span class="kw4">size_t</span> SBT_Rank<span class="br0">&#40;</span>SBTree T<span class="sy0">,</span> key_t key<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="co1">///此功能不完善，如果同一个key有两个不同的rank,那么返回值是其中的任意一个的rank。</span>
+    <span class="co1">///可以考虑用二分法加 SBT_Select实现</span>
+    <span class="co1">///若不存在此节点则返回0</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>T<span class="sy0">==</span>NULL_TREE<span class="br0">&#41;</span> <span class="kw1">return</span> <span class="nu0">0</span><span class="sy0">;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>key<span class="sy0">==</span>T<span class="sy0">-&gt;</span>key<span class="br0">&#41;</span> <span class="kw1">return</span> T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">-&gt;</span>size<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>cmp<span class="br0">&#40;</span>key<span class="sy0">,</span> T<span class="sy0">-&gt;</span>key<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="kw1">return</span> SBT_Rank<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">,</span>key<span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw4">size_t</span> r<span class="sy0">=</span>SBT_Rank<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">,</span>key<span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw1">return</span> r<span class="sy0">==</span><span class="nu0">0</span><span class="sy0">?</span><span class="nu0">0</span><span class="sy0">:</span>r<span class="sy0">+</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">-&gt;</span>size<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw2">inline</span> <span class="kw4">void</span> SBT_Free<span class="br0">&#40;</span>SBTNode <span class="sy0">*</span>t<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>t<span class="sy0">!=</span>NULL_TREE<span class="br0">&#41;</span> delete t<span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="coMULTI">/**下面是一些测试代码**/</span>
+&#160;
+bool cmp<span class="br0">&#40;</span>key_t x<span class="sy0">,</span> key_t y<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    <span class="kw1">return</span> x<span class="sy0">&lt;</span>y<span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="co2">#include &lt;stdlib.h&gt;</span>
+<span class="co2">#include &lt;time.h&gt;</span>
+&#160;
+<span class="kw4">int</span> deep<span class="sy0">;</span>
+<span class="kw4">size_t</span> count<span class="sy0">;</span>
+SBTree root<span class="sy0">=</span>NULL_TREE<span class="sy0">;</span>
+&#160;
+<span class="kw4">void</span> SBT_Print<span class="br0">&#40;</span>SBTree T<span class="sy0">,</span> <span class="kw4">int</span> d<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>T<span class="sy0">==</span>NULL_TREE<span class="br0">&#41;</span> <span class="kw1">return</span><span class="sy0">;</span>
+    SBT_Print<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">,</span> d<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw4">static</span> <span class="kw4">size_t</span> r<span class="sy0">;</span>
+    key_t value<span class="sy0">;</span>
+    <span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;Rank =&#160;%d<span class="es1">\n</span>&quot;</span><span class="sy0">,</span> r<span class="sy0">=</span>SBT_Rank<span class="br0">&#40;</span>root<span class="sy0">,</span> T<span class="sy0">-&gt;</span>key<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;value =&#160;%d<span class="es1">\n</span>&quot;</span><span class="sy0">,</span> value <span class="sy0">=</span> SBT_Select<span class="br0">&#40;</span>root<span class="sy0">,</span> r<span class="br0">&#41;</span><span class="sy0">-&gt;</span>key<span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>value<span class="sy0">!=</span>T<span class="sy0">-&gt;</span>key<span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        <span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;Error!&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+        <span class="kw3">exit</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy0">=</span><span class="nu0">0</span><span class="sy0">;</span> i<span class="sy0">&lt;</span>d<span class="sy0">;</span> <span class="sy0">++</span>i<span class="br0">&#41;</span> <span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;  &quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;%d<span class="es1">\n</span>&quot;</span><span class="sy0">,</span> T<span class="sy0">-&gt;</span>key<span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span> <span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">-&gt;</span>p<span class="sy0">!=</span>NULL_TREE <span class="sy0">&amp;&amp;</span> T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">-&gt;</span>p<span class="sy0">!=</span>T<span class="br0">&#41;</span> <span class="sy0">||</span> <span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">-&gt;</span>p<span class="sy0">!=</span>NULL_TREE <span class="sy0">&amp;&amp;</span> T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">-&gt;</span>p<span class="sy0">!=</span>T<span class="br0">&#41;</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;Error parent!<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+        <span class="kw3">exit</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+    SBT_Print<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>ch<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">,</span> d<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> show<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>root<span class="sy0">-&gt;</span>p<span class="sy0">!=</span>NULL_TREE<span class="br0">&#41;</span> <span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;Error!<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;The size of the tree is&#160;%d<span class="es1">\n</span>&quot;</span><span class="sy0">,</span> root<span class="sy0">-&gt;</span>size<span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;The tree is<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    count <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span>
+    SBT_Print<span class="br0">&#40;</span>root<span class="sy0">,</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>root<span class="sy0">-&gt;</span>size <span class="sy0">!=</span> count<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;root-&gt;size =&#160;%u<span class="es1">\n</span> count =&#160;%u <span class="es1">\n</span> Error size!<span class="es1">\n</span>&quot;</span><span class="sy0">,</span> root<span class="sy0">-&gt;</span>size<span class="sy0">,</span> count<span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;End of the tree!<span class="es1">\n</span><span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+&#160;
+    <span class="kw3">srand</span><span class="br0">&#40;</span><span class="kw3">time</span><span class="br0">&#40;</span>NULL<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw4">size_t</span> n<span class="sy0">=</span><span class="nu0">3000000</span><span class="sy0">;</span>
+    key_t x<span class="sy0">;</span>
+    <span class="kw3">freopen</span><span class="br0">&#40;</span><span class="st0">&quot;output.txt&quot;</span><span class="sy0">,</span><span class="st0">&quot;w&quot;</span><span class="sy0">,</span>stdout<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="co1">//#define READFILE</span>
+<span class="co2">#ifdef READFILE</span>
+    <span class="kw4">char</span> order<span class="sy0">;</span>
+    <span class="kw3">freopen</span><span class="br0">&#40;</span><span class="st0">&quot;input.txt&quot;</span><span class="sy0">,</span><span class="st0">&quot;r&quot;</span><span class="sy0">,</span>stdin<span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw3">scanf</span><span class="br0">&#40;</span><span class="st0">&quot;%d<span class="es1">\n</span>&quot;</span><span class="sy0">,&amp;</span>n<span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">size_t</span> i<span class="sy0">=</span><span class="nu0">0</span><span class="sy0">;</span> i<span class="sy0">&lt;</span>n<span class="sy0">;</span> <span class="sy0">++</span>i<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;i=%u<span class="es1">\n</span>&quot;</span><span class="sy0">,</span> i<span class="br0">&#41;</span><span class="sy0">;</span>
+        <span class="kw3">scanf</span><span class="br0">&#40;</span><span class="st0">&quot;%c&#160;%d<span class="es1">\n</span>&quot;</span><span class="sy0">,</span> <span class="sy0">&amp;</span>order<span class="sy0">,</span> <span class="sy0">&amp;</span>x<span class="br0">&#41;</span><span class="sy0">;</span>
+        <span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;x=%d<span class="es1">\n</span>&quot;</span><span class="sy0">,</span> x<span class="br0">&#41;</span><span class="sy0">;</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>order<span class="sy0">==</span><span class="st0">'I'</span><span class="br0">&#41;</span>
+            SBT_Insert<span class="br0">&#40;</span>root<span class="sy0">,</span> new SBTNode<span class="br0">&#40;</span>x<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+        <span class="kw1">else</span>
+            SBT_Free<span class="br0">&#40;</span>SBT_Delete<span class="br0">&#40;</span>root<span class="sy0">,</span> x<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+        show<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>NULL_TREE<span class="sy0">-&gt;</span>key <span class="sy0">!=</span><span class="nu0">0</span><span class="br0">&#41;</span> <span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;Error NULL&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+    <span class="br0">&#125;</span>
+<span class="co2">#else</span>
+    <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">size_t</span> i<span class="sy0">=</span><span class="nu0">0</span><span class="sy0">;</span> i<span class="sy0">&lt;</span>n<span class="sy0">;</span> <span class="sy0">++</span>i<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+&#160;
+        <span class="kw1">if</span> <span class="br0">&#40;</span>i<span class="sy0">%</span><span class="nu19">3</span><span class="sy0">==</span><span class="nu0">0</span><span class="br0">&#41;</span>
+            <span class="co1">//printf(&quot;D&#160;%ld\n&quot;, x), SBT_Free(SBT_Delete(&amp;root, x));</span>
+            SBT_Free<span class="br0">&#40;</span>SBT_Delete<span class="br0">&#40;</span>root<span class="sy0">,</span> x<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+        <span class="kw1">else</span>
+            <span class="co1">//printf(&quot;I&#160;%ld\n&quot;,x = rand()),SBT_Insert(root, new SBTNode(x));</span>
+            SBT_Insert<span class="br0">&#40;</span>root<span class="sy0">,</span> new SBTNode<span class="br0">&#40;</span>x<span class="sy0">=</span><span class="kw3">rand</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+        <span class="co1">//show();</span>
+&#160;
+        <span class="kw1">if</span> <span class="br0">&#40;</span>NULL_TREE<span class="sy0">-&gt;</span>key <span class="sy0">!=</span><span class="nu0">0</span><span class="br0">&#41;</span> <span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;Error NULL&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+  <span class="co1">//  show();</span>
+    SBTNode <span class="sy0">*</span>pre<span class="sy0">,</span> <span class="sy0">*</span>suc<span class="sy0">;</span>
+    FILE<span class="sy0">*</span> compare<span class="sy0">=</span><span class="kw3">fopen</span><span class="br0">&#40;</span><span class="st0">&quot;compare.txt&quot;</span><span class="sy0">,</span><span class="st0">&quot;w&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy0">=</span><span class="nu0">0</span><span class="sy0">;</span> i<span class="sy0">&lt;</span><span class="nu0">32767</span><span class="sy0">;</span> <span class="sy0">++</span>i<span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        pre <span class="sy0">=</span> SBT_Near<span class="br0">&#40;</span>root<span class="sy0">,</span> i<span class="sy0">,</span> <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+        suc <span class="sy0">=</span> SBT_Near<span class="br0">&#40;</span>root<span class="sy0">,</span> i<span class="sy0">,</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="co1">//        fprintf(compare,&quot;pre=%d i=%d suc=%d\n&quot;,pre-&gt;key, i, suc-&gt;key);</span>
+    <span class="br0">&#125;</span>
+&#160;
+<span class="co2">#endif</span>
+&#160;
+    <span class="kw1">return</span> <span class="nu0">0</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>给出一个更加简洁的版本，对maintain操作的使用提出了简化（事实上分拆了maintain,省略相当一部分没有必要的判断，主要用leftBalance和rightBalance替换maintain的操作），使用了一些编程技巧（主要是哨兵技巧）
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="coMULTI">/**********************************************************************
+     Size Balance Tree的精简实现
+     2012.02.11   汪子逸 Copyright Reserved.
+     转载请注明.
+&#160;
+     代码与注释一起给出，以对部分技巧进行说明
+     重点是使用哨兵结点简化NULL判断
+     Insert操作带入平衡，省略maintain操作
+     Delete操作给出一个略微复杂的实现
+     Search Select Rank操作都十分简单
+***********************************************************************/</span>
+&#160;
+<span class="coMULTI">/*基本存储结构*/</span>
+<span class="kw4">struct</span> SBTNode 
+<span class="br0">&#123;</span>
+	<span class="kw4">int</span> data<span class="sy0">;</span>
+	<span class="kw4">int</span> size<span class="sy0">;</span>
+	<span class="kw4">struct</span> SBTNode <span class="sy0">*</span>lchild<span class="sy0">;</span>
+	<span class="kw4">struct</span> SBTNode <span class="sy0">*</span>rchild<span class="sy0">;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+<span class="coMULTI">/*Nil哨兵结点，用来代替NULL表示空，可以极大地简化NULL判断*/</span>
+SBTNode Nil<span class="sy0">=</span><span class="br0">&#123;</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,&amp;</span>Nil<span class="sy0">,&amp;</span>Nil<span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+<span class="coMULTI">/*左旋操作，两个平衡树基本操作之一*/</span>
+<span class="kw4">void</span> lRotate<span class="br0">&#40;</span>SBTNode<span class="sy0">*</span> <span class="sy0">&amp;</span>t<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="coMULTI">/*交接*/</span>
+	SBTNode <span class="sy0">*</span>p <span class="sy0">=</span> t<span class="sy0">-&gt;</span>rchild<span class="sy0">;</span>
+	t<span class="sy0">-&gt;</span>rchild  <span class="sy0">=</span> p<span class="sy0">-&gt;</span>lchild<span class="sy0">;</span>
+	p<span class="sy0">-&gt;</span>lchild  <span class="sy0">=</span> t<span class="sy0">;</span>
+&#160;
+	<span class="coMULTI">/*调整*/</span>
+	p<span class="sy0">-&gt;</span>size <span class="sy0">=</span> t<span class="sy0">-&gt;</span>size<span class="sy0">;</span>
+	t<span class="sy0">-&gt;</span>size <span class="sy0">=</span> t<span class="sy0">-&gt;</span>lchild<span class="sy0">-&gt;</span>size <span class="sy0">+</span> t<span class="sy0">-&gt;</span>rchild<span class="sy0">-&gt;</span>size <span class="sy0">+</span> <span class="nu0">1</span><span class="sy0">;</span>
+&#160;
+	<span class="coMULTI">/*返回*/</span>
+	t <span class="sy0">=</span> p<span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="coMULTI">/*右旋操作，两个平衡树基本操作之二*/</span>
+<span class="kw4">void</span> rRotate<span class="br0">&#40;</span>SBTNode <span class="sy0">*</span>t<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="coMULTI">/*交接*/</span>
+	SBTNode <span class="sy0">*</span>p <span class="sy0">=</span> t<span class="sy0">-&gt;</span>lchild<span class="sy0">;</span>
+	t<span class="sy0">-&gt;</span>lchild  <span class="sy0">=</span> p<span class="sy0">-&gt;</span>rchild<span class="sy0">;</span>
+	p<span class="sy0">-&gt;</span>rchild  <span class="sy0">=</span> t<span class="sy0">;</span>
+&#160;
+	<span class="coMULTI">/*调整*/</span>
+	p<span class="sy0">-&gt;</span>size <span class="sy0">=</span> t<span class="sy0">-&gt;</span>size<span class="sy0">;</span>
+	t<span class="sy0">-&gt;</span>size <span class="sy0">=</span> t<span class="sy0">-&gt;</span>lchild<span class="sy0">-&gt;</span>size <span class="sy0">+</span> t<span class="sy0">-&gt;</span>rchild<span class="sy0">-&gt;</span>size <span class="sy0">+</span><span class="nu0">1</span><span class="sy0">;</span>
+&#160;
+	<span class="coMULTI">/*返回*/</span>
+	t <span class="sy0">=</span> p<span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="coMULTI">/*左平衡操作，用于平衡LL型和LR型*/</span>
+<span class="kw4">void</span> leftBalance<span class="br0">&#40;</span>SBTNode <span class="sy0">*&amp;</span>t<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy0">-&gt;</span>lchild<span class="sy0">-&gt;</span>lchild<span class="sy0">-&gt;</span>size <span class="sy0">&gt;</span> t<span class="sy0">-&gt;</span>rchild<span class="sy0">-&gt;</span>size<span class="br0">&#41;</span>
+		rRotate<span class="br0">&#40;</span>t<span class="br0">&#41;</span><span class="sy0">;</span>
+	<span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy0">-&gt;</span>lchild<span class="sy0">-&gt;</span>rchild<span class="sy0">-&gt;</span>size <span class="sy0">&gt;</span> t<span class="sy0">-&gt;</span>rchild<span class="sy0">-&gt;</span>size<span class="br0">&#41;</span>
+		lRotate<span class="br0">&#40;</span>t<span class="sy0">-&gt;</span>lchild<span class="br0">&#41;</span><span class="sy0">,</span>rRotate<span class="br0">&#40;</span>t<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="coMULTI">/*右平衡操作，用于平衡RR型和RL型*/</span>
+<span class="kw4">void</span> rightBalance<span class="br0">&#40;</span>SBTNode <span class="sy0">*&amp;</span>t<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy0">-&gt;</span>rchild<span class="sy0">-&gt;</span>rchild<span class="sy0">-&gt;</span>size <span class="sy0">&gt;</span> t<span class="sy0">-&gt;</span>lchild<span class="sy0">-&gt;</span>size<span class="br0">&#41;</span>
+		lRotate<span class="br0">&#40;</span>t<span class="br0">&#41;</span><span class="sy0">;</span>
+	<span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy0">-&gt;</span>rchild<span class="sy0">-&gt;</span>lchild<span class="sy0">-&gt;</span>size <span class="sy0">&gt;</span> t<span class="sy0">-&gt;</span>lchild<span class="sy0">-&gt;</span>size<span class="br0">&#41;</span>
+		rRotate<span class="br0">&#40;</span>t<span class="sy0">-&gt;</span>rchild<span class="br0">&#41;</span><span class="sy0">,</span>lRotate<span class="br0">&#40;</span>t<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="coMULTI">/*插入操作，注意可以这里使用leftBalance和rightBalance,省略maintain操作*/</span>
+<span class="kw4">void</span> insert<span class="br0">&#40;</span>SBTNode <span class="sy0">*&amp;</span>t<span class="sy0">,</span><span class="kw4">int</span> x<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy0">==</span> <span class="sy0">&amp;</span>Nil<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		SBTNode <span class="sy0">*</span>p <span class="sy0">=</span> new SBTNode <span class="sy0">;</span>
+		p<span class="sy0">-&gt;</span>data <span class="sy0">=</span> x<span class="sy0">;</span>
+		p<span class="sy0">-&gt;</span>size <span class="sy0">=</span> <span class="nu0">1</span><span class="sy0">;</span>
+		p<span class="sy0">-&gt;</span>lchild <span class="sy0">=</span> <span class="sy0">&amp;</span>Nil<span class="sy0">;</span>
+		p<span class="sy0">-&gt;</span>rchild <span class="sy0">=</span> <span class="sy0">&amp;</span>Nil<span class="sy0">;</span>
+		t <span class="sy0">=</span> p<span class="sy0">;</span>	
+	<span class="br0">&#125;</span>
+	<span class="kw1">else</span>
+	<span class="br0">&#123;</span>
+		<span class="kw1">if</span><span class="br0">&#40;</span>x<span class="sy0">&lt;</span>t<span class="sy0">-&gt;</span>data<span class="br0">&#41;</span><span class="br0">&#123;</span>t<span class="sy0">-&gt;</span>size<span class="sy0">++;</span> insert<span class="br0">&#40;</span>t<span class="sy0">-&gt;</span>lchild<span class="sy0">,</span>x<span class="br0">&#41;</span><span class="sy0">;</span> leftBalance<span class="br0">&#40;</span>t<span class="br0">&#41;</span> <span class="sy0">;</span><span class="br0">&#125;</span>
+		<span class="kw1">else</span>         <span class="br0">&#123;</span>t<span class="sy0">-&gt;</span>size<span class="sy0">++;</span> insert<span class="br0">&#40;</span>t<span class="sy0">-&gt;</span>rchild<span class="sy0">,</span>x<span class="br0">&#41;</span><span class="sy0">;</span> rightBalance<span class="br0">&#40;</span>t<span class="br0">&#41;</span><span class="sy0">;</span><span class="br0">&#125;</span>	
+	<span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+<span class="coMULTI">/********************************************************************
+   删除操作，也是最难正确实现的操作了，但其实一般题目中很少用，
+   如果直接假设int x在树中是存在的，那么将简单很多，但这并不十分合理
+   删除的总体是思路是这样的：
+&#160;
+   如果比当前结点值小，到左树上面去删除
+   如果比当前结点值大，到右树上面去删除
+   如果等于当前结点值，那么应该删除本结点，但直接删除可能会破坏树的结构
+       如果左子树为空，返回右子树
+       如果右子树为空，返回左子树
+       如果左右子树都不为空，应该找到其中序前驱，或者后继来替换这个结点
+&#160;
+   在不考虑size域的情况下，自此应该可以写出递归版本的删除了
+   但考虑size域呢，如果假设int x一定存在，那么只需要沿路径size--就可以
+   但如果还可能int x不存在呢，能直接沿路size--吗？这是不可以的
+   那么只有先尝试递归向下删除，查看删除结果，再判断是否size--，那么一些
+   简洁的写法不得不变的略复杂一下
+&#160;
+   如果不需要Delete操作，那么数组静态实现是更好的选择，因为简单很多
+*********************************************************************/</span>
+&#160;
+SBTNode<span class="sy0">*</span> Delete<span class="br0">&#40;</span>SBTNode <span class="sy0">*&amp;</span>t<span class="sy0">,</span><span class="kw4">int</span> x<span class="br0">&#41;</span><span class="coMULTI">/*删除t为根的树中，第一个含x的结点*/</span>
+<span class="br0">&#123;</span>                                           <span class="coMULTI">/*t被修改为新的根*/</span>
+	<span class="coMULTI">/*空树不需要删除*/</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy0">==&amp;</span>Nil<span class="br0">&#41;</span> <span class="kw1">return</span> <span class="sy0">&amp;</span>Nil<span class="sy0">;</span>
+&#160;
+	SBTNode <span class="sy0">*</span>p <span class="sy0">=</span> <span class="sy0">&amp;</span>Nil<span class="sy0">;</span><span class="coMULTI">/*记录被删除的结点，并返回*/</span>
+	<span class="coMULTI">/*应该到左子树上寻找删除结点*/</span>
+	<span class="kw1">if</span>     <span class="br0">&#40;</span>x<span class="sy0">&lt;</span>t<span class="sy0">-&gt;</span>data<span class="br0">&#41;</span><span class="br0">&#123;</span>	p <span class="sy0">=</span> Delete<span class="br0">&#40;</span>t<span class="sy0">-&gt;</span>lchild<span class="sy0">,</span>x<span class="br0">&#41;</span><span class="sy0">;</span><span class="br0">&#125;</span>
+&#160;
+	<span class="coMULTI">/*应该到右子树上寻找删除结点*/</span>
+	<span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span>x<span class="sy0">&gt;</span>t<span class="sy0">-&gt;</span>data<span class="br0">&#41;</span><span class="br0">&#123;</span>	p <span class="sy0">=</span> Delete<span class="br0">&#40;</span>t<span class="sy0">-&gt;</span>rchild<span class="sy0">,</span>x<span class="br0">&#41;</span><span class="sy0">;</span><span class="br0">&#125;</span>
+&#160;
+	<span class="coMULTI">/*删除本结点*/</span>
+	<span class="kw1">else</span><span class="coMULTI">/* x==t-&gt;data */</span>
+	<span class="br0">&#123;</span>	
+		<span class="coMULTI">/*如果左右子树都不为空*/</span>
+		<span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy0">-&gt;</span>lchild <span class="sy0">!=&amp;</span>Nil <span class="sy0">&amp;&amp;</span> t<span class="sy0">-&gt;</span>rchild <span class="sy0">!=</span> <span class="sy0">&amp;</span>Nil<span class="br0">&#41;</span>
+		<span class="br0">&#123;</span>
+			<span class="coMULTI">/*找到中序的前驱，左子树的最右结点*/</span>
+			SBTNode <span class="sy0">*</span>f <span class="sy0">=</span> t<span class="sy0">;</span>
+			p <span class="sy0">=</span> f<span class="sy0">-&gt;</span>lchild<span class="sy0">;</span>
+			<span class="kw1">while</span><span class="br0">&#40;</span>p<span class="sy0">-&gt;</span>rchild <span class="sy0">!=</span> <span class="sy0">&amp;</span>Nil<span class="br0">&#41;</span>
+			<span class="br0">&#123;</span>	f<span class="sy0">=</span>p<span class="sy0">;</span> p<span class="sy0">=</span>p<span class="sy0">-&gt;</span>rchild<span class="sy0">;</span>  <span class="br0">&#125;</span>
+&#160;
+			<span class="coMULTI">/*p为用来替换根的结点，f是其父结点*/</span>
+			<span class="kw1">if</span>  <span class="br0">&#40;</span>p<span class="sy0">==</span>f<span class="sy0">-&gt;</span>rchild<span class="br0">&#41;</span>	<span class="br0">&#123;</span>f<span class="sy0">-&gt;</span>rchild <span class="sy0">=</span> p<span class="sy0">-&gt;</span>lchild<span class="sy0">;</span><span class="br0">&#125;</span>
+			<span class="kw1">else</span><span class="coMULTI">/*p==f-&gt;lchild*/</span><span class="br0">&#123;</span>f<span class="sy0">-&gt;</span>lchild <span class="sy0">=</span> p<span class="sy0">-&gt;</span>lchild<span class="sy0">;</span><span class="br0">&#125;</span>
+&#160;
+			<span class="coMULTI">/*t和p互换数据*/</span>
+			t<span class="sy0">-&gt;</span>data <span class="sy0">^=</span> p<span class="sy0">-&gt;</span>data<span class="sy0">;</span>
+			p<span class="sy0">-&gt;</span>data <span class="sy0">^=</span> t<span class="sy0">-&gt;</span>data<span class="sy0">;</span>
+			t<span class="sy0">-&gt;</span>data <span class="sy0">^=</span> p<span class="sy0">-&gt;</span>data<span class="sy0">;</span>
+		<span class="br0">&#125;</span>
+		<span class="coMULTI">/*如果左子树为空*/</span>
+		<span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy0">-&gt;</span>lchild<span class="sy0">==&amp;</span>Nil<span class="br0">&#41;</span>
+		<span class="br0">&#123;</span>	p <span class="sy0">=</span> t<span class="sy0">;</span> t <span class="sy0">=</span> t<span class="sy0">-&gt;</span>rchild<span class="sy0">;</span><span class="br0">&#125;</span>
+		<span class="coMULTI">/*如果右子树为空*/</span>
+		<span class="kw1">else</span>
+		<span class="br0">&#123;</span>	p <span class="sy0">=</span> t<span class="sy0">;</span> t <span class="sy0">=</span> t<span class="sy0">-&gt;</span>lchild<span class="sy0">;</span><span class="br0">&#125;</span>
+	<span class="br0">&#125;</span>
+	<span class="coMULTI">/*调整大小,删除后t可能是Nil*/</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy0">!=&amp;</span>Nil<span class="br0">&#41;</span> t<span class="sy0">-&gt;</span>size <span class="sy0">=</span> t<span class="sy0">-&gt;</span>lchild<span class="sy0">-&gt;</span>size <span class="sy0">+</span> t<span class="sy0">-&gt;</span>rchild<span class="sy0">-&gt;</span>size <span class="sy0">+</span><span class="nu0">1</span><span class="sy0">;</span>
+	<span class="kw1">return</span> p<span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+SBTNode <span class="sy0">*</span> Search<span class="br0">&#40;</span>SBTNode <span class="sy0">*</span>t<span class="sy0">,</span><span class="kw4">int</span> x<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy0">==&amp;</span>Nil <span class="sy0">||</span> t<span class="sy0">-&gt;</span>data <span class="sy0">==</span> x<span class="br0">&#41;</span>
+		<span class="kw1">return</span> t<span class="sy0">;</span>
+	<span class="kw1">else</span>
+		Search<span class="br0">&#40;</span>x<span class="sy0">&lt;</span>t<span class="sy0">-&gt;</span>data<span class="sy0">?</span> t<span class="sy0">-&gt;</span>lchild<span class="sy0">:</span>t<span class="sy0">-&gt;</span>rchild<span class="sy0">,</span>x<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="coMULTI">/*返回第k大的结点,返回最小值Select(t,1)即可*/</span>
+SBTNode<span class="sy0">*</span> Select<span class="br0">&#40;</span>SBTNode <span class="sy0">*</span>t<span class="sy0">,</span><span class="kw4">int</span> k<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy0">==&amp;</span>Nil <span class="sy0">||</span> k<span class="sy0">&gt;</span>t<span class="sy0">-&gt;</span>size<span class="br0">&#41;</span> <span class="kw1">return</span> <span class="sy0">&amp;</span>Nil<span class="sy0">;</span>
+&#160;
+	<span class="kw4">int</span> off <span class="sy0">=</span> k <span class="sy0">-</span> t<span class="sy0">-&gt;</span>lchild<span class="sy0">-&gt;</span>size<span class="sy0">-</span><span class="nu0">1</span><span class="sy0">;</span><span class="coMULTI">/*off表示比根大多少个位置*/</span>
+	<span class="kw1">if</span>     <span class="br0">&#40;</span>off<span class="sy0">==</span><span class="nu0">0</span><span class="br0">&#41;</span> <span class="kw1">return</span> t<span class="sy0">;</span>
+	<span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span>off<span class="sy0">&lt;</span><span class="nu0">0</span><span class="br0">&#41;</span>  <span class="kw1">return</span> Select<span class="br0">&#40;</span>t<span class="sy0">-&gt;</span>lchild<span class="sy0">,</span>k<span class="br0">&#41;</span><span class="sy0">;</span>
+	<span class="kw1">else</span>            <span class="kw1">return</span> Select<span class="br0">&#40;</span>t<span class="sy0">-&gt;</span>rchild<span class="sy0">,</span>off<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="coMULTI">/*返回x如果插入t，排在第多少的位置,x可以目前还不在t中*/</span>
+<span class="kw4">int</span> Rank<span class="br0">&#40;</span>SBTNode <span class="sy0">*</span>t<span class="sy0">,</span><span class="kw4">int</span> x<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy0">==&amp;</span>Nil<span class="br0">&#41;</span> <span class="kw1">return</span> <span class="nu0">1</span><span class="sy0">;</span><span class="coMULTI">/*空树，插入即是最大*/</span>
+&#160;
+	<span class="kw1">if</span>     <span class="br0">&#40;</span>x<span class="sy0">&lt;</span> t<span class="sy0">-&gt;</span>data<span class="br0">&#41;</span> <span class="kw1">return</span> Rank<span class="br0">&#40;</span>t<span class="sy0">-&gt;</span>lchild<span class="sy0">,</span>x<span class="br0">&#41;</span><span class="sy0">;</span>
+	<span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span>x<span class="sy0">&gt;</span> t<span class="sy0">-&gt;</span>data<span class="br0">&#41;</span> <span class="kw1">return</span> t<span class="sy0">-&gt;</span>lchild<span class="sy0">-&gt;</span>size<span class="sy0">+</span><span class="nu0">1</span> <span class="sy0">+</span> Rank<span class="br0">&#40;</span>t<span class="sy0">-&gt;</span>rchild<span class="sy0">,</span>x<span class="br0">&#41;</span><span class="sy0">;</span>
+	<span class="kw1">else</span> <span class="coMULTI">/*x==t-&gt;data)*/</span><span class="kw1">return</span> t<span class="sy0">-&gt;</span>lchild<span class="sy0">-&gt;</span>size<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="coMULTI">/*中序遍历，方便调试用的*/</span>
+<span class="kw4">void</span> InOrder<span class="br0">&#40;</span>SBTNode <span class="sy0">*</span>t<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy0">!=&amp;</span>Nil<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		InOrder<span class="br0">&#40;</span>t<span class="sy0">-&gt;</span>lchild<span class="br0">&#41;</span><span class="sy0">;</span>
+		<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;%d<span class="es1">\n</span>&quot;</span><span class="sy0">,</span>t<span class="sy0">-&gt;</span>data<span class="br0">&#41;</span><span class="sy0">;</span>
+		InOrder<span class="br0">&#40;</span>t<span class="sy0">-&gt;</span>rchild<span class="br0">&#41;</span><span class="sy0">;</span>
+	<span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="coMULTI">/*测试树的高度，方便测试树的形态*/</span>
+<span class="kw4">int</span> height<span class="br0">&#40;</span>SBTNode <span class="sy0">*</span>t<span class="br0">&#41;</span><span class="coMULTI">/*返回树的高度*/</span>
+<span class="br0">&#123;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>t<span class="sy0">==&amp;</span>Nil<span class="br0">&#41;</span> <span class="kw1">return</span> <span class="nu0">0</span><span class="sy0">;</span>
+	<span class="kw1">return</span>
+	height<span class="br0">&#40;</span>t<span class="sy0">-&gt;</span>lchild<span class="br0">&#41;</span> <span class="sy0">&gt;=</span> height<span class="br0">&#40;</span>t<span class="sy0">-&gt;</span>rchild<span class="br0">&#41;</span> <span class="sy0">?</span> 
+	height<span class="br0">&#40;</span>t<span class="sy0">-&gt;</span>lchild<span class="br0">&#41;</span> <span class="sy0">+</span><span class="nu0">1</span><span class="sy0">:</span>
+	height<span class="br0">&#40;</span>t<span class="sy0">-&gt;</span>rchild<span class="br0">&#41;</span> <span class="sy0">+</span><span class="nu0">1</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="coMULTI">/*下面是测试用的主函数，因为使用了时间测试，请include&lt;time.h&gt;*/</span>
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	SBTNode <span class="sy0">*</span>root <span class="sy0">=</span> <span class="sy0">&amp;</span>Nil<span class="sy0">;</span>
+&#160;
+	<span class="kw4">const</span> <span class="kw4">int</span> n <span class="sy0">=</span> <span class="nu0">10000</span><span class="sy0">;</span>	
+	clock_t start <span class="sy0">=</span> <span class="kw3">clock</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+	<span class="coMULTI">/*********************/</span>
+	<span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy0">=</span><span class="nu0">0</span><span class="sy0">;</span> i<span class="sy0">&lt;</span>n<span class="sy0">;</span> <span class="sy0">++</span>i<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>	insert<span class="br0">&#40;</span>root<span class="sy0">,</span>i<span class="br0">&#41;</span><span class="sy0">;</span>	<span class="br0">&#125;</span>
+&#160;
+	<span class="coMULTI">/*********************/</span>
+	clock_t end <span class="sy0">=</span> <span class="kw3">clock</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+	<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;insert&#160;%d data time used is&#160;%d ms<span class="es1">\n</span>&quot;</span><span class="sy0">,</span>n<span class="sy0">,</span>end<span class="sy0">-</span>start<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+	<span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy0">=</span><span class="nu0">4000</span><span class="sy0">;</span> i<span class="sy0">&lt;</span>n<span class="sy0">;</span> <span class="sy0">++</span>i<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>	Delete<span class="br0">&#40;</span>root<span class="sy0">,</span>i<span class="br0">&#41;</span><span class="sy0">;</span> 	<span class="br0">&#125;</span>
+&#160;
+	<span class="coMULTI">/*求height的函数会遍历整棵树，所以比较耗时*/</span>
+	<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;the size of left  SBTree is&#160;%d<span class="es1">\n</span>&quot;</span><span class="sy0">,</span>root<span class="sy0">-&gt;</span>lchild<span class="sy0">-&gt;</span>size<span class="br0">&#41;</span><span class="sy0">;</span>
+	<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;the size of right SBTree is&#160;%d<span class="es1">\n</span>&quot;</span><span class="sy0">,</span>root<span class="sy0">-&gt;</span>rchild<span class="sy0">-&gt;</span>size<span class="br0">&#41;</span><span class="sy0">;</span>
+	<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;the height of left  SBTree is&#160;%d<span class="es1">\n</span>&quot;</span><span class="sy0">,</span>height<span class="br0">&#40;</span>root<span class="sy0">-&gt;</span>lchild<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+	<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;the height of right SBTree is&#160;%d<span class="es1">\n</span>&quot;</span><span class="sy0">,</span>height<span class="br0">&#40;</span>root<span class="sy0">-&gt;</span>rchild<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+	<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;the height of SBTree is&#160;%d<span class="es1">\n</span>&quot;</span><span class="sy0">,</span>height<span class="br0">&#40;</span>root<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+	<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;the rank of 15 is&#160;%d <span class="es1">\n</span>&quot;</span><span class="sy0">,</span>Rank<span class="br0">&#40;</span>root<span class="sy0">,</span><span class="nu0">15</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+	<span class="kw3">system</span><span class="br0">&#40;</span><span class="st0">&quot;pause&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+	<span class="kw1">return</span> <span class="nu0">0</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 13/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:991-0!*!*!*!*!*!* and timestamp 20120702205759 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=Code:SBT/C&amp;oldid=29646">http://www.nocow.cn/index.php?title=Code:SBT/C&amp;oldid=29646</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-code" class="selected"><a href="/index.php/Code:SBT/C">代码</a></li>
+				<li id="ca-talk"><a href="/index.php/Code_Talk:SBT/C" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=Code:SBT/C&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=Code:SBT/C&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Code%3ASBT+C" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Code:SBT/C" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Code:SBT/C" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=Code:SBT/C&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=Code:SBT/C&amp;oldid=29646" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过4,689次。</li>
+		<li id="credits">本页面由<a href="/index.php?title=%E7%94%A8%E6%88%B7:Thegenius&amp;action=edit&amp;redlink=1" class="new" title="用户:Thegenius（尚未撰写）">汪子逸</a>于2012年2月11日 (星期六) 11:50做出最后修改。 在<a href="/index.php?title=%E7%94%A8%E6%88%B7:Dreamkxd&amp;action=edit&amp;redlink=1" class="new" title="用户:Dreamkxd（尚未撰写）">罗勇刚</a>、<a href="/index.php/%E7%94%A8%E6%88%B7:Cosechy" title="用户:Cosechy">yh</a>和<a href="/index.php/%E7%94%A8%E6%88%B7:%E9%80%86%E9%93%AD" title="用户:逆铭">逆铭</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 1.464 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

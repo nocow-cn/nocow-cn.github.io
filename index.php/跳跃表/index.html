@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>跳跃表 - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=%E8%B7%B3%E8%B7%83%E8%A1%A8&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=%E8%B7%B3%E8%B7%83%E8%A1%A8&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "跳跃表", "wgTitle": "跳跃表", "wgCurRevisionId": 20830, "wgArticleId": 9, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["数据结构"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-跳跃表 action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">跳跃表</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><pre>本文在[[GNU自由文档许可证]]之条款下提供</pre>
+<p><b>跳跃表</b>(<b>Skip List</b>)是一种随机化<a href="/index.php/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" title="数据结构">数据结构</a>，基于并联的<a href="/index.php/%E9%93%BE%E8%A1%A8" title="链表">链表</a>，其<a href="/index.php?title=%E6%95%88%E7%8E%87&amp;action=edit&amp;redlink=1" class="new" title="效率（尚未撰写）">效率</a>可比拟于<a href="/index.php/%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91" title="二叉查找树" class="mw-redirect">二叉查找树</a>(对于大多数操作需要<a href="/index.php?title=Big_O_notation&amp;action=edit&amp;redlink=1" class="new" title="Big O notation（尚未撰写）">O</a>(log <i>n</i>)平均时间)。
+</p><p>基本上，跳跃列表是对有序的<a href="/index.php/%E9%93%BE%E8%A1%A8" title="链表">链表</a>增加上附加的前进链接，增加是以<a href="/index.php?title=Randomization&amp;action=edit&amp;redlink=1" class="new" title="Randomization（尚未撰写）">随机化</a>的方式进行的，所以在列表中的查找可以快速的跳过部分列表(因此得名)。所有操作都以对数随机化的时间进行。
+</p><p><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6&amp;wpDestFile=Example.ogg" class="new" title="Example.ogg">Media:Example.ogg</a>== 描述 ==
+</p><p>跳跃列表是按<a href="/index.php?title=%E5%B1%82&amp;action=edit&amp;redlink=1" class="new" title="层（尚未撰写）">层</a>建造的。底层是一个普通的有序<a href="/index.php/%E9%93%BE%E8%A1%A8" title="链表">链表</a>。每个更高层都充当下面列表的"<a href="/index.php?title=%E5%BF%AB%E9%80%9F%E8%B7%91%E9%81%93&amp;action=edit&amp;redlink=1" class="new" title="快速跑道（尚未撰写）">快速跑道</a>"，这里在层 <i>i</i> 中的元素按某个固定的概率 <i>p</i> 出现在层 <i>i</i>+1 中。平均起来，每个元素都在 1/(1-<i>p</i>) 个列表中出现，而最高层的元素(通常是在跳跃列表前端的一个特殊的头元素)在 O(log<sub>1/<i>p</i></sub> <i>n</i>) 个列表中出现。
+</p>
+<pre>1
+1-----4---6
+1---3-4---6-----9
+1-2-3-4-5-6-7-8-9-10
+</pre>
+<p>要查找一个目标元素，起步于头元素和顶层列表，并沿着每个链表搜索，直到到达小于或等于目标的最后一个元素。通过跟踪起自目标直到到达在更高列表中出现的元素的反向查找路径，在每个链表中预期的步数显而易见是 1/<i>p</i>。所以查找的总体代价是 O((log<sub>1/p</sub> n) / p)，当<i>p</i> 是常数时是 O(log <i>n</i>)。通过选择不同 <i>p</i> 值，就可以在查找代价和存储代价之间作出权衡。
+</p><p>插入和删除的实现非常象相应的链表操作，除了"高层"元素必须在多个链表中插入或删除之外。
+</p><p>跳跃列表不象某些传统<a href="/index.php/%E5%B9%B3%E8%A1%A1%E6%A0%91" title="平衡树" class="mw-redirect">平衡树</a>数据结构那样提供绝对的最坏情况性能保证，因为用来建造跳跃列表的扔硬币方法总有可能(尽管概率很小)生成一个糟糕的不平衡结构。但是在实际中它工作的很好，随机化平衡方案比在平衡二叉查找树中用的确定性平衡方案容易实现。跳跃列表在<a href="/index.php?title=%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97&amp;action=edit&amp;redlink=1" class="new" title="并行计算（尚未撰写）">并行计算</a>中也很有用，这里的插入可以在跳跃列表不同的部分并行的进行，而不用全局的数据结构重新平衡。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=%E8%B7%B3%E8%B7%83%E8%A1%A8&amp;action=edit&amp;section=1" title="编辑段落：历史">编辑</a>]</span> <span class="mw-headline" id=".E5.8E.86.E5.8F.B2">历史</span></h2>
+<p>跳跃列表由 <a href="/index.php?title=William_Pugh&amp;action=edit&amp;redlink=1" class="new" title="William Pugh（尚未撰写）">William Pugh</a> 发明。他在 <a href="/index.php?title=Communications_of_the_ACM&amp;action=edit&amp;redlink=1" class="new" title="Communications of the ACM（尚未撰写）">Communications of the ACM</a> June 1990, 33(6) 668-676 发表了<i>Skip lists: a probabilistic alternative to balanced trees</i>，在其中详细描述了他的工作。参见 <a rel="nofollow" class="external text" href="http://citeseer.ist.psu.edu/pugh90skip.html">引用</a>并<a rel="nofollow" class="external text" href="ftp://ftp.cs.umd.edu/pub/skipLists/">下载文档</a>。
+</p><p>引用发明者的话:
+</p><p><i>跳跃列表是在很多应用中有可能替代平衡树而作为实现方法的一种数据结构。跳跃列表的算法有同平衡树一样的渐进的预期时间边界，并且更简单、更快速和使用更少的空间。</i>
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=%E8%B7%B3%E8%B7%83%E8%A1%A8&amp;action=edit&amp;section=2" title="编辑段落：外部链接">编辑</a>]</span> <span class="mw-headline" id=".E5.A4.96.E9.83.A8.E9.93.BE.E6.8E.A5">外部链接</span></h2>
+<ul><li><a rel="nofollow" class="external text" href="http://nist.gov/dads/HTML/skiplist.html">Description</a> from the <a href="/index.php?title=Dictionary_of_Algorithms_and_Data_Structures&amp;action=edit&amp;redlink=1" class="new" title="Dictionary of Algorithms and Data Structures（尚未撰写）">Dictionary of Algorithms and Data Structures</a>
+</li><li><a rel="nofollow" class="external text" href="http://www.cs.auckland.ac.nz/software/AlgAnim/niemann/s_skl.htm">skip lists</a> by Thomas Niemann
+</li><li><a rel="nofollow" class="external text" href="http://sf.linuxforum.net/snippet/detail.php?type=snippet&amp;id=16">跳跃列表的注释实现</a>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 15/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:9-0!*!0!!*!*!* and timestamp 20150502093532 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=%E8%B7%B3%E8%B7%83%E8%A1%A8&amp;oldid=20830">http://www.nocow.cn/index.php?title=%E8%B7%B3%E8%B7%83%E8%A1%A8&amp;oldid=20830</a>”</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="特殊:页面分类">1个分类</a>: <ul><li><a href="/index.php/%E5%88%86%E7%B1%BB:%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" title="分类:数据结构">数据结构</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/%E8%B7%B3%E8%B7%83%E8%A1%A8" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk"><a href="/index.php/%E8%AE%A8%E8%AE%BA:%E8%B7%B3%E8%B7%83%E8%A1%A8" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=%E8%B7%B3%E8%B7%83%E8%A1%A8&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=%E8%B7%B3%E8%B7%83%E8%A1%A8&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=%E8%B7%B3%E8%B7%83%E8%A1%A8" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/%E8%B7%B3%E8%B7%83%E8%A1%A8" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/%E8%B7%B3%E8%B7%83%E8%A1%A8" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=%E8%B7%B3%E8%B7%83%E8%A1%A8&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=%E8%B7%B3%E8%B7%83%E8%A1%A8&amp;oldid=20830" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过11,649次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/204.236.235.245" title="特殊:用户贡献/204.236.235.245">204.236.235.245</a>于2010年6月3日 (星期四) 17:33做出最后修改。 在<a href="/index.php?title=%E7%94%A8%E6%88%B7:Miller&amp;action=edit&amp;redlink=1" class="new" title="用户:Miller（尚未撰写）">zy</a>、<a href="/index.php/%E7%94%A8%E6%88%B7:Exile" title="用户:Exile">Exile</a>和<a href="/index.php/%E7%94%A8%E6%88%B7:Cosechy" title="用户:Cosechy">yh</a>、NOCOW用户<a href="/index.php/%E7%94%A8%E6%88%B7:Windywinter" title="用户:Windywinter">Windywinter</a>和<a href="/index.php?title=%E8%B7%B3%E8%B7%83%E8%A1%A8&amp;action=credits" title="跳跃表">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.203 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

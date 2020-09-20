@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>USACO/packrec - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=USACO/packrec&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=USACO/packrec&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "USACO/packrec", "wgTitle": "USACO/packrec", "wgCurRevisionId": 34944, "wgArticleId": 241, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for pascal
+ * CSS class: source-pascal, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.pascal.source-pascal .de1, .pascal.source-pascal .de2 {}
+.pascal.source-pascal  {font-family:monospace;}
+.pascal.source-pascal .imp {font-weight: bold; color: red;}
+.pascal.source-pascal li, .pascal.source-pascal .li1 {font-weight: normal; vertical-align:top;}
+.pascal.source-pascal .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.pascal.source-pascal .li2 {font-weight: bold; vertical-align:top;}
+.pascal.source-pascal .kw1 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw2 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw3 {color: #000066;}
+.pascal.source-pascal .kw4 {color: #000066; font-weight: bold;}
+.pascal.source-pascal .co1 {color: #666666; font-style: italic;}
+.pascal.source-pascal .coMULTI {color: #666666; font-style: italic;}
+.pascal.source-pascal .es0 {color: #000099; font-weight: bold;}
+.pascal.source-pascal .es_h {color: #000099; font-weight: bold;}
+.pascal.source-pascal .br0 {color: #009900;}
+.pascal.source-pascal .sy0 {color: #339933;}
+.pascal.source-pascal .st0 {color: #ff0000;}
+.pascal.source-pascal .st_h {color: #ff0000;}
+.pascal.source-pascal .nu0 {color: #cc66cc;}
+.pascal.source-pascal .me1 {color: #0066ee;}
+.pascal.source-pascal .ln-xtra, .pascal.source-pascal li.ln-xtra, .pascal.source-pascal div.ln-xtra {background-color: #ffc;}
+.pascal.source-pascal span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-USACO_packrec action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">USACO/packrec</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="/index.php/USACO" title="USACO">USACO</a></span></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><h2><span class="editsection">[<a href="/index.php?title=USACO/packrec&amp;action=edit&amp;section=1" title="编辑段落：分析">编辑</a>]</span> <span class="mw-headline" id=".E5.88.86.E6.9E.90">分析</span></h2>
+<p>只要将示例中的6种(其实是5种,图4和5是同一种情况)进行模拟,以求得最优解
+</p>
+<hr />
+<p>最开始觉得完全无法下手（因为如果通过建立坐标系来枚举的话是绝对会超时的）。
+</p><p>最后发现这题目太阴了。（实际上也是自己的水平不够）
+</p><p>注意题中那副图，下面有一排小字：
+</p><p>"The six basic layouts of four rectangles"
+</p><p>注意了，这里面并没有"possible"一词，也就是说图上描绘的就是所有的basic layouts。
+</p><p>仔细想想确实也必须这样啊！basic layouts到底有几种，分别是什么样，这是一个数学本身要解决的问题，对于仅仅是应用数学的计算机科学来说，这个并不是它所关注的问题，数学家已经为我们提供了理论基础，我们只需要通过这些已经建立的模型进行计算就行了。
+</p><p>既然已经知道了所有可能的摆放方式，接下来的问题就简单了(思维上)。
+</p><p>对某个确定的摆放模型来说，都有且只有4个位置可以选择。
+</p><p>我们只需要搜索出4个矩形的全排列，将其填入对应位置，然后分别用6种模型进行计算即可。
+</p><p>这用dfs实在是太容易做到了。
+</p><p>还有需要注意的地方是，题目对输出结果格式的要求，我没有找到自动排成规定的格式的方法，所以是在搜索完成后再对答案进行整理(这里又需要排序),最后输出结果的。
+</p><p>由于矩形的个数是确定的4个，所以dfs需要的时间大约为4!=24，完全可以接受。
+</p><p>从上面的分析可以看出，编码量是巨大的，我采用的一个减少编码量的技巧是使用函数指针数组来表示6种计算模型。
+</p><p>最后，其实最后两种模型是可以合并为一种的，不过多一种又有什么关系呢？
+</p><p>——By Aikilis
+</p>
+<hr />
+<p>一些小提示：
+</p><p>1、痛恨背诵快排？那就写一个布尔数组的基数排序，然后最后输出的时候只需要检查最小的面积的根号就行了。
+</p><p>最劣情况是4个边长50的正方形排成一排，数组开到200即可。
+</p><p>2、第4、5种情况明显可以合并
+</p><p>3、1~5种不用考虑面积重叠，样例给的图么，所见即所得，直接写算式即可。
+</p><p>但是第6种就要注意重叠问题了。
+</p><p>提示性思路：
+</p><p><b>警告</b>：以下思路未经过严谨验证，只保证过USACO提供的21个样例
+</p><p>规定一下使用的变量：
+</p><p>maxx，maxy：拼接好后封闭矩形横向长度和纵向长度
+</p><p>save[1..4,1..2]存放第i个矩形的横向和纵向长度，比如第2个矩形的横向长度为save[2,1]，纵向长度为save[2,2]
+</p><p>首先，放置的方法是4个角各一个矩形。
+</p><p>那先给矩形标号：
+</p><p>1 3
+</p><p>2 4
+</p><p>然后直接看题目描述中给的图，可以发现满足下面的式子：
+</p><p>maxx:=max(save[1,1]+save[3,1],save[2,1]+save[4,1]); 
+</p><p>maxy:=max(save[1,2]+save[2,2],save[3,2]+save[4,2]); 
+</p><p><br />
+然后第6种情况先这么写着，然后用样例测试一下，发现不对，只有36.
+</p><p>然后让程序输出找到的最小解的矩形的摆法，依次输出了
+</p><p>((1,2),(3,4),(5,4),(3,2))
+</p><p>（格式：(矩形1的横向长度，矩形1的纵向长度)，......）
+</p><p>你把输出的这个带回到分析出的式子，发现矩形被摆成了这个样子：
+</p><p><br />
+<a href="/index.php/%E6%96%87%E4%BB%B6:Packrec1.jpg" class="image"><img alt="Packrec1.jpg" src="/images/b/b7/Packrec1.jpg" width="493" height="484" /></a>
+</p><p><br />
+矩形发生重叠了，如何取消掉重叠？两种思路：
+</p><p>1、不进行横向移动，只进行纵向移动
+</p><p>2、不进行纵向移动，只进行横向移动
+</p><p>两种思路取1即可。我们这里采取思路1.
+</p><p><br />
+思路1的话，把3号方块向上移动就可以解决问题了。
+</p><p><br />
+<a href="/index.php/%E6%96%87%E4%BB%B6:Packrec2.jpg" class="image"><img alt="Packrec2.jpg" src="/images/0/06/Packrec2.jpg" width="472" height="618" /></a>
+</p><p><br />
+3号方块向上移动，意味着我们对横向长度的计算不需要重新编写，纵向长度需要重新考虑。
+</p><p>于是让我们改写成这样：
+</p><p>maxy:=max(save[1,2],save[3,2])+max(save[2,2],save[4,2]); 
+</p><p>但是，这样的式子不适合题目描述中所给的图的情况，所以还需要想想如何判断来决定什么时候用什么样的式子。
+</p><p><br />
+为什么会出现矩形纵向移动的需要？因为矩形3要叠放在矩形2上面，而不是我们一开始看到的叠放在了矩形4上面，才会不重叠。
+</p><p>如何用表达式描述矩形3要叠放在矩形2上面？
+</p><p>(save[2,2]&gt;save[4,2])and(save[3,1]&gt;save[4,1])——2号比4号高，4号横向没3号胖
+</p><p><br />
+不要以为完工了，把图形上下翻转（1、2对调，3、4对调），并做一次自由落体
+</p><p><a href="/index.php/%E6%96%87%E4%BB%B6:Packrec3.jpg" class="image"><img alt="Packrec3.jpg" src="/images/b/b0/Packrec3.jpg" width="478" height="620" /></a>
+</p><p><br />
+如果采用一开始那个式子，又会出现重叠现象，需要把1号方块向上移动。
+</p><p>这时候，1号方块要叠放在4号方块之上，而不是2号方块之上。
+</p><p>如何表述？——
+</p><p>(save[1,1]&gt;save[2,1])and(save[4,2]&gt;save[2,2])——1号比2号横向要胖，4号比2号要高
+</p><p><br />
+然后，两种情况，出现任何一种都要用后面分析出来的式子。
+</p><p>合并一下：
+</p>
+<pre> if (((save[1,1]&gt;save[2,1])and(save[4,2]&gt;save[2,2]))or((save[2,2]&gt;save[4,2])and(save[3,1]&gt;save[4,1]))) then 
+      maxy:=max(save[1,2],save[3,2])+max(save[2,2],save[4,2])
+ else maxy:=max(save[1,2]+save[2,2],save[3,2]+save[4,2]);
+</pre>
+<p>这就是第六种情况的纵向计算的完整写法。
+</p><p><br />
+该方法实现的代码见<a href="/index.php/Code:USACO/packrec/C%2B%2B" title="Code:USACO/packrec/C++">C++ skyxxzc</a> <a href="/index.php/Code:USACO/packrec/Pascal" title="Code:USACO/packrec/Pascal">Pascal fcxxzux1</a>
+</p>
+<hr />
+<p>接下来介绍本人（本人是从上面那条线开始写起的）的处理第6种的方法。
+</p><p>应该比楼上的简单而且本人过了。（说实在我没看懂楼上的）
+</p><p>以样例4 3  4 4  6 3  5 5说明
+</p><p>进行4!（位置）*2^4（每个的横竖）次搜索，
+</p><p>想法是将四块摆放如下
+</p><p>1 3
+</p><p>2 4
+</p><p>并将靠中间的四个角对齐，这个例子中是这样的：
+</p><p>当然只是想想，不用代码
+</p><p>0 0 0 0 0 3 3 3
+</p><p>1 1 1 1 1 3 3 3
+</p><p>1 1 1 1 1 3 3 3
+</p><p>1 1 1 1 1 3 3 3
+</p><p>1 1 1 1 1 3 3 3
+</p><p>1 1 1 1 1 3 3 3
+</p><p>0 2 2 2 2 4 4 4 4
+</p><p>0 2 2 2 2 4 4 4 4
+</p><p>0 2 2 2 2 4 4 4 4
+</p><p>0 2 2 2 2
+</p><p>然后把较高的右边这条向下移动一格使各块都靠最底（有些例子是左边或者不移动）：
+</p><p>此时计算整体图形的高max(1高+2高,3高+4高)因为接下来要水平移动，不会使高减少
+</p><p>1 1 1 1 1 3 3 3
+</p><p>1 1 1 1 1 3 3 3
+</p><p>1 1 1 1 1 3 3 3
+</p><p>1 1 1 1 1 3 3 3
+</p><p>1 1 1 1 1 3 3 3
+</p><p>0 2 2 2 2 3 3 3
+</p><p>0 2 2 2 2 4 4 4 4
+</p><p>0 2 2 2 2 4 4 4 4
+</p><p>0 2 2 2 2 4 4 4 4
+</p><p>然后将2 和4 向左移至与1 对齐（将1 和3 向右移是一样的）：
+</p><p>需要提前验证是否可以向左移动（满足 2高&gt;=4高）
+</p><p>以及移动是否能缩小宽度（(1宽&gt;2宽)or(3宽&lt;4宽)）不然移动没有意义
+</p><p>移动之后，整体图形的宽为max(1宽+3宽,2宽+4宽)
+</p><p>如果不移动整体图形的宽为max(1宽,2宽)+max(3宽+4宽)
+</p><p>1 1 1 1 1 3 3 3
+</p><p>1 1 1 1 1 3 3 3
+</p><p>1 1 1 1 1 3 3 3
+</p><p>1 1 1 1 1 3 3 3
+</p><p>1 1 1 1 1 3 3 3
+</p><p>2 2 2 2 0 3 3 3
+</p><p>2 2 2 2 4 4 4 4
+</p><p>2 2 2 2 4 4 4 4
+</p><p>2 2 2 2 4 4 4 4
+</p><p>移动完就好了
+</p><p>其实说了这么多代码只有3行：
+</p><p>整体图形的高:=max(1高+2高,3高+4高)
+</p><p>if(2高&gt;=4高)and((1宽&gt;2宽)or(3宽&lt;4宽))then整体图形的宽:=max(1宽+3宽,2宽+4宽)
+</p><p>else整体图形的宽:=max(1宽,2宽)+max(3宽+4宽)
+</p><p>以下是我用pascal写的
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1">  h<span class="sy0">:=</span>da<span class="br0">&#40;</span>l<span class="br0">&#91;</span>i1<span class="sy0">,</span>j1<span class="br0">&#93;</span><span class="sy0">+</span>l<span class="br0">&#91;</span>i2<span class="sy0">,</span>j2<span class="br0">&#93;</span><span class="sy0">,</span>l<span class="br0">&#91;</span>i3<span class="sy0">,</span>j3<span class="br0">&#93;</span><span class="sy0">+</span>l<span class="br0">&#91;</span>i4<span class="sy0">,</span>j4<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+  <span class="kw1">if</span> <span class="br0">&#40;</span>l<span class="br0">&#91;</span>i2<span class="sy0">,</span>j2<span class="br0">&#93;</span>&gt;<span class="sy0">=</span>l<span class="br0">&#91;</span>i4<span class="sy0">,</span>j4<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="kw3">and</span><span class="br0">&#40;</span><span class="br0">&#40;</span>l<span class="br0">&#91;</span>i1<span class="sy0">,</span><span class="nu0">3</span><span class="sy0">-</span>j1<span class="br0">&#93;</span>&gt;l<span class="br0">&#91;</span>i2<span class="sy0">,</span><span class="nu0">3</span><span class="sy0">-</span>j2<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="kw1">or</span><span class="br0">&#40;</span>l<span class="br0">&#91;</span>i3<span class="sy0">,</span><span class="nu0">3</span><span class="sy0">-</span>j3<span class="br0">&#93;</span>&lt;l<span class="br0">&#91;</span>i4<span class="sy0">,</span><span class="nu0">3</span><span class="sy0">-</span>j4<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+    <span class="kw1">then</span> w<span class="sy0">:=</span>da<span class="br0">&#40;</span>l<span class="br0">&#91;</span>i1<span class="sy0">,</span><span class="nu0">3</span><span class="sy0">-</span>j1<span class="br0">&#93;</span><span class="sy0">+</span>l<span class="br0">&#91;</span>i3<span class="sy0">,</span><span class="nu0">3</span><span class="sy0">-</span>j3<span class="br0">&#93;</span><span class="sy0">,</span>l<span class="br0">&#91;</span>i2<span class="sy0">,</span><span class="nu0">3</span><span class="sy0">-</span>j2<span class="br0">&#93;</span><span class="sy0">+</span>l<span class="br0">&#91;</span>i4<span class="sy0">,</span><span class="nu0">3</span><span class="sy0">-</span>j4<span class="br0">&#93;</span><span class="br0">&#41;</span>
+    <span class="kw1">else</span> w<span class="sy0">:=</span>da<span class="br0">&#40;</span>l<span class="br0">&#91;</span>i1<span class="sy0">,</span><span class="nu0">3</span><span class="sy0">-</span>j1<span class="br0">&#93;</span><span class="sy0">,</span>l<span class="br0">&#91;</span>i2<span class="sy0">,</span><span class="nu0">3</span><span class="sy0">-</span>j2<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">+</span>da<span class="br0">&#40;</span>l<span class="br0">&#91;</span>i3<span class="sy0">,</span><span class="nu0">3</span><span class="sy0">-</span>j3<span class="br0">&#93;</span><span class="sy0">,</span>l<span class="br0">&#91;</span>i4<span class="sy0">,</span><span class="nu0">3</span><span class="sy0">-</span>j4<span class="br0">&#93;</span><span class="br0">&#41;</span>;</pre></div></div>
+<p>代码很短。。。60多行。不过我不知道怎么发代码
+</p>
+<hr />ycxx_fx1
+<hr />
+<p>表示看不懂楼上的和楼上的楼上的，我说一下我想法
+</p><p>先把四个长方形编号0,1,2,3
+</p><p>这样摆：
+</p><p>0 1
+</p><p>2 3
+</p><p>那么，对于0和3的相对位置，有两种
+</p><p>一种是（方式一）
+</p><p>0 0 0 -
+</p><p>0 0 0 -
+</p><p>- 3 3 3
+</p><p>- 3 3 3
+</p><p>此时record.x=max(rec[0].x+rec[1].x,rec[2].x+rec[3].x);
+</p><p>一种是（方式二）
+</p><p>0 0 0 - - -
+</p><p>0 0 0 3 3 3
+</p><p>- - - 3 3 3
+</p><p>此时record.x=max(max(rec[0].x+rec[1].x,rec[2].x+rec[3].x),rec[0].x+rec[3].x);
+</p><p>对于1和2，也是一样。
+</p><p>但是，如果都按（方式一）摆，会出现重叠，那么这种情况就可以删去了，因为此时无论如何按照楼上提供平移方法都不会得到最优解（可证，略）所以就搞定了
+</p><p>21个数据全过
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/packrec&amp;action=edit&amp;section=2" title="编辑段落：参考代码">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81">参考代码</span></h2>
+<p><a href="/index.php/Code:USACO/packrec/C" title="Code:USACO/packrec/C">C</a><br />
+<a href="/index.php/Code:USACO/packrec/C%2B%2B" title="Code:USACO/packrec/C++">C++</a><br />
+<a href="/index.php/Code:USACO/packrec/Pascal" title="Code:USACO/packrec/Pascal">Pascal</a><br />
+<a href="/index.php/Code:USACO/packrec/Java" title="Code:USACO/packrec/Java">Java</a>
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/packrec&amp;action=edit&amp;section=3" title="编辑段落：引用">编辑</a>]</span> <span class="mw-headline" id=".E5.BC.95.E7.94.A8">引用</span></h2>
+<p><a rel="nofollow" class="external autonumber" href="http://h.thec.cn/starforever/">[1]</a>
+</p><p><a rel="nofollow" class="external autonumber" href="http://train.usaco.org/">[2]</a>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 19/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:241-0!*!0!!*!2!* and timestamp 20170806230606 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=USACO/packrec&amp;oldid=34944">http://www.nocow.cn/index.php?title=USACO/packrec&amp;oldid=34944</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/USACO/packrec" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:USACO/packrec&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=USACO/packrec&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=USACO/packrec&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=USACO%2Fpackrec" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/USACO/packrec" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/USACO/packrec" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=USACO/packrec&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=USACO/packrec&amp;oldid=34944" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过30,827次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/54.173.35.129" title="特殊:用户贡献/54.173.35.129">54.173.35.129</a>于2014年6月24日 (星期二) 19:54做出最后修改。 在NOCOW用户<a href="/index.php/%E7%94%A8%E6%88%B7:Xsy" title="用户:Xsy">Xsy</a>和<a href="/index.php/%E7%94%A8%E6%88%B7:Yts1999" title="用户:Yts1999">Yts1999</a>、NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/112.254.64.191" title="特殊:用户贡献/112.254.64.191">112.254.64.191</a>和<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/112.255.143.50" title="特殊:用户贡献/112.255.143.50">112.255.143.50</a>和<a href="/index.php?title=USACO/packrec&amp;action=credits" title="USACO/packrec">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.207 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

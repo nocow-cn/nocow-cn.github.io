@@ -1,0 +1,789 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="keywords" content="Code:USACO/frameup/Pascal" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (中文(简体))" />
+<link title="Creative Commons" type="application/rdf+xml" href="/index.php?title=Code:USACO/frameup/Pascal&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+		<title>NOCOW - Code:USACO/frameup/Pascal</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins/monobook/main.css?42b"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print" href="/skins/common/commonPrint.css?42b" />
+		<link rel="stylesheet" type="text/css" media="handheld" href="/skins/monobook/handheld.css?42b" />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins/monobook/IE50Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins/monobook/IE55Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins/monobook/IE60Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins/monobook/IE70Fixes.css?42b";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?42b"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">/*<![CDATA[*/
+var skin = "monobook";
+var stylepath = "/skins";
+var wgArticlePath = "/index.php/$1";
+var wgScriptPath = "";
+var wgServer = "http://www.nocow.cn";
+var wgCanonicalNamespace = "Code";
+var wgCanonicalSpecialPageName = false;
+var wgNamespaceNumber = 104;
+var wgPageName = "Code:USACO/frameup/Pascal";
+var wgTitle = "USACO/frameup/Pascal";
+var wgArticleId = "1652";
+var wgIsArticle = true;
+var wgUserName = null;
+var wgUserLanguage = "zh-cn";
+var wgContentLanguage = "zh-cn";
+var wgBreakFrames = false;
+var wgCurRevisionId = "13189";
+/*]]>*/</script>
+                
+		<script type="text/javascript" src="/skins/common/wikibits.js?42b"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=-&action=raw&gen=css&maxage=18000";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+			</head>
+<body  class="mediawiki ns-104 ltr page-Code_USACO_frameup_Pascal">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+<!--div style="text-align:center;font-size:85%;font-weight:bold" id=headlinemessage>NOCOW近期对条目的命名进行了一些整理，一些链接可能失效，为此带来的不便请大家谅解。创建条目时也请遵循新的命名规范，谢谢合作。</div-->
+		<a name="top" id="top"></a>
+				<h1 class="firstHeading">Code:USACO/frameup/Pascal</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">来自&quot;NOCOW&quot;</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">跳转到: <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>			<!-- start content -->
+			<pre class="pascal"><span style="color: #808080; font-style: italic;">{
+这道题还真是恶心...
+Executing...
+   Test 1: TEST OK [0.000 secs, 272 KB]
+   Test 2: TEST OK [0.000 secs, 272 KB]
+   Test 3: TEST OK [0.000 secs, 272 KB]
+   Test 4: TEST OK [0.000 secs, 272 KB]
+   Test 5: TEST OK [0.000 secs, 276 KB]
+   Test 6: TEST OK [0.000 secs, 276 KB]
+   Test 7: TEST OK [0.000 secs, 272 KB]
+   Test 8: TEST OK [0.000 secs, 272 KB]
+   Test 9: TEST OK [0.054 secs, 276 KB]
+&nbsp;
+All tests OK.
+Your program ('frameup') produced all correct answers!  This is your
+submission #2 for this problem.  Congratulations!
+第一次提交不知道坐上角右下角也能被覆盖，并且有多解，郁闷...
+以下程序100行
+}</span>
+<span style="color: #808080; font-style: italic;">{
+ID: lorabit1
+PROB: frameup
+LANG: PASCAL
+}</span>
+<span style="color: #b1b100;">var</span>
+  n,m:<span style="color: #993333;">longint</span>;
+  s:<span style="color: #993333;">string</span>;
+  map:<span style="color: #993333;">array</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span>..<span style="color: #cc66cc;">30</span>,<span style="color: #cc66cc;">0</span>..<span style="color: #cc66cc;">30</span><span style="color: #66cc66;">&#93;</span><span style="color: #b1b100;">of</span> <span style="color: #993333;">char</span>;
+  r,sx,sy,tx,ty:<span style="color: #993333;">array</span><span style="color: #66cc66;">&#91;</span><span style="color: #993333;">char</span><span style="color: #66cc66;">&#93;</span><span style="color: #b1b100;">of</span> <span style="color: #993333;">longint</span>;
+  e:<span style="color: #993333;">array</span><span style="color: #66cc66;">&#91;</span><span style="color: #993333;">char</span>,<span style="color: #993333;">char</span><span style="color: #66cc66;">&#93;</span><span style="color: #b1b100;">of</span> <span style="color: #993333;">boolean</span>;
+&nbsp;
+  <span style="color: #000000; font-weight: bold;">procedure</span> readData;
+  <span style="color: #b1b100;">var</span>
+    i,j:<span style="color: #993333;">longint</span>;
+  <span style="color: #b1b100;">begin</span>
+    <span style="">readln</span><span style="color: #66cc66;">&#40;</span>n,m<span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #b1b100;">for</span> i:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> n <span style="color: #b1b100;">do</span>
+    <span style="color: #b1b100;">begin</span>
+      <span style="color: #b1b100;">for</span> j:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> m <span style="color: #b1b100;">do</span>
+        <span style="">read</span><span style="color: #66cc66;">&#40;</span>map<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+      <span style="">readln</span>;
+    <span style="color: #b1b100;">end</span>;
+  <span style="color: #b1b100;">end</span>;
+&nbsp;
+  <span style="color: #000000; font-weight: bold;">procedure</span> search;
+  <span style="color: #b1b100;">var</span>
+    i,j:<span style="color: #993333;">longint</span>;
+    b,c:<span style="color: #993333;">char</span>;
+  <span style="color: #b1b100;">begin</span>
+    j:=maxlongint;
+    <span style="color: #b1b100;">for</span> c:=<span style="color: #ff0000;">'A'</span> <span style="color: #b1b100;">to</span> <span style="color: #ff0000;">'Z'</span> <span style="color: #b1b100;">do</span> <span style="color: #b1b100;">if</span> r<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span>&lt;j <span style="color: #b1b100;">then</span> j:=r<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span>;
+    <span style="color: #b1b100;">if</span> j=maxlongint <span style="color: #b1b100;">then</span>
+    <span style="color: #b1b100;">begin</span>
+      <span style="">writeln</span><span style="color: #66cc66;">&#40;</span>s<span style="color: #66cc66;">&#41;</span>;
+      exit;
+    <span style="color: #b1b100;">end</span>;
+    <span style="color: #b1b100;">for</span> c:=<span style="color: #ff0000;">'A'</span> <span style="color: #b1b100;">to</span> <span style="color: #ff0000;">'Z'</span> <span style="color: #b1b100;">do</span> <span style="color: #b1b100;">if</span> r<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span>=j <span style="color: #b1b100;">then</span>
+      <span style="color: #b1b100;">begin</span>
+        s:=s+c;
+        <span style="color: #b1b100;">for</span> b:=<span style="color: #ff0000;">'A'</span> <span style="color: #b1b100;">to</span> <span style="color: #ff0000;">'Z'</span> <span style="color: #b1b100;">do</span> <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>e<span style="color: #66cc66;">&#91;</span>c,b<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span><span style="">and</span><span style="color: #66cc66;">&#40;</span>c&lt;&gt;b<span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">then</span> dec<span style="color: #66cc66;">&#40;</span>r<span style="color: #66cc66;">&#91;</span>b<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+        r<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span>:=maxlongint;
+        search;
+        r<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span>:=j;
+        <span style="color: #b1b100;">for</span> b:=<span style="color: #ff0000;">'A'</span> <span style="color: #b1b100;">to</span> <span style="color: #ff0000;">'Z'</span> <span style="color: #b1b100;">do</span> <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>e<span style="color: #66cc66;">&#91;</span>c,b<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span><span style="">and</span><span style="color: #66cc66;">&#40;</span>c&lt;&gt;b<span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">then</span> inc<span style="color: #66cc66;">&#40;</span>r<span style="color: #66cc66;">&#91;</span>b<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+        delete<span style="color: #66cc66;">&#40;</span>s,length<span style="color: #66cc66;">&#40;</span>s<span style="color: #66cc66;">&#41;</span>,<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span>;
+      <span style="color: #b1b100;">end</span>;
+  <span style="color: #b1b100;">end</span>;
+&nbsp;
+  <span style="color: #000000; font-weight: bold;">procedure</span> main;
+  <span style="color: #b1b100;">var</span>
+    i,j,x,y:<span style="color: #993333;">longint</span>;
+    c,b:<span style="color: #993333;">char</span>;
+    u:<span style="color: #993333;">boolean</span>;
+  <span style="color: #b1b100;">begin</span>
+    <span style="color: #b1b100;">for</span> c:=<span style="color: #ff0000;">'A'</span> <span style="color: #b1b100;">to</span> <span style="color: #ff0000;">'Z'</span> <span style="color: #b1b100;">do</span>
+    <span style="color: #b1b100;">begin</span>
+      r<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span>:=maxlongint;
+      sx<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span>:=maxlongint;
+      sy<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span>:=maxlongint;
+    <span style="color: #b1b100;">end</span>;
+    <span style="color: #b1b100;">for</span> i:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> n <span style="color: #b1b100;">do</span>
+      <span style="color: #b1b100;">for</span> j:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> m <span style="color: #b1b100;">do</span>
+      <span style="color: #b1b100;">begin</span>
+        c:=map<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span>;
+        r<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span>:=<span style="color: #cc66cc;">0</span>;
+        <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>i&lt;sx<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">then</span> sx<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span>:=i;
+        <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>j&lt;sy<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">then</span> sy<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span>:=j;
+        <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>i&gt;tx<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">then</span> tx<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span>:=i;
+        <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>j&gt;ty<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">then</span> ty<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span>:=j;
+      <span style="color: #b1b100;">end</span>;
+    <span style="color: #b1b100;">for</span> c:=<span style="color: #ff0000;">'A'</span> <span style="color: #b1b100;">to</span> <span style="color: #ff0000;">'Z'</span> <span style="color: #b1b100;">do</span>
+    <span style="color: #b1b100;">begin</span>
+      <span style="color: #b1b100;">for</span> i:=sy<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">to</span> ty<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">do</span>
+      <span style="color: #b1b100;">begin</span>
+        e<span style="color: #66cc66;">&#91;</span>c,map<span style="color: #66cc66;">&#91;</span>sx<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span>,i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span>:=<span style="color: #000000; font-weight: bold;">true</span>;
+        e<span style="color: #66cc66;">&#91;</span>c,map<span style="color: #66cc66;">&#91;</span>tx<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span>,i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span>:=<span style="color: #000000; font-weight: bold;">true</span>;
+      <span style="color: #b1b100;">end</span>;
+      <span style="color: #b1b100;">for</span> i:=sx<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">to</span> tx<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">do</span>
+      <span style="color: #b1b100;">begin</span>
+        e<span style="color: #66cc66;">&#91;</span>c,map<span style="color: #66cc66;">&#91;</span>i,sy<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span>:=<span style="color: #000000; font-weight: bold;">true</span>;
+        e<span style="color: #66cc66;">&#91;</span>c,map<span style="color: #66cc66;">&#91;</span>i,ty<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span>:=<span style="color: #000000; font-weight: bold;">true</span>;
+      <span style="color: #b1b100;">end</span>;
+    <span style="color: #b1b100;">end</span>;
+    <span style="color: #b1b100;">for</span> c:=<span style="color: #ff0000;">'A'</span> <span style="color: #b1b100;">to</span> <span style="color: #ff0000;">'Z'</span> <span style="color: #b1b100;">do</span>
+      <span style="color: #b1b100;">for</span> b:=<span style="color: #ff0000;">'A'</span> <span style="color: #b1b100;">to</span> <span style="color: #ff0000;">'Z'</span> <span style="color: #b1b100;">do</span>
+        <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>e<span style="color: #66cc66;">&#91;</span>b,c<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span><span style="">and</span><span style="color: #66cc66;">&#40;</span>b&lt;&gt;c<span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">then</span>
+          inc<span style="color: #66cc66;">&#40;</span>r<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+    s:=<span style="color: #ff0000;">''</span>;
+    search;
+  <span style="color: #b1b100;">end</span>;
+&nbsp;
+<span style="color: #b1b100;">begin</span>
+  assign<span style="color: #66cc66;">&#40;</span>input,<span style="color: #ff0000;">'frameup.in'</span><span style="color: #66cc66;">&#41;</span>;reset<span style="color: #66cc66;">&#40;</span>input<span style="color: #66cc66;">&#41;</span>;
+  assign<span style="color: #66cc66;">&#40;</span>output,<span style="color: #ff0000;">'frameup.out'</span><span style="color: #66cc66;">&#41;</span>;rewrite<span style="color: #66cc66;">&#40;</span>output<span style="color: #66cc66;">&#41;</span>;
+  readData;
+  main;
+  close<span style="color: #66cc66;">&#40;</span>output<span style="color: #66cc66;">&#41;</span>;
+<span style="color: #b1b100;">end</span>.</pre>
+<pre class="pascal"><span style="color: #808080; font-style: italic;">{
+id:crboygi2
+PROG:frameup
+LANG:PASCAL
+}</span>
+<span style="color: #000000; font-weight: bold;">program</span> frameup;
+  <span style="color: #993333;">type</span>
+    ty=<span style="color: #993333;">array</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span>..<span style="color: #cc66cc;">30</span><span style="color: #66cc66;">&#93;</span><span style="color: #b1b100;">of</span> <span style="color: #993333;">char</span>;
+  <span style="color: #b1b100;">var</span>
+    l,r,u,d:<span style="color: #993333;">array</span><span style="color: #66cc66;">&#91;</span><span style="color: #ff0000;">'A'</span>..<span style="color: #ff0000;">'Z'</span><span style="color: #66cc66;">&#93;</span><span style="color: #b1b100;">of</span> <span style="color: #993333;">integer</span>;<span style="color: #808080; font-style: italic;">{存储字母的上下左右边界}</span>
+    bb:<span style="color: #993333;">array</span><span style="color: #66cc66;">&#91;</span><span style="color: #ff0000;">'A'</span>..<span style="color: #ff0000;">'Z'</span>,<span style="color: #ff0000;">'A'</span>..<span style="color: #ff0000;">'Z'</span><span style="color: #66cc66;">&#93;</span><span style="color: #b1b100;">of</span> <span style="color: #993333;">boolean</span>;<span style="color: #808080; font-style: italic;">{字母之间的联系}</span>
+    du:<span style="color: #993333;">array</span><span style="color: #66cc66;">&#91;</span><span style="color: #ff0000;">'A'</span>..<span style="color: #ff0000;">'Z'</span><span style="color: #66cc66;">&#93;</span><span style="color: #b1b100;">of</span> <span style="color: #993333;">longint</span>;<span style="color: #808080; font-style: italic;">{字母的入度}</span>
+    w:<span style="color: #993333;">array</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span>..<span style="color: #cc66cc;">100</span>,<span style="color: #cc66cc;">1</span>..<span style="color: #cc66cc;">100</span><span style="color: #66cc66;">&#93;</span><span style="color: #b1b100;">of</span> <span style="color: #993333;">char</span>;<span style="color: #808080; font-style: italic;">{读入数据}</span>
+    have:<span style="color: #993333;">array</span><span style="color: #66cc66;">&#91;</span><span style="color: #ff0000;">'A'</span>..<span style="color: #ff0000;">'Z'</span><span style="color: #66cc66;">&#93;</span><span style="color: #b1b100;">of</span> <span style="color: #993333;">boolean</span>;<span style="color: #808080; font-style: italic;">{字母是否出现过}</span>
+    used:<span style="color: #993333;">array</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span>..<span style="color: #cc66cc;">26</span><span style="color: #66cc66;">&#93;</span><span style="color: #b1b100;">of</span> <span style="color: #993333;">boolean</span>;<span style="color: #808080; font-style: italic;">{拓扑排序时回溯时用到}</span>
+    ch:<span style="color: #993333;">array</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span>..<span style="color: #cc66cc;">26</span><span style="color: #66cc66;">&#93;</span><span style="color: #b1b100;">of</span> <span style="color: #993333;">char</span>;<span style="color: #808080; font-style: italic;">{将出现的字母存入数组中}</span>
+    n,m,n1,len:<span style="color: #993333;">longint</span>;
+    aa:<span style="color: #993333;">array</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span>..<span style="color: #cc66cc;">10000</span><span style="color: #66cc66;">&#93;</span><span style="color: #b1b100;">of</span> <span style="color: #993333;">string</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">30</span><span style="color: #66cc66;">&#93;</span>;<span style="color: #808080; font-style: italic;">{存储结果}</span>
+    a1:ty;
+    ch1:<span style="color: #993333;">char</span>;
+  <span style="color: #000000; font-weight: bold;">procedure</span>  int;
+    <span style="color: #b1b100;">var</span> i,j:<span style="color: #993333;">integer</span>;
+    <span style="color: #b1b100;">begin</span>
+      assign<span style="color: #66cc66;">&#40;</span>input,<span style="color: #ff0000;">'frameup.in'</span><span style="color: #66cc66;">&#41;</span>;reset<span style="color: #66cc66;">&#40;</span>input<span style="color: #66cc66;">&#41;</span>;
+      <span style="color: #b1b100;">for</span> ch1:=<span style="color: #ff0000;">'A'</span> <span style="color: #b1b100;">to</span> <span style="color: #ff0000;">'Z'</span> <span style="color: #b1b100;">do</span>
+        <span style="color: #b1b100;">begin</span>
+          l<span style="color: #66cc66;">&#91;</span>ch1<span style="color: #66cc66;">&#93;</span>:=<span style="color: #cc66cc;">100</span>;r<span style="color: #66cc66;">&#91;</span>ch1<span style="color: #66cc66;">&#93;</span>:=<span style="color: #cc66cc;">-100</span>;u<span style="color: #66cc66;">&#91;</span>ch1<span style="color: #66cc66;">&#93;</span>:=<span style="color: #cc66cc;">100</span>;d<span style="color: #66cc66;">&#91;</span>ch1<span style="color: #66cc66;">&#93;</span>:=<span style="color: #cc66cc;">-100</span>;
+        <span style="color: #b1b100;">end</span>;
+      <span style="">readln</span><span style="color: #66cc66;">&#40;</span>n,m<span style="color: #66cc66;">&#41;</span>;
+      <span style="color: #b1b100;">for</span> i:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> n <span style="color: #b1b100;">do</span>
+        <span style="color: #b1b100;">begin</span>
+          <span style="color: #b1b100;">for</span> j:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> m <span style="color: #b1b100;">do</span>
+           <span style="color: #b1b100;">begin</span>
+            <span style="">read</span><span style="color: #66cc66;">&#40;</span>w<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>; ch1:=w<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span>;
+            <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span><span style="">ord</span><span style="color: #66cc66;">&#40;</span>w<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>&gt;=<span style="">ord</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">'A'</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span><span style="">and</span><span style="color: #66cc66;">&#40;</span><span style="">ord</span><span style="color: #66cc66;">&#40;</span>w<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>&lt;=<span style="">ord</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">'Z'</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">then</span> <span style="color: #b1b100;">begin</span><span style="color: #808080; font-style: italic;">{计算上下左右边界}</span>
+            <span style="color: #b1b100;">if</span> j&lt;l<span style="color: #66cc66;">&#91;</span>w<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">then</span> l<span style="color: #66cc66;">&#91;</span>w<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span>:=j;
+            <span style="color: #b1b100;">if</span> j&gt;r<span style="color: #66cc66;">&#91;</span>w<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">then</span> r<span style="color: #66cc66;">&#91;</span>w<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span>:=j;
+            <span style="color: #b1b100;">if</span> i&lt;u<span style="color: #66cc66;">&#91;</span>w<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">then</span> u<span style="color: #66cc66;">&#91;</span>w<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span>:=i;
+            <span style="color: #b1b100;">if</span> i&gt;d<span style="color: #66cc66;">&#91;</span>w<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">then</span> d<span style="color: #66cc66;">&#91;</span>w<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span>:=i;
+            <span style="color: #b1b100;">if</span> have<span style="color: #66cc66;">&#91;</span>w<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span>=<span style="color: #000000; font-weight: bold;">false</span> <span style="color: #b1b100;">then</span>
+              <span style="color: #b1b100;">begin</span>
+                have<span style="color: #66cc66;">&#91;</span>w<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span>:=<span style="color: #000000; font-weight: bold;">true</span>;
+                inc<span style="color: #66cc66;">&#40;</span>n1<span style="color: #66cc66;">&#41;</span>;ch<span style="color: #66cc66;">&#91;</span>n1<span style="color: #66cc66;">&#93;</span>:=w<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span>;<span style="color: #808080; font-style: italic;">{将出现的字母存入ch数组}</span>
+              <span style="color: #b1b100;">end</span>; <span style="color: #b1b100;">end</span>;
+           <span style="color: #b1b100;">end</span>;
+          <span style="">readln</span>;
+        <span style="color: #b1b100;">end</span>;
+    <span style="color: #b1b100;">end</span>;
+  <span style="color: #000000; font-weight: bold;">procedure</span>  try1<span style="color: #66cc66;">&#40;</span>step:<span style="color: #993333;">integer</span><span style="color: #66cc66;">&#41;</span>;<span style="color: #808080; font-style: italic;">{拓扑回溯过程}</span>
+    <span style="color: #b1b100;">var</span>
+      i,j:<span style="color: #993333;">integer</span>;
+      ch3:<span style="color: #993333;">char</span>;
+    <span style="color: #b1b100;">begin</span>
+      <span style="color: #b1b100;">if</span> step&gt;n1 <span style="color: #b1b100;">then</span> <span style="color: #b1b100;">begin</span> inc<span style="color: #66cc66;">&#40;</span>len<span style="color: #66cc66;">&#41;</span>;aa<span style="color: #66cc66;">&#91;</span>len<span style="color: #66cc66;">&#93;</span>:=a1;exit;end;
+      <span style="color: #b1b100;">for</span> i:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> n1 <span style="color: #b1b100;">do</span>
+        <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>used<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>=<span style="color: #000000; font-weight: bold;">false</span><span style="color: #66cc66;">&#41;</span><span style="">and</span><span style="color: #66cc66;">&#40;</span>du<span style="color: #66cc66;">&#91;</span>ch<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span>=<span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">then</span>
+          <span style="color: #b1b100;">begin</span>
+            ch3:=ch<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>;
+            <span style="color: #b1b100;">for</span> j:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> n1 <span style="color: #b1b100;">do</span>
+              <span style="color: #b1b100;">if</span> bb<span style="color: #66cc66;">&#91;</span>ch3,ch<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span>=<span style="color: #000000; font-weight: bold;">true</span> <span style="color: #b1b100;">then</span> dec<span style="color: #66cc66;">&#40;</span>du<span style="color: #66cc66;">&#91;</span>ch<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+            a1<span style="color: #66cc66;">&#91;</span>n1-step<span style="color: #cc66cc;">+1</span><span style="color: #66cc66;">&#93;</span>:=ch3; used<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>:=<span style="color: #000000; font-weight: bold;">true</span>;
+            try1<span style="color: #66cc66;">&#40;</span>step<span style="color: #cc66cc;">+1</span><span style="color: #66cc66;">&#41;</span>;
+            used<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>:=<span style="color: #000000; font-weight: bold;">false</span>;
+            <span style="color: #b1b100;">for</span> j:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> n1 <span style="color: #b1b100;">do</span>
+              <span style="color: #b1b100;">if</span> bb<span style="color: #66cc66;">&#91;</span>ch3,ch<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span>=<span style="color: #000000; font-weight: bold;">true</span> <span style="color: #b1b100;">then</span> inc<span style="color: #66cc66;">&#40;</span>du<span style="color: #66cc66;">&#91;</span>ch<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+          <span style="color: #b1b100;">end</span>;
+    <span style="color: #b1b100;">end</span>;
+  <span style="color: #000000; font-weight: bold;">procedure</span>  main;<span style="color: #808080; font-style: italic;">{先建立图形，再进行拓扑}</span>
+    <span style="color: #b1b100;">var</span>
+      i,j:<span style="color: #993333;">integer</span>;
+    <span style="color: #b1b100;">begin</span>
+      <span style="color: #b1b100;">for</span> i:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> n1 <span style="color: #b1b100;">do</span><span style="color: #808080; font-style: italic;">{建立图形的主过程}</span>
+        <span style="color: #b1b100;">begin</span>
+          ch1:=ch<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>;
+          <span style="color: #b1b100;">for</span> j:=l<span style="color: #66cc66;">&#91;</span>ch1<span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">to</span> r<span style="color: #66cc66;">&#91;</span>ch1<span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">do</span><span style="color: #808080; font-style: italic;">{扫描上下边界}</span>
+           <span style="color: #b1b100;">begin</span>
+            <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>w<span style="color: #66cc66;">&#91;</span>u<span style="color: #66cc66;">&#91;</span>ch1<span style="color: #66cc66;">&#93;</span>,j<span style="color: #66cc66;">&#93;</span>&lt;&gt;ch1<span style="color: #66cc66;">&#41;</span><span style="">and</span><span style="color: #66cc66;">&#40;</span>w<span style="color: #66cc66;">&#91;</span>u<span style="color: #66cc66;">&#91;</span>ch1<span style="color: #66cc66;">&#93;</span>,j<span style="color: #66cc66;">&#93;</span>&lt;&gt;<span style="color: #ff0000;">'.'</span><span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">then</span><span style="color: #808080; font-style: italic;">{扫描上边界}</span>
+              <span style="color: #b1b100;">if</span> bb<span style="color: #66cc66;">&#91;</span>w<span style="color: #66cc66;">&#91;</span>u<span style="color: #66cc66;">&#91;</span>ch1<span style="color: #66cc66;">&#93;</span>,j<span style="color: #66cc66;">&#93;</span>,ch1<span style="color: #66cc66;">&#93;</span>=<span style="color: #000000; font-weight: bold;">false</span> <span style="color: #b1b100;">then</span>
+                <span style="color: #b1b100;">begin</span>
+                  inc<span style="color: #66cc66;">&#40;</span>du<span style="color: #66cc66;">&#91;</span>ch1<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+                  bb<span style="color: #66cc66;">&#91;</span>w<span style="color: #66cc66;">&#91;</span>u<span style="color: #66cc66;">&#91;</span>ch1<span style="color: #66cc66;">&#93;</span>,j<span style="color: #66cc66;">&#93;</span>,ch1<span style="color: #66cc66;">&#93;</span>:=<span style="color: #000000; font-weight: bold;">true</span>;
+                <span style="color: #b1b100;">end</span>;
+            <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>w<span style="color: #66cc66;">&#91;</span>d<span style="color: #66cc66;">&#91;</span>ch1<span style="color: #66cc66;">&#93;</span>,j<span style="color: #66cc66;">&#93;</span>&lt;&gt;ch1<span style="color: #66cc66;">&#41;</span><span style="">and</span><span style="color: #66cc66;">&#40;</span>w<span style="color: #66cc66;">&#91;</span>d<span style="color: #66cc66;">&#91;</span>ch1<span style="color: #66cc66;">&#93;</span>,j<span style="color: #66cc66;">&#93;</span>&lt;&gt;<span style="color: #ff0000;">'.'</span><span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">then</span><span style="color: #808080; font-style: italic;">{扫描下边界}</span>
+              <span style="color: #b1b100;">if</span> bb<span style="color: #66cc66;">&#91;</span>w<span style="color: #66cc66;">&#91;</span>d<span style="color: #66cc66;">&#91;</span>ch1<span style="color: #66cc66;">&#93;</span>,j<span style="color: #66cc66;">&#93;</span>,ch1<span style="color: #66cc66;">&#93;</span>=<span style="color: #000000; font-weight: bold;">false</span> <span style="color: #b1b100;">then</span>
+                <span style="color: #b1b100;">begin</span>
+                  inc<span style="color: #66cc66;">&#40;</span>du<span style="color: #66cc66;">&#91;</span>ch1<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+                  bb<span style="color: #66cc66;">&#91;</span>w<span style="color: #66cc66;">&#91;</span>d<span style="color: #66cc66;">&#91;</span>ch1<span style="color: #66cc66;">&#93;</span>,j<span style="color: #66cc66;">&#93;</span>,ch1<span style="color: #66cc66;">&#93;</span>:=<span style="color: #000000; font-weight: bold;">true</span>;
+                <span style="color: #b1b100;">end</span>;
+            <span style="color: #b1b100;">end</span>;
+          <span style="color: #b1b100;">for</span> j:=u<span style="color: #66cc66;">&#91;</span>ch1<span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">to</span> d<span style="color: #66cc66;">&#91;</span>ch1<span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">do</span><span style="color: #808080; font-style: italic;">{扫描左右边界}</span>
+            <span style="color: #b1b100;">begin</span>
+              <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>w<span style="color: #66cc66;">&#91;</span>j,l<span style="color: #66cc66;">&#91;</span>ch1<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span>&lt;&gt;ch1<span style="color: #66cc66;">&#41;</span><span style="">and</span><span style="color: #66cc66;">&#40;</span>w<span style="color: #66cc66;">&#91;</span>j,l<span style="color: #66cc66;">&#91;</span>ch1<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span>&lt;&gt;<span style="color: #ff0000;">'.'</span><span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">then</span><span style="color: #808080; font-style: italic;">{扫描左边界}</span>
+                <span style="color: #b1b100;">if</span> bb<span style="color: #66cc66;">&#91;</span>w<span style="color: #66cc66;">&#91;</span>j,l<span style="color: #66cc66;">&#91;</span>ch1<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span>,ch1<span style="color: #66cc66;">&#93;</span>=<span style="color: #000000; font-weight: bold;">false</span> <span style="color: #b1b100;">then</span>
+                  <span style="color: #b1b100;">begin</span>
+                    inc<span style="color: #66cc66;">&#40;</span>du<span style="color: #66cc66;">&#91;</span>ch1<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+                    bb<span style="color: #66cc66;">&#91;</span>w<span style="color: #66cc66;">&#91;</span>j,l<span style="color: #66cc66;">&#91;</span>ch1<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span>,ch1<span style="color: #66cc66;">&#93;</span>:=<span style="color: #000000; font-weight: bold;">true</span>;
+                  <span style="color: #b1b100;">end</span>;
+              <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>w<span style="color: #66cc66;">&#91;</span>j,r<span style="color: #66cc66;">&#91;</span>ch1<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span>&lt;&gt;ch1<span style="color: #66cc66;">&#41;</span><span style="">and</span><span style="color: #66cc66;">&#40;</span>w<span style="color: #66cc66;">&#91;</span>j,r<span style="color: #66cc66;">&#91;</span>ch1<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span>&lt;&gt;<span style="color: #ff0000;">'.'</span><span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">then</span><span style="color: #808080; font-style: italic;">{扫描右边界}</span>
+                <span style="color: #b1b100;">if</span> bb<span style="color: #66cc66;">&#91;</span>w<span style="color: #66cc66;">&#91;</span>j,r<span style="color: #66cc66;">&#91;</span>ch1<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span>,ch1<span style="color: #66cc66;">&#93;</span>=<span style="color: #000000; font-weight: bold;">false</span> <span style="color: #b1b100;">then</span>
+                  <span style="color: #b1b100;">begin</span>
+                    inc<span style="color: #66cc66;">&#40;</span>du<span style="color: #66cc66;">&#91;</span>ch1<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+                    bb<span style="color: #66cc66;">&#91;</span>w<span style="color: #66cc66;">&#91;</span>j,r<span style="color: #66cc66;">&#91;</span>ch1<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span>,ch1<span style="color: #66cc66;">&#93;</span>:=<span style="color: #000000; font-weight: bold;">true</span>;
+                  <span style="color: #b1b100;">end</span>;
+            <span style="color: #b1b100;">end</span>;
+        <span style="color: #b1b100;">end</span>;
+      try1<span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #b1b100;">end</span>;
+ <span style="color: #808080; font-style: italic;">{ procedure  pai;{没用快排9，10个测试数据超时}</span>
+    <span style="color: #b1b100;">var</span>
+      i,j,num:<span style="color: #993333;">longint</span>;
+    <span style="color: #b1b100;">begin</span>
+      <span style="color: #b1b100;">for</span> i:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> len<span style="color: #cc66cc;">-1</span> <span style="color: #b1b100;">do</span>
+        <span style="color: #b1b100;">begin</span>
+          num:=i;
+          <span style="color: #b1b100;">for</span> j:=i<span style="color: #cc66cc;">+1</span> <span style="color: #b1b100;">to</span> len <span style="color: #b1b100;">do</span>
+            <span style="color: #b1b100;">if</span> aa<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span>&lt;aa<span style="color: #66cc66;">&#91;</span>num<span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">then</span> num:=j;
+          a1:=aa<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>;
+          aa<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>:=aa<span style="color: #66cc66;">&#91;</span>num<span style="color: #66cc66;">&#93;</span>;
+          aa<span style="color: #66cc66;">&#91;</span>num<span style="color: #66cc66;">&#93;</span>:=a1;
+        <span style="color: #b1b100;">end</span>;
+    <span style="color: #b1b100;">end</span>;  <span style="color: #66cc66;">&#125;</span>
+  <span style="color: #000000; font-weight: bold;">procedure</span>  kuai<span style="color: #66cc66;">&#40;</span>s,t:<span style="color: #993333;">longint</span>;var k:<span style="color: #993333;">longint</span><span style="color: #66cc66;">&#41;</span>;<span style="color: #808080; font-style: italic;">{快排过程}</span>
+    <span style="color: #b1b100;">var</span>
+      i,j:<span style="color: #993333;">integer</span>;
+      temp:ty;
+    <span style="color: #b1b100;">begin</span>
+      i:=s;j:=t;temp:=aa<span style="color: #66cc66;">&#91;</span>s<span style="color: #66cc66;">&#93;</span>;
+      <span style="color: #b1b100;">while</span> i&lt;j <span style="color: #b1b100;">do</span>
+        <span style="color: #b1b100;">begin</span>
+          <span style="color: #b1b100;">while</span> <span style="color: #66cc66;">&#40;</span>i&lt;j<span style="color: #66cc66;">&#41;</span><span style="">and</span><span style="color: #66cc66;">&#40;</span>aa<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span>&gt;temp<span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">do</span> dec<span style="color: #66cc66;">&#40;</span>j<span style="color: #66cc66;">&#41;</span>;
+          aa<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>:=aa<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span>;
+          <span style="color: #b1b100;">while</span> <span style="color: #66cc66;">&#40;</span>i&lt;j<span style="color: #66cc66;">&#41;</span><span style="">and</span><span style="color: #66cc66;">&#40;</span>aa<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>&lt;temp<span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">do</span> inc<span style="color: #66cc66;">&#40;</span>i<span style="color: #66cc66;">&#41;</span>;
+          aa<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span>:=aa<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>;
+        <span style="color: #b1b100;">end</span>;
+      aa<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>:=temp;
+      k:=i;
+    <span style="color: #b1b100;">end</span>;
+  <span style="color: #000000; font-weight: bold;">procedure</span>  pai<span style="color: #66cc66;">&#40;</span>s,t:<span style="color: #993333;">longint</span><span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #b1b100;">var</span> k:<span style="color: #993333;">longint</span>;
+    <span style="color: #b1b100;">begin</span>
+      <span style="color: #b1b100;">if</span> s&lt;t <span style="color: #b1b100;">then</span>
+        <span style="color: #b1b100;">begin</span>
+          kuai<span style="color: #66cc66;">&#40;</span>s,t,k<span style="color: #66cc66;">&#41;</span>;
+          pai<span style="color: #66cc66;">&#40;</span>s,k<span style="color: #cc66cc;">-1</span><span style="color: #66cc66;">&#41;</span>;
+          pai<span style="color: #66cc66;">&#40;</span>k<span style="color: #cc66cc;">+1</span>,t<span style="color: #66cc66;">&#41;</span>;
+        <span style="color: #b1b100;">end</span>;
+    <span style="color: #b1b100;">end</span>;
+  <span style="color: #000000; font-weight: bold;">procedure</span>  out1;<span style="color: #808080; font-style: italic;">{输出过程}</span>
+    <span style="color: #b1b100;">var</span>
+      i,j:<span style="color: #993333;">longint</span>;
+    <span style="color: #b1b100;">begin</span>
+      assign<span style="color: #66cc66;">&#40;</span>output,<span style="color: #ff0000;">'frameup.out'</span><span style="color: #66cc66;">&#41;</span>;rewrite<span style="color: #66cc66;">&#40;</span>output<span style="color: #66cc66;">&#41;</span>;
+      <span style="color: #b1b100;">for</span> i:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> len <span style="color: #b1b100;">do</span>
+        <span style="color: #b1b100;">begin</span>
+          <span style="color: #b1b100;">for</span> j:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> n1 <span style="color: #b1b100;">do</span>
+            <span style="">write</span><span style="color: #66cc66;">&#40;</span>aa<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+          <span style="">writeln</span>;
+        <span style="color: #b1b100;">end</span>;
+      close<span style="color: #66cc66;">&#40;</span>output<span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #b1b100;">end</span>;
+<span style="color: #b1b100;">begin</span>
+  int;
+  main;
+  pai<span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">1</span>,len<span style="color: #66cc66;">&#41;</span>;
+  out1;
+<span style="color: #b1b100;">end</span>.</pre>
+<p>此题的思路是扫描每一个字母图形的上下左右边界，进行拓扑排序
+</p>
+<pre> （1） 矩形的每条边中，至少有一部分是可见的。
+</pre>
+<p>于是我们可以轻易的确定每个矩形的边界。然后就对两个矩形的交点进行判断：
+注意
+</p>
+<pre> （1）字母不是仅5个，而是26个大写字母都有。
+ （2）要用快排（但在vijos上用一般排序就能0ms，因为vijos上的测试数据比较弱）
+</pre>
+<p>也可登入我的博客，去看更多啊，^_^
+<a href="http://hi.baidu.com/crboygirl/blog/item/1ef22b38bb540b2097ddd89e.html" class="external free" title="http://hi.baidu.com/crboygirl/blog/item/1ef22b38bb540b2097ddd89e.html" rel="nofollow">http://hi.baidu.com/crboygirl/blog/item/1ef22b38bb540b2097ddd89e.html</a>
+</p><p>//By King.
+</p>
+<pre class="pascal">算是比较恶心了！
+我是直接模拟的，
+因此效率比较低。
+代码还是比较清晰的。
+&nbsp;
+&nbsp;
+&nbsp;
+<span style="color: #808080; font-style: italic;">{
+ID: 31440461
+PROG: frameup
+LANG: PASCAL
+}</span>
+&nbsp;
+<span style="color: #993333;">const</span> maxH=<span style="color: #cc66cc;">30</span>;
+&nbsp;
+<span style="color: #993333;">type</span>
+  TheMap=<span style="color: #993333;">array</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span>..<span style="color: #202020;">maxH</span>,<span style="color: #cc66cc;">1</span>..<span style="color: #202020;">maxH</span><span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">of</span> <span style="color: #993333;">char</span>;
+  re=<span style="color: #993333;">record</span>
+      hh,ww:<span style="color: #993333;">integer</span>;
+     <span style="color: #b1b100;">end</span>;
+<span style="color: #b1b100;">var</span> map,TempMap:TheMap;
+    visit:<span style="color: #993333;">array</span><span style="color: #66cc66;">&#91;</span><span style="color: #ff0000;">'A'</span>..<span style="color: #ff0000;">'Z'</span><span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">of</span> <span style="color: #993333;">boolean</span>;
+    maxstep,i,j,H,W,cans:<span style="color: #993333;">integer</span>;
+    ans:<span style="color: #993333;">array</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span>..<span style="color: #cc66cc;">10000</span><span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">of</span> <span style="color: #993333;">string</span><span style="color: #66cc66;">&#91;</span>maxH<span style="color: #66cc66;">&#93;</span>;
+    V:<span style="color: #993333;">array</span><span style="color: #66cc66;">&#91;</span><span style="color: #ff0000;">'A'</span>..<span style="color: #ff0000;">'Z'</span>,<span style="color: #cc66cc;">1</span>..<span style="color: #cc66cc;">4</span><span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">of</span> re;
+    ch:<span style="color: #993333;">char</span>;
+&nbsp;
+<span style="color: #000000; font-weight: bold;">procedure</span> GetVertex;
+<span style="color: #b1b100;">var</span> i,j:<span style="color: #993333;">integer</span>;
+    ok:<span style="color: #993333;">boolean</span>;
+<span style="color: #b1b100;">begin</span>
+  <span style="color: #b1b100;">for</span> ch:=<span style="color: #ff0000;">'A'</span> <span style="color: #b1b100;">to</span> <span style="color: #ff0000;">'Z'</span> <span style="color: #b1b100;">do</span>
+    <span style="color: #b1b100;">if</span> visit<span style="color: #66cc66;">&#91;</span>ch<span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">then</span>
+    <span style="color: #b1b100;">begin</span>
+       ok:=<span style="color: #000000; font-weight: bold;">false</span>;
+       <span style="color: #b1b100;">for</span> i:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> H <span style="color: #b1b100;">do</span>
+       <span style="color: #b1b100;">begin</span>
+         <span style="color: #b1b100;">for</span> j:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> W <span style="color: #b1b100;">do</span> <span style="color: #b1b100;">if</span> map<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span>=ch <span style="color: #b1b100;">then</span> <span style="color: #b1b100;">begin</span> ok:=<span style="color: #000000; font-weight: bold;">true</span>;break;end;
+         <span style="color: #b1b100;">if</span> ok <span style="color: #b1b100;">then</span> <span style="color: #000000; font-weight: bold;">break</span>;
+       <span style="color: #b1b100;">end</span>;
+&nbsp;
+       v<span style="color: #66cc66;">&#91;</span>ch,<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">hh</span>:=i;
+       v<span style="color: #66cc66;">&#91;</span>ch,<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ww</span>:=j;
+       <span style="color: #b1b100;">for</span> j:=w <span style="color: #b1b100;">downto</span> <span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">do</span> <span style="color: #b1b100;">if</span> map<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span>=ch <span style="color: #b1b100;">then</span> <span style="color: #000000; font-weight: bold;">break</span>;
+       v<span style="color: #66cc66;">&#91;</span>ch,<span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">hh</span>:=i;
+       v<span style="color: #66cc66;">&#91;</span>ch,<span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ww</span>:=j;
+       <span style="color: #808080; font-style: italic;">//</span>
+       ok:=<span style="color: #000000; font-weight: bold;">false</span>;
+       <span style="color: #b1b100;">for</span> i:=H <span style="color: #b1b100;">downto</span> <span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">do</span>
+       <span style="color: #b1b100;">begin</span>
+          <span style="color: #b1b100;">for</span> j:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> W <span style="color: #b1b100;">do</span>  <span style="color: #b1b100;">if</span> map<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span>=ch <span style="color: #b1b100;">then</span> <span style="color: #b1b100;">begin</span> ok:=<span style="color: #000000; font-weight: bold;">true</span>;break;end;
+          <span style="color: #b1b100;">if</span> ok <span style="color: #b1b100;">then</span> <span style="color: #000000; font-weight: bold;">break</span>;
+       <span style="color: #b1b100;">end</span>;
+       <span style="color: #808080; font-style: italic;">//if map[i,j]=ch then break;v[ch,3].hh:=i;</span>
+       v<span style="color: #66cc66;">&#91;</span>ch,<span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">hh</span>:=i;
+       v<span style="color: #66cc66;">&#91;</span>ch,<span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ww</span>:=j;
+       <span style="color: #b1b100;">for</span> j:=W <span style="color: #b1b100;">downto</span> <span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">do</span> <span style="color: #b1b100;">if</span> map<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span>=ch <span style="color: #b1b100;">then</span> <span style="color: #000000; font-weight: bold;">break</span>;
+       v<span style="color: #66cc66;">&#91;</span>ch,<span style="color: #cc66cc;">4</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">hh</span>:=i;
+       v<span style="color: #66cc66;">&#91;</span>ch,<span style="color: #cc66cc;">4</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ww</span>:=j;
+       <span style="color: #808080; font-style: italic;">//</span>
+       <span style="color: #b1b100;">if</span> v<span style="color: #66cc66;">&#91;</span>ch,<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ww</span>&gt;v<span style="color: #66cc66;">&#91;</span>ch,<span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ww</span> <span style="color: #b1b100;">then</span> v<span style="color: #66cc66;">&#91;</span>ch,<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ww</span>:=v<span style="color: #66cc66;">&#91;</span>ch,<span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ww</span>;
+       v<span style="color: #66cc66;">&#91;</span>ch,<span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ww</span>:=v<span style="color: #66cc66;">&#91;</span>ch,<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ww</span>;
+       <span style="color: #b1b100;">if</span> v<span style="color: #66cc66;">&#91;</span>ch,<span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ww</span>&lt;v<span style="color: #66cc66;">&#91;</span>ch,<span style="color: #cc66cc;">4</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ww</span> <span style="color: #b1b100;">then</span> v<span style="color: #66cc66;">&#91;</span>ch,<span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ww</span>:=v<span style="color: #66cc66;">&#91;</span>ch,<span style="color: #cc66cc;">4</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ww</span>;
+       v<span style="color: #66cc66;">&#91;</span>ch,<span style="color: #cc66cc;">4</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ww</span>:=v<span style="color: #66cc66;">&#91;</span>ch,<span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ww</span>;
+    <span style="color: #b1b100;">end</span>;
+<span style="color: #b1b100;">end</span>;
+<span style="color: #808080; font-style: italic;">//</span>
+<span style="color: #000000; font-weight: bold;">function</span> IsOnSurface<span style="color: #66cc66;">&#40;</span>now:<span style="color: #993333;">char</span><span style="color: #66cc66;">&#41;</span>:<span style="color: #993333;">boolean</span>;
+<span style="color: #b1b100;">var</span> i,j,ii,jj:<span style="color: #993333;">integer</span>;
+<span style="color: #b1b100;">begin</span>
+  <span style="color: #808080; font-style: italic;">//if visit[now] then exit(false);</span>
+  i:=v<span style="color: #66cc66;">&#91;</span>now,<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">hh</span>;
+  ii:=v<span style="color: #66cc66;">&#91;</span>now,<span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">hh</span>;
+  <span style="color: #b1b100;">for</span> j:=v<span style="color: #66cc66;">&#91;</span>now,<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ww</span> <span style="color: #b1b100;">to</span> v<span style="color: #66cc66;">&#91;</span>now,<span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ww</span> <span style="color: #b1b100;">do</span>
+    <span style="color: #b1b100;">if</span> <span style="color: #b1b100;">not</span> <span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#40;</span>map<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span>=now<span style="color: #66cc66;">&#41;</span>or<span style="color: #66cc66;">&#40;</span>map<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span>=<span style="color: #ff0000;">'.'</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span>
+           <span style="">and</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#40;</span>map<span style="color: #66cc66;">&#91;</span>ii,j<span style="color: #66cc66;">&#93;</span>=now<span style="color: #66cc66;">&#41;</span>or<span style="color: #66cc66;">&#40;</span>map<span style="color: #66cc66;">&#91;</span>ii,j<span style="color: #66cc66;">&#93;</span>=<span style="color: #ff0000;">'.'</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span>
+           <span style="color: #b1b100;">then</span> exit<span style="color: #66cc66;">&#40;</span><span style="color: #000000; font-weight: bold;">false</span><span style="color: #66cc66;">&#41;</span>;
+  <span style="color: #808080; font-style: italic;">//</span>
+  j:=v<span style="color: #66cc66;">&#91;</span>now,<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ww</span>;
+  jj:=v<span style="color: #66cc66;">&#91;</span>now,<span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ww</span>;
+  <span style="color: #b1b100;">for</span> i:=v<span style="color: #66cc66;">&#91;</span>now,<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">hh</span> <span style="color: #b1b100;">to</span> v<span style="color: #66cc66;">&#91;</span>now,<span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">hh</span> <span style="color: #b1b100;">do</span>
+    <span style="color: #b1b100;">if</span> <span style="color: #b1b100;">not</span> <span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#40;</span>map<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span>=now<span style="color: #66cc66;">&#41;</span>or<span style="color: #66cc66;">&#40;</span>map<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span>=<span style="color: #ff0000;">'.'</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span>
+           <span style="">and</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#40;</span>map<span style="color: #66cc66;">&#91;</span>i,jj<span style="color: #66cc66;">&#93;</span>=now<span style="color: #66cc66;">&#41;</span>or<span style="color: #66cc66;">&#40;</span>map<span style="color: #66cc66;">&#91;</span>i,jj<span style="color: #66cc66;">&#93;</span>=<span style="color: #ff0000;">'.'</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span>
+           <span style="color: #b1b100;">then</span> exit<span style="color: #66cc66;">&#40;</span><span style="color: #000000; font-weight: bold;">false</span><span style="color: #66cc66;">&#41;</span>;
+  exit<span style="color: #66cc66;">&#40;</span><span style="color: #000000; font-weight: bold;">true</span><span style="color: #66cc66;">&#41;</span>;
+<span style="color: #b1b100;">end</span>;
+<span style="color: #808080; font-style: italic;">//</span>
+<span style="color: #000000; font-weight: bold;">procedure</span> clean<span style="color: #66cc66;">&#40;</span>now:<span style="color: #993333;">char</span><span style="color: #66cc66;">&#41;</span>;
+<span style="color: #b1b100;">var</span> i,j,ii,jj:<span style="color: #993333;">integer</span>;
+<span style="color: #b1b100;">begin</span>
+  <span style="color: #808080; font-style: italic;">//if visit[now] then exit(false);</span>
+  i:=v<span style="color: #66cc66;">&#91;</span>now,<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">hh</span>;
+  ii:=v<span style="color: #66cc66;">&#91;</span>now,<span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">hh</span>;
+  <span style="color: #b1b100;">for</span> j:=v<span style="color: #66cc66;">&#91;</span>now,<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ww</span> <span style="color: #b1b100;">to</span> v<span style="color: #66cc66;">&#91;</span>now,<span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ww</span> <span style="color: #b1b100;">do</span>
+  <span style="color: #b1b100;">begin</span>
+    <span style="color: #b1b100;">if</span> map<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span>=now <span style="color: #b1b100;">then</span> map<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span>:=<span style="color: #ff0000;">'.'</span>;
+    <span style="color: #b1b100;">if</span> map<span style="color: #66cc66;">&#91;</span>ii,j<span style="color: #66cc66;">&#93;</span>=now <span style="color: #b1b100;">then</span> map<span style="color: #66cc66;">&#91;</span>ii,j<span style="color: #66cc66;">&#93;</span>:=<span style="color: #ff0000;">'.'</span>;
+  <span style="color: #b1b100;">end</span>;
+  <span style="color: #808080; font-style: italic;">//</span>
+  j:=v<span style="color: #66cc66;">&#91;</span>now,<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ww</span>;
+  jj:=v<span style="color: #66cc66;">&#91;</span>now,<span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ww</span>;
+  <span style="color: #b1b100;">for</span> i:=v<span style="color: #66cc66;">&#91;</span>now,<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">hh</span> <span style="color: #b1b100;">to</span> v<span style="color: #66cc66;">&#91;</span>now,<span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">hh</span> <span style="color: #b1b100;">do</span>
+  <span style="color: #b1b100;">begin</span> 
+    <span style="color: #b1b100;">if</span> map<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span>=now <span style="color: #b1b100;">then</span> map<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span>:=<span style="color: #ff0000;">'.'</span>;
+    <span style="color: #b1b100;">if</span> map<span style="color: #66cc66;">&#91;</span>i,jj<span style="color: #66cc66;">&#93;</span>=now <span style="color: #b1b100;">then</span> map<span style="color: #66cc66;">&#91;</span>i,jj<span style="color: #66cc66;">&#93;</span>:=<span style="color: #ff0000;">'.'</span>;
+  <span style="color: #b1b100;">end</span>;
+<span style="color: #b1b100;">end</span>;
+<span style="color: #808080; font-style: italic;">//</span>
+<span style="color: #000000; font-weight: bold;">procedure</span> search<span style="color: #66cc66;">&#40;</span>step:<span style="color: #993333;">integer</span>;order:<span style="color: #993333;">string</span><span style="color: #66cc66;">&#91;</span>maxH<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+<span style="color: #b1b100;">var</span> ch:<span style="color: #993333;">char</span>;
+    TempMap:TheMap;
+<span style="color: #b1b100;">begin</span>
+  <span style="color: #b1b100;">if</span> step=maxstep <span style="color: #b1b100;">then</span>
+      <span style="color: #b1b100;">begin</span> inc<span style="color: #66cc66;">&#40;</span>cans<span style="color: #66cc66;">&#41;</span>;
+            ans<span style="color: #66cc66;">&#91;</span>cans<span style="color: #66cc66;">&#93;</span>:=order;
+            exit;
+      <span style="color: #b1b100;">end</span>;
+  <span style="color: #b1b100;">for</span> ch:=<span style="color: #ff0000;">'A'</span> <span style="color: #b1b100;">to</span> <span style="color: #ff0000;">'Z'</span> <span style="color: #b1b100;">do</span>
+     <span style="color: #b1b100;">if</span> <span style="color: #b1b100;">not</span> visit<span style="color: #66cc66;">&#91;</span>ch<span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">then</span>
+        <span style="color: #b1b100;">if</span> IsOnSurface<span style="color: #66cc66;">&#40;</span>ch<span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">then</span>
+          <span style="color: #b1b100;">begin</span> TempMap:=map;
+                clean<span style="color: #66cc66;">&#40;</span>ch<span style="color: #66cc66;">&#41;</span>;
+                visit<span style="color: #66cc66;">&#91;</span>ch<span style="color: #66cc66;">&#93;</span>:=<span style="color: #000000; font-weight: bold;">true</span>;
+                search<span style="color: #66cc66;">&#40;</span>step<span style="color: #cc66cc;">+1</span>,ch+order<span style="color: #66cc66;">&#41;</span>;
+                visit<span style="color: #66cc66;">&#91;</span>ch<span style="color: #66cc66;">&#93;</span>:=<span style="color: #000000; font-weight: bold;">false</span>;
+                Map:=TempMap;
+          <span style="color: #b1b100;">end</span>;
+<span style="color: #b1b100;">end</span>;
+<span style="color: #808080; font-style: italic;">//</span>
+<span style="color: #000000; font-weight: bold;">procedure</span> Qsort<span style="color: #66cc66;">&#40;</span>l,r:<span style="color: #993333;">integer</span><span style="color: #66cc66;">&#41;</span>;
+<span style="color: #b1b100;">var</span> i,j:<span style="color: #993333;">integer</span>;
+    mid,temp:<span style="color: #993333;">string</span><span style="color: #66cc66;">&#91;</span>maxH<span style="color: #66cc66;">&#93;</span>;
+<span style="color: #b1b100;">begin</span>
+  i:=l;
+  j:=r;
+  mid:=ans<span style="color: #66cc66;">&#91;</span><span style="color: #66cc66;">&#40;</span>l+r<span style="color: #66cc66;">&#41;</span> <span style="">shr</span> <span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>;
+  <span style="color: #b1b100;">repeat</span>
+    <span style="color: #b1b100;">while</span> ans<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>&lt;mid <span style="color: #b1b100;">do</span> inc<span style="color: #66cc66;">&#40;</span>i<span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #b1b100;">while</span> ans<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span>&gt;mid <span style="color: #b1b100;">do</span> dec<span style="color: #66cc66;">&#40;</span>j<span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #b1b100;">if</span> i&lt;=j <span style="color: #b1b100;">then</span>
+    <span style="color: #b1b100;">begin</span>
+      temp:=ans<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>;
+      ans<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>:=ans<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span>;
+      ans<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span>:=temp;
+      inc<span style="color: #66cc66;">&#40;</span>i<span style="color: #66cc66;">&#41;</span>;
+      dec<span style="color: #66cc66;">&#40;</span>j<span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #b1b100;">end</span>;
+  <span style="color: #b1b100;">until</span> i&gt;j;
+  <span style="color: #b1b100;">if</span> i&lt;r <span style="color: #b1b100;">then</span> qsort<span style="color: #66cc66;">&#40;</span>i,r<span style="color: #66cc66;">&#41;</span>;
+  <span style="color: #b1b100;">if</span> j&gt;l <span style="color: #b1b100;">then</span> qsort<span style="color: #66cc66;">&#40;</span>l,j<span style="color: #66cc66;">&#41;</span>;
+<span style="color: #b1b100;">end</span>;
+<span style="color: #808080; font-style: italic;">//main</span>
+<span style="color: #b1b100;">begin</span>
+  assign<span style="color: #66cc66;">&#40;</span>input,<span style="color: #ff0000;">'frameup.in'</span><span style="color: #66cc66;">&#41;</span>;
+  reset<span style="color: #66cc66;">&#40;</span>input<span style="color: #66cc66;">&#41;</span>;
+  assign<span style="color: #66cc66;">&#40;</span>output,<span style="color: #ff0000;">'frameup.out'</span><span style="color: #66cc66;">&#41;</span>;
+  rewrite<span style="color: #66cc66;">&#40;</span>output<span style="color: #66cc66;">&#41;</span>;
+  <span style="">readln</span><span style="color: #66cc66;">&#40;</span>H,W<span style="color: #66cc66;">&#41;</span>;
+  <span style="color: #b1b100;">for</span> i:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> h <span style="color: #b1b100;">do</span>
+  <span style="color: #b1b100;">begin</span>
+    <span style="color: #b1b100;">for</span> j:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> w <span style="color: #b1b100;">do</span>
+        <span style="color: #b1b100;">begin</span> <span style="">read</span><span style="color: #66cc66;">&#40;</span>map<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+              <span style="color: #b1b100;">if</span> map<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span>&lt;&gt;<span style="color: #ff0000;">'.'</span> <span style="color: #b1b100;">then</span>
+              <span style="color: #b1b100;">if</span> <span style="color: #b1b100;">not</span> visit<span style="color: #66cc66;">&#91;</span>map<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">then</span>
+                 <span style="color: #b1b100;">begin</span> inc<span style="color: #66cc66;">&#40;</span>maxstep<span style="color: #66cc66;">&#41;</span>;
+                       visit<span style="color: #66cc66;">&#91;</span>map<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span>:=<span style="color: #000000; font-weight: bold;">true</span>;
+                 <span style="color: #b1b100;">end</span>;
+        <span style="color: #b1b100;">end</span>;
+    <span style="">readln</span>;
+  <span style="color: #b1b100;">end</span>;
+  <span style="color: #808080; font-style: italic;">//</span>
+  getVertex;
+  <span style="color: #b1b100;">for</span> ch:=<span style="color: #ff0000;">'A'</span> <span style="color: #b1b100;">to</span> <span style="color: #ff0000;">'Z'</span><span style="color: #b1b100;">do</span> visit<span style="color: #66cc66;">&#91;</span>ch<span style="color: #66cc66;">&#93;</span>:=<span style="color: #b1b100;">not</span> visit<span style="color: #66cc66;">&#91;</span>ch<span style="color: #66cc66;">&#93;</span>;
+  <span style="color: #808080; font-style: italic;">//</span>
+  <span style="color: #b1b100;">for</span> ch:=<span style="color: #ff0000;">'A'</span> <span style="color: #b1b100;">to</span> <span style="color: #ff0000;">'Z'</span> <span style="color: #b1b100;">do</span>
+  <span style="color: #b1b100;">if</span> <span style="color: #b1b100;">not</span> visit<span style="color: #66cc66;">&#91;</span>ch<span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">then</span>
+    <span style="color: #b1b100;">if</span> IsOnSurface<span style="color: #66cc66;">&#40;</span>ch<span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">then</span>
+      <span style="color: #b1b100;">begin</span> TempMap:=Map;
+            clean<span style="color: #66cc66;">&#40;</span>ch<span style="color: #66cc66;">&#41;</span>;
+            visit<span style="color: #66cc66;">&#91;</span>ch<span style="color: #66cc66;">&#93;</span>:=<span style="color: #000000; font-weight: bold;">true</span>;
+            search<span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">1</span>,ch<span style="color: #66cc66;">&#41;</span>;
+            visit<span style="color: #66cc66;">&#91;</span>ch<span style="color: #66cc66;">&#93;</span>:=<span style="color: #000000; font-weight: bold;">false</span>;
+            Map:=TempMap;
+      <span style="color: #b1b100;">end</span>;
+ Qsort<span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">1</span>,cans<span style="color: #66cc66;">&#41;</span>;
+ <span style="color: #b1b100;">for</span> i:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> cans <span style="color: #b1b100;">do</span> <span style="">writeln</span><span style="color: #66cc66;">&#40;</span>ans<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+  close<span style="color: #66cc66;">&#40;</span>output<span style="color: #66cc66;">&#41;</span>;
+<span style="color: #b1b100;">end</span>.</pre>
+<pre class="pascal">使用的方法是拓扑排序，代码写得简短了些。
+而且在搜索时如果确定字母序的话就不需要另外写一个排序了。
+<span style="color: #808080; font-style: italic;">{
+ID:ybw8821
+PROG:frameup
+LANG:PASCAL
+}</span>
+<span style="color: #000000; font-weight: bold;">program</span> frameup_YoungBoy;
+<span style="color: #993333;">const</span>
+  infile=<span style="color: #ff0000;">'frameup.in'</span>;
+  outfile=<span style="color: #ff0000;">'frameup.out'</span>;
+&nbsp;
+<span style="color: #b1b100;">var</span>
+  map:<span style="color: #993333;">array</span> <span style="color: #66cc66;">&#91;</span><span style="color: #ff0000;">'A'</span>..<span style="color: #ff0000;">'Z'</span>,<span style="color: #ff0000;">'A'</span>..<span style="color: #ff0000;">'Z'</span><span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">of</span> <span style="color: #993333;">boolean</span>; <span style="color: #808080; font-style: italic;">{拓扑排序的图}</span>
+  num:<span style="color: #993333;">array</span> <span style="color: #66cc66;">&#91;</span><span style="color: #ff0000;">'A'</span>..<span style="color: #ff0000;">'Z'</span><span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">of</span> <span style="color: #993333;">longint</span>;  <span style="color: #66cc66;">&#40;</span>记录边的入度<span style="color: #66cc66;">&#125;</span>
+  alive:<span style="color: #993333;">array</span> <span style="color: #66cc66;">&#91;</span><span style="color: #ff0000;">'A'</span>..<span style="color: #ff0000;">'Z'</span><span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">of</span> <span style="color: #993333;">boolean</span>; <span style="color: #808080; font-style: italic;">{记录哪些字母存在}</span>
+  graph:<span style="color: #993333;">array</span> <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span>..<span style="color: #cc66cc;">30</span><span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">of</span> <span style="color: #993333;">string</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">30</span><span style="color: #66cc66;">&#93;</span>;  <span style="color: #808080; font-style: italic;">{图形}</span>
+  ans:<span style="color: #993333;">array</span> <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span>..<span style="color: #cc66cc;">10000</span><span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">of</span> <span style="color: #993333;">string</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">30</span><span style="color: #66cc66;">&#93;</span>; <span style="color: #808080; font-style: italic;">{答案}</span>
+  tot,h,w,ldep:<span style="color: #993333;">longint</span>; <span style="color: #808080; font-style: italic;">{tot是解的数目,ldep是出现的字母数}</span>
+&nbsp;
+<span style="color: #000000; font-weight: bold;">function</span> Min<span style="color: #66cc66;">&#40;</span>int1,int2:<span style="color: #993333;">longint</span><span style="color: #66cc66;">&#41;</span>:<span style="color: #993333;">longint</span>;
+<span style="color: #b1b100;">begin</span>
+  <span style="color: #b1b100;">if</span> int1&lt;int2 <span style="color: #b1b100;">then</span> Min:=int1 <span style="color: #b1b100;">else</span> Min:=int2;
+<span style="color: #b1b100;">end</span>;
+&nbsp;
+<span style="color: #000000; font-weight: bold;">function</span> Max<span style="color: #66cc66;">&#40;</span>int1,int2:<span style="color: #993333;">longint</span><span style="color: #66cc66;">&#41;</span>:<span style="color: #993333;">longint</span>;
+<span style="color: #b1b100;">begin</span>
+  <span style="color: #b1b100;">if</span> int1&gt;int2 <span style="color: #b1b100;">then</span> Max:=int1 <span style="color: #b1b100;">else</span> Max:=int2;
+<span style="color: #b1b100;">end</span>;
+&nbsp;
+<span style="color: #000000; font-weight: bold;">procedure</span> Init;
+<span style="color: #b1b100;">var</span> i:<span style="color: #993333;">longint</span>;
+<span style="color: #b1b100;">begin</span>
+  assign<span style="color: #66cc66;">&#40;</span>input,infile<span style="color: #66cc66;">&#41;</span>; reset<span style="color: #66cc66;">&#40;</span>input<span style="color: #66cc66;">&#41;</span>;
+  <span style="">readln</span><span style="color: #66cc66;">&#40;</span>h,w<span style="color: #66cc66;">&#41;</span>;
+  <span style="color: #b1b100;">for</span> i:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> h <span style="color: #b1b100;">do</span> <span style="">readln</span><span style="color: #66cc66;">&#40;</span>graph<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+  close<span style="color: #66cc66;">&#40;</span>input<span style="color: #66cc66;">&#41;</span>;
+<span style="color: #b1b100;">end</span>;
+&nbsp;
+<span style="color: #000000; font-weight: bold;">procedure</span> Print;
+<span style="color: #b1b100;">var</span> i:<span style="color: #993333;">longint</span>;
+<span style="color: #b1b100;">begin</span>
+  assign<span style="color: #66cc66;">&#40;</span>output,outfile<span style="color: #66cc66;">&#41;</span>; rewrite<span style="color: #66cc66;">&#40;</span>output<span style="color: #66cc66;">&#41;</span>;
+  <span style="color: #b1b100;">for</span> i:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> tot <span style="color: #b1b100;">do</span> <span style="">writeln</span><span style="color: #66cc66;">&#40;</span>ans<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+  close<span style="color: #66cc66;">&#40;</span>output<span style="color: #66cc66;">&#41;</span>;
+<span style="color: #b1b100;">end</span>;
+&nbsp;
+<span style="color: #000000; font-weight: bold;">procedure</span> MakeMap; <span style="color: #808080; font-style: italic;">{通过原图形求出拓扑图}</span>
+<span style="color: #b1b100;">var</span>
+  c:<span style="color: #993333;">char</span>;
+  i,j,x1,x2,y1,y2:<span style="color: #993333;">longint</span>;
+<span style="color: #b1b100;">begin</span>
+  fillchar<span style="color: #66cc66;">&#40;</span>alive,sizeof<span style="color: #66cc66;">&#40;</span>alive<span style="color: #66cc66;">&#41;</span>,<span style="color: #000000; font-weight: bold;">false</span><span style="color: #66cc66;">&#41;</span>;
+  fillchar<span style="color: #66cc66;">&#40;</span>map,sizeof<span style="color: #66cc66;">&#40;</span>map<span style="color: #66cc66;">&#41;</span>,<span style="color: #000000; font-weight: bold;">false</span><span style="color: #66cc66;">&#41;</span>;
+  ldep:=<span style="color: #cc66cc;">0</span>;
+  <span style="color: #b1b100;">for</span> c:=<span style="color: #ff0000;">'A'</span> <span style="color: #b1b100;">to</span> <span style="color: #ff0000;">'Z'</span> <span style="color: #b1b100;">do</span>
+  <span style="color: #b1b100;">for</span> i:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> h <span style="color: #b1b100;">do</span>
+    <span style="color: #b1b100;">if</span> pos<span style="color: #66cc66;">&#40;</span>c,graph<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>&gt;<span style="color: #cc66cc;">0</span> <span style="color: #b1b100;">then</span>
+    <span style="color: #b1b100;">begin</span>
+      inc<span style="color: #66cc66;">&#40;</span>ldep<span style="color: #66cc66;">&#41;</span>;
+      alive<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span>:=<span style="color: #000000; font-weight: bold;">true</span>;
+      <span style="color: #000000; font-weight: bold;">break</span>;
+    <span style="color: #b1b100;">end</span>;
+  <span style="color: #b1b100;">for</span> c:=<span style="color: #ff0000;">'A'</span> <span style="color: #b1b100;">to</span> <span style="color: #ff0000;">'Z'</span> <span style="color: #b1b100;">do</span>
+    <span style="color: #b1b100;">if</span> alive<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">then</span>
+    <span style="color: #b1b100;">begin</span>
+      x1:=maxlongint; y1:=maxlongint;
+      x2:=<span style="color: #cc66cc;">0</span>; y2:=<span style="color: #cc66cc;">0</span>;
+      <span style="color: #b1b100;">for</span> i:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> h <span style="color: #b1b100;">do</span>
+      <span style="color: #b1b100;">for</span> j:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> w <span style="color: #b1b100;">do</span>
+        <span style="color: #b1b100;">if</span> graph<span style="color: #66cc66;">&#91;</span>i,j<span style="color: #66cc66;">&#93;</span>=c <span style="color: #b1b100;">then</span>
+        <span style="color: #b1b100;">begin</span>
+          x1:=Min<span style="color: #66cc66;">&#40;</span>x1,i<span style="color: #66cc66;">&#41;</span>; y1:=Min<span style="color: #66cc66;">&#40;</span>y1,j<span style="color: #66cc66;">&#41;</span>;
+          x2:=Max<span style="color: #66cc66;">&#40;</span>x2,i<span style="color: #66cc66;">&#41;</span>; y2:=Max<span style="color: #66cc66;">&#40;</span>y2,j<span style="color: #66cc66;">&#41;</span>;
+        <span style="color: #b1b100;">end</span>;
+      <span style="color: #b1b100;">for</span> i:=x1 <span style="color: #b1b100;">to</span> x2 <span style="color: #b1b100;">do</span>
+      <span style="color: #b1b100;">begin</span>
+        <span style="color: #b1b100;">if</span> <span style="color: #b1b100;">not</span><span style="color: #66cc66;">&#40;</span>map<span style="color: #66cc66;">&#91;</span>c,graph<span style="color: #66cc66;">&#91;</span>i,y1<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">then</span>
+        <span style="color: #b1b100;">begin</span>
+          map<span style="color: #66cc66;">&#91;</span>c,graph<span style="color: #66cc66;">&#91;</span>i,y1<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span>:=<span style="color: #000000; font-weight: bold;">true</span>;
+          inc<span style="color: #66cc66;">&#40;</span>num<span style="color: #66cc66;">&#91;</span>graph<span style="color: #66cc66;">&#91;</span>i,y1<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+        <span style="color: #b1b100;">end</span>;
+        <span style="color: #b1b100;">if</span> <span style="color: #b1b100;">not</span><span style="color: #66cc66;">&#40;</span>map<span style="color: #66cc66;">&#91;</span>c,graph<span style="color: #66cc66;">&#91;</span>i,y2<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">then</span>
+        <span style="color: #b1b100;">begin</span>
+          map<span style="color: #66cc66;">&#91;</span>c,graph<span style="color: #66cc66;">&#91;</span>i,y2<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span>:=<span style="color: #000000; font-weight: bold;">true</span>;
+          inc<span style="color: #66cc66;">&#40;</span>num<span style="color: #66cc66;">&#91;</span>graph<span style="color: #66cc66;">&#91;</span>i,y2<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+        <span style="color: #b1b100;">end</span>;
+      <span style="color: #b1b100;">end</span>;
+      <span style="color: #b1b100;">for</span> i:=y1 <span style="color: #b1b100;">to</span> y2 <span style="color: #b1b100;">do</span>
+      <span style="color: #b1b100;">begin</span>
+        <span style="color: #b1b100;">if</span> <span style="color: #b1b100;">not</span><span style="color: #66cc66;">&#40;</span>map<span style="color: #66cc66;">&#91;</span>c,graph<span style="color: #66cc66;">&#91;</span>x1,i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">then</span>
+        <span style="color: #b1b100;">begin</span>
+          map<span style="color: #66cc66;">&#91;</span>c,graph<span style="color: #66cc66;">&#91;</span>x1,i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span>:=<span style="color: #000000; font-weight: bold;">true</span>;
+          inc<span style="color: #66cc66;">&#40;</span>num<span style="color: #66cc66;">&#91;</span>graph<span style="color: #66cc66;">&#91;</span>x1,i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+        <span style="color: #b1b100;">end</span>;
+        <span style="color: #b1b100;">if</span> <span style="color: #b1b100;">not</span><span style="color: #66cc66;">&#40;</span>map<span style="color: #66cc66;">&#91;</span>c,graph<span style="color: #66cc66;">&#91;</span>x2,i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">then</span>
+        <span style="color: #b1b100;">begin</span>
+          map<span style="color: #66cc66;">&#91;</span>c,graph<span style="color: #66cc66;">&#91;</span>x2,i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span>:=<span style="color: #000000; font-weight: bold;">true</span>;
+          inc<span style="color: #66cc66;">&#40;</span>num<span style="color: #66cc66;">&#91;</span>graph<span style="color: #66cc66;">&#91;</span>x2,i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+        <span style="color: #b1b100;">end</span>;
+      <span style="color: #b1b100;">end</span>;
+    <span style="color: #b1b100;">end</span>;
+<span style="color: #b1b100;">end</span>;
+&nbsp;
+<span style="color: #000000; font-weight: bold;">procedure</span> DFS<span style="color: #66cc66;">&#40;</span>depth:<span style="color: #993333;">longint</span>;now:<span style="color: #993333;">string</span><span style="color: #66cc66;">&#41;</span>; <span style="color: #808080; font-style: italic;">{这就是深搜啦}</span>
+<span style="color: #b1b100;">var</span>
+  c,cc:<span style="color: #993333;">char</span>;
+  tmp:<span style="color: #993333;">array</span> <span style="color: #66cc66;">&#91;</span><span style="color: #ff0000;">'A'</span>..<span style="color: #ff0000;">'Z'</span><span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">of</span> <span style="color: #993333;">longint</span>;
+<span style="color: #b1b100;">begin</span>
+  <span style="color: #b1b100;">if</span> depth&gt;ldep <span style="color: #b1b100;">then</span>
+  <span style="color: #b1b100;">begin</span>
+    inc<span style="color: #66cc66;">&#40;</span>tot<span style="color: #66cc66;">&#41;</span>;
+    ans<span style="color: #66cc66;">&#91;</span>tot<span style="color: #66cc66;">&#93;</span>:=now;
+    exit;
+  <span style="color: #b1b100;">end</span>;
+  tmp:=num;
+  <span style="color: #b1b100;">for</span> c:=<span style="color: #ff0000;">'A'</span> <span style="color: #b1b100;">to</span> <span style="color: #ff0000;">'Z'</span> <span style="color: #b1b100;">do</span>
+    <span style="color: #b1b100;">if</span> num<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span>=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">then</span>
+    <span style="color: #b1b100;">begin</span>
+      num<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span>:=<span style="color: #cc66cc;">0</span>;
+      <span style="color: #b1b100;">for</span> cc:=<span style="color: #ff0000;">'A'</span> <span style="color: #b1b100;">to</span> <span style="color: #ff0000;">'Z'</span> <span style="color: #b1b100;">do</span>
+        <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>c&lt;&gt;cc<span style="color: #66cc66;">&#41;</span> <span style="">and</span> <span style="color: #66cc66;">&#40;</span>map<span style="color: #66cc66;">&#91;</span>c,cc<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">then</span> dec<span style="color: #66cc66;">&#40;</span>num<span style="color: #66cc66;">&#91;</span>cc<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+      DFS<span style="color: #66cc66;">&#40;</span>depth<span style="color: #cc66cc;">+1</span>,now+c<span style="color: #66cc66;">&#41;</span>;
+      num:=tmp;
+      num<span style="color: #66cc66;">&#91;</span>c<span style="color: #66cc66;">&#93;</span>:=<span style="color: #cc66cc;">1</span>;
+    <span style="color: #b1b100;">end</span>;
+<span style="color: #b1b100;">end</span>;
+&nbsp;
+<span style="color: #000000; font-weight: bold;">procedure</span> Main;
+<span style="color: #b1b100;">var</span>
+  i,j,k:<span style="color: #993333;">longint</span>;
+  t:<span style="color: #993333;">string</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">30</span><span style="color: #66cc66;">&#93;</span>;
+<span style="color: #b1b100;">begin</span>
+  MakeMap;
+  DFS<span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">1</span>,<span style="color: #ff0000;">''</span><span style="color: #66cc66;">&#41;</span>;
+<span style="color: #b1b100;">end</span>;
+&nbsp;
+<span style="color: #b1b100;">begin</span>
+  Init;
+  Main;
+  Print;
+<span style="color: #b1b100;">end</span>.</pre>
+
+<!-- Saved in parser cache with key nocow:pcache:idhash:1652-0!1!0!!zh-cn!2 and timestamp 20090818184513 -->
+<div class="printfooter">
+来自"<a href="http://www.nocow.cn/index.php/Code:USACO/frameup/Pascal">http://www.nocow.cn/index.php/Code:USACO/frameup/Pascal</a>"</div>
+						<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+						 <li id="ca-nstab-code" class="selected"><a href="/index.php/Code:USACO/frameup/Pascal">代码</a></li>
+						 <li id="ca-talk" class="new"><a href="/index.php?title=Code_Talk:USACO/frameup/Pascal&amp;action=edit">讨论</a></li>
+						 <li id="ca-edit"><a href="/index.php?title=Code:USACO/frameup/Pascal&amp;action=edit">编辑</a></li>
+						 <li id="ca-history"><a href="/index.php?title=Code:USACO/frameup/Pascal&amp;action=history">历史</a></li>
+				</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=Special:Userlogin&amp;returnto=Code:USACO/frameup/Pascal">登录或创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5" title="首页"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/Special:Recentchanges">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/Special:Random">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/Help:%E5%B8%AE%E5%8A%A9">使用帮助</a></li>
+				<li id="n-sitesupport"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5">帮助我们</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php/Special:Search" id="searchform"><div>
+<input name="ref" type="hidden" value="Code:USACO/frameup/Pascal">
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="进入" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="搜索" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/Special:Whatlinkshere/Code:USACO/frameup/Pascal">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/Special:Recentchangeslinked/Code:USACO/frameup/Pascal">链出更改</a></li>
+<li id="t-upload"><a href="/index.php/Special:Upload">上传文件</a></li>
+<li id="t-specialpages"><a href="/index.php/Special:Specialpages">特殊页面</a></li>
+				<li id="t-print"><a href="/index.php?title=Code:USACO/frameup/Pascal&amp;printable=yes">可打印版</a></li>				<li id="t-permalink"><a href="/index.php?title=Code:USACO/frameup/Pascal&amp;oldid=13189">永久链接</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt='GNU Free Documentation License 1.2' /></a></div>
+			<ul id="f-list">
+				<li id="viewcount">访问次数: 1,658次</li>
+				<li id="credits">此页由NOCOW注册用户<a href="/index.php?title=User:Lora.BiT&amp;action=edit" class="new" title="User:Lora.BiT">Lora.BiT</a>于2008年11月9日, 07:40最后更改. 在<a href="/index.php?title=User:YoungBoy&amp;action=edit" class="new" title="User:YoungBoy">YoungBoy</a>, <a href="/index.php?title=User:Cosechy_movingbot&amp;action=edit" class="new" title="User:Cosechy movingbot">cosechy@gmail.com</a> 和 <a href="/index.php/User:Nocow" title="User:Nocow">king</a> 和 NOCOW匿名用户的工作基础上.</li>
+				<li id="copyright">本站内容在<a href="http://www.gnu.org/copyleft/fdl.html" class="external " title="http://www.gnu.org/copyleft/fdl.html" rel="nofollow">GNU Free Documentation License 1.2</a>下发布</li>
+				<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E7%AD%96%E7%95%A5" title="NOCOW:隐私策略">隐私策略</a></li>
+				<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+				<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+				<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by bdezlinux in 1.939 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body></html>

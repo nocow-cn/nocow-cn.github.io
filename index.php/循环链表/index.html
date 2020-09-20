@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>链表 - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="canonical" href="/index.php/%E9%93%BE%E8%A1%A8" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=%E9%93%BE%E8%A1%A8&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=%E9%93%BE%E8%A1%A8&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "链表", "wgTitle": "链表", "wgCurRevisionId": 32240, "wgArticleId": 479, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["版权无争议的内容", "小作品", "线性表"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-链表 action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">链表</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub">(跳转自<a href="/index.php?title=%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8&amp;redirect=no" title="循环链表">循环链表</a>)</div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><pre> 这篇文章可以证实是由NOCOW用户原创，不存在任何版权争议。
+ 本文作者同意以<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL" class="mw-redirect">GNU FDL</a>、<a href="/index.php/NOCOW:CC-by-sa" title="NOCOW:CC-by-sa">CC-by-sa</a>和<a href="/index.php/NOCOW:GNU_LGPL" title="NOCOW:GNU LGPL">GNU LGPL</a>（如果适用）三种版权发布此文章（不包括翻译文章中属于原始所有者的部分版权）。
+ 如果你修改了这篇文章并且不同意用GNU FDL以外的版权发布，可以换一个<a href="/index.php/%E5%88%86%E7%B1%BB:%E7%89%88%E6%9D%83%E6%A8%A1%E6%9D%BF" title="分类:版权模板">版权模板</a>或者移除此模板。
+</pre>
+<p><dl style="background-color:aliceblue"><dd>这篇文章是指<b>线性链表</b>，对于<b>非线性的其他链式结构</b>，参见<b><a href="/index.php/%E6%A0%91" title="树">树</a>、<a href="/index.php/%E5%9B%BE" title="图">图</a>、<a href="/index.php/%E8%B7%B3%E8%A1%A8" title="跳表" class="mw-redirect">跳表</a>、<a href="/index.php?title=%E6%8C%87%E9%92%88&amp;action=edit&amp;redlink=1" class="new" title="指针（尚未撰写）">指针</a>等</b>。</dl>
+</p><p><b>链表</b>是一种常见的基础数据结构，是一种<a href="/index.php/%E7%BA%BF%E6%80%A7%E8%A1%A8" title="线性表">线性表</a>，但是并不会按线性的顺序存储数据，而是在每一个节点里存到下一个节点的<a href="/index.php?title=%E6%8C%87%E9%92%88&amp;action=edit&amp;redlink=1" class="new" title="指针（尚未撰写）">指针</a>。由于不必须按顺序存储，链表在插入的时候可以达到O(1)的复杂度，比另一种线性表：<a href="/index.php/%E9%A1%BA%E5%BA%8F%E8%A1%A8" title="顺序表">顺序表</a>快得多，但是查找一个节点或者访问特定编号的节点则需要O(n)的时间，而顺序表相应的时间复杂度分别是O(logn)和O(1)。
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E7.BB.93.E6.9E.84"><span class="tocnumber">1</span> <span class="toctext">结构</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#.E5.8F.8C.E5.90.91.E9.93.BE.E8.A1.A8"><span class="tocnumber">1.1</span> <span class="toctext">双向链表</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#.E5.BE.AA.E7.8E.AF.E9.93.BE.E8.A1.A8"><span class="tocnumber">1.2</span> <span class="toctext">循环链表</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#.E5.9D.97.E7.8A.B6.E9.93.BE.E8.A1.A8"><span class="tocnumber">1.3</span> <span class="toctext">块状链表</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#.E5.85.B6.E5.AE.83.E6.89.A9.E5.B1.95"><span class="tocnumber">1.4</span> <span class="toctext">其它扩展</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#.E5.AD.98.E5.82.A8.E7.BB.93.E6.9E.84"><span class="tocnumber">1.5</span> <span class="toctext">存储结构</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#.E5.9F.BA.E6.9C.AC.E6.93.8D.E4.BD.9C"><span class="tocnumber">2</span> <span class="toctext">基本操作</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#.E6.8F.92.E5.85.A5"><span class="tocnumber">2.1</span> <span class="toctext">插入</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#.E5.88.A0.E9.99.A4"><span class="tocnumber">2.2</span> <span class="toctext">删除</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#.E6.9F.A5.E6.89.BE"><span class="tocnumber">2.3</span> <span class="toctext">查找</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#.E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81"><span class="tocnumber">3</span> <span class="toctext">参考代码</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#.E5.B8.B8.E8.A7.81.E7.94.A8.E9.80.94"><span class="tocnumber">4</span> <span class="toctext">常见用途</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#.E8.AF.84.E4.BB.B7"><span class="tocnumber">5</span> <span class="toctext">评价</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#.E5.8F.82.E8.A7.81"><span class="tocnumber">6</span> <span class="toctext">参见</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#.E5.85.B6.E4.BB.96.E6.95.B0.E6.8D.AE.E7.BB.93.E6.9E.84"><span class="tocnumber">6.1</span> <span class="toctext">其他数据结构</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#.E5.8F.82.E8.80.83.E9.A2.98.E7.9B.AE"><span class="tocnumber">6.2</span> <span class="toctext">参考题目</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="/index.php?title=%E9%93%BE%E8%A1%A8&amp;action=edit&amp;section=1" title="编辑段落：结构">编辑</a>]</span> <span class="mw-headline" id=".E7.BB.93.E6.9E.84">结构</span></h2>
+<p>链表最基本的结构是在每个节点保存数据和到下一个节点的地址，在最后一个节点保存一个特殊的结束标记，另外在一个固定的位置保存指向第一个节点的指针，有的时候也会同时储存指向最后一个节点的指针。一般查找一个节点的时候需要从第一个节点开始每次访问下一个节点，一直访问到需要的位置。但是也可以提前把一个节点的位置另外保存起来，然后直接访问。当然如果只是访问数据就没必要了，不如在链表上储存指向实际数据的指针。这样一般是为了访问链表中的下一个或者前一个（需要储存反向的指针，见下面的双向链表）节点。
+</p><p>相对于下面的双线链表，这种普通的，每个节点只有一个指针的链表也叫<b>单向链表</b>，或者<b>单链表</b>，通常用在每次都只会按顺序遍历这个链表的时候（例如图的邻接表，通常都是按固定顺序访问的）。
+</p><p>链表也有很多种不同的变化：
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=%E9%93%BE%E8%A1%A8&amp;action=edit&amp;section=2" title="编辑段落：双向链表">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.8C.E5.90.91.E9.93.BE.E8.A1.A8">双向链表</span></h3>
+<p><b>双向链表</b>也叫<b>双链表</b>。<b>双向链表</b>中不仅有指向后一个节点的指针，还有指向前一个节点的指针。这样可以从任何一个节点访问前一个节点，当然也可以访问后一个节点，以至整个链表。一般是在需要大批量的另外储存数据在链表中的位置的时候用。双向链表也可以配合下面的其他链表的扩展使用。
+</p><p>由于另外储存了指向链表内容的指针，并且可能会修改相邻的节点，有的时候第一个节点可能会被删除或者在之前添加一个新的节点。这时候就要修改指向首个节点的指针。有一种方便的可以消除这种特殊情况的方法是在最后一个节点之后、第一个节点之前储存一个永远不会被删除或者移动的虚拟节点，形成一个下面说的循环链表。这个虚拟节点之后的节点就是真正的第一个节点。这种情况通常可以用这个虚拟节点直接表示这个链表，对于把链表单独的存在<a href="/index.php?title=%E6%95%B0%E7%BB%84&amp;action=edit&amp;redlink=1" class="new" title="数组（尚未撰写）">数组</a>里的情况，也可以直接用这个数组表示链表并用第0个或者第-1个（如果编译器支持）节点固定的表示这个虚拟节点。
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=%E9%93%BE%E8%A1%A8&amp;action=edit&amp;section=3" title="编辑段落：循环链表">编辑</a>]</span> <span class="mw-headline" id=".E5.BE.AA.E7.8E.AF.E9.93.BE.E8.A1.A8">循环链表</span></h3>
+<p><b>循环链表</b>中第一个节点之前就是最后一个节点，反之亦然。循环链表一般用在第一个节点的位置在哪无所谓，或者根本不会修改的链表（不过不会修改的链表用顺序表实现往往更容易）。否则，对于新加入的节点应该是在第一个节点之前还是最后一个节点之后可能比较不好处理。当然，如果只会在最后插入数据（或者只会在之前），处理也是很容易的。
+</p><p>另外有一种模拟的循环链表，就是在访问到最后一个节点之后的时候，手工的跳转到第一个节点。访问到第一个节点之前的时候也一样。这样也可以实现循环链表的功能，在直接用循环链表比较麻烦或者可能会出现问题的时候可以用。
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=%E9%93%BE%E8%A1%A8&amp;action=edit&amp;section=4" title="编辑段落：块状链表">编辑</a>]</span> <span class="mw-headline" id=".E5.9D.97.E7.8A.B6.E9.93.BE.E8.A1.A8">块状链表</span></h3>
+<dl><dd><div class="noprint" style="font-size:small">主条目：<a href="/index.php/%E5%9D%97%E7%8A%B6%E9%93%BE%E8%A1%A8" title="块状链表">块状链表</a></div>
+</dd></dl>
+<p><b>块状链表</b>本身是一个链表，但是链表储存的并不是一般的数据，而是由这些数据组成的顺序表。每一个块状链表的节点，也就是顺序表，可以被叫做一个<b>块</b>。
+</p><p>块状链表通过使用可变的顺序表的长度和特殊的插入、删除方式，可以在达到<img class="tex" alt="O( \sqrt n )" src="/images/math/f/e/a/fead7b2d10b52b3d4a65262d290ebf1b.png" />的复杂度。块状链表另一个特点是相对于普通链表来说节省内存，因为不用保存指向每一个数据节点的指针。
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=%E9%93%BE%E8%A1%A8&amp;action=edit&amp;section=5" title="编辑段落：其它扩展">编辑</a>]</span> <span class="mw-headline" id=".E5.85.B6.E5.AE.83.E6.89.A9.E5.B1.95">其它扩展</span></h3>
+<p>根据情况，也可以自己设计链表的其它扩展。但是一般不会在边上附加数据，因为链表的点和边基本上是一一对应的（除了第一个或者最后一个节点，但是也不会产生特殊情况）。不过有一个特例是如果链表支持在链表的一段中把前和后指针反向，反向标记加在边上可能会更方便。
+</p><p>对于非线性的链表，可以参见相关的其他数据结构，例如<a href="/index.php/%E6%A0%91" title="树">树</a>、<a href="/index.php/%E5%9B%BE" title="图">图</a>。另外有一种基于多个线性链表的数据结构：<a href="/index.php/%E8%B7%B3%E8%A1%A8" title="跳表" class="mw-redirect">跳表</a>，插入、删除和查找等基本操作的速度可以达到O(nlogn)，和<a href="/index.php/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91" title="平衡二叉树">平衡二叉树</a>一样。
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=%E9%93%BE%E8%A1%A8&amp;action=edit&amp;section=6" title="编辑段落：存储结构">编辑</a>]</span> <span class="mw-headline" id=".E5.AD.98.E5.82.A8.E7.BB.93.E6.9E.84">存储结构</span></h3>
+<p>链表中的节点不需要以特定的方式存储，但是集中存储也是可以的，主要分下面这几种具体的存储方法：
+</p>
+<dl><dt>共用存储空间</dt><dd>链表的节点和其它的数据共用存储空间，优点是可以存储无限多的内容（不过要处理器支持这个大小，并且存储空间足够的情况下），不需要提前分配内存；缺点是由于内容分散，有时候可能不方便<a href="/index.php?title=%E8%B0%83%E8%AF%95&amp;action=edit&amp;redlink=1" class="new" title="调试（尚未撰写）">调试</a>。
+</dd><dt>独立存储空间</dt><dd>一个链表或者多个链表使用独立的存储空间，一般用<a href="/index.php?title=%E6%95%B0%E7%BB%84&amp;action=edit&amp;redlink=1" class="new" title="数组（尚未撰写）">数组</a>或者类似结构实现，优点是可以自动获得一个附加数据：唯一的编号，并且方便调试；缺点是不能动态的分配内存。当然，另外的在上面加一层块状链表用来分配内存也是可以的，这样就解决了这个问题。这种方法有时候被叫做<b>数组模拟链表</b>，但是事实上只是用表示在数组中的位置的<a href="/index.php?title=%E4%B8%8B%E6%A0%87&amp;action=edit&amp;redlink=1" class="new" title="下标（尚未撰写）">下标</a>索引代替了指向内存地址的<a href="/index.php?title=%E6%8C%87%E9%92%88&amp;action=edit&amp;redlink=1" class="new" title="指针（尚未撰写）">指针</a>，这种下标索引其实也是逻辑上的指针，整个结构还是链表，并不算是被模拟的（但是可以说成是<b>用数组实现的链表</b>）。
+</dd></dl>
+<h2><span class="editsection">[<a href="/index.php?title=%E9%93%BE%E8%A1%A8&amp;action=edit&amp;section=7" title="编辑段落：基本操作">编辑</a>]</span> <span class="mw-headline" id=".E5.9F.BA.E6.9C.AC.E6.93.8D.E4.BD.9C">基本操作</span></h2>
+<h3><span class="editsection">[<a href="/index.php?title=%E9%93%BE%E8%A1%A8&amp;action=edit&amp;section=8" title="编辑段落：插入">编辑</a>]</span> <span class="mw-headline" id=".E6.8F.92.E5.85.A5">插入</span></h3>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">&#160;
+单链表的插入可以总结为两种<span class="sy4">:</span>
+<span class="nu0">1</span><span class="sy4">:</span>无序的插入。
+<span class="nu0">2</span><span class="sy4">:</span>有序的插入。
+&#160;
+@<span class="nu19">1</span><span class="sy4">:</span>无序的插入只要把新的结点的地址赋给头指针即可 代码<span class="sy4">:</span>
+&#160;
+<span class="co1">//*****************************</span>
+Node <span class="sy2">*</span>new_data<span class="sy4">;</span>
+&#160;
+<span class="kw3">cin</span><span class="sy1">&gt;&gt;</span>new_data<span class="sy2">-</span><span class="sy1">&gt;</span>data<span class="sy4">;</span>
+&#160;
+new_data<span class="sy2">-</span><span class="sy1">&gt;</span>next <span class="sy1">=</span> Head<span class="sy4">;</span>
+Head <span class="sy1">=</span> new_data<span class="sy4">;</span>
+<span class="co1">//*****************************</span>
+&#160;
+@<span class="nu19">2</span><span class="sy4">:</span>有序的插入要分为很多种情况<span class="br0">&#40;</span>数据的降序<span class="br0">&#41;</span>
+<span class="nu0">1</span><span class="br0">&#41;</span>数据降序排序的话,如果新数据最大则如同@<span class="nu19">1</span>。
+<span class="nu0">2</span><span class="br0">&#41;</span>如果新数据在中间的话,先用<span class="kw1">while</span>循环，然后插入即可。
+<span class="nu0">3</span><span class="br0">&#41;</span>如果最小则尾随于最后。</pre></div></div>
+<h3><span class="editsection">[<a href="/index.php?title=%E9%93%BE%E8%A1%A8&amp;action=edit&amp;section=9" title="编辑段落：删除">编辑</a>]</span> <span class="mw-headline" id=".E5.88.A0.E9.99.A4">删除</span></h3>
+<p>//----//
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">&#160;
+&#160;
+<span class="co2">#include &lt;iostream&gt;</span>
+<span class="kw2">using</span> <span class="kw2">namespace</span> std<span class="sy4">;</span>
+&#160;
+<span class="kw4">struct</span>	Node
+<span class="br0">&#123;</span>
+	<span class="kw4">int</span> no<span class="sy4">;</span>
+	<span class="kw4">int</span> data<span class="sy4">;</span>				<span class="co1">//存储数据</span>
+	Node <span class="sy2">*</span>next<span class="sy4">;</span>				<span class="co1">//指向下一组数据</span>
+<span class="br0">&#125;</span><span class="sy4">;</span>
+&#160;
+<span class="kw2">class</span>	Create
+<span class="br0">&#123;</span>
+	<span class="kw2">public</span><span class="sy4">:</span>
+		Create<span class="br0">&#40;</span>Node <span class="sy2">*</span>HEAD <span class="sy1">=</span> <span class="kw2">NULL</span><span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw4">void</span> create<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>			<span class="co1">//创建链表</span>
+		<span class="kw4">void</span> display<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span>		<span class="co1">//显示链表中的数据</span>
+		<span class="kw4">void</span> Delete<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>			<span class="co1">//删除结点</span>
+		<span class="kw4">void</span> search<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span>		<span class="co1">//搜索结点</span>
+	<span class="co1">//</span>
+	<span class="kw2">private</span><span class="sy4">:</span>
+		Node <span class="sy2">*</span>Head<span class="sy4">;</span>			<span class="co1">//存储头指针</span>
+<span class="br0">&#125;</span><span class="sy4">;</span>
+&#160;
+Create<span class="sy4">::</span><span class="me2">Create</span><span class="br0">&#40;</span>Node <span class="sy2">*</span>HEAD<span class="br0">&#41;</span> <span class="sy4">:</span> Head<span class="br0">&#40;</span>HEAD<span class="br0">&#41;</span>
+<span class="br0">&#123;</span><span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> Create<span class="sy4">::</span><span class="me2">create</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	Node <span class="sy2">*</span>head <span class="sy1">=</span> <span class="kw2">NULL</span><span class="sy4">;</span>
+	Node <span class="sy2">*</span>tail <span class="sy1">=</span> <span class="kw2">NULL</span><span class="sy4">;</span>
+	<span class="kw4">int</span> value_data  <span class="sy1">=</span> <span class="nu0">100</span><span class="sy4">;</span>
+	<span class="kw4">int</span> value_no	<span class="sy1">=</span> <span class="nu0">100</span><span class="sy4">;</span>
+&#160;
+	<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span><span class="st0">&quot;<span class="es1">\n</span>Enter the no data and end by Enter 0:<span class="es1">\n</span>no data<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+	<span class="kw3">cin</span><span class="sy1">&gt;&gt;</span>value_no<span class="sy4">;</span>
+&#160;
+	<span class="kw1">while</span> <span class="br0">&#40;</span>value_no <span class="sy3">!</span><span class="sy1">=</span> <span class="nu0">0</span><span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		head	 <span class="sy1">=</span> <span class="kw3">new</span> Node<span class="sy4">;</span>		<span class="co1">//栈上申请内存</span>
+&#160;
+		head<span class="sy2">-</span><span class="sy1">&gt;</span>no <span class="sy1">=</span> value_no<span class="sy4">;</span>
+		<span class="kw3">cin</span><span class="sy1">&gt;&gt;</span>head<span class="sy2">-</span><span class="sy1">&gt;</span>data<span class="sy4">;</span>
+&#160;
+		<span class="kw1">if</span> <span class="br0">&#40;</span>Head <span class="sy1">==</span> <span class="kw2">NULL</span><span class="br0">&#41;</span>		<span class="co1">//判断头指针是否为空</span>
+		<span class="br0">&#123;</span>
+			Head		<span class="sy1">=</span> head<span class="sy4">;</span>
+			Head<span class="sy2">-</span><span class="sy1">&gt;</span>next	<span class="sy1">=</span> <span class="kw2">NULL</span><span class="sy4">;</span>
+			tail		<span class="sy1">=</span> head<span class="sy4">;</span>	<span class="co1">//新结点至尾</span>
+		<span class="br0">&#125;</span>
+		<span class="kw1">else</span>
+		<span class="br0">&#123;</span>
+			tail<span class="sy2">-</span><span class="sy1">&gt;</span>next	<span class="sy1">=</span> head<span class="sy4">;</span>
+			head<span class="sy2">-</span><span class="sy1">&gt;</span>next	<span class="sy1">=</span> <span class="kw2">NULL</span><span class="sy4">;</span>
+			tail		<span class="sy1">=</span> head<span class="sy4">;</span>	<span class="co1">//新结点至尾</span>
+		<span class="br0">&#125;</span>
+&#160;
+		<span class="kw3">cin</span><span class="sy1">&gt;&gt;</span>value_no<span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+&#160;
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> Create<span class="sy4">::</span><span class="me2">Delete</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="kw4">int</span> search_no	<span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+	Node <span class="sy2">*</span>Te	<span class="sy1">=</span> Head<span class="sy4">;</span>
+	Node <span class="sy2">*</span>front_data<span class="sy1">=</span> <span class="kw2">NULL</span><span class="sy4">;</span>
+&#160;
+	<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span><span class="st0">&quot;Enter the no you want to delete:&quot;</span><span class="sy4">;</span>
+	<span class="kw3">cin</span><span class="sy1">&gt;&gt;</span>search_no<span class="sy4">;</span>
+&#160;
+	<span class="kw1">if</span> <span class="br0">&#40;</span>Head<span class="sy2">-</span><span class="sy1">&gt;</span>no <span class="sy1">==</span> search_no<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		Head <span class="sy1">=</span> Head<span class="sy2">-</span><span class="sy1">&gt;</span>next<span class="sy4">;</span>
+		<span class="kw3">delete</span> Te<span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw1">else</span>
+	<span class="br0">&#123;</span>
+		<span class="kw1">while</span> <span class="br0">&#40;</span>Te<span class="br0">&#41;</span>
+		<span class="br0">&#123;</span>
+			<span class="kw1">if</span> <span class="br0">&#40;</span>Te<span class="sy2">-</span><span class="sy1">&gt;</span>no <span class="sy1">==</span> search_no<span class="br0">&#41;</span>
+			<span class="br0">&#123;</span>
+				<span class="kw1">break</span><span class="sy4">;</span>
+			<span class="br0">&#125;</span>
+			front_data <span class="sy1">=</span> Te<span class="sy4">;</span>
+			Te <span class="sy1">=</span> Te<span class="sy2">-</span><span class="sy1">&gt;</span>next<span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+&#160;
+		<span class="kw1">if</span> <span class="br0">&#40;</span>Te <span class="sy1">==</span> <span class="kw2">NULL</span><span class="br0">&#41;</span>
+		<span class="br0">&#123;</span>
+			<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span><span class="st0">&quot;No data!&quot;</span><span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+		<span class="kw1">else</span>
+		<span class="br0">&#123;</span>
+			<span class="co1">//if ()			</span>
+			front_data<span class="sy2">-</span><span class="sy1">&gt;</span>next <span class="sy1">=</span> Te<span class="sy2">-</span><span class="sy1">&gt;</span>next<span class="sy4">;</span>
+			<span class="kw3">delete</span> Te<span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+	<span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> Create<span class="sy4">::</span><span class="me2">display</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span>
+<span class="br0">&#123;</span>
+	Node <span class="sy2">*</span>Te <span class="sy1">=</span> Head<span class="sy4">;</span>
+&#160;
+	<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span><span class="st0">&quot;<span class="es1">\n</span>no	data:<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+	<span class="kw1">while</span> <span class="br0">&#40;</span>Te<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span>Te<span class="sy2">-</span><span class="sy1">&gt;</span>no<span class="sy4">;</span>
+		<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span><span class="st0">'<span class="es1">\t</span>'</span><span class="sy1">&lt;&lt;</span>Te<span class="sy2">-</span><span class="sy1">&gt;</span>data<span class="sy4">;</span>
+		<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span>endl<span class="sy4">;</span>
+		Te <span class="sy1">=</span> Te<span class="sy2">-</span><span class="sy1">&gt;</span>next<span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span>endl<span class="sy4">;</span>
+&#160;
+<span class="br0">&#125;</span>
+<span class="co1">//</span>
+&#160;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	Create instance<span class="sy4">;</span>
+&#160;
+	instance.<span class="me1">create</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	instance.<span class="me1">display</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	instance.<span class="me1">Delete</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	instance.<span class="me1">display</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+	<span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h3><span class="editsection">[<a href="/index.php?title=%E9%93%BE%E8%A1%A8&amp;action=edit&amp;section=10" title="编辑段落：查找">编辑</a>]</span> <span class="mw-headline" id=".E6.9F.A5.E6.89.BE">查找</span></h3>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">&#160;
+<span class="coMULTI">/*--------------------------------------------------
+&#160;
+		Node.cpp
+&#160;
+--------------------------------------------------*/</span>
+&#160;
+<span class="co2">#include &lt;iostream&gt;</span>
+&#160;
+<span class="kw2">using</span> <span class="kw2">namespace</span> std<span class="sy4">;</span>
+&#160;
+<span class="kw4">struct</span>	Node
+<span class="br0">&#123;</span>
+	<span class="kw4">int</span> no<span class="sy4">;</span>
+	<span class="kw4">int</span> data<span class="sy4">;</span>				<span class="co1">//存储数据</span>
+	Node <span class="sy2">*</span>next<span class="sy4">;</span>				<span class="co1">//指向下一组数据</span>
+<span class="br0">&#125;</span><span class="sy4">;</span>
+&#160;
+<span class="kw2">class</span>	Create
+<span class="br0">&#123;</span>
+	<span class="kw2">public</span><span class="sy4">:</span>
+		Create<span class="br0">&#40;</span>Node <span class="sy2">*</span>HEAD <span class="sy1">=</span> <span class="kw2">NULL</span><span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw4">void</span> create<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>			<span class="co1">//创建链表</span>
+		<span class="kw4">void</span> display<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span>		<span class="co1">//显示链表中的数据</span>
+		<span class="kw4">void</span> Delete<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>			<span class="co1">//删除结点</span>
+		<span class="kw4">void</span> search<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span>		<span class="co1">//搜索结点</span>
+	<span class="co1">//</span>
+	<span class="kw2">private</span><span class="sy4">:</span>
+		Node <span class="sy2">*</span>Head<span class="sy4">;</span>			<span class="co1">//存储头指针</span>
+<span class="br0">&#125;</span><span class="sy4">;</span>
+&#160;
+Create<span class="sy4">::</span><span class="me2">Create</span><span class="br0">&#40;</span>Node <span class="sy2">*</span>HEAD<span class="br0">&#41;</span> <span class="sy4">:</span> Head<span class="br0">&#40;</span>HEAD<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> Create<span class="sy4">::</span><span class="me2">create</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	Node <span class="sy2">*</span>head <span class="sy1">=</span> <span class="kw2">NULL</span><span class="sy4">;</span>
+	Node <span class="sy2">*</span>tail <span class="sy1">=</span> <span class="kw2">NULL</span><span class="sy4">;</span>
+	<span class="kw4">int</span> value_data  <span class="sy1">=</span> <span class="nu0">100</span><span class="sy4">;</span>
+	<span class="kw4">int</span> value_no	<span class="sy1">=</span> <span class="nu0">100</span><span class="sy4">;</span>
+&#160;
+	<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span><span class="st0">&quot;<span class="es1">\n</span>Enter the no data and end by Enter 0:<span class="es1">\n</span>no data<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+	<span class="kw3">cin</span><span class="sy1">&gt;&gt;</span>value_no<span class="sy4">;</span>
+&#160;
+	<span class="kw1">while</span> <span class="br0">&#40;</span>value_no <span class="sy3">!</span><span class="sy1">=</span> <span class="nu0">0</span><span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		head	 <span class="sy1">=</span> <span class="kw3">new</span> Node<span class="sy4">;</span>		<span class="co1">//栈上申请内存</span>
+&#160;
+		head<span class="sy2">-</span><span class="sy1">&gt;</span>no <span class="sy1">=</span> value_no<span class="sy4">;</span>
+		<span class="kw3">cin</span><span class="sy1">&gt;&gt;</span>head<span class="sy2">-</span><span class="sy1">&gt;</span>data<span class="sy4">;</span>
+&#160;
+		<span class="kw1">if</span> <span class="br0">&#40;</span>Head <span class="sy1">==</span> <span class="kw2">NULL</span><span class="br0">&#41;</span>		<span class="co1">//判断头指针是否为空</span>
+		<span class="br0">&#123;</span>
+			Head		<span class="sy1">=</span> head<span class="sy4">;</span>
+			Head<span class="sy2">-</span><span class="sy1">&gt;</span>next	<span class="sy1">=</span> <span class="kw2">NULL</span><span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+		<span class="kw1">else</span>
+		<span class="br0">&#123;</span>
+			tail<span class="sy2">-</span><span class="sy1">&gt;</span>next	<span class="sy1">=</span> head<span class="sy4">;</span>
+			head<span class="sy2">-</span><span class="sy1">&gt;</span>next	<span class="sy1">=</span> <span class="kw2">NULL</span><span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+		tail <span class="sy1">=</span> head<span class="sy4">;</span>			<span class="co1">// 新节点至尾</span>
+		<span class="kw3">cin</span><span class="sy1">&gt;&gt;</span>value_no<span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+&#160;
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> Create<span class="sy4">::</span><span class="me2">Delete</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="kw4">int</span> search_no	<span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+	Node <span class="sy2">*</span>Te	<span class="sy1">=</span> Head<span class="sy4">;</span>
+	Node <span class="sy2">*</span>front_data<span class="sy1">=</span> <span class="kw2">NULL</span><span class="sy4">;</span>
+&#160;
+	<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span><span class="st0">&quot;Enter the no you want to delete:&quot;</span><span class="sy4">;</span>
+	<span class="kw3">cin</span><span class="sy1">&gt;&gt;</span>search_no<span class="sy4">;</span>
+&#160;
+	<span class="kw1">if</span> <span class="br0">&#40;</span>Head<span class="sy2">-</span><span class="sy1">&gt;</span>no <span class="sy1">==</span> search_no<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		Head <span class="sy1">=</span> Head<span class="sy2">-</span><span class="sy1">&gt;</span>next<span class="sy4">;</span>
+		<span class="kw3">delete</span> Te<span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw1">else</span>
+	<span class="br0">&#123;</span>
+		<span class="kw1">while</span> <span class="br0">&#40;</span>Te<span class="br0">&#41;</span>
+		<span class="br0">&#123;</span>
+			<span class="kw1">if</span> <span class="br0">&#40;</span>Te<span class="sy2">-</span><span class="sy1">&gt;</span>no <span class="sy1">==</span> search_no<span class="br0">&#41;</span>
+			<span class="br0">&#123;</span>
+				<span class="kw1">break</span><span class="sy4">;</span>
+			<span class="br0">&#125;</span>
+			front_data <span class="sy1">=</span> Te<span class="sy4">;</span>
+			Te <span class="sy1">=</span> Te<span class="sy2">-</span><span class="sy1">&gt;</span>next<span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+&#160;
+		<span class="kw1">if</span> <span class="br0">&#40;</span>Te <span class="sy1">==</span> <span class="kw2">NULL</span><span class="br0">&#41;</span>
+		<span class="br0">&#123;</span>
+			<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span><span class="st0">&quot;No data!&quot;</span><span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+		<span class="kw1">else</span>
+		<span class="br0">&#123;</span>
+			front_data<span class="sy2">-</span><span class="sy1">&gt;</span>next <span class="sy1">=</span> Te<span class="sy2">-</span><span class="sy1">&gt;</span>next<span class="sy4">;</span>
+			<span class="kw3">delete</span> Te<span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+	<span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+&#160;
+&#160;
+<span class="kw4">void</span> Create<span class="sy4">::</span><span class="me2">search</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span>
+<span class="br0">&#123;</span>
+	<span class="kw4">int</span> search_no	<span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+	Node <span class="sy2">*</span>Te	<span class="sy1">=</span> Head<span class="sy4">;</span>
+&#160;
+	<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span><span class="st0">&quot;Enter the no you want to search:&quot;</span><span class="sy4">;</span>
+	<span class="kw3">cin</span><span class="sy1">&gt;&gt;</span>search_no<span class="sy4">;</span>
+&#160;
+	<span class="kw1">while</span> <span class="br0">&#40;</span>Te<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span>Te<span class="sy2">-</span><span class="sy1">&gt;</span>no <span class="sy1">==</span> search_no<span class="br0">&#41;</span>
+		<span class="br0">&#123;</span>
+			<span class="kw1">break</span><span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+		Te <span class="sy1">=</span> Te<span class="sy2">-</span><span class="sy1">&gt;</span>next<span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+&#160;
+	<span class="kw1">if</span> <span class="br0">&#40;</span>Te <span class="sy1">==</span> <span class="kw2">NULL</span><span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span><span class="st0">&quot;No data!&quot;</span><span class="sy4">;</span>
+		<span class="kw1">return</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span>Te<span class="sy2">-</span><span class="sy1">&gt;</span>no<span class="sy4">;</span>
+	<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span><span class="st0">'<span class="es1">\t</span>'</span><span class="sy1">&lt;&lt;</span>Te<span class="sy2">-</span><span class="sy1">&gt;</span>data<span class="sy4">;</span>
+	<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span>endl<span class="sy4">;</span>
+&#160;
+<span class="br0">&#125;</span>
+<span class="kw4">void</span> Create<span class="sy4">::</span><span class="me2">display</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span>
+<span class="br0">&#123;</span>
+	Node <span class="sy2">*</span>Te <span class="sy1">=</span> Head<span class="sy4">;</span>
+&#160;
+	<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span><span class="st0">&quot;<span class="es1">\n</span>no	data:<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+	<span class="kw1">while</span> <span class="br0">&#40;</span>Te<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span>Te<span class="sy2">-</span><span class="sy1">&gt;</span>no<span class="sy4">;</span>
+		<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span><span class="st0">'<span class="es1">\t</span>'</span><span class="sy1">&lt;&lt;</span>Te<span class="sy2">-</span><span class="sy1">&gt;</span>data<span class="sy4">;</span>
+		<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span>endl<span class="sy4">;</span>
+		Te <span class="sy1">=</span> Te<span class="sy2">-</span><span class="sy1">&gt;</span>next<span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span>endl<span class="sy4">;</span>
+&#160;
+<span class="br0">&#125;</span>
+<span class="co1">//</span>
+&#160;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	Create instance<span class="sy4">;</span>
+&#160;
+	instance.<span class="me1">create</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	instance.<span class="me1">display</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	instance.<span class="me1">search</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+	<span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h2><span class="editsection">[<a href="/index.php?title=%E9%93%BE%E8%A1%A8&amp;action=edit&amp;section=11" title="编辑段落：参考代码">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81">参考代码</span></h2>
+<dl><dt>单向链表</dt><dd><a href="/index.php/Code:%E9%93%BE%E8%A1%A8/C%2B%2B" title="Code:链表/C++">C++</a> <a href="/index.php/Code:%E9%93%BE%E8%A1%A8/Pascal" title="Code:链表/Pascal">Pascal</a>
+</dd><dt>双向链表</dt><dd><a href="/index.php/Code:%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/C%2B%2B" title="Code:双向链表/C++">C++</a> <a href="/index.php/Code:%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/Pascal" title="Code:双向链表/Pascal">Pascal</a>
+</dd><dt>单向循环链表</dt><dd><a href="/index.php?title=Code:%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8/C%2B%2B&amp;action=edit&amp;redlink=1" class="new" title="Code:循环链表/C++（尚未撰写）">C++</a> <a href="/index.php?title=Code:%E5%8D%95%E5%90%91%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8/Pascal&amp;action=edit&amp;redlink=1" class="new" title="Code:单向循环链表/Pascal（尚未撰写）">Pascal</a>
+</dd></dl>
+<h2><span class="editsection">[<a href="/index.php?title=%E9%93%BE%E8%A1%A8&amp;action=edit&amp;section=12" title="编辑段落：常见用途">编辑</a>]</span> <span class="mw-headline" id=".E5.B8.B8.E8.A7.81.E7.94.A8.E9.80.94">常见用途</span></h2>
+<h2><span class="editsection">[<a href="/index.php?title=%E9%93%BE%E8%A1%A8&amp;action=edit&amp;section=13" title="编辑段落：评价">编辑</a>]</span> <span class="mw-headline" id=".E8.AF.84.E4.BB.B7">评价</span></h2>
+<h2><span class="editsection">[<a href="/index.php?title=%E9%93%BE%E8%A1%A8&amp;action=edit&amp;section=14" title="编辑段落：参见">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E8.A7.81">参见</span></h2>
+<h3><span class="editsection">[<a href="/index.php?title=%E9%93%BE%E8%A1%A8&amp;action=edit&amp;section=15" title="编辑段落：其他数据结构">编辑</a>]</span> <span class="mw-headline" id=".E5.85.B6.E4.BB.96.E6.95.B0.E6.8D.AE.E7.BB.93.E6.9E.84">其他数据结构</span></h3>
+<ul><li><a href="/index.php/%E7%BA%BF%E6%80%A7%E8%A1%A8" title="线性表">线性表</a>
+</li><li><a href="/index.php/%E9%A1%BA%E5%BA%8F%E8%A1%A8" title="顺序表">顺序表</a>
+</li><li><a href="/index.php?title=%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84&amp;action=edit&amp;redlink=1" class="new" title="基本数据结构（尚未撰写）">基本数据结构</a>
+</li><li><a href="/index.php/%E6%A0%91" title="树">树</a>
+</li><li><a href="/index.php?title=%E6%8C%87%E9%92%88&amp;action=edit&amp;redlink=1" class="new" title="指针（尚未撰写）">指针</a>
+</li></ul>
+<h3><span class="editsection">[<a href="/index.php?title=%E9%93%BE%E8%A1%A8&amp;action=edit&amp;section=16" title="编辑段落：参考题目">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E8.80.83.E9.A2.98.E7.9B.AE">参考题目</span></h3>
+<div style="border:1px solid #ddd; background-color:#eee;padding:6px 20px 5px 12px;margin:10px 0px 15px 20px;-moz-border-radius:9px;"><b>链表</b>是一个小作品，欢迎<span class="plainlinks"><b><a rel="nofollow" class="external text" href="http://www.nocow.cn/index.php?title=%E9%93%BE%E8%A1%A8&amp;action=edit">帮助扩充</a></b></span>这个条目。</div>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 130/1000000
+Post-expand include size: 1185/2097152 bytes
+Template argument size: 104/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:479-0!1!0!!zh-cn!*!* and timestamp 20150502090308 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=%E9%93%BE%E8%A1%A8&amp;oldid=32240#.E5.BE.AA.E7.8E.AF.E9.93.BE.E8.A1.A8">http://www.nocow.cn/index.php?title=%E9%93%BE%E8%A1%A8&amp;oldid=32240#.E5.BE.AA.E7.8E.AF.E9.93.BE.E8.A1.A8</a>”</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="特殊:页面分类">3个分类</a>: <ul><li><a href="/index.php/%E5%88%86%E7%B1%BB:%E7%89%88%E6%9D%83%E6%97%A0%E4%BA%89%E8%AE%AE%E7%9A%84%E5%86%85%E5%AE%B9" title="分类:版权无争议的内容">版权无争议的内容</a></li><li><a href="/index.php/%E5%88%86%E7%B1%BB:%E5%B0%8F%E4%BD%9C%E5%93%81" title="分类:小作品">小作品</a></li><li><a href="/index.php/%E5%88%86%E7%B1%BB:%E7%BA%BF%E6%80%A7%E8%A1%A8" title="分类:线性表">线性表</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/%E9%93%BE%E8%A1%A8" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:%E9%93%BE%E8%A1%A8&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=%E9%93%BE%E8%A1%A8&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=%E9%93%BE%E8%A1%A8&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/%E9%93%BE%E8%A1%A8" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/%E9%93%BE%E8%A1%A8" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=%E9%93%BE%E8%A1%A8&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=%E9%93%BE%E8%A1%A8&amp;oldid=32240" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过24,062次。</li>
+		<li id="credits">本页面由NOCOW用户<a href="/index.php?title=%E7%94%A8%E6%88%B7:FreeBirdLjj&amp;action=edit&amp;redlink=1" class="new" title="用户:FreeBirdLjj（尚未撰写）">FreeBirdLjj</a>于2013年2月10日 (星期日) 22:10做出最后修改。 在<a href="/index.php/%E7%94%A8%E6%88%B7:Cosechy" title="用户:Cosechy">yh</a>、NOCOW用户<a href="/index.php?title=%E7%94%A8%E6%88%B7:Outlander&amp;action=edit&amp;redlink=1" class="new" title="用户:Outlander（尚未撰写）">Outlander</a>、NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/147.228.63.164" title="特殊:用户贡献/147.228.63.164">147.228.63.164</a>和<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/60.2.23.250" title="特殊:用户贡献/60.2.23.250">60.2.23.250</a>和<a href="/index.php?title=%E9%93%BE%E8%A1%A8&amp;action=credits#.E5.BE.AA.E7.8E.AF.E9.93.BE.E8.A1.A8" title="链表">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script>
+redirectToFragment("#.E5.BE.AA.E7.8E.AF.E9.93.BE.E8.A1.A8");
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.181 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /index.php?title=
+Disallow: /index.php/User:Cosechy/viewertest/Post:%E8%8B%B1%E6%96%87%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99
+Disallow: /index.php/Index.php
+User-agent: Webdup/0.9
+Disallow: /
+User-agent: Webdup
+Disallow: /
+

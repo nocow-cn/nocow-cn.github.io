@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>NOCOW NEW WIKI ALPHA2 - </title>
+<style type="text/css">
+.debugtrace {display:inline}
+.debugtrace .debugtraceinfo {display:none}
+.debugtrace:hover .debugtraceinfo,
+#chemical:hover + * .chemical .debugtraceinfo,
+#chemical:focus + * .chemical .debugtraceinfo,
+#chemical:active + * .chemical .debugtraceinfo,
+#gray:hover + * .gray .debugtraceinfo,
+#gray:focus + * .gray .debugtraceinfo,
+#gray:active + * .gray .debugtraceinfo,
+#green:hover + * .green .debugtraceinfo,
+#green:focus + * .green .debugtraceinfo,
+#green:active + * .green .debugtraceinfo,
+#orange:hover + * .orange .debugtraceinfo,
+#orange:focus + * .orange .debugtraceinfo,
+#orange:active + * .orange .debugtraceinfo,
+#blue:hover + * .blue .debugtraceinfo,
+#blue:focus + * .blue .debugtraceinfo,
+#blue:active + * .blue .debugtraceinfo,
+#red:hover + * .red .debugtraceinfo,
+#red:focus + * .red .debugtraceinfo,
+#red:active + * .red .debugtraceinfo,
+#yellow:hover + * .yellow .debugtraceinfo,
+#yellow:focus + * .yellow .debugtraceinfo,
+#yellow:active + * .yellow .debugtraceinfo,
+#purple:hover + * .purple .debugtraceinfo,
+#purple:focus + * .purple .debugtraceinfo,
+#purple:active + * .purple .debugtraceinfo
+	{display:block}
+#chemical:hover + * .chemical,
+#chemical:focus + * .chemical,
+#chemical:active + * .chemical,
+#gray:hover + * .gray,
+#gray:focus + * .gray,
+#gray:active + * .gray,
+#green:hover + * .green,
+#green:focus + * .green,
+#green:active + * .green,
+#orange:hover + * .orange,
+#orange:focus + * .orange,
+#orange:active + * .orange,
+#blue:hover + * .blue,
+#blue:focus + * .blue,
+#blue:active + * .blue,
+#red:hover + * .red,
+#red:focus + * .red,
+#red:active + * .red,
+#yellow:hover + * .yellow,
+#yellow:focus + * .yellow,
+#yellow:active + * .yellow,
+#purple:hover + * .purple,
+#purple:focus + * .purple,
+#purple:active + * .purple
+	{display:block; margin:-1px; border:1px solid purple}
+.debugtrace:hover {display:block; margin:-1px; border:1px solid brown;}
+</style>
+</head>
+<body>
+<div><a id="yellow" style="background-color:lightyellow" href="#">db class construction</a> <span><a id="red" style="background-color:lightpink" href="#">dynamic tree operations</a> <span><a id="blue" style="background-color:powderblue" href="#">mysql queries</a> <span><a id="orange" style="background-color:wheat" href="#">class resolving</a> <span><a id="green" style="background-color:#A0EEA0" href="#">directory operations</a> <span><a id="chemical" style="background-color:#A0EED4" href="#">misc operations</a> <span><a id="gray" style="background-color:gainsboro" href="#">control redirections</a> <span><a id="purple" style="background-color:plum" href="#">stack operations</a>
+<pre style="white-space:pre-wrap">
+<div class="debugtrace yellow">1
+nb_base_php: about:unallocateable
+<div class="debugtraceinfo" style="background-color:lightyellow;margin-left:50px">exception 'nb_failure' with message 'debug' in /var/www/alpha2/errors.php:164
+Stack trace:
+#0 /var/www/alpha2/baseclass.php(95): nb_trace('1?nb_base_php: ...', 'yellow')
+#1 /var/www/alpha2/phpbase.php(45): nb_base_template->trace_construct()
+#2 /var/www/alpha2/class.php(7): nb_base_php->__construct()
+#3 /var/www/alpha2/test-view.php(76): require_once('/var/www/alpha2...')
+#4 {main}</div></div><div class="debugtrace yellow">2
+nb_array: about:unallocateable
+<div class="debugtraceinfo" style="background-color:lightyellow;margin-left:50px">exception 'nb_failure' with message 'debug' in /var/www/alpha2/errors.php:164
+Stack trace:
+#0 /var/www/alpha2/baseclass.php(95): nb_trace('2?nb_array: abo...', 'yellow')
+#1 /var/www/alpha2/directory.php(273): nb_base_template->trace_construct()
+#2 /var/www/alpha2/array.php(173): nb_simple_dir->__construct(Array, NULL, false, NULL)
+#3 /var/www/alpha2/class.php(8): nb_array->__construct()
+#4 /var/www/alpha2/test-view.php(76): require_once('/var/www/alpha2...')
+#5 {main}</div></div><div class="debugtrace yellow">3
+nb_base_php: about:unallocateable
+<div class="debugtraceinfo" style="background-color:lightyellow;margin-left:50px">exception 'nb_failure' with message 'debug' in /var/www/alpha2/errors.php:164
+Stack trace:
+#0 /var/www/alpha2/baseclass.php(95): nb_trace('3?nb_base_php: ...', 'yellow')
+#1 /var/www/alpha2/phpbase.php(45): nb_base_template->trace_construct()
+#2 /var/www/alpha2/array.php(17): nb_base_php->__construct()
+#3 /var/www/alpha2/array.php(175): nb_array_content->__construct(NULL, NULL)
+#4 /var/www/alpha2/class.php(8): nb_array->__construct()
+#5 /var/www/alpha2/test-view.php(76): require_once('/var/www/alpha2...')
+#6 {main}</div></div><div class="debugtrace yellow">4
+nb_array_content: about:unallocateable
+<div class="debugtraceinfo" style="background-color:lightyellow;margin-left:50px">exception 'nb_failure' with message 'debug' in /var/www/alpha2/errors.php:164
+Stack trace:
+#0 /var/www/alpha2/baseclass.php(95): nb_trace('4?nb_array_cont...', 'yellow')
+#1 /var/www/alpha2/baseclass.php(86): nb_base_template->trace_construct()
+#2 /var/www/alpha2/array.php(20): nb_base_template->__construct(Array, NULL, 1)
+#3 /var/www/alpha2/array.php(175): nb_array_content->__construct(NULL, NULL)
+#4 /var/www/alpha2/class.php(8): nb_array->__construct()
+#5 /var/www/alpha2/test-view.php(76): require_once('/var/www/alpha2...')
+#6 {main}</div></div><div class="debugtrace yellow">5
+nb_base_php: about:unallocateable/:ip
+<div class="debugtraceinfo" style="background-color:lightyellow;margin-left:50px">exception 'nb_failure' with message 'debug' in /var/www/alpha2/errors.php:164
+Stack trace:
+#0 /var/www/alpha2/baseclass.php(95): nb_trace('5?nb_base_php: ...', 'yellow')
+#1 /var/www/alpha2/phpbase.php(45): nb_base_template->trace_construct()
+#2 /var/www/alpha2/phpbase.php(99): nb_base_php->__construct(Array, Object(nb_path))
+#3 /var/www/alpha2/class.php(8): nb_base_php->mkdir(Array, Object(nb_array))
+#4 /var/www/alpha2/test-view.php(76): require_once('/var/www/alpha2...')
+#5 {main}</div></div>Array
+(
+    [0] => mysql: connection ok
+)
+<div class="debugtrace yellow">6
+nb_base_mysql_core: server:content/main
+<div class="debugtraceinfo" style="background-color:lightyellow;margin-left:50px">exception 'nb_failure' with message 'debug' in /var/www/alpha2/errors.php:164
+Stack trace:
+#0 /var/www/alpha2/baseclass.php(95): nb_trace('6?nb_base_mysql...', 'yellow')
+#1 /var/www/alpha2/baseclass.php(86): nb_base_template->trace_construct()
+#2 /var/www/alpha2/mysql.php(144): nb_base_template->__construct(Object(nb_mysql_conn), Object(nb_path), false)
+#3 /var/www/alpha2/mysql.php(693): nb_base_mysql_core->__construct(Object(nb_mysql_conn), Object(nb_path))
+#4 /var/www/alpha2/test-view.php(87): nb_base_mysql->__construct(Object(nb_mysql_conn), Object(nb_path))
+#5 {main}</div></div><div class="debugtrace green">mysql: get default headers of nb_base_mysql (6)
+<div class="debugtraceinfo" style="background-color:#A0EEA0;margin-left:50px">exception 'nb_failure' with message 'debug' in /var/www/alpha2/errors.php:164
+Stack trace:
+#0 /var/www/alpha2/mysql.php(687): nb_trace('mysql: get defa...', 'green')
+#1 /var/www/alpha2/directory.php(268): nb_base_mysql->nbdir_get_default_headers()
+#2 /var/www/alpha2/mysql.php(694): nb_simple_dir->__construct(Array, Object(nb_path), false, NULL)
+#3 /var/www/alpha2/test-view.php(87): nb_base_mysql->__construct(Object(nb_mysql_conn), Object(nb_path))
+#4 {main}</div></div><div class="debugtrace chemical">mysql: getcore (6)
+<div class="debugtraceinfo" style="background-color:#A0EED4;margin-left:50px">exception 'nb_failure' with message 'debug' in /var/www/alpha2/errors.php:164
+Stack trace:
+#0 /var/www/alpha2/mysql.php(701): nb_trace('mysql: getcore', 'chemical')
+#1 /var/www/alpha2/mysql.php(688): nb_base_mysql->sql_getcore()
+#2 /var/www/alpha2/directory.php(268): nb_base_mysql->nbdir_get_default_headers()
+#3 /var/www/alpha2/mysql.php(694): nb_simple_dir->__construct(Array, Object(nb_path), false, NULL)
+#4 /var/www/alpha2/test-view.php(87): nb_base_mysql->__construct(Object(nb_mysql_conn), Object(nb_path))
+#5 {main}</div></div>mysql: getcore: done
+<div class="debugtrace yellow">7
+nb_base_mysql: server:content/main
+<div class="debugtraceinfo" style="background-color:lightyellow;margin-left:50px">exception 'nb_failure' with message 'debug' in /var/www/alpha2/errors.php:164
+Stack trace:
+#0 /var/www/alpha2/baseclass.php(95): nb_trace('7?nb_base_mysql...', 'yellow')
+#1 /var/www/alpha2/directory.php(273): nb_base_template->trace_construct()
+#2 /var/www/alpha2/mysql.php(694): nb_simple_dir->__construct(Array, Object(nb_path), false, NULL)
+#3 /var/www/alpha2/test-view.php(87): nb_base_mysql->__construct(Object(nb_mysql_conn), Object(nb_path))
+#4 {main}</div></div><div class="debugtrace yellow">8
+nb_rootshell: server:content/main
+<div class="debugtraceinfo" style="background-color:lightyellow;margin-left:50px">exception 'nb_failure' with message 'debug' in /var/www/alpha2/errors.php:164
+Stack trace:
+#0 /var/www/alpha2/baseclass.php(95): nb_trace('8?nb_rootshell:...', 'yellow')
+#1 /var/www/alpha2/directory.php(273): nb_base_template->trace_construct()
+#2 /var/www/alpha2/directory.php(859): nb_simple_dir->__construct(Array, Object(nb_path), false, NULL)
+#3 /var/www/alpha2/test-view.php(88): nb_dir->__construct(Array, Object(nb_path))
+#4 {main}</div></div><div class="debugtrace green">directory walk: nbdir_chdir: , layer .headers from nb_rootshell (8)
+<div class="debugtraceinfo" style="background-color:#A0EEA0;margin-left:50px">exception 'nb_failure' with message 'debug' in /var/www/alpha2/errors.php:164
+Stack trace:
+#0 /var/www/alpha2/directory.php(354): nb_trace('directory walk:...', 'green')
+#1 /var/www/alpha2/directory.php(491): nb_simple_dir->nbdir_walkto(Array, 'nbdir_chdir')
+#2 /var/www/alpha2/test-view.php(128): nb_simple_dir->chdir(Array)
+#3 {main}</div></div><div class="debugtrace yellow">9
+nb_dir_walk: server:content/main
+<div class="debugtraceinfo" style="background-color:lightyellow;margin-left:50px">exception 'nb_failure' with message 'debug' in /var/www/alpha2/errors.php:164
+Stack trace:
+#0 /var/www/alpha2/baseclass.php(95): nb_trace('9?nb_dir_walk: ...', 'yellow')
+#1 /var/www/alpha2/virtual.php(123): nb_base_template->trace_construct()
+#2 /var/www/alpha2/directory.php(366): nb_dir_walk->__construct(Object(nb_rootshell), Object(nb_advanced_dir_factory), Array, 'nbdir_chdir', Object(nb_path), NULL)
+#3 /var/www/alpha2/directory.php(491): nb_simple_dir->nbdir_walkto(Array, 'nbdir_chdir')
+#4 /var/www/alpha2/test-view.php(128): nb_simple_dir->chdir(Array)
+#5 {main}</div></div><div class="debugtrace yellow">10
+nb_headers: server:content/main
+<div class="debugtraceinfo" style="background-color:lightyellow;margin-left:50px">exception 'nb_failure' with message 'debug' in /var/www/alpha2/errors.php:164
+Stack trace:
+#0 /var/www/alpha2/baseclass.php(95): nb_trace('10?nb_headers: ...', 'yellow')
+#1 /var/www/alpha2/baseclass.php(86): nb_base_template->trace_construct()
+#2 /var/www/alpha2/factory.php(176): nb_base_template->__construct(Array, Object(nb_path), NULL)
+#3 /var/www/alpha2/virtual.php(127): nb_advanced_dir_factory->factory(Object(nb_rootshell), Object(nb_path))
+#4 /var/www/alpha2/directory.php(378): nb_dir_walk->factory()
+#5 /var/www/alpha2/directory.php(491): nb_simple_dir->nbdir_walkto(Array, 'nbdir_chdir')
+#6 /var/www/alpha2/test-view.php(128): nb_simple_dir->chdir(Array)
+#7 {main}</div></div><div class="debugtrace yellow">11
+nb_virtual_chdir: 
+<div class="debugtraceinfo" style="background-color:lightyellow;margin-left:50px">exception 'nb_failure' with message 'debug' in /var/www/alpha2/errors.php:164
+Stack trace:
+#0 /var/www/alpha2/baseclass.php(95): nb_trace('11?nb_virtual_c...', 'yellow')
+#1 /var/www/alpha2/virtual.php(24): nb_base_template->trace_construct()
+#2 /var/www/alpha2/virtual.php(177): nb_virtual_chdir->__construct(Object(nb_advanced_dir_factory), Array)
+#3 /var/www/alpha2/directory.php(378): nb_dir_walk->factory()
+#4 /var/www/alpha2/directory.php(491): nb_simple_dir->nbdir_walkto(Array, 'nbdir_chdir')
+#5 /var/www/alpha2/test-view.php(128): nb_simple_dir->chdir(Array)
+#6 {main}</div></div><div class="debugtrace gray">exception thrown: notfound (11)
+<div class="debugtraceinfo" style="background-color:gainsboro;margin-left:50px">exception 'nb_failure' with message 'debug' in /var/www/alpha2/errors.php:164
+Stack trace:
+#0 /var/www/alpha2/errors.php(32): nb_trace('exception throw...', 'gray')
+#1 /var/www/alpha2/directory.php(157): nb_e('notfound')
+#2 /var/www/alpha2/virtual.php(177): nb_headers->factory(Object(nb_virtual_chdir), Object(nb_path))
+#3 /var/www/alpha2/directory.php(378): nb_dir_walk->factory()
+#4 /var/www/alpha2/directory.php(491): nb_simple_dir->nbdir_walkto(Array, 'nbdir_chdir')
+#5 /var/www/alpha2/test-view.php(128): nb_simple_dir->chdir(Array)
+#6 {main}</div></div>directory walk: catched
+<div class="debugtrace chemical">check target: none (11)
+<div class="debugtraceinfo" style="background-color:#A0EED4;margin-left:50px">exception 'nb_failure' with message 'debug' in /var/www/alpha2/errors.php:164
+Stack trace:
+#0 /var/www/alpha2/errors.php(60): nb_trace('check target: n...', 'chemical')
+#1 /var/www/alpha2/directory.php(417): nb_checktarget(Object(nb_rootshell), Object(nb_failure))
+#2 /var/www/alpha2/directory.php(491): nb_simple_dir->nbdir_walkto(Array, 'nbdir_chdir')
+#3 /var/www/alpha2/test-view.php(128): nb_simple_dir->chdir(Array)
+#4 {main}</div></div><div class="debugtrace chemical">factory chdir:  (11)
+<div class="debugtraceinfo" style="background-color:#A0EED4;margin-left:50px">exception 'nb_failure' with message 'debug' in /var/www/alpha2/errors.php:164
+Stack trace:
+#0 /var/www/alpha2/factory.php(183): nb_trace('factory chdir: ', 'chemical')
+#1 /var/www/alpha2/directory.php(423): nb_advanced_dir_factory->chdir(Array, Object(nb_rootshell))
+#2 /var/www/alpha2/directory.php(491): nb_simple_dir->nbdir_walkto(Array, 'nbdir_chdir')
+#3 /var/www/alpha2/test-view.php(128): nb_simple_dir->chdir(Array)
+#4 {main}</div></div><div class="debugtrace green">directory walk: nbdir_chdir: , layer 0 from nb_rootshell (11)
+<div class="debugtraceinfo" style="background-color:#A0EEA0;margin-left:50px">exception 'nb_failure' with message 'debug' in /var/www/alpha2/errors.php:164
+Stack trace:
+#0 /var/www/alpha2/directory.php(354): nb_trace('directory walk:...', 'green')
+#1 /var/www/alpha2/directory.php(491): nb_simple_dir->nbdir_walkto(Array, 'nbdir_chdir')
+#2 /var/www/alpha2/test-view.php(128): nb_simple_dir->chdir(Array)
+#3 {main}</div></div><div class="debugtrace yellow">12
+nb_dir_walk: server:content/main
+<div class="debugtraceinfo" style="background-color:lightyellow;margin-left:50px">exception 'nb_failure' with message 'debug' in /var/www/alpha2/errors.php:164
+Stack trace:
+#0 /var/www/alpha2/baseclass.php(95): nb_trace('12?nb_dir_walk:...', 'yellow')
+#1 /var/www/alpha2/virtual.php(123): nb_base_template->trace_construct()
+#2 /var/www/alpha2/directory.php(366): nb_dir_walk->__construct(Object(nb_rootshell), Object(nb_base_mysql), Array, 'nbdir_chdir', Object(nb_path), NULL)
+#3 /var/www/alpha2/directory.php(491): nb_simple_dir->nbdir_walkto(Array, 'nbdir_chdir')
+#4 /var/www/alpha2/test-view.php(128): nb_simple_dir->chdir(Array)
+#5 {main}</div></div><div class="debugtrace yellow">13
+nb_virtual_chdir: 
+<div class="debugtraceinfo" style="background-color:lightyellow;margin-left:50px">exception 'nb_failure' with message 'debug' in /var/www/alpha2/errors.php:164
+Stack trace:
+#0 /var/www/alpha2/baseclass.php(95): nb_trace('13?nb_virtual_c...', 'yellow')
+#1 /var/www/alpha2/virtual.php(24): nb_base_template->trace_construct()
+#2 /var/www/alpha2/virtual.php(177): nb_virtual_chdir->__construct(Object(nb_base_mysql), Array)
+#3 /var/www/alpha2/directory.php(378): nb_dir_walk->factory()
+#4 /var/www/alpha2/directory.php(491): nb_simple_dir->nbdir_walkto(Array, 'nbdir_chdir')
+#5 /var/www/alpha2/test-view.php(128): nb_simple_dir->chdir(Array)
+#6 {main}</div></div>directory walk: done
+<div class="debugtrace yellow">14
+nb_rootshell: server:content/main
+<div class="debugtraceinfo" style="background-color:lightyellow;margin-left:50px">exception 'nb_failure' with message 'debug' in /var/www/alpha2/errors.php:164
+Stack trace:
+#0 /var/www/alpha2/baseclass.php(95): nb_trace('14?nb_rootshell...', 'yellow')
+#1 /var/www/alpha2/directory.php(273): nb_base_template->trace_construct()
+#2 /var/www/alpha2/directory.php(859): nb_simple_dir->__construct(Array, Object(nb_path), false, NULL)
+#3 /var/www/alpha2/directory.php(473): nb_dir->__construct(Array, Object(nb_path), false)
+#4 /var/www/alpha2/directory.php(491): nb_simple_dir->nbdir_walkto(Array, 'nbdir_chdir')
+#5 /var/www/alpha2/test-view.php(128): nb_simple_dir->chdir(Array)
+#6 {main}</div></div><div class="debugtrace yellow">15
+nb_simple_data: about:unallocateable
+<div class="debugtraceinfo" style="background-color:lightyellow;margin-left:50px">exception 'nb_failure' with message 'debug' in /var/www/alpha2/errors.php:164
+Stack trace:
+#0 /var/www/alpha2/baseclass.php(95): nb_trace('15?nb_simple_da...', 'yellow')
+#1 /var/www/alpha2/baseclass.php(86): nb_base_template->trace_construct()
+#2 /var/www/alpha2/baseclass.php(331): nb_base_template->__construct(Array, NULL, false)
+#3 /var/www/alpha2/directory.php(695): nb_simple_data->__construct(Array)
+#4 /var/www/alpha2/test-view.php(131): nb_simple_dir->sdata()
+#5 {main}</div></div><div class="debugtrace yellow">16
+nb_simple_data: about:unallocateable
+<div class="debugtraceinfo" style="background-color:lightyellow;margin-left:50px">exception 'nb_failure' with message 'debug' in /var/www/alpha2/errors.php:164
+Stack trace:
+#0 /var/www/alpha2/baseclass.php(95): nb_trace('16?nb_simple_da...', 'yellow')
+#1 /var/www/alpha2/baseclass.php(86): nb_base_template->trace_construct()
+#2 /var/www/alpha2/baseclass.php(331): nb_base_template->__construct(Array, NULL, false)
+#3 /var/www/alpha2/directory.php(695): nb_simple_data->__construct(Array)
+#4 /var/www/alpha2/baseclass.php(393): nb_simple_dir->sdata()
+#5 /var/www/alpha2/directory.php(705): nb_simple_data->append(Object(nb_base_mysql))
+#6 /var/www/alpha2/test-view.php(131): nb_simple_dir->sdata()
+#7 {main}</div></div><div class="debugtrace blue">mysql query: SELECT `content` FROM `content` WHERE `id` = 1 (16)
+<div class="debugtraceinfo" style="background-color:powderblue;margin-left:50px">exception 'nb_failure' with message 'debug' in /var/www/alpha2/errors.php:164
+Stack trace:
+#0 /var/www/alpha2/mysql.php(129): nb_trace('mysql query: SE...', 'blue')
+#1 /var/www/alpha2/mysql.php(94): nb_mysql_conn->trace_query('SELECT `content...')
+#2 /var/www/alpha2/mysql.php(333): nb_mysql_conn->query('SELECT `content...')
+#3 /var/www/alpha2/baseclass.php(393): nb_base_mysql_core->sdata()
+#4 /var/www/alpha2/directory.php(705): nb_simple_data->append(Object(nb_base_mysql_core))
+#5 /var/www/alpha2/baseclass.php(393): nb_simple_dir->sdata()
+#6 /var/www/alpha2/directory.php(705): nb_simple_data->append(Object(nb_base_mysql))
+#7 /var/www/alpha2/test-view.php(131): nb_simple_dir->sdata()
+#8 {main}</div></div>mysql: connection closed
+</pre>
+</span></span></span></span></span></span></span>
+<hr>
+<div style="overflow:hidden;position:relative;zoom:1;min-height:500px">
+<table cellspacing="0" cellpadding="0" width="100%" style="position:relative;zoom:1">
+<td style="overflow:hidden">
+囧，这是根页面<br>
+<a href="test-view.php/index">test</a>
+</td>
+</table>
+</div>
+</body>
+</html>

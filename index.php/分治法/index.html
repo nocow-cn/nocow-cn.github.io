@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>分治法 - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=%E5%88%86%E6%B2%BB%E6%B3%95&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=%E5%88%86%E6%B2%BB%E6%B3%95&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "分治法", "wgTitle": "分治法", "wgCurRevisionId": 30175, "wgArticleId": 4549, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-分治法 action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">分治法</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><p>分治法
+</p><p>　　在计算机科学中，分治法是一种很重要的算法。字面上的解释是“分而治之”，就是把一个复杂的问题分成两个或更多的相同或相似的子问题，再把子问题分成更小的子问题……直到最后子问题可以简单的直接求解，原问题的解即子问题的解的合并。这个技巧是很多高效算法的基础，如排序算法(快速排序，归并排序)，傅立叶变换(快速傅立叶变换)……
+编辑本段
+分治法简介
+</p><p>　　
+　　任何一个可以用计算机求解的问题所需的计算时间都与其规模有关。问题的规模越小，越容易直接求解，解题所需的计算时间也越少。例如，对于n个元素的排序问题，当n=1时，不需任何计算。
+　　n=2时，只要作一次比较即可排好序。n=3时只要作3次比较即可，…。
+　　而当n较大时，问题就不那么容易处理了。要想直接解决一个规模较大的问题，有时是相当困难的。
+　　分治法的设计思想是，将一个难以直接解决的大问题，分割成一些规模较小的相同问题，以便各个击破，分而治之。
+　　分治策略是：对于一个规模为n的问题，若该问题可以容易地解决（比如说规模n较小）则直接解决，否则将其分解为k个规模较小的子问题，这些子问题互相独立且与原问题形式相同，递归地解这些子问题，然后将各子问题的解合并得到原问题的解。这种算法设计策略叫做分治法。
+　　如果原问题可分割成k个子问题，1&lt;k≤n ，且这些子问题都可解并可利用这些子问题的解求出原问题的解，那么这种分治法就是可行的。由分治法产生的子问题往往是原问题的较小模式，这就为使用递归技术提供了方便。在这种情况下，反复应用分治手段，可以使子问题与原问题类型一致而其规模却不断缩小，最终使子问题缩小到很容易直接求出其解。这自然导致递归过程的产生。分治与递归像一对孪生兄弟，经常同时应用在算法设计之中，并由此产生许多高效算法。
+　　分治法所能解决的问题一般具有以下几个特征：
+　　1) 该问题的规模缩小到一定的程度就可以容易地解决
+　　2) 该问题可以分解为若干个规模较小的相同问题，即该问题具有最优子结构性质。
+　　3) 利用该问题分解出的子问题的解可以合并为该问题的解；
+　　4) 该问题所分解出的各个子问题是相互独立的，即子问题之间不包含公共的子子问题。
+　　上述的第一条特征是绝大多数问题都可以满足的，因为问题的计算复杂性一般是随着问题规模的增加而增加；第二条特征是应用分治法的前提它也是大多数问题可以满足的，此特征反映了递归思想的应用；第三条特征是关键，能否利用分治法完全取决于问题是否具有第三条特征，如果具备了第一条和第二条特征，而不具备第三条特征，则可以考虑用贪心法或动态规划法。第四条特征涉及到分治法的效率，如果各子问题是不独立的则分治法要做许多不必要的工作，重复地解公共的子问题，此时虽然可用分治法，但一般用动态规划法较好。
+　　分治法的基本步骤
+　　分治法在每一层递归上都有三个步骤：
+　　分解：将原问题分解为若干个规模较小，相互独立，与原问题形式相同的子问题；
+　　解决：若子问题规模较小而容易被解决则直接解，否则递归地解各个子问题合并：将各个子问题的解合并为原问题的解。
+　　它的一般的算法设计模式如下：
+　　Divide-and-Conquer(P)
+　　1. if |P|≤n0
+　　2. then return(ADHOC(P))
+　　3. 将P分解为较小的子问题 P1 ,P2 ,...,Pk
+　　4. for i←1 to k
+　　5. do yi ← Divide-and-Conquer(Pi) △ 递归解决Pi
+　　6. T ← MERGE(y1,y2,...,yk) △ 合并子问题
+　　7. return(T)
+　　其中|P|表示问题P的规模；n0为一阈值，表示当问题P的规模不超过n0时，问题已容易直接解出，不必再继续分解。ADHOC(P)是该分治法中的基本子算法，用于直接解小规模的问题P。因此，当P的规模不超过n0时直接用算法ADHOC(P)求解。算法MERGE(y1,y2,...,yk)是该分治法中的合并子算法，用于将P的子问题P1 ,P2 ,...,Pk的相应的解y1,y2,...,yk合并为P的解。
+　　根据分治法的分割原则，原问题应该分为多少个子问题才较适宜？
+　　各个子问题的规模应该怎样才为适当？
+　　答: 但人们从大量实践中发现，在用分治法设计算法时，最好使子问题的规模大致相同。换句话说，将一个问题分成大小相等的k个子问题的处理方法是行之有效的。许多问题可以取 k = 2。这种使子问题规模大致相等的做法是出自一种平衡(balancing)子问题的思想，它几乎总是比子问题规模不等的做法要好。
+　　出处：网络
+　　实践题目：
+　　给定一个顺序表，编写一个求出其最大值和最小值的分治算法。
+　　分析：
+　　由于顺序表的结构没有给出，作为演示分治法这里从简顺序表取一整形数组数组大小由用户定义，数据随机生成。我们知道如果数组大小为 1 则可以直接给出结果，如果大小为 2则一次比较即可得出结果，于是我们找到求解该问题的子问题即: 数组大小 &lt;= 2。到此我们就可以进行分治运算了，只要求解的问题数组长度比 2 大就继续分治，否则求解子问题的解并更新全局解
+　　以下是代码。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">　　<span class="sy2">*/</span>
+　　<span class="coMULTI">/*** 编译环境TC ***/</span>
+　　<span class="co2">#include &lt;stdio.h&gt;</span>
+　　<span class="co2">#include &lt;stdlib.h&gt;</span>
+　　<span class="co2">#include &lt;limits.h&gt;</span>
+　　<span class="co2">#define M 40</span>
+　　<span class="coMULTI">/* 分治法获取最优解 */</span>
+　　<span class="kw4">void</span> PartionGet<span class="br0">&#40;</span><span class="kw4">int</span> s,<span class="kw4">int</span> e,<span class="kw4">int</span> <span class="sy2">*</span>meter,<span class="kw4">int</span> <span class="sy2">*</span>max,<span class="kw4">int</span> <span class="sy2">*</span>min<span class="br0">&#41;</span><span class="br0">&#123;</span>
+　　<span class="coMULTI">/* 参数:
+　　* s 当前分治段的开始下标
+　　* e 当前分治段的结束下标
+　　* meter 表的地址
+　　* max 存储当前搜索到的最大值
+　　* min 存储当前搜索到的最小值
+　　*/</span>
+　　<span class="kw4">int</span> i<span class="sy4">;</span>
+　　<span class="kw1">if</span><span class="br0">&#40;</span>e<span class="sy2">-</span>s <span class="sy1">&lt;=</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#123;</span> <span class="coMULTI">/* 获取局部解，并更新全局解 */</span>
+　　<span class="kw1">if</span><span class="br0">&#40;</span>meter<span class="br0">&#91;</span>s<span class="br0">&#93;</span> <span class="sy1">&gt;</span> meter<span class="br0">&#91;</span>e<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+　　<span class="kw1">if</span><span class="br0">&#40;</span>meter<span class="br0">&#91;</span>s<span class="br0">&#93;</span> <span class="sy1">&gt;</span> <span class="sy2">*</span>max<span class="br0">&#41;</span>
+　　<span class="sy2">*</span>max <span class="sy1">=</span> meter<span class="br0">&#91;</span>s<span class="br0">&#93;</span><span class="sy4">;</span>
+　　<span class="kw1">if</span><span class="br0">&#40;</span>meter<span class="br0">&#91;</span>e<span class="br0">&#93;</span> <span class="sy1">&lt;</span> <span class="sy2">*</span>min<span class="br0">&#41;</span>
+　　<span class="sy2">*</span>min <span class="sy1">=</span> meter<span class="br0">&#91;</span>e<span class="br0">&#93;</span><span class="sy4">;</span>
+　　<span class="br0">&#125;</span>
+　　<span class="kw1">else</span><span class="br0">&#123;</span>
+　　<span class="kw1">if</span><span class="br0">&#40;</span>meter<span class="br0">&#91;</span>e<span class="br0">&#93;</span> <span class="sy1">&gt;</span> <span class="sy2">*</span>max<span class="br0">&#41;</span>
+　　<span class="sy2">*</span>max <span class="sy1">=</span> meter<span class="br0">&#91;</span>s<span class="br0">&#93;</span><span class="sy4">;</span>
+　　<span class="kw1">if</span><span class="br0">&#40;</span>meter<span class="br0">&#91;</span>s<span class="br0">&#93;</span> <span class="sy1">&lt;</span> <span class="sy2">*</span>min<span class="br0">&#41;</span>
+　　<span class="sy2">*</span>min <span class="sy1">=</span> meter<span class="br0">&#91;</span>s<span class="br0">&#93;</span><span class="sy4">;</span>
+　　<span class="br0">&#125;</span>
+　　<span class="kw1">return</span> <span class="sy4">;</span>
+　　<span class="br0">&#125;</span>
+　　i <span class="sy1">=</span> s <span class="sy2">+</span> <span class="br0">&#40;</span>e<span class="sy2">-</span>s<span class="br0">&#41;</span><span class="sy2">/</span><span class="nu0">2</span><span class="sy4">;</span> <span class="coMULTI">/* 不是子问题继续分治,这里使用了二分，也可以是其它 */</span>
+　　PartionGet<span class="br0">&#40;</span>s,i,meter,max,min<span class="br0">&#41;</span><span class="sy4">;</span>
+　　PartionGet<span class="br0">&#40;</span>i<span class="sy2">+</span><span class="nu0">1</span>,e,meter,max,min<span class="br0">&#41;</span><span class="sy4">;</span>
+　　<span class="br0">&#125;</span>
+　　<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+　　<span class="kw4">int</span> i,meter<span class="br0">&#91;</span>M<span class="br0">&#93;</span><span class="sy4">;</span>
+　　<span class="kw4">int</span> max <span class="sy1">=</span> <span class="kw2">INT_MIN</span><span class="sy4">;</span> <span class="coMULTI">/* 用最小值初始化 */</span>
+　　<span class="kw4">int</span> min <span class="sy1">=</span> <span class="kw2">INT_MAX</span><span class="sy4">;</span> <span class="coMULTI">/* 用最大值初始化 */</span>
+　　<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;The array's element as followed:<span class="es1">\n</span><span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+　　randomize<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="coMULTI">/* 初始化随机数发生器 */</span>
+　　<span class="kw1">for</span><span class="br0">&#40;</span>i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> M<span class="sy4">;</span> i <span class="sy2">++</span><span class="br0">&#41;</span><span class="br0">&#123;</span> <span class="coMULTI">/* 随机数据填充数组 */</span>
+　　meter <span class="sy1">=</span> <span class="kw3">rand</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">%</span><span class="nu19">10000</span><span class="sy4">;</span>
+　　<span class="kw1">if</span><span class="br0">&#40;</span><span class="sy3">!</span><span class="br0">&#40;</span><span class="br0">&#40;</span>i<span class="sy2">+</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy2">%</span><span class="nu19">10</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="coMULTI">/* 输出表的随机数据 */</span>
+　　<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;%-6d<span class="es1">\n</span>&quot;</span>,meter<span class="br0">&#41;</span><span class="sy4">;</span>
+　　<span class="kw1">else</span>
+　　<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;%-6d&quot;</span>,meter<span class="br0">&#41;</span><span class="sy4">;</span>
+　　<span class="br0">&#125;</span>
+　　PartionGet<span class="br0">&#40;</span><span class="nu0">0</span>,M <span class="sy2">-</span> <span class="nu0">1</span>,meter,<span class="sy3">&amp;</span>max,<span class="sy3">&amp;</span>min<span class="br0">&#41;</span><span class="sy4">;</span> <span class="coMULTI">/* 分治法获取最值 */</span>
+　　<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;<span class="es1">\n</span>Max&#160;:&#160;%d<span class="es1">\n</span>Min&#160;:&#160;%d<span class="es1">\n</span>&quot;</span>,max,min<span class="br0">&#41;</span><span class="sy4">;</span>
+　　<span class="kw3">system</span><span class="br0">&#40;</span><span class="st0">&quot;pause&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+　　<span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+　　<span class="br0">&#125;</span></pre></div></div>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 4/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:4549-0!*!*!*!*!*!* and timestamp 20130812233515 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=%E5%88%86%E6%B2%BB%E6%B3%95&amp;oldid=30175">http://www.nocow.cn/index.php?title=%E5%88%86%E6%B2%BB%E6%B3%95&amp;oldid=30175</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/%E5%88%86%E6%B2%BB%E6%B3%95" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:%E5%88%86%E6%B2%BB%E6%B3%95&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=%E5%88%86%E6%B2%BB%E6%B3%95&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=%E5%88%86%E6%B2%BB%E6%B3%95&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=%E5%88%86%E6%B2%BB%E6%B3%95" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/%E5%88%86%E6%B2%BB%E6%B3%95" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/%E5%88%86%E6%B2%BB%E6%B3%95" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=%E5%88%86%E6%B2%BB%E6%B3%95&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=%E5%88%86%E6%B2%BB%E6%B3%95&amp;oldid=30175" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过684次。</li>
+		<li id="credits">本页面由<a href="/index.php?title=%E7%94%A8%E6%88%B7:Cosechy_movingbot&amp;action=edit&amp;redlink=1" class="new" title="用户:Cosechy movingbot（尚未撰写）">cosechy@gmail.com</a>于2012年3月3日 (星期六) 04:57做出最后修改。 在<a href="/index.php?title=%E7%94%A8%E6%88%B7:Kao541yeye&amp;action=edit&amp;redlink=1" class="new" title="用户:Kao541yeye（尚未撰写）">RZH</a>和NOCOW用户<a href="/index.php?title=%E7%94%A8%E6%88%B7:Comzyh&amp;action=edit&amp;redlink=1" class="new" title="用户:Comzyh（尚未撰写）">Comzyh</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.155 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

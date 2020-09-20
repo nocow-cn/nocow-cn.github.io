@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>Dijkstra算法 - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=Dijkstra%E7%AE%97%E6%B3%95&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=Dijkstra%E7%AE%97%E6%B3%95&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Dijkstra算法", "wgTitle": "Dijkstra算法", "wgCurRevisionId": 35978, "wgArticleId": 25, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["版权无争议的内容", "图论"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Dijkstra算法 action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">Dijkstra算法</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><pre> 这篇文章可以证实是由NOCOW用户原创，不存在任何版权争议。
+ 本文作者同意以<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL" class="mw-redirect">GNU FDL</a>、<a href="/index.php/NOCOW:CC-by-sa" title="NOCOW:CC-by-sa">CC-by-sa</a>和<a href="/index.php/NOCOW:GNU_LGPL" title="NOCOW:GNU LGPL">GNU LGPL</a>（如果适用）三种版权发布此文章（不包括翻译文章中属于原始所有者的部分版权）。
+ 如果你修改了这篇文章并且不同意用GNU FDL以外的版权发布，可以换一个<a href="/index.php/%E5%88%86%E7%B1%BB:%E7%89%88%E6%9D%83%E6%A8%A1%E6%9D%BF" title="分类:版权模板">版权模板</a>或者移除此模板。
+</pre>
+<p><b>Dijkstra算法</b>是一种求<a href="/index.php/%E5%8D%95%E6%BA%90%E6%9C%80%E7%9F%AD%E8%B7%AF" title="单源最短路">单源最短路</a>的<a href="/index.php/%E7%AE%97%E6%B3%95" title="算法">算法</a>，即从一个点开始到所有其他点的<a href="/index.php/%E6%9C%80%E7%9F%AD%E8%B7%AF" title="最短路" class="mw-redirect">最短路</a>。其基本原理是：每次新扩展一个距离最短的点，更新与其相邻的点的距离。当所有边权都为正时，由于不会存在一个距离更短的没扩展过的点，所以这个点的距离永远不会再被改变，因而保证了算法的正确性。不过根据这个原理，用Dijkstra求最短路的图不能有负权边，因为扩展到负权边的时候会产生更短的距离，有可能就破坏了已经更新的点距离不会改变的性质。
+</p><p>如果用本算法求一个图中全部的最短路，则要以每个点为源调用一次Dijkstra算法。
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E9.80.82.E7.94.A8.E6.9D.A1.E4.BB.B6.E4.B8.8E.E9.99.90.E5.88.B6"><span class="tocnumber">1</span> <span class="toctext">适用条件与限制</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#.E7.AE.97.E6.B3.95.E6.B5.81.E7.A8.8B"><span class="tocnumber">2</span> <span class="toctext">算法流程</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#.E7.AE.97.E6.B3.95.E5.AE.9E.E7.8E.B0"><span class="tocnumber">3</span> <span class="toctext">算法实现</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#.E4.BC.98.E5.8C.96"><span class="tocnumber">4</span> <span class="toctext">优化</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#.E4.BA.8C.E5.8F.89.E5.A0.86.E5.AE.9E.E7.8E.B0"><span class="tocnumber">4.1</span> <span class="toctext">二叉堆实现</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#.E7.A8.8B.E5.BA.8F"><span class="tocnumber">4.2</span> <span class="toctext">程序</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#.E6.89.A9.E5.B1.95"><span class="tocnumber">4.3</span> <span class="toctext">扩展</span></a>
+<ul>
+<li class="toclevel-3 tocsection-8"><a href="#.E7.AC.ACk.E7.9F.AD.E8.B7.AF"><span class="tocnumber">4.3.1</span> <span class="toctext">第k短路</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-9"><a href="#.E7.BB.83.E4.B9.A0"><span class="tocnumber">4.4</span> <span class="toctext">练习</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="/index.php?title=Dijkstra%E7%AE%97%E6%B3%95&amp;action=edit&amp;section=1" title="编辑段落：适用条件与限制">编辑</a>]</span> <span class="mw-headline" id=".E9.80.82.E7.94.A8.E6.9D.A1.E4.BB.B6.E4.B8.8E.E9.99.90.E5.88.B6">适用条件与限制</span></h2>
+<ul><li><a href="/index.php/%E6%9C%89%E5%90%91%E5%9B%BE" title="有向图">有向图</a>和<a href="/index.php/%E6%97%A0%E5%90%91%E5%9B%BE" title="无向图">无向图</a>都可以使用本算法，无向图中的每条边可以看成相反的两条边。
+</li><li>用来求最短路的图中不能存在负权边。(可以利用<a href="/index.php/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F" title="拓扑排序">拓扑排序</a>检测)
+</li></ul>
+<h2><span class="editsection">[<a href="/index.php?title=Dijkstra%E7%AE%97%E6%B3%95&amp;action=edit&amp;section=2" title="编辑段落：算法流程">编辑</a>]</span> <span class="mw-headline" id=".E7.AE.97.E6.B3.95.E6.B5.81.E7.A8.8B">算法流程</span></h2>
+<p>在以下说明中，s为源，w[u,v]为点u和v之间的边的长度，结果保存在dist[]
+</p>
+<ol><li>初始化：源的距离dist[s]设为0，其他的点距离设为无穷大，同时把所有的点的状态设为没有扩展过。
+</li><li>循环n-1次：
+<ol><li>在没有扩展过的点中取一距离最小的点u，并将其状态设为已扩展。
+</li><li>对于每个与u相邻的点v，执行<a href="/index.php/Relax" title="Relax" class="mw-redirect">Relax</a>(u,v)，也就是说，如果dist[u]+w[u,v]&lt;dist[v]，那么把dist[v]更新成更短的距离dist[u]+w[u,v]。此时到点v的最短路径上，前一个节点即为u。
+</li></ol>
+</li><li>结束。此时对于任意的u，dist[u]就是s到u的距离。
+</li></ol>
+<h2><span class="editsection">[<a href="/index.php?title=Dijkstra%E7%AE%97%E6%B3%95&amp;action=edit&amp;section=3" title="编辑段落：算法实现">编辑</a>]</span> <span class="mw-headline" id=".E7.AE.97.E6.B3.95.E5.AE.9E.E7.8E.B0">算法实现</span></h2>
+<pre>  function [min,path]=dijkstra(w,start,terminal)
+  n=size(w,1); label(start)=0; f(start)=start;
+  for i=1:n
+     if i~=start
+        label(i)=inf;
+     end
+  end
+  s(1)=start; u=start;
+  while length(s)&lt;n
+     for i=1:n
+        ins=0;
+        for j=1:length(s)
+           if i==s(j)
+              ins=1;
+           end
+        end
+        if ins==0
+           v=i;
+           if label(v)&gt;(label(u)+w(u,v))
+              label(v)=(label(u)+w(u,v)); f(v)=u;
+           end
+        end
+     end
+     v1=0;
+     k=inf;
+     for i=1:n
+        ins=0;
+        for j=1:length(s)
+           if i==s(j)
+              ins=1;
+           end
+        end
+        if ins==0
+           v=i;
+           if k&gt;label(v)
+              k=label(v);  v1=v;
+           end
+        end
+     end
+     s(length(s)+1)=v1;  
+     u=v1;
+  end
+  min=label(terminal); path(1)=terminal;
+  i=1; 
+  while path(i)~=start
+     path(i+1)=f(path(i));
+     i=i+1&#160;;
+  end
+  path(i)=start;
+  L=length(path);
+  path=path(L:-1:1);
+</pre>
+<p>调用
+</p>
+<pre>  edge= [ 2,3,1,3,3,5,4, 4,1,7,6,6,5, 5,11, 1,8,6,9,10,8,9, 9,10;...
+             3,4,2,7,5,3,5,11,7,6,7,5,6,11, 5, 8,1,9,5,11,9,8,10,9;...
+             3,5,8,5,6,6,1,12,7,9,9,2,2,10,10,8,8,3,7, 2, 9,9, 2, 2];
+  n=11; weight=inf*ones(n, n);
+  for i=1:n
+     weight(i, i)=0;
+  end
+  for i=1:size(edge,2)
+     weight(edge(1, i), edge(2, i))=edge(3, i);
+  end
+  [dis, path]=dijkstra(weight, 1, 11)
+</pre>
+<h1><span class="editsection">[<a href="/index.php?title=Dijkstra%E7%AE%97%E6%B3%95&amp;action=edit&amp;section=4" title="编辑段落：优化">编辑</a>]</span> <span class="mw-headline" id=".E4.BC.98.E5.8C.96">优化</span></h1>
+<p>最简单的实现方法就是，在每次循环中，再用一个循环找距离最短的点，然后用任意的方法更新与其相邻的边，<a href="/index.php?title=%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6&amp;action=edit&amp;redlink=1" class="new" title="时间复杂度（尚未撰写）">时间复杂度</a>显然为<img class="tex" alt="O\left(n^2\right)" src="/images/math/7/8/0/780729e43d407c1a4feb35ae96f0bee1.png" />
+</p><p>对于<a href="/index.php?title=%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6&amp;action=edit&amp;redlink=1" class="new" title="空间复杂度（尚未撰写）">空间复杂度</a>：如果只要求出距离，只要n的附加空间保存距离就可以了（距离小于当前距离的是已访问的节点，对于距离相等的情况可以比较编号或是特殊处理下）。如果要求出路径则需要另外V的空间保存前一个节点，总共需要2n的空间。
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=Dijkstra%E7%AE%97%E6%B3%95&amp;action=edit&amp;section=5" title="编辑段落：二叉堆实现">编辑</a>]</span> <span class="mw-headline" id=".E4.BA.8C.E5.8F.89.E5.A0.86.E5.AE.9E.E7.8E.B0">二叉堆实现</span></h3>
+<p>使用<a href="/index.php/%E4%BA%8C%E5%8F%89%E5%A0%86" title="二叉堆">二叉堆</a>(Binary Heap)来保存没有扩展过的点的距离并维护其最小值，并在访问每条边的时候更新，可以把时间复杂度变成<img class="tex" alt="O\left(\left|E\right|+\left|V\right|\log\left|V\right|\right)" src="/images/math/a/a/4/aa4dcf98280ae56dd2930334f58dcfed.png" />。
+</p><p>用<a href="/index.php/%E9%82%BB%E6%8E%A5%E8%A1%A8" title="邻接表">邻接表</a>保存边，使得扩展边的总复杂度为O(E)，否则复杂度不会减小。
+</p><p>空间复杂度：这种算法需要一个二叉堆，及其反向指针，另外还要保存距离，所以所用空间为3V。如果保存路径则为4V。
+</p><p>具体思路：先将所有的点插入堆，并将值赋为极大值(maxint/maxlongint)，将原点赋值为0，通过松弛技术（relax）进行更新以及设定为扩展。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=Dijkstra%E7%AE%97%E6%B3%95&amp;action=edit&amp;section=6" title="编辑段落：程序">编辑</a>]</span> <span class="mw-headline" id=".E7.A8.8B.E5.BA.8F">程序</span></h2>
+<p><a href="/index.php/Dijkstra_%E4%BA%8C%E5%8F%89%E5%A0%86%E5%AE%9E%E7%8E%B0_Pascal" title="Dijkstra 二叉堆实现 Pascal"><b>二叉堆实现_Pascal</b></a> 
+</p><p><a href="/index.php/Dijkstra_%E4%BA%8C%E5%8F%89%E5%A0%86%E5%AE%9E%E7%8E%B0_C" title="Dijkstra 二叉堆实现 C"><b>二叉堆实现_C</b></a>
+</p><p><a href="/index.php/Dijkstra_%E4%BA%8C%E5%8F%89%E5%A0%86%E5%AE%9E%E7%8E%B0_C%2B%2B" title="Dijkstra 二叉堆实现 C++"><b>二叉堆实现_C++</b></a>
+<br />
+<a href="/index.php/Dijkstra_%E9%98%9F%E5%88%97%E4%BC%98%E5%8C%96_pascal" title="Dijkstra 队列优化 pascal"><b>队列优化_pascal</b></a>
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=Dijkstra%E7%AE%97%E6%B3%95&amp;action=edit&amp;section=7" title="编辑段落：扩展">编辑</a>]</span> <span class="mw-headline" id=".E6.89.A9.E5.B1.95">扩展</span></h2>
+<h3><span class="editsection">[<a href="/index.php?title=Dijkstra%E7%AE%97%E6%B3%95&amp;action=edit&amp;section=8" title="编辑段落：第k短路">编辑</a>]</span> <span class="mw-headline" id=".E7.AC.ACk.E7.9F.AD.E8.B7.AF">第k短路</span></h3>
+<p>当k比较小时，可以直接在每个点保存k条最短路。更新的时候对每条能更新的路都更新一遍。此时每次更新的代价相当于把两个长度为k的表合并在一起，所以复杂度为纯Dijkstra实现的复杂度×O(k)。
+</p><p><br />
+曹氏短边法：每次将任意一条边赋值为MAX，重复计算数次后得到k短路径。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=Dijkstra%E7%AE%97%E6%B3%95&amp;action=edit&amp;section=9" title="编辑段落：练习">编辑</a>]</span> <span class="mw-headline" id=".E7.BB.83.E4.B9.A0">练习</span></h2>
+<p><a href="/index.php/Sweet_Butter(USACO_3.2.6)" title="Sweet Butter(USACO 3.2.6)" class="mw-redirect"><b>Sweet Butter(USACO 3.2.6)</b></a>
+</p>
+<div style="margin:15px auto 20px;border:1px solid #c3c3c3;background-color:#f5f5f5;-moz-border-radius:7px;padding:0px;"><div style="background:#c3c3c3;padding-left:10px;-moz-border-radius-topleft:5px;-moz-border-radius-topright:5px;display:block!important;display:block;display:inline-block!ie">
+<div style="float:right"><a rel="nofollow" class="external text" href="http://www.nocow.cn/index.php?title=%E6%A8%A1%E6%9D%BF:%E5%9B%BE%E8%AE%BA&amp;action=edit">[编辑]</a></div> <b><a href="/index.php/%E5%9B%BE%E8%AE%BA" title="图论">图论</a>及<a href="/index.php/%E5%9B%BE%E8%AE%BA" title="图论">图论算法</a></b></div>
+<div style="padding:5px 20px">
+<p><b><a href="/index.php/%E5%9B%BE" title="图">图</a></b> - <b><a href="/index.php/%E6%9C%89%E5%90%91%E5%9B%BE" title="有向图">有向图</a></b> - <b><a href="/index.php/%E6%97%A0%E5%90%91%E5%9B%BE" title="无向图">无向图</a></b> - <b><a href="/index.php/%E8%BF%9E%E9%80%9A%E5%9B%BE" title="连通图">连通图</a></b> - <b><a href="/index.php/%E5%BC%BA%E8%BF%9E%E9%80%9A%E5%9B%BE" title="强连通图">强连通图</a></b> - <b><a href="/index.php/%E5%AE%8C%E5%85%A8%E5%9B%BE" title="完全图">完全图</a></b> - <b><a href="/index.php/%E7%A8%80%E7%96%8F%E5%9B%BE" title="稀疏图">稀疏图</a></b> - <b><a href="/index.php/%E9%9B%B6%E5%9B%BE" title="零图">零图</a></b> - <b><a href="/index.php/%E6%A0%91" title="树">树</a></b> - <b><a href="/index.php/%E7%BD%91%E7%BB%9C%E6%B5%81" title="网络流">网络</a></b>
+</p><p><b>基本<a href="/index.php/%E9%81%8D%E5%8E%86" title="遍历">遍历</a>算法：</b><a href="/index.php/%E5%AE%BD%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2" title="宽度优先搜索" class="mw-redirect">宽度优先搜索</a> - <a href="/index.php/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2" title="深度优先搜索">深度优先搜索</a> - <a href="/index.php/A*" title="A*">A*</a> - <b><a href="/index.php/%E5%B9%B6%E6%9F%A5%E9%9B%86" title="并查集">并查集</a>求<a href="/index.php/%E8%BF%9E%E9%80%9A%E5%88%86%E6%94%AF" title="连通分支">连通分支</a></b> - <b><a href="/index.php/Flood_Fill" title="Flood Fill">Flood Fill</a></b>
+</p><p><b><a href="/index.php/%E6%9C%80%E7%9F%AD%E8%B7%AF" title="最短路" class="mw-redirect">最短路</a>：</b><strong class="selflink">Dijkstra</strong> - <a href="/index.php/Bellman-Ford%E7%AE%97%E6%B3%95" title="Bellman-Ford算法">Bellman-Ford</a>（<a href="/index.php/SPFA" title="SPFA" class="mw-redirect">SPFA</a>） - <a href="/index.php/Floyd-Warshall%E7%AE%97%E6%B3%95" title="Floyd-Warshall算法">Floyd-Warshall</a> - <a href="/index.php/Johnson%E7%AE%97%E6%B3%95" title="Johnson算法">Johnson算法</a>
+</p><p><b><a href="/index.php/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91" title="最小生成树">最小生成树</a>：</b><a href="/index.php/Prim%E7%AE%97%E6%B3%95" title="Prim算法">Prim</a> - <a href="/index.php/Kruskal%E7%AE%97%E6%B3%95" title="Kruskal算法">Kruskal</a>
+</p><p><b><a href="/index.php/%E5%BC%BA%E8%BF%9E%E9%80%9A%E5%88%86%E6%94%AF" title="强连通分支">强连通分支</a>：</b><a href="/index.php/Kosaraju%E7%AE%97%E6%B3%95" title="Kosaraju算法">Kosaraju</a> - <a href="/index.php/Gabow%E7%AE%97%E6%B3%95" title="Gabow算法">Gabow</a> - <a href="/index.php/Tarjan%E7%AE%97%E6%B3%95" title="Tarjan算法">Tarjan</a>
+</p><p><b><a href="/index.php/%E7%BD%91%E7%BB%9C%E6%B5%81" title="网络流">网络流</a>：</b><a href="/index.php?title=%E5%A2%9E%E5%B9%BF%E8%B7%AF%E6%B3%95&amp;action=edit&amp;redlink=1" class="new" title="增广路法（尚未撰写）">增广路法</a>（<a href="/index.php/Ford-Fulkerson%E7%AE%97%E6%B3%95" title="Ford-Fulkerson算法" class="mw-redirect">Ford-Fulkerson</a>，<a href="/index.php/Edmonds-Karp%E7%AE%97%E6%B3%95" title="Edmonds-Karp算法">Edmonds-Karp</a>，<a href="/index.php/Dinic%E7%AE%97%E6%B3%95" title="Dinic算法">Dinic</a>） - <a href="/index.php/%E9%A2%84%E6%B5%81%E6%8E%A8%E8%BF%9B%E7%AE%97%E6%B3%95" title="预流推进算法">预流推进</a> - <a href="/index.php/Relabel-to-front" title="Relabel-to-front">Relabel-to-front</a>
+</p><p><b>图<a href="/index.php/%E5%8C%B9%E9%85%8D" title="匹配">匹配</a> - <a href="/index.php/%E4%BA%8C%E5%88%86%E5%9B%BE%E5%8C%B9%E9%85%8D" title="二分图匹配">二分图匹配</a>：</b><a href="/index.php/%E5%8C%88%E7%89%99%E5%88%A9%E7%AE%97%E6%B3%95" title="匈牙利算法">匈牙利算法</a> - <a href="/index.php/Kuhn-Munkres%E7%AE%97%E6%B3%95" title="Kuhn-Munkres算法">Kuhn-Munkres</a> - <a href="/index.php/Edmonds%27_Blossom-Contraction" title="Edmonds' Blossom-Contraction">Edmonds' Blossom-Contraction</a>
+</p>
+</div></div>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 67/1000000
+Post-expand include size: 2218/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:25-0!1!0!!zh-cn!*!* and timestamp 20170826050841 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=Dijkstra%E7%AE%97%E6%B3%95&amp;oldid=35978">http://www.nocow.cn/index.php?title=Dijkstra%E7%AE%97%E6%B3%95&amp;oldid=35978</a>”</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="特殊:页面分类">2个分类</a>: <ul><li><a href="/index.php/%E5%88%86%E7%B1%BB:%E7%89%88%E6%9D%83%E6%97%A0%E4%BA%89%E8%AE%AE%E7%9A%84%E5%86%85%E5%AE%B9" title="分类:版权无争议的内容">版权无争议的内容</a></li><li><a href="/index.php/%E5%88%86%E7%B1%BB:%E5%9B%BE%E8%AE%BA" title="分类:图论">图论</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/Dijkstra%E7%AE%97%E6%B3%95" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk"><a href="/index.php/%E8%AE%A8%E8%AE%BA:Dijkstra%E7%AE%97%E6%B3%95" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=Dijkstra%E7%AE%97%E6%B3%95&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=Dijkstra%E7%AE%97%E6%B3%95&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Dijkstra%E7%AE%97%E6%B3%95" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Dijkstra%E7%AE%97%E6%B3%95" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Dijkstra%E7%AE%97%E6%B3%95" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=Dijkstra%E7%AE%97%E6%B3%95&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=Dijkstra%E7%AE%97%E6%B3%95&amp;oldid=35978" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过80,404次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/54.173.35.129" title="特殊:用户贡献/54.173.35.129">54.173.35.129</a>于2016年6月5日 (星期日) 14:19做出最后修改。 在NOCOW用户<a href="/index.php/%E7%94%A8%E6%88%B7:Libertyeagle" title="用户:Libertyeagle">Libertyeagle</a>、NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/36.250.66.176" title="特殊:用户贡献/36.250.66.176">36.250.66.176</a>、<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/219.217.226.133" title="特殊:用户贡献/219.217.226.133">219.217.226.133</a>和<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/125.71.5.34" title="特殊:用户贡献/125.71.5.34">125.71.5.34</a>和<a href="/index.php?title=Dijkstra%E7%AE%97%E6%B3%95&amp;action=credits" title="Dijkstra算法">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.147 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

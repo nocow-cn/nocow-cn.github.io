@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>二叉搜索树 - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="canonical" href="/index.php/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "二叉搜索树", "wgTitle": "二叉搜索树", "wgCurRevisionId": 25912, "wgArticleId": 15, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["小作品", "数据结构"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for c
+ * CSS class: source-c, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.c.source-c .de1, .c.source-c .de2 {}
+.c.source-c  {font-family:monospace;}
+.c.source-c .imp {font-weight: bold; color: red;}
+.c.source-c li, .c.source-c .li1 {font-weight: normal; vertical-align:top;}
+.c.source-c .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.c.source-c .li2 {font-weight: bold; vertical-align:top;}
+.c.source-c .kw1 {color: #b1b100;}
+.c.source-c .kw2 {color: #000000; font-weight: bold;}
+.c.source-c .kw3 {color: #000066;}
+.c.source-c .kw4 {color: #993333;}
+.c.source-c .co1 {color: #666666; font-style: italic;}
+.c.source-c .co2 {color: #339933;}
+.c.source-c .coMULTI {color: #808080; font-style: italic;}
+.c.source-c .es0 {color: #000099; font-weight: bold;}
+.c.source-c .es1 {color: #000099; font-weight: bold;}
+.c.source-c .es2 {color: #660099; font-weight: bold;}
+.c.source-c .es3 {color: #660099; font-weight: bold;}
+.c.source-c .es4 {color: #660099; font-weight: bold;}
+.c.source-c .es5 {color: #006699; font-weight: bold;}
+.c.source-c .br0 {color: #009900;}
+.c.source-c .sy0 {color: #339933;}
+.c.source-c .st0 {color: #ff0000;}
+.c.source-c .nu0 {color: #0000dd;}
+.c.source-c .nu6 {color: #208080;}
+.c.source-c .nu8 {color: #208080;}
+.c.source-c .nu12 {color: #208080;}
+.c.source-c .nu16 {color:#800080;}
+.c.source-c .nu17 {color:#800080;}
+.c.source-c .nu18 {color:#800080;}
+.c.source-c .nu19 {color:#800080;}
+.c.source-c .me1 {color: #202020;}
+.c.source-c .me2 {color: #202020;}
+.c.source-c .ln-xtra, .c.source-c li.ln-xtra, .c.source-c div.ln-xtra {background-color: #ffc;}
+.c.source-c span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-二叉搜索树 action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">二叉搜索树</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub">(跳转自<a href="/index.php?title=BST&amp;redirect=no" title="BST">BST</a>)</div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E4.BB.8B.E7.BB.8D"><span class="tocnumber">1</span> <span class="toctext">介绍</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#.E5.9F.BA.E6.9C.AC.E6.93.8D.E4.BD.9C"><span class="tocnumber">2</span> <span class="toctext">基本操作</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#.E6.9F.A5.E6.89.BE"><span class="tocnumber">2.1</span> <span class="toctext">查找</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#.E6.8F.92.E5.85.A5"><span class="tocnumber">2.2</span> <span class="toctext">插入</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#.E5.88.A0.E9.99.A4"><span class="tocnumber">2.3</span> <span class="toctext">删除</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#.E5.88.86.E6.9E.90"><span class="tocnumber">3</span> <span class="toctext">分析</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#.E5.88.86.E7.B1.BB"><span class="tocnumber">4</span> <span class="toctext">分类</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#.E5.B9.B3.E8.A1.A1.E7.9A.84.E4.BA.8C.E5.8F.89.E6.90.9C.E7.B4.A2.E6.A0.91.28BST.29"><span class="tocnumber">4.1</span> <span class="toctext">平衡的二叉搜索树(BST)</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#.E7.94.A8.E4.BA.8E.E7.89.B9.E6.AE.8A.E7.94.A8.E9.80.94.E7.9A.84.E4.BA.8C.E5.8F.89.E6.90.9C.E7.B4.A2.E6.A0.91"><span class="tocnumber">4.2</span> <span class="toctext">用于特殊用途的二叉搜索树</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="/index.php?title=%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91&amp;action=edit&amp;section=1" title="编辑段落：介绍">编辑</a>]</span> <span class="mw-headline" id=".E4.BB.8B.E7.BB.8D">介绍</span></h2>
+<p><i>二叉搜索树</i>（<i>Binary Search Tree</i>），或者是一棵空树，或者是具有下列性质的<a href="/index.php/%E4%BA%8C%E5%8F%89%E6%A0%91" title="二叉树">二叉树</a>：
+</p>
+<ol><li>若它的左子树不空，则左子树上所有结点的值均小于它的根结点的值；
+</li><li>若它的右子树不空，则右子树上所有结点的值均大于它的根结点的值；
+</li><li>它的左、右子树也分别为二叉搜索树。
+</li></ol>
+<p>二叉搜索树的查找过程和<a href="/index.php?title=%E6%AC%A1%E4%BC%98%E4%BA%8C%E5%8F%89%E6%A0%91&amp;action=edit&amp;redlink=1" class="new" title="次优二叉树（尚未撰写）">次优二叉树</a>类似，通常采取二叉<a href="/index.php/%E9%93%BE%E8%A1%A8" title="链表">链表</a>作为二叉搜索序树的<a href="/index.php/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" title="数据结构">存储结构</a>。中序遍历二叉搜索树可得到一个关键字的有序序列，一个无序序列可以通过构造一棵二叉搜索树变成一个有序序列，构造树的过程即为对无序序列进行排序的过程。每次插入的新的结点都是二叉搜索树上新的叶子结点，在进行插入操作时，不必移动其它结点，只需改动某个结点的指针，由空变为非空即可。搜索,插入,删除的复杂度等于树高，O(log(n)).
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91&amp;action=edit&amp;section=2" title="编辑段落：基本操作">编辑</a>]</span> <span class="mw-headline" id=".E5.9F.BA.E6.9C.AC.E6.93.8D.E4.BD.9C">基本操作</span></h2>
+<h3><span class="editsection">[<a href="/index.php?title=%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91&amp;action=edit&amp;section=3" title="编辑段落：查找">编辑</a>]</span> <span class="mw-headline" id=".E6.9F.A5.E6.89.BE">查找</span></h3>
+<p>在二叉搜索树b中查找x的过程为：
+</p>
+<ol><li>若b是空树，则搜索失败，否则：
+</li><li>若x等于b的根结点的数据域之值，则查找成功；否则：
+</li><li>若x小于b的根结点的数据域之值，则搜索左子树；否则：
+</li><li>查找右子树。
+</li></ol>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1">Status SearchBST<span class="br0">&#40;</span>BiTree T<span class="sy0">,</span> KeyType key<span class="sy0">,</span> BiTree f<span class="sy0">,</span> BiTree <span class="sy0">&amp;</span>p<span class="br0">&#41;</span><span class="br0">&#123;</span>
+	<span class="co1">//在根指针T所指二叉搜索树中递归地查找其关键字等于key的数据元素，若查找成功，</span>
+	<span class="co1">//则指针p指向该数据元素结点，并返回TRUE，否则指针指向查找路径上访问的最后</span>
+	<span class="co1">//一个结点并返回FALSE，指针f指向T的双亲，其初始调用值为NULL</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span><span class="sy0">!</span>T<span class="br0">&#41;</span><span class="br0">&#123;</span> p<span class="sy0">=</span>f<span class="sy0">;</span> <span class="kw1">return</span> FALSE<span class="sy0">;</span><span class="br0">&#125;</span>	<span class="co1">//查找不成功</span>
+	<span class="kw1">else</span> <span class="kw1">if</span> EQ<span class="br0">&#40;</span>key<span class="sy0">,</span> T<span class="sy0">-&gt;</span>data.<span class="me1">key</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>P<span class="sy0">=</span>T<span class="sy0">;</span> <span class="kw1">return</span> TRUE<span class="sy0">;</span><span class="br0">&#125;</span>	<span class="co1">//查找成功</span>
+	<span class="kw1">else</span> <span class="kw1">if</span> LT<span class="br0">&#40;</span>key<span class="sy0">,</span>T<span class="sy0">-&gt;</span>data.<span class="me1">key</span><span class="br0">&#41;</span> 
+<span class="kw1">return</span> SearchBST<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>lchild<span class="sy0">,</span> key<span class="sy0">,</span> T<span class="sy0">,</span> p<span class="br0">&#41;</span><span class="sy0">;</span>	<span class="co1">//在左子树中继续查找</span>
+	<span class="kw1">else</span> <span class="kw1">return</span> SearchBST<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>rchild<span class="sy0">,</span> key<span class="sy0">,</span> T<span class="sy0">,</span> p<span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">//在右子树中继续查找</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>A
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91&amp;action=edit&amp;section=4" title="编辑段落：插入">编辑</a>]</span> <span class="mw-headline" id=".E6.8F.92.E5.85.A5">插入</span></h3>
+<p>向一个二叉搜索树b中插入一个结点s的算法，过程为：
+</p>
+<ol><li>若b是空树，则将s所指结点作为根结点插入，否则：
+</li><li>若s-&gt;data等于b的根结点的数据域之值，则返回，否则：
+</li><li>若s-&gt;data小于b的根结点的数据域之值，则把s所指结点插入到左子树中，否则：
+</li><li>把s所指结点插入到右子树中。
+</li></ol>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="coMULTI">/*当二叉搜索树T中不存在关键字等于e.key的数据元素时，插入e并返回TRUE，否则返回FALSE*/</span>
+Status InsertBST<span class="br0">&#40;</span>BiTree <span class="sy0">&amp;</span>T<span class="sy0">,</span> ElemType e<span class="br0">&#41;</span><span class="br0">&#123;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span><span class="sy0">!</span>SearchBST<span class="br0">&#40;</span>T<span class="sy0">,</span> e.<span class="me1">key</span><span class="sy0">,</span> NULL<span class="sy0">,</span>p<span class="br0">&#41;</span><span class="br0">&#123;</span>
+		s<span class="sy0">=</span><span class="br0">&#40;</span>BiTree<span class="br0">&#41;</span><span class="kw3">malloc</span><span class="br0">&#40;</span><span class="kw4">sizeof</span><span class="br0">&#40;</span>BiTNode<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+		s<span class="sy0">-&gt;</span>data <span class="sy0">=</span> e<span class="sy0">;</span> s<span class="sy0">-&gt;</span>lchild <span class="sy0">=</span> s<span class="sy0">-&gt;</span>rchild <span class="sy0">=</span> NULL<span class="sy0">;</span>
+		<span class="kw1">if</span><span class="br0">&#40;</span><span class="sy0">!</span>p<span class="br0">&#41;</span>  T<span class="sy0">=</span>s<span class="sy0">;</span>	<span class="co1">//被插结点*s为新的根结点</span>
+		<span class="kw1">else</span> <span class="kw1">if</span> LT<span class="br0">&#40;</span>e.<span class="me1">key</span><span class="sy0">,</span> p<span class="sy0">-&gt;</span>data.<span class="me1">key</span><span class="br0">&#41;</span> p<span class="sy0">-&gt;</span>lchld <span class="sy0">=</span> s<span class="sy0">;</span>	<span class="co1">//被插结点*s为左孩子</span>
+		<span class="kw1">else</span> p<span class="sy0">-&gt;</span>rchild <span class="sy0">=</span> s<span class="sy0">;</span>	<span class="co1">//被插结点*s为右孩子</span>
+		<span class="kw1">return</span> TRUE<span class="sy0">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw1">else</span> <span class="kw1">return</span> FALSE<span class="sy0">;</span>	<span class="co1">//树中已有关键字相同的结点，不再插入</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h3><span class="editsection">[<a href="/index.php?title=%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91&amp;action=edit&amp;section=5" title="编辑段落：删除">编辑</a>]</span> <span class="mw-headline" id=".E5.88.A0.E9.99.A4">删除</span></h3>
+<p>在二叉搜索树删去一个结点，分三种情况讨论：
+</p>
+<ol><li>若*p结点为叶子结点，即PL(左子树)和PR(右子树)均为空树。由于删去叶子结点不破坏整棵树的结构，则只需修改其双亲结点的指针为空即可。
+</li><li>若*p结点只有左子树PL或右子树PR，此时只要令PL或PR直接成为其双亲结点*f的左子树即可，作此修改也不破坏二叉搜索树的特性。
+</li><li>若*p结点的左子树和右子树均不空。在删去*p之后，为保持其它元素之间的相对位置不变，可按中序遍历保持有序进行调整，可以有两种做法：其一是令*p的左子树为*f的左子树，*s为*f左子树的最右下的结点，而*p的右子树为*s的右子树；其二是令*p的直接前驱（或直接后继）替代*p，然后再从二叉搜索树中删去它的直接前驱（或直接后继）。在二叉搜索树上删除一个结点的算法如下：
+</li></ol>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1">Status DeleteBST<span class="br0">&#40;</span>BiTree <span class="sy0">&amp;</span>T<span class="sy0">,</span> KeyType key<span class="br0">&#41;</span><span class="br0">&#123;</span>
+	<span class="co1">//若二叉搜索树T中存在关键字等于key的数据元素时，则删除该数据元素，并返回</span>
+	<span class="co1">//TRUE；否则返回FALSE</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span><span class="sy0">!</span>T<span class="br0">&#41;</span> <span class="kw1">return</span> FALSE<span class="sy0">;</span>	<span class="co1">//不存在关键字等于key的数据元素</span>
+	<span class="kw1">else</span><span class="br0">&#123;</span>
+		<span class="kw1">if</span><span class="br0">&#40;</span>EQ<span class="br0">&#40;</span>key<span class="sy0">,</span> T<span class="sy0">-&gt;</span>data.<span class="me1">key</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="kw1">return</span> Delete<span class="br0">&#40;</span>T<span class="br0">&#41;</span><span class="br0">&#125;</span><span class="sy0">;</span>		<span class="co1">//找到关键字等于key的数据元素</span>
+		<span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span>LT<span class="br0">&#40;</span>key<span class="sy0">,</span> T<span class="sy0">-&gt;</span>data.<span class="me1">key</span><span class="br0">&#41;</span><span class="br0">&#41;</span>	<span class="kw1">return</span> DeleteBST<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>lchild<span class="sy0">,</span> key<span class="br0">&#41;</span><span class="sy0">;</span>
+		<span class="kw1">else</span> <span class="kw1">return</span> DeleteBST<span class="br0">&#40;</span>T<span class="sy0">-&gt;</span>rchild<span class="sy0">,</span> key<span class="br0">&#41;</span><span class="sy0">;</span>
+	<span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+Status Delete<span class="br0">&#40;</span>BiTree <span class="sy0">&amp;</span>p<span class="br0">&#41;</span><span class="br0">&#123;</span>
+	<span class="co1">//从二叉搜索树中删除结点p，并重接它的左或右子树</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span><span class="sy0">!</span>p<span class="sy0">-&gt;</span>rchild<span class="br0">&#41;</span><span class="br0">&#123;</span>	<span class="co1">//右子树空则只需重接它的左子树</span>
+		q<span class="sy0">=</span>p<span class="sy0">;</span> p<span class="sy0">=</span>p<span class="sy0">-&gt;</span>lchild<span class="sy0">;</span>	<span class="kw3">free</span><span class="br0">&#40;</span>q<span class="br0">&#41;</span><span class="sy0">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy0">!</span>p<span class="sy0">-&gt;</span>lchild<span class="br0">&#41;</span><span class="br0">&#123;</span>	<span class="co1">//左子树空只需重接它的右子树</span>
+		q<span class="sy0">=</span>p<span class="sy0">;</span> p<span class="sy0">=</span>p<span class="sy0">-&gt;</span>rchild<span class="sy0">;</span> <span class="kw3">free</span><span class="br0">&#40;</span>q<span class="br0">&#41;</span><span class="sy0">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw1">else</span><span class="br0">&#123;</span>	<span class="co1">//左右子树均不空</span>
+		q<span class="sy0">=</span>p<span class="sy0">;</span> 
+                s<span class="sy0">=</span>p<span class="sy0">-&gt;</span>lchild<span class="sy0">;</span>
+		<span class="kw1">while</span><span class="br0">&#40;</span>s<span class="sy0">-&gt;</span>rchild<span class="br0">&#41;</span><span class="br0">&#123;</span> 
+                       q<span class="sy0">=</span>s<span class="sy0">;</span> 
+                       s<span class="sy0">=</span>s<span class="sy0">-&gt;</span>rchild
+                <span class="br0">&#125;</span>	<span class="co1">//转左，然后向右到尽头</span>
+		p<span class="sy0">-&gt;</span>data <span class="sy0">=</span> s<span class="sy0">-&gt;</span>data<span class="sy0">;</span>	<span class="co1">//s指向被删结点的“前驱”</span>
+		<span class="kw1">if</span><span class="br0">&#40;</span>q<span class="sy0">!=</span>p<span class="br0">&#41;</span>	
+                       q<span class="sy0">-&gt;</span>rchild <span class="sy0">=</span> s<span class="sy0">-&gt;</span>lchild<span class="sy0">;</span>	<span class="co1">//重接*q的右子树</span>
+		<span class="kw1">else</span> 
+                        q<span class="sy0">-&gt;</span>lchild <span class="sy0">=</span> s<span class="sy0">-&gt;</span>lchild<span class="sy0">;</span>	<span class="co1">//重接*q的左子树</span>
+		<span class="kw3">free</span><span class="br0">&#40;</span>s<span class="br0">&#41;</span><span class="sy0">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw1">return</span> TRUE<span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h2><span class="editsection">[<a href="/index.php?title=%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91&amp;action=edit&amp;section=6" title="编辑段落：分析">编辑</a>]</span> <span class="mw-headline" id=".E5.88.86.E6.9E.90">分析</span></h2>
+<p><a href="/index.php/BST_C" title="BST C">C</a><br />
+<a href="/index.php/BST_Pascal" title="BST Pascal">Pascal</a>
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91&amp;action=edit&amp;section=7" title="编辑段落：分类">编辑</a>]</span> <span class="mw-headline" id=".E5.88.86.E7.B1.BB">分类</span></h2>
+<h3><span class="editsection">[<a href="/index.php?title=%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91&amp;action=edit&amp;section=8" title="编辑段落：平衡的二叉搜索树(BST)">编辑</a>]</span> <span class="mw-headline" id=".E5.B9.B3.E8.A1.A1.E7.9A.84.E4.BA.8C.E5.8F.89.E6.90.9C.E7.B4.A2.E6.A0.91.28BST.29">平衡的二叉搜索树(BST)</span></h3>
+<p><a href="/index.php/Treap" title="Treap">Treap</a>
+<a href="/index.php/AVL%E6%A0%91" title="AVL树">AVL树</a>
+<a href="/index.php/%E7%BA%A2%E9%BB%91%E6%A0%91" title="红黑树">红黑树</a>
+<a href="/index.php/SBT" title="SBT" class="mw-redirect">SBT</a>
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91&amp;action=edit&amp;section=9" title="编辑段落：用于特殊用途的二叉搜索树">编辑</a>]</span> <span class="mw-headline" id=".E7.94.A8.E4.BA.8E.E7.89.B9.E6.AE.8A.E7.94.A8.E9.80.94.E7.9A.84.E4.BA.8C.E5.8F.89.E6.90.9C.E7.B4.A2.E6.A0.91">用于特殊用途的二叉搜索树</span></h3>
+<p><a href="/index.php/%E7%BA%BF%E6%AE%B5%E6%A0%91" title="线段树">线段树</a>
+<a href="/index.php/B%E6%A0%91" title="B树">B树</a>
+<a href="/index.php/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84" title="树状数组" class="mw-redirect">树状数组</a>
+</p>
+<div style="border:1px solid #ddd; background-color:#eee;padding:6px 20px 5px 12px;margin:10px 0px 15px 20px;-moz-border-radius:9px;"><b>二叉搜索树</b>是一个小作品，欢迎<span class="plainlinks"><b><a rel="nofollow" class="external text" href="http://www.nocow.cn/index.php?title=%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91&amp;action=edit">帮助扩充</a></b></span>这个条目。</div>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 71/1000000
+Post-expand include size: 493/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:15-0!*!0!!zh-cn!*!* and timestamp 20150502090152 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91&amp;oldid=25912">http://www.nocow.cn/index.php?title=%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91&amp;oldid=25912</a>”</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="特殊:页面分类">2个分类</a>: <ul><li><a href="/index.php/%E5%88%86%E7%B1%BB:%E5%B0%8F%E4%BD%9C%E5%93%81" title="分类:小作品">小作品</a></li><li><a href="/index.php/%E5%88%86%E7%B1%BB:%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" title="分类:数据结构">数据结构</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk"><a href="/index.php/%E8%AE%A8%E8%AE%BA:%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=BST" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91&amp;oldid=25912" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过28,419次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/204.236.235.245" title="特殊:用户贡献/204.236.235.245">204.236.235.245</a>于2011年6月5日 (星期日) 15:24做出最后修改。 在<a href="/index.php?title=%E7%94%A8%E6%88%B7:Answer&amp;action=edit&amp;redlink=1" class="new" title="用户:Answer（尚未撰写）">wzp</a>、NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/122.235.236.157" title="特殊:用户贡献/122.235.236.157">122.235.236.157</a>、<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/117.136.9.51" title="特殊:用户贡献/117.136.9.51">117.136.9.51</a>和<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/123.172.173.104" title="特殊:用户贡献/123.172.173.104">123.172.173.104</a>和<a href="/index.php?title=%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91&amp;action=credits" title="二叉搜索树">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.057 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

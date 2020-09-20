@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>蚁群优化算法 - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=%E8%9A%81%E7%BE%A4%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=%E8%9A%81%E7%BE%A4%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "蚁群优化算法", "wgTitle": "蚁群优化算法", "wgCurRevisionId": 36433, "wgArticleId": 5111, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-蚁群优化算法 action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">蚁群优化算法</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E8.9A.81.E7.BE.A4.E7.AE.97.E6.B3.95.E7.9A.84.E6.8F.90.E5.87.BA.EF.BC.9A"><span class="tocnumber">1</span> <span class="toctext">蚁群算法的提出：</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#.E4.BA.BA.E5.B7.A5.E8.9A.82.E8.9A.81.E4.B8.8E.E7.9C.9F.E5.AE.9E.E8.9A.82.E8.9A.81.E7.9A.84.E5.BC.82.E5.90.8C.E6.AF.94.E8.BE.83"><span class="tocnumber">2</span> <span class="toctext">人工蚂蚁与真实蚂蚁的异同比较</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#.E7.9B.B8.E5.90.8C.E7.82.B9.E6.AF.94.E8.BE.83"><span class="tocnumber">2.1</span> <span class="toctext">相同点比较</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#.E4.B8.8D.E5.90.8C.E7.82.B9.E6.AF.94.E8.BE.83"><span class="tocnumber">2.2</span> <span class="toctext">不同点比较</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#.E8.9A.81.E7.BE.A4.E7.AE.97.E6.B3.95.E7.9A.84.E6.B5.81.E7.A8.8B.E5.9B.BE"><span class="tocnumber">3</span> <span class="toctext">蚁群算法的流程图</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#.E5.9F.BA.E6.9C.AC.E8.9A.81.E7.BE.A4.E7.AE.97.E6.B3.95.E7.9A.84.E5.AE.9E.E7.8E.B0.E6.AD.A5.E9.AA.A4"><span class="tocnumber">4</span> <span class="toctext">基本蚁群算法的实现步骤</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#.E8.9A.81.E7.BE.A4.E7.AE.97.E6.B3.95.E7.9A.84matlab.E6.BA.90.E7.A8.8B.E5.BA.8F"><span class="tocnumber">5</span> <span class="toctext">蚁群算法的matlab源程序</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#.E8.9A.81.E7.BE.A4.E7.AE.97.E6.B3.95.E4.BB.BF.E7.9C.9F.E7.BB.93.E6.9E.9C"><span class="tocnumber">6</span> <span class="toctext">蚁群算法仿真结果</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#.E7.89.88.E6.9D.83.E5.A3.B0.E6.98.8E"><span class="tocnumber">7</span> <span class="toctext">版权声明</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="/index.php?title=%E8%9A%81%E7%BE%A4%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95&amp;action=edit&amp;section=1" title="编辑段落：蚁群算法的提出：">编辑</a>]</span> <span class="mw-headline" id=".E8.9A.81.E7.BE.A4.E7.AE.97.E6.B3.95.E7.9A.84.E6.8F.90.E5.87.BA.EF.BC.9A"> 蚁群算法的提出： </span></h2>
+<pre>   人类认识事物的能力来源于与自然界的相互作用，自然界一直是人类创造力的源泉。自然界有许多自适应的优化现象不断地给人以启示，生物和自然中的生态系
+统可以利用自身的演化来让许多在人类看来高度复杂的优化问题得到几乎完美的解决。近些年来，一些与经典的数学问题思想不同的，试图通过模拟自然生态系统
+来求解复杂优化问题的仿生学算法相继出现，如蚁群算法、遗传算法、粒子群算法等。这些算法大大丰富了现在优化技术，也为那些传统最优化技术难以处理的组
+合优化问题提供了切实可行的解决方案。
+   生物学家通过对蚂蚁的长期的观察发现，每只蚂蚁的智能并不高，看起来没有集中的指挥，但它们却能协同工作，集中事物，建起坚固漂亮的蚁穴并抚养后代，
+依靠群体能力发挥出超出个体的智能。蚁群算法是最新发展的一种模拟昆虫王国中蚂蚁群体智能行为的仿生优化算法，它具有较强的鲁棒性、优良的分布式计算机
+制、易于与其他方法相结合等优点。尽管蚁群算法的严格理论基础尚未奠定，国内外的相关研究还处于实验阶段，但是目前人们对蚁群算法的研究已经由当初单一
+的旅行商问题(TSP)领域渗透到了多个应用领域，由解决一维静态优化问题发展到解决多维动态组合优化问题，由离散域范围内的研究逐渐扩展到了连续域范围内的
+研究，从而使这种新兴的仿生优化算法展现出勃勃生机和广阔的发展前景。
+</pre>
+<p>对的
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=%E8%9A%81%E7%BE%A4%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95&amp;action=edit&amp;section=2" title="编辑段落：人工蚂蚁与真实蚂蚁的异同比较">编辑</a>]</span> <span class="mw-headline" id=".E4.BA.BA.E5.B7.A5.E8.9A.82.E8.9A.81.E4.B8.8E.E7.9C.9F.E5.AE.9E.E8.9A.82.E8.9A.81.E7.9A.84.E5.BC.82.E5.90.8C.E6.AF.94.E8.BE.83"> 人工蚂蚁与真实蚂蚁的异同比较 </span></h2>
+<h3><span class="editsection">[<a href="/index.php?title=%E8%9A%81%E7%BE%A4%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95&amp;action=edit&amp;section=3" title="编辑段落：相同点比较">编辑</a>]</span> <span class="mw-headline" id=".E7.9B.B8.E5.90.8C.E7.82.B9.E6.AF.94.E8.BE.83"> 相同点比较 </span></h3>
+<pre>   蚁群算法是从自然界中真实蚂蚁觅食的群体行为得到启发而提出的，其很多观点都来源于真实蚁群，因此算法中所定义的人工蚂蚁与真实蚂蚁存在如下共同点。
+  （1）都存在一个群体中个体相互交流通信的机制
+   人工蚂蚁和真实蚂蚁都存在一种改变当前所处环境的机制：真实蚂蚁在经过的路径上留下信息素，人工蚂蚁改变在其所经路径上存储的数字信息，该信息就是算
+法中所定义的信息量，它记录了蚂蚁当前解和历史解的性能状态，而且可被其他后继人工蚂蚁读写。蚁群的这种交流方式改变了当前蚂蚁所经路径周围的环境，同
+时也以函数的形式改变了整个蚁群所存储的历史信息。通常，在蚁群算法中有一个挥发机制，它像真实的信息量挥发一样随着时间的推移来改变路径上的信息量。
+挥发机制使得人工蚂蚁和真实蚂蚁可以逐渐地忘却历史遗留信息，这样可使蚂蚁在选择路径时不局限于以前蚂蚁所存留的“经验”。
+   （2）都要完成一个相同的任务
+   人工蚂蚁和真实蚂蚁都要完成一个相同的任务，即寻找一条从源节点（巢穴）到目的节点（食物源）的最短路径。人工蚂蚁和真实蚂蚁都不具有跳跃性，只能在
+相邻节点之间一步步移动，直至遍历完所有城市。为了能在多次寻路过程中找到最短路径，则应该记录当前的移动序列。
+   （3）利用当前信息进行路径选择的随机选择策略
+   人工蚂蚁和真实蚂蚁从某一节点到下一节点的移动都是利用概率选择策略实现的，概率选择策略只利用当前的信息去预测未来的情况，而不能利用未来的信息。
+因此，人工蚂蚁和真实蚂蚁所使用的选择策略在时间和空间上都是局部的。
+</pre>
+<h3><span class="editsection">[<a href="/index.php?title=%E8%9A%81%E7%BE%A4%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95&amp;action=edit&amp;section=4" title="编辑段落：不同点比较">编辑</a>]</span> <span class="mw-headline" id=".E4.B8.8D.E5.90.8C.E7.82.B9.E6.AF.94.E8.BE.83"> 不同点比较 </span></h3>
+<pre>   在从真实蚁群行为获得启发而构造蚁群算法的过程中，人工蚂蚁还具备了真实蚂蚁所不具备的一些特性：
+  （1）人工蚂蚁存在于一个离散的空间中，它们的移动是从一个状态到另一个状态的转换；
+  （2）人工蚂蚁具有一个记忆其本身过去行为的内在状态；
+  （3）人工蚂蚁存在于一个与时间无关联的环境中；
+  （4）人工蚂蚁不是完全盲从的，它还受到问题空间特征的启发。例如有的问题中人工蚂蚁在产生一个解后改变信息量，但无论哪种方法，信息量的更新并不是随
+时都可以进行的；
+  （5）为了改善算法的优化效率，人工蚂蚁可增加一些性能，如预测未来、局部优化、回退等，这些行为在真实蚂蚁中是不存在的。在很多具体应用中，人工蚂蚁
+可在局部优化过程中相互交换信息，还有一些改进蚁群算法中的人工蚂蚁可实现简单预测。
+</pre>
+<h2><span class="editsection">[<a href="/index.php?title=%E8%9A%81%E7%BE%A4%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95&amp;action=edit&amp;section=5" title="编辑段落：蚁群算法的流程图">编辑</a>]</span> <span class="mw-headline" id=".E8.9A.81.E7.BE.A4.E7.AE.97.E6.B3.95.E7.9A.84.E6.B5.81.E7.A8.8B.E5.9B.BE"> 蚁群算法的流程图 </span></h2>
+<p><a href="/index.php/%E6%96%87%E4%BB%B6:%E8%9A%81%E7%BE%A4%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B%E5%9B%BE.png" class="image"><img alt="蚁群算法流程图.png" src="/images/6/60/%E8%9A%81%E7%BE%A4%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B%E5%9B%BE.png" width="540" height="812" /></a>
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=%E8%9A%81%E7%BE%A4%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95&amp;action=edit&amp;section=6" title="编辑段落：基本蚁群算法的实现步骤">编辑</a>]</span> <span class="mw-headline" id=".E5.9F.BA.E6.9C.AC.E8.9A.81.E7.BE.A4.E7.AE.97.E6.B3.95.E7.9A.84.E5.AE.9E.E7.8E.B0.E6.AD.A5.E9.AA.A4"> 基本蚁群算法的实现步骤 </span></h2>
+<pre>以TSP为例，基本蚁群算法的具体实现步骤如下：
+（1）参数初始化。令时间t=0和循环次数<span class="texhtml" dir="ltr">&#964;</span>=0，设置最大循环次数<span class="texhtml" dir="ltr"><i>N</i><sub><i>c</i></sub></span>=0，将m只蚂蚁置于n个元素（城市）上，令有向图上每条边
+</pre>
+<p>（i，j）的初始化信息量<span class="texhtml" dir="ltr">&#964;<sub><i>i</i><i>j</i></sub>(<i>t</i>) = <i>c</i><i>o</i><i>n</i><i>s</i><i>t</i></span>，其中const表示常数，且初始时刻<span class="texhtml" dir="ltr">&#916;&#964;<sub><i>i</i><i>j</i></sub>(0) = 0</span> 。
+</p>
+<pre>（2）循环次数<img class="tex" alt="N_c \larr N_c+1" src="/images/math/0/6/5/0651dedc011674aceb439738f6c0195f.png" /> 。
+（3）蚂蚁的禁忌表索引号k=1。
+（4）蚂蚁数目<img class="tex" alt="k \larr k+1" src="/images/math/f/2/0/f2044ab5352c4639c0adc356c2f07d54.png" />。
+（5）蚂蚁个体根据状态转移概率公式计算的概率选择元素（城市）j并前进，<img class="tex" alt="j\in{{C-tabu_k}}" src="/images/math/8/1/4/814f1a4aa09ff6c8ed147cd14d21dbae.png" />。
+<a href="/index.php/%E6%96%87%E4%BB%B6:%E8%9A%81%E7%BE%A4%E7%AE%97%E6%B3%95%E8%BD%AC%E7%A7%BB%E6%A6%82%E7%8E%87.png" class="image"><img alt="蚁群算法转移概率.png" src="/images/e/ee/%E8%9A%81%E7%BE%A4%E7%AE%97%E6%B3%95%E8%BD%AC%E7%A7%BB%E6%A6%82%E7%8E%87.png" width="423" height="105" /></a>
+ 其中， 表示在t时刻蚂蚁k由元素（城市）i转移到元素（城市）j的状态转移概率。 <span class="texhtml" dir="ltr"><i>a</i><i>l</i><i>l</i><i>o</i><i>w</i><i>e</i><i>d</i><sub><i>k</i></sub> = <i>C</i> &#8722; <i>t</i><i>a</i><i>b</i><i>u</i><sub><i>k</i></sub></span>表示蚂蚁k下一步允许选择的城市。<span class="texhtml" dir="ltr">&#945;</span> 为启发式因子，
+表示轨迹的相对重要性，反映了蚂蚁在运动过程中所积累的信息在蚂蚁运动时所起的作用，其值越大，则该蚂蚁越倾向于选择其他蚂蚁
+经过的路径，蚂蚁之间的协作性越强。<span class="texhtml" dir="ltr">&#946;</span>为期望启发式因子，表示能见度的相对重要性，反映了蚂蚁在运动过程中启发信息在蚂蚁选择路径中的受重
+视程度，其值越大，则该状态转移概率越接近于贪心规则；<span class="texhtml" dir="ltr">&#951;<sub><i>i</i><i>j</i></sub>(<i>t</i>)</span> 为启发函数，表达式为<img class="tex" alt="\eta_{ij}(t)=\frac{1}{d_{ij}}" src="/images/math/6/1/f/61f0b0ef9cc8350b3e344f32b6a81f8e.png" /> 。式中，<span class="texhtml" dir="ltr"><i>d</i><sub><i>i</i><i>j</i></sub></span> 表示相邻两个城市之间的距离。
+（6）修改禁忌表指针，即选择好之后将蚂蚁移动到新的元素（城市），并把该元素（城市）移动到该蚂蚁个体的禁忌表中。
+（7）	若集合C中元素（城市）未遍历完，即k&lt;m，则跳转到第（4）步，否则执行第（8）步。
+（8）	根据公式更新每条路径上的信息量：
+</pre>
+<pre><span class="texhtml" dir="ltr">&#964;<sub><i>i</i><i>j</i></sub>(<i>t</i> + <i>n</i>) = (1 &#8722; &#961;) * &#964;<sub><i>i</i><i>j</i></sub>(<i>t</i>) + &#916;&#964;<sub><i>i</i><i>j</i></sub>(<i>t</i>)</span>
+</pre>
+<pre><img class="tex" alt="\Delta\tau_{ij}(t)=\sum_{k=1}^m \Delta\tau_{ij}^{k}(t)" src="/images/math/d/1/0/d107163ca147bd568cb817a21ad11c5b.png" />
+</pre>
+<pre>（9）	若满足结束条件，即如果循环次数 ，则循环结束并输出程序计算结果，否则清空禁忌表并跳转到第（2）步。
+</pre>
+<h2><span class="editsection">[<a href="/index.php?title=%E8%9A%81%E7%BE%A4%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95&amp;action=edit&amp;section=7" title="编辑段落：蚁群算法的matlab源程序">编辑</a>]</span> <span class="mw-headline" id=".E8.9A.81.E7.BE.A4.E7.AE.97.E6.B3.95.E7.9A.84matlab.E6.BA.90.E7.A8.8B.E5.BA.8F"> 蚁群算法的matlab源程序 </span></h2>
+<p>1.蚁群算法主程序：main.m756忍一忍vb
+</p>
+<pre>%function [bestroute,routelength]=Ant
+clc
+clear
+tic
+% 读入城市间距离矩阵数据文件
+CooCity = load( 'CooCity.txt' )&#160;;% 城市网络图坐标数据文件，txt形式给出
+NC=length(CooCity);          &#160;% 城市个数
+for i=1:NC      &#160;% 计算各城市间的距离
+    for j=1:NC
+        distance(i,j)=sqrt((CooCity(i,2)-CooCity(j,2))^2+(CooCity(i,3)-CooCity(j,3))^2);
+   end
+end
+MAXIT=10;%最大循环次数
+Citystart=[];        &#160;% 起点城市编号
+tau=ones(NC,NC);&#160;% 初始时刻各边上的信息痕迹为1
+rho=0.5;        &#160;% 挥发系数
+alpha=1;        &#160;% 残留信息相对重要度
+beta=5;         &#160;% 预见值的相对重要度
+Q=10;         &#160;% 蚁环常数
+NumAnt=20;        &#160;% 蚂蚁数量
+routelength=inf;       &#160;% 用来记录当前找到的最优路径长度
+for n=1:MAXIT
+    for k=1:NumAnt      &#160;%考查第K只蚂蚁
+        deltatau=zeros(NC,NC);&#160;% 第K只蚂蚁移动前各边上的信息增量为零
+       &#160;%[routek,lengthk]=path(distance,tau,alpha,beta,[]);     &#160;%  不靠率起始点
+        [routek,lengthk]=path(distance,tau,alpha,beta,Citystart);  &#160;% 指定起始点
+       
+        if lengthk&lt;routelength  &#160;% 找到一条更好的路径
+            &#160;:::routelength=lengthk;
+          &#160;:::bestroute=routek;
+       end
+       for i=1:NC-1     &#160;% 第K只蚂蚁在路径上释放的信息量
+            deltatau(routek(i),routek(i+1))=deltatau(routek(i),routek(i+1))+Q/lengthk; &#160;% 信息素更新
+        end
+      &#160;%deltatau(routek(NC),1)=deltatau(routek(NC),1)+Q/lengthk; &#160;% 
+   end
+   length_n(n)=routelength;  &#160;% 记录路径收敛
+    tau=(1-rho).*tau; &#160;% 信息素挥发
+end
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+costtime=toc;
+subplot(1,2,1),plot([CooCity(bestroute,2)],[CooCity(bestroute,3)],'-*')
+subplot(1,2,2),plot([1:MAXIT],length_n,'-*')
+[routelength,costtime]
+</pre>
+<p>2.蚁群算法寻找路径程序：path.m
+</p>
+<pre>% 某只蚂蚁找到的某条路径routek,lengthk
+function [routek,lengthk]=path(distance,tau,alpha,beta,Citystart) 
+[m,n]=size(distance);
+if isempty(Citystart)       &#160;% 如果不确定起点
+    p=fix(m*rand)+1;        &#160;% 随机方式初始化起点，均匀概率
+else
+   p=Citystart;           &#160;% 外部给定确定起点
+end
+lengthk=0;       &#160;% 初始路径长度设为 0
+routek=[p];       &#160;% 蚂蚁路径点序列，即该蚂蚁已经过的城市集合，路径初始起点
+for i=1:m-1
+   np=routek(end); &#160;% 蚂蚁路径城市序号，依次经过的城市编号  
+    np_sum=0;     &#160;% 路由长度初始为 0
+   for j=1:m
+       if inroute(j,routek)       &#160;% 判断城市节点j是否属于tabuk，即是否已经过
+           continue;
+       else                   &#160;% j为还未经过的点，对
+           ada=1/distance(np,j); &#160;%  预见度
+           np_sum=np_sum+tau(np,j)^alpha*ada^beta;  &#160;% 路由表：信息痕迹、预见度
+       end
+   end
+   cp=zeros(1,m); &#160;% 转移概率，基于路径长度及路由表
+   for j=1:m
+       if inroute(j,routek)
+           continue;
+       else
+           ada=1/distance(np,j);      &#160;% 预见度
+           cp(j)=tau(np,j)^alpha*ada^beta/np_sum;  &#160;% np到j的转移概率
+       end
+   end
+   NextCity=nextcitychoose2(cp);&#160;% 根据转移概率确定下一个城市,
+  &#160;% 直观地，取转移概率最大值方向方法，决策结果稳定且收敛快
+   routek=[routek,NextCity];&#160;% 更新路径
+   lengthk=lengthk+distance(np,NextCity);   &#160;%  更新路径长度
+end
+</pre>
+<h2><span class="editsection">[<a href="/index.php?title=%E8%9A%81%E7%BE%A4%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95&amp;action=edit&amp;section=8" title="编辑段落：蚁群算法仿真结果">编辑</a>]</span> <span class="mw-headline" id=".E8.9A.81.E7.BE.A4.E7.AE.97.E6.B3.95.E4.BB.BF.E7.9C.9F.E7.BB.93.E6.9E.9C"> 蚁群算法仿真结果 </span></h2>
+<p><a href="/index.php/%E6%96%87%E4%BB%B6:%E8%9A%81%E7%BE%A4%E7%AE%97%E6%B3%95%E4%BB%BF%E7%9C%9F%E7%BB%93%E6%9E%9C.png" class="image"><img alt="蚁群算法仿真结果.png" src="/images/b/be/%E8%9A%81%E7%BE%A4%E7%AE%97%E6%B3%95%E4%BB%BF%E7%9C%9F%E7%BB%93%E6%9E%9C.png" width="556" height="491" /></a>
+</p>
+<pre>其中左边是蚂蚁行走的最短路径，右边是最短路径的值的收敛情况。
+</pre>
+<h2><span class="editsection">[<a href="/index.php?title=%E8%9A%81%E7%BE%A4%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95&amp;action=edit&amp;section=9" title="编辑段落：版权声明">编辑</a>]</span> <span class="mw-headline" id=".E7.89.88.E6.9D.83.E5.A3.B0.E6.98.8E"> 版权声明 </span></h2>
+<ul><li>《蚁群算法原理及其应用》：段海滨，科学出版社。
+</li><li>《智能蚁群算法及其应用》：吴启迪，汪镭，上海科技教育出版社。
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 169/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:5111-0!1!*!!zh-cn!2!* and timestamp 20170909033953 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=%E8%9A%81%E7%BE%A4%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95&amp;oldid=36433">http://www.nocow.cn/index.php?title=%E8%9A%81%E7%BE%A4%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95&amp;oldid=36433</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/%E8%9A%81%E7%BE%A4%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:%E8%9A%81%E7%BE%A4%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=%E8%9A%81%E7%BE%A4%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=%E8%9A%81%E7%BE%A4%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=%E8%9A%81%E7%BE%A4%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/%E8%9A%81%E7%BE%A4%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/%E8%9A%81%E7%BE%A4%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=%E8%9A%81%E7%BE%A4%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=%E8%9A%81%E7%BE%A4%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95&amp;oldid=36433" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过26,087次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/54.173.35.129" title="特殊:用户贡献/54.173.35.129">54.173.35.129</a>于2017年8月14日 (星期一) 14:03做出最后修改。 在NOCOW用户<a href="/index.php?title=%E7%94%A8%E6%88%B7:Ljjyxz123&amp;action=edit&amp;redlink=1" class="new" title="用户:Ljjyxz123（尚未撰写）">Ljjyxz123</a>和NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/27.17.30.54" title="特殊:用户贡献/27.17.30.54">27.17.30.54</a>、<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/218.192.169.121" title="特殊:用户贡献/218.192.169.121">218.192.169.121</a>和<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/119.120.69.211" title="特殊:用户贡献/119.120.69.211">119.120.69.211</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.242 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

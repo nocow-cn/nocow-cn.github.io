@@ -1,0 +1,860 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="keywords" content="牛,Floyd-Warshall算法,GNU FDL,GNU自由文档许可证,NOCOW,OI,OIer,USACO,大牛介绍,天牛,巨牛" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (中文(简体))" />
+<link title="Creative Commons" type="application/rdf+xml" href="/index.php?title=%E7%89%9B&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+		<title>NOCOW - 牛</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins/monobook/main.css?42b"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print" href="/skins/common/commonPrint.css?42b" />
+		<link rel="stylesheet" type="text/css" media="handheld" href="/skins/monobook/handheld.css?42b" />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins/monobook/IE50Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins/monobook/IE55Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins/monobook/IE60Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins/monobook/IE70Fixes.css?42b";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?42b"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">/*<![CDATA[*/
+var skin = "monobook";
+var stylepath = "/skins";
+var wgArticlePath = "/index.php/$1";
+var wgScriptPath = "";
+var wgServer = "http://www.nocow.cn";
+var wgCanonicalNamespace = "";
+var wgCanonicalSpecialPageName = false;
+var wgNamespaceNumber = 0;
+var wgPageName = "牛";
+var wgTitle = "牛";
+var wgArticleId = "460";
+var wgIsArticle = true;
+var wgUserName = null;
+var wgUserLanguage = "zh-cn";
+var wgContentLanguage = "zh-cn";
+var wgBreakFrames = false;
+var wgCurRevisionId = "7487";
+/*]]>*/</script>
+                
+		<script type="text/javascript" src="/skins/common/wikibits.js?42b"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=-&action=raw&gen=css&maxage=18000";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+			</head>
+<body  class="mediawiki ns-0 ltr page-牛">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 class="firstHeading">牛</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">来自&quot;NOCOW&quot;</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">跳转到: <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>			<!-- start content -->
+			<table cellspacing="0" cellpadding="0" style="float:right; border:1px solid brown; text-align:center; margin:0px 10px;width:85px; background-color: #fffca0">
+
+<tr>
+<td style="padding:0px 5px;"> 你可以使用<b>[<a href="http://www.nocow.cn/cow.php" class="external autonumber" title="http://www.nocow.cn/cow.php" rel="nofollow">[1]</a>]</b>直接访问这些内容。
+</td></tr></table>
+<pre> 这篇的版权已经经过检查，并注明出处，不存在版权争议。全部文章检查完毕之前，请不要删除此模板。
+ 本文未注明的内容都可以使用GFDL版权发布（不包括翻译文章中属于原始所有者的部分版权）。
+ 如果你添加了一些原文中缺少的非GFDL版权内容，应当<b>标出适当的<a href="/index.php/Category:%E7%89%88%E6%9D%83%E6%A8%A1%E6%9D%BF" title="Category:版权模板">模板</a>并注明来源，否则可能会被删除</b>。
+</pre>
+<p><b>牛</b>一般是指脊索动物门脊椎动物亚门有颌超纲哺乳纲真兽亚纲偶蹄目反刍亚目牛科牛亚科牛族生物，通常是牛属，有时候也可以指<a href="/index.php?title=%E6%B0%B4%E7%89%9B&amp;action=edit" class="new" title="水牛">水牛</a>属等其它的属。另外，有时也用来表示其他的以“牛”结尾的生物，如<a href="/index.php?title=%E8%9C%97%E7%89%9B&amp;action=edit" class="new" title="蜗牛">蜗牛</a>、<a href="/index.php/%E5%A4%A9%E7%89%9B" title="天牛">天牛</a>等，不过用牛来泛指的时候，通常不包括这些其他纲的“牛”。
+</p><p>由于牛是很常见的动物的一种，也经常有其他动物（主要是昆虫等小动物）被命名为牛。另外也是因为牛很常见，世界上很多地方以及很多领域都发展出来了很多关于牛的文化。
+</p>
+<div style="float:left;margin-right:5px!important;margin-right:5px;margin-right:2px!ie"><table id="toc" class="toc" summary="目录"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#.E7.89.9B.E7.A7.91.E5.8A.A8.E7.89.A9"><span class="tocnumber">1</span> <span class="toctext">牛科动物</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.E5.90.84.E7.A7.8D.E7.89.9B"><span class="tocnumber">1.1</span> <span class="toctext">各种牛</span></a>
+<ul>
+<li class="toclevel-3"><a href="#.E5.AE.B6.E7.89.9B"><span class="tocnumber">1.1.1</span> <span class="toctext">家牛</span></a></li>
+<li class="toclevel-3"><a href="#.E6.B0.B4.E7.89.9B"><span class="tocnumber">1.1.2</span> <span class="toctext">水牛</span></a></li>
+<li class="toclevel-3"><a href="#.E7.89.A6.E7.89.9B"><span class="tocnumber">1.1.3</span> <span class="toctext">牦牛</span></a></li>
+<li class="toclevel-3"><a href="#.E9.87.8E.E7.89.9B"><span class="tocnumber">1.1.4</span> <span class="toctext">野牛</span></a></li>
+<li class="toclevel-3"><a href="#.E7.89.9B.E7.BE.9A.EF.BC.88.E5.8F.88.E7.A7.B0.E8.A7.92.E9.A9.AC.EF.BC.89"><span class="tocnumber">1.1.5</span> <span class="toctext">牛羚（又称角马）</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#.E7.89.9B.E4.BA.A7.E5.93.81"><span class="tocnumber">1.2</span> <span class="toctext">牛产品</span></a>
+<ul>
+<li class="toclevel-3"><a href="#.E7.89.9B.E7.9A.84.E7.9B.B4.E6.8E.A5.E4.BA.A7.E5.93.81"><span class="tocnumber">1.2.1</span> <span class="toctext">牛的直接产品</span></a></li>
+<li class="toclevel-3"><a href="#.E7.89.9B.E7.9A.84.E9.97.B4.E6.8E.A5.E4.BA.A7.E5.93.81"><span class="tocnumber">1.2.2</span> <span class="toctext">牛的间接产品</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#.E7.89.9B.E7.B1.BB.E7.96.BE.E7.97.85"><span class="tocnumber">1.3</span> <span class="toctext">牛类疾病</span></a>
+<ul>
+<li class="toclevel-3"><a href="#.E7.96.AF.E7.89.9B.E7.97.85"><span class="tocnumber">1.3.1</span> <span class="toctext">疯牛病</span></a></li>
+<li class="toclevel-3"><a href="#.E5.8F.A3.E8.B9.84.E7.96.AB"><span class="tocnumber">1.3.2</span> <span class="toctext">口蹄疫</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#.E4.B8.96.E7.95.8C.E6.9C.80.E7.89.9B"><span class="tocnumber">1.4</span> <span class="toctext">世界最牛</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.E5.85.B6.E4.BB.96.E4.BB.A5.E7.89.9B.E5.91.BD.E5.90.8D.E7.9A.84.E7.94.9F.E7.89.A9"><span class="tocnumber">2</span> <span class="toctext">其他以牛命名的生物</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.E5.8A.A8.E7.89.A9"><span class="tocnumber">2.1</span> <span class="toctext">动物</span></a>
+<ul>
+<li class="toclevel-3"><a href="#.E7.8A.80.E7.89.9B"><span class="tocnumber">2.1.1</span> <span class="toctext">犀牛</span></a></li>
+<li class="toclevel-3"><a href="#.E8.9C.97.E7.89.9B"><span class="tocnumber">2.1.2</span> <span class="toctext">蜗牛</span></a></li>
+<li class="toclevel-3"><a href="#.E5.A4.A9.E7.89.9B"><span class="tocnumber">2.1.3</span> <span class="toctext">天牛</span></a></li>
+<li class="toclevel-3"><a href="#.E7.89.9B.E8.9B.99"><span class="tocnumber">2.1.4</span> <span class="toctext">牛蛙</span></a></li>
+<li class="toclevel-3"><a href="#.E7.89.9B.E8.A7.92.E5.85.BD"><span class="tocnumber">2.1.5</span> <span class="toctext">牛角兽</span></a></li>
+<li class="toclevel-3"><a href="#.E7.89.9B.E8.99.BB"><span class="tocnumber">2.1.6</span> <span class="toctext">牛虻</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#.E6.A4.8D.E7.89.A9"><span class="tocnumber">2.2</span> <span class="toctext">植物</span></a>
+<ul>
+<li class="toclevel-3"><a href="#.E7.89.9B.E8.92.A1"><span class="tocnumber">2.2.1</span> <span class="toctext">牛蒡</span></a></li>
+<li class="toclevel-3"><a href="#.E7.89.B5.E7.89.9B.E8.8A.B1"><span class="tocnumber">2.2.2</span> <span class="toctext">牵牛花</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.E4.B8.8E.E7.89.9B.E6.9C.89.E5.85.B3.E7.9A.84.E5.85.B6.E4.BB.96.E7.89.A9.E5.93.81"><span class="tocnumber">3</span> <span class="toctext">与牛有关的其他物品</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.E6.99.AE.E9.80.9A.E5.AE.B6.E7.94.A8.E7.89.A9.E5.93.81"><span class="tocnumber">3.1</span> <span class="toctext">普通家用物品</span></a></li>
+<li class="toclevel-2"><a href="#.E4.B8.93.E4.B8.9A.E7.89.A9.E5.93.81"><span class="tocnumber">3.2</span> <span class="toctext">专业物品</span></a></li>
+<li class="toclevel-2"><a href="#.E5.A4.A7.E5.9E.8B.E5.99.A8.E5.85.B7"><span class="tocnumber">3.3</span> <span class="toctext">大型器具</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.E7.89.9B.E7.9A.84.E8.A1.A8.E7.A4.BA.E5.92.8C.E8.B1.A1.E5.BE.81"><span class="tocnumber">4</span> <span class="toctext">牛的表示和象征</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.E5.90.84.E8.AF.AD.E8.A8.80.E4.B8.AD.E7.89.9B.E7.9A.84.E5.86.99.E6.B3.95"><span class="tocnumber">4.1</span> <span class="toctext">各语言中牛的写法</span></a></li>
+<li class="toclevel-2"><a href="#ASCII.E8.89.BA.E6.9C.AF.E4.B8.AD.E7.9A.84.E7.89.9B"><span class="tocnumber">4.2</span> <span class="toctext">ASCII艺术中的牛</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.E5.85.B3.E4.BA.8E.E7.89.9B.E7.9A.84.E6.96.87.E8.89.BA.E4.BD.9C.E5.93.81"><span class="tocnumber">5</span> <span class="toctext">关于牛的文艺作品</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.E5.85.B3.E4.BA.8E.E7.89.9B.E7.9A.84.E9.9D.99.E6.80.81.E7.BE.8E.E6.9C.AF.E4.BD.9C.E5.93.81"><span class="tocnumber">5.1</span> <span class="toctext">关于牛的静态美术作品</span></a></li>
+<li class="toclevel-2"><a href="#.E5.85.B3.E4.BA.8E.E7.89.9B.E7.9A.84.E6.AD.8C.E6.9B.B2"><span class="tocnumber">5.2</span> <span class="toctext">关于牛的歌曲</span></a></li>
+<li class="toclevel-2"><a href="#.E5.85.B3.E4.BA.8E.E7.89.9B.E7.9A.84.E5.BD.B1.E8.A7.86.E4.BD.9C.E5.93.81"><span class="tocnumber">5.3</span> <span class="toctext">关于牛的影视作品</span></a></li>
+<li class="toclevel-2"><a href="#.E5.85.B3.E4.BA.8E.E7.89.9B.E7.9A.84.E6.95.85.E4.BA.8B"><span class="tocnumber">5.4</span> <span class="toctext">关于牛的故事</span></a>
+<ul>
+<li class="toclevel-3"><a href="#.E6.8D.9E.E9.93.81.E7.89.9B"><span class="tocnumber">5.4.1</span> <span class="toctext">捞铁牛</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#.E5.85.B3.E4.BA.8E.E7.89.9B.E7.9A.84.E8.99.9A.E6.9E.84.E4.BA.BA.E7.89.A9"><span class="tocnumber">5.5</span> <span class="toctext">关于牛的虚构人物</span></a>
+<ul>
+<li class="toclevel-3"><a href="#.E7.89.9B.E5.A4.B4.E4.BA.BA"><span class="tocnumber">5.5.1</span> <span class="toctext">牛头人</span></a></li>
+<li class="toclevel-3"><a href="#.E7.89.9B.E9.AD.94.E7.8E.8B"><span class="tocnumber">5.5.2</span> <span class="toctext">牛魔王</span></a></li>
+<li class="toclevel-3"><a href="#.E7.89.9B.E5.A4.B4.E9.A9.AC.E9.9D.A2"><span class="tocnumber">5.5.3</span> <span class="toctext">牛头马面</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.E4.B8.AD.E5.9B.BD.E7.89.9B.E6.96.87.E5.8C.96"><span class="tocnumber">6</span> <span class="toctext">中国牛文化</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.E7.94.9F.E8.82.96.E7.9A.84.E7.89.9B"><span class="tocnumber">6.1</span> <span class="toctext">生肖的牛</span></a>
+<ul>
+<li class="toclevel-3"><a href="#.E5.B1.9E.E7.89.9B.E7.9A.84.E5.90.8D.E4.BA.BA"><span class="tocnumber">6.1.1</span> <span class="toctext">属牛的名人</span></a>
+<ul>
+<li class="toclevel-4"><a href="#.E5.85.B6.E4.BB.96"><span class="tocnumber">6.1.1.1</span> <span class="toctext">其他</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#.E8.B1.A1.E5.BE.81.E6.84.8F.E4.B9.89"><span class="tocnumber">6.2</span> <span class="toctext">象征意义</span></a></li>
+<li class="toclevel-2"><a href="#.E9.BE.99.E7.9A.84.E4.B9.9D.E5.AD.90.E4.B9.8B.E4.B8.80.EF.BC.9A.E5.9B.9A.E7.89.9B"><span class="tocnumber">6.3</span> <span class="toctext">龙的九子之一：囚牛</span></a></li>
+<li class="toclevel-2"><a href="#.E5.A7.93.E6.B0.8F.E7.9A.84.E7.89.9B"><span class="tocnumber">6.4</span> <span class="toctext">姓氏的牛</span></a></li>
+<li class="toclevel-2"><a href="#.E4.B8.8E.E7.89.9B.E6.9C.89.E5.85.B3.E7.9A.84.E5.90.8D.E5.AD.97"><span class="tocnumber">6.5</span> <span class="toctext">与牛有关的名字</span></a>
+<ul>
+<li class="toclevel-3"><a href="#.E5.8C.85.E6.8B.AC.E7.89.9B.E7.9A.84.E4.BA.BA.E5.90.8D"><span class="tocnumber">6.5.1</span> <span class="toctext">包括牛的人名</span></a></li>
+<li class="toclevel-3"><a href="#.E4.BB.A5.E7.89.9B.E8.B1.A1.E5.BE.81.E7.9A.84.E5.85.B6.E4.BB.96.E5.90.8D.E5.AD.97"><span class="tocnumber">6.5.2</span> <span class="toctext">以牛象征的其他名字</span></a></li>
+<li class="toclevel-3"><a href="#.E5.85.B6.E4.BB.96.E8.AF.AD.E8.A8.80.E7.BF.BB.E8.AF.91.E6.88.90.E7.9A.84.E7.89.9B"><span class="tocnumber">6.5.3</span> <span class="toctext">其他语言翻译成的牛</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#.E7.89.A7.E7.AB.A5"><span class="tocnumber">6.6</span> <span class="toctext">牧童</span></a></li>
+<li class="toclevel-2"><a href="#.E6.B1.89.E8.AF.AD.E4.B8.AD.E7.9A.84.E7.89.9B"><span class="tocnumber">6.7</span> <span class="toctext">汉语中的牛</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.E5.85.B6.E4.BB.96.E5.9B.BD.E5.AE.B6.E4.B8.8E.E5.9C.B0.E5.8C.BA.E7.9A.84.E7.89.9B.E6.96.87.E5.8C.96"><span class="tocnumber">7</span> <span class="toctext">其他国家与地区的牛文化</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.E7.89.9B.E4.BB.94"><span class="tocnumber">7.1</span> <span class="toctext">牛仔</span></a></li>
+<li class="toclevel-2"><a href="#.E6.96.97.E7.89.9B.E6.96.87.E5.8C.96"><span class="tocnumber">7.2</span> <span class="toctext">斗牛文化</span></a></li>
+<li class="toclevel-2"><a href="#.E8.A5.BF.E6.96.B9.E6.96.87.E5.8C.96.E4.B8.AD.E7.9A.84.E8.B1.A1.E5.BE.81.E6.84.8F.E4.B9.89"><span class="tocnumber">7.3</span> <span class="toctext">西方文化中的象征意义</span></a></li>
+<li class="toclevel-2"><a href="#NBA.E4.B8.8E.E7.89.9B"><span class="tocnumber">7.4</span> <span class="toctext">NBA与牛</span></a></li>
+<li class="toclevel-2"><a href="#.E7.89.9B.E6.B4.A5.E5.A4.A7.E5.AD.A6.E4.B8.8E.E7.89.9B"><span class="tocnumber">7.5</span> <span class="toctext">牛津大学与牛</span></a></li>
+<li class="toclevel-2"><a href="#.E5.B0.BC.E6.B3.8A.E5.B0.94.E4.B8.8E.E7.89.9B"><span class="tocnumber">7.6</span> <span class="toctext">尼泊尔与牛</span></a></li>
+<li class="toclevel-2"><a href="#.E9.87.91.E7.89.9B.E5.BA.A7.E7.A5.9E.E8.AF.9D"><span class="tocnumber">7.7</span> <span class="toctext">金牛座神话</span></a></li>
+<li class="toclevel-2"><a href="#.E4.BD.A0.E6.9C.89.E4.B8.A4.E5.A4.B4.E5.A5.B6.E7.89.9B"><span class="tocnumber">7.8</span> <span class="toctext">你有两头奶牛</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.E4.BF.A1.E6.81.AF.E7.A7.91.E5.AD.A6.E6.8A.80.E6.9C.AF.E4.B8.8E.E8.AE.A1.E7.AE.97.E6.9C.BA.E4.B8.AD.E7.9A.84.E7.89.9B"><span class="tocnumber">8</span> <span class="toctext">信息科学技术与计算机中的牛</span></a>
+<ul>
+<li class="toclevel-2"><a href="#OI.E7.95.8C.E5.AF.B9.E4.BA.BA.E7.9A.84.E7.A7.B0.E5.8F.B7"><span class="tocnumber">8.1</span> <span class="toctext">OI界对人的称号</span></a></li>
+<li class="toclevel-2"><a href="#.E5.86.9C.E5.A4.AB.E7.BA.A6.E7.BF.B0.E4.B8.8E.E7.89.9B.E7.B3.BB.E5.88.97.E9.A2.98.E7.9B.AE"><span class="tocnumber">8.2</span> <span class="toctext">农夫约翰与牛系列题目</span></a></li>
+<li class="toclevel-2"><a href="#NOCOW"><span class="tocnumber">8.3</span> <span class="toctext">NOCOW</span></a></li>
+<li class="toclevel-2"><a href="#GNU"><span class="tocnumber">8.4</span> <span class="toctext">GNU</span></a></li>
+<li class="toclevel-2"><a href="#cowsay.E4.B8.8E.E8.B6.85.E7.BA.A7.E7.89.9B.E5.8A.9B"><span class="tocnumber">8.5</span> <span class="toctext">cowsay与超级牛力</span></a></li>
+<li class="toclevel-2"><a href="#.E6.98.9F.E9.99.85.E4.BA.89.E9.9C.B8.E7.A7.98.E7.B1.8D"><span class="tocnumber">8.6</span> <span class="toctext">星际争霸秘籍</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.E5.85.B6.E4.BB.96.E7.A7.91.E5.AD.A6.E4.B8.AD.E7.9A.84.E7.89.9B"><span class="tocnumber">9</span> <span class="toctext">其他科学中的牛</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.E6.95.B0.E5.AD.A6.E4.B8.8E.E7.89.9B"><span class="tocnumber">9.1</span> <span class="toctext">数学与牛</span></a>
+<ul>
+<li class="toclevel-3"><a href="#.E7.BE.A4.E7.89.9B.E9.97.AE.E9.A2.98"><span class="tocnumber">9.1.1</span> <span class="toctext">群牛问题</span></a></li>
+<li class="toclevel-3"><a href="#.E7.89.9B.E5.90.83.E8.8D.89.E9.97.AE.E9.A2.98"><span class="tocnumber">9.1.2</span> <span class="toctext">牛吃草问题</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#.E7.89.A9.E7.90.86.E5.AD.A6.E4.B8.8E.E7.89.9B"><span class="tocnumber">9.2</span> <span class="toctext">物理学与牛</span></a>
+<ul>
+<li class="toclevel-3"><a href="#.E5.8A.9B.E7.9A.84.E5.8D.95.E4.BD.8D.E7.89.9B.E9.A1.BF"><span class="tocnumber">9.2.1</span> <span class="toctext">力的单位牛顿</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#.E5.8C.96.E5.AD.A6.E4.B8.8E.E7.89.9B"><span class="tocnumber">9.3</span> <span class="toctext">化学与牛</span></a></li>
+<li class="toclevel-2"><a href="#.E7.94.9F.E7.89.A9.E5.AD.A6.E3.80.81.E5.8C.BB.E5.AD.A6.E4.B8.8E.E7.89.9B"><span class="tocnumber">9.4</span> <span class="toctext">生物学、医学与牛</span></a>
+<ul>
+<li class="toclevel-3"><a href="#.E7.BB.93.E6.99.B6.E7.89.9B.E8.83.B0.E5.B2.9B.E7.B4.A0"><span class="tocnumber">9.4.1</span> <span class="toctext">结晶牛胰岛素</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#.E5.93.B2.E5.AD.A6.E4.B8.8E.E7.89.9B"><span class="tocnumber">9.5</span> <span class="toctext">哲学与牛</span></a></li>
+<li class="toclevel-2"><a href="#.E6.94.BF.E6.B2.BB.E7.BB.8F.E6.B5.8E.E5.AD.A6.E4.B8.8E.E7.89.9B"><span class="tocnumber">9.6</span> <span class="toctext">政治经济学与牛</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.E5.A4.A9.E6.96.87.E4.B8.AD.E7.9A.84.E7.89.9B"><span class="tocnumber">10</span> <span class="toctext">天文中的牛</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.E7.89.9B.E9.83.8E.E6.98.9F"><span class="tocnumber">10.1</span> <span class="toctext">牛郎星</span></a></li>
+<li class="toclevel-2"><a href="#.E9.87.91.E7.89.9B.E5.BA.A7"><span class="tocnumber">10.2</span> <span class="toctext">金牛座</span></a>
+<ul>
+<li class="toclevel-3"><a href="#.E5.A4.A9.E6.96.87.E5.AD.A6.E4.B8.AD.E7.9A.84.E9.87.91.E7.89.9B.E5.BA.A7"><span class="tocnumber">10.2.1</span> <span class="toctext">天文学中的金牛座</span></a></li>
+<li class="toclevel-3"><a href="#.E9.87.91.E7.89.9B.E5.BA.A7.E6.B5.81.E6.98.9F.E9.9B.A8"><span class="tocnumber">10.2.2</span> <span class="toctext">金牛座流星雨</span></a></li>
+<li class="toclevel-3"><a href="#.E5.8D.A0.E6.98.9F.E6.9C.AF.E4.B8.8E.E9.87.91.E7.89.9B.E5.BA.A7"><span class="tocnumber">10.2.3</span> <span class="toctext">占星术与金牛座</span></a></li>
+<li class="toclevel-3"><a href="#.E9.87.91.E7.89.9B.E5.BA.A7.E5.90.8D.E4.BA.BA"><span class="tocnumber">10.2.4</span> <span class="toctext">金牛座名人</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#.E7.89.9B.E5.AE.BF"><span class="tocnumber">10.3</span> <span class="toctext">牛宿</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.E5.9C.B0.E7.90.86.E4.B8.8A.E7.9A.84.E7.89.9B"><span class="tocnumber">11</span> <span class="toctext">地理上的牛</span></a></li>
+<li class="toclevel-1"><a href="#.E5.90.83.E7.9A.84.E7.89.9B"><span class="tocnumber">12</span> <span class="toctext">吃的牛</span></a></li>
+<li class="toclevel-1"><a href="#.E5.8F.82.E8.A7.81"><span class="tocnumber">13</span> <span class="toctext">参见</span></a></li>
+<li class="toclevel-1"><a href="#.E5.A4.96.E9.83.A8.E9.93.BE.E6.8E.A5"><span class="tocnumber">14</span> <span class="toctext">外部链接</span></a></li>
+</ul>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "显示"; var tocHideText = "隐藏"; showTocToggle(); } </script>
+</div>
+<a name=".E7.89.9B.E7.A7.91.E5.8A.A8.E7.89.A9"></a><h2><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=1" title="编辑段落: 牛科动物">编辑</a>]</span> <span class="mw-headline">牛科动物</span></h2>
+<p>通常，只有一部分牛科动物才算是“牛”的一种。另外牛科也有马、羊、羚羊等其它的动物。
+</p><p>像其他反刍动物一样，牛科动物有四个胃：瘤胃、网胃、重瓣胃和皱胃，当牛食草在第一个胃消化完毕会再回到口部再咀嚼到第二个胃，如此类推。
+</p><p>比较常见的牛是家牛。大多数今天的家牛的祖先是原牛。原牛曾在欧亚大陆上非常普及，但后来它们的数量渐渐减小，1627年世界上最后一头原牛在<a href="/index.php?title=%E6%B3%A2%E5%85%B0&amp;action=edit" class="new" title="波兰">波兰</a>被捕杀。
+</p>
+<a name=".E5.90.84.E7.A7.8D.E7.89.9B"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=2" title="编辑段落: 各种牛">编辑</a>]</span> <span class="mw-headline">各种牛</span></h3>
+<a name=".E5.AE.B6.E7.89.9B"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=3" title="编辑段落: 家牛">编辑</a>]</span> <span class="mw-headline">家牛</span></h4>
+<div class="thumb tright"><div class="thumbinner" style="width:254px;"><a href="/index.php/Image:Rinder.jpg" class="internal" title="美国农业部下属的农业研究服务局拍摄的三头牛的照片"><img src="/images/e/e9/Rinder.jpg" alt="美国农业部下属的农业研究服务局拍摄的三头牛的照片" width="252" height="156" longdesc="/index.php/Image:Rinder.jpg" class="thumbimage" /></a>  <div class="thumbcaption">美国农业部下属的农业研究服务局拍摄的三头牛的照片</div></div></div>
+<p><b>家牛</b>，一般是人工饲养的牛，一般将它们用来作为肉、奶或皮革的来源，或使用它们的力气。
+</p><p>人类在公元前8世纪就已经开始驯养牛了。今天世界上有许多家牛种类，有些甚至是来自原牛的家牛与其他牛种（比如美洲野牛）的交配。尤其许多亚洲的家牛是来自其他牛种的。
+</p><p>另外由于驯化过程的不同，家牛也有很多不同的品种，例如：
+</p>
+<ul><li>日本和牛
+</li><li>利木赞牛
+</li><li>西门塔尔
+</li></ul>
+<p>另外有专门培养出来用于产奶的母牛，通常叫做<b>奶牛</b>（或<b>乳牛</b>）。
+</p>
+<a name=".E6.B0.B4.E7.89.9B"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=4" title="编辑段落: 水牛">编辑</a>]</span> <span class="mw-headline">水牛</span></h4>
+<p><b>水牛</b>是一种大的偶蹄动物，驯养的水牛在亚洲和美洲非常普遍。在亚洲，水牛主要用来作为劳动力；在欧洲的意大利、罗马尼亚和保加利亚它被用做奶牛或食用牛。今天在印度、尼泊尔、不丹和泰国还有野生水牛，澳大利亚北部也有野生的水牛。在东南亚的野生水牛的来历不是很清楚，它们可能是又变野的驯养的水牛的后代，也可能是本地原来就有的野生水牛的后代，或是两者的交配产物。今天野生的水牛已经相当少了。
+</p><p>水牛的分类还有争议，Mac Greger于1941年认为水牛只有一种，下分两个亚种：B. bubalus arnee（河水牛）和B. bubalus carabanesis（沼泽水牛）。其他专家将两者分为相亲的独立的种。
+</p>
+<a name=".E7.89.A6.E7.89.9B"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=5" title="编辑段落: 牦牛">编辑</a>]</span> <span class="mw-headline">牦牛</span></h4>
+<p><b>牦牛</b>，又写作犛牛（牦、犛二字音maoˊ、liˊ皆可），是一种生活在青藏高原的长毛的牛属动物，在西藏是一种被驯养的牲畜。
+</p><p>野的牦牛的肩高可达两米，驯养的牦牛一般只有一半高，野牦牛和家牦牛都有长毛来御寒，野牦牛一般是棕色或黑色的，家牦牛也有白色的。
+</p><p>牦牛主要因为它们的奶和肉而被驯养，不过当地的牧民、商人和登山者也用它们来驮运重物，往往用来驮运重物的牦牛实际上是牦牛和家牛的交种。
+</p><p>野牦牛是濒危动物。
+</p>
+<a name=".E9.87.8E.E7.89.9B"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=6" title="编辑段落: 野牛">编辑</a>]</span> <span class="mw-headline">野牛</span></h4>
+<a name=".E7.89.9B.E7.BE.9A.EF.BC.88.E5.8F.88.E7.A7.B0.E8.A7.92.E9.A9.AC.EF.BC.89"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=7" title="编辑段落: 牛羚（又称角马）">编辑</a>]</span> <span class="mw-headline">牛羚（又称角马）</span></h4>
+<p>英文写作gnu，一个著名的自由软件组织<a href="/index.php?title=GNU&amp;action=edit" class="new" title="GNU">GNU</a>就是以这种动物命名。GNU的代表标志也是这种牛。
+</p>
+<a name=".E7.89.9B.E4.BA.A7.E5.93.81"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=8" title="编辑段落: 牛产品">编辑</a>]</span> <span class="mw-headline">牛产品</span></h3>
+<a name=".E7.89.9B.E7.9A.84.E7.9B.B4.E6.8E.A5.E4.BA.A7.E5.93.81"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=9" title="编辑段落: 牛的直接产品">编辑</a>]</span> <span class="mw-headline">牛的直接产品</span></h4>
+<ul><li><b>牛粪</b>,这是一种重要的肥料。
+</li><li><b>牛奶</b>，是最古老的天然饮料之一。牛奶顾名思义是从雌性乳牛身上所挤出来的。
+<dl><dd>有一个著名的牛奶品牌叫做<b>蒙牛</b>，名字中也包括“牛”。
+</dd></dl>
+</li><li><b>牛肉</b>
+</li><li><b>牛板筋</b>
+</li><li><b>牛气管</b>
+</li><li><b>牛腰子</b>
+</li><li><b>牛肚</b>
+</li><li><b>牛鞭</b>
+</li><li><b>牛皮</b>，牛皮也指乱说的假话、空话等。
+</li><li><b>牛尾巴</b>，牛尾巴的毛也有很大的利用价值。
+</li><li><b>牛胰岛素</b>，从牛身上提取的胰岛素，或是用其他方法合成的相同的物质。胰岛素是治疗糖尿病的一种必须的非处方药品。
+</li></ul>
+<p>除此之外，牛的力气也有很大的利用价值。到今天为止在地球上许多地方家牛还被用来拉车或耕地。
+</p><p>有些牛是为了某一特定价值而培养出来的，例如肉牛和奶牛。另外不同种类的牛通常会在不同的地方有优势。
+</p>
+<a name=".E7.89.9B.E7.9A.84.E9.97.B4.E6.8E.A5.E4.BA.A7.E5.93.81"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=10" title="编辑段落: 牛的间接产品">编辑</a>]</span> <span class="mw-headline">牛的间接产品</span></h4>
+<ul><li><b>牛肉干</b>
+</li><li><b>牛肉面</b>
+</li><li><b>牛排</b>
+</li><li><b>撒尿牛丸</b>
+</li></ul>
+<p>参加下面以牛命名的物品部分。
+</p>
+<a name=".E7.89.9B.E7.B1.BB.E7.96.BE.E7.97.85"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=11" title="编辑段落: 牛类疾病">编辑</a>]</span> <span class="mw-headline">牛类疾病</span></h3>
+<p><dl style="background-color:#efe"><dd>NOCOW<b>不</b>为这些内容提供任何担保，请<b>不要</b>把这些内容作为正式医疗意见，如果要获得更多的内容或者更好的指引，请<b>咨询专业医护人员</b>。</dl>
+牛可以得疯牛病、口蹄疫、炭疽、肺结核等疾病。
+</p>
+<a name=".E7.96.AF.E7.89.9B.E7.97.85"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=12" title="编辑段落: 疯牛病">编辑</a>]</span> <span class="mw-headline">疯牛病</span></h4>
+<p>学名牛脑海绵状病（Bovine spongiform encephalopathy (BSE)），俗称疯牛病(mad cow disease)。这种疾病据信是由于朊病毒（prion）引起的，并且可以通过喂食含有疾病的动物骨粉传播。人类食用疯牛肉可能患上一种导致脑衰竭的绝症。
+</p><p>疯牛病引起过很多大面积范围乃至世界性的事件。对于受到疯牛病的一定影响（例如从爆发疯牛病的地区进口牛肉）的地区，即使可以证明出售的牛肉是健康的，也往往因为消费者信心不足而造成牛肉价格大幅度下跌，可能还会对这个地方的经济造成一定的影响。
+</p>
+<a name=".E5.8F.A3.E8.B9.84.E7.96.AB"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=13" title="编辑段落: 口蹄疫">编辑</a>]</span> <span class="mw-headline">口蹄疫</span></h4>
+<p>口蹄疫（英语Foot-and-mouth disease，有时称hoof-and-mouth disease）是牛和猪的一种非致命的病毒传染病，但是也会对动物的健康造成严重影响，并且传播的非常快，大面积爆发时也会带来严重的问题。它也可以感染鹿、山羊、绵羊和其它偶蹄动物，比如象、鼠和刺猬。马和人类感染病例则非常少。有一个原因是因为口蹄疫病毒对胃酸敏感，所以人类食用带病的肉类通常不会感染口蹄疫病毒，但是也可以通过接触带病动物而感染。在英国，最后一次确认人类患口蹄疫是在1967年。不过即使这样，因为还有患病的可能，一般人还是不愿意吃这些不健康的动物的肉的，另外患病动物会伴随着体重减轻和母牛的牛奶减少，所以口蹄疫对农畜业的影响要比对人类的影响大得多。
+</p>
+<a name=".E4.B8.96.E7.95.8C.E6.9C.80.E7.89.9B"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=14" title="编辑段落: 世界最牛">编辑</a>]</span> <span class="mw-headline">世界最牛</span></h3>
+<ul><li>最大的牛：印度野牛
+</li><li>最小的牛：低地水牛
+</li><li>海拔最高的牛：
+</li><li>繁殖能力最强的牛：
+</li><li>尾巴最长的牛：
+</li><li>犄角最尖的牛：
+</li><li>杀人最多的牛：
+</li></ul>
+<a name=".E5.85.B6.E4.BB.96.E4.BB.A5.E7.89.9B.E5.91.BD.E5.90.8D.E7.9A.84.E7.94.9F.E7.89.A9"></a><h2><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=15" title="编辑段落: 其他以牛命名的生物">编辑</a>]</span> <span class="mw-headline">其他以牛命名的生物</span></h2>
+<a name=".E5.8A.A8.E7.89.A9"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=16" title="编辑段落: 动物">编辑</a>]</span> <span class="mw-headline">动物</span></h3>
+<a name=".E7.8A.80.E7.89.9B"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=17" title="编辑段落: 犀牛">编辑</a>]</span> <span class="mw-headline">犀牛</span></h4>
+<p>犀牛是哺乳类犀科的总称，主要分布于非洲和东南亚。是最大的奇蹄目动物，也是仅次于大象体型大的陆地动物。所有的犀类基本上是腿短、体粗壮。
+现存的4属5种的犀牛除白犀牛外﹐都滨临绝种﹐其中以爪哇犀牛的数目最少﹐约50头左右﹔而黑犀牛也只有1万到3万头左右。
+</p>
+<a name=".E8.9C.97.E7.89.9B"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=18" title="编辑段落: 蜗牛">编辑</a>]</span> <span class="mw-headline">蜗牛</span></h4>
+<p>蜗牛并不是生物学上一个分类的名称。一般指大蜗牛科的所有种类动物，广义的也包括腹足纲其他科的一些动物〔包括蛞蝓等〕。一般西方语言中不区分水生的螺类和陆生的蜗牛，汉语中蜗牛只指陆生种类，虽然也包括许多不同科、属的动物，但形状都相似。
+</p>
+<a name=".E5.A4.A9.E7.89.9B"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=19" title="编辑段落: 天牛">编辑</a>]</span> <span class="mw-headline">天牛</span></h4>
+<dl><dd><div class="noprint" style="font-size:small">主条目：<a href="/index.php/%E5%A4%A9%E7%89%9B" title="天牛">天牛</a></div>
+</dd></dl>
+<p>天牛是鞘翅目天牛科昆虫的总称，全世界约有超过20,000种。
+体躯修长；有很长的触角，常常超过身体的长度，雄虫的又比雌虫长。
+</p><p>有些种类拟态成蚂蚁或黄蜂的样子，以逃避敌害。
+天牛的成虫多以植物的树皮、芽、叶等为食；幼虫生活于木材中，蛀蚀植物的茎干，因此被人类视为害虫。
+</p>
+<a name=".E7.89.9B.E8.9B.99"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=20" title="编辑段落: 牛蛙">编辑</a>]</span> <span class="mw-headline">牛蛙</span></h4>
+<a name=".E7.89.9B.E8.A7.92.E5.85.BD"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=21" title="编辑段落: 牛角兽">编辑</a>]</span> <span class="mw-headline">牛角兽</span></h4>
+<a name=".E7.89.9B.E8.99.BB"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=22" title="编辑段落: 牛虻">编辑</a>]</span> <span class="mw-headline">牛虻</span></h4>
+<a name=".E6.A4.8D.E7.89.A9"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=23" title="编辑段落: 植物">编辑</a>]</span> <span class="mw-headline">植物</span></h3>
+<a name=".E7.89.9B.E8.92.A1"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=24" title="编辑段落: 牛蒡">编辑</a>]</span> <span class="mw-headline">牛蒡</span></h4>
+<p><b>牛蒡</b>是菊科牛蒡属多年生草本植物。别名大力子。肉质根和嫩茎可以作为蔬菜食用，种子入中药为牛蒡子。中国最多见的物种是A. lappa。
+</p>
+<a name=".E7.89.B5.E7.89.9B.E8.8A.B1"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=25" title="编辑段落: 牵牛花">编辑</a>]</span> <span class="mw-headline">牵牛花</span></h4>
+<p>牵牛花是旋花科牵牛属的植物。花是漏斗状的，形状很像喇叭，所以又叫<b>喇叭花</b>。其品种很多，颜色有蓝、绯红、桃红、紫色等，也有混色的。花瓣边缘的变化比较多，是常见的观赏植物。
+</p><p><dl style="background-color:#efe"><dd>NOCOW<b>不</b>为这些内容提供任何担保，请<b>不要</b>把这些内容作为正式医疗意见，如果要获得更多的内容或者更好的指引，请<b>咨询专业医护人员</b>。</dl>
+牵牛叶子三裂，基部心型。<sup>[需要解释]</sup>花上有粗毛。花期以夏季最盛。<sup>[需要通顺]</sup>种子有药用价值，中药名为<b>牵牛子</b>。可以用来治疗水肿、痰满喘咳、便秘、蛔虫、虫、脚气等病症。孕妇、气虚脾虚者忌服。
+</p>
+<a name=".E4.B8.8E.E7.89.9B.E6.9C.89.E5.85.B3.E7.9A.84.E5.85.B6.E4.BB.96.E7.89.A9.E5.93.81"></a><h2><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=26" title="编辑段落: 与牛有关的其他物品">编辑</a>]</span> <span class="mw-headline">与牛有关的其他物品</span></h2>
+<p>这里略去了一部分牛和以牛命名的其他生物的直接产品，这些内容请参见相关章节。
+</p>
+<a name=".E6.99.AE.E9.80.9A.E5.AE.B6.E7.94.A8.E7.89.A9.E5.93.81"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=27" title="编辑段落: 普通家用物品">编辑</a>]</span> <span class="mw-headline">普通家用物品</span></h3>
+<ul><li>食物
+<ul><li>牛轧糖
+</li></ul>
+</li><li>饮料
+<ul><li>红牛
+</li></ul>
+</li><li>药物
+<ul><li>牛黄
+</li></ul>
+</li><li>生活用品
+</li><li>服饰与穿戴
+</li><li>家用电器
+</li><li>其他小型物品
+</li></ul>
+<a name=".E4.B8.93.E4.B8.9A.E7.89.A9.E5.93.81"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=28" title="编辑段落: 专业物品">编辑</a>]</span> <span class="mw-headline">专业物品</span></h3>
+<ul><li>乐器
+</li><li>文房用品及纸制品
+<ul><li>牛皮纸
+</li></ul>
+</li><li>化学药品
+</li><li>科学实验器材
+</li></ul>
+<a name=".E5.A4.A7.E5.9E.8B.E5.99.A8.E5.85.B7"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=29" title="编辑段落: 大型器具">编辑</a>]</span> <span class="mw-headline">大型器具</span></h3>
+<ul><li>交通运输工具
+<ul><li><b>木牛流马</b>
+</li></ul>
+</li><li>大型机械设备
+</li><li>兵器
+</li></ul>
+<a name=".E7.89.9B.E7.9A.84.E8.A1.A8.E7.A4.BA.E5.92.8C.E8.B1.A1.E5.BE.81"></a><h2><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=30" title="编辑段落: 牛的表示和象征">编辑</a>]</span> <span class="mw-headline">牛的表示和象征</span></h2>
+<a name=".E5.90.84.E8.AF.AD.E8.A8.80.E4.B8.AD.E7.89.9B.E7.9A.84.E5.86.99.E6.B3.95"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=31" title="编辑段落: 各语言中牛的写法">编辑</a>]</span> <span class="mw-headline">各语言中牛的写法</span></h3>
+<dl><dt>汉语</dt><dd>牛（汉语拼音：n&#237;u；注音符号：ㄋㄧㄡ&#180;）
+</dd><dt>英语</dt><dd>cattle, ox, cow（奶牛）, bull 
+</dd><dt>日语</dt><dd>ウシ
+</dd><dt>韩语</dt><dd>소
+</dd><dt>德语</dt><dd>
+</dd><dt>法语</dt><dd>
+</dd><dt>俄语</dt><dd>
+</dd></dl>
+<a name="ASCII.E8.89.BA.E6.9C.AF.E4.B8.AD.E7.9A.84.E7.89.9B"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=32" title="编辑段落: ASCII艺术中的牛">编辑</a>]</span> <span class="mw-headline">ASCII艺术中的牛</span></h3>
+<pre>((__))________?
+ (00) (_)     |
+ (oo)\___(_)__/
+      |  | vvv|
+</pre>
+<pre>((__))
+ (00)
+ (oo)
+nn--nn
+</pre>
+<a name=".E5.85.B3.E4.BA.8E.E7.89.9B.E7.9A.84.E6.96.87.E8.89.BA.E4.BD.9C.E5.93.81"></a><h2><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=33" title="编辑段落: 关于牛的文艺作品">编辑</a>]</span> <span class="mw-headline">关于牛的文艺作品</span></h2>
+<a name=".E5.85.B3.E4.BA.8E.E7.89.9B.E7.9A.84.E9.9D.99.E6.80.81.E7.BE.8E.E6.9C.AF.E4.BD.9C.E5.93.81"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=34" title="编辑段落: 关于牛的静态美术作品">编辑</a>]</span> <span class="mw-headline">关于牛的静态美术作品</span></h3>
+<a name=".E5.85.B3.E4.BA.8E.E7.89.9B.E7.9A.84.E6.AD.8C.E6.9B.B2"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=35" title="编辑段落: 关于牛的歌曲">编辑</a>]</span> <span class="mw-headline">关于牛的歌曲</span></h3>
+<ul><li><b>我是一只牛</b>，刘德华
+</li><li><b>斗牛</b>，周杰伦
+</li></ul>
+<a name=".E5.85.B3.E4.BA.8E.E7.89.9B.E7.9A.84.E5.BD.B1.E8.A7.86.E4.BD.9C.E5.93.81"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=36" title="编辑段落: 关于牛的影视作品">编辑</a>]</span> <span class="mw-headline">关于牛的影视作品</span></h3>
+<ul><li><b>鸡与牛</b>，一个卡通系列剧。
+</li><li><b>七龙珠</b>
+</li><li><b>西游记</b>
+</li></ul>
+<a name=".E5.85.B3.E4.BA.8E.E7.89.9B.E7.9A.84.E6.95.85.E4.BA.8B"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=37" title="编辑段落: 关于牛的故事">编辑</a>]</span> <span class="mw-headline">关于牛的故事</span></h3>
+<a name=".E6.8D.9E.E9.93.81.E7.89.9B"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=38" title="编辑段落: 捞铁牛">编辑</a>]</span> <span class="mw-headline">捞铁牛</span></h4>
+<a name=".E5.85.B3.E4.BA.8E.E7.89.9B.E7.9A.84.E8.99.9A.E6.9E.84.E4.BA.BA.E7.89.A9"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=39" title="编辑段落: 关于牛的虚构人物">编辑</a>]</span> <span class="mw-headline">关于牛的虚构人物</span></h3>
+<a name=".E7.89.9B.E5.A4.B4.E4.BA.BA"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=40" title="编辑段落: 牛头人">编辑</a>]</span> <span class="mw-headline">牛头人</span></h4>
+<p>魔兽系列中，牛头人种族在创造它的英语环境里称做“托伦（Tauren）”。在中文里，人们按照他们的种族外形习惯性的称他们为牛头人。
+</p><p>托伦族（Tauren）牛头人是暴雪娱乐公司著名的魔兽系列电脑游戏中的原创种族。他们是卡利姆多大陆中部草原的部落居民。虽然他们的外形与设计上的近亲，希腊神化中的牛头怪米诺陶洛斯（minotaur）十分相似，但不像邪恶牛头怪，善良的托伦族是崇尚和平的。同萨尔带领的兽人一样，牛头人也在为了保持他们高贵的传统而奋斗。
+</p>
+<a name=".E7.89.9B.E9.AD.94.E7.8E.8B"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=41" title="编辑段落: 牛魔王">编辑</a>]</span> <span class="mw-headline">牛魔王</span></h4>
+<p>牛魔王，是中国古典小说《西游记》中的人物，主要出现在孙悟空与火焰山这一篇故事中，在书中一开始称他为大力王，又自号平天大圣（为七大圣之首）。他是火焰山的主人，妻子原是罗刹女铁扇公主，有个儿子叫红孩儿。后来又与玉面狐狸在一起。孙悟空为使火焰山的火熄灭，曾变身为牛魔王向铁扇公主骗来芭蕉扇。但牛魔王技高一筹，又变成猪八戒把孙悟空的扇子给骗回来。后来是猪八戒与孙悟空合力打败他。最后哪吒太子前来收服他。
+</p>
+<a name=".E7.89.9B.E5.A4.B4.E9.A9.AC.E9.9D.A2"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=42" title="编辑段落: 牛头马面">编辑</a>]</span> <span class="mw-headline">牛头马面</span></h4>
+<p>牛头马面是中国神话中的两个鬼差，形象分别是牛头人身、马头人身，负责捉拿、带领阳寿终了的亡魂到地府，也有人说他们是负责把守地府中奈何桥的神明，生前犯罪的鬼魂通过，就推落桥下，让桥下的毒蛇、怪兽吞噬。此说法与古埃及神话中，狼头人身的地狱守门者阿努比斯相近，阿努比斯也会将不遵循正义的死者灵魂，喂给怪物阿米特。
+</p><p>牛头马面被认为是阴界神明（如东岳大帝、阎王、城隍爷）的部下，在台湾，常被尊称为牛马将军，基于中国衙役贪财的形象，有些人会向祂们烧纸钱，希望祂们不要为难自己的祖先。
+</p>
+<a name=".E4.B8.AD.E5.9B.BD.E7.89.9B.E6.96.87.E5.8C.96"></a><h2><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=43" title="编辑段落: 中国牛文化">编辑</a>]</span> <span class="mw-headline">中国牛文化</span></h2>
+<a name=".E7.94.9F.E8.82.96.E7.9A.84.E7.89.9B"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=44" title="编辑段落: 生肖的牛">编辑</a>]</span> <span class="mw-headline">生肖的牛</span></h3>
+<p>牛是中国的12生肖之一，排名第二。
+</p>
+<a name=".E5.B1.9E.E7.89.9B.E7.9A.84.E5.90.8D.E4.BA.BA"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=45" title="编辑段落: 属牛的名人">编辑</a>]</span> <span class="mw-headline">属牛的名人</span></h4>
+<ul><li><b>周笔畅</b>，中国歌手。
+</li><li><b>布雷克·罗斯</b>，Mozilla Firefox 的最初开发者
+</li><li><b>金城武</b>，演员。
+</li><li><b>李开复</b>，Microsoft --&gt; Google
+</li><li><b>刘德华</b>，香港歌手、演员
+</li><li><b>庾澄庆</b>，台湾歌手。
+</li><li><b>张学友</b>，香港歌手、演员。
+</li><li><b>戴安娜王妃</b>
+</li><li><b>龚如心</b>，香港华懋（注：这个字可能发“冃”，“愗”或者“暓”的音）集团主席，亚洲第一女富豪。
+</li><li><b>董建华</b>，中华人民共和国香港特别行政区首任行政长官。
+</li><li><b>萨达姆</b>，前伊拉克总统。
+</li><li><b>金大中</b>，前韩国总统
+</li><li><b>撒切尔夫人</b>，前英国首相
+</li><li><b>华特迪士尼</b>（Walt Disney），美国动画片画家和导演
+</li><li><b>陈毅</b>，中国军事家、政治家
+</li><li><b>张学良</b>，中国军人
+</li><li><b>裕仁</b>，日本天皇
+</li></ul>
+<a name=".E5.85.B6.E4.BB.96"></a><h5><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=46" title="编辑段落: 其他">编辑</a>]</span> <span class="mw-headline">其他</span></h5>
+<ul><li><b>刘备</b>
+</li><li><b>达赖四世</b>
+</li><li><b>班禅一世</b>
+</li><li><b>霍去病</b>
+</li><li><b>晁错</b>
+</li><li><b>范仲淹</b>
+</li><li><b>李白</b>，唐代著名诗人。
+</li><li><b>苏轼</b>
+</li><li><b>陶渊明</b>
+</li><li><b>孝庄皇后</b>
+</li><li><b>谭嗣同</b>
+</li><li><b>拿破仑</b>
+</li></ul>
+<p>等。
+</p>
+<a name=".E8.B1.A1.E5.BE.81.E6.84.8F.E4.B9.89"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=47" title="编辑段落: 象征意义">编辑</a>]</span> <span class="mw-headline">象征意义</span></h3>
+<p>牛在中国文化中是勤力的象征。
+</p>
+<a name=".E9.BE.99.E7.9A.84.E4.B9.9D.E5.AD.90.E4.B9.8B.E4.B8.80.EF.BC.9A.E5.9B.9A.E7.89.9B"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=48" title="编辑段落: 龙的九子之一：囚牛">编辑</a>]</span> <span class="mw-headline">龙的九子之一：囚牛</span></h3>
+<a name=".E5.A7.93.E6.B0.8F.E7.9A.84.E7.89.9B"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=49" title="编辑段落: 姓氏的牛">编辑</a>]</span> <span class="mw-headline">姓氏的牛</span></h3>
+<p>牛也是中国的一个姓氏，在《百家姓》中排第310位。
+</p><p>牛姓的起源主要有四种：
+</p>
+<ol><li>商纣王庶兄<b>微子</b>的后代<b>牛父</b>的子孙，以牛父的父亲的字为氏。
+</li><li>改自寮姓，也有一说那个人的祖先本来就姓牛，为避难而改姓寮。
+</li><li>有些农家终日与牛为伴，后来其中一部分就以牛为姓。
+</li><li>少数名族改用汉姓的时候，就有一部分改姓牛。
+</li></ol>
+<p>根据2006年公布的，国家自然科学基金姓氏研究项目支持下，中国科学院遗传与发育生物学研究所和深圳鼎昌实业有限公司进行的一次历时两年的调查，姓牛的人数在中国排名第98。
+</p><p>另外也有其他的关于姓氏的调查和研究，牛姓的排名通常也在第一百名左右。
+</p><p>当今姓牛的名人有：
+</p>
+<ul><li><b>牛群</b>，小品演员。
+</li><li><b>牛根生</b>，蒙牛乳业创始人。
+</li></ul>
+<a name=".E4.B8.8E.E7.89.9B.E6.9C.89.E5.85.B3.E7.9A.84.E5.90.8D.E5.AD.97"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=50" title="编辑段落: 与牛有关的名字">编辑</a>]</span> <span class="mw-headline">与牛有关的名字</span></h3>
+<p>由于牛是一个很通用的字，所以也在很多人名中使用。有的时候这些人也会被简单叫做“阿牛”，另外一些本来名字中不包括“牛”的人因为一些特殊的原因也会被叫做阿牛。有的时候，这个名字中也有暗示一个人比较勤力或是乐于奉献的意思。
+</p>
+<a name=".E5.8C.85.E6.8B.AC.E7.89.9B.E7.9A.84.E4.BA.BA.E5.90.8D"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=51" title="编辑段落: 包括牛的人名">编辑</a>]</span> <span class="mw-headline">包括牛的人名</span></h4>
+<p>比较著名的包含牛或是外号包含牛的人名有：
+</p>
+<ul><li><b>陈庆祥</b>（阿牛），马来西亚歌手。 
+</li><li><b>曾健成</b>（阿牛），香港前立法会议员。 
+</li><li><b>张无忌</b>（曾阿牛），金庸小说《倚天屠龙记》人物，曾化名“曾阿牛”
+</li><li><b>牛郎</b>，牛郎与织女是中国神话传说中的人物。
+</li></ul>
+<a name=".E4.BB.A5.E7.89.9B.E8.B1.A1.E5.BE.81.E7.9A.84.E5.85.B6.E4.BB.96.E5.90.8D.E5.AD.97"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=52" title="编辑段落: 以牛象征的其他名字">编辑</a>]</span> <span class="mw-headline">以牛象征的其他名字</span></h4>
+<p>除了人名，也有很多其他的名字中包括“牛”。其中有一部分本身就是和牛有关系的，但是也有的只是取牛的象征意义：
+</p>
+<ul><li><b>红牛</b>，饮料名。
+</li><li><b>牛轧糖</b>，一种西洋牛奶花生糖，分为软硬两种。由糖浆混合花生，再由一张可以吃的米纸包着。
+</li><li><b>牛博网</b>，一个中国大陆新兴的互联网博客网站。
+</li><li><b>牛宿</b>，二十八宿之一，北方七宿第二宿。
+</li></ul>
+<p>另外如动物、植物名称以及科学中使用的专有名称等，参见本文相应的章节。
+</p>
+<a name=".E5.85.B6.E4.BB.96.E8.AF.AD.E8.A8.80.E7.BF.BB.E8.AF.91.E6.88.90.E7.9A.84.E7.89.9B"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=53" title="编辑段落: 其他语言翻译成的牛">编辑</a>]</span> <span class="mw-headline">其他语言翻译成的牛</span></h4>
+<p>有些名字本来没有牛的意思，翻译成中文或者以中文的方式发音的话可能会变成牛：
+</p>
+<ul><li><b>Northern Illinois University</b> (<a href="http://www.niu.edu" class="external text" title="http://www.niu.edu" rel="nofollow">NIU</a>)，正好是牛的汉语拼音写法。
+</li><li><b>牛顿（Newton）</b>，著名数学、物理等多方面的科学家，晚年研究过神学。主要成就包括万有引力定律和扩展到任意实数的<a href="/index.php?title=%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86&amp;action=edit" class="new" title="二项式定理">二项式定理</a>等。
+</li></ul>
+<a name=".E7.89.A7.E7.AB.A5"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=54" title="编辑段落: 牧童">编辑</a>]</span> <span class="mw-headline">牧童</span></h3>
+<p>牧童是经常出中国封建社会时期的故事中的角色，在近代战争时期更为明显。特点通常是：
+</p>
+<ul><li>年龄比较小，是一个孩子。
+</li><li>以一头牛为伴，经常去放牛，与一头牛同时出现。
+</li></ul>
+<p>知名牧童：
+</p>
+<ul><li><b>王二小</b>：
+</li></ul>
+<a name=".E6.B1.89.E8.AF.AD.E4.B8.AD.E7.9A.84.E7.89.9B"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=55" title="编辑段落: 汉语中的牛">编辑</a>]</span> <span class="mw-headline">汉语中的牛</span></h3>
+<ul><li><b>牛</b>是中国的口头用语之一，是为“厉害”之意。有时也可以用作名词，意思是指厉害的人或其他事物。
+</li><li><b>吹牛</b>人们称呼说大话叫吹牛皮。吹牛这一俗语，来源于陕甘宁和内蒙古一带。
+</li><li><b>牛脾气</b>指固执倔强的脾气，犟脾气。
+</li><li><b>NB</b>（火星文），表示很厉害的意思，其中的N原指牛。
+</li><li><b>牛X</b>或<b>牛叉</b>，亦为“厉害”之意，可能是来自NB。
+</li><li><b>犇</b>（Unicode：U+7287，十进制为29319；GBK：A0C4，十进制为41156；发音为b&#275;n），就是三个牛，表示特别特别特别厉害，偶尔在网络等用文本表达信息的地方使用。这个字本来是“奔”的另一种写法。
+</li><li><b>牦</b>，是一种浑身长满长毛的牛科动物，可以用来指很毛的牛。
+</li><li><b>牛力</b>，形容很大的力，也形容很强的功能等，有的时候也说<b>超级牛力</b>（<b>Super Cow Power</b>），还有消极一点的<b>九牛二虎之力</b>等。
+</li><li><b>牛毛</b>，形容很细的东西，如<b>牛毛细雨</b>。
+</li><li><b>牛角尖</b>
+</li><li><b>鸡口牛后</b>
+</li></ul>
+<a name=".E5.85.B6.E4.BB.96.E5.9B.BD.E5.AE.B6.E4.B8.8E.E5.9C.B0.E5.8C.BA.E7.9A.84.E7.89.9B.E6.96.87.E5.8C.96"></a><h2><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=56" title="编辑段落: 其他国家与地区的牛文化">编辑</a>]</span> <span class="mw-headline">其他国家与地区的牛文化</span></h2>
+<a name=".E7.89.9B.E4.BB.94"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=57" title="编辑段落: 牛仔">编辑</a>]</span> <span class="mw-headline">牛仔</span></h3>
+<p>牛仔（英文：cowboy；西班牙文：vaquero）是指在美洲牧场上照顾牛、马的人。专门照顾马的人又叫牧马人（wrangler）。除了牧场里工作外，有些牛仔还参加牛仔竞技（rodeo）；不少牛仔是专业牛仔竞技参赛者。
+</p>
+<a name=".E6.96.97.E7.89.9B.E6.96.87.E5.8C.96"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=58" title="编辑段落: 斗牛文化">编辑</a>]</span> <span class="mw-headline">斗牛文化</span></h3>
+<p><a href="/index.php?title=%E6%96%97%E7%89%9B&amp;action=edit" class="new" title="斗牛">斗牛</a>，是指牛与人、牛与牛、或牛与狗间打斗的一项竞技活动。 
+</p>
+<ul><li>西班牙斗牛斗牛的西班牙语为toreo，corrida de toros 或 tauromaquia，葡萄牙语为tourada，corrida de touros 或 tauromaquia，是一项人与牛斗的运动。参与斗牛的人称为斗牛士，主要流行于西班牙、葡萄牙以及拉丁美洲，更是西班牙的国技。斗牛的历史可追溯至史前时代的牛崇拜以及壁画中。
+</li></ul>
+<p>斗牛是项很危险的运动。常有斗牛士因此受伤或死亡。
+</p>
+<ul><li>日本斗牛
+</li></ul>
+<p>日本的斗牛则是一项牛与牛斗的运动。主要依靠的是两条牛上的牛角，互相推挤比较力气。常见于爱媛县、鹿儿岛县、岛根县、冲绳、新潟县等地。
+</p>
+<a name=".E8.A5.BF.E6.96.B9.E6.96.87.E5.8C.96.E4.B8.AD.E7.9A.84.E8.B1.A1.E5.BE.81.E6.84.8F.E4.B9.89"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=59" title="编辑段落: 西方文化中的象征意义">编辑</a>]</span> <span class="mw-headline">西方文化中的象征意义</span></h3>
+<p>牛在西方文化中是财富与力量的象征，源于古埃及。股票价格持续上升被称为“牛市”。
+</p>
+<a name="NBA.E4.B8.8E.E7.89.9B"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=60" title="编辑段落: NBA与牛">编辑</a>]</span> <span class="mw-headline">NBA与牛</span></h3>
+<ul><li>芝加哥公牛
+</li></ul>
+<div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="/index.php/Image:ChicagoBulls.png" class="internal" title="芝加哥公牛LOGO"><img src="/images/thumb/8/8d/ChicagoBulls.png/180px-ChicagoBulls.png" alt="芝加哥公牛LOGO" width="180" height="180" longdesc="/index.php/Image:ChicagoBulls.png" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify" style="float:right"><a href="/index.php/Image:ChicagoBulls.png" class="internal" title="放大"><img src="/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>芝加哥公牛LOGO</div></div></div>
+<ul><li>达拉斯小牛
+</li></ul>
+<a name=".E7.89.9B.E6.B4.A5.E5.A4.A7.E5.AD.A6.E4.B8.8E.E7.89.9B"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=61" title="编辑段落: 牛津大学与牛">编辑</a>]</span> <span class="mw-headline">牛津大学与牛</span></h3>
+<a name=".E5.B0.BC.E6.B3.8A.E5.B0.94.E4.B8.8E.E7.89.9B"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=62" title="编辑段落: 尼泊尔与牛">编辑</a>]</span> <span class="mw-headline">尼泊尔与牛</span></h3>
+<p>尼泊尔王国的国兽是牛。
+</p>
+<a name=".E9.87.91.E7.89.9B.E5.BA.A7.E7.A5.9E.E8.AF.9D"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=63" title="编辑段落: 金牛座神话">编辑</a>]</span> <span class="mw-headline">金牛座神话</span></h3>
+<p><b>金牛座</b>（<b>Taurus</b>，简称<b>Tau</b>，所有格为<b>Tauri</b>）是黄道十二星座之一，象征物为牛。在占星术中，金牛宫（4月20日-5月20日）对应的就是金牛座。
+</p><p>西方神话中金牛座的来历有两种说法：
+</p>
+<ul><li>金牛座是腓尼基皇阿戈诺尔(Agenor)之女欧罗巴，她常与朋友在提尔(Tyr)的沙滩上嬉戏，宙斯要儿子赫耳墨斯(Hermes)在附近的一个小丘上放牛，而宙斯就化身为一只牛混在牛群中，宙斯乘机靠近嬉戏中的欧罗巴，由于此牛异常雪白，牛角又闪闪发光，欧罗巴深被此牛吸引，白牛亲了一下欧罗巴的手，并示意欧罗巴骑上去，欧罗巴年少无知果然中计，白牛一直载著欧罗巴渡过海洋，而且白牛狡猾地游到较深水的地方，迫使欧罗巴紧紧地抱著它，终于白牛在克里特岛(Crete)上登陆并露出其真面目，宙斯深得欧罗巴的欢心，而欧罗巴亦替宙斯诞下多个儿子，包括克里特岛皇弥诺斯(Minos)，而宙斯为了纪念此事，在天上以金牛座代表其化身的白牛。 
+</li><li>宙斯为免情人艾奥(Io)受到天后赫拉(Hera)的虐待，故把艾奥变成小牛，多疑的赫拉要阿尔戈斯(Argus)替其看守艾奥，阿尔戈斯有一百只眼，睡觉时只会闭上两只眼，绝不让艾奥离开，宙斯要赫耳墨斯向阿尔戈斯讲故事，令到阿尔戈斯打瞌睡（也有说是把阿尔戈斯杀死)，赫耳墨斯乘机放走艾奥，赫拉并未罢休，派一只牛虻去烦著小牛，最后艾奥只好跳入海中，远走高飞。 
+</li></ul>
+<p>请参见下面天文学中的<a href="#.E9.87.91.E7.89.9B.E5.BA.A7" title="">金牛座</a>一节。
+</p>
+<a name=".E4.BD.A0.E6.9C.89.E4.B8.A4.E5.A4.B4.E5.A5.B6.E7.89.9B"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=64" title="编辑段落: 你有两头奶牛">编辑</a>]</span> <span class="mw-headline">你有两头奶牛</span></h3>
+<p><b>你有两头奶牛(You have two cows)</b>是在欧美地区很流行的一连串政治笑话。这句话通常是政治经济学中举例的时候开头的一句话，一般是表示一个人在原始社会中用自己的财产（也就是两头奶牛）和其他人交换的具体情况。有一些关于政治经济学的书，不管是讲什么问题都要举个以“你有两头奶牛”开头的例子，而且大部分例子都是以“你有两头奶牛”开头。因此最后发展成了一些很常见很通用的笑话，欧美地区有时播放与真牛有关的新闻也会提到两头奶牛。
+</p><p>有一个英文下载网站<a href="http://www.tucows.com/" class="external text" title="http://www.tucows.com/" rel="nofollow">TUCOWS</a>，一般可以认为是取两头奶牛的英文写法Two Cows的谐音。可见两头奶牛的影响力之大。
+</p><p>下面是政治经济学中关于两头奶牛的描述的一些例子：
+</p>
+<dl><dt>无政府主义</dt><dd>你有两头奶牛。邻居偷走你的一头奶牛，政府完全不管。 
+</dd><dt>社会主义</dt><dd>你有两头奶牛。政府征收你一头奶牛，转送给其他人。 
+</dd><dt>共产主义</dt><dd>你有两头奶牛。政府征收你两头奶牛，只给你一部分牛奶。 
+</dd><dt>极权主义</dt><dd>你有两头奶牛。政府没收你两头奶牛并否认它们曾经存在，也不会给你牛奶。 
+</dd><dt>资本主义</dt><dd>你有两头奶牛。你卖了一头奶牛，用得到的钱买了一头公牛。
+</dd><dt>法西斯主义</dt><dd>你有两头奶牛。政府射杀你其中一头奶牛，又卖给你另一头奶牛。 
+</dd><dt>虚无主义</dt><dd><a href="/index.php/NOCOW" title="NOCOW">根本就没有甚么奶牛</a>。 
+</dd><dt>纳粹主义</dt><dd>你有两头奶牛。政府征收你两头奶牛，再将你射杀。 
+</dd></dl>
+<p>这些内容通过一些比喻而避免了不好证明的问题，直接夸大一种制度的缺点，可以说是政治宣传上的一种投机取巧的方法。不过当然也有很多人持有相反的看法，也以同样的方法表示出来，比如：
+</p>
+<dl><dt>无政府主义</dt><dd>你有两头奶牛。有一天有个人偷了一头牛，所有的人拒绝和他进行任何交易，直到这个人不得不道歉赔偿为止。
+</dd><dt>社会主义</dt><dd>有人有一万头奶牛。政府征收他的两千头奶牛，并发给你两头牛的牛奶。
+</dd><dt>共产主义</dt><dd>你有两头奶牛。你的牛有一天突然意外死亡，你从新生小牛的人家无偿的领了一头新的牛。
+</dd><dt>极权主义</dt><dd>
+</dd><dt>资本主义</dt><dd>你有两头奶牛。你由于一些意外情况需要钱，不得不向你的邻居卖了两头奶牛，过了几天你以二倍的价格买回了其中的一头牛。
+</dd><dt>法西斯主义</dt><dd>
+</dd><dt>虚无主义</dt><dd><a href="/index.php/NOCOW" title="NOCOW">根本就没有甚么奶牛</a>。从此你还是和以前一样，什么也没有发生。
+</dd><dt>纳粹主义</dt><dd>你有两头奶牛。你的一头奶牛得了一种没有迹象表明会传染的病，但是政府还是强行将这头牛射杀，并补偿给你了另外一头牛。
+</dd></dl>
+<a name=".E4.BF.A1.E6.81.AF.E7.A7.91.E5.AD.A6.E6.8A.80.E6.9C.AF.E4.B8.8E.E8.AE.A1.E7.AE.97.E6.9C.BA.E4.B8.AD.E7.9A.84.E7.89.9B"></a><h2><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=65" title="编辑段落: 信息科学技术与计算机中的牛">编辑</a>]</span> <span class="mw-headline">信息科学技术与计算机中的牛</span></h2>
+<a name="OI.E7.95.8C.E5.AF.B9.E4.BA.BA.E7.9A.84.E7.A7.B0.E5.8F.B7"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=66" title="编辑段落: OI界对人的称号">编辑</a>]</span> <span class="mw-headline">OI界对人的称号</span></h3>
+<dl><dd><div class="noprint" style="font-size:small">主条目：<a href="/index.php?title=%E5%A4%A7%E7%89%9B&amp;action=edit" class="new" title="大牛">大牛</a></div>
+</dd></dl>
+<p>即取中国口语中牛的名词意思（特别厉害的人或物），不过一般是指<a href="/index.php/OI" title="OI">OI</a>界的人。<a href="/index.php/OIer" title="OIer">OIer</a>一般把牛当名词用就是指很厉害的OIer。当然有的时候可能也会认为别人人品太差而不配做牛。
+</p><p>牛并没有一个具体的定义，每个人往往有一个自己的标准，但是对于特别牛的大牛，否认这是牛可能会遭到大家反对和谴责。总而言之，<b>牛</b>一般就是指比较厉害或者公认比较厉害，而且人品方面比较配做牛的人。
+</p><p>牛也经常被叫做<b><a href="/index.php?title=%E5%A4%A7%E7%89%9B&amp;action=edit" class="new" title="大牛">大牛</a></b>，相对来说更厉害的牛可以被叫做<b><a href="/index.php/%E5%A4%A9%E7%89%9B" title="天牛">天牛</a></b>、<b><a href="/index.php?title=%E7%A5%9E%E7%89%9B&amp;action=edit" class="new" title="神牛">神牛</a></b>等。另外也有<b><a href="/index.php/%E5%B7%A8%E7%89%9B" title="巨牛">巨牛</a></b>这种说法，意即巨大的牛，也可以当形容词表示特别厉害的意思。另外也有牛头人、牛头人酋长等说法，不过一般不作为正式称呼。
+</p><p>牛或者大牛也可以加在被称作牛的人的ID、真名或其缩写、简写后面，作为对其的比较尊敬的称呼。而大牛很少用在一个字的名字或简称后面，同时越来越多的人都有了一个字的简称，所以某某牛这个称呼也越来越流行，如鱼牛、奶牛（这种情况的的唯一条件是他的真名或id中有“奶”“乃”或者其他相近的字）。
+</p><p>另外，喜欢灌水或者闲聊的牛叫做<b><a href="/index.php?title=%E6%B0%B4%E7%89%9B&amp;action=edit" class="new" title="水牛">水牛</a></b>，但是水牛并不一定都和灌水有关系，如果ID或者名字中含有“水”字，也可以由上面的原因被称作“水牛”。女性的牛叫做<b><a href="/index.php?title=%E6%AF%8D%E7%89%9B&amp;action=edit" class="new" title="母牛">母牛</a></b>，母牛的标准通常比一般说的牛低，但是一旦有符合标准的母牛通常在所有的牛中也是排名很高的。由于大多数牛是男性的，一般不会有人说“公牛”。
+</p>
+<a name=".E5.86.9C.E5.A4.AB.E7.BA.A6.E7.BF.B0.E4.B8.8E.E7.89.9B.E7.B3.BB.E5.88.97.E9.A2.98.E7.9B.AE"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=67" title="编辑段落: 农夫约翰与牛系列题目">编辑</a>]</span> <span class="mw-headline">农夫约翰与牛系列题目</span></h3>
+<dl><dd><div class="noprint" style="font-size:small">主条目：<a href="/index.php?title=%E5%86%9C%E5%A4%AB%E7%BA%A6%E7%BF%B0%E4%B8%8E%E7%89%9B&amp;action=edit" class="new" title="农夫约翰与牛">农夫约翰与牛</a></div>
+</dd></dl>
+<p><b>农夫约翰与牛</b>是一系列的程序设计题目，写了农夫约翰与他养的奶牛之间的故事。有时也会提到约翰的朋友Ron<sup>[需要证实]</sup>，以及其中一个特别的牛<sup>[需要证实]</sup>Bessie。这之中的牛往往是拟人化的，通常拥有一些智能以及和人类似的行为方式。这些也不一定会在题目中显现出来，有时也会表示牛的智能比人类低，但是不会说明牛没有智能或只有低级生物的智能。例如不会说“牛之间不会用语言交流”，但是可以说“约翰无法理解牛所用的语言”。
+</p><p><a href="/index.php/USACO" title="USACO">USACO</a>中关于约翰与牛的题目最多，同时USACO中绝大多数题目都是关于约翰与牛的。包括其题库以及竞赛中的题目。一般不管什么题目，都会套上一个和牛有关的背景，另外一个有管理或者敌对身份的人就是约翰。USACO的标志也是牛。另外在USACO发给注册用户的邮件中，往往会包括用ASCII符号画出来的牛。
+</p><p>非英文的题目有的时候也会使用约翰与牛的背景（毕竟牛通常不是作为宠物存在的，而且关于牛的题目比生物学分类中同属一个科的羊要多得多），而其中用到的名字也可能有改动，例如有些汉语题目中把农夫约翰的名字改成了“<b><a href="/index.php?title=%E5%88%98%E6%B1%9D%E4%BD%B3&amp;action=edit" class="new" title="刘汝佳">佳佳</a></b>”。名字改动过的约翰与牛题目往往不被算作这一系列的题目之一，但是显然是受约翰与牛系列的题目影响过。
+</p><p>在美国举办的IOI2003的图标中也出现了牛的图案，并且题目描述也与本系列类似，可以看作是农夫约翰与牛系列题目在国际赛场的延伸版本。
+</p>
+<a name="NOCOW"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=68" title="编辑段落: NOCOW">编辑</a>]</span> <span class="mw-headline">NOCOW</span></h3>
+<dl><dd><div class="noprint" style="font-size:small">主条目：<a href="/index.php/NOCOW" title="NOCOW">NOCOW</a></div>
+</dd></dl>
+<div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="/index.php/Image:NOCOW_ASCII.PNG" class="internal" title="ASCII中的NOCOW，作者：Cdwind"><img src="/images/thumb/d/d9/NOCOW_ASCII.PNG/180px-NOCOW_ASCII.PNG" alt="ASCII中的NOCOW，作者：Cdwind" width="180" height="241" longdesc="/index.php/Image:NOCOW_ASCII.PNG" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify" style="float:right"><a href="/index.php/Image:NOCOW_ASCII.PNG" class="internal" title="放大"><img src="/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>ASCII中的NOCOW，作者：<a href="/index.php/User:Cdwind" title="User:Cdwind">Cdwind</a></div></div></div>
+<p><b>NOCOW</b>是一个基于wiki的程序设计网络知识库。目标是包括算法和数据结构、编程语法、库使用以及程序结构等一切关于信息学的知识。未来可能还会涉及IT界新闻等相关领域。<b>NOCOW</b>的名字的一个意思就取自no cow，即<b>无牛</b>。
+</p><p>NOCOW具有wiki的开放、人人可编辑等特点，主要使用<a href="/index.php/GNU_FDL" title="GNU FDL">GNU FDL</a>版权发布。但是NOCOW同样也会吸收一部分其他版权的内容。其中GFDL的部分是NOCOW的主要目标，而其他内容通常作为补充或是表达个人想法之用。当然这些内容由于不能随便编辑，管理人员认为无价值或是侵权的内容可能会直接删除。
+</p><p>目前，NOCOW的用户大部分都是参加或者曾经参加<a href="/index.php?title=%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%A5%A5%E6%9E%97%E5%8C%B9%E5%85%8B%E7%AB%9E%E8%B5%9B&amp;action=edit" class="new" title="信息学奥林匹克竞赛">信息学奥林匹克竞赛</a>的学生，所以内容以<a href="/index.php/%E7%AE%97%E6%B3%95" title="算法">算法</a>和<a href="/index.php/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" title="数据结构">数据结构</a>以及相关练习题目的解答为主，另外对于程序代码，也会偏向于使用Pascal和C++语言，而缺少其他语言的内容。不过对于算法和数据结构的内容，通常只要能理解思想，可以用同一计算机模型上的任何语言表达出来。写关于算法数据结构的条目的时候，也应该尽量避免在代码范例以外的部分使用程序代码。
+</p>
+<a name="GNU"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=69" title="编辑段落: GNU">编辑</a>]</span> <span class="mw-headline">GNU</span></h3>
+<dl><dd><div class="noprint" style="font-size:small">主条目：<a href="/index.php?title=GNU&amp;action=edit" class="new" title="GNU">GNU</a></div>
+</dd></dl>
+<div class="thumb tleft"><div class="thumbinner" style="width:182px;"><a href="/index.php/Image:Heckert_gnu_big.png" class="internal" title="GNU的代表标志-牛羚"><img src="/images/thumb/0/03/Heckert_gnu_big.png/180px-Heckert_gnu_big.png" alt="GNU的代表标志-牛羚" width="180" height="176" longdesc="/index.php/Image:Heckert_gnu_big.png" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify" style="float:right"><a href="/index.php/Image:Heckert_gnu_big.png" class="internal" title="放大"><img src="/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>GNU的代表标志-牛羚</div></div></div>
+<p>GNU是一个著名的<a href="/index.php?title=%E8%87%AA%E7%94%B1%E8%BD%AF%E4%BB%B6&amp;action=edit" class="new" title="自由软件">自由软件</a>组织，其目的是完成一个自由的<a href="/index.php?title=%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&amp;action=edit" class="new" title="操作系统">操作系统</a>（这种操作系统通常被叫做<a href="/index.php?title=Linux&amp;action=edit" class="new" title="Linux">Linux</a>）。GNU及其发起人可以看成是自由软件界的领袖。
+</p><p>GNU的名字及其标志也是一种牛科动物，中文一般叫做<b>牛羚</b>或是<b>角马</b>。
+</p><p>GNU的<a href="/index.php?title=GNU%E9%80%9A%E7%94%A8%E5%85%AC%E5%85%B1%E8%AE%B8%E5%8F%AF%E8%AF%81&amp;action=edit" class="new" title="GNU通用公共许可证">GNU通用公共许可证</a>以及<a href="/index.php?title=GNU%E5%AE%BD%E9%80%9A%E7%94%A8%E5%85%AC%E5%85%B1%E8%AE%B8%E5%8F%AF%E8%AF%81&amp;action=edit" class="new" title="GNU宽通用公共许可证">GNU宽通用公共许可证</a>是GNU的主要贡献之一。通过这些版权，崇尚自由的软件作者可以专心写程序而不用过多的考虑版权问题。同时，这些版权也帮助软件作者破除了一些错误的思想，例如，很多以前的开源软件作者都是要求“非商业使用”的，而带有这个限制的软件很难组建成非常流行的操作系统，即使通过这些软件组建成了操作系统，硬件厂商想要在出售的计算机中预装这些操作系统时也会遇到麻烦。
+</p><p>另外GNU也做了很多其他的宣传工作，以及告诉其他人什么才是软件界中的自由。同时GNU还在帮助协调整个自由软件计划，并负责开发一些很需要但是没人开发的软件。而大部分其他实用的自由软件并不是由GNU本身开发的，但是根据GNU的版权，任何其他人或组织，包括操作系统的组建者，都可以以任何方式使用这些软件，这样就出现了自由的操作系统，也就达到了GNU的目的。
+</p><p>GNU并不拥有不是自己开发的自由软件和操作系统的所有权，但是由于版权规定所有者不能收回所有的权利，并且其他人在任何时候都可以改用新版的GNU版权发布这些内容，所以GNU在事实上控制着这些软件的版权（但是仍然不能收回旧版版权中的权利，如果更改权利，在过去拿到了软件的<a href="/index.php?title=%E6%BA%90%E7%A8%8B%E5%BA%8F&amp;action=edit" class="new" title="源程序">源程序</a>的人可以用以前的版权继续发布这些内容。）
+</p><p>GNU的另一个版权：<a href="/index.php/GNU%E8%87%AA%E7%94%B1%E6%96%87%E6%A1%A3%E8%AE%B8%E5%8F%AF%E8%AF%81" title="GNU自由文档许可证">GNU自由文档许可证</a>，在是不是真的自由的方面引起了很大的争议。新版的<a href="/index.php?title=GNU%E9%80%9A%E7%94%A8%E5%85%AC%E5%85%B1%E8%AE%B8%E5%8F%AF%E8%AF%81&amp;action=edit" class="new" title="GNU通用公共许可证">GNU通用公共许可证</a>草案中的反<a href="/index.php?title=DRM&amp;action=edit" class="new" title="DRM">DRM</a>条款也有很大的反对意见。
+</p>
+<a name="cowsay.E4.B8.8E.E8.B6.85.E7.BA.A7.E7.89.9B.E5.8A.9B"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=70" title="编辑段落: cowsay与超级牛力">编辑</a>]</span> <span class="mw-headline">cowsay与超级牛力</span></h3>
+<p>超级牛力是Debian系统中的一股神秘的力量。
+</p><p>说白了就是设计师的娱乐，也就是复活节彩蛋程序（Easter Eggs），让某些程序呣呣叫。曾经有人由于“超级牛力”没有任何文件说明而回报bug，然而基于娱乐价值，这些指令显然不会纳入文档，而继续保持神秘，好让新手丈二金刚摸不着头脑直到发现这些复活节彩蛋，捧腹大笑。更好笑的是aptitude宣称没有超级牛力，大概直到黑客深究源程序代码才会发现神秘的蛇吞象。还有一些非套件系统专用的程序含有此类冷笑话，请翻一下源程序代码。
+</p><p>debian的apt-get命令的说明中写着：<i>本apt有着超级牛力。</i>在debian或者基于debian的系统中，在命令行里输入apt-get moo，会出现一头牛的ASCII图案。另外aptitude的说明中宣称<i>这个aptitude没有超级牛力。</i>输入aptitude moo和若干个-v时，也会提示“本程序中没有复活节彩蛋”或者其他的特殊内容。
+</p>
+<a name=".E6.98.9F.E9.99.85.E4.BA.89.E9.9C.B8.E7.A7.98.E7.B1.8D"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=71" title="编辑段落: 星际争霸秘籍">编辑</a>]</span> <span class="mw-headline">星际争霸秘籍</span></h3>
+<p>著名游戏StarCraft中有一条秘籍：“There is NO COW level”，可以用来直接通关。
+</p>
+<a name=".E5.85.B6.E4.BB.96.E7.A7.91.E5.AD.A6.E4.B8.AD.E7.9A.84.E7.89.9B"></a><h2><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=72" title="编辑段落: 其他科学中的牛">编辑</a>]</span> <span class="mw-headline">其他科学中的牛</span></h2>
+<a name=".E6.95.B0.E5.AD.A6.E4.B8.8E.E7.89.9B"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=73" title="编辑段落: 数学与牛">编辑</a>]</span> <span class="mw-headline">数学与牛</span></h3>
+<a name=".E7.BE.A4.E7.89.9B.E9.97.AE.E9.A2.98"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=74" title="编辑段落: 群牛问题">编辑</a>]</span> <span class="mw-headline">群牛问题</span></h4>
+<p>阿基米德群牛问题
+</p>
+<a name=".E7.89.9B.E5.90.83.E8.8D.89.E9.97.AE.E9.A2.98"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=75" title="编辑段落: 牛吃草问题">编辑</a>]</span> <span class="mw-headline">牛吃草问题</span></h4>
+<p>牛顿牛吃草问题
+</p>
+<a name=".E7.89.A9.E7.90.86.E5.AD.A6.E4.B8.8E.E7.89.9B"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=76" title="编辑段落: 物理学与牛">编辑</a>]</span> <span class="mw-headline">物理学与牛</span></h3>
+<a name=".E5.8A.9B.E7.9A.84.E5.8D.95.E4.BD.8D.E7.89.9B.E9.A1.BF"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=77" title="编辑段落: 力的单位牛顿">编辑</a>]</span> <span class="mw-headline">力的单位牛顿</span></h4>
+<p>在物理中<b>牛顿</b>是力的国际标准单位，英文符号是N，在中文里简称“牛”。这之中的牛不存在象征意义，但是音译成中文之后发音就是牛顿，正好包括牛。
+</p><p>1牛顿=1千克·米/平方秒（1N=1kgm/s<sup>2</sup>），表示可以使1千克的质量获得1米/平方秒的加速度的力。这是因为力的作用会按质量分解到每一部分并产生同样的效果。同时质量和加速度趋向的乘积可以互相抵消，所以被叫做“力”。而万有引力的作用效果事实上是不依赖于质量的，没有质量的光也可以同样被吸引，并获得同样的加速度。除了万有引力，其他已知的力（电弱力、强力）都只对特定的粒子起作用。
+</p>
+<a name=".E5.8C.96.E5.AD.A6.E4.B8.8E.E7.89.9B"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=78" title="编辑段落: 化学与牛">编辑</a>]</span> <span class="mw-headline">化学与牛</span></h3>
+<a name=".E7.94.9F.E7.89.A9.E5.AD.A6.E3.80.81.E5.8C.BB.E5.AD.A6.E4.B8.8E.E7.89.9B"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=79" title="编辑段落: 生物学、医学与牛">编辑</a>]</span> <span class="mw-headline">生物学、医学与牛</span></h3>
+<a name=".E7.BB.93.E6.99.B6.E7.89.9B.E8.83.B0.E5.B2.9B.E7.B4.A0"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=80" title="编辑段落: 结晶牛胰岛素">编辑</a>]</span> <span class="mw-headline">结晶牛胰岛素</span></h4>
+<a name=".E5.93.B2.E5.AD.A6.E4.B8.8E.E7.89.9B"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=81" title="编辑段落: 哲学与牛">编辑</a>]</span> <span class="mw-headline">哲学与牛</span></h3>
+<a name=".E6.94.BF.E6.B2.BB.E7.BB.8F.E6.B5.8E.E5.AD.A6.E4.B8.8E.E7.89.9B"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=82" title="编辑段落: 政治经济学与牛">编辑</a>]</span> <span class="mw-headline">政治经济学与牛</span></h3>
+<p>参见上面的<a href="#.E4.BD.A0.E6.9C.89.E4.B8.A4.E5.A4.B4.E5.A5.B6.E7.89.9B" title="">你有两头奶牛</a>。
+</p><p>另外，《资本论》的作者卡尔·马克思是金牛座的。
+</p>
+<a name=".E5.A4.A9.E6.96.87.E4.B8.AD.E7.9A.84.E7.89.9B"></a><h2><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=83" title="编辑段落: 天文中的牛">编辑</a>]</span> <span class="mw-headline">天文中的牛</span></h2>
+<a name=".E7.89.9B.E9.83.8E.E6.98.9F"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=84" title="编辑段落: 牛郎星">编辑</a>]</span> <span class="mw-headline">牛郎星</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="/index.php/Image:PIA04204.jpg" class="internal" title="NASA拍摄的牛郎星(Altair)图片"><img src="/images/thumb/f/fb/PIA04204.jpg/180px-PIA04204.jpg" alt="NASA拍摄的牛郎星(Altair)图片" width="180" height="180" longdesc="/index.php/Image:PIA04204.jpg" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify" style="float:right"><a href="/index.php/Image:PIA04204.jpg" class="internal" title="放大"><img src="/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>NASA拍摄的牛郎星(Altair)图片</div></div></div>
+<p><b>牛郎星</b>，河鼓二(Altair)，即“天鹰座α”，又叫“牵牛”或“大将军”。
+</p><p>全天的第十二亮星，白色，星等0.77，距离16.3光年。光度约为太阳的8倍，表面温度约7000摄氏度。它和天鹰座β、γ星的连线正指向织女星。
+</p><p>位置是赤经19时48.3分，赤纬8度44分。
+</p><p><b>牛郎星</b>的命名和中国神话中的牛郎有关。
+</p>
+<a name=".E9.87.91.E7.89.9B.E5.BA.A7"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=85" title="编辑段落: 金牛座">编辑</a>]</span> <span class="mw-headline">金牛座</span></h3>
+<a name=".E5.A4.A9.E6.96.87.E5.AD.A6.E4.B8.AD.E7.9A.84.E9.87.91.E7.89.9B.E5.BA.A7"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=86" title="编辑段落: 天文学中的金牛座">编辑</a>]</span> <span class="mw-headline">天文学中的金牛座</span></h4>
+<p>金牛座，天文符号♉，黄道星座之一。它是北半球冬季夜空上最大、最显著的星座之一。西边是白羊座，东边是双子座，北边是英仙座、柏修斯和御夫座，西南面是猎户座奥瑞恩<sup>[需要解释]</sup>，东南面是波江座和鲸鱼座。其中橙红色的毕宿五是天空中少数的一等星之一。
+</p><p>金牛座的命名和其形状比较像牛有关。传统上代表牛角之一的五车五是金牛座与御夫座共有的。
+</p><p>金牛座中有两个明亮的星团：
+</p>
+<dl><dt>昴星团</dt><dd>又叫七姊妹星团，是最著名的疏散星团之一；
+</dd><dt>毕宿星团</dt><dd>同样是肉眼可见，包含了组成金牛头部的V形的星。它是已知的最接近太阳系的星团。
+</dd></dl>
+<p>金牛座中还有一个深空天体就是位于ζ星东北面的M1蟹状星云，就是1054年7月4日的超新星爆发后剩下的超新星残骸。
+</p>
+<a name=".E9.87.91.E7.89.9B.E5.BA.A7.E6.B5.81.E6.98.9F.E9.9B.A8"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=87" title="编辑段落: 金牛座流星雨">编辑</a>]</span> <span class="mw-headline">金牛座流星雨</span></h4>
+<a name=".E5.8D.A0.E6.98.9F.E6.9C.AF.E4.B8.8E.E9.87.91.E7.89.9B.E5.BA.A7"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=88" title="编辑段落: 占星术与金牛座">编辑</a>]</span> <span class="mw-headline">占星术与金牛座</span></h4>
+<p><b>占星术</b>是用天体的相对位置和相对运动（尤其是太阳系内的行星的位置）来解释或预言人的命运和行为的系统。通常被认为是一种<b>伪科学</b>。在世界上绝大多数的文化中，人们都曾经或至今仍然相信天文现象对人有影响。这就出现了占星术。
+</p><p>西方占星术发源于美索不达米亚地区。到了前2778年，埃及人认识到了天狼星上升与尼罗河大水之间的关系，曾试图通过天狼星的位置来推断政治的发展。后来在巴比伦的影响下将黄道分为十二个星座。至今西方占星术还有很多信奉者，也有各种各样的教派，有时会因为一些问题互相争吵不休。占星术在中国大陆、香港地区被娱乐化，叫做<b>星座</b>，网站会定期发布不同星座的每周、每日运程，比较不同星座之间的处事方式等。
+</p><p>金牛座的黄道带时间是4月20日到5月20日，太阳所在星座时间为5月14日到6月19日，一般说的星座通常指的是黄道带时间（即没有蛇夫座）。
+</p><p>金牛座代表人的幼儿阶段，代表的人体部位为颈、喉咙，性格是谨慎、温和、务实。
+</p><p>在占星术中，金牛座就像其名字一样，物质上的占有欲很强，同时在十二星座中是最勤奋刻苦和坚韧不拔的，做决定时会考虑的很全面，如果一旦做了决定，轻易不会改变。天生有着一点忧郁和压抑，如果累积到很强的程度也会爆发出来。同时金牛座认为爱情、美丽和富有带来的喜悦也是生命存在的意义，而且为此会选择最安全、确实的方法，但是金牛座很少会自己产生新的思想。<sup>[需要中立性修正]（<a href="/index.php/Talk:%E7%89%9B" title="Talk:牛">讨论</a>）</sup>金牛座对朋友特别的忠实，善解人意，因此和金牛座的友情往往能持续一生。做事都特别讲究规则和合理性，喜欢新理念并会花时间去接触和了解。
+</p><p>这些内容往往对不同的人有不同的解释，所以占星术和其他占卜方法往往能在心理学上帮助人认清自己，而并没有适合每一个人的具体理论。
+</p>
+<a name=".E9.87.91.E7.89.9B.E5.BA.A7.E5.90.8D.E4.BA.BA"></a><h4><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=89" title="编辑段落: 金牛座名人">编辑</a>]</span> <span class="mw-headline">金牛座名人</span></h4>
+<p>金牛座的名人有：
+</p>
+<ul><li><b>苏格拉底</b>，著名古希腊哲学家，据记载作为雅典公民，被雅典法庭以不信神和腐蚀雅典青年思想的罪名被判处死刑，当时他有逃亡的机会，但是由于他认为逃亡只会进一步破坏雅典法律的权威，仍然选择饮下毒堇汁而死。
+</li><li><b>梵高</b>，荷兰画家，印象派的代表人物，强调感情的宣泄，而对现实并不一定作出如实的反映。
+</li><li><b>莎士比亚</b>，一般认为是英国最杰出的诗人和剧作家，共创作了38部剧本和154首十四行诗，他不但创造了许多最催人泪下的悲剧，他的很多出喜剧也是在英国舞台上曾经上演过的所有戏剧中最引人发笑的。其诗歌也不只是单纯的叙述，而能触及人类本性中最深层的部分，因此被很多人认为是英国文学史上的佳作。
+</li><li><b>马克思</b>，马克思主义的创始人，德国犹太人，主要著作有《资本论》、《共产党宣言》等，是无产阶级运动中的精神领袖，支持他的理论的人被视为马克思主义者。马克思大胆的假设，资本主义终将被社会主义和共产主义取代。马克思过世几年后的十九世纪末，其哲学思想迅速的传遍各地。社会主义成为欧洲先进国家政经改革的趋势。之后，马克思主义也派分成为以伯恩斯坦为中心的非革命派（又称修正主义派）与以列宁最为著名的革命派。但马克思主义在今天仍然是理论性的学说。
+</li><li><b>列宁</b>，马克思主义者，支持革命派思想，列宁主义的提出者。原名为弗拉基米尔·伊里奇·乌里扬诺夫（Владимир Ильич Ульянов），列宁是他参加革命后的化名。
+</li><li><b>尼克松</b>，前美国总统。
+</li><li><b>保罗二世</b>，现任教皇。
+</li><li><b>伊丽莎白二世</b>，英国女王。
+</li><li><b>欧文</b>
+</li><li><b>皮埃尔·居里</b>
+</li><li><b>弗洛伊德</b>，精神分析学家。另外<a href="/index.php/Floyd-Warshall%E7%AE%97%E6%B3%95" title="Floyd-Warshall算法">Floyd-Warshall算法</a>的发明人之一也叫做弗洛伊德，但是不是同一个人。
+</li><li><b>莫尔斯</b>，莫尔斯电报码的发明人。
+</li><li><b>巴尔扎克</b>
+</li><li><b>达芬奇</b>
+</li><li><b>贝克汉姆</b>
+</li><li><b>周润发</b>
+</li><li><b>李敖</b>
+</li></ul>
+<p>等。
+</p>
+<a name=".E7.89.9B.E5.AE.BF"></a><h3><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=90" title="编辑段落: 牛宿">编辑</a>]</span> <span class="mw-headline">牛宿</span></h3>
+<a name=".E5.9C.B0.E7.90.86.E4.B8.8A.E7.9A.84.E7.89.9B"></a><h2><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=91" title="编辑段落: 地理上的牛">编辑</a>]</span> <span class="mw-headline">地理上的牛</span></h2>
+<ul><li><b>牛栏山</b>（北京市顺义区镇名）
+</li></ul>
+<a name=".E5.90.83.E7.9A.84.E7.89.9B"></a><h2><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=92" title="编辑段落: 吃的牛">编辑</a>]</span> <span class="mw-headline">吃的牛</span></h2>
+<p><a href="/index.php/Image:%E5%90%83%E7%9A%84%E7%89%9B.jpg" class="image" title="Image:吃的牛.jpg"><img src="/images/4/45/%E5%90%83%E7%9A%84%E7%89%9B.jpg" alt="Image:吃的牛.jpg" width="500" height="375" longdesc="/index.php/Image:%E5%90%83%E7%9A%84%E7%89%9B.jpg" /></a>
+</p>
+<a name=".E5.8F.82.E8.A7.81"></a><h2><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=93" title="编辑段落: 参见">编辑</a>]</span> <span class="mw-headline">参见</span></h2>
+<ul><li><a href="/index.php?title=%E5%A4%A7%E7%89%9B&amp;action=edit" class="new" title="大牛">大牛</a>
+</li><li><a href="/index.php/%E5%B7%A8%E7%89%9B" title="巨牛">巨牛</a>
+</li><li><a href="/index.php/%E5%A4%A9%E7%89%9B" title="天牛">天牛</a>
+</li><li><a href="/index.php?title=%E7%A5%9E%E7%89%9B&amp;action=edit" class="new" title="神牛">神牛</a>
+</li><li><a href="/index.php?title=%E6%B0%B4%E7%89%9B&amp;action=edit" class="new" title="水牛">水牛</a>
+</li><li><a href="/index.php?title=%E6%AF%8D%E7%89%9B&amp;action=edit" class="new" title="母牛">母牛</a>
+</li><li><a href="/index.php/%E5%A4%A7%E7%89%9B%E4%BB%8B%E7%BB%8D" title="大牛介绍">大牛介绍</a>（也包括巨牛、天牛、神牛等的介绍，当然也包括母牛）
+</li></ul>
+<a name=".E5.A4.96.E9.83.A8.E9.93.BE.E6.8E.A5"></a><h2><span class="editsection">[<a href="/index.php?title=%E7%89%9B&amp;action=edit&amp;section=94" title="编辑段落: 外部链接">编辑</a>]</span> <span class="mw-headline">外部链接</span></h2>
+<ul><li>部分来自<a href="http://zh.wikipedia.org/" class="external text" title="http://zh.wikipedia.org/" rel="nofollow">维基百科</a>中的<a href="http://zh.wikipedia.org/wiki/%E7%89%9B" class="external text" title="http://zh.wikipedia.org/wiki/%E7%89%9B" rel="nofollow">牛</a>，使用<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL">GFDL</a>版权发布。
+</li><li>部分来自<a href="http://zh.wikipedia.org/" class="external text" title="http://zh.wikipedia.org/" rel="nofollow">维基百科</a>中的<a href="http://zh.wikipedia.org/wiki/水牛" class="external text" title="http://zh.wikipedia.org/wiki/水牛" rel="nofollow">水牛</a>，使用<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL">GFDL</a>版权发布。
+</li><li>部分来自<a href="http://zh.wikipedia.org/" class="external text" title="http://zh.wikipedia.org/" rel="nofollow">维基百科</a>中的<a href="http://zh.wikipedia.org/wiki/牦牛" class="external text" title="http://zh.wikipedia.org/wiki/牦牛" rel="nofollow">牦牛</a>，使用<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL">GFDL</a>版权发布。
+</li><li>部分来自<a href="http://zh.wikipedia.org/" class="external text" title="http://zh.wikipedia.org/" rel="nofollow">维基百科</a>中的<a href="http://zh.wikipedia.org/wiki/犀科" class="external text" title="http://zh.wikipedia.org/wiki/犀科" rel="nofollow">犀科</a>，使用<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL">GFDL</a>版权发布。
+</li><li>部分来自<a href="http://zh.wikipedia.org/" class="external text" title="http://zh.wikipedia.org/" rel="nofollow">维基百科</a>中的<a href="http://zh.wikipedia.org/wiki/蜗牛" class="external text" title="http://zh.wikipedia.org/wiki/蜗牛" rel="nofollow">蜗牛</a>，使用<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL">GFDL</a>版权发布。
+</li><li>部分来自<a href="http://zh.wikipedia.org/" class="external text" title="http://zh.wikipedia.org/" rel="nofollow">维基百科</a>中的<a href="http://zh.wikipedia.org/wiki/天牛" class="external text" title="http://zh.wikipedia.org/wiki/天牛" rel="nofollow">天牛</a>，使用<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL">GFDL</a>版权发布。
+</li><li>部分来自<a href="http://zh.wikipedia.org/" class="external text" title="http://zh.wikipedia.org/" rel="nofollow">维基百科</a>中的<a href="http://zh.wikipedia.org/wiki/%E7%89%9B%E6%B5%B7%E7%B6%BF%E7%8B%80%E8%85%A6%E7%97%85" class="external text" title="http://zh.wikipedia.org/wiki/%E7%89%9B%E6%B5%B7%E7%B6%BF%E7%8B%80%E8%85%A6%E7%97%85" rel="nofollow">牛海绵状脑病</a>，使用<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL">GFDL</a>版权发布。
+</li><li>部分来自<a href="http://zh.wikipedia.org/" class="external text" title="http://zh.wikipedia.org/" rel="nofollow">维基百科</a>中的<a href="http://zh.wikipedia.org/wiki/%E5%8F%A3%E8%B9%84%E7%96%AB" class="external text" title="http://zh.wikipedia.org/wiki/%E5%8F%A3%E8%B9%84%E7%96%AB" rel="nofollow">口蹄疫</a>，使用<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL">GFDL</a>版权发布。
+</li><li>部分来自<a href="http://zh.wikipedia.org/" class="external text" title="http://zh.wikipedia.org/" rel="nofollow">维基百科</a>中的<a href="http://zh.wikipedia.org/wiki/牵牛花" class="external text" title="http://zh.wikipedia.org/wiki/牵牛花" rel="nofollow">牵牛花</a>，使用<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL">GFDL</a>版权发布。
+</li><li>部分来自<a href="http://zh.wikipedia.org/" class="external text" title="http://zh.wikipedia.org/" rel="nofollow">维基百科</a>中的<a href="http://zh.wikipedia.org/wiki/牛头人" class="external text" title="http://zh.wikipedia.org/wiki/牛头人" rel="nofollow">牛头人</a>，使用<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL">GFDL</a>版权发布。
+</li><li>部分来自<a href="http://zh.wikipedia.org/" class="external text" title="http://zh.wikipedia.org/" rel="nofollow">维基百科</a>中的<a href="http://zh.wikipedia.org/wiki/牛魔王" class="external text" title="http://zh.wikipedia.org/wiki/牛魔王" rel="nofollow">牛魔王</a>，使用<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL">GFDL</a>版权发布。
+</li><li>部分来自<a href="http://zh.wikipedia.org/" class="external text" title="http://zh.wikipedia.org/" rel="nofollow">维基百科</a>中的<a href="http://zh.wikipedia.org/wiki/牛头马面" class="external text" title="http://zh.wikipedia.org/wiki/牛头马面" rel="nofollow">牛头马面</a>，使用<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL">GFDL</a>版权发布。
+</li><li>部分来自<a href="http://zh.wikipedia.org/" class="external text" title="http://zh.wikipedia.org/" rel="nofollow">维基百科</a>中的<a href="http://zh.wikipedia.org/wiki/%E4%BD%A0%E6%9C%89%E5%85%A9%E9%A0%AD%E6%AF%8D%E7%89%9B" class="external text" title="http://zh.wikipedia.org/wiki/%E4%BD%A0%E6%9C%89%E5%85%A9%E9%A0%AD%E6%AF%8D%E7%89%9B" rel="nofollow">你有两头母牛</a>，使用<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL">GFDL</a>版权发布。
+</li><li>部分来自<a href="http://zh.wikipedia.org/" class="external text" title="http://zh.wikipedia.org/" rel="nofollow">维基百科</a>中的<a href="http://zh.wikipedia.org/wiki/河鼓二" class="external text" title="http://zh.wikipedia.org/wiki/河鼓二" rel="nofollow">河鼓二</a>，使用<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL">GFDL</a>版权发布。
+</li><li>部分来自<a href="http://zh.wikipedia.org/" class="external text" title="http://zh.wikipedia.org/" rel="nofollow">维基百科</a>中的<a href="http://zh.wikipedia.org/wiki/金牛座" class="external text" title="http://zh.wikipedia.org/wiki/金牛座" rel="nofollow">金牛座</a>，使用<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL">GFDL</a>版权发布。
+</li><li>部分来自<a href="http://zh.wikipedia.org/" class="external text" title="http://zh.wikipedia.org/" rel="nofollow">维基百科</a>中的<a href="http://zh.wikipedia.org/wiki/占星学" class="external text" title="http://zh.wikipedia.org/wiki/占星学" rel="nofollow">占星学</a>，使用<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL">GFDL</a>版权发布。
+</li><li>部分来自<a href="http://zh.wikipedia.org/" class="external text" title="http://zh.wikipedia.org/" rel="nofollow">维基百科</a>中的<a href="http://zh.wikipedia.org/wiki/星座" class="external text" title="http://zh.wikipedia.org/wiki/星座" rel="nofollow">星座</a>，使用<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL">GFDL</a>版权发布。
+</li><li>部分来自<a href="http://zh.wikipedia.org/" class="external text" title="http://zh.wikipedia.org/" rel="nofollow">维基百科</a>中的<a href="http://zh.wikipedia.org/wiki/苏格拉底" class="external text" title="http://zh.wikipedia.org/wiki/苏格拉底" rel="nofollow">苏格拉底</a>，使用<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL">GFDL</a>版权发布。
+</li><li>部分来自<a href="http://zh.wikipedia.org/" class="external text" title="http://zh.wikipedia.org/" rel="nofollow">维基百科</a>中的<a href="http://zh.wikipedia.org/wiki/凡·高" class="external text" title="http://zh.wikipedia.org/wiki/凡·高" rel="nofollow">凡·高</a>，使用<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL">GFDL</a>版权发布。
+</li><li>部分来自<a href="http://zh.wikipedia.org/" class="external text" title="http://zh.wikipedia.org/" rel="nofollow">维基百科</a>中的<a href="http://zh.wikipedia.org/wiki/威廉·莎士比亚" class="external text" title="http://zh.wikipedia.org/wiki/威廉·莎士比亚" rel="nofollow">威廉·莎士比亚</a>，使用<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL">GFDL</a>版权发布。
+</li><li>部分来自<a href="http://zh.wikipedia.org/" class="external text" title="http://zh.wikipedia.org/" rel="nofollow">维基百科</a>中的<a href="http://zh.wikipedia.org/wiki/卡尔·马克思" class="external text" title="http://zh.wikipedia.org/wiki/卡尔·马克思" rel="nofollow">卡尔·马克思</a>，使用<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL">GFDL</a>版权发布。
+</li><li>部分来自<a href="http://zh.wikipedia.org/" class="external text" title="http://zh.wikipedia.org/" rel="nofollow">维基百科</a>中的<a href="http://zh.wikipedia.org/wiki/列宁" class="external text" title="http://zh.wikipedia.org/wiki/列宁" rel="nofollow">列宁</a>，使用<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL">GFDL</a>版权发布。
+</li><li>部分来自<a href="http://wiki.debian.org.tw/" class="external text" title="http://wiki.debian.org.tw/" rel="nofollow">DebianWiki</a>中的<a href="http://wiki.debian.org.tw/index.php/SuperCowPowers" class="external text" title="http://wiki.debian.org.tw/index.php/SuperCowPowers" rel="nofollow">SuperCowPowers</a>，使用<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL">GFDL</a>版权发布。
+</li><li><a href="http://www.chinasurname.com/0030113.htm" class="external text" title="http://www.chinasurname.com/0030113.htm" rel="nofollow">牛姓的具体介绍</a>
+</li><li><a href="http://www.chinacattle.net/culture/niushi/ns0004.htm" class="external text" title="http://www.chinacattle.net/culture/niushi/ns0004.htm" rel="nofollow">关于牛姓的第一个来源的具体解释</a>
+</li><li><a href="http://www.chinapop.gov.cn/rkxx/rkxw/t20060113_55166.htm" class="external text" title="http://www.chinapop.gov.cn/rkxx/rkxw/t20060113_55166.htm" rel="nofollow">关于中国人姓氏比例的调查</a>
+</li><li><a href="http://zh.uncyclopedia.info/wiki/%E4%BD%A0%E6%9C%89%E5%85%A9%E9%A0%AD%E7%89%9B" class="external text" title="http://zh.uncyclopedia.info/wiki/%E4%BD%A0%E6%9C%89%E5%85%A9%E9%A0%AD%E7%89%9B" rel="nofollow">正体中文伪基百科中关于<b>你有两头牛</b>的恶搞内容</a>（提示：这些内容正式的部分在下面给出的子页面中。）
+</li><li><a href="http://www.puresky.org/news/magic/2007/219/072192328446C70217B5F6F91HK92IA.html" class="external text" title="http://www.puresky.org/news/magic/2007/219/072192328446C70217B5F6F91HK92IA.html" rel="nofollow">爱情故事网星座性格介绍</a>
+</li><li><a href="http://www.elore.com/Astrology/Study/taurus.htm" class="external text" title="http://www.elore.com/Astrology/Study/taurus.htm" rel="nofollow">一个国外的星座网站中关于金牛座的内容</a>，作为对照。
+</li><li><a href="http://www.yueyao.cn/home/dm/si/niu/Index.html" class="external text" title="http://www.yueyao.cn/home/dm/si/niu/Index.html" rel="nofollow">一些关于牛的地名</a><b>（警告：该网站可能会损害您的计算机）</b>
+</li></ul>
+<!-- 
+Pre-expand include size: 2543 bytes
+Post-expand include size: 1790 bytes
+Template argument size: 145 bytes
+Maximum: 2097152 bytes
+-->
+
+<!-- Saved in parser cache with key nocow:pcache:idhash:460-0!1!0!!zh-cn!2 and timestamp 20080111234329 -->
+<div class="printfooter">
+来自"<a href="http://www.nocow.cn/index.php/%E7%89%9B">http://www.nocow.cn/index.php/%E7%89%9B</a>"</div>
+			<div id="catlinks"><p class='catlinks'><a href="/index.php/Special:Categories" title="Special:Categories">1个分类</a>: <span dir='ltr'><a href="/index.php/Category:%E7%89%88%E6%9D%83%E6%97%A0%E4%BA%89%E8%AE%AE%E7%9A%84%E5%86%85%E5%AE%B9" title="Category:版权无争议的内容">版权无争议的内容</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+						 <li id="ca-nstab-main" class="selected"><a href="/index.php/%E7%89%9B">条目</a></li>
+						 <li id="ca-talk"><a href="/index.php/Talk:%E7%89%9B">讨论</a></li>
+						 <li id="ca-edit"><a href="/index.php?title=%E7%89%9B&amp;action=edit">编辑</a></li>
+						 <li id="ca-history"><a href="/index.php?title=%E7%89%9B&amp;action=history">历史</a></li>
+				</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=Special:Userlogin&amp;returnto=%E7%89%9B">登录或创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5" title="首页"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/Special:Recentchanges">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/Special:Random">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/Help:%E5%B8%AE%E5%8A%A9">使用帮助</a></li>
+				<li id="n-sitesupport"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5">资助本站</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="进入" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="搜索" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/Special:Whatlinkshere/%E7%89%9B">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/Special:Recentchangeslinked/%E7%89%9B">链出更改</a></li>
+<li id="t-upload"><a href="/index.php/Special:Upload">上传文件</a></li>
+<li id="t-specialpages"><a href="/index.php/Special:Specialpages">特殊页面</a></li>
+				<li id="t-print"><a href="/index.php?title=%E7%89%9B&amp;printable=yes">可打印版</a></li>				<li id="t-permalink"><a href="/index.php?title=%E7%89%9B&amp;oldid=7487">永久链接</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt='GNU Free Documentation License 1.2' /></a></div>
+			<ul id="f-list">
+				<li id="viewcount">访问次数: 8,203次</li>
+				<li id="credits">此页由NOCOW匿名用户于2007年11月14日, 13:52最后更改. 在<a href="/index.php/User:Cosechy" title="User:Cosechy">yh</a>, <a href="/index.php/User:BNJ" title="User:BNJ">BNJ!</a>, <a href="/index.php/User:Sky_wind" title="User:Sky wind">武斌</a> 和 <a href="/index.php/User:Ahyangyi" title="User:Ahyangyi">ahyangyi</a> 和 <a href="/index.php?title=%E7%89%9B&amp;action=credits" title="牛">其他</a>的工作基础上.</li>
+				<li id="copyright">本站内容在<a href="http://www.gnu.org/copyleft/fdl.html" class="external " title="http://www.gnu.org/copyleft/fdl.html" rel="nofollow">GNU Free Documentation License 1.2</a>下发布</li>
+				<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E7%AD%96%E7%95%A5" title="NOCOW:隐私策略">隐私策略</a></li>
+				<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+				<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by bdezlinux in 1.211 secs. --></body></html>

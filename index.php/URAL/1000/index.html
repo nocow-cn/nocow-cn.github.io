@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>A+B问题 - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="canonical" href="/index.php/A%2BB%E9%97%AE%E9%A2%98" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=A%2BB%E9%97%AE%E9%A2%98&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=A%2BB%E9%97%AE%E9%A2%98&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "A+B问题", "wgTitle": "A+B问题", "wgCurRevisionId": 33452, "wgArticleId": 563, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["版权无争议的内容", "POJ", "NKOJ", "ZJU", "URAL Volume 1", "SGU", "VIJOS"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for pascal
+ * CSS class: source-pascal, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.pascal.source-pascal .de1, .pascal.source-pascal .de2 {}
+.pascal.source-pascal  {font-family:monospace;}
+.pascal.source-pascal .imp {font-weight: bold; color: red;}
+.pascal.source-pascal li, .pascal.source-pascal .li1 {font-weight: normal; vertical-align:top;}
+.pascal.source-pascal .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.pascal.source-pascal .li2 {font-weight: bold; vertical-align:top;}
+.pascal.source-pascal .kw1 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw2 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw3 {color: #000066;}
+.pascal.source-pascal .kw4 {color: #000066; font-weight: bold;}
+.pascal.source-pascal .co1 {color: #666666; font-style: italic;}
+.pascal.source-pascal .coMULTI {color: #666666; font-style: italic;}
+.pascal.source-pascal .es0 {color: #000099; font-weight: bold;}
+.pascal.source-pascal .es_h {color: #000099; font-weight: bold;}
+.pascal.source-pascal .br0 {color: #009900;}
+.pascal.source-pascal .sy0 {color: #339933;}
+.pascal.source-pascal .st0 {color: #ff0000;}
+.pascal.source-pascal .st_h {color: #ff0000;}
+.pascal.source-pascal .nu0 {color: #cc66cc;}
+.pascal.source-pascal .me1 {color: #0066ee;}
+.pascal.source-pascal .ln-xtra, .pascal.source-pascal li.ln-xtra, .pascal.source-pascal div.ln-xtra {background-color: #ffc;}
+.pascal.source-pascal span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for c
+ * CSS class: source-c, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.c.source-c .de1, .c.source-c .de2 {}
+.c.source-c  {font-family:monospace;}
+.c.source-c .imp {font-weight: bold; color: red;}
+.c.source-c li, .c.source-c .li1 {font-weight: normal; vertical-align:top;}
+.c.source-c .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.c.source-c .li2 {font-weight: bold; vertical-align:top;}
+.c.source-c .kw1 {color: #b1b100;}
+.c.source-c .kw2 {color: #000000; font-weight: bold;}
+.c.source-c .kw3 {color: #000066;}
+.c.source-c .kw4 {color: #993333;}
+.c.source-c .co1 {color: #666666; font-style: italic;}
+.c.source-c .co2 {color: #339933;}
+.c.source-c .coMULTI {color: #808080; font-style: italic;}
+.c.source-c .es0 {color: #000099; font-weight: bold;}
+.c.source-c .es1 {color: #000099; font-weight: bold;}
+.c.source-c .es2 {color: #660099; font-weight: bold;}
+.c.source-c .es3 {color: #660099; font-weight: bold;}
+.c.source-c .es4 {color: #660099; font-weight: bold;}
+.c.source-c .es5 {color: #006699; font-weight: bold;}
+.c.source-c .br0 {color: #009900;}
+.c.source-c .sy0 {color: #339933;}
+.c.source-c .st0 {color: #ff0000;}
+.c.source-c .nu0 {color: #0000dd;}
+.c.source-c .nu6 {color: #208080;}
+.c.source-c .nu8 {color: #208080;}
+.c.source-c .nu12 {color: #208080;}
+.c.source-c .nu16 {color:#800080;}
+.c.source-c .nu17 {color:#800080;}
+.c.source-c .nu18 {color:#800080;}
+.c.source-c .nu19 {color:#800080;}
+.c.source-c .me1 {color: #202020;}
+.c.source-c .me2 {color: #202020;}
+.c.source-c .ln-xtra, .c.source-c li.ln-xtra, .c.source-c div.ln-xtra {background-color: #ffc;}
+.c.source-c span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for java
+ * CSS class: source-java, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.java.source-java .de1, .java.source-java .de2 {}
+.java.source-java  {font-family:monospace;}
+.java.source-java .imp {font-weight: bold; color: red;}
+.java.source-java li, .java.source-java .li1 {font-weight: normal; vertical-align:top;}
+.java.source-java .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.java.source-java .li2 {font-weight: bold; vertical-align:top;}
+.java.source-java .kw1 {color: #000000; font-weight: bold;}
+.java.source-java .kw2 {color: #000066; font-weight: bold;}
+.java.source-java .kw3 {color: #003399;}
+.java.source-java .kw4 {color: #000066; font-weight: bold;}
+.java.source-java .co1 {color: #666666; font-style: italic;}
+.java.source-java .co2 {color: #006699;}
+.java.source-java .co3 {color: #008000; font-style: italic; font-weight: bold;}
+.java.source-java .coMULTI {color: #666666; font-style: italic;}
+.java.source-java .es0 {color: #000099; font-weight: bold;}
+.java.source-java .br0 {color: #009900;}
+.java.source-java .sy0 {color: #339933;}
+.java.source-java .st0 {color: #0000ff;}
+.java.source-java .nu0 {color: #cc66cc;}
+.java.source-java .me1 {color: #006633;}
+.java.source-java .me2 {color: #006633;}
+.java.source-java .ln-xtra, .java.source-java li.ln-xtra, .java.source-java div.ln-xtra {background-color: #ffc;}
+.java.source-java span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-A_B问题 action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">A+B问题</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub">(跳转自<a href="/index.php?title=URAL/1000&amp;redirect=no" title="URAL/1000">URAL/1000</a>)</div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><pre> 这篇文章可以证实是由NOCOW用户原创，不存在任何版权争议。
+ 本文作者同意以<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL" class="mw-redirect">GNU FDL</a>、<a href="/index.php/NOCOW:CC-by-sa" title="NOCOW:CC-by-sa">CC-by-sa</a>和<a href="/index.php/NOCOW:GNU_LGPL" title="NOCOW:GNU LGPL">GNU LGPL</a>（如果适用）三种版权发布此文章（不包括翻译文章中属于原始所有者的部分版权）。
+ 如果你修改了这篇文章并且不同意用GNU FDL以外的版权发布，可以换一个<a href="/index.php/%E5%88%86%E7%B1%BB:%E7%89%88%E6%9D%83%E6%A8%A1%E6%9D%BF" title="分类:版权模板">版权模板</a>或者移除此模板。
+</pre>
+<p>A+B问题是一个非常简单的程序设计问题。通常是<a href="/index.php/%E5%9C%A8%E7%BA%BF%E9%A2%98%E5%BA%93" title="在线题库" class="mw-redirect">在线题库</a>用来让人测试提交和输入输出方法的题目。
+</p>
+<dl><dd>这是<a href="/index.php/POJ" title="POJ">POJ</a> <a href="/index.php/POJ" title="POJ"> </a>中的OI题目<b>A+B Problem</b>的<b>介绍及题解</b>，参见 <a href="/index.php?title=Translate:PKU/1000&amp;action=edit&amp;redlink=1" class="new" title="Translate:PKU/1000（尚未撰写）">翻译</a>，<a href="/index.php/Code:PKU/1000/C" title="Code:PKU/1000/C">C语言代码</a>，<a href="/index.php/Code:PKU/1000/C%2B%2B" title="Code:PKU/1000/C++">C++语言代码</a>，<a href="/index.php/Code:PKU/1000/Pascal" title="Code:PKU/1000/Pascal">Pascal语言代码</a>。
+</dd><dd>这是<a href="/index.php/NKOJ" title="NKOJ">NKOJ</a> <a href="/index.php/NKOJ" title="NKOJ"> </a>中的OI题目<b>A+B Problem</b>的<b>介绍及题解</b>，参见 <a href="/index.php?title=Translate:NKOJ/1001&amp;action=edit&amp;redlink=1" class="new" title="Translate:NKOJ/1001（尚未撰写）">翻译</a>，<a href="/index.php?title=Code:NKOJ/1001/C&amp;action=edit&amp;redlink=1" class="new" title="Code:NKOJ/1001/C（尚未撰写）">C语言代码</a>，<a href="/index.php?title=Code:NKOJ/1001/C%2B%2B&amp;action=edit&amp;redlink=1" class="new" title="Code:NKOJ/1001/C++（尚未撰写）">C++语言代码</a>，<a href="/index.php/Code:NKOJ/1001/Pascal" title="Code:NKOJ/1001/Pascal">Pascal语言代码</a>。
+</dd><dd>这是<a href="/index.php/ZJU" title="ZJU">ZJU</a> <a href="/index.php/ZJU" title="ZJU"> </a>中的OI题目<b>A+B Problem</b>的<b>介绍及题解</b>，参见 <a href="/index.php/Translate:ZJU/1001" title="Translate:ZJU/1001">翻译</a>，<a href="/index.php?title=Code:ZJU/1001/C&amp;action=edit&amp;redlink=1" class="new" title="Code:ZJU/1001/C（尚未撰写）">C语言代码</a>，<a href="/index.php?title=Code:ZJU/1001/C%2B%2B&amp;action=edit&amp;redlink=1" class="new" title="Code:ZJU/1001/C++（尚未撰写）">C++语言代码</a>，<a href="/index.php?title=Code:ZJU/1001/Pascal&amp;action=edit&amp;redlink=1" class="new" title="Code:ZJU/1001/Pascal（尚未撰写）">Pascal语言代码</a>。
+</dd><dd>这是<a href="/index.php/URAL" title="URAL">URAL</a> <a href="/index.php/URAL_Volume_1" title="URAL Volume 1">Volume 1 </a>中的OI题目<b>A+B Problem</b>的<b>介绍及题解</b>，参见 <a href="/index.php/Translate:URAL/1000" title="Translate:URAL/1000">翻译</a>，<a href="/index.php/Code:URAL/1000/C" title="Code:URAL/1000/C">C语言代码</a>，<a href="/index.php?title=Code:URAL/1000/C%2B%2B&amp;action=edit&amp;redlink=1" class="new" title="Code:URAL/1000/C++（尚未撰写）">C++语言代码</a>，<a href="/index.php/Code:URAL/1000/Pascal" title="Code:URAL/1000/Pascal">Pascal语言代码</a>。
+</dd><dd>这是<a href="/index.php/SGU" title="SGU">SGU</a> <a href="/index.php/SGU" title="SGU"> </a>中的OI题目<b>A+B Problem</b>的<b>介绍及题解</b>，参见 <a href="/index.php?title=Translate:SGU/100&amp;action=edit&amp;redlink=1" class="new" title="Translate:SGU/100（尚未撰写）">翻译</a>，<a href="/index.php?title=Code:SGU/100/C&amp;action=edit&amp;redlink=1" class="new" title="Code:SGU/100/C（尚未撰写）">C语言代码</a>，<a href="/index.php?title=Code:SGU/100/C%2B%2B&amp;action=edit&amp;redlink=1" class="new" title="Code:SGU/100/C++（尚未撰写）">C++语言代码</a>，<a href="/index.php?title=Code:SGU/100/Pascal&amp;action=edit&amp;redlink=1" class="new" title="Code:SGU/100/Pascal（尚未撰写）">Pascal语言代码</a>。
+</dd><dd>这是<a href="/index.php/VIJOS" title="VIJOS">VIJOS</a> <a href="/index.php/VIJOS" title="VIJOS"> </a>中的OI题目<b>A+B Problem</b>的<b>介绍及题解</b>，参见 <a href="/index.php/Code:VIJOS/1000/C" title="Code:VIJOS/1000/C">C语言代码</a>，<a href="/index.php?title=Code:VIJOS/1000/C%2B%2B&amp;action=edit&amp;redlink=1" class="new" title="Code:VIJOS/1000/C++（尚未撰写）">C++语言代码</a>，<a href="/index.php/Code:VIJOS/1000/Pascal" title="Code:VIJOS/1000/Pascal">Pascal语言代码</a>。
+</dd></dl>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E4.B8.80.E8.88.AC.E6.8F.8F.E8.BF.B0"><span class="tocnumber">1</span> <span class="toctext">一般描述</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#.E8.8C.83.E4.BE.8B.E7.A8.8B.E5.BA.8F"><span class="tocnumber">2</span> <span class="toctext">范例程序</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Pascal"><span class="tocnumber">2.1</span> <span class="toctext">Pascal</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#C.2B.2B"><span class="tocnumber">2.2</span> <span class="toctext">C++</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#C"><span class="tocnumber">2.3</span> <span class="toctext">C</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Java"><span class="tocnumber">2.4</span> <span class="toctext">Java</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#.E8.A6.81.E6.B3.A8.E6.84.8F.E7.9A.84.E9.97.AE.E9.A2.98"><span class="tocnumber">3</span> <span class="toctext">要注意的问题</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#.E9.9A.BE.E7.82.B9"><span class="tocnumber">4</span> <span class="toctext">难点</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#.E8.AF.84.E4.BB.B7.E5.8F.8A.E6.89.A9.E5.B1.95"><span class="tocnumber">5</span> <span class="toctext">评价及扩展</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#.E7.BB.8F.E5.85.B8.E5.BB.B6.E4.BC.B8.E9.A2.98"><span class="tocnumber">6</span> <span class="toctext">经典延伸题</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#.E9.A2.98.E7.9B.AE.E7.BC.96.E5.8F.B7"><span class="tocnumber">7</span> <span class="toctext">题目编号</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#.E6.89.80.E7.94.A8.E7.AE.97.E6.B3.95.E5.92.8C.E6.95.B0.E6.8D.AE.E7.BB.93.E6.9E.84"><span class="tocnumber">7.1</span> <span class="toctext">所用算法和数据结构</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#.E7.9B.B8.E5.85.B3.E9.A2.98.E7.9B.AE"><span class="tocnumber">7.2</span> <span class="toctext">相关题目</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="/index.php?title=A%2BB%E9%97%AE%E9%A2%98&amp;action=edit&amp;section=1" title="编辑段落：一般描述">编辑</a>]</span> <span class="mw-headline" id=".E4.B8.80.E8.88.AC.E6.8F.8F.E8.BF.B0">一般描述</span></h2>
+<p>输入两个数A和B（一般是在<a href="/index.php?title=%E9%95%BF%E6%95%B4%E5%9E%8B&amp;action=edit&amp;redlink=1" class="new" title="长整型（尚未撰写）">长整</a>范围内的正整数，也就是小于2147483648），输出A+B。
+//以下是胡扯
+本题算法：动态规划+微积分+高精度
+将a分解成a个1相加 将b分解成b个1相加
+利用高精度算法依次累加a个1和b个1的和 然后将多个和进行比较 利用动态规划求出最正确的解
+利用微积分观点可证明此算法正确性
+标程如下
+</p>
+<pre> var a,b,i:int64;
+     s:int64;
+ begin
+   readln(a,b);
+   for i:=1 to a do 
+      inc(s);
+   for j:=1 to b do
+     inc(s);
+   writeln(s);
+ end.
+</pre>
+<p>但是 此题仍然存在着一个最严重的问题尚未解决：1+1为什么=2? 1+2为什么=3?……
+等等等等 依此类推 请世界上所有的大牛和超大牛帮忙解决 感激不尽
+</p><p><br />
+{为什么要证明哦，这应该是人定的吧}
+{确实不用证明, 因为2的定义是1+1, 3的定义是1+2. 这是定义, 没有证明.}
+{可以通过peano公设得出基本运算规律。至于1和2之类的符号就是人为定义的，在那个公理系统中表示某个特定的意义}
+{这件事情是一个巨大的难题，当年不知道有多少人为之想不清楚吐血而亡}
+{微~~微~~微~~微积分 飘过}
+//以上是胡扯
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=A%2BB%E9%97%AE%E9%A2%98&amp;action=edit&amp;section=2" title="编辑段落：范例程序">编辑</a>]</span> <span class="mw-headline" id=".E8.8C.83.E4.BE.8B.E7.A8.8B.E5.BA.8F">范例程序</span></h2>
+<h3><span class="editsection">[<a href="/index.php?title=A%2BB%E9%97%AE%E9%A2%98&amp;action=edit&amp;section=3" title="编辑段落：Pascal">编辑</a>]</span> <span class="mw-headline" id="Pascal"><a href="/index.php/Pascal" title="Pascal">Pascal</a></span></h3>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="kw1">VAR</span> 
+  a<span class="sy0">,</span>b<span class="sy0">:</span><span class="kw4">longint</span>;
+<span class="kw1">BEGIN</span>
+  <span class="kw3">readln</span><span class="br0">&#40;</span>a<span class="sy0">,</span>b<span class="br0">&#41;</span>;
+  <span class="kw3">writeln</span><span class="br0">&#40;</span>a<span class="sy0">+</span>b<span class="br0">&#41;</span>;
+<span class="kw1">END</span>.</pre></div></div>
+<p>还有两种迥异程序：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="coMULTI">{$asmmode Intel}</span>
+&#160;
+<span class="kw1">var</span>
+a<span class="sy0">,</span>b<span class="sy0">,</span>c<span class="sy0">:</span><span class="kw4">longint</span>;
+&#160;
+<span class="kw1">begin</span>
+<span class="kw3">readln</span><span class="br0">&#40;</span>a<span class="sy0">,</span>b<span class="br0">&#41;</span>;
+<span class="kw1">asm</span>
+mov eax<span class="sy0">,</span>a
+add eax<span class="sy0">,</span>b
+mov c<span class="sy0">,</span>eax
+<span class="kw1">end</span>;
+<span class="kw3">writeln</span><span class="br0">&#40;</span>c<span class="br0">&#41;</span>;
+<span class="kw1">end</span>.</pre></div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="kw1">var</span>
+a<span class="sy0">,</span>b<span class="sy0">,</span>c<span class="sy0">:</span>dword;
+<span class="kw1">begin</span>
+<span class="kw3">read</span><span class="br0">&#40;</span>a<span class="sy0">,</span>b<span class="br0">&#41;</span>;
+<span class="kw1">while</span> b&lt;&gt;<span class="nu0">0</span> <span class="kw1">do</span>
+<span class="kw1">begin</span>
+c<span class="sy0">:=</span>a <span class="kw3">and</span> b;
+a<span class="sy0">:=</span>a <span class="kw1">xor</span> b;
+b<span class="sy0">:=</span>c <span class="kw1">shl</span> <span class="nu0">1</span>;
+<span class="kw1">end</span>;
+<span class="kw3">writeln</span><span class="br0">&#40;</span>a<span class="br0">&#41;</span>;
+<span class="kw1">end</span>.</pre></div></div>
+<h3><span class="editsection">[<a href="/index.php?title=A%2BB%E9%97%AE%E9%A2%98&amp;action=edit&amp;section=4" title="编辑段落：C++">编辑</a>]</span> <span class="mw-headline" id="C.2B.2B"><a href="/index.php/C%2B%2B" title="C++">C++</a></span></h3>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include&lt;iostream&gt;</span>
+<span class="kw2">using</span> <span class="kw2">namespace</span> std<span class="sy4">;</span>
+&#160;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    <span class="kw4">long</span> a,b<span class="sy4">;</span>
+    <span class="kw3">cin</span><span class="sy1">&gt;&gt;</span>a<span class="sy1">&gt;&gt;</span>b<span class="sy4">;</span>
+    <span class="kw3">cout</span><span class="sy1">&lt;&lt;</span>a<span class="sy2">+</span>b<span class="sy1">&lt;&lt;</span>endl<span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h3><span class="editsection">[<a href="/index.php?title=A%2BB%E9%97%AE%E9%A2%98&amp;action=edit&amp;section=5" title="编辑段落：C">编辑</a>]</span> <span class="mw-headline" id="C"><a href="/index.php/C" title="C" class="mw-redirect">C</a></span></h3>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+  <span class="kw4">long</span> a<span class="sy0">,</span>b<span class="sy0">;</span>
+  <span class="kw3">scanf</span><span class="br0">&#40;</span><span class="st0">&quot;%d%d&quot;</span><span class="sy0">,&amp;</span>a<span class="sy0">,&amp;</span>b<span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;%d<span class="es1">\n</span>&quot;</span><span class="sy0">,</span>a<span class="sy0">+</span>b<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h3><span class="editsection">[<a href="/index.php?title=A%2BB%E9%97%AE%E9%A2%98&amp;action=edit&amp;section=6" title="编辑段落：Java">编辑</a>]</span> <span class="mw-headline" id="Java"><a href="/index.php/Java" title="Java">Java</a></span></h3>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="java source-java"><pre class="de1"><span class="kw1">import</span> <span class="co2">java.util.Scanner</span><span class="sy0">;</span> 
+<span class="kw1">public</span> <span class="kw1">class</span> Main
+<span class="br0">&#123;</span> 
+<span class="kw1">public</span> <span class="kw1">static</span> <span class="kw4">void</span> main<span class="br0">&#40;</span><span class="kw3">String</span><span class="br0">&#91;</span><span class="br0">&#93;</span> args<span class="br0">&#41;</span>
+  <span class="br0">&#123;</span> 
+    Scanner in<span class="sy0">=</span><span class="kw1">new</span> Scanner<span class="br0">&#40;</span><span class="kw3">System</span>.<span class="me1">in</span><span class="br0">&#41;</span><span class="sy0">;</span> 
+    <span class="kw4">int</span> a<span class="sy0">=</span>in.<span class="me1">nextInt</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span> 
+    <span class="kw4">int</span> b<span class="sy0">=</span>in.<span class="me1">nextInt</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span> 
+    <span class="kw3">System</span>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="br0">&#40;</span>a<span class="sy0">+</span>b<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span> 
+  <span class="br0">&#125;</span> 
+<span class="br0">&#125;</span></pre></div></div>
+<p>适用于所有输入两个0到2147483647之间的十进制数的，使用标准输入输出的A+B问题。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=A%2BB%E9%97%AE%E9%A2%98&amp;action=edit&amp;section=7" title="编辑段落：要注意的问题">编辑</a>]</span> <span class="mw-headline" id=".E8.A6.81.E6.B3.A8.E6.84.8F.E7.9A.84.E9.97.AE.E9.A2.98">要注意的问题</span></h2>
+<p>在有的版本的A+B题目中，虽然输入的a和b都在<a href="/index.php?title=%E9%95%BF%E6%95%B4%E5%9E%8B&amp;action=edit&amp;redlink=1" class="new" title="长整型（尚未撰写）">长整</a>的范围之内，结果a+b的值不一定也在这个范围。这时候就要使用<a href="/index.php?title=%E6%97%A0%E7%AC%A6%E5%8F%B7%E9%95%BF%E6%95%B4%E5%9E%8B&amp;action=edit&amp;redlink=1" class="new" title="无符号长整型（尚未撰写）">无符号的长整数</a>，也就是pascal的longword或者cardinal、c++的unsigned long。如果这道题目的数据也允许负数，就要使用<a href="/index.php?title=64%E4%BD%8D%E6%95%B4%E6%95%B0&amp;action=edit&amp;redlink=1" class="new" title="64位整数（尚未撰写）">64位整数</a>，pascal的int64以及c++的long long。当然也可以特殊处理，不过比较麻烦。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=A%2BB%E9%97%AE%E9%A2%98&amp;action=edit&amp;section=8" title="编辑段落：难点">编辑</a>]</span> <span class="mw-headline" id=".E9.9A.BE.E7.82.B9">难点</span></h2>
+<p>这个题库可能会使用特殊的输入输出方法（例如文件输入），也可能要求提交的时候加入一些附加信息，如果没在这个题库做过题目也没有看帮助，或者以前完全没有使用文件的经验，这可能就是难点。
+</p><p>另外对于一些不自带数字输入输出功能的语言（例如<a href="/index.php?title=BrainF**k&amp;action=edit&amp;redlink=1" class="new" title="BrainF**k（尚未撰写）">BrainF**k</a>），自己写数字输入输出可能也是比较困难的地方。
+</p><p>另外上面要注意的问题，也可能会让人不小心出错。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=A%2BB%E9%97%AE%E9%A2%98&amp;action=edit&amp;section=9" title="编辑段落：评价及扩展">编辑</a>]</span> <span class="mw-headline" id=".E8.AF.84.E4.BB.B7.E5.8F.8A.E6.89.A9.E5.B1.95">评价及扩展</span></h2>
+<p>尽管此题牵涉到一些相当重要而深奥的知识点，但是由于很多语言非常贴心的为用户准备好了加法运算，所以此题变得较为容易。
+</p><p>这道题是为了测试输入输出和提交方法用的，没有多少技术含量。
+</p><p><a href="/index.php/USACO" title="USACO" class="mw-redirect">USACO</a>的<a href="/index.php/USACO/ride" title="USACO/ride">Your Ride Is Here</a>还考察了基本的语法，目的还有测试做题的人会不会编程。而<a href="/index.php/SPOJ/TEST" title="SPOJ/TEST">Life, the Universe, and Everything</a>同时也为<a href="/index.php?title=BrainF**k&amp;action=edit&amp;redlink=1" class="new" title="BrainF**k（尚未撰写）">BrainF**k</a>等语言的使用者考虑了，是一道不需要数字输入输出，什么语言都可以很简单的做出来的题目。另外还有一个经常用来测试的程序：输出Hello World，但是Hello World的程序没有输入部分。
+</p><p>而这道题目的扩展通常只是加入数据范围之类的陷阱，<a href="/index.php/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2" title="进制转换">用其他的进制</a>，<a href="/index.php?title=%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E6%B3%95&amp;action=edit&amp;redlink=1" class="new" title="高精度加法（尚未撰写）">计算高精度数</a>，<a href="/index.php?title=%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%A1%E7%AE%97&amp;action=edit&amp;redlink=1" class="new" title="表达式计算（尚未撰写）">支持操作符</a>之类的。第二、三条通常只是练习题目，最后一条在编译器、解释器之类的很多地方都比较有用，但是这种程序绝大部分都不是关于A+B的内容。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=A%2BB%E9%97%AE%E9%A2%98&amp;action=edit&amp;section=10" title="编辑段落：经典延伸题">编辑</a>]</span> <span class="mw-headline" id=".E7.BB.8F.E5.85.B8.E5.BB.B6.E4.BC.B8.E9.A2.98">经典延伸题</span></h2>
+<p>POJ 2756
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=A%2BB%E9%97%AE%E9%A2%98&amp;action=edit&amp;section=11" title="编辑段落：题目编号">编辑</a>]</span> <span class="mw-headline" id=".E9.A2.98.E7.9B.AE.E7.BC.96.E5.8F.B7">题目编号</span></h2>
+<ul><li><a href="/index.php/Translate:URAL/1000" title="Translate:URAL/1000">URAL 1000</a>（<a href="/index.php/URAL/1000/Pascal" title="URAL/1000/Pascal" class="mw-redirect">程序</a>）
+</li><li><a href="/index.php?title=Translate:SGU/100&amp;action=edit&amp;redlink=1" class="new" title="Translate:SGU/100（尚未撰写）">SGU 100</a>
+</li><li><a rel="nofollow" class="external text" href="http://www.vijos.cn/Problem_Show.asp?id=1000">VIJOS 1000</a>
+</li><li><a href="/index.php?title=Translate:ZOJ/1000&amp;action=edit&amp;redlink=1" class="new" title="Translate:ZOJ/1000（尚未撰写）">浙江大学OJ 1000</a>
+</li><li><a href="/index.php?title=Translate:PKUOJ/1000&amp;action=edit&amp;redlink=1" class="new" title="Translate:PKUOJ/1000（尚未撰写）">北京大学OJ 1000</a>
+</li></ul>
+<p><br />
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=A%2BB%E9%97%AE%E9%A2%98&amp;action=edit&amp;section=12" title="编辑段落：所用算法和数据结构">编辑</a>]</span> <span class="mw-headline" id=".E6.89.80.E7.94.A8.E7.AE.97.E6.B3.95.E5.92.8C.E6.95.B0.E6.8D.AE.E7.BB.93.E6.9E.84">所用算法和数据结构</span></h3>
+<p>算法1：无。
+算法2：数组，高精度加法
+算法3：位运算
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=A%2BB%E9%97%AE%E9%A2%98&amp;action=edit&amp;section=13" title="编辑段落：相关题目">编辑</a>]</span> <span class="mw-headline" id=".E7.9B.B8.E5.85.B3.E9.A2.98.E7.9B.AE">相关题目</span></h3>
+<ul><li><a href="/index.php/USACO/ride" title="USACO/ride">Your Ride Is Here</a>
+</li><li><a href="/index.php/SPOJ/TEST" title="SPOJ/TEST">Life, the Universe, and Everything</a>
+</li><li><a href="/index.php/Hello_World" title="Hello World">Hello World</a>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 373/1000000
+Post-expand include size: 2092/2097152 bytes
+Template argument size: 350/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:563-0!*!0!!zh-cn!*!* and timestamp 20150429170016 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=A%2BB%E9%97%AE%E9%A2%98&amp;oldid=33452">http://www.nocow.cn/index.php?title=A%2BB%E9%97%AE%E9%A2%98&amp;oldid=33452</a>”</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="特殊:页面分类">7个分类</a>: <ul><li><a href="/index.php/%E5%88%86%E7%B1%BB:%E7%89%88%E6%9D%83%E6%97%A0%E4%BA%89%E8%AE%AE%E7%9A%84%E5%86%85%E5%AE%B9" title="分类:版权无争议的内容">版权无争议的内容</a></li><li><a href="/index.php?title=%E5%88%86%E7%B1%BB:POJ&amp;action=edit&amp;redlink=1" class="new" title="分类:POJ（尚未撰写）">POJ</a></li><li><a href="/index.php/%E5%88%86%E7%B1%BB:NKOJ" title="分类:NKOJ">NKOJ</a></li><li><a href="/index.php?title=%E5%88%86%E7%B1%BB:ZJU&amp;action=edit&amp;redlink=1" class="new" title="分类:ZJU（尚未撰写）">ZJU</a></li><li><a href="/index.php?title=%E5%88%86%E7%B1%BB:URAL_Volume_1&amp;action=edit&amp;redlink=1" class="new" title="分类:URAL Volume 1（尚未撰写）">URAL Volume 1</a></li><li><a href="/index.php?title=%E5%88%86%E7%B1%BB:SGU&amp;action=edit&amp;redlink=1" class="new" title="分类:SGU（尚未撰写）">SGU</a></li><li><a href="/index.php?title=%E5%88%86%E7%B1%BB:VIJOS&amp;action=edit&amp;redlink=1" class="new" title="分类:VIJOS（尚未撰写）">VIJOS</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/A%2BB%E9%97%AE%E9%A2%98" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:A%2BB%E9%97%AE%E9%A2%98&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=A%2BB%E9%97%AE%E9%A2%98&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=A%2BB%E9%97%AE%E9%A2%98&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=URAL%2F1000" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/A%2BB%E9%97%AE%E9%A2%98" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/A%2BB%E9%97%AE%E9%A2%98" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=A%2BB%E9%97%AE%E9%A2%98&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=A%2BB%E9%97%AE%E9%A2%98&amp;oldid=33452" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过24,374次。</li>
+		<li id="credits">本页面由<a href="/index.php/%E7%94%A8%E6%88%B7:Cosechy" title="用户:Cosechy">yh</a>于2013年8月17日 (星期六) 03:20做出最后修改。 在<a href="/index.php/%E7%94%A8%E6%88%B7:Wecing" title="用户:Wecing">wecing</a>和<a href="/index.php/%E7%94%A8%E6%88%B7:Yuzeming" title="用户:Yuzeming">俞则明</a>、NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/218.108.45.155" title="特殊:用户贡献/218.108.45.155">218.108.45.155</a>和<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/61.153.71.46" title="特殊:用户贡献/61.153.71.46">61.153.71.46</a>和<a href="/index.php?title=A%2BB%E9%97%AE%E9%A2%98&amp;action=credits" title="A+B问题">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.332 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

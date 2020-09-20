@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>USACO/hidden - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=USACO/hidden&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=USACO/hidden&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "USACO/hidden", "wgTitle": "USACO/hidden", "wgCurRevisionId": 35977, "wgArticleId": 1197, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["版权无争议的内容", "USACO Chapter 5"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-USACO_hidden action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">USACO/hidden</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="/index.php/USACO" title="USACO">USACO</a></span></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><pre> 这篇文章可以证实是由NOCOW用户原创，不存在任何版权争议。
+ 本文作者同意以<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL" class="mw-redirect">GNU FDL</a>、<a href="/index.php/NOCOW:CC-by-sa" title="NOCOW:CC-by-sa">CC-by-sa</a>和<a href="/index.php/NOCOW:GNU_LGPL" title="NOCOW:GNU LGPL">GNU LGPL</a>（如果适用）三种版权发布此文章（不包括翻译文章中属于原始所有者的部分版权）。
+ 如果你修改了这篇文章并且不同意用GNU FDL以外的版权发布，可以换一个<a href="/index.php/%E5%88%86%E7%B1%BB:%E7%89%88%E6%9D%83%E6%A8%A1%E6%9D%BF" title="分类:版权模板">版权模板</a>或者移除此模板。
+</pre>
+<dl><dd>这是<a href="/index.php/USACO" title="USACO" class="mw-redirect">USACO</a> <a href="/index.php/USACO_Chapter_5#Chapter_5.5" title="USACO Chapter 5" class="mw-redirect">Chapter 5 .5</a>中的OI题目<b>Hidden Passwords</b>的<b>介绍及题解</b>，参见 <a href="/index.php/Translate:USACO/hidden" title="Translate:USACO/hidden">翻译</a>，<a href="/index.php/Code:USACO/hidden/C" title="Code:USACO/hidden/C">C语言代码</a>，<a href="/index.php/Code:USACO/hidden/C%2B%2B" title="Code:USACO/hidden/C++">C++语言代码</a>，<a href="/index.php/Code:USACO/hidden/Pascal" title="Code:USACO/hidden/Pascal">Pascal语言代码</a>。
+</dd></dl>
+<p><br />
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E9.97.AE.E9.A2.98.E5.88.86.E6.9E.90"><span class="tocnumber">1</span> <span class="toctext">问题分析</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#.E5.90.8E.E7.BC.80.E6.95.B0.E7.BB.84"><span class="tocnumber">1.1</span> <span class="toctext">后缀数组</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#.E6.B1.82.E5.8A.A9"><span class="tocnumber">1.2</span> <span class="toctext">求助</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#ORZ"><span class="tocnumber">2</span> <span class="toctext">ORZ</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#.E7.9B.B4.E6.8E.A5.E6.9A.B4.E5.8A.9B.E5.B0.B1.E5.A5.BD.E4.BA.86"><span class="tocnumber">3</span> <span class="toctext">直接暴力就好了</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#.E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81"><span class="tocnumber">4</span> <span class="toctext">参考代码</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/hidden&amp;action=edit&amp;section=1" title="编辑段落：问题分析">编辑</a>]</span> <span class="mw-headline" id=".E9.97.AE.E9.A2.98.E5.88.86.E6.9E.90">问题分析</span></h2>
+<p>首先，为了解决环的情况，可以在这个字符串后面再接一个相同的字符串。这样不影响结果。
+本题可以采用比较法。
+我们可以用两个标记i、j表示两个待比较字符串（长度为n）的起始位置。初始时i=0，j=1。
+每次比较以i开头和以j开头的字符串s[i]和s[j]的大小，如果s[i]&gt;s[j]则i=j，否则j向后移k位，k表示s[i]和s[j]的最长相同前缀的长度，因为s[i]的前K位的字母都大于等于s[i]的第一个字母,而s[i]与s[j]的前K为字母相同,所以下一次只需比较s[i+k]与s[i]即可,k在比较大小时顺便可以求出。不停比较直到j≥n。
+这种算法可以应付大多数数据，但是因为最坏情况下算法的时间复杂度是O(n^2)的，对于特殊构造的数据就不行了。不过USACO没有出这种数据，放心做吧。
+</p><p>几个需要注意的细节:
+</p>
+<ul><li>当比较时发现两个字符串相同时,直接输出0 
+</li><li>k的最小值应为1
+</li></ul>
+<p>//不应该吧，如果原字符串是abaaba按照你的方法输出是0而我认为正确的应该是2…只是发表一下个人意见而已：我认为如果s[i]&gt;s[j]则i=j，j=j+1.不然就j=j+k。 By TtXu
+</p><p>//LS貌似是算错了吧，按照上面的方法运行出来就是2，参见pascal程序1。 From Error
+</p><p><br />
+</p>
+<ul><li>本题为 最小表示法 问题.
+</li></ul>
+<p>（转自sevenlunar 和讯博客）
+首先我们明确一个概念：最小后缀(least suffix)。
+</p><p>对于给定的一个串，将它的所有后缀按字典序排序，其中第一个后缀就是最小后缀。
+</p><p>那么如何求最小后缀呢？
+</p><p>最显然的方法是O(n2)的，这里我介绍一种O(n)的算法。
+</p><p>对于一个长度为n的主串s，设v[i]表示子串s[i..i+v[i]-1]，该子串的所有前缀在主串中所有相应长度的子串中字典序最小（这句比较绕，但是很关键一定要弄明白）。
+</p><p>比如对于串acab则v[3]=2，即子串'ab'的所有前缀('a','ab')中，'a'在所有长度为1的子串('a','c','b')中字典序最小，'ab'在所有长度为2的子串('ac','ca','ab')中字典序最小。
+</p><p>我们要求的是最大的v[i]，则i开始的主串的后缀就是最小后缀。
+</p><p>初始时v为0。设list记录当前所有的i，使得v[i]当前最大，初始时list=(1..n)。
+</p><p>对于每个在list中的i，
+</p><p>如果v[i+v[i]]&gt;0，那么把s(i..i+v[i]-1)和s(i+v[i]..i+v[i]+v[i+v[i]]-1)合并后的s(i..i+v[i]+v[i+v[i]]-1)肯定最小，则v[i]=v[i]+v[i+v[i]]；
+</p><p>同时为了避免重复，把i+v[i]从list中去掉。
+</p><p>如果v[i+v[i]]=0，那么当且仅当s[i+v[i]]在所有s[j+v[j]]（j在list中）中最小时，v[i..i+v[i]]才最小，则v[i]=v[i]+1。
+</p><p>求出v后，把当前v最大的i放入list，其余的删掉，重复这个过程，直到list中只有1个i为止。
+</p><p>可以看出以上过程实际上就是不断地合并区间，而每个位置最多只访问一次，list中的位置最多删除一次，所以总的复杂度是O(n)的。
+</p><p><br /> 
+</p><p>现在我们回到这道题上来，我们把主串复制两份，这样就解决了圈的问题。然后我们在串的最后加一个大于串中所有字符的字符（'z'+1）。
+</p><p>此时这个串的最小后缀所对应的开始位置i就是所求。
+</p><p>这是很显然的，因为最小后缀的前缀肯定是最小的。
+</p><p><br /> 
+</p><p>ps.这道题Maigo的程序从编程复杂度上比这个简单多了，但是其实是可以设计出数据TLE的(39999个b+1个a)，只不过USACO和ZOJ都没有出这种数据。
+</p><p>ps.其实本题答案不应该仅仅原串复制后的最小后缀，因为题目中有要求出现位置最小，例如aaa应该输出0，但是按照上面那个方法求出的会是2
+</p><p>ps.对于上一个ps，复制以后增加一个比'z'还大的字符在串尾即可
+</p><p><br />
+</p><p><br />
+又一个方法：
+类似后缀数组，可在NlogN时间内求出子串任意长度的任意排名。
+首先把字母复制一遍，处理后缀数组，得到2^k(k=0..log(n))的子串(后缀)的名次，然后：
+字符串的长度N可以表示为二进制，位数不超过log(n),然后用类似后缀数组的倍增，把长度
+N分成的块(每个块都是2^k),按照第一第二关键字，逐渐合并，每次合并用基数排序，O(N),
+所以也是NLogN.
+不过常数可能较大。
+</p><p>后缀数组是可行的，然而USACO又增加了数据（准确说改了题目），使得“aaaa”合法，那么使用完后缀数组后，我还用了kmp，不知神牛有无解决方法
+</p>
+<pre>              （我觉得可以增加串尾符啊……{by Tearhap_断章})
+</pre>
+<p>我不明白LS的意思，我觉得用后缀数组做很水。。。。{by Morenan}
+Executing...
+</p>
+<pre>  Test 1: TEST OK [0.011 secs, 2652 KB]
+  Test 2: TEST OK [0.011 secs, 2652 KB]
+  Test 3: TEST OK [0.011 secs, 2652 KB]
+  Test 4: TEST OK [0.011 secs, 2652 KB]
+  Test 5: TEST OK [0.011 secs, 2652 KB]
+  Test 6: TEST OK [0.011 secs, 2652 KB]
+  Test 7: TEST OK [0.032 secs, 2652 KB]
+  Test 8: TEST OK [0.378 secs, 2652 KB]
+  Test 9: TEST OK [0.367 secs, 2652 KB]
+  Test 10: TEST OK [0.346 secs, 2652 KB]
+  Test 11: TEST OK [0.248 secs, 2652 KB]
+  Test 12: TEST OK [0.054 secs, 2652 KB]
+  Test 13: TEST OK [0.011 secs, 2652 KB]
+  Test 14: TEST OK [0.097 secs, 2652 KB]
+</pre>
+<p>微慢了点。
+</p><p><br />
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=USACO/hidden&amp;action=edit&amp;section=2" title="编辑段落：后缀数组">编辑</a>]</span> <span class="mw-headline" id=".E5.90.8E.E7.BC.80.E6.95.B0.E7.BB.84">后缀数组</span></h3>
+<p>此题可以使用后缀数组，但需要做稍微改动。为了避免类似“aaaa”这样的数据带来的问题，我们可以在串的末尾加上无限个值为无限的字符。当然，没有必要真的加。只需要将下面两句话交换即可：
+</p>
+<pre>   for(p=0,i=n-j+1;i&lt;=n;++i)   y[++p]=i;
+   for(i=1;i&lt;=n;++i)   if(sa[i]&gt;j) y[++p]=sa[i]-j;
+</pre>
+<p>↓
+</p>
+<pre>   for(p=0,i=1;i&lt;=n;++i)   if(sa[i]&gt;j) y[++p]=sa[i]-j;
+   for(i=n-j+1;i&lt;=n;++i)   y[++p]=i;
+</pre>
+<pre>  Test 1: TEST OK [0.000 secs, 7364 KB]
+  Test 2: TEST OK [0.000 secs, 7364 KB]
+  Test 3: TEST OK [0.000 secs, 7364 KB]
+  Test 4: TEST OK [0.000 secs, 7364 KB]
+  Test 5: TEST OK [0.000 secs, 7364 KB]
+  Test 6: TEST OK [0.000 secs, 7364 KB]
+  Test 7: TEST OK [0.027 secs, 7364 KB]
+  Test 8: TEST OK [0.270 secs, 7364 KB]
+  Test 9: TEST OK [0.243 secs, 7364 KB]
+  Test 10: TEST OK [0.243 secs, 7364 KB]
+  Test 11: TEST OK [0.108 secs, 7364 KB]
+  Test 12: TEST OK [0.000 secs, 7364 KB]
+  Test 13: TEST OK [0.000 secs, 7364 KB]
+  Test 14: TEST OK [0.027 secs, 7364 KB]
+</pre>
+<p><br />
+ps：
+很明显的最小表示法吗……建议参考WC周源《最小表示思想的应用》,简洁易懂,程序还很快……
+</p><p>简单的代码实现请参考Pascal范例~
+</p><p>Executing...
+</p>
+<pre>  Test 1: TEST OK [0.000 secs, 208 KB]
+  Test 2: TEST OK [0.000 secs, 240 KB]
+  Test 3: TEST OK [0.000 secs, 240 KB]
+  Test 4: TEST OK [0.011 secs, 240 KB]
+  Test 5: TEST OK [0.000 secs, 272 KB]
+  Test 6: TEST OK [0.000 secs, 304 KB]
+  Test 7: TEST OK [0.000 secs, 304 KB]
+  Test 8: TEST OK [0.032 secs, 304 KB]
+  Test 9: TEST OK [0.022 secs, 304 KB]
+  Test 10: TEST OK [0.043 secs, 304 KB]
+  Test 11: TEST OK [0.022 secs, 304 KB]
+  Test 12: TEST OK [0.000 secs, 304 KB]
+  Test 13: TEST OK [0.011 secs, 208 KB]
+  Test 14: TEST OK [0.000 secs, 304 KB]
+</pre>
+<h3><span class="editsection">[<a href="/index.php?title=USACO/hidden&amp;action=edit&amp;section=3" title="编辑段落：求助">编辑</a>]</span> <span class="mw-headline" id=".E6.B1.82.E5.8A.A9">求助</span></h3>
+<p>请问最小表示法能保证正确性吗，有可能找出的是另一串相同的字符，而并非最小表示的啊.
+</p><p>(设指针i,j分别向后滑动k个位置后比较失败(k&gt;=0)。假设s[i+k]≠s[j+k]：讨论 s[i+k] &gt; s[j+k]：因为s[i+x]与s[j+x](0&lt;=x&lt;=k-1)对应相等，即有：s[i...i+k-1] = s[j...j+k-1]，现在已经在i+k位置处与j+k不相等且s[i+k]&gt;s[j+k]，因此对指针i而言整个s[i]到s[k-1]都不是s的最小表示的起始位置，则PosMin(s)&gt;i+k，所以i可以滑动到i+k+1仍可保证&lt;=PosMin(s)。 反之对称地s[i+k]&lt;s[j+k],j可以滑动到j+k+1仍可保证&lt;=PosMin(s)。不管怎么样总有min(i,j) &lt;= PosMin(s)，当k==len时，返回min(i,j)即为答案。因为i,j都是单调递增的，复杂度O(n)。)
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/hidden&amp;action=edit&amp;section=4" title="编辑段落：ORZ">编辑</a>]</span> <span class="mw-headline" id="ORZ">ORZ</span></h2>
+<p>硬是没看懂为什么是O(n)，但是我的时间很好的证明了：
+</p><p>USER: wang x [wx539181]
+TASK: hidden
+LANG: C++
+</p><p>Compiling...
+Compile: OK
+</p><p>Executing...
+</p>
+<pre>  Test 1: TEST OK [0.000 secs, 3328 KB]
+  Test 2: TEST OK [0.000 secs, 3328 KB]
+  Test 3: TEST OK [0.000 secs, 3328 KB]
+  Test 4: TEST OK [0.000 secs, 3328 KB]
+  Test 5: TEST OK [0.000 secs, 3328 KB]
+  Test 6: TEST OK [0.000 secs, 3328 KB]
+  Test 7: TEST OK [0.000 secs, 3328 KB]
+  Test 8: TEST OK [0.000 secs, 3328 KB]
+  Test 9: TEST OK [0.000 secs, 3328 KB]
+  Test 10: TEST OK [0.000 secs, 3328 KB]
+  Test 11: TEST OK [0.000 secs, 3328 KB]
+  Test 12: TEST OK [0.000 secs, 3328 KB]
+  Test 13: TEST OK [0.000 secs, 3328 KB]
+  Test 14: TEST OK [0.000 secs, 3328 KB]
+</pre>
+<p>All tests OK.详见C++ CODE
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/hidden&amp;action=edit&amp;section=5" title="编辑段落：直接暴力就好了">编辑</a>]</span> <span class="mw-headline" id=".E7.9B.B4.E6.8E.A5.E6.9A.B4.E5.8A.9B.E5.B0.B1.E5.A5.BD.E4.BA.86">直接暴力就好了</span></h2>
+<p>可以在读入时统计每个字母第几次出现在哪个位置, 然后按字典序找到第一个出现次数非零的字母. 之后倒序记录每个位置上的该字母的连续出现次数Count[i], 并更新最大连续出现次数MAX, 特别注意此题是环状结构. 之后只处理Count[i] == MAX的位即可. 
+</p><p>Executing...
+</p>
+<pre>  Test 1: TEST OK [0.000 secs, 13964 KB]
+  Test 2: TEST OK [0.027 secs, 13964 KB]
+  Test 3: TEST OK [0.027 secs, 13964 KB]
+  Test 4: TEST OK [0.027 secs, 13964 KB]
+  Test 5: TEST OK [0.027 secs, 13964 KB]
+  Test 6: TEST OK [0.027 secs, 13964 KB]
+  Test 7: TEST OK [0.027 secs, 13964 KB]
+  Test 8: TEST OK [0.027 secs, 14076 KB]
+  Test 9: TEST OK [0.027 secs, 13964 KB]
+  Test 10: TEST OK [0.027 secs, 13964 KB]
+  Test 11: TEST OK [0.027 secs, 13964 KB]
+  Test 12: TEST OK [0.027 secs, 13964 KB]
+  Test 13: TEST OK [0.027 secs, 13964 KB]
+  Test 14: TEST OK [0.918 secs, 13964 KB]
+</pre>
+<p>All tests OK.
+</p><p>最后一个点比较尴尬, 第11个点很明显是卡找A的..--Climber.pI
+</p>
+<hr />
+<p>更猥琐的暴力—DY
+</p><p><br />
+</p>
+<pre>  Test 1: TEST OK [0.000 secs, 664 KB]
+  Test 2: TEST OK [0.000 secs, 664 KB]
+  Test 3: TEST OK [0.000 secs, 664 KB]
+  Test 4: TEST OK [0.000 secs, 664 KB]
+  Test 5: TEST OK [0.000 secs, 664 KB]
+  Test 6: TEST OK [0.000 secs, 664 KB]
+  Test 7: TEST OK [0.000 secs, 664 KB]
+  Test 8: TEST OK [0.054 secs, 664 KB]
+  Test 9: TEST OK [0.248 secs, 664 KB]
+  Test 10: TEST OK [0.378 secs, 664 KB]
+  Test 11: TEST OK [0.000 secs, 664 KB]
+  Test 12: TEST OK [0.000 secs, 664 KB]
+  Test 13: TEST OK [0.000 secs, 664 KB]
+  Test 14: TEST OK [0.367 secs, 664 KB]
+</pre>
+<p>All tests OK.
+</p>
+<pre>只要扫描一遍，把最小的字母位置记录下来。而且连续的一串只需记第一个（想一想，为什么）。//冒充一下LRJ
+然后枚举比较即可。
+</pre>
+<p><br />
+</p>
+<hr />
+<p>实在是没时间，只好写暴力，各位注意一下c++的string在暴力的时候很不好用，它那个[]操作符是有各种额外check的
+</p><p>要是想过，就得来个 const char* p = str.c_str();，然后把p当作c字符串来搞。 -- dp
+</p>
+<hr />
+<p>红书模板P216..注意读入时候可能换行
+```
+</p>
+<pre>   int pos = 0;
+   while (pos &lt; N ) {
+       scanf("%s",str + pos);
+       pos = (int)strlen(str);
+   }
+</pre>
+<p>```
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/hidden&amp;action=edit&amp;section=6" title="编辑段落：参考代码">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81">参考代码</span></h2>
+<p><a href="/index.php/Code:USACO/hidden/C" title="Code:USACO/hidden/C">C</a>
+</p><p><a href="/index.php/Code:USACO/hidden/C%2B%2B" title="Code:USACO/hidden/C++">C++</a>
+</p><p><a href="/index.php/Code:USACO/hidden/Pascal" title="Code:USACO/hidden/Pascal">Pascal</a>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 74/1000000
+Post-expand include size: 882/2097152 bytes
+Template argument size: 71/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:1197-0!*!0!!zh-cn!*!* and timestamp 20170806230536 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=USACO/hidden&amp;oldid=35977">http://www.nocow.cn/index.php?title=USACO/hidden&amp;oldid=35977</a>”</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="特殊:页面分类">2个分类</a>: <ul><li><a href="/index.php/%E5%88%86%E7%B1%BB:%E7%89%88%E6%9D%83%E6%97%A0%E4%BA%89%E8%AE%AE%E7%9A%84%E5%86%85%E5%AE%B9" title="分类:版权无争议的内容">版权无争议的内容</a></li><li><a href="/index.php?title=%E5%88%86%E7%B1%BB:USACO_Chapter_5&amp;action=edit&amp;redlink=1" class="new" title="分类:USACO Chapter 5（尚未撰写）">USACO Chapter 5</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/USACO/hidden" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:USACO/hidden&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=USACO/hidden&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=USACO/hidden&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=USACO%2Fhidden" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/USACO/hidden" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/USACO/hidden" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=USACO/hidden&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=USACO/hidden&amp;oldid=35977" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过12,964次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/54.173.35.129" title="特殊:用户贡献/54.173.35.129">54.173.35.129</a>于2016年6月4日 (星期六) 22:58做出最后修改。 在<a href="/index.php?title=%E7%94%A8%E6%88%B7:Devilphoenix&amp;action=edit&amp;redlink=1" class="new" title="用户:Devilphoenix（尚未撰写）">Albert Chen</a>、NOCOW用户<a href="/index.php/%E7%94%A8%E6%88%B7:Yts1999" title="用户:Yts1999">Yts1999</a>和<a href="/index.php?title=%E7%94%A8%E6%88%B7:Billyhmt&amp;action=edit&amp;redlink=1" class="new" title="用户:Billyhmt（尚未撰写）">Billyhmt</a>、NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/221.193.217.138" title="特殊:用户贡献/221.193.217.138">221.193.217.138</a>和<a href="/index.php?title=USACO/hidden&amp;action=credits" title="USACO/hidden">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.202 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

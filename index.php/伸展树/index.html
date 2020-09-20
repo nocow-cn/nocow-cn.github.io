@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>Splay Tree - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="canonical" href="/index.php/Splay_Tree" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=Splay_Tree&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=Splay_Tree&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Splay_Tree", "wgTitle": "Splay Tree", "wgCurRevisionId": 34168, "wgArticleId": 572, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["小作品", "损坏的文件的链接的页面"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Splay_Tree action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">Splay Tree</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub">(跳转自<a href="/index.php?title=%E4%BC%B8%E5%B1%95%E6%A0%91&amp;redirect=no" title="伸展树">伸展树</a>)</div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><div style="border:1px solid #ddd; background-color:#eee;padding:6px 20px 5px 12px;margin:10px 0px 15px 20px;-moz-border-radius:9px;"><b>Splay Tree</b>是一个小作品，欢迎<span class="plainlinks"><b><a rel="nofollow" class="external text" href="http://www.nocow.cn/index.php?title=Splay_Tree&amp;action=edit">帮助扩充</a></b></span>这个条目。</div>
+<p>参考WC2004，杨思雨论文
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E4.BB.8B.E7.BB.8D"><span class="tocnumber">1</span> <span class="toctext">介绍</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#.E6.93.8D.E4.BD.9C"><span class="tocnumber">2</span> <span class="toctext">操作</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#.E4.BC.B8.E5.B1.95Splay"><span class="tocnumber">2.1</span> <span class="toctext">伸展Splay</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#.E6.8F.92.E5.85.A5Insert"><span class="tocnumber">2.2</span> <span class="toctext">插入Insert</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#.E6.9F.A5.E6.89.BEFind"><span class="tocnumber">2.3</span> <span class="toctext">查找Find</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#.E5.88.A0.E9.99.A4Delete"><span class="tocnumber">2.4</span> <span class="toctext">删除Delete</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#.E5.90.88.E5.B9.B6Join"><span class="tocnumber">2.5</span> <span class="toctext">合并Join</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#.E5.88.86.E7.A6.BBSplit"><span class="tocnumber">2.6</span> <span class="toctext">分离Split</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#.E5.8F.82.E8.80.83.E7.A8.8B.E5.BA.8F"><span class="tocnumber">3</span> <span class="toctext">参考程序</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#.E5.A4.96.E9.83.A8.E9.93.BE.E6.8E.A5"><span class="tocnumber">4</span> <span class="toctext">外部链接</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="/index.php?title=Splay_Tree&amp;action=edit&amp;section=1" title="编辑段落：介绍">编辑</a>]</span> <span class="mw-headline" id=".E4.BB.8B.E7.BB.8D">介绍</span></h2>
+<p>本节描述一种相对简单的数据结构，叫做<b>伸展树</b>（splay tree），它保证从空树开始任意连续M次对树的操作最多花费O(MlogN)时间。虽然这种保证并不排除任意单次操作花费O(N)时间的可能，而且这样的界也不如每次操作最坏情形的界为O(logN)时那么强，但是实际效果是一样的：不存在不好的输入序列。
+</p><p>Splay Tree 是二叉查找树的一种，它与平衡二叉树、红黑树不同的是，Splay Tree从不强制地保持自身的平衡，每当查找到某个节点n的时候，在返回节点n的同时，Splay Tree会将节点n旋转到树根的位置，这样就使得Splay Tree天生有着一种类似缓存的能力，因为每次被查找到的节点都会被搬到树根的位置，所以当80%的情况下我们需要查找的元素都是某个固定的节点，或者是一部分特定的节点时，那么在很多时候，查找的效率会是O(1)的效率！当然如果查找的节点是很均匀地分布在不同的地方时，Splay Tree的性能就会变得很差了，但Splay Tree的均摊时间复杂度还是O（logn）的。
+</p><p>这里先介绍一下左旋（zag）和右旋（zig）的操作
+<a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6&amp;wpDestFile=Http://hi.csdn.net/attachment/201107/21/0_13112275721N3Z.gif" class="new" title="文件:Http://hi.csdn.net/attachment/201107/21/0 13112275721N3Z.gif">文件:Http://hi.csdn.net/attachment/201107/21/0 13112275721N3Z.gif</a>
+</p><p>然后就是Splay Tree进行Splay操作的具体步骤，主要分两种情况：
+</p><p><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6&amp;wpDestFile=Http://hi.csdn.net/attachment/201107/21/0_1311227785J1FJ.gif" class="new" title="文件:Http://hi.csdn.net/attachment/201107/21/0 1311227785J1FJ.gif">文件:Http://hi.csdn.net/attachment/201107/21/0 1311227785J1FJ.gif</a>
+先看图中的左边，查找到的x节点的父节点是y，x是y的左子树，y的父节点z是根节点，y也是z的左子树，要把x旋转到根节点的位置，就要进行zig(y)，然后再进行zig(x)操作
+</p><p>再看图中的右边，查找到的z节点的父节点是y，z是y的右子树，y的父节点x是根节点，y也是x的右子树，要把z旋转到根节点的位置，就要进行zag(y)，然后进行zag(x)操作
+</p><p><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6&amp;wpDestFile=Http://hi.csdn.net/attachment/201107/21/0_1311228052Kr0Y.gif" class="new" title="文件:Http://hi.csdn.net/attachment/201107/21/0 1311228052Kr0Y.gif">文件:Http://hi.csdn.net/attachment/201107/21/0 1311228052Kr0Y.gif</a>
+</p><p>若是途中的情况，若需要把x移动到根节点，则需要先进行zig(x)，然后再进行zag(x)操作
+</p><p>还有一种y是z的左子树，x是y的右子树的情况，这时就需要先进行zag(x)，然后再进行zig(x)操作了
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=Splay_Tree&amp;action=edit&amp;section=2" title="编辑段落：操作">编辑</a>]</span> <span class="mw-headline" id=".E6.93.8D.E4.BD.9C">操作</span></h2>
+<h3><span class="editsection">[<a href="/index.php?title=Splay_Tree&amp;action=edit&amp;section=3" title="编辑段落：伸展Splay">编辑</a>]</span> <span class="mw-headline" id=".E4.BC.B8.E5.B1.95Splay">伸展Splay</span></h3>
+<pre>   /**
+    * Internal method to perform a top-down splay.
+    * The last accessed node becomes the new root.
+    * This method may be overridden to use a different
+    * splaying algorithm, however, the splay tree code
+    * depends on the accessed item going to the root.
+    * x is the target item to splay around.
+    * t is the root of the subtree to splay.
+    */
+   void splay( const Comparable &amp; x, BinaryNode * &amp; t )
+   {
+       BinaryNode *leftTreeMax, *rightTreeMin;
+       static BinaryNode header;
+       header.left = header.right = nullNode;
+       leftTreeMax = rightTreeMin = &amp;header;
+       nullNode-&gt;element = x;   // Guarantee a match
+       for(&#160;;&#160;; )
+           if( x &lt; t-&gt;element )
+           {
+               if( t-&gt;left == nullNode )
+                   break;
+               if( x &lt; t-&gt;left-&gt;element )
+                   rotateWithLeftChild( t );
+               // Link Right
+               rightTreeMin-&gt;left = t;
+               rightTreeMin = t;
+               t = t-&gt;left;
+           }
+           else if( t-&gt;element &lt; x )
+           {
+               if( t-&gt;right == nullNode )
+                   break;
+               if( t-&gt;right-&gt;element &lt; x )
+                   rotateWithRightChild( t );
+               // Link Left
+               leftTreeMax-&gt;right = t;
+               leftTreeMax = t;
+               t = t-&gt;right;
+           }
+           else
+               break;
+       leftTreeMax-&gt;right = t-&gt;left;
+       rightTreeMin-&gt;left = t-&gt;right;
+       t-&gt;left = header.right;
+       t-&gt;right = header.left;
+   }
+</pre>
+<h3><span class="editsection">[<a href="/index.php?title=Splay_Tree&amp;action=edit&amp;section=4" title="编辑段落：插入Insert">编辑</a>]</span> <span class="mw-headline" id=".E6.8F.92.E5.85.A5Insert">插入Insert</span></h3>
+<pre>   void insert( const Comparable &amp; x )
+   {
+       static BinaryNode *newNode = NULL;
+       if( newNode == NULL )
+           newNode = new BinaryNode;
+       newNode-&gt;element = x;
+       if( root == nullNode )
+       {
+           newNode-&gt;left = newNode-&gt;right = nullNode;
+           root = newNode;
+       }
+       else
+       {
+           splay( x, root );
+           if( x &lt; root-&gt;element )
+           {
+               newNode-&gt;left = root-&gt;left;
+               newNode-&gt;right = root;
+               root-&gt;left = nullNode;
+               root = newNode;
+           }
+           else
+           if( root-&gt;element &lt; x )
+           {
+               newNode-&gt;right = root-&gt;right;
+               newNode-&gt;left = root;
+               root-&gt;right = nullNode;
+               root = newNode;
+           }
+           else
+               return;
+       }
+       newNode = NULL;   // So next insert will call new
+   }
+</pre>
+<h3><span class="editsection">[<a href="/index.php?title=Splay_Tree&amp;action=edit&amp;section=5" title="编辑段落：查找Find">编辑</a>]</span> <span class="mw-headline" id=".E6.9F.A5.E6.89.BEFind">查找Find</span></h3>
+<h3><span class="editsection">[<a href="/index.php?title=Splay_Tree&amp;action=edit&amp;section=6" title="编辑段落：删除Delete">编辑</a>]</span> <span class="mw-headline" id=".E5.88.A0.E9.99.A4Delete">删除Delete</span></h3>
+<pre>   void remove( const Comparable &amp; x )
+   {
+       BinaryNode *newTree;
+           // If x is found, it will be at the root
+       if(&#160;!contains( x ) )
+           return;   // Item not found; do nothing
+       if( root-&gt;left == nullNode )
+           newTree = root-&gt;right;
+       else
+       {
+           // Find the maximum in the left subtree
+           // Splay it to the root; and then attach right child
+           newTree = root-&gt;left;
+           splay( x, newTree );
+           newTree-&gt;right = root-&gt;right;
+       }
+       delete root;
+       root = newTree;
+   }
+</pre>
+<h3><span class="editsection">[<a href="/index.php?title=Splay_Tree&amp;action=edit&amp;section=7" title="编辑段落：合并Join">编辑</a>]</span> <span class="mw-headline" id=".E5.90.88.E5.B9.B6Join">合并Join</span></h3>
+<h3><span class="editsection">[<a href="/index.php?title=Splay_Tree&amp;action=edit&amp;section=8" title="编辑段落：分离Split">编辑</a>]</span> <span class="mw-headline" id=".E5.88.86.E7.A6.BBSplit">分离Split</span></h3>
+<h2><span class="editsection">[<a href="/index.php?title=Splay_Tree&amp;action=edit&amp;section=9" title="编辑段落：参考程序">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E8.80.83.E7.A8.8B.E5.BA.8F">参考程序</span></h2>
+<ul><li><a href="/index.php/Splay_Tree_C" title="Splay Tree C" class="mw-redirect">code in C</a>
+</li><li><a href="/index.php/Splay_Tree_Pascal" title="Splay Tree Pascal" class="mw-redirect">code in Pascal</a>
+</li><li><a href="/index.php/Splay_Tree_C" title="Splay Tree C" class="mw-redirect">code in C++</a>
+</li></ul>
+<h2><span class="editsection">[<a href="/index.php?title=Splay_Tree&amp;action=edit&amp;section=10" title="编辑段落：外部链接">编辑</a>]</span> <span class="mw-headline" id=".E5.A4.96.E9.83.A8.E9.93.BE.E6.8E.A5">外部链接</span></h2>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 50/1000000
+Post-expand include size: 408/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:572-0!*!0!!zh-cn!2!* and timestamp 20151008064141 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=Splay_Tree&amp;oldid=34168">http://www.nocow.cn/index.php?title=Splay_Tree&amp;oldid=34168</a>”</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="特殊:页面分类">2个分类</a>: <ul><li><a href="/index.php/%E5%88%86%E7%B1%BB:%E5%B0%8F%E4%BD%9C%E5%93%81" title="分类:小作品">小作品</a></li><li><a href="/index.php?title=%E5%88%86%E7%B1%BB:%E6%8D%9F%E5%9D%8F%E7%9A%84%E6%96%87%E4%BB%B6%E7%9A%84%E9%93%BE%E6%8E%A5%E7%9A%84%E9%A1%B5%E9%9D%A2&amp;action=edit&amp;redlink=1" class="new" title="分类:损坏的文件的链接的页面（尚未撰写）">损坏的文件的链接的页面</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/Splay_Tree" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:Splay_Tree&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=Splay_Tree&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=Splay_Tree&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=%E4%BC%B8%E5%B1%95%E6%A0%91" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Splay_Tree" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Splay_Tree" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=Splay_Tree&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=Splay_Tree&amp;oldid=34168" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过29,146次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/204.236.235.245" title="特殊:用户贡献/204.236.235.245">204.236.235.245</a>于2014年2月4日 (星期二) 22:42做出最后修改。 在<a href="/index.php?title=%E7%94%A8%E6%88%B7:Cainiaozr&amp;action=edit&amp;redlink=1" class="new" title="用户:Cainiaozr（尚未撰写）">ZHANG RONG</a>、NOCOW用户<a href="/index.php?title=%E7%94%A8%E6%88%B7:Rapheal&amp;action=edit&amp;redlink=1" class="new" title="用户:Rapheal（尚未撰写）">Rapheal</a>、NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/113.108.127.6" title="特殊:用户贡献/113.108.127.6">113.108.127.6</a>和<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/61.187.87.194" title="特殊:用户贡献/61.187.87.194">61.187.87.194</a>和<a href="/index.php?title=Splay_Tree&amp;action=credits" title="Splay Tree">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.145 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

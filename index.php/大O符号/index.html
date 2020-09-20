@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>大O符号 - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=%E5%A4%A7O%E7%AC%A6%E5%8F%B7&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=%E5%A4%A7O%E7%AC%A6%E5%8F%B7&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "大O符号", "wgTitle": "大O符号", "wgCurRevisionId": 21201, "wgArticleId": 1384, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["符号", "算法", "数学分析"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-大O符号 action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">大O符号</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><p><b>大O符号（Big O notation）</b>是用于描述<a href="/index.php?title=%E5%87%BD%E6%95%B0&amp;action=edit&amp;redlink=1" class="new" title="函数（尚未撰写）">函数</a><a href="/index.php?title=%E6%B8%90%E8%BF%9B%E5%88%86%E6%9E%90&amp;action=edit&amp;redlink=1" class="new" title="渐进分析（尚未撰写）">渐进行为</a>的<a href="/index.php?title=%E6%95%B0%E5%AD%A6&amp;action=edit&amp;redlink=1" class="new" title="数学（尚未撰写）">数学</a>符号。更确切地说，它是用另一个（通常更简单的）函数来描述一个函数<a href="/index.php?title=%E6%95%B0%E9%87%8F%E7%BA%A7&amp;action=edit&amp;redlink=1" class="new" title="数量级（尚未撰写）">数量级</a>的<b>渐近上界</b>。在<a href="/index.php?title=%E6%95%B0%E5%AD%A6&amp;action=edit&amp;redlink=1" class="new" title="数学（尚未撰写）">数学</a>中，它一般用来刻画被截断的<a href="/index.php?title=%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0&amp;action=edit&amp;redlink=1" class="new" title="无穷级数（尚未撰写）">无穷级数</a>尤其是<a href="/index.php?title=%E6%B8%90%E8%BF%91%E7%BA%A7%E6%95%B0&amp;action=edit&amp;redlink=1" class="new" title="渐近级数（尚未撰写）">渐近级数</a>的剩余项；在<a href="/index.php?title=%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6&amp;action=edit&amp;redlink=1" class="new" title="计算机科学（尚未撰写）">计算机科学</a>中，它在<a href="/index.php?title=%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90&amp;action=edit&amp;redlink=1" class="new" title="算法分析（尚未撰写）">分析</a><a href="/index.php/%E7%AE%97%E6%B3%95" title="算法">算法</a><a href="/index.php?title=%E5%A4%8D%E6%9D%82%E5%BA%A6&amp;action=edit&amp;redlink=1" class="new" title="复杂度（尚未撰写）">复杂度</a>的方面非常有用。 
+</p><p>大O符号是由<a href="/index.php?title=%E5%BE%B7%E5%9B%BD&amp;action=edit&amp;redlink=1" class="new" title="德国（尚未撰写）">德国</a><a href="/index.php/%E6%95%B0%E8%AE%BA" title="数论">数论</a>学家<a href="/index.php?title=%E4%BF%9D%E7%BD%97%C2%B7%E5%B7%B4%E8%B5%AB%E6%9B%BC&amp;action=edit&amp;redlink=1" class="new" title="保罗·巴赫曼（尚未撰写）">保罗·巴赫曼</a>（Paul Bachmann）在其1892年的著作《解析数论》（<i>Analytische Zahlentheorie</i>）首先引入的。而这个记号则是在另一位德国数论学家<a href="/index.php?title=%E8%89%BE%E5%BE%B7%E8%92%99%C2%B7%E6%9C%97%E9%81%93&amp;action=edit&amp;redlink=1" class="new" title="艾德蒙·朗道（尚未撰写）">艾德蒙·朗道</a>（Edmund Landau）的著作中才推广的，因此它有时又称为<b><a href="/index.php?title=%E6%9C%97%E9%81%93%E7%AC%A6%E5%8F%B7&amp;action=edit&amp;redlink=1" class="new" title="朗道符号（尚未撰写）">朗道符号</a>（Landau symbol）</b>。代表“order of ...”（……阶）的大O，最初是一个大写的希腊字母'<a href="/index.php?title=%CE%9F&amp;action=edit&amp;redlink=1" class="new" title="Ο（尚未撰写）">Ο</a>'（Omicron），现今用的是<a href="/index.php?title=%E8%8B%B1%E6%96%87&amp;action=edit&amp;redlink=1" class="new" title="英文（尚未撰写）">英文</a>大写字母'<a href="/index.php?title=O&amp;action=edit&amp;redlink=1" class="new" title="O（尚未撰写）">O</a>'，但从来不是阿拉伯数字'0'。
+</p><p>这个符号有两种形式上很接近但迥然不同的使用方法：<a href="/index.php?title=%E6%97%A0%E7%A9%B7%E5%A4%A7&amp;action=edit&amp;redlink=1" class="new" title="无穷大（尚未撰写）">无穷大</a>渐进与<a href="/index.php?title=%E6%97%A0%E7%A9%B7%E5%B0%8F&amp;action=edit&amp;redlink=1" class="new" title="无穷小（尚未撰写）">无穷小</a>渐进。然而这个区别-{只是}-在运用中的而不是原则上的——除了对函数自变量的一些不同的限定，“大O”的形式定义在两种情况下都是相同的。
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E6.97.A0.E7.A9.B7.E5.A4.A7.E6.B8.90.E8.BF.9B"><span class="tocnumber">1</span> <span class="toctext">无穷大渐进</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#.E6.97.A0.E7.A9.B7.E5.B0.8F.E6.B8.90.E8.BF.9B"><span class="tocnumber">2</span> <span class="toctext">无穷小渐进</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#.E5.BD.A2.E5.BC.8F.E5.8C.96.E5.AE.9A.E4.B9.89"><span class="tocnumber">3</span> <span class="toctext">形式化定义</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#.E5.B8.B8.E7.94.A8.E7.9A.84.E5.87.BD.E6.95.B0.E9.98.B6"><span class="tocnumber">4</span> <span class="toctext">常用的函数阶</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#.E4.B8.80.E4.BA.9B.E7.9B.B8.E5.85.B3.E7.9A.84.E6.B8.90.E8.BF.9B.E7.AC.A6.E5.8F.B7"><span class="tocnumber">5</span> <span class="toctext">一些相关的渐进符号</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#.E5.8F.82.E7.9C.8B"><span class="tocnumber">6</span> <span class="toctext">参看</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#.E5.8F.82.E8.80.83.E8.B5.84.E6.96.99"><span class="tocnumber">7</span> <span class="toctext">参考资料</span></a></li>
+</ul>
+</td></tr></table>
+<h3><span class="editsection">[<a href="/index.php?title=%E5%A4%A7O%E7%AC%A6%E5%8F%B7&amp;action=edit&amp;section=1" title="编辑段落：无穷大渐进">编辑</a>]</span> <span class="mw-headline" id=".E6.97.A0.E7.A9.B7.E5.A4.A7.E6.B8.90.E8.BF.9B"> 无穷大渐进 </span></h3>
+<p>在分析算法效率的时候非常有用。举个例子，解决一个规模为 n 的问题所花费的时间（或者所需步骤的数目）可以被求得：<span class="texhtml" dir="ltr"><i>T</i>(<i>n</i>) = 4<i>n</i><sup>2</sup> &#8722; 2<i>n</i> + 2</span>。
+</p><p>当n增大时，<span class="texhtml" dir="ltr"><i>n</i><sup>2</sup></span>项将开始占主导地位，而其他各项可以被忽略——举例说明：当<span class="texhtml" dir="ltr"><i>n</i> = 500</span>，<span class="texhtml" dir="ltr">4<i>n</i><sup>2</sup></span>项是<span class="texhtml" dir="ltr">2<i>n</i></span>项的1000倍大，因此在大多数场合下，省略后者对表达式的值的影响将是可以忽略不计的。
+</p><p>进一步看，如果我们与任一其他级的表达式比较，<span class="texhtml" dir="ltr"><i>n</i><sup>2</sup></span>项的<a href="/index.php?title=%E7%B3%BB%E6%95%B0&amp;action=edit&amp;redlink=1" class="new" title="系数（尚未撰写）">系数</a>也是无关紧要的。例如一个包含<span class="texhtml" dir="ltr"><i>n</i><sup>3</sup></span>或<span class="texhtml" dir="ltr">2<sup><i>n</i></sup></span>项的表达式，即使<span class="texhtml" dir="ltr"><i>T</i>(<i>n</i>) = 1000000<i>n</i><sup>2</sup></span>，假定<span class="texhtml" dir="ltr"><i>U</i>(<i>n</i>) = <i>n</i><sup>3</sup></span>，一旦n增长到大于1000000，后者就会一直超越前者。
+</p><p>这样，大O符号就记下剩余的部分，写作：
+</p>
+<dl><dd><img class="tex" alt="T(n)\in O(n^2)" src="/images/math/0/4/1/041ebb0bbcfefe449c2f59fdc3ae231b.png" />
+</dd></dl>
+<p>并且我们就说该算法具有 <i>n<sup>2</sup>阶</i>（平方阶）的时间复杂度。
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=%E5%A4%A7O%E7%AC%A6%E5%8F%B7&amp;action=edit&amp;section=2" title="编辑段落：无穷小渐进">编辑</a>]</span> <span class="mw-headline" id=".E6.97.A0.E7.A9.B7.E5.B0.8F.E6.B8.90.E8.BF.9B"> 无穷小渐进 </span></h3>
+<p>大O也可以用来描述数学函数估计中的误差项。例如： 
+</p>
+<dl><dd><img class="tex" alt="e^x=1+x+x^2/2+\hbox{O}(x^3)\qquad" src="/images/math/7/5/5/755133b8f7b668adf0413802d6d80ba8.png" /> 当 <img class="tex" alt="\ x\to 0" src="/images/math/b/7/5/b758337e579c3b842f9a3e104a18ebb0.png" /> 时
+</dd></dl>
+<p>这表示，如果 <i>x</i> 足够接近于0，那么误差（<span class="texhtml" dir="ltr"><i>e</i><sup><i>x</i></sup> &#8722; (1 + <i>x</i> + <i>x</i><sup>2</sup> / 2)</span>的差）的<a href="/index.php?title=%E7%BB%9D%E5%AF%B9%E5%80%BC&amp;action=edit&amp;redlink=1" class="new" title="绝对值（尚未撰写）">绝对值</a>小于 <i>x</i><sup>3</sup> 的某一常数倍。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=%E5%A4%A7O%E7%AC%A6%E5%8F%B7&amp;action=edit&amp;section=3" title="编辑段落：形式化定义">编辑</a>]</span> <span class="mw-headline" id=".E5.BD.A2.E5.BC.8F.E5.8C.96.E5.AE.9A.E4.B9.89"> 形式化定义 </span></h2>
+<p><img class="tex" alt="f(x)=O(g(x)) \Leftrightarrow \exists C,x_{0}&#160;: \left( x \ge x_{0} \Rightarrow f(x) \le C g(x) \right)" src="/images/math/c/e/c/cec9595cbdbf1c9ff633bf169912cf20.png" />
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=%E5%A4%A7O%E7%AC%A6%E5%8F%B7&amp;action=edit&amp;section=4" title="编辑段落：常用的函数阶">编辑</a>]</span> <span class="mw-headline" id=".E5.B8.B8.E7.94.A8.E7.9A.84.E5.87.BD.E6.95.B0.E9.98.B6"> 常用的函数阶 </span></h2>
+<p>下面是在分析算法的时候常见的函数分类列表。所有这些函数都处于“n”趋近于无穷大的情况下，增长得慢的函数列在上面。“c”是一个任意常数。
+</p>
+<table border="1" cellpadding="4" cellspacing="0">
+<tr>
+<th> 符号 </th>
+<th> 名称
+</th></tr>
+<tr>
+<td><span class="texhtml" dir="ltr"><i>O</i>(1)</span> </td>
+<td> <a href="/index.php?title=%E5%B8%B8%E6%95%B0&amp;action=edit&amp;redlink=1" class="new" title="常数（尚未撰写）">常数</a>（阶，下同）
+</td></tr>
+<tr>
+<td><span class="texhtml" dir="ltr"><i>O</i>(log<sup> * </sup><i>n</i>)</span> </td>
+<td> <a href="/index.php?title=%E8%BF%AD%E4%BB%A3%E5%AF%B9%E6%95%B0&amp;action=edit&amp;redlink=1" class="new" title="迭代对数（尚未撰写）">迭代对数</a>
+</td></tr>
+<tr>
+<td><span class="texhtml" dir="ltr"><i>O</i>(log<i>n</i>)</span> </td>
+<td> <a href="/index.php?title=%E5%AF%B9%E6%95%B0&amp;action=edit&amp;redlink=1" class="new" title="对数（尚未撰写）">对数</a>
+</td></tr>
+<tr>
+<td><span class="texhtml" dir="ltr"><i>O</i>([log<i>n</i>]<sup><i>c</i></sup>)</span> </td>
+<td> <a href="/index.php?title=%E5%A4%9A%E5%AF%B9%E6%95%B0&amp;action=edit&amp;redlink=1" class="new" title="多对数（尚未撰写）">多对数</a>
+</td></tr>
+<tr>
+<td><span class="texhtml" dir="ltr"><i>o</i>(<i>n</i>)</span> </td>
+<td> <a href="/index.php?title=%E6%AC%A1%E7%BA%BF%E6%80%A7&amp;action=edit&amp;redlink=1" class="new" title="次线性（尚未撰写）">次线性</a>
+</td></tr>
+<tr>
+<td><span class="texhtml" dir="ltr"><i>O</i>(<i>n</i>)</span> </td>
+<td> <a href="/index.php?title=%E7%BA%BF%E6%80%A7&amp;action=edit&amp;redlink=1" class="new" title="线性（尚未撰写）">线性</a>
+</td></tr>
+<tr>
+<td><span class="texhtml" dir="ltr"><i>O</i>(<i>n</i>log<i>n</i>)</span> </td>
+<td> <a href="/index.php?title=%E7%BA%BF%E6%80%A7%E5%AF%B9%E6%95%B0&amp;action=edit&amp;redlink=1" class="new" title="线性对数（尚未撰写）">线性对数</a>，或对数线性、拟线性、超线性
+</td></tr>
+<tr>
+<td><span class="texhtml" dir="ltr"><i>O</i>(<i>n</i><sup>2</sup>)</span> </td>
+<td> <a href="/index.php?title=%E5%B9%B3%E6%96%B9&amp;action=edit&amp;redlink=1" class="new" title="平方（尚未撰写）">平方</a>
+</td></tr>
+<tr>
+<td><span class="texhtml" dir="ltr"><i>O</i>(<i>n</i><sup><i>c</i></sup>)</span>, <span class="texhtml" dir="ltr"><i>c</i> &gt; 1</span> </td>
+<td> <a href="/index.php?title=%E5%A4%9A%E9%A1%B9%E5%BC%8F&amp;action=edit&amp;redlink=1" class="new" title="多项式（尚未撰写）">多项式</a>，有时叫作“代数”（阶）
+</td></tr>
+<tr>
+<td><span class="texhtml" dir="ltr"><i>O</i>(<i>c</i><sup><i>n</i></sup>)</span> </td>
+<td> <a href="/index.php?title=%E6%8C%87%E6%95%B0&amp;action=edit&amp;redlink=1" class="new" title="指数（尚未撰写）">指数</a>，有时叫作“<a href="/index.php?title=%E7%AD%89%E6%AF%94%E6%95%B0%E5%88%97&amp;action=edit&amp;redlink=1" class="new" title="等比数列（尚未撰写）">几何</a>”（阶）
+</td></tr>
+<tr>
+<td><span class="texhtml" dir="ltr"><i>O</i>(<i>n</i>!)</span> </td>
+<td> <a href="/index.php?title=%E9%98%B6%E4%B9%98&amp;action=edit&amp;redlink=1" class="new" title="阶乘（尚未撰写）">阶乘</a>，有时叫做“组合”（阶）
+</td></tr></table>
+<h2><span class="editsection">[<a href="/index.php?title=%E5%A4%A7O%E7%AC%A6%E5%8F%B7&amp;action=edit&amp;section=5" title="编辑段落：一些相关的渐进符号">编辑</a>]</span> <span class="mw-headline" id=".E4.B8.80.E4.BA.9B.E7.9B.B8.E5.85.B3.E7.9A.84.E6.B8.90.E8.BF.9B.E7.AC.A6.E5.8F.B7"> 一些相关的渐进符号 </span></h2>
+<p>大O是最经常使用的比较函数的渐进符号。
+</p>
+<table border="1" cellpadding="4" cellspacing="0">
+<tr>
+<th>符号
+</th>
+<th>定义
+</th></tr>
+<tr>
+<td><i>f</i>(<i>n</i>) = O(<i>g</i>(<i>n</i>))
+</td>
+<td>渐进上限
+</td></tr>
+<tr>
+<td><i>f</i>(<i>n</i>) = o(<i>g</i>(<i>n</i>))
+</td>
+<td>asymptotically negligible (<b>M</b> = 0)
+</td></tr>
+<tr>
+<td><i>f</i>(<i>n</i>) = &#937;(<i>g</i>(<i>n</i>))
+</td>
+<td>渐进下限 (<a href="/index.php?title=%E5%BD%93%E4%B8%94%E4%BB%85%E5%BD%93&amp;action=edit&amp;redlink=1" class="new" title="当且仅当（尚未撰写）">当且仅当</a> <i>g</i>(<i>n</i>) = O(<i>f</i>(<i>n</i>)))
+</td></tr>
+<tr>
+<td><i>f</i>(<i>n</i>) = &#969;(<i>g</i>(<i>n</i>))
+</td>
+<td>asymptotically dominant (<a href="/index.php?title=%E5%BD%93%E4%B8%94%E4%BB%85%E5%BD%93&amp;action=edit&amp;redlink=1" class="new" title="当且仅当（尚未撰写）">当且仅当</a> <i>g</i>(<i>n</i>) = o(<i>f</i>(<i>n</i>)))
+</td></tr>
+<tr>
+<td><i>f</i>(<i>n</i>) = &#920;(<i>g</i>(<i>n</i>))
+</td>
+<td>紧确的上下界 (<a href="/index.php?title=%E5%BD%93%E4%B8%94%E4%BB%85%E5%BD%93&amp;action=edit&amp;redlink=1" class="new" title="当且仅当（尚未撰写）">当且仅当</a> both <i>f</i>(<i>n</i>) = O(<i>g</i>(<i>n</i>)) and <i>g</i>(<i>n</i>) = O(<i>f</i>(<i>n</i>)))
+</td></tr></table>
+<h2><span class="editsection">[<a href="/index.php?title=%E5%A4%A7O%E7%AC%A6%E5%8F%B7&amp;action=edit&amp;section=6" title="编辑段落：参看">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E7.9C.8B">参看</span></h2>
+<ul><li><a href="/index.php?title=%E5%A4%A7%CE%A9%E7%AC%A6%E5%8F%B7&amp;action=edit&amp;redlink=1" class="new" title="大Ω符号（尚未撰写）">大Ω符号</a>
+</li><li><a href="/index.php?title=%E5%A4%A7%CE%98%E7%AC%A6%E5%8F%B7&amp;action=edit&amp;redlink=1" class="new" title="大Θ符号（尚未撰写）">大Θ符号</a>
+</li></ul>
+<h2><span class="editsection">[<a href="/index.php?title=%E5%A4%A7O%E7%AC%A6%E5%8F%B7&amp;action=edit&amp;section=7" title="编辑段落：参考资料">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E8.80.83.E8.B5.84.E6.96.99"> 参考资料 </span></h2>
+<ul><li>严蔚敏，吴伟民。数据结构：C语言版。北京清华大学出版社，1996。<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%BD%91%E7%BB%9C%E4%B9%A6%E6%BA%90/7302023689" class="internal mw-magiclink-isbn">ISBN 7-302-02368-9</a>。1.4节 算法和算法分析，14-17页。
+</li><li>部分来自<a rel="nofollow" class="external text" href="http://zh.wikipedia.org/">维基百科</a>中的<a rel="nofollow" class="external text" href="http://zh.wikipedia.org/wiki/大O符号">大O符号</a>，使用<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL" class="mw-redirect">GFDL</a>版权发布。
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 277/1000000
+Post-expand include size: 153/2097152 bytes
+Template argument size: 20/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:1384-0!1!0!!zh-cn!*!* and timestamp 20121011042005 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=%E5%A4%A7O%E7%AC%A6%E5%8F%B7&amp;oldid=21201">http://www.nocow.cn/index.php?title=%E5%A4%A7O%E7%AC%A6%E5%8F%B7&amp;oldid=21201</a>”</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="特殊:页面分类">3个分类</a>: <ul><li><a href="/index.php?title=%E5%88%86%E7%B1%BB:%E7%AC%A6%E5%8F%B7&amp;action=edit&amp;redlink=1" class="new" title="分类:符号（尚未撰写）">符号</a></li><li><a href="/index.php?title=%E5%88%86%E7%B1%BB:%E7%AE%97%E6%B3%95&amp;action=edit&amp;redlink=1" class="new" title="分类:算法（尚未撰写）">算法</a></li><li><a href="/index.php?title=%E5%88%86%E7%B1%BB:%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90&amp;action=edit&amp;redlink=1" class="new" title="分类:数学分析（尚未撰写）">数学分析</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/%E5%A4%A7O%E7%AC%A6%E5%8F%B7" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:%E5%A4%A7O%E7%AC%A6%E5%8F%B7&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=%E5%A4%A7O%E7%AC%A6%E5%8F%B7&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=%E5%A4%A7O%E7%AC%A6%E5%8F%B7&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=%E5%A4%A7O%E7%AC%A6%E5%8F%B7" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/%E5%A4%A7O%E7%AC%A6%E5%8F%B7" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/%E5%A4%A7O%E7%AC%A6%E5%8F%B7" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=%E5%A4%A7O%E7%AC%A6%E5%8F%B7&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=%E5%A4%A7O%E7%AC%A6%E5%8F%B7&amp;oldid=21201" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过4,696次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/204.236.235.245" title="特殊:用户贡献/204.236.235.245">204.236.235.245</a>于2010年6月28日 (星期一) 08:02做出最后修改。 在<a href="/index.php/%E7%94%A8%E6%88%B7:Cosechy" title="用户:Cosechy">yh</a>和<a href="/index.php/%E7%94%A8%E6%88%B7:Ronice" title="用户:Ronice">Ronice</a>和NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/60.166.96.94" title="特殊:用户贡献/60.166.96.94">60.166.96.94</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.754 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

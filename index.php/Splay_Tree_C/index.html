@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>Code:Splay Tree/C - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="canonical" href="/index.php/Code:Splay_Tree/C" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=Code:Splay_Tree/C&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=Code:Splay_Tree/C&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "Code", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 104, "wgPageName": "Code:Splay_Tree/C", "wgTitle": "Splay Tree/C", "wgCurRevisionId": 30207, "wgArticleId": 1718, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-104 ns-subject page-Code_Splay_Tree_C action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">Code:Splay Tree/C</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub">(跳转自<a href="/index.php?title=Splay_Tree_C&amp;redirect=no" title="Splay Tree C">Splay Tree C</a>)</div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="coMULTI">/*
+				An implementation of top-down splaying
+					D. Sleator &lt;sleator@cs.cmu.edu&gt;
+								 March 1992
+&#160;
+  &quot;Splay trees&quot;, or &quot;self-adjusting search trees&quot; are a simple and
+  efficient data structure for storing an ordered set.  The data
+  structure consists of a binary tree, without parent pointers, and no
+  additional fields.  It allows searching, insertion, deletion,
+  deletemin, deletemax, splitting, joining, and many other operations,
+  all with amortized logarithmic performance.  Since the trees adapt to
+  the sequence of requests, their performance on real access patterns is
+  typically even better.  Splay trees are described in a number of texts
+  and papers [1,2,3,4,5].
+&#160;
+  The code here is adapted from simple top-down splay, at the bottom of
+  page 669 of [3].  It can be obtained via anonymous ftp from
+  spade.pc.cs.cmu.edu in directory /usr/sleator/public.
+&#160;
+  The chief modification here is that the splay operation works even if the
+  item being splayed is not in the tree, and even if the tree root of the
+  tree is NULL.  So the line:
+&#160;
+							  t = splay(i, t);
+&#160;
+  causes it to search for item with key i in the tree rooted at t.  If it's
+  there, it is splayed to the root.  If it isn't there, then the node put
+  at the root is the last one before NULL that would have been reached in a
+  normal binary search for i.  (It's a neighbor of i in the tree.)  This
+  allows many other operations to be easily implemented, as shown below.
+&#160;
+  [1] &quot;Fundamentals of data structures in C&quot;, Horowitz, Sahni,
+	   and Anderson-Freed, Computer Science Press, pp 542-547.
+  [2] &quot;Data Structures and Their Algorithms&quot;, Lewis and Denenberg,
+	   Harper Collins, 1991, pp 243-251.
+  [3] &quot;Self-adjusting Binary Search Trees&quot; Sleator and Tarjan,
+	   JACM Volume 32, No 3, July 1985, pp 652-686.
+  [4] &quot;Data Structure and Algorithm Analysis&quot;, Mark Weiss,
+	   Benjamin Cummins, 1992, pp 119-130.
+  [5] &quot;Data Structures, Algorithms, and Performance&quot;, Derick Wood,
+	   Addison-Wesley, 1993, pp 367-375.
+&#160;
+  The following code was written by Daniel Sleator, and is released
+  in the public domain.
+*/</span>
+&#160;
+<span class="co2">#include &lt;stdio.h&gt;</span>
+&#160;
+<span class="kw4">int</span> size<span class="sy4">;</span>  <span class="coMULTI">/* number of nodes in the tree */</span>
+		   <span class="coMULTI">/* Not actually needed for any of the operations */</span>
+&#160;
+<span class="kw4">typedef</span> <span class="kw4">struct</span> tree_node Tree<span class="sy4">;</span>
+<span class="kw4">struct</span> tree_node <span class="br0">&#123;</span>
+	Tree <span class="sy2">*</span> left, <span class="sy2">*</span> right<span class="sy4">;</span>
+	<span class="kw4">int</span> item<span class="sy4">;</span>
+<span class="br0">&#125;</span><span class="sy4">;</span>
+&#160;
+Tree <span class="sy2">*</span> splay <span class="br0">&#40;</span><span class="kw4">int</span> i, Tree <span class="sy2">*</span> t<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+<span class="coMULTI">/* Simple top down splay, not requiring i to be in the tree t.  */</span>
+<span class="coMULTI">/* What it does is described above.							 */</span>
+	Tree N, <span class="sy2">*</span>l, <span class="sy2">*</span>r, <span class="sy2">*</span>y<span class="sy4">;</span>
+	<span class="kw1">if</span> <span class="br0">&#40;</span>t <span class="sy1">==</span> <span class="kw2">NULL</span><span class="br0">&#41;</span> <span class="kw1">return</span> t<span class="sy4">;</span>
+	N.<span class="me1">left</span> <span class="sy1">=</span> N.<span class="me1">right</span> <span class="sy1">=</span> <span class="kw2">NULL</span><span class="sy4">;</span>
+	l <span class="sy1">=</span> r <span class="sy1">=</span> <span class="sy3">&amp;</span>N<span class="sy4">;</span>
+&#160;
+	<span class="kw1">for</span> <span class="br0">&#40;</span><span class="sy4">;;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span>i <span class="sy1">&lt;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>item<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+			<span class="kw1">if</span> <span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>left <span class="sy1">==</span> <span class="kw2">NULL</span><span class="br0">&#41;</span> <span class="kw1">break</span><span class="sy4">;</span>
+			<span class="kw1">if</span> <span class="br0">&#40;</span>i <span class="sy1">&lt;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="sy2">-</span><span class="sy1">&gt;</span>item<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+				y <span class="sy1">=</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="sy4">;</span>						   <span class="coMULTI">/* rotate right */</span>
+				t<span class="sy2">-</span><span class="sy1">&gt;</span>left <span class="sy1">=</span> y<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="sy4">;</span>
+				y<span class="sy2">-</span><span class="sy1">&gt;</span>right <span class="sy1">=</span> t<span class="sy4">;</span>
+				t <span class="sy1">=</span> y<span class="sy4">;</span>
+				<span class="kw1">if</span> <span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>left <span class="sy1">==</span> <span class="kw2">NULL</span><span class="br0">&#41;</span> <span class="kw1">break</span><span class="sy4">;</span>
+			<span class="br0">&#125;</span>
+			r<span class="sy2">-</span><span class="sy1">&gt;</span>left <span class="sy1">=</span> t<span class="sy4">;</span>							   <span class="coMULTI">/* link right */</span>
+			r <span class="sy1">=</span> t<span class="sy4">;</span>
+			t <span class="sy1">=</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="sy4">;</span>
+		<span class="br0">&#125;</span> <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>i <span class="sy1">&gt;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>item<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+			<span class="kw1">if</span> <span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>right <span class="sy1">==</span> <span class="kw2">NULL</span><span class="br0">&#41;</span> <span class="kw1">break</span><span class="sy4">;</span>
+			<span class="kw1">if</span> <span class="br0">&#40;</span>i <span class="sy1">&gt;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="sy2">-</span><span class="sy1">&gt;</span>item<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+				y <span class="sy1">=</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="sy4">;</span>						  <span class="coMULTI">/* rotate left */</span>
+				t<span class="sy2">-</span><span class="sy1">&gt;</span>right <span class="sy1">=</span> y<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="sy4">;</span>
+				y<span class="sy2">-</span><span class="sy1">&gt;</span>left <span class="sy1">=</span> t<span class="sy4">;</span>
+				t <span class="sy1">=</span> y<span class="sy4">;</span>
+				<span class="kw1">if</span> <span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>right <span class="sy1">==</span> <span class="kw2">NULL</span><span class="br0">&#41;</span> <span class="kw1">break</span><span class="sy4">;</span>
+			<span class="br0">&#125;</span>
+			l<span class="sy2">-</span><span class="sy1">&gt;</span>right <span class="sy1">=</span> t<span class="sy4">;</span>							  <span class="coMULTI">/* link left */</span>
+			l <span class="sy1">=</span> t<span class="sy4">;</span>
+			t <span class="sy1">=</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="sy4">;</span>
+		<span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
+			<span class="kw1">break</span><span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+	<span class="br0">&#125;</span>
+	l<span class="sy2">-</span><span class="sy1">&gt;</span>right <span class="sy1">=</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="sy4">;</span>								<span class="coMULTI">/* assemble */</span>
+	r<span class="sy2">-</span><span class="sy1">&gt;</span>left <span class="sy1">=</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="sy4">;</span>
+	t<span class="sy2">-</span><span class="sy1">&gt;</span>left <span class="sy1">=</span> N.<span class="me1">right</span><span class="sy4">;</span>
+	t<span class="sy2">-</span><span class="sy1">&gt;</span>right <span class="sy1">=</span> N.<span class="me1">left</span><span class="sy4">;</span>
+	<span class="kw1">return</span> t<span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="coMULTI">/* Here is how sedgewick would have written this.					*/</span>
+<span class="coMULTI">/* It does the same thing.										   */</span>
+Tree <span class="sy2">*</span> sedgewickized_splay <span class="br0">&#40;</span><span class="kw4">int</span> i, Tree <span class="sy2">*</span> t<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+	Tree N, <span class="sy2">*</span>l, <span class="sy2">*</span>r, <span class="sy2">*</span>y<span class="sy4">;</span>
+	<span class="kw1">if</span> <span class="br0">&#40;</span>t <span class="sy1">==</span> <span class="kw2">NULL</span><span class="br0">&#41;</span> <span class="kw1">return</span> t<span class="sy4">;</span>
+	N.<span class="me1">left</span> <span class="sy1">=</span> N.<span class="me1">right</span> <span class="sy1">=</span> <span class="kw2">NULL</span><span class="sy4">;</span>
+	l <span class="sy1">=</span> r <span class="sy1">=</span> <span class="sy3">&amp;</span>N<span class="sy4">;</span>
+&#160;
+	<span class="kw1">for</span> <span class="br0">&#40;</span><span class="sy4">;;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span>i <span class="sy1">&lt;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>item<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+			<span class="kw1">if</span> <span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>left <span class="sy3">!</span><span class="sy1">=</span> <span class="kw2">NULL</span> <span class="sy3">&amp;&amp;</span> i <span class="sy1">&lt;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="sy2">-</span><span class="sy1">&gt;</span>item<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+				y <span class="sy1">=</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="sy4">;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>left <span class="sy1">=</span> y<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="sy4">;</span> y<span class="sy2">-</span><span class="sy1">&gt;</span>right <span class="sy1">=</span> t<span class="sy4">;</span> t <span class="sy1">=</span> y<span class="sy4">;</span>
+			<span class="br0">&#125;</span>
+			<span class="kw1">if</span> <span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>left <span class="sy1">==</span> <span class="kw2">NULL</span><span class="br0">&#41;</span> <span class="kw1">break</span><span class="sy4">;</span>
+			r<span class="sy2">-</span><span class="sy1">&gt;</span>left <span class="sy1">=</span> t<span class="sy4">;</span> r <span class="sy1">=</span> t<span class="sy4">;</span> t <span class="sy1">=</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="sy4">;</span>
+		<span class="br0">&#125;</span> <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>i <span class="sy1">&gt;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>item<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+			<span class="kw1">if</span> <span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>right <span class="sy3">!</span><span class="sy1">=</span> <span class="kw2">NULL</span> <span class="sy3">&amp;&amp;</span> i <span class="sy1">&gt;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="sy2">-</span><span class="sy1">&gt;</span>item<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+				y <span class="sy1">=</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="sy4">;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>right <span class="sy1">=</span> y<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="sy4">;</span> y<span class="sy2">-</span><span class="sy1">&gt;</span>left <span class="sy1">=</span> t<span class="sy4">;</span> t <span class="sy1">=</span> y<span class="sy4">;</span>
+			<span class="br0">&#125;</span>
+			<span class="kw1">if</span> <span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>right <span class="sy1">==</span> <span class="kw2">NULL</span><span class="br0">&#41;</span> <span class="kw1">break</span><span class="sy4">;</span>
+			l<span class="sy2">-</span><span class="sy1">&gt;</span>right <span class="sy1">=</span> t<span class="sy4">;</span> l <span class="sy1">=</span> t<span class="sy4">;</span> t <span class="sy1">=</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="sy4">;</span>
+		<span class="br0">&#125;</span> <span class="kw1">else</span> <span class="kw1">break</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	l<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="sy1">=</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="sy4">;</span> r<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="sy1">=</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="sy4">;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="sy1">=</span>N.<span class="me1">right</span><span class="sy4">;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="sy1">=</span>N.<span class="me1">left</span><span class="sy4">;</span>
+	<span class="kw1">return</span> t<span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+Tree <span class="sy2">*</span> insert<span class="br0">&#40;</span><span class="kw4">int</span> i, Tree <span class="sy2">*</span> t<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+<span class="coMULTI">/* Insert i into the tree t, unless it's already there.	*/</span>
+<span class="coMULTI">/* Return a pointer to the resulting tree.				 */</span>
+	Tree <span class="sy2">*</span> <span class="kw3">new</span><span class="sy4">;</span>
+&#160;
+	<span class="kw3">new</span> <span class="sy1">=</span> <span class="br0">&#40;</span>Tree <span class="sy2">*</span><span class="br0">&#41;</span> <span class="kw3">malloc</span> <span class="br0">&#40;</span><span class="kw3">sizeof</span> <span class="br0">&#40;</span>Tree<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw1">if</span> <span class="br0">&#40;</span><span class="kw3">new</span> <span class="sy1">==</span> <span class="kw2">NULL</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+		<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;Ran out of space<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw3">exit</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	new<span class="sy2">-</span><span class="sy1">&gt;</span>item <span class="sy1">=</span> i<span class="sy4">;</span>
+	<span class="kw1">if</span> <span class="br0">&#40;</span>t <span class="sy1">==</span> <span class="kw2">NULL</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+		new<span class="sy2">-</span><span class="sy1">&gt;</span>left <span class="sy1">=</span> new<span class="sy2">-</span><span class="sy1">&gt;</span>right <span class="sy1">=</span> <span class="kw2">NULL</span><span class="sy4">;</span>
+		size <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
+		<span class="kw1">return</span> <span class="kw3">new</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	t <span class="sy1">=</span> splay<span class="br0">&#40;</span>i,t<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw1">if</span> <span class="br0">&#40;</span>i <span class="sy1">&lt;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>item<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+		new<span class="sy2">-</span><span class="sy1">&gt;</span>left <span class="sy1">=</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="sy4">;</span>
+		new<span class="sy2">-</span><span class="sy1">&gt;</span>right <span class="sy1">=</span> t<span class="sy4">;</span>
+		t<span class="sy2">-</span><span class="sy1">&gt;</span>left <span class="sy1">=</span> <span class="kw2">NULL</span><span class="sy4">;</span>
+		size <span class="sy2">++</span><span class="sy4">;</span>
+		<span class="kw1">return</span> <span class="kw3">new</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span> <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>i <span class="sy1">&gt;</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>item<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+		new<span class="sy2">-</span><span class="sy1">&gt;</span>right <span class="sy1">=</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="sy4">;</span>
+		new<span class="sy2">-</span><span class="sy1">&gt;</span>left <span class="sy1">=</span> t<span class="sy4">;</span>
+		t<span class="sy2">-</span><span class="sy1">&gt;</span>right <span class="sy1">=</span> <span class="kw2">NULL</span><span class="sy4">;</span>
+		size<span class="sy2">++</span><span class="sy4">;</span>
+		<span class="kw1">return</span> <span class="kw3">new</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span> <span class="coMULTI">/* We get here if it's already in the tree */</span>
+			 <span class="coMULTI">/* Don't add it again					  */</span>
+		<span class="kw3">free</span><span class="br0">&#40;</span><span class="kw3">new</span><span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw1">return</span> t<span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+&#160;
+Tree <span class="sy2">*</span> <span class="kw3">delete</span><span class="br0">&#40;</span><span class="kw4">int</span> i, Tree <span class="sy2">*</span> t<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+<span class="coMULTI">/* Deletes i from the tree if it's there.			   */</span>
+<span class="coMULTI">/* Return a pointer to the resulting tree.			  */</span>
+	Tree <span class="sy2">*</span> x<span class="sy4">;</span>
+	<span class="kw1">if</span> <span class="br0">&#40;</span>t<span class="sy1">==</span><span class="kw2">NULL</span><span class="br0">&#41;</span> <span class="kw1">return</span> <span class="kw2">NULL</span><span class="sy4">;</span>
+	t <span class="sy1">=</span> splay<span class="br0">&#40;</span>i,t<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw1">if</span> <span class="br0">&#40;</span>i <span class="sy1">==</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>item<span class="br0">&#41;</span> <span class="br0">&#123;</span>			   <span class="coMULTI">/* found it */</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span>t<span class="sy2">-</span><span class="sy1">&gt;</span>left <span class="sy1">==</span> <span class="kw2">NULL</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+			x <span class="sy1">=</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="sy4">;</span>
+		<span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
+			x <span class="sy1">=</span> splay<span class="br0">&#40;</span>i, t<span class="sy2">-</span><span class="sy1">&gt;</span>left<span class="br0">&#41;</span><span class="sy4">;</span>
+			x<span class="sy2">-</span><span class="sy1">&gt;</span>right <span class="sy1">=</span> t<span class="sy2">-</span><span class="sy1">&gt;</span>right<span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+		size<span class="sy2">--</span><span class="sy4">;</span>
+		<span class="kw3">free</span><span class="br0">&#40;</span>t<span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw1">return</span> x<span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw1">return</span> t<span class="sy4">;</span>						 <span class="coMULTI">/* It wasn't there */</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+<span class="coMULTI">/* A sample use of these functions.  Start with the empty tree,		 */</span>
+<span class="coMULTI">/* insert some stuff into it, and then delete it						*/</span>
+	Tree <span class="sy2">*</span> root<span class="sy4">;</span>
+	<span class="kw4">int</span> i<span class="sy4">;</span>
+	root <span class="sy1">=</span> <span class="kw2">NULL</span><span class="sy4">;</span>			  <span class="coMULTI">/* the empty tree */</span>
+	size <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+	<span class="kw1">for</span> <span class="br0">&#40;</span>i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> <span class="nu0">1024</span><span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+		root <span class="sy1">=</span> insert<span class="br0">&#40;</span><span class="br0">&#40;</span><span class="nu0">541</span><span class="sy2">*</span>i<span class="br0">&#41;</span> <span class="sy3">&amp;</span> <span class="br0">&#40;</span><span class="nu0">1023</span><span class="br0">&#41;</span>, root<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw1">for</span> <span class="br0">&#40;</span>i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> <span class="nu0">1024</span><span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+		root <span class="sy1">=</span> <span class="kw3">delete</span><span class="br0">&#40;</span><span class="br0">&#40;</span><span class="nu0">541</span><span class="sy2">*</span>i<span class="br0">&#41;</span> <span class="sy3">&amp;</span> <span class="br0">&#40;</span><span class="nu0">1023</span><span class="br0">&#41;</span>, root<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;size =&#160;%d<span class="es1">\n</span>&quot;</span>, size<span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">        <span class="co2">#include &quot;splay.h&quot;</span>
+        <span class="co2">#include &lt;stdlib.h&gt;</span>
+        <span class="co2">#include &quot;fatal.h&quot;</span>
+&#160;
+        <span class="kw4">struct</span> SplayNode
+        <span class="br0">&#123;</span>
+            ElementType Element<span class="sy4">;</span>
+            SplayTree      Left<span class="sy4">;</span>
+            SplayTree      Right<span class="sy4">;</span>
+        <span class="br0">&#125;</span><span class="sy4">;</span>
+&#160;
+        <span class="kw4">typedef</span> <span class="kw4">struct</span> SplayNode <span class="sy2">*</span>Position<span class="sy4">;</span>
+        <span class="kw4">static</span> Position NullNode <span class="sy1">=</span> <span class="kw2">NULL</span><span class="sy4">;</span>  <span class="coMULTI">/* Needs initialization */</span>
+&#160;
+        SplayTree
+        Initialize<span class="br0">&#40;</span> <span class="kw4">void</span> <span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+            <span class="kw1">if</span><span class="br0">&#40;</span> NullNode <span class="sy1">==</span> <span class="kw2">NULL</span> <span class="br0">&#41;</span>
+            <span class="br0">&#123;</span>
+                NullNode <span class="sy1">=</span> <span class="kw3">malloc</span><span class="br0">&#40;</span> <span class="kw3">sizeof</span><span class="br0">&#40;</span> <span class="kw4">struct</span> SplayNode <span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="sy4">;</span>
+                <span class="kw1">if</span><span class="br0">&#40;</span> NullNode <span class="sy1">==</span> <span class="kw2">NULL</span> <span class="br0">&#41;</span>
+                    FatalError<span class="br0">&#40;</span> <span class="st0">&quot;Out of space!!!&quot;</span> <span class="br0">&#41;</span><span class="sy4">;</span>
+                NullNode<span class="sy2">-</span><span class="sy1">&gt;</span>Left <span class="sy1">=</span> NullNode<span class="sy2">-</span><span class="sy1">&gt;</span>Right <span class="sy1">=</span> NullNode<span class="sy4">;</span>
+            <span class="br0">&#125;</span>
+            <span class="kw1">return</span> NullNode<span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+&#160;
+        <span class="kw4">static</span> SplayTree Splay<span class="br0">&#40;</span> ElementType Item, Position X <span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+        SplayTree
+        MakeEmpty<span class="br0">&#40;</span> SplayTree T <span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+            <span class="kw1">if</span><span class="br0">&#40;</span> T <span class="sy3">!</span><span class="sy1">=</span> NullNode <span class="br0">&#41;</span>
+            <span class="br0">&#123;</span>
+                MakeEmpty<span class="br0">&#40;</span> T<span class="sy2">-</span><span class="sy1">&gt;</span>Left <span class="br0">&#41;</span><span class="sy4">;</span>
+                MakeEmpty<span class="br0">&#40;</span> T<span class="sy2">-</span><span class="sy1">&gt;</span>Right <span class="br0">&#41;</span><span class="sy4">;</span>
+                <span class="kw3">free</span><span class="br0">&#40;</span> T <span class="br0">&#41;</span><span class="sy4">;</span>
+            <span class="br0">&#125;</span>
+            <span class="kw1">return</span> NullNode<span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+&#160;
+        <span class="kw4">void</span>
+        PrintTree<span class="br0">&#40;</span> SplayTree T <span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+            <span class="kw1">if</span><span class="br0">&#40;</span> T <span class="sy3">!</span><span class="sy1">=</span> NullNode <span class="br0">&#41;</span>
+            <span class="br0">&#123;</span>
+                PrintTree<span class="br0">&#40;</span> T<span class="sy2">-</span><span class="sy1">&gt;</span>Left <span class="br0">&#41;</span><span class="sy4">;</span>
+                <span class="kw3">printf</span><span class="br0">&#40;</span> <span class="st0">&quot;%d &quot;</span>, T<span class="sy2">-</span><span class="sy1">&gt;</span>Element <span class="br0">&#41;</span><span class="sy4">;</span>
+                PrintTree<span class="br0">&#40;</span> T<span class="sy2">-</span><span class="sy1">&gt;</span>Right <span class="br0">&#41;</span><span class="sy4">;</span>
+            <span class="br0">&#125;</span>
+        <span class="br0">&#125;</span>
+&#160;
+        SplayTree
+        Find<span class="br0">&#40;</span> ElementType X, SplayTree T <span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+            <span class="kw1">return</span> Splay<span class="br0">&#40;</span> X, T <span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+&#160;
+        SplayTree
+        FindMin<span class="br0">&#40;</span> SplayTree T <span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+            <span class="kw1">return</span> Splay<span class="br0">&#40;</span> NegInfinity, T <span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+&#160;
+        SplayTree
+        FindMax<span class="br0">&#40;</span> SplayTree T <span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+            <span class="kw1">return</span> Splay<span class="br0">&#40;</span> Infinity, T <span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+&#160;
+        <span class="coMULTI">/* This function can be called only if K2 has a left child */</span>
+        <span class="coMULTI">/* Perform a rotate between a node (K2) and its left child */</span>
+        <span class="coMULTI">/* Update heights, then return new root */</span>
+&#160;
+        <span class="kw4">static</span> Position
+        SingleRotateWithLeft<span class="br0">&#40;</span> Position K2 <span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+            Position K1<span class="sy4">;</span>
+&#160;
+            K1 <span class="sy1">=</span> K2<span class="sy2">-</span><span class="sy1">&gt;</span>Left<span class="sy4">;</span>
+            K2<span class="sy2">-</span><span class="sy1">&gt;</span>Left <span class="sy1">=</span> K1<span class="sy2">-</span><span class="sy1">&gt;</span>Right<span class="sy4">;</span>
+            K1<span class="sy2">-</span><span class="sy1">&gt;</span>Right <span class="sy1">=</span> K2<span class="sy4">;</span>
+&#160;
+            <span class="kw1">return</span> K1<span class="sy4">;</span>  <span class="coMULTI">/* New root */</span>
+        <span class="br0">&#125;</span>
+&#160;
+        <span class="coMULTI">/* This function can be called only if K1 has a right child */</span>
+        <span class="coMULTI">/* Perform a rotate between a node (K1) and its right child */</span>
+        <span class="coMULTI">/* Update heights, then return new root */</span>
+&#160;
+        <span class="kw4">static</span> Position
+        SingleRotateWithRight<span class="br0">&#40;</span> Position K1 <span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+            Position K2<span class="sy4">;</span>
+&#160;
+            K2 <span class="sy1">=</span> K1<span class="sy2">-</span><span class="sy1">&gt;</span>Right<span class="sy4">;</span>
+            K1<span class="sy2">-</span><span class="sy1">&gt;</span>Right <span class="sy1">=</span> K2<span class="sy2">-</span><span class="sy1">&gt;</span>Left<span class="sy4">;</span>
+            K2<span class="sy2">-</span><span class="sy1">&gt;</span>Left <span class="sy1">=</span> K1<span class="sy4">;</span>
+&#160;
+            <span class="kw1">return</span> K2<span class="sy4">;</span>  <span class="coMULTI">/* New root */</span>
+        <span class="br0">&#125;</span>
+&#160;
+<span class="coMULTI">/* START: fig12_6.txt */</span>
+        <span class="coMULTI">/* Top-down splay procedure, */</span>
+        <span class="coMULTI">/* not requiring Item to be in tree */</span>
+&#160;
+        SplayTree
+        Splay<span class="br0">&#40;</span> ElementType Item, Position X <span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+            <span class="kw4">static</span> <span class="kw4">struct</span> SplayNode Header<span class="sy4">;</span>
+            Position LeftTreeMax, RightTreeMin<span class="sy4">;</span>
+&#160;
+            Header.<span class="me1">Left</span> <span class="sy1">=</span> Header.<span class="me1">Right</span> <span class="sy1">=</span> NullNode<span class="sy4">;</span>
+            LeftTreeMax <span class="sy1">=</span> RightTreeMin <span class="sy1">=</span> <span class="sy3">&amp;</span>Header<span class="sy4">;</span>
+            NullNode<span class="sy2">-</span><span class="sy1">&gt;</span>Element <span class="sy1">=</span> Item<span class="sy4">;</span>
+&#160;
+            <span class="kw1">while</span><span class="br0">&#40;</span> Item <span class="sy3">!</span><span class="sy1">=</span> X<span class="sy2">-</span><span class="sy1">&gt;</span>Element <span class="br0">&#41;</span>
+            <span class="br0">&#123;</span>
+                <span class="kw1">if</span><span class="br0">&#40;</span> Item <span class="sy1">&lt;</span> X<span class="sy2">-</span><span class="sy1">&gt;</span>Element <span class="br0">&#41;</span>
+                <span class="br0">&#123;</span>
+                    <span class="kw1">if</span><span class="br0">&#40;</span> Item <span class="sy1">&lt;</span> X<span class="sy2">-</span><span class="sy1">&gt;</span>Left<span class="sy2">-</span><span class="sy1">&gt;</span>Element <span class="br0">&#41;</span>
+                        X <span class="sy1">=</span> SingleRotateWithLeft<span class="br0">&#40;</span> X <span class="br0">&#41;</span><span class="sy4">;</span>
+                    <span class="kw1">if</span><span class="br0">&#40;</span> X<span class="sy2">-</span><span class="sy1">&gt;</span>Left <span class="sy1">==</span> NullNode <span class="br0">&#41;</span>
+                        <span class="kw1">break</span><span class="sy4">;</span>
+                    <span class="coMULTI">/* Link right */</span>
+                    RightTreeMin<span class="sy2">-</span><span class="sy1">&gt;</span>Left <span class="sy1">=</span> X<span class="sy4">;</span>
+                    RightTreeMin <span class="sy1">=</span> X<span class="sy4">;</span>
+                    X <span class="sy1">=</span> X<span class="sy2">-</span><span class="sy1">&gt;</span>Left<span class="sy4">;</span>
+                <span class="br0">&#125;</span>
+                <span class="kw1">else</span>
+                <span class="br0">&#123;</span>
+                    <span class="kw1">if</span><span class="br0">&#40;</span> Item <span class="sy1">&gt;</span> X<span class="sy2">-</span><span class="sy1">&gt;</span>Right<span class="sy2">-</span><span class="sy1">&gt;</span>Element <span class="br0">&#41;</span>
+                        X <span class="sy1">=</span> SingleRotateWithRight<span class="br0">&#40;</span> X <span class="br0">&#41;</span><span class="sy4">;</span>
+                    <span class="kw1">if</span><span class="br0">&#40;</span> X<span class="sy2">-</span><span class="sy1">&gt;</span>Right <span class="sy1">==</span> NullNode <span class="br0">&#41;</span>
+                        <span class="kw1">break</span><span class="sy4">;</span>
+                    <span class="coMULTI">/* Link left */</span>
+                    LeftTreeMax<span class="sy2">-</span><span class="sy1">&gt;</span>Right <span class="sy1">=</span> X<span class="sy4">;</span>
+                    LeftTreeMax <span class="sy1">=</span> X<span class="sy4">;</span>
+                    X <span class="sy1">=</span> X<span class="sy2">-</span><span class="sy1">&gt;</span>Right<span class="sy4">;</span>
+                <span class="br0">&#125;</span>
+            <span class="br0">&#125;</span>  <span class="coMULTI">/* while Item&#160;!= X-&gt;Element */</span>
+&#160;
+            <span class="coMULTI">/* Reassemble */</span>
+            LeftTreeMax<span class="sy2">-</span><span class="sy1">&gt;</span>Right <span class="sy1">=</span> X<span class="sy2">-</span><span class="sy1">&gt;</span>Left<span class="sy4">;</span>
+            RightTreeMin<span class="sy2">-</span><span class="sy1">&gt;</span>Left <span class="sy1">=</span> X<span class="sy2">-</span><span class="sy1">&gt;</span>Right<span class="sy4">;</span>
+            X<span class="sy2">-</span><span class="sy1">&gt;</span>Left <span class="sy1">=</span> Header.<span class="me1">Right</span><span class="sy4">;</span>
+            X<span class="sy2">-</span><span class="sy1">&gt;</span>Right <span class="sy1">=</span> Header.<span class="me1">Left</span><span class="sy4">;</span>
+&#160;
+            <span class="kw1">return</span> X<span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+<span class="coMULTI">/* END */</span>
+&#160;
+&#160;
+&#160;
+&#160;
+<span class="coMULTI">/* START: fig12_7.txt */</span>
+        SplayTree
+        Insert<span class="br0">&#40;</span> ElementType Item, SplayTree T <span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+            <span class="kw4">static</span> Position NewNode <span class="sy1">=</span> <span class="kw2">NULL</span><span class="sy4">;</span>
+&#160;
+            <span class="kw1">if</span><span class="br0">&#40;</span> NewNode <span class="sy1">==</span> <span class="kw2">NULL</span> <span class="br0">&#41;</span>
+            <span class="br0">&#123;</span>
+                NewNode <span class="sy1">=</span> <span class="kw3">malloc</span><span class="br0">&#40;</span> <span class="kw3">sizeof</span><span class="br0">&#40;</span> <span class="kw4">struct</span> SplayNode <span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="sy4">;</span>
+                <span class="kw1">if</span><span class="br0">&#40;</span> NewNode <span class="sy1">==</span> <span class="kw2">NULL</span> <span class="br0">&#41;</span>
+                    FatalError<span class="br0">&#40;</span> <span class="st0">&quot;Out of space!!!&quot;</span> <span class="br0">&#41;</span><span class="sy4">;</span>
+            <span class="br0">&#125;</span>
+            NewNode<span class="sy2">-</span><span class="sy1">&gt;</span>Element <span class="sy1">=</span> Item<span class="sy4">;</span>
+&#160;
+            <span class="kw1">if</span><span class="br0">&#40;</span> T <span class="sy1">==</span> NullNode <span class="br0">&#41;</span>
+            <span class="br0">&#123;</span>
+                NewNode<span class="sy2">-</span><span class="sy1">&gt;</span>Left <span class="sy1">=</span> NewNode<span class="sy2">-</span><span class="sy1">&gt;</span>Right <span class="sy1">=</span> NullNode<span class="sy4">;</span>
+                T <span class="sy1">=</span> NewNode<span class="sy4">;</span>
+            <span class="br0">&#125;</span>
+            <span class="kw1">else</span>
+            <span class="br0">&#123;</span>
+                T <span class="sy1">=</span> Splay<span class="br0">&#40;</span> Item, T <span class="br0">&#41;</span><span class="sy4">;</span>
+                <span class="kw1">if</span><span class="br0">&#40;</span> Item <span class="sy1">&lt;</span> T<span class="sy2">-</span><span class="sy1">&gt;</span>Element <span class="br0">&#41;</span>
+                <span class="br0">&#123;</span>
+                    NewNode<span class="sy2">-</span><span class="sy1">&gt;</span>Left <span class="sy1">=</span> T<span class="sy2">-</span><span class="sy1">&gt;</span>Left<span class="sy4">;</span>
+                    NewNode<span class="sy2">-</span><span class="sy1">&gt;</span>Right <span class="sy1">=</span> T<span class="sy4">;</span>
+                    T<span class="sy2">-</span><span class="sy1">&gt;</span>Left <span class="sy1">=</span> NullNode<span class="sy4">;</span>
+                    T <span class="sy1">=</span> NewNode<span class="sy4">;</span>
+                <span class="br0">&#125;</span>
+                <span class="kw1">else</span>
+                <span class="kw1">if</span><span class="br0">&#40;</span> T<span class="sy2">-</span><span class="sy1">&gt;</span>Element <span class="sy1">&lt;</span> Item <span class="br0">&#41;</span>
+                <span class="br0">&#123;</span>
+                    NewNode<span class="sy2">-</span><span class="sy1">&gt;</span>Right <span class="sy1">=</span> T<span class="sy2">-</span><span class="sy1">&gt;</span>Right<span class="sy4">;</span>
+                    NewNode<span class="sy2">-</span><span class="sy1">&gt;</span>Left <span class="sy1">=</span> T<span class="sy4">;</span>
+                    T<span class="sy2">-</span><span class="sy1">&gt;</span>Right <span class="sy1">=</span> NullNode<span class="sy4">;</span>
+                    T <span class="sy1">=</span> NewNode<span class="sy4">;</span>
+                <span class="br0">&#125;</span>
+                <span class="kw1">else</span>
+                    <span class="kw1">return</span> T<span class="sy4">;</span>  <span class="coMULTI">/* Already in the tree */</span>
+            <span class="br0">&#125;</span>
+&#160;
+            NewNode <span class="sy1">=</span> <span class="kw2">NULL</span><span class="sy4">;</span>   <span class="coMULTI">/* So next insert will call malloc */</span>
+            <span class="kw1">return</span> T<span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+<span class="coMULTI">/* END */</span>
+&#160;
+&#160;
+<span class="coMULTI">/* START: fig12_8.txt */</span>
+        SplayTree
+        Remove<span class="br0">&#40;</span> ElementType Item, SplayTree T <span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+            Position NewTree<span class="sy4">;</span>
+&#160;
+            <span class="kw1">if</span><span class="br0">&#40;</span> T <span class="sy3">!</span><span class="sy1">=</span> NullNode <span class="br0">&#41;</span>
+            <span class="br0">&#123;</span>
+                T <span class="sy1">=</span> Splay<span class="br0">&#40;</span> Item, T <span class="br0">&#41;</span><span class="sy4">;</span>
+                <span class="kw1">if</span><span class="br0">&#40;</span> Item <span class="sy1">==</span> T<span class="sy2">-</span><span class="sy1">&gt;</span>Element <span class="br0">&#41;</span>
+                <span class="br0">&#123;</span>
+                    <span class="coMULTI">/* Found it! */</span>
+                    <span class="kw1">if</span><span class="br0">&#40;</span> T<span class="sy2">-</span><span class="sy1">&gt;</span>Left <span class="sy1">==</span> NullNode <span class="br0">&#41;</span>
+                        NewTree <span class="sy1">=</span> T<span class="sy2">-</span><span class="sy1">&gt;</span>Right<span class="sy4">;</span>
+                    <span class="kw1">else</span>
+                    <span class="br0">&#123;</span>
+                        NewTree <span class="sy1">=</span> T<span class="sy2">-</span><span class="sy1">&gt;</span>Left<span class="sy4">;</span>
+                        NewTree <span class="sy1">=</span> Splay<span class="br0">&#40;</span> Item, NewTree <span class="br0">&#41;</span><span class="sy4">;</span>
+                        NewTree<span class="sy2">-</span><span class="sy1">&gt;</span>Right <span class="sy1">=</span> T<span class="sy2">-</span><span class="sy1">&gt;</span>Right<span class="sy4">;</span>
+                    <span class="br0">&#125;</span>
+                    <span class="kw3">free</span><span class="br0">&#40;</span> T <span class="br0">&#41;</span><span class="sy4">;</span>
+                    T <span class="sy1">=</span> NewTree<span class="sy4">;</span>
+                <span class="br0">&#125;</span>
+            <span class="br0">&#125;</span>
+&#160;
+            <span class="kw1">return</span> T<span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+&#160;
+<span class="coMULTI">/* END */</span>
+&#160;
+        ElementType
+        Retrieve<span class="br0">&#40;</span> SplayTree T <span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+            <span class="kw1">return</span> T<span class="sy2">-</span><span class="sy1">&gt;</span>Element<span class="sy4">;</span>
+        <span class="br0">&#125;</span></pre></div></div>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 7/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:1718-0!*!*!*!*!*!* and timestamp 20131105011639 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=Code:Splay_Tree/C&amp;oldid=30207">http://www.nocow.cn/index.php?title=Code:Splay_Tree/C&amp;oldid=30207</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-code" class="selected"><a href="/index.php/Code:Splay_Tree/C">代码</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=Code_Talk:Splay_Tree/C&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=Code:Splay_Tree/C&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=Code:Splay_Tree/C&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Splay+Tree+C" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Code:Splay_Tree/C" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Code:Splay_Tree/C" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=Code:Splay_Tree/C&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=Code:Splay_Tree/C&amp;oldid=30207" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过5,553次。</li>
+		<li id="credits">本页面由<a href="/index.php?title=%E7%94%A8%E6%88%B7:Cosechy_movingbot&amp;action=edit&amp;redlink=1" class="new" title="用户:Cosechy movingbot（尚未撰写）">cosechy@gmail.com</a>于2012年3月3日 (星期六) 11:11做出最后修改。 在<a href="/index.php/%E7%94%A8%E6%88%B7:Gnaggnoyil" title="用户:Gnaggnoyil">SuperBrother</a>和NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/58.35.242.208" title="特殊:用户贡献/58.35.242.208">58.35.242.208</a>和<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/58.247.121.66" title="特殊:用户贡献/58.247.121.66">58.247.121.66</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.107 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="keywords" content="Schlnet translate" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (中文(简体))" />
+<link title="Creative Commons" type="application/rdf+xml" href="/index.php?title=Schlnet_translate&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+		<title>NOCOW - Schlnet translate</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins/monobook/main.css?42b"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print" href="/skins/common/commonPrint.css?42b" />
+		<link rel="stylesheet" type="text/css" media="handheld" href="/skins/monobook/handheld.css?42b" />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins/monobook/IE50Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins/monobook/IE55Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins/monobook/IE60Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins/monobook/IE70Fixes.css?42b";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?42b"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">/*<![CDATA[*/
+var skin = "monobook";
+var stylepath = "/skins";
+var wgArticlePath = "/index.php/$1";
+var wgScriptPath = "";
+var wgServer = "http://www.nocow.cn";
+var wgCanonicalNamespace = "";
+var wgCanonicalSpecialPageName = false;
+var wgNamespaceNumber = 0;
+var wgPageName = "Schlnet_translate";
+var wgTitle = "Schlnet translate";
+var wgArticleId = "830";
+var wgIsArticle = true;
+var wgUserName = null;
+var wgUserLanguage = "zh-cn";
+var wgContentLanguage = "zh-cn";
+var wgBreakFrames = false;
+var wgCurRevisionId = "3145";
+/*]]>*/</script>
+                
+		<script type="text/javascript" src="/skins/common/wikibits.js?42b"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=-&action=raw&gen=css&maxage=18000";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+			</head>
+<body  class="mediawiki ns-0 ltr page-Schlnet_translate">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 class="firstHeading">Schlnet translate</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">来自&quot;NOCOW&quot;</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">跳转到: <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>			<!-- start content -->
+			<p><b>Network of Schools</b>
+校园网
+</p><p>IOI '96 Day 1 Problem 3
+</p><p>译 by Felicia Crazy
+</p>
+<table id="toc" class="toc" summary="目录"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#.E6.8F.8F.E8.BF.B0"><span class="tocnumber">1</span> <span class="toctext">描述</span></a></li>
+<li class="toclevel-1"><a href="#.E6.A0.BC.E5.BC.8F"><span class="tocnumber">2</span> <span class="toctext">格式</span></a></li>
+<li class="toclevel-1"><a href="#SAMPLE_INPUT_.28file_schlnet.in.29"><span class="tocnumber">3</span> <span class="toctext">SAMPLE INPUT (file schlnet.in)</span></a></li>
+<li class="toclevel-1"><a href="#SAMPLE_OUTPUT_.28file_schlnet.out.29"><span class="tocnumber">4</span> <span class="toctext">SAMPLE OUTPUT (file schlnet.out)</span></a></li>
+</ul>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "显示"; var tocHideText = "隐藏"; showTocToggle(); } </script>
+<a name=".E6.8F.8F.E8.BF.B0"></a><h2><span class="editsection">[<a href="/index.php?title=Schlnet_translate&amp;action=edit&amp;section=1" title="编辑段落: 描述">编辑</a>]</span> <span class="mw-headline">描述</span></h2>
+<p>一些学校连入一个电脑网络。那些学校已订立了协议：每个学校都会给其它的一些学校分发软件（称作“接受学校”）。注意如果 B 在 A 学校的分发列表中，那么 A 不必也在 B 学校的列表中。
+</p><p>你要写一个程序计算，根据协议，为了让网络中所有的学校都用上新软件，必须接受新软件副本的最少学校数目（子任务 A）。更进一步，我们想要确定通过给任意一个学校发送新软件，这个软件就会分发到网络中的所有学校。为了完成这个任务，我们可能必须扩展接收学校列表，使其加入新成员。计算最少需要增加几个扩展，使得不论我们给哪个学校发送新软件，它都会到达其余所有的学校（子任务 B）。一个扩展就是在一个学校的接收学校列表中引入一个新成员。
+</p>
+<a name=".E6.A0.BC.E5.BC.8F"></a><h2><span class="editsection">[<a href="/index.php?title=Schlnet_translate&amp;action=edit&amp;section=2" title="编辑段落: 格式">编辑</a>]</span> <span class="mw-headline">格式</span></h2>
+<p><b>PROGRAM NAME:</b> schlnet
+</p><p><b>INPUT FORMAT</b>
+输入文件的第一行包括一个整数 N：网络中的学校数目（2 &lt;= N &lt;= 100）。学校用前 N 个正整数标识。接下来 N 行中每行都表示一个接收学校列表（分发列表）。第 i+1 行包括学校 i 的接收学校的标识符。每个列表用 0 结束。空列表只用一个 0 表示。
+</p><p><b>OUTPUT FORMAT</b>
+</p><p>你的程序应该在输出文件中输出两行。第一行应该包括一个正整数：子任务 A 的解。第二行应该包括子任务 B 的解。
+</p>
+<a name="SAMPLE_INPUT_.28file_schlnet.in.29"></a><h2><span class="editsection">[<a href="/index.php?title=Schlnet_translate&amp;action=edit&amp;section=3" title="编辑段落: SAMPLE INPUT (file schlnet.in)">编辑</a>]</span> <span class="mw-headline">SAMPLE INPUT (file schlnet.in)</span></h2>
+<pre>5
+2 4 3 0
+4 5 0
+0
+0
+1 0
+</pre>
+<p><br />
+</p><p><br />
+</p>
+<a name="SAMPLE_OUTPUT_.28file_schlnet.out.29"></a><h2><span class="editsection">[<a href="/index.php?title=Schlnet_translate&amp;action=edit&amp;section=4" title="编辑段落: SAMPLE OUTPUT (file schlnet.out)">编辑</a>]</span> <span class="mw-headline">SAMPLE OUTPUT (file schlnet.out)</span></h2>
+<pre>1
+2
+</pre>
+<!-- Saved in parser cache with key nocow:pcache:idhash:830-0!1!0!!zh-cn!2 and timestamp 20071104015310 -->
+<div class="printfooter">
+来自"<a href="http://www.nocow.cn/index.php/Schlnet_translate">http://www.nocow.cn/index.php/Schlnet_translate</a>"</div>
+						<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+						 <li id="ca-nstab-main" class="selected"><a href="/index.php/Schlnet_translate">条目</a></li>
+						 <li id="ca-talk" class="new"><a href="/index.php?title=Talk:Schlnet_translate&amp;action=edit">讨论</a></li>
+						 <li id="ca-edit"><a href="/index.php?title=Schlnet_translate&amp;action=edit">编辑</a></li>
+						 <li id="ca-history"><a href="/index.php?title=Schlnet_translate&amp;action=history">历史</a></li>
+				</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="/index.php/User:64.208.172.181" class="new">64.208.172.181</a></li>
+				<li id="pt-anontalk"><a href="/index.php/User_talk:64.208.172.181" class="new">对此IP进行讨论</a></li>
+				<li id="pt-anonlogin"><a href="/index.php?title=Special:Userlogin&amp;returnto=Schlnet_translate">登录或创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5" title="首页"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/Special:Recentchanges">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/Special:Random">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/Help:%E5%B8%AE%E5%8A%A9">使用帮助</a></li>
+				<li id="n-sitesupport"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5">资助本站</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="进入" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="搜索" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/Special:Whatlinkshere/Schlnet_translate">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/Special:Recentchangeslinked/Schlnet_translate">链出更改</a></li>
+<li id="t-upload"><a href="/index.php/Special:Upload">上传文件</a></li>
+<li id="t-specialpages"><a href="/index.php/Special:Specialpages">特殊页面</a></li>
+				<li id="t-print"><a href="/index.php?title=Schlnet_translate&amp;printable=yes">可打印版</a></li>				<li id="t-permalink"><a href="/index.php?title=Schlnet_translate&amp;oldid=3145">永久链接</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt='GNU Free Documentation License 1.2' /></a></div>
+			<ul id="f-list">
+				<li id="viewcount">访问次数: 325次</li>
+				<li id="credits">此页由<a href="/index.php/User:Ghost" title="User:Ghost">ghost</a>于2007年5月29日, 14:14最后更改. </li>
+				<li id="copyright">本站内容在<a href="http://www.gnu.org/copyleft/fdl.html" class="external " title="http://www.gnu.org/copyleft/fdl.html" rel="nofollow">GNU Free Documentation License 1.2</a>下发布</li>
+				<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E7%AD%96%E7%95%A5" title="NOCOW:隐私策略">隐私策略</a></li>
+				<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+				<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by bdezlinux in 0.142 secs. --></body></html>

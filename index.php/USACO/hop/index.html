@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>USACO/hop - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=USACO/hop&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=USACO/hop&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "USACO/hop", "wgTitle": "USACO/hop", "wgCurRevisionId": 31633, "wgArticleId": 4679, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-USACO_hop action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">USACO/hop</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="/index.php/USACO" title="USACO">USACO</a></span></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Description"><span class="tocnumber">1</span> <span class="toctext">Description</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#PROBLEM_NAME:"><span class="tocnumber">2</span> <span class="toctext">PROBLEM NAME:</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#INPUT_FORMAT:"><span class="tocnumber">3</span> <span class="toctext">INPUT FORMAT:</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#SAMPLE_INPUT_.28file_hop.in.29:"><span class="tocnumber">4</span> <span class="toctext">SAMPLE INPUT (file hop.in):</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#OUTPUT_FORMAT:"><span class="tocnumber">5</span> <span class="toctext">OUTPUT FORMAT:</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#SAMPLE_OUTPUT_.28file_hop.out.29:"><span class="tocnumber">6</span> <span class="toctext">SAMPLE OUTPUT (file hop.out):</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#OUTPUT_DETAILS:"><span class="tocnumber">7</span> <span class="toctext">OUTPUT DETAILS:</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/hop&amp;action=edit&amp;section=1" title="编辑段落：Description">编辑</a>]</span> <span class="mw-headline" id="Description"> Description </span></h2>
+<p>奶牛们正在回味童年，玩一个类似跳格子的游戏，在这个游戏里，奶牛们在草地上画了一行N个格子，(3 &lt;=N &lt;= 250,000)，编号为1..N。
+就像任何一个好游戏一样，这样的跳格子游戏也有奖励！第i个格子标有一个数字V_i(-2,000,000,000 &lt;=V_i &lt;= 2,000,000,000)表示这个格子的钱。
+奶牛们想看看最后谁能得到最多的钱。
+规则很简单：
+</p>
+<ul><li>每个奶牛从0号格子出发。(0号格子在1号之前，那里没钱)
+</li><li>她向N号格子进行一系列的跳跃(也可以不跳)，每次她跳到的格子最多可以和前一个落脚的格子差K格(1 &lt;= K &lt;= N)(比方说，当前在1号格，K=2, 可以跳到2号和3号格子)
+</li><li>在任何时候，她都可以选择回头往0号格子跳，直到跳到0号格子。另外，除了以上规则之外，回头跳的时候还有两条规则：
+</li><li>不可以跳到之前停留的格子。
+</li><li>除了0号格子之外，她在回来的时候，停留的格子必须是恰巧过去的时候停留的某个格子的前一格(当然，也可以跳过某些过去时候停留的格子)。简单点说，如果i号格子是回来停留的格子，i+1号就必须是过去停留的格子，如果i+1号格子是过去停留的格子，i号格子不一定要是回来停留的格子。(如果这里不太清楚的可以去看英文原文)
+</li></ul>
+<p>她得到的钱就是所有停留过的格子中的数字的和，请你求出最多奶牛可以得到的钱数。
+在样例中，K=2，一行5个格子。
+</p>
+<pre>
+    格子  编号:    0      1      2      3      4      5
+                 +---+  +---+  +---+  +---+  +---+  +---+
+                 |///|--|   |--|   |--|   |--|   |--|   |
+                 +---+  +---+  +---+  +---+  +---+  +---+
+         钱数&#160;:    -       0      1      2     -3      4
+</pre>
+<p>一个合法的序列Bessie可以选择的是0[0], 1[0], 3[2], 2[1], 0[0]。(括号里的数表示钱数)这样，可以得到的钱数为0+0+2+1+0 = 3。
+如果Bessie选择一个序列开头为0, 1, 2, 3, ...，那么她就没办法跳回去了，因为她没办法再跳到一个之前没跳过的格子。
+序列0[0], 2[1], 4[-3], 5[4], 3[2], 1[0], 0[0]是最大化钱数的序列之一，最后的钱数为(0+1-3+4+2+0 = 4)。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/hop&amp;action=edit&amp;section=2" title="编辑段落：PROBLEM NAME:">编辑</a>]</span> <span class="mw-headline" id="PROBLEM_NAME:"> PROBLEM NAME: </span></h2>
+<p>hop
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/hop&amp;action=edit&amp;section=3" title="编辑段落：INPUT FORMAT:">编辑</a>]</span> <span class="mw-headline" id="INPUT_FORMAT:"> INPUT FORMAT: </span></h2>
+<ul><li>第1行 1: 两个用空格隔开的整数: N 和 K
+</li><li>第2到N+1行: 第i+1行有一个整数: V_i
+</li></ul>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/hop&amp;action=edit&amp;section=4" title="编辑段落：SAMPLE INPUT (file hop.in):">编辑</a>]</span> <span class="mw-headline" id="SAMPLE_INPUT_.28file_hop.in.29:"> SAMPLE INPUT (file hop.in): </span></h2>
+<pre>
+5 2
+0
+1
+2
+-3
+4
+</pre>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/hop&amp;action=edit&amp;section=5" title="编辑段落：OUTPUT FORMAT:">编辑</a>]</span> <span class="mw-headline" id="OUTPUT_FORMAT:"> OUTPUT FORMAT: </span></h2>
+<ul><li>第一行: 一个单个的整数表示最大的钱数是多少。
+</li></ul>
+<p><br />
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/hop&amp;action=edit&amp;section=6" title="编辑段落：SAMPLE OUTPUT (file hop.out):">编辑</a>]</span> <span class="mw-headline" id="SAMPLE_OUTPUT_.28file_hop.out.29:"> SAMPLE OUTPUT (file hop.out): </span></h2>
+<pre>
+4
+</pre>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/hop&amp;action=edit&amp;section=7" title="编辑段落：OUTPUT DETAILS:">编辑</a>]</span> <span class="mw-headline" id="OUTPUT_DETAILS:"> OUTPUT DETAILS: </span></h2>
+<p>还有一种可能的最大化钱数的序列是: 0 2 4 5 3 1 0
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 54/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:4679-0!*!*!!zh-cn!*!* and timestamp 20121011025359 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=USACO/hop&amp;oldid=31633">http://www.nocow.cn/index.php?title=USACO/hop&amp;oldid=31633</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/USACO/hop" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:USACO/hop&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=USACO/hop&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=USACO/hop&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=USACO%2Fhop" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/USACO/hop" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/USACO/hop" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=USACO/hop&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=USACO/hop&amp;oldid=31633" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过859次。</li>
+		<li id="credits">本页面由NOCOW用户<a href="/index.php?title=%E7%94%A8%E6%88%B7:Yts1999&amp;action=edit&amp;redlink=1" class="new" title="用户:Yts1999（尚未撰写）">Yts1999</a>于2012年10月3日 (星期三) 14:48做出最后修改。 在NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/222.177.17.75" title="特殊:用户贡献/222.177.17.75">222.177.17.75</a>和<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/114.101.81.242" title="特殊:用户贡献/114.101.81.242">114.101.81.242</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.372 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

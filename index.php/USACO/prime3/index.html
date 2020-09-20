@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="keywords" content="USACO/prime3,USACO,USACO Chapter 4,CC-by-sa,GFDL,GNU LGPL,版权模板,USACO/prime3,USACO/prime3/C,USACO/prime3/C++,USACO/prime3/Pascal" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (中文(简体))" />
+<link title="Creative Commons" type="application/rdf+xml" href="/index.php?title=USACO/prime3&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+		<title>NOCOW - USACO/prime3</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins/monobook/main.css?42b"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print" href="/skins/common/commonPrint.css?42b" />
+		<link rel="stylesheet" type="text/css" media="handheld" href="/skins/monobook/handheld.css?42b" />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins/monobook/IE50Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins/monobook/IE55Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins/monobook/IE60Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins/monobook/IE70Fixes.css?42b";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?42b"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">/*<![CDATA[*/
+var skin = "monobook";
+var stylepath = "/skins";
+var wgArticlePath = "/index.php/$1";
+var wgScriptPath = "";
+var wgServer = "http://www.nocow.cn";
+var wgCanonicalNamespace = "";
+var wgCanonicalSpecialPageName = false;
+var wgNamespaceNumber = 0;
+var wgPageName = "USACO/prime3";
+var wgTitle = "USACO/prime3";
+var wgArticleId = "1166";
+var wgIsArticle = true;
+var wgUserName = null;
+var wgUserLanguage = "zh-cn";
+var wgContentLanguage = "zh-cn";
+var wgBreakFrames = false;
+var wgCurRevisionId = "27119";
+/*]]>*/</script>
+                
+		<script type="text/javascript" src="/skins/common/wikibits.js?42b"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=-&action=raw&gen=css&maxage=18000";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+			</head>
+<body  class="mediawiki ns-0 ltr page-USACO_prime3">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+<div style="text-align:center;font-size:85%;font-weight:bold" id=headlinemessage>
+<div>如果发现广告等破坏行为，请尽量将条目恢复到较早的版本而不是把相应内容直接删除，谢谢合作。</div>
+<!--div>NOCOW近期对条目的命名进行了一些整理，一些链接可能失效，为此带来的不便请大家谅解。创建条目时也请遵循新的命名规范，谢谢合作。</div-->
+</div>
+		<a name="top" id="top"></a>
+				<h1 class="firstHeading">USACO/prime3</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">来自&quot;NOCOW&quot;</h3>
+			<div id="contentSub"><span class="subpages">&lt; <a href="/index.php/USACO" title="USACO">USACO</a></span></div>
+									<div id="jump-to-nav">跳转到: <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>			<!-- start content -->
+			<pre> 这篇文章可以证实是由NOCOW用户原创，不存在任何版权争议。
+ 本文作者同意以<a href="/index.php/NOCOW:GFDL" title="NOCOW:GFDL">GNU FDL</a>、<a href="/index.php/NOCOW:CC-by-sa" title="NOCOW:CC-by-sa">CC-by-sa</a>和<a href="/index.php/NOCOW:GNU_LGPL" title="NOCOW:GNU LGPL">GNU LGPL</a>（如果适用）三种版权发布此文章（不包括翻译文章中属于原始所有者的部分版权）。
+ 如果你修改了这篇文章并且不同意用GNU FDL以外的版权发布，可以换一个<a href="/index.php/Category:%E7%89%88%E6%9D%83%E6%A8%A1%E6%9D%BF" title="Category:版权模板">版权模板</a>或者移除此模板。
+</pre>
+<dl><dd>这是<a href="/index.php/USACO" title="USACO">USACO</a> <a href="/index.php/USACO_Chapter_4#Chapter_4.3" title="USACO Chapter 4">Chapter 4 .3</a>中的OI题目<b>The Primes</b>的<b>介绍及题解</b>，参见 <a href="/index.php/Translate:USACO/prime3" title="Translate:USACO/prime3">翻译</a>，<a href="/index.php/Code:USACO/prime3/C" title="Code:USACO/prime3/C">C语言代码</a>，<a href="/index.php/Code:USACO/prime3/C%2B%2B" title="Code:USACO/prime3/C++">C++语言代码</a>，<a href="/index.php/Code:USACO/prime3/Pascal" title="Code:USACO/prime3/Pascal">Pascal语言代码</a>。
+</dd></dl>
+<p><br />
+</p>
+<table id="toc" class="toc" summary="目录"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#.E9.97.AE.E9.A2.98.E5.88.86.E6.9E.90"><span class="tocnumber">1</span> <span class="toctext">问题分析</span></a></li>
+<li class="toclevel-1"><a href="#.E4.BC.98.E5.8C.96.E6.8A.80.E5.B7.A7"><span class="tocnumber">2</span> <span class="toctext">优化技巧</span></a></li>
+<li class="toclevel-1"><a href="#.E8.B0.81.E8.AF.B4.E9.A1.BA.E5.BA.8F.E6.9E.9A.E4.B8.BE.E8.BF.87.E4.B8.8D.E4.BA.86"><span class="tocnumber">3</span> <span class="toctext">谁说顺序枚举过不了</span></a></li>
+<li class="toclevel-1"><a href="#.E9.80.92.E5.BD.92.E7.9A.84.E9.A1.BA.E5.BA.8F.E6.9E.9A.E4.B8.BE.E9.83.BD.E8.83.BD.E8.BF.87"><span class="tocnumber">4</span> <span class="toctext">递归的顺序枚举都能过</span></a></li>
+<li class="toclevel-1"><a href="#.E6.88.91.E7.9A.84.E9.80.92.E5.BD.92.E9.A1.BA.E5.BA.8F.E6.9E.9A.E4.B8.BE"><span class="tocnumber">5</span> <span class="toctext">我的递归顺序枚举</span></a></li>
+<li class="toclevel-1"><a href="#.E5.8F.A6.E4.B8.80.E7.A7.8D.E6.80.9D.E8.B7.AF"><span class="tocnumber">6</span> <span class="toctext">另一种思路</span></a></li>
+<li class="toclevel-1"><a href="#.E4.BC.98.E5.8C.96.E9.A1.BA.E5.BA.8F.E6.9E.9A.E4.B8.BE"><span class="tocnumber">7</span> <span class="toctext">优化顺序枚举</span></a></li>
+<li class="toclevel-1"><a href="#DFS.E6.89.8B.E5.8A.A8.E6.8C.87.E5.AE.9A.E6.90.9C.E7.B4.A2.E9.A1.BA.E5.BA.8F"><span class="tocnumber">8</span> <span class="toctext">DFS手动指定搜索顺序</span></a></li>
+<li class="toclevel-1"><a href="#.E8.8C.83.E4.BE.8B.E7.A8.8B.E5.BA.8F"><span class="tocnumber">9</span> <span class="toctext">范例程序</span></a></li>
+</ul>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "显示"; var tocHideText = "隐藏"; showTocToggle(); } </script>
+<a name=".E9.97.AE.E9.A2.98.E5.88.86.E6.9E.90"></a><h2><span class="editsection">[<a href="/index.php?title=USACO/prime3&amp;action=edit&amp;section=1" title="编辑段落: 问题分析">编辑</a>]</span> <span class="mw-headline">问题分析</span></h2>
+<p>这道题比较难。
+采取枚举模拟搜索，但是需要优化。
+</p>
+<a name=".E4.BC.98.E5.8C.96.E6.8A.80.E5.B7.A7"></a><h2><span class="editsection">[<a href="/index.php?title=USACO/prime3&amp;action=edit&amp;section=2" title="编辑段落: 优化技巧">编辑</a>]</span> <span class="mw-headline">优化技巧</span></h2>
+<p>一行行的枚举连样例都过不了，考虑这题格子之间有相互约束，所以首先要优化枚举顺序。先枚举两条对角线，因为他们控制的行列是最多的，而且左上角的数已经确定了。接着枚举中间的一竖列,因为它同样控制的行列最多,接着枚举最上面一行和最下面一行。此时第3行的2，4两个数也可以通过减法得到了。最后枚举第2，4行，第3行减法得到。于是所有格子都已经确定了，验证一下就OK。
+</p><p>数据结构方面，需要多个数组记录满足条件的素数，比如已知第1,3,5位的所有素数或已知第1位的所有素数都要预处理出来。并且每个数用5个1位数储存，这样操作方便而且效率高。
+</p><p>全程都需要时刻剪去不满足要求的情况。
+</p><p>注意细节，此题相当繁杂。
+</p>
+<pre>                                                                          By Leser Yang.
+</pre>
+<p>其实用for暴力枚举不烦，但是写错就完蛋了，调试要累死的.
+</p>
+<a name=".E8.B0.81.E8.AF.B4.E9.A1.BA.E5.BA.8F.E6.9E.9A.E4.B8.BE.E8.BF.87.E4.B8.8D.E4.BA.86"></a><h2><span class="editsection">[<a href="/index.php?title=USACO/prime3&amp;action=edit&amp;section=3" title="编辑段落: 谁说顺序枚举过不了">编辑</a>]</span> <span class="mw-headline">谁说顺序枚举过不了</span></h2>
+<pre>  Test 1: TEST OK [0.011 secs, 3092 KB]
+  Test 2: TEST OK [0.011 secs, 3092 KB]
+  Test 3: TEST OK [0.043 secs, 3092 KB]
+  Test 4: TEST OK [0.065 secs, 3092 KB]
+  Test 5: TEST OK [0.076 secs, 3092 KB]
+  Test 6: TEST OK [0.270 secs, 3092 KB]
+  Test 7: TEST OK [0.346 secs, 3092 KB]
+  Test 8: TEST OK [0.464 secs, 3092 KB]
+  Test 9: TEST OK [0.821 secs, 3092 KB]
+  Test 10: TEST OK [1.156 secs, 3092 KB]
+</pre>
+<p>用了15重循环枚举+类Trie+位运算（类似Checker），写起来很爽，一次AC。。。
+但用时确实不会很快。。。
+具体见C++源代码
+</p><p><br />
+你程序牛逼，囧rz --路人<br />
+你的程序相当牛逼，OTZ。在下佩服得五体投地 -- By 路人乙
+你的程序确实相当相当牛逼，囧rz Orz。在下看了仰天长叹 -- By 路人丙
+你的程序实在是太太太太牛牛牛牛逼，囧rz Orz，各种rz。在下看了各种佩服外加无限仰慕 -- By 路人丁
+</p>
+<a name=".E9.80.92.E5.BD.92.E7.9A.84.E9.A1.BA.E5.BA.8F.E6.9E.9A.E4.B8.BE.E9.83.BD.E8.83.BD.E8.BF.87"></a><h2><span class="editsection">[<a href="/index.php?title=USACO/prime3&amp;action=edit&amp;section=4" title="编辑段落: 递归的顺序枚举都能过">编辑</a>]</span> <span class="mw-headline">递归的顺序枚举都能过</span></h2>
+<pre>  Test 1: TEST OK [0.011 secs, 2280 KB]
+  Test 2: TEST OK [0.022 secs, 2280 KB]
+  Test 3: TEST OK [0.043 secs, 2280 KB]
+  Test 4: TEST OK [0.097 secs, 2280 KB]
+  Test 5: TEST OK [0.108 secs, 2280 KB]
+  Test 6: TEST OK [0.346 secs, 2280 KB]
+  Test 7: TEST OK [0.464 secs, 2280 KB]
+  Test 8: TEST OK [0.594 secs, 2280 KB]
+  Test 9: TEST OK [0.994 secs, 2280 KB]
+  Test 10: TEST OK [1.339 secs, 2280 KB]
+</pre>
+<p>只用了lowbit和原始的递归  
+</p><p>搜了4*4的方阵，对于任何行、列、主副对角线 都用lowbit 剪枝即可。  
+</p><p>具体见C源码……
+</p>
+<a name=".E6.88.91.E7.9A.84.E9.80.92.E5.BD.92.E9.A1.BA.E5.BA.8F.E6.9E.9A.E4.B8.BE"></a><h2><span class="editsection">[<a href="/index.php?title=USACO/prime3&amp;action=edit&amp;section=5" title="编辑段落: 我的递归顺序枚举">编辑</a>]</span> <span class="mw-headline">我的递归顺序枚举</span></h2>
+<p>TASK: prime3
+LANG: C++
+</p><p>Compiling...
+Compile: OK
+</p><p>Executing...
+</p>
+<pre>  Test 1: TEST OK [0.022 secs, 3412 KB]
+  Test 2: TEST OK [0.032 secs, 3412 KB]
+  Test 3: TEST OK [0.043 secs, 3412 KB]
+  Test 4: TEST OK [0.054 secs, 3412 KB]
+  Test 5: TEST OK [0.076 secs, 3412 KB]
+  Test 6: TEST OK [0.097 secs, 3412 KB]
+  Test 7: TEST OK [0.130 secs, 3412 KB]
+  Test 8: TEST OK [0.151 secs, 3412 KB]
+  Test 9: TEST OK [0.194 secs, 3412 KB]
+  Test 10: TEST OK [0.227 secs, 3412 KB]
+</pre>
+<p>All tests OK.
+用的是顺序枚举，速度很快
+具体顺序：
+</p>
+<pre>   0 <b>20</b> <b>22</b> <b>23</b>  <b>8</b>   
+  13  1 <b>17</b>  7 15
+  9  10  2 11 <b>12</b>
+  <b>14</b>  6 <b>18</b>  3 <b>16</b> 
+   5 19 21 <b>24</b>  <b>4</b>
+</pre>
+<p>加粗的可以推出来，13重for
+详见bc_zhan1代码
+</p>
+<a name=".E5.8F.A6.E4.B8.80.E7.A7.8D.E6.80.9D.E8.B7.AF"></a><h2><span class="editsection">[<a href="/index.php?title=USACO/prime3&amp;action=edit&amp;section=6" title="编辑段落: 另一种思路">编辑</a>]</span> <span class="mw-headline">另一种思路</span></h2>
+<p>Executing...
+</p>
+<pre>  Test 1: TEST OK [0.011 secs, 4852 KB]
+  Test 2: TEST OK [0.011 secs, 4852 KB]
+  Test 3: TEST OK [0.022 secs, 4852 KB]
+  Test 4: TEST OK [0.162 secs, 4852 KB]
+  Test 5: TEST OK [0.065 secs, 4852 KB]
+  Test 6: TEST OK [0.216 secs, 4852 KB]
+  Test 7: TEST OK [0.259 secs, 4852 KB]
+  Test 8: TEST OK [0.486 secs, 4852 KB]
+  Test 9: TEST OK [0.594 secs, 4852 KB]
+  Test 10: TEST OK [0.972 secs, 4852 KB]
+</pre>
+<p>方法：
+保存两个符合要求的10000..100000质数表，一个质数表中的质数须满足最高位为矩阵的第1个数且全部为非零位; 另一个质数表的质数满足各数位均非偶数; 两个表中的质数的各位之和为输入值。想必读者已经猜到了，矩阵最外一层的四个质数必然分别在这两个表中。而经过实际测试表明，两个表的大小基本上不会超过100，由此只需四重循环枚举，再判断内部的9个数字。
+经过计算可得出矩阵中央位置的数字可有最外层的16个数字直接确定。因此只需再枚举2个数，即可确定剩余的数字。
+</p>
+<pre>                                                                               By Ever_ljq.
+</pre>
+<a name=".E4.BC.98.E5.8C.96.E9.A1.BA.E5.BA.8F.E6.9E.9A.E4.B8.BE"></a><h2><span class="editsection">[<a href="/index.php?title=USACO/prime3&amp;action=edit&amp;section=7" title="编辑段落: 优化顺序枚举">编辑</a>]</span> <span class="mw-headline">优化顺序枚举</span></h2>
+<p>前7个点0.000secs  后3个点0.027secs
+</p><p>USER: Wang Qian [wangqia6]
+TASK: prime3
+LANG: C++
+</p><p>Compiling...
+Compile: OK
+</p><p>Executing...
+</p>
+<pre>  Test 1: TEST OK [0.000 secs, 8068 KB]
+  Test 2: TEST OK [0.000 secs, 8068 KB]
+  Test 3: TEST OK [0.000 secs, 8068 KB]
+  Test 4: TEST OK [0.000 secs, 8068 KB]
+  Test 5: TEST OK [0.000 secs, 8068 KB]
+  Test 6: TEST OK [0.000 secs, 8068 KB]
+  Test 7: TEST OK [0.000 secs, 8068 KB]
+  Test 8: TEST OK [0.027 secs, 8068 KB]
+  Test 9: TEST OK [0.027 secs, 8068 KB]
+  Test 10: TEST OK [0.027 secs, 8068 KB]
+</pre>
+<p>All tests OK.
+</p>
+<a name="DFS.E6.89.8B.E5.8A.A8.E6.8C.87.E5.AE.9A.E6.90.9C.E7.B4.A2.E9.A1.BA.E5.BA.8F"></a><h2><span class="editsection">[<a href="/index.php?title=USACO/prime3&amp;action=edit&amp;section=8" title="编辑段落: DFS手动指定搜索顺序">编辑</a>]</span> <span class="mw-headline">DFS手动指定搜索顺序</span></h2>
+<p>其实和for循环的做法差不多, 就是在DFS里写上25个case..但是速度要快得多, 最后一个测试点0.1s
+搜索顺序是这样的：
+</p>
+<pre>0 21 18 22  5
+</pre>
+<p>12  2 13  8  9
+</p><p>16 23  3 24 10
+</p><p>14  7 15  4 11
+</p>
+<pre>6 19 17 20  1
+</pre>
+<p>大致分为几种情况{sum表示当前行\列\对角线未填数字之和}:
+</p><p>1)非末位. 边界条件是 0 &lt;= i &lt;= min{sum, 9}
+</p><p>2)末位. 边界条件是i = 1, 3, 7, 9(i &lt;= sum)
+</p><p>3)可计算位(即该行或列或对角线已经填了4个数). sum &lt; 10, 判断是否为素数, dfs下一层时, sum-下一层已填充位置.
+</p><p>4)对于由情况3)转移而来的状态, 需要检查sum &gt;= 0.
+</p><p>详见C++代码. 
+</p><p>--Climber.pI
+</p>
+<a name=".E8.8C.83.E4.BE.8B.E7.A8.8B.E5.BA.8F"></a><h2><span class="editsection">[<a href="/index.php?title=USACO/prime3&amp;action=edit&amp;section=9" title="编辑段落: 范例程序">编辑</a>]</span> <span class="mw-headline">范例程序</span></h2>
+<ul><li><a href="/index.php/Code:USACO/prime3/C" title="Code:USACO/prime3/C">C程序代码</a>
+</li><li><a href="/index.php/Code:USACO/prime3/Pascal" title="Code:USACO/prime3/Pascal">Pascal程序代码</a>
+</li><li><a href="/index.php/Code:USACO/prime3/C%2B%2B" title="Code:USACO/prime3/C++">C++程序代码</a>
+</li></ul>
+<!-- 
+Pre-expand include size: 2387 bytes
+Post-expand include size: 888 bytes
+Template argument size: 658 bytes
+Maximum: 2097152 bytes
+-->
+
+<!-- Saved in parser cache with key nocow:pcache:idhash:1166-0!1!0!!zh-cn!2 and timestamp 20111207032215 -->
+<div class="printfooter">
+来自"<a href="http://www.nocow.cn/index.php/USACO/prime3">http://www.nocow.cn/index.php/USACO/prime3</a>"</div>
+			<div id="catlinks"><p class='catlinks'><a href="/index.php/Special:Categories" title="Special:Categories">2个分类</a>: <span dir='ltr'><a href="/index.php/Category:%E7%89%88%E6%9D%83%E6%97%A0%E4%BA%89%E8%AE%AE%E7%9A%84%E5%86%85%E5%AE%B9" title="Category:版权无争议的内容">版权无争议的内容</a></span> | <span dir='ltr'><a href="/index.php/Category:USACO_Chapter_4" title="Category:USACO Chapter 4">USACO Chapter 4</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+						 <li id="ca-nstab-main" class="selected"><a href="/index.php/USACO/prime3">条目</a></li>
+						 <li id="ca-talk" class="new"><a href="/index.php?title=Talk:USACO/prime3&amp;action=edit">讨论</a></li>
+						 <li id="ca-edit"><a href="/index.php?title=USACO/prime3&amp;action=edit">编辑</a></li>
+						 <li id="ca-history"><a href="/index.php?title=USACO/prime3&amp;action=history">历史</a></li>
+				</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=Special:Userlogin&amp;returnto=USACO/prime3">登录或创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5" title="首页"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/Special:Recentchanges">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/Special:Random">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/Help:%E5%B8%AE%E5%8A%A9">使用帮助</a></li>
+				<li id="n-sitesupport"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5">帮助我们</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php/Special:Search" id="searchform"><div>
+<input name="ref" type="hidden" value="USACO/prime3">
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="进入" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="搜索" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/Special:Whatlinkshere/USACO/prime3">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/Special:Recentchangeslinked/USACO/prime3">链出更改</a></li>
+<li id="t-upload"><a href="/index.php/Special:Upload">上传文件</a></li>
+<li id="t-specialpages"><a href="/index.php/Special:Specialpages">特殊页面</a></li>
+				<li id="t-print"><a href="/index.php?title=USACO/prime3&amp;printable=yes">可打印版</a></li>				<li id="t-permalink"><a href="/index.php?title=USACO/prime3&amp;oldid=27119">永久链接</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt='GNU Free Documentation License 1.2' /></a></div>
+			<ul id="f-list">
+				<li id="viewcount">访问次数: 9,560次</li>
+				<li id="credits">此页由NOCOW匿名用户于2011年8月20日, 19:12最后更改. 在<a href="/index.php?title=User:Ever_ljq&amp;action=edit" class="new" title="User:Ever ljq">ljq</a>, <a href="/index.php?title=User:EleMenTlz&amp;action=edit" class="new" title="User:EleMenTlz">姚智瀚</a>, <a href="/index.php?title=User:Cosechy_movingbot&amp;action=edit" class="new" title="User:Cosechy movingbot">cosechy@gmail.com</a> 和 <a href="/index.php?title=User:Yangjhjh&amp;action=edit" class="new" title="User:Yangjhjh">Leser</a> 和 <a href="/index.php?title=USACO/prime3&amp;action=credits" title="USACO/prime3">其他</a>的工作基础上.</li>
+				<li id="copyright">本站内容在<a href="http://www.gnu.org/copyleft/fdl.html" class="external " title="http://www.gnu.org/copyleft/fdl.html" rel="nofollow">GNU Free Documentation License 1.2</a>下发布</li>
+				<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E7%AD%96%E7%95%A5" title="NOCOW:隐私策略">隐私策略</a></li>
+				<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+				<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+				<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by bdezlinux in 0.661 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body></html>

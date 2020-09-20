@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>Translate:USACO/Minimal Spanning Trees - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=Translate:USACO/Minimal_Spanning_Trees&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=Translate:USACO/Minimal_Spanning_Trees&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "Translate", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 102, "wgPageName": "Translate:USACO/Minimal_Spanning_Trees", "wgTitle": "USACO/Minimal Spanning Trees", "wgCurRevisionId": 35144, "wgArticleId": 5628, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-102 ns-subject page-Translate_USACO_Minimal_Spanning_Trees action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">Translate:USACO/Minimal Spanning Trees</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="/index.php/Translate:USACO" title="Translate:USACO">Translate:USACO</a></span></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><p>最小生成树 (MST)
+</p><p>译 by Lucky Crazy &amp; Felicia Crazy
+例题：最短网络 [Russ Cox, Winter 1999 USACO Open]
+农民约翰被选为他们镇的镇长！他其中一个竞选承诺就是在镇上建立起互联网，并连接到所有的农场。当然，他需要你的帮助。
+约翰已经给他的农场安排了一条高速的网络线路，他想把这条线路共享给其他农场。为了用最小的消费，他想铺设最短的光纤去连接所有的农场。
+你将得到一份各农场之间连接费用的列表，你必须找出能连接所有农场并所用光纤最短的方案。
+每两个农场间的距离不会超过100000
+数学模型：
+</p><p>给出: 一幅连通的有权无向图。
+　
+</p><p>一棵生成树的图是一张无向的连通图(也就是图中任意一对节点都是连通的).
+</p><p>而一棵最小生成树是一棵权和最小的生成树(即树所有的权值和最小).
+利用 Prim 算法建造最小生成树：
+</p><p>给出: 所有节点和权值的列表。
+</p><p>利用贪心算法建造最小生成树，即在每次都将已有的生成树相连的一个权值最小的节点连入树中。
+</p><p>从某一个节点开始生成。
+</p><p>确定所有不在树中结点连接到树中所需的最小权值（如下例中的distance），并记录下与之相连的结点（如下例中的source)。
+</p><p>如果有结点无法连入树中，那么假设它的权值为无穷大 （比图中所有的权值都大）.
+</p><p>在每一步中,找出一个和生成树相连的权值最小的节点（即在distance栏中）并且用一条边将它连入树中。
+</p><p>（由于最小生成树的性质，它必定是不含圈的。否则断开这个圈仍然可以保证每个节点都在树中——译者）
+</p><p>如果你想知道详细的分析或该算法的正确性证明，请参考《算法导论》的第24章。
+</p><p>伪代码:
+</p>
+<pre>
+  # distance(j) is distance from tree to node j
+  # source(j) is which node of so-far connected MST
+  #                      is closest to node j
+ 1   For all nodes i
+ 2     distance(i) = infinity        # no connections
+ 3     intree(i) = False             # no nodes in tree
+ 4     source(i) = nil 
+ 5   treesize = 1                    # add node 1 to tree
+ 6   treecost = 0                   
+ 7   intree(1) = True
+ 8   For all neighbors j of node 1   # update distances
+ 9      distance(j) = weight(1,j)
+10     source(j) = 1 
+11   while (treesize &lt; graphsize)
+12     find node with minimum distance to tree; call it node i
+13     assert (distance(i)&#160;!= infinity, &quot;Graph Is Not Connected&quot;) 
+    # add edge source(i),i to MST
+14     treesize = treesize + 1
+15     treecost = treecost + distance(i)
+16     intree(i) = True              # mark node i as in tree 
+    # update distance after node i added
+17     for all neighbors j of node i
+18       if (distance(j) &gt; weight(i,j))
+19         distance(j) = weight(i,j)
+20         source(j) = i
+</pre>
+<p>该算法的时间复杂度为 O(N2)。使用堆可以得到 O(N log N)的复杂度。
+图例：
+</p><p>考虑下图的权，边情况:
+</p><p>目标：生成最小生成树。 该算法将在1）节点开始，它与节点2），6），3）相连，权值情况如下：
+</p>
+<pre>
+Node 	distance 	intree 	source
+1 	infinity 	True 	nil
+2 	30 	False 	1
+3 	20 	False 	1
+6 	25 	False 	1
+</pre>
+<p>已知不存在权为无穷大的情况。（intree=False &amp; source=nil）
+</p><p>可连接的最小权为20, 所以节点3）被连入树中：
+</p>
+<pre>
+Node 	distance 	intree 	source
+1 	infinity 	True 	nil
+2 	9 	False 	3
+3 	20 	True 	1
+6 	25 	False 	1
+7 	7 	False 	3
+</pre>
+<p>注意：节点3）现在已经“在树中”了，节点2）的权已经从20变成的9，且source也变成的3。
+</p><p>可连接的最小权为7, 所以节点3）和7）被连接:
+</p>
+<pre>
+Node 	distance 	intree 	source
+1 	infinity 	True 	nil
+2 	9 	False 	3
+3 	20 	True 	1
+6 	10 	False 	7
+7 	7 	True 	3
+</pre>
+<p>可连接的最小权为节点2）的9。 连接节点3)和2）：
+</p>
+<pre>
+Node 	distance 	intree 	source
+1 	infinity 	True 	nil
+2 	9 	True 	3
+3 	20 	True 	1
+4 	21 	False 	2
+5 	9 	False 	2
+6 	10 	False 	7
+7 	7 	True 	3
+</pre>
+<p>连接节点2）和5）：
+</p>
+<pre>
+Node 	distance 	intree 	source
+1 	infinity 	True 	nil
+2 	9 	True 	3
+3 	20 	True 	1
+4 	8 	False 	5
+5 	9 	True 	2
+6 	10 	False 	7
+7 	7 	True 	3
+8 	12 	False 	5
+</pre>
+<p>下一步连接节点5) 和4）:
+</p>
+<pre>
+Node 	distance 	intree 	source
+1 	infinity 	True 	nil
+2 	9 	True 	3
+3 	20 	True 	1
+4 	8 	True 	5
+5 	9 	True 	2
+6 	10 	False 	7
+7 	7 	True 	3
+8 	12 	False 	5
+</pre>
+<p>连接节点6）和7）:
+</p>
+<pre>
+Node 	distance 	intree 	source
+1 	infinity 	True 	nil
+2 	9 	True 	3
+3 	20 	True 	1
+4 	8 	True 	5
+5 	9 	True 	2
+6 	10 	True 	7
+7 	7 	True 	3
+8 	11 	False 	6
+</pre>
+<p>最后，连接节点6）和8）：
+</p>
+<pre>
+Node 	distance 	intree 	source
+1 	infinity 	True 	nil
+2 	9 	True 	3
+3 	20 	True 	1
+4 	8 	True 	5
+5 	9 	True 	2
+6 	10 	True 	7
+7 	7 	True 	3
+8 	11 	True 	6
+</pre>
+<p>最小生成树完成。
+注意：
+</p><p>必须知道某些情况下某些结点无法连入树中，应避免重复计算这些结点。（即 intree=False &amp; source=nil，在例中没有该情况）。
+题型提示：
+</p><p>如果某些问题需要一张最优的连通图，并且需要用以一个最小的花费来连接该系统或该系统的任意两个部分，这样的问题就极类似最小生成树问题。
+</p><p>拓展：
+</p><p>如果你的生成树有任何约束条件的话（任意两个结点可能离得非常远，或者平均距离必须最小），这个算法就玩完了，而且让程序适应这样的约束条件非常困难。
+</p><p>显而易见，任意两个结点之间不能有多边（你就留下权值最小的边，忽略其余的边）。
+</p><p>Prim 算法无法扩展到有向图（如果你想要的是强连通图的话）。
+例题：
+包裹寄送
+</p><p>给出：一些城市的位置，和轮船公司连接每对城市的航线的花费。找出使得一个包裹能够从任意一座城市送到任意的另外一座城市的花费最小。
+高速公路建设
+</p><p>当然，为了经济效益，他们想要花最少的钱来做这件事。高速公路的花费正比于它的长度。给出 L.S. 州的所有城市的 x,y 坐标，设计使得所有城市互相连通的最便宜的建造方案。
+Bovile 电话(已删节) [USACO Training Camp 1998, Contest 2]
+</p><p>给出：一些奶牛和田野中的干草堆（奶牛和干草堆在一起），连接任意的位置需要一定的花费。只用干草堆和奶牛，计算哪些干草堆应该包含在干草堆网络中，并且使总花费最小。
+</p><p>分析：对于每一组可能的干草堆（也就是，共有 2 n 组），计算这组干草堆和奶牛的最小生成树。计算最小生成树的组合，使得花费最小。
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 28/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:5628-0!*!*!*!*!*!* and timestamp 20170806222143 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Minimal_Spanning_Trees&amp;oldid=35144">http://www.nocow.cn/index.php?title=Translate:USACO/Minimal_Spanning_Trees&amp;oldid=35144</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-translate" class="selected"><a href="/index.php/Translate:USACO/Minimal_Spanning_Trees">翻译</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=Translate_Talk:USACO/Minimal_Spanning_Trees&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=Translate:USACO/Minimal_Spanning_Trees&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=Translate:USACO/Minimal_Spanning_Trees&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Translate%3AUSACO%2FMinimal+Spanning+Trees" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Translate:USACO/Minimal_Spanning_Trees" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Translate:USACO/Minimal_Spanning_Trees" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=Translate:USACO/Minimal_Spanning_Trees&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=Translate:USACO/Minimal_Spanning_Trees&amp;oldid=35144" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过4,657次。</li>
+		<li id="credits">本页面由NOCOW用户<a href="/index.php?title=%E7%94%A8%E6%88%B7:Zkx06111&amp;action=edit&amp;redlink=1" class="new" title="用户:Zkx06111（尚未撰写）">Zkx06111</a>于2014年8月10日 (星期日) 20:05做出最后修改。 在<a href="/index.php?title=%E7%94%A8%E6%88%B7:Silver_Bullets&amp;action=edit&amp;redlink=1" class="new" title="用户:Silver Bullets（尚未撰写）">邓龙</a>、NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/27.210.126.97" title="特殊:用户贡献/27.210.126.97">27.210.126.97</a>、<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/119.117.120.66" title="特殊:用户贡献/119.117.120.66">119.117.120.66</a>和<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/114.237.193.128" title="特殊:用户贡献/114.237.193.128">114.237.193.128</a>和<a href="/index.php?title=Translate:USACO/Minimal_Spanning_Trees&amp;action=credits" title="Translate:USACO/Minimal Spanning Trees">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.184 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

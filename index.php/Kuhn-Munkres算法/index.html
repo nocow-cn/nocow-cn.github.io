@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>Kuhn-Munkres算法 - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=Kuhn-Munkres%E7%AE%97%E6%B3%95&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=Kuhn-Munkres%E7%AE%97%E6%B3%95&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Kuhn-Munkres算法", "wgTitle": "Kuhn-Munkres算法", "wgCurRevisionId": 29976, "wgArticleId": 3046, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Kuhn-Munkres算法 action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">Kuhn-Munkres算法</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><p>Maigo的KM算法讲解（的确精彩）
+</p>
+<pre>   KM算法是通过给每个顶点一个标号（叫做顶标）来把求最大权匹配的问题转化为求完备匹配的问题的。设顶点Xi的顶标为A[i]，
+</pre>
+<p>顶点Yi的顶标为B[i]，顶点Xi与Yj之间的边权为w[i,j]。在算法执行过程中的任一时刻，对于任一条边(i,j)，
+A[i]+B[j]&gt;=w[i,j]始终成立。KM算法的正确性基于以下定理：
+</p><p>　　* 若由二分图中所有满足A[i]+B[j]=w[i,j]的边(i,j)构成的子图（称做相等子图）有完备匹配，那么这个完备匹配就是二分图的最大权匹配。
+</p><p>　　这个定理是显然的。因为对于二分图的任意一个匹配，如果它包含于相等子图，那么它的边权和等于所有顶点的顶标和；如果它有的边不包含于相等子图，那么它的边权和小于所有顶点的顶标和。所以相等子图的完备匹配一定是二分图的最大权匹配。
+</p><p>　　初始时为了使A[i]+B[j]&gt;=w[i,j]恒成立，令A[i]为所有与顶点Xi关联的边的最大权，B[j]=0。如果当前的相等子图没有完备匹配，就按下面的方法修改顶标以使扩大相等子图，直到相等子图具有完备匹配为止。
+</p><p>　　我们求当前相等子图的完备匹配失败了，是因为对于某个X顶点，我们找不到一条从它出发的交错路。这时我们获得了一棵交错树，它的叶子结点全部是X顶点。现在我们把交错树中X顶点的顶标全都减小某个值d，Y顶点的顶标全都增加同一个值d，那么我们会发现： 
+</p><p>两端都在交错树中的边(i,j)，A[i]+B[j]的值没有变化。也就是说，它原来属于相等子图，现在仍属于相等子图。 
+</p><p>两端都不在交错树中的边(i,j)，A[i]和B[j]都没有变化。也就是说，它原来属于（或不属于）相等子图，现在仍属于（或不属于）相等子图。 
+</p><p>X端不在交错树中，Y端在交错树中的边(i,j)，它的A[i]+B[j]的值有所增大。它原来不属于相等子图，现在仍不属于相等子图。 
+</p><p>X端在交错树中，Y端不在交错树中的边(i,j)，它的A[i]+B[j]的值有所减小。也就说，它原来不属于相等子图，现在可能进入了相等子图，因而使相等子图得到了扩大。 
+</p><p>　　现在的问题就是求d值了。为了使A[i]+B[j]&gt;=w[i,j]始终成立，且至少有一条边进入相等子图，d应该等于min{A[i]+B[j]-w[i,j]|Xi在交错树中，Yi不在交错树中}。 
+</p><p>　　以上就是KM算法的基本思路。但是朴素的实现方法，时间复杂度为O(n4)——需要找O(n)次增广路，每次增广最多需要修改O(n)次顶标，每次修改顶标时由于要枚举边来求d值，复杂度为O(n2)。实际上KM算法的复杂度是可以做到O(n3)的。我们给每个Y顶点一个“松弛量”函数slack，每次开始找增广路时初始化为无穷大。在寻找增广路的过程中，检查边(i,j)时，如果它不在相等子图中，则让slack[j]变成原值与A[i]+B[j]-w[i,j]的较小值。这样，在修改顶标时，取所有不在交错树中的Y顶点的slack值中的最小值作为d值即可。但还要注意一点：修改顶标后，要把所有的slack值都减去d。
+</p><p><br />
+</p><p><br />
+二分图最大权完美匹配KM算法
+</p><p>　　好吧，这弄点正经的。这次就写写大家肯定很久以前就搞出来的KM。我写这个是因为前几天整理模板的时候居然发现我的KM还是O(n^4)的，虽然实际运行效果大部分和O(n^3)差不多，但是理论的上界仍然让我不爽，就像network simplex algorithm一样。
+</p><p>　　先说一下KM的适用范围。据我分析KM实际上可以对任意带权（无论正负权）二分图求最大/最小权完美匹配，唯一的一个，也是最重要的一个要求就是这个匹配必须是完美匹配，否则KM的正确性将无法得到保证。这个当了解了KM的正确性证明之后自然就会知道。非完美的匹配的似乎必须祭出mincost maxflow了。
+</p><p>　　然后就是KM的时间界。这里略去KM的步骤不谈。众所周知，KM弄不好就会写出O(n^4)的算法，而实际上是存在O(n^3)的实现的。那么O(n^4)究竟是慢在什么地方呢？这个就需要搞清楚O(n^4)的4究竟是怎么来的。
+</p><p>　　每个点都需要作一次增广，所以有一个n的循环。每个循环内部，每次可能无法得到一条增广路，需要新加入一个y顶点，然后重新寻找增广路。一次最少加进1个点，所以最多加入n次。每次重新找一遍增广路n^2，更新距离标号需要扫描每一条边n^2，所以迭加起来O(n)*O(n)*O(n^2)，结果自然就是O(n^4)。
+</p><p>　　第一层和第二层循环似乎没有很好的方法可以把它搞掉，所以我们只能从第三层，也就是每次的O(n^2)入手。这一层包括两个部分，一个是增广路的n^2，一个是更新标号的n^2，需要将二者同时搞掉才能降低总共的复杂度。注意更新标号之后有一个最重要的性质，那就是 原来存在的合法边仍然合法，更新只是将不合法的边变得合法。所以当我们找到一次交错树，没有增广路之后，下次再寻找的时候完全没有必要重新开始，因为原先有的边更新之后还有，所以完全可以接着上一次得到的交错树继续寻找。那么应该从什么地方继续号、开始搜索呢？很明显是那些新加进的点，也就是新进入的那些y点。这样虽然不知道每次更新标号会又扫描多少次，但是每条边最多也就被扫描一次，然后被添加进交错树一次。所以这一块，n层循环总的复杂度是O(n^2)。按照这样描述的话，用dfs似乎没有可以接着上一次找的方法，所以只能用bfs来写增广路的搜索了。
+</p><p>　　然后就是重标号。这一段实际上是由重新扫了一次边，然后对x在树中而y不在的边进行侦测，然后重新标号。想把这个搞掉似乎是有些困难，但是我们先做的是增广路搜索然后才是标号，增广路搜索的时候不也是要扫边么？要是能在bfs的时候记录一下什么信息，到时候直接取用不就好了？所以，做法就是在bfs的时候，对于每个扫到的这种边，更新一下对应的y顶点的标号，这个标号的意义就是y点连接的所有这种边当中可松弛的最小值，定义为slack[y]。然后每次更新的时候扫一下所有的y，对于所有没在交错树中的y，找到最小slack[y]，然后更新就可以了。注意由于我们要接着上一次进行bfs，所以上一次算出来的标号也要留下来。别忘了重标号之后每个y点的slack[y]也要同样更新，这样每次寻找标号并更新的复杂度就是O(n)了，n层重标号最多也就是O(n^2)，然后bfs的O(n^2)，增广的O(n)，所以对于每个点，想对匹配进行增广，复杂度就是O(n^2)，n个点每个点来一次自然就是O(n^3)了。
+</p><p><br />
+CODE:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;cstdio&gt;</span>
+<span class="co2">#include &lt;cstring&gt;</span>
+<span class="co2">#include &lt;algorithm&gt;</span>
+<span class="kw2">using</span> <span class="kw2">namespace</span> std<span class="sy4">;</span>
+&#160;
+<span class="kw4">const</span> <span class="kw4">int</span> size <span class="sy1">=</span> <span class="nu0">160</span><span class="sy4">;</span>
+<span class="kw4">const</span> <span class="kw4">int</span> INF <span class="sy1">=</span> <span class="nu0">100000000</span><span class="sy4">;</span> <span class="co1">// 相对无穷大</span>
+&#160;
+<span class="kw4">bool</span> map<span class="br0">&#91;</span>size<span class="br0">&#93;</span><span class="br0">&#91;</span>size<span class="br0">&#93;</span><span class="sy4">;</span>         <span class="co1">// 二分图的相等子图, map[i][j] = true 代表Xi与Yj有边</span>
+<span class="kw4">bool</span> xckd<span class="br0">&#91;</span>size<span class="br0">&#93;</span>, yckd<span class="br0">&#91;</span>size<span class="br0">&#93;</span><span class="sy4">;</span> <span class="co1">// 标记在一次DFS中，Xi与Yi是否在交错树上</span>
+<span class="kw4">int</span> match<span class="br0">&#91;</span>size<span class="br0">&#93;</span><span class="sy4">;</span>             <span class="co1">// 保存匹配信息，其中i为Y中的顶点标号，match[i]为X中顶点标号</span>
+&#160;
+<span class="kw4">bool</span> DFS<span class="br0">&#40;</span><span class="kw4">int</span>, <span class="kw4">const</span> <span class="kw4">int</span><span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+<span class="kw4">void</span> KM_Perfect_Match<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">int</span> n, <span class="kw4">const</span> <span class="kw4">int</span> edge<span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#91;</span>size<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+   <span class="kw4">int</span> i, j<span class="sy4">;</span>
+   <span class="kw4">int</span> lx<span class="br0">&#91;</span>size<span class="br0">&#93;</span>, ly<span class="br0">&#91;</span>size<span class="br0">&#93;</span><span class="sy4">;</span>   <span class="co1">// KM算法中Xi与Yi的标号</span>
+   <span class="kw1">for</span><span class="br0">&#40;</span>i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> n<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+      lx<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="sy2">-</span>INF<span class="sy4">;</span>
+      ly<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+      <span class="kw1">for</span><span class="br0">&#40;</span>j <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> j <span class="sy1">&lt;</span> n<span class="sy4">;</span> j<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+         lx<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">=</span> max<span class="br0">&#40;</span>lx<span class="br0">&#91;</span>i<span class="br0">&#93;</span>, edge<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+      <span class="br0">&#125;</span>
+   <span class="br0">&#125;</span>
+    <span class="kw4">bool</span> perfect <span class="sy1">=</span> <span class="kw2">false</span><span class="sy4">;</span>
+    <span class="kw1">while</span><span class="br0">&#40;</span><span class="sy3">!</span>perfect<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+      <span class="co1">// 初始化邻接矩阵</span>
+        <span class="kw1">for</span><span class="br0">&#40;</span>i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> n<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+            <span class="kw1">for</span><span class="br0">&#40;</span>j <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> j <span class="sy1">&lt;</span> n<span class="sy4">;</span> j<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+            <span class="kw1">if</span><span class="br0">&#40;</span>lx<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy2">+</span>ly<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy1">==</span> edge<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="br0">&#41;</span> map<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="kw2">true</span><span class="sy4">;</span>
+            <span class="kw1">else</span> map<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="kw2">false</span><span class="sy4">;</span>
+         <span class="br0">&#125;</span>
+      <span class="br0">&#125;</span>
+      <span class="co1">// 匹配过程</span>
+      <span class="kw4">int</span> live <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+      <span class="kw3">memset</span><span class="br0">&#40;</span>match, <span class="sy2">-</span><span class="nu0">1</span>, <span class="kw3">sizeof</span><span class="br0">&#40;</span>match<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+      <span class="kw1">for</span><span class="br0">&#40;</span>i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> n<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+         <span class="kw3">memset</span><span class="br0">&#40;</span>xckd, <span class="kw2">false</span>, <span class="kw3">sizeof</span><span class="br0">&#40;</span>xckd<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+         <span class="kw3">memset</span><span class="br0">&#40;</span>yckd, <span class="kw2">false</span>, <span class="kw3">sizeof</span><span class="br0">&#40;</span>yckd<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+         <span class="kw1">if</span><span class="br0">&#40;</span>DFS<span class="br0">&#40;</span>i, n<span class="br0">&#41;</span><span class="br0">&#41;</span> live<span class="sy2">++</span><span class="sy4">;</span>
+         <span class="kw1">else</span> <span class="br0">&#123;</span>
+            xckd<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="kw2">true</span><span class="sy4">;</span>
+            <span class="kw1">break</span><span class="sy4">;</span>
+         <span class="br0">&#125;</span>
+      <span class="br0">&#125;</span>
+      <span class="kw1">if</span><span class="br0">&#40;</span>live <span class="sy1">==</span> n<span class="br0">&#41;</span> perfect <span class="sy1">=</span> <span class="kw2">true</span><span class="sy4">;</span>
+      <span class="kw1">else</span> <span class="br0">&#123;</span>
+         <span class="co1">// 修改标号过程</span>
+         <span class="kw4">int</span> ex <span class="sy1">=</span> INF<span class="sy4">;</span>
+         <span class="kw1">for</span><span class="br0">&#40;</span>i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> n<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+            <span class="kw1">for</span><span class="br0">&#40;</span>j <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> xckd<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy3">&amp;&amp;</span> j <span class="sy1">&lt;</span> n<span class="sy4">;</span> j<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+               <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy3">!</span>yckd<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="br0">&#41;</span> ex <span class="sy1">=</span> min<span class="br0">&#40;</span>ex, lx<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy2">+</span>ly<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy2">-</span>edge<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+            <span class="br0">&#125;</span>
+         <span class="br0">&#125;</span>
+         <span class="kw1">for</span><span class="br0">&#40;</span>i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> n<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+            <span class="kw1">if</span><span class="br0">&#40;</span>xckd<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span> lx<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy2">-</span><span class="sy1">=</span> ex<span class="sy4">;</span>
+            <span class="kw1">if</span><span class="br0">&#40;</span>yckd<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span> ly<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy2">+</span><span class="sy1">=</span> ex<span class="sy4">;</span>
+         <span class="br0">&#125;</span>
+      <span class="br0">&#125;</span>
+   <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="co1">// 此函数用来寻找是否有以Xp为起点的增广路径，返回值为是否含有增广路</span>
+&#160;
+<span class="kw4">bool</span> DFS<span class="br0">&#40;</span><span class="kw4">int</span> p, <span class="kw4">const</span> <span class="kw4">int</span> n<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+   <span class="kw4">int</span> i<span class="sy4">;</span>
+   <span class="kw1">for</span><span class="br0">&#40;</span>i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> n<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+      <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy3">!</span>yckd<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy3">&amp;&amp;</span> map<span class="br0">&#91;</span>p<span class="br0">&#93;</span><span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+         yckd<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="kw2">true</span><span class="sy4">;</span>
+         <span class="kw4">int</span> t <span class="sy1">=</span> match<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy4">;</span>
+         match<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">=</span> p<span class="sy4">;</span>
+         <span class="kw1">if</span><span class="br0">&#40;</span>t <span class="sy1">==</span> <span class="sy2">-</span><span class="nu0">1</span> <span class="sy3">||</span> DFS<span class="br0">&#40;</span>t, n<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+            <span class="kw1">return</span> <span class="kw2">true</span><span class="sy4">;</span>
+         <span class="br0">&#125;</span>
+         match<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">=</span> t<span class="sy4">;</span>
+         <span class="kw1">if</span><span class="br0">&#40;</span>t <span class="sy3">!</span><span class="sy1">=</span> <span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span> xckd<span class="br0">&#91;</span>t<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="kw2">true</span><span class="sy4">;</span>
+      <span class="br0">&#125;</span>
+   <span class="br0">&#125;</span>
+   <span class="kw1">return</span> <span class="kw2">false</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+   <span class="kw4">int</span> n, edge<span class="br0">&#91;</span>size<span class="br0">&#93;</span><span class="br0">&#91;</span>size<span class="br0">&#93;</span><span class="sy4">;</span> <span class="co1">// edge[i][j]为连接Xi与Yj的边的权值</span>
+   <span class="kw4">int</span> i<span class="sy4">;</span>
+&#160;
+   <span class="coMULTI">/***************************************************
+    *       在此处要做的工作&#160;:
+    *       读取二分图每两点间边的权并保存在edge[][]中,
+    * 若X与Y数目不等，应添加配合的顶点
+    *       保存二分图中X与Y的顶点数n,若上一步不等应保
+    * 存添加顶点完毕后的n
+    ***************************************************/</span>
+&#160;
+   KM_Perfect_Match<span class="br0">&#40;</span>n, edge<span class="br0">&#41;</span><span class="sy4">;</span>
+   <span class="kw4">int</span> cost <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+   <span class="kw1">for</span><span class="br0">&#40;</span>i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> n<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+      cost <span class="sy2">+</span><span class="sy1">=</span> edge<span class="br0">&#91;</span>match<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy4">;</span>
+   <span class="br0">&#125;</span>
+   <span class="co1">// cost 为最大匹配的总和, match[]中保存匹配信息</span>
+&#160;
+   <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>另附O(N^3)的算法代码:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;cstdio&gt;</span>
+<span class="co2">#include &lt;queue&gt;</span>
+<span class="co2">#include &lt;algorithm&gt;</span>
+<span class="kw2">using</span> <span class="kw2">namespace</span> std<span class="sy4">;</span>
+&#160;
+<span class="kw4">const</span> <span class="kw4">int</span> N <span class="sy1">=</span> <span class="nu0">128</span><span class="sy4">;</span>
+<span class="kw4">const</span> <span class="kw4">int</span> INF <span class="sy1">=</span> <span class="nu0">1</span> <span class="sy1">&lt;&lt;</span> <span class="nu0">28</span><span class="sy4">;</span>
+&#160;
+<span class="kw2">class</span> Graph <span class="br0">&#123;</span>
+<span class="kw2">private</span><span class="sy4">:</span>
+   <span class="kw4">bool</span> xckd<span class="br0">&#91;</span>N<span class="br0">&#93;</span>, yckd<span class="br0">&#91;</span>N<span class="br0">&#93;</span><span class="sy4">;</span>
+   <span class="kw4">int</span> n, edge<span class="br0">&#91;</span>N<span class="br0">&#93;</span><span class="br0">&#91;</span>N<span class="br0">&#93;</span>, xmate<span class="br0">&#91;</span>N<span class="br0">&#93;</span>, ymate<span class="br0">&#91;</span>N<span class="br0">&#93;</span><span class="sy4">;</span>
+   <span class="kw4">int</span> lx<span class="br0">&#91;</span>N<span class="br0">&#93;</span>, ly<span class="br0">&#91;</span>N<span class="br0">&#93;</span>, slack<span class="br0">&#91;</span>N<span class="br0">&#93;</span>, prev<span class="br0">&#91;</span>N<span class="br0">&#93;</span><span class="sy4">;</span>
+   queue<span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> Q<span class="sy4">;</span>
+   <span class="kw4">bool</span> bfs<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+   <span class="kw4">void</span> agument<span class="br0">&#40;</span><span class="kw4">int</span><span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="kw2">public</span><span class="sy4">:</span>
+   <span class="kw4">bool</span> make<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+   <span class="kw4">int</span> KMMatch<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span><span class="sy4">;</span>
+<span class="kw4">bool</span> Graph<span class="sy4">::</span><span class="me2">make</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+   <span class="kw4">int</span> house<span class="br0">&#91;</span>N<span class="br0">&#93;</span>, child<span class="br0">&#91;</span>N<span class="br0">&#93;</span>, h, w, cn <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+   <span class="kw4">char</span> line<span class="br0">&#91;</span>N<span class="br0">&#93;</span><span class="sy4">;</span>
+   <span class="kw3">scanf</span><span class="br0">&#40;</span><span class="st0">&quot;%d&#160;%d&quot;</span>, <span class="sy3">&amp;</span>h, <span class="sy3">&amp;</span>w<span class="br0">&#41;</span><span class="sy4">;</span>
+   <span class="kw1">if</span><span class="br0">&#40;</span>w <span class="sy1">==</span> <span class="nu0">0</span><span class="br0">&#41;</span> <span class="kw1">return</span> <span class="kw2">false</span><span class="sy4">;</span>
+   <span class="kw3">scanf</span><span class="br0">&#40;</span><span class="st0">&quot;<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span> n <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+   <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> h<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+      <span class="kw3">gets</span><span class="br0">&#40;</span>line<span class="br0">&#41;</span><span class="sy4">;</span>
+      <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> j <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> line<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy3">!</span><span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> j<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+         <span class="kw1">if</span><span class="br0">&#40;</span>line<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy1">==</span> <span class="st0">'H'</span><span class="br0">&#41;</span> house<span class="br0">&#91;</span>n<span class="sy2">++</span><span class="br0">&#93;</span> <span class="sy1">=</span> i <span class="sy2">*</span> N <span class="sy2">+</span> j<span class="sy4">;</span>
+         <span class="kw1">if</span><span class="br0">&#40;</span>line<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy1">==</span> <span class="st0">'m'</span><span class="br0">&#41;</span> child<span class="br0">&#91;</span>cn<span class="sy2">++</span><span class="br0">&#93;</span> <span class="sy1">=</span> i <span class="sy2">*</span> N <span class="sy2">+</span> j<span class="sy4">;</span>
+      <span class="br0">&#125;</span>
+   <span class="br0">&#125;</span>
+   <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> n<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+      <span class="kw4">int</span> cr <span class="sy1">=</span> child<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy2">/</span> N, cc <span class="sy1">=</span> child<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy2">%</span> N<span class="sy4">;</span>
+      <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> j <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> j <span class="sy1">&lt;</span> n<span class="sy4">;</span> j<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+         <span class="kw4">int</span> hr <span class="sy1">=</span> house<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy2">/</span> N, hc <span class="sy1">=</span> house<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy2">%</span> N<span class="sy4">;</span>
+         edge<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="sy2">-</span><span class="kw3">abs</span><span class="br0">&#40;</span>cr<span class="sy2">-</span>hr<span class="br0">&#41;</span> <span class="sy2">-</span> <span class="kw3">abs</span><span class="br0">&#40;</span>cc<span class="sy2">-</span>hc<span class="br0">&#41;</span><span class="sy4">;</span>
+      <span class="br0">&#125;</span>
+   <span class="br0">&#125;</span>
+   <span class="kw1">return</span> <span class="kw2">true</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+<span class="kw4">bool</span> Graph<span class="sy4">::</span><span class="me2">bfs</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+   <span class="kw1">while</span><span class="br0">&#40;</span><span class="sy3">!</span>Q.<span class="me1">empty</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+      <span class="kw4">int</span> p <span class="sy1">=</span> Q.<span class="me1">front</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, u <span class="sy1">=</span> p<span class="sy1">&gt;&gt;</span><span class="nu0">1</span><span class="sy4">;</span> Q.<span class="me1">pop</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+      <span class="kw1">if</span><span class="br0">&#40;</span>p<span class="sy3">&amp;</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+         <span class="kw1">if</span><span class="br0">&#40;</span>ymate<span class="br0">&#91;</span>u<span class="br0">&#93;</span> <span class="sy1">==</span> <span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> agument<span class="br0">&#40;</span>u<span class="br0">&#41;</span><span class="sy4">;</span> <span class="kw1">return</span> <span class="kw2">true</span><span class="sy4">;</span> <span class="br0">&#125;</span>
+         <span class="kw1">else</span> <span class="br0">&#123;</span> xckd<span class="br0">&#91;</span>ymate<span class="br0">&#91;</span>u<span class="br0">&#93;</span><span class="br0">&#93;</span> <span class="sy1">=</span> <span class="kw2">true</span><span class="sy4">;</span> Q.<span class="me1">push</span><span class="br0">&#40;</span>ymate<span class="br0">&#91;</span>u<span class="br0">&#93;</span><span class="sy1">&lt;&lt;</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="br0">&#125;</span>
+      <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
+         <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> n<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span>
+            <span class="kw1">if</span><span class="br0">&#40;</span>yckd<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="kw1">continue</span><span class="sy4">;</span>
+            <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span>lx<span class="br0">&#91;</span>u<span class="br0">&#93;</span><span class="sy2">+</span>ly<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy3">!</span><span class="sy1">=</span> edge<span class="br0">&#91;</span>u<span class="br0">&#93;</span><span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+               <span class="kw4">int</span> ex <span class="sy1">=</span> lx<span class="br0">&#91;</span>u<span class="br0">&#93;</span><span class="sy2">+</span>ly<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy2">-</span>edge<span class="br0">&#91;</span>u<span class="br0">&#93;</span><span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy4">;</span>
+               <span class="kw1">if</span><span class="br0">&#40;</span>slack<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">&gt;</span> ex<span class="br0">&#41;</span> <span class="br0">&#123;</span> slack<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">=</span> ex<span class="sy4">;</span> prev<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">=</span> u<span class="sy4">;</span> <span class="br0">&#125;</span>
+            <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
+               yckd<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="kw2">true</span><span class="sy4">;</span> prev<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">=</span> u<span class="sy4">;</span>
+               Q.<span class="me1">push</span><span class="br0">&#40;</span><span class="br0">&#40;</span>i<span class="sy1">&lt;&lt;</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy3">|</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+            <span class="br0">&#125;</span>
+      <span class="br0">&#125;</span>
+   <span class="br0">&#125;</span>
+   <span class="kw1">return</span> <span class="kw2">false</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+<span class="kw4">void</span> Graph<span class="sy4">::</span><span class="me2">agument</span><span class="br0">&#40;</span><span class="kw4">int</span> u<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+   <span class="kw1">while</span><span class="br0">&#40;</span>u <span class="sy3">!</span><span class="sy1">=</span> <span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+      <span class="kw4">int</span> pv <span class="sy1">=</span> xmate<span class="br0">&#91;</span>prev<span class="br0">&#91;</span>u<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy4">;</span>
+      ymate<span class="br0">&#91;</span>u<span class="br0">&#93;</span> <span class="sy1">=</span> prev<span class="br0">&#91;</span>u<span class="br0">&#93;</span><span class="sy4">;</span> xmate<span class="br0">&#91;</span>prev<span class="br0">&#91;</span>u<span class="br0">&#93;</span><span class="br0">&#93;</span> <span class="sy1">=</span> u<span class="sy4">;</span>
+      u <span class="sy1">=</span> pv<span class="sy4">;</span>
+   <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+<span class="kw4">int</span> Graph<span class="sy4">::</span><span class="me2">KMMatch</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+   <span class="kw3">memset</span><span class="br0">&#40;</span>ly, <span class="nu0">0</span>, <span class="kw3">sizeof</span><span class="br0">&#40;</span>ly<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+   <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> n<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+      lx<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="sy2">-</span>INF<span class="sy4">;</span>
+      <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> j <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> j <span class="sy1">&lt;</span> n<span class="sy4">;</span> j<span class="sy2">++</span><span class="br0">&#41;</span> lx<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">&gt;</span><span class="sy4">?</span><span class="sy1">=</span> edge<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy4">;</span>
+   <span class="br0">&#125;</span>
+   <span class="kw3">memset</span><span class="br0">&#40;</span>xmate, <span class="sy2">-</span><span class="nu0">1</span>, <span class="kw3">sizeof</span><span class="br0">&#40;</span>xmate<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="kw3">memset</span><span class="br0">&#40;</span>ymate, <span class="sy2">-</span><span class="nu0">1</span>, <span class="kw3">sizeof</span><span class="br0">&#40;</span>ymate<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+   <span class="kw4">bool</span> agu <span class="sy1">=</span> <span class="kw2">true</span><span class="sy4">;</span>
+   <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> mn <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> mn <span class="sy1">&lt;</span> n<span class="sy4">;</span> mn<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+      <span class="kw1">if</span><span class="br0">&#40;</span>agu<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+         <span class="kw3">memset</span><span class="br0">&#40;</span>xckd, <span class="kw2">false</span>, <span class="kw3">sizeof</span><span class="br0">&#40;</span>xckd<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+         <span class="kw3">memset</span><span class="br0">&#40;</span>yckd, <span class="kw2">false</span>, <span class="kw3">sizeof</span><span class="br0">&#40;</span>yckd<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+         <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> n<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> slack<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">=</span> INF<span class="sy4">;</span>
+         <span class="kw1">while</span><span class="br0">&#40;</span><span class="sy3">!</span>Q.<span class="me1">empty</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> Q.<span class="me1">pop</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+         xckd<span class="br0">&#91;</span>mn<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="kw2">true</span><span class="sy4">;</span> Q.<span class="me1">push</span><span class="br0">&#40;</span>mn<span class="sy1">&lt;&lt;</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+      <span class="br0">&#125;</span>
+      <span class="kw1">if</span><span class="br0">&#40;</span>bfs<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> agu <span class="sy1">=</span> <span class="kw2">true</span><span class="sy4">;</span> <span class="kw1">continue</span><span class="sy4">;</span> <span class="br0">&#125;</span>
+      <span class="kw4">int</span> ex <span class="sy1">=</span> INF<span class="sy4">;</span> mn<span class="sy2">--</span><span class="sy4">;</span> agu <span class="sy1">=</span> <span class="kw2">false</span><span class="sy4">;</span>
+      <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> n<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span>
+         <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy3">!</span>yckd<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span> ex <span class="sy1">&lt;</span><span class="sy4">?</span><span class="sy1">=</span> slack<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy4">;</span>
+      <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> n<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+         <span class="kw1">if</span><span class="br0">&#40;</span>xckd<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span> lx<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy2">-</span><span class="sy1">=</span> ex<span class="sy4">;</span>
+         <span class="kw1">if</span><span class="br0">&#40;</span>yckd<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span> ly<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy2">+</span><span class="sy1">=</span> ex<span class="sy4">;</span>
+         slack<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy2">-</span><span class="sy1">=</span> ex<span class="sy4">;</span>
+      <span class="br0">&#125;</span>
+      <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> n<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span>
+         <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy3">!</span>yckd<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy3">&amp;&amp;</span> slack<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">==</span> <span class="nu0">0</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> yckd<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="kw2">true</span><span class="sy4">;</span> Q.<span class="me1">push</span><span class="br0">&#40;</span><span class="br0">&#40;</span>i<span class="sy1">&lt;&lt;</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy3">|</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="br0">&#125;</span>
+&#160;
+   <span class="br0">&#125;</span>
+   <span class="kw4">int</span> cost <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+   <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> n<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> cost <span class="sy2">+</span><span class="sy1">=</span> edge<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>xmate<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy4">;</span>
+   <span class="kw1">return</span> cost<span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+   Graph g<span class="sy4">;</span>
+&#160;
+   <span class="kw1">while</span><span class="br0">&#40;</span>g.<span class="me1">make</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;%d<span class="es1">\n</span>&quot;</span>, <span class="sy2">-</span>g.<span class="me1">KMMatch</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+   <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>二分图匹配----基于匈牙利算法和KM算法2007-09-19 16:54设G=(V,{R})是一个无向图。如顶点集V可分割为两个互不相交的子集，并且图中每条边依附的两个顶点都分属两个不同的子集。则称图G为二分图。
+</p>
+<pre> v      给定一个二分图G，在G的一个子图M中，M的边集{E}中的任意两条边都不依附于同一个顶点，则称M是一个匹配。
+</pre>
+<p>v      选择这样的边数最大的子集称为图的最大匹配问题(maximal matching problem)
+</p><p>v      如果一个匹配中，图中的每个顶点都和图中某条边相关联，则称此匹配为完全匹配，也称作完备匹配。
+</p><p>最大匹配在实际中有广泛的用处，求最大匹配的一种显而易见的算法是：先找出全部匹配，然后保留匹配数最多的。但是这个算法的复杂度为边数的指数级函数。因此，需要寻求一种更加高效的算法。
+</p><p>匈牙利算法是求解最大匹配的有效算法，该算法用到了增广路的定义(也称增广轨或交错轨)：若P是图G中一条连通两个未匹配顶点的路径，并且属M的边和不属M的边(即已匹配和待匹配的边)在P上交替出现，则称P为相对于M的一条增广路径。
+</p><p>由增广路径的定义可以推出下述三个结论：
+</p><p>v      1.  P的路径长度必定为奇数，第一条边和最后一条边都不属于M。
+</p><p>v      2.  P经过取反操作（即非M中的边变为M中的边，原来M中的边去掉）可以得到一个更大的匹配M’。
+</p><p>v      3.  M为G的最大匹配当且仅当不存在相对于M的增广路径。
+</p><p>从而可以得到求解最大匹配的匈牙利算法：
+</p><p>v      (1)置M为空
+</p><p>v      (2)找出一条增广路径P，通过取反操作获得更大的匹配M’代替M
+</p><p>v      (3)重复(2)操作直到找不出增广路径为止
+</p><p>根据该算法，我选用dfs (深度优先搜索)实现。
+</p><p>程序清单如下：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> match<span class="br0">&#91;</span>i<span class="br0">&#93;</span>            <span class="co1">//存储集合m中的节点i在集合n中的匹配节点,初值为-1。</span>
+<span class="kw4">int</span> n,m,match<span class="br0">&#91;</span><span class="nu0">100</span><span class="br0">&#93;</span><span class="sy4">;</span>                      <span class="co1">//二分图的两个集合分别含有n和m个元素。</span>
+<span class="kw4">bool</span> visit<span class="br0">&#91;</span><span class="nu0">100</span><span class="br0">&#93;</span>,map<span class="br0">&#91;</span><span class="nu0">100</span><span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">100</span><span class="br0">&#93;</span><span class="sy4">;</span>               <span class="co1">//map存储邻接矩阵。</span>
+<span class="kw4">bool</span> dfs<span class="br0">&#40;</span><span class="kw4">int</span> k<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+<span class="kw4">int</span> t<span class="sy4">;</span>
+<span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> m<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span>
+     <span class="kw1">if</span><span class="br0">&#40;</span>map<span class="br0">&#91;</span>k<span class="br0">&#93;</span><span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy3">&amp;&amp;</span> <span class="sy3">!</span>visit<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+      visit<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="kw2">true</span><span class="sy4">;</span>
+      t <span class="sy1">=</span> match<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy4">;</span>
+      match<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">=</span> k<span class="sy4">;</span>                            <span class="co1">//路径取反操作。</span>
+      <span class="kw1">if</span><span class="br0">&#40;</span>t <span class="sy1">==</span> <span class="sy2">-</span><span class="nu0">1</span> <span class="sy3">||</span> dfs<span class="br0">&#40;</span>t<span class="br0">&#41;</span><span class="br0">&#41;</span>         <span class="co1">//寻找是否为增广路径</span>
+       <span class="kw1">return</span> <span class="kw2">true</span><span class="sy4">;</span>
+      match<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">=</span> t<span class="sy4">;</span>
+<span class="br0">&#125;</span>
+     <span class="kw1">return</span> <span class="kw2">false</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+<span class="co1">//...........</span>
+&#160;
+     <span class="kw4">int</span>    s <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+&#160;
+     <span class="kw3">memset</span><span class="br0">&#40;</span>match,<span class="sy2">-</span><span class="nu0">1</span>,<span class="kw3">sizeof</span><span class="br0">&#40;</span>match<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+     <span class="kw1">for</span><span class="br0">&#40;</span>i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> n<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span><span class="br0">&#123;</span>      <span class="co1">//以二分集中的较小集为n进行匹配较优</span>
+      <span class="kw3">memset</span><span class="br0">&#40;</span>visit,<span class="nu0">0</span>,<span class="kw3">sizeof</span><span class="br0">&#40;</span>visit<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+      <span class="kw1">if</span><span class="br0">&#40;</span>dfs<span class="br0">&#40;</span>i<span class="br0">&#41;</span><span class="br0">&#41;</span>
+&#160;
+          s<span class="sy2">++</span><span class="sy4">;</span>          <span class="co1">//s为匹配数</span>
+     <span class="br0">&#125;</span>
+<span class="co1">//............</span>
+<span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>二分图最优匹配：对于二分图的每条边都有一个权（非负），要求一种完备匹配方案，使得所有匹配边的权和最大，记做最优完备匹配。（特殊的，当所有边的权为1时，就是最大完备匹配问题）
+</p><p>解二分图最优匹配问题可用穷举的方法，但穷举的效率=n！，所以我们需要更加优秀的算法。
+</p><p>先说一个定理：设M是一个带权完全二分图G的一个完备匹配，给每个顶点一个可行顶标(第i个x顶点的可行标用lx[i]表示，第j个y顶点的可行标用ly[j]表示)，如果对所有的边(i,j) in G,都有lx[i]+ly[j]&gt;=w[i,j]成立(w[i,j]表示边的权)，且对所有的边(i,j) in M,都有lx[i]+ly[j]=w[i,j]成立，则M是图G的一个最优匹配。
+</p><p>Kuhn－Munkras算法（即KM算法）流程：
+</p><p>v      (1)初始化可行顶标的值
+</p><p>v      (2)用匈牙利算法寻找完备匹配
+</p><p>v      (3)若未找到完备匹配则修改可行顶标的值
+</p><p>v      (4)重复(2)(3)直到找到相等子图的完备匹配为止
+</p><p>KM算法主要就是控制怎样修改可行顶标的策略使得最终可以达到一个完美匹配，首先任意设置可行顶标（如每个X节点的可行顶标设为它出发的所有弧的最大权，Y节点的可行顶标设为0），然后在相等子图中寻找增广路，找到增广路就沿着增广路增广。而如果没有找到增广路呢，那么就考虑所有现在在匈牙利树中的X节点（记为S集合），所有现在在匈牙利树中的Y节点（记为T集合），考察所有一段在S集合，一段在not T集合中的弧，取       delta = min {l(xi)+l(yj)-w(xi,yj) , | xi in S, yj  in not T}   。明显的，当我们把所有S集合中的l(xi)减少delta之后，一定会有至少一条属于(S, not T)的边进入相等子图，进而可以继续扩展匈牙利树，为了保证原来属于(S,T )的边不退出相等子图，把所有在T集合中的点的可行顶标增加delta。随后匈牙利树继续扩展，如果新加入匈牙利树的Y节点是未盖点，那么找到增广路，否则把该节点的对应的X匹配点加入匈牙利树继续尝试增广。
+</p><p>复杂度分析：由于在不扩大匹配的情况下每次匈牙利树做如上调整之后至少增加一个元素，因此最多执行n次就可以找到一条增广路，最多需要找n条增广路，故最多执行n^2次修改顶标的操作，而每次修改顶标需要扫描所有弧，这样修改顶标的复杂度就是O(n^2)的，总的复杂度是O(n^4)的。
+</p>
+<pre>   对于not T的每个元素yj，定义松弛变量slack(yj) =min{l(xi)+l(yj)-w(xi,yj), | xi in S}，很明显每次的
+</pre>
+<p>delta = min{slack(yj), | yj  in not T}，每次增广之后用O(n^2)的时间计算所有点的初始slack，由于生长匈牙利
+树的时候每条弧的顶标增量相同，因此修改每个slack需要常数时间（注意在修改顶标后和把已盖Y节点对应的X节点加入匈牙
+利树的时候是需要修改slack的）。这样修改所有slack值时间是O(n)的，每次增广后最多修改n次顶标，那么修改顶标的总
+时间降为O(n^2)，n次增广的总时间复杂度降为O(n^3)。事实上这样实现之后对于大部分的数据可以比O(n^4)的算法快一倍
+左右。
+</p><p>利用二分图匹配的匈牙利算法和KM算法，我们可以求解大部分的关于二分图的问题，它们提供了求解最大匹配和最优匹配的有
+效算法，在具体编程时我们只要多注意优化，我们就可以得出求解这类问题的有效方法，从而可以对这类实际问题进行有效合
+理的解决
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 10/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:3046-0!*!*!*!*!*!* and timestamp 20170420192016 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=Kuhn-Munkres%E7%AE%97%E6%B3%95&amp;oldid=29976">http://www.nocow.cn/index.php?title=Kuhn-Munkres%E7%AE%97%E6%B3%95&amp;oldid=29976</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/Kuhn-Munkres%E7%AE%97%E6%B3%95" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk"><a href="/index.php/%E8%AE%A8%E8%AE%BA:Kuhn-Munkres%E7%AE%97%E6%B3%95" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=Kuhn-Munkres%E7%AE%97%E6%B3%95&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=Kuhn-Munkres%E7%AE%97%E6%B3%95&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Kuhn-Munkres%E7%AE%97%E6%B3%95" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Kuhn-Munkres%E7%AE%97%E6%B3%95" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Kuhn-Munkres%E7%AE%97%E6%B3%95" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=Kuhn-Munkres%E7%AE%97%E6%B3%95&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=Kuhn-Munkres%E7%AE%97%E6%B3%95&amp;oldid=29976" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过12,659次。</li>
+		<li id="credits">本页面由<a href="/index.php?title=%E7%94%A8%E6%88%B7:Cosechy_movingbot&amp;action=edit&amp;redlink=1" class="new" title="用户:Cosechy movingbot（尚未撰写）">cosechy@gmail.com</a>于2012年3月3日 (星期六) 04:31做出最后修改。 在<a href="/index.php/%E7%94%A8%E6%88%B7:Cyc" title="用户:Cyc">蔡煜成</a>、NOCOW用户<a href="/index.php?title=%E7%94%A8%E6%88%B7:Jhb&amp;action=edit&amp;redlink=1" class="new" title="用户:Jhb（尚未撰写）">Jhb</a>、NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/60.166.225.186" title="特殊:用户贡献/60.166.225.186">60.166.225.186</a>和<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/121.10.248.227" title="特殊:用户贡献/121.10.248.227">121.10.248.227</a>和<a href="/index.php?title=Kuhn-Munkres%E7%AE%97%E6%B3%95&amp;action=credits" title="Kuhn-Munkres算法">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.258 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

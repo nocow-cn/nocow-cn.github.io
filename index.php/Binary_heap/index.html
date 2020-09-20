@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>Binary heap - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=Binary_heap&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=Binary_heap&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Binary_heap", "wgTitle": "Binary heap", "wgCurRevisionId": 17679, "wgArticleId": 1719, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for pascal
+ * CSS class: source-pascal, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.pascal.source-pascal .de1, .pascal.source-pascal .de2 {}
+.pascal.source-pascal  {font-family:monospace;}
+.pascal.source-pascal .imp {font-weight: bold; color: red;}
+.pascal.source-pascal li, .pascal.source-pascal .li1 {font-weight: normal; vertical-align:top;}
+.pascal.source-pascal .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.pascal.source-pascal .li2 {font-weight: bold; vertical-align:top;}
+.pascal.source-pascal .kw1 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw2 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw3 {color: #000066;}
+.pascal.source-pascal .kw4 {color: #000066; font-weight: bold;}
+.pascal.source-pascal .co1 {color: #666666; font-style: italic;}
+.pascal.source-pascal .coMULTI {color: #666666; font-style: italic;}
+.pascal.source-pascal .es0 {color: #000099; font-weight: bold;}
+.pascal.source-pascal .es_h {color: #000099; font-weight: bold;}
+.pascal.source-pascal .br0 {color: #009900;}
+.pascal.source-pascal .sy0 {color: #339933;}
+.pascal.source-pascal .st0 {color: #ff0000;}
+.pascal.source-pascal .st_h {color: #ff0000;}
+.pascal.source-pascal .nu0 {color: #cc66cc;}
+.pascal.source-pascal .me1 {color: #0066ee;}
+.pascal.source-pascal .ln-xtra, .pascal.source-pascal li.ln-xtra, .pascal.source-pascal div.ln-xtra {background-color: #ffc;}
+.pascal.source-pascal span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Binary_heap action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">Binary heap</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><p>令G = （X,*,Y）是一个二分图，其中，X = {x1,x2,...xm}, Y = {y1,y2,...yn}。令M为G中的任一个匹配。
+</p><p>1）讲X的所有不与M的边关联的顶点标上（@），并称所有的顶点为未被扫描的。转到 2）。 
+</p><p>2）如果在上一步没有新的标记加到X的顶点上，则停止。否则转到 3）。 
+</p><p>3）当存在X被标记但未被扫描的顶点时，选择一个被标记但未被扫描的X的顶点，比如，xi,用(xi)标记Y的所有顶点，这些顶点被不属于M且尚未标记的边连到xi .现在，顶点xi是被扫描的。如果不存在被标记但未被扫描的顶点，则转到 4）。 
+</p><p>4）如果在步骤 3）没有新的标记被标到Y的顶点上，则停止。否则，转到 5）。 
+</p><p>5）当存在Y被标记但未被扫描的顶点时，选择Y的一个被标记但未被扫描的顶点，比如yi，用(yi)标记X的顶点，这些顶点被属于M且尚未标记的边连到yi.现在，顶点yi是被扫描的。如果不存在被标记但未被扫描的顶点，则转到 2）。 
+</p><p>也可以叙述为： 
+</p><p>匈牙利算法 
+关键在于匈牙利算法的递归过程中有很多重复计算的节点，而且这种重复无法避免，他不能 
+向动态规划一样找到一个“序”将递归改为递推。                                      
+</p><p>算法中的几个术语说明： 
+</p><p>1.二部图： 
+</p>
+<pre>  如果图G=(V,E)的顶点集何V可分为两个集合X,Y，且满足 X∪Y = V, X∩Y=Φ，则G称为二部图；G的边集用E(G)表示，点集用V(G)表示。 
+</pre>
+<p>2.匹配：
+</p>
+<pre>  设M是E(G)的一个子集，如果M中任意两条边在G中均不邻接，则称M是G的一个匹配。M中的—条边的两个端点叫做在M是配对的。
+</pre>
+<p>3.饱和与非饱和： 
+</p>
+<pre>  若匹配M的某条边与顶点v关联，则称M饱和顶点v，并且称v是M-饱和的，否则称v是M-不饱和的。 
+</pre>
+<p>4.交互道： 
+</p>
+<pre>  若M是二分图G＝(V,E)的一个匹配。设从图G中的一个顶点到另一个顶点存在一条道路，这条道路是由属于M的边和不属于M的边交替出现组成的，则称这条道路为交互道。 
+</pre>
+<p>5.可增广道路：
+</p>
+<pre>  若一交互道的两端点为关于M非饱和顶点时，则称这条交互道是可增广道路。显然，一条边的两端点非饱和，则这条边也是可增广道路。 
+</pre>
+<p>6.最大匹配：
+</p>
+<pre>  如果M是一匹配，而不存在其它匹配M'，使得|M'|&gt;|M|，则称M是最大匹配。其中|M|表示匹配M的边数。 
+</pre>
+<p>7.对称差： 
+</p>
+<pre>  A，B是两个集合，定义A⊕B = (A∪B)\(A∩B), 则A⊕B称为A和B的对称差。 
+</pre>
+<p><br />
+定理：M为G的最大匹配的充要条件是G中不存在可增广道路。 
+Hall定理：对于二部图G，存在一个匹配M，使得X的所有顶点关于M饱和的充要条件是：对于X的任意一个子集A，和A邻接的点集为T(A)，恒有： |T(A)| &gt;= |A| 
+</p><p>匈牙利算法是基于Hall定理中充分性证明的思想，其基本步骤为： 
+1。任给初始匹配M； 
+2。若X已饱和则结束，否则进行第3步； 
+3。在X中找到一个非饱和顶点x0，作 
+</p>
+<pre>   V1 ← {x0},  V2 ← Φ 
+</pre>
+<p>4。若T(V1) = V2则因为无法匹配而停止，否则任选一点y ∈T(V1)\V2； 
+5。若y已饱和则转6，否则做一条从x0 →y的可增广道路P，M←M⊕E(P)，转2； 
+6。由于y已饱和，所以M中有一条边(y,z)，作 V1 ← V1 ∪{z}, V2 ← V2 ∪ {y}， 转4；
+</p><p>给定一个二分图(x,y)，x中的点和y中点的连接情况，一个匹配是二分图的子图，其中任一个x中的点只能和最多一个y中的点连接，一个y中的点也只能和一个x中的点连接，最大匹配就是使子图中的边数（我们称为匹配边）最多的匹配。
+</p><p><br />
+</p><p>mat[i,j]记录x中的i和y中j是否可匹配，cov[i]记录y中的已盖点i连着x中的那个点，如果i是未盖点，则cov[i]=0，另外在寻找可增广轨时不能有重复，所以用use[i]记录x中的i是否被访问过。
+</p><p>从x中一未盖点出发，通过交错轨（匹配边和非匹配边交错）找到y中的一个未盖点，然后把这条交错轨上的匹配边和非匹配边交换，则匹配边比原先多了一条，重复以上步骤直到找不到交错轨为止。
+</p><p><br />
+</p><p>伪代码如下：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="kw1">function</span> can <span class="br0">&#40;</span>s<span class="sy0">:</span><span class="kw4">byte</span><span class="br0">&#41;</span><span class="sy0">:</span><span class="kw4">boolean</span>;
+&#160;
+<span class="kw1">begin</span>
+&#160;
+  <span class="kw1">if</span> use<span class="br0">&#91;</span>s<span class="br0">&#93;</span> <span class="kw1">then</span>
+&#160;
+    exit<span class="br0">&#40;</span><span class="kw2">false</span><span class="br0">&#41;</span>;
+&#160;
+  use<span class="br0">&#91;</span>s<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;
+&#160;
+  <span class="kw1">for</span> 所有y中的点i <span class="kw1">do</span>
+&#160;
+    <span class="kw1">if</span> mat<span class="br0">&#91;</span>s<span class="sy0">,</span>i<span class="br0">&#93;</span> <span class="kw1">then</span>
+&#160;
+      <span class="kw1">if</span> i是未盖点 <span class="kw1">then</span>
+&#160;
+      <span class="kw1">begin</span>
+&#160;
+        cov<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">:=</span>s;    <span class="co1">//i点变成已盖点，交换匹配边和非匹配边</span>
+&#160;
+        exit<span class="br0">&#40;</span><span class="kw2">true</span><span class="br0">&#41;</span>;
+&#160;
+      <span class="kw1">end</span>
+&#160;
+      <span class="kw1">else</span>
+&#160;
+        <span class="kw1">if</span> can<span class="br0">&#40;</span>cov<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="kw1">then</span>
+&#160;
+        <span class="kw1">begin</span>
+&#160;
+          cov<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">:=</span>s;    <span class="co1">//交换匹配边和非匹配边</span>
+&#160;
+          exit<span class="br0">&#40;</span><span class="kw2">true</span><span class="br0">&#41;</span>;
+&#160;
+        <span class="kw1">end</span>;
+&#160;
+  exit<span class="br0">&#40;</span><span class="kw2">false</span><span class="br0">&#41;</span>;
+&#160;
+<span class="kw1">end</span>;
+&#160;
+<span class="kw1">procedure</span> main;
+&#160;
+<span class="kw1">begin</span>
+&#160;
+  <span class="kw1">for</span> x中的点i    <span class="co1">//i肯定是未盖点</span>
+&#160;
+    <span class="kw1">if</span> can<span class="br0">&#40;</span>i<span class="br0">&#41;</span> <span class="kw1">then</span>
+&#160;
+      inc<span class="br0">&#40;</span>sum<span class="br0">&#41;</span>    <span class="co1">//sum是匹配数</span>
+&#160;
+<span class="kw1">end</span>;</pre></div></div>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 4/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:1719-0!*!*!*!*!*!* and timestamp 20130805005009 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=Binary_heap&amp;oldid=17679">http://www.nocow.cn/index.php?title=Binary_heap&amp;oldid=17679</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/Binary_heap" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:Binary_heap&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=Binary_heap&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=Binary_heap&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Binary+heap" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Binary_heap" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Binary_heap" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=Binary_heap&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=Binary_heap&amp;oldid=17679" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过2,555次。</li>
+		<li id="credits">本页面由<a href="/index.php/%E7%94%A8%E6%88%B7:LittleRock" title="用户:LittleRock">极地飞狐</a>于2009年11月8日 (星期日) 15:10做出最后修改。 在<a href="/index.php/%E7%94%A8%E6%88%B7:Leokan" title="用户:Leokan">刘锴</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.118 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

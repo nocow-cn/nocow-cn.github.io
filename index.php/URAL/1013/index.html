@@ -1,0 +1,480 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="keywords" content="URAL/1013" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (中文(简体))" />
+<link title="Creative Commons" type="application/rdf+xml" href="/index.php?title=URAL/1013&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+		<title>NOCOW - URAL/1013</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins/monobook/main.css?42b"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print" href="/skins/common/commonPrint.css?42b" />
+		<link rel="stylesheet" type="text/css" media="handheld" href="/skins/monobook/handheld.css?42b" />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins/monobook/IE50Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins/monobook/IE55Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins/monobook/IE60Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins/monobook/IE70Fixes.css?42b";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?42b"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">/*<![CDATA[*/
+var skin = "monobook";
+var stylepath = "/skins";
+var wgArticlePath = "/index.php/$1";
+var wgScriptPath = "";
+var wgServer = "http://www.nocow.cn";
+var wgCanonicalNamespace = "";
+var wgCanonicalSpecialPageName = false;
+var wgNamespaceNumber = 0;
+var wgPageName = "URAL/1013";
+var wgTitle = "URAL/1013";
+var wgArticleId = "2884";
+var wgIsArticle = true;
+var wgUserName = null;
+var wgUserLanguage = "zh-cn";
+var wgContentLanguage = "zh-cn";
+var wgBreakFrames = false;
+var wgCurRevisionId = "23847";
+/*]]>*/</script>
+                
+		<script type="text/javascript" src="/skins/common/wikibits.js?42b"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=-&action=raw&gen=css&maxage=18000";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+			</head>
+<body  class="mediawiki ns-0 ltr page-URAL_1013">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+<div style="text-align:center;font-size:85%;font-weight:bold" id=headlinemessage>
+<div>如果发现广告等破坏行为，请尽量将条目恢复到较早的版本而不是把相应内容直接删除，谢谢合作。</div>
+<!--div>NOCOW近期对条目的命名进行了一些整理，一些链接可能失效，为此带来的不便请大家谅解。创建条目时也请遵循新的命名规范，谢谢合作。</div-->
+</div>
+		<a name="top" id="top"></a>
+				<h1 class="firstHeading">URAL/1013</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">来自&quot;NOCOW&quot;</h3>
+			<div id="contentSub"><span class="subpages">&lt; <a href="/index.php/URAL" title="URAL">URAL</a></span></div>
+									<div id="jump-to-nav">跳转到: <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>			<!-- start content -->
+			<pre class="cpp"><span style="color: #339900;">#include&lt;stdio.h&gt;</span>
+<span style="color: #339900;">#include&lt;string.h&gt;</span>
+&nbsp;
+<span style="color: #0000ff;">const</span> <span style="color: #0000ff;">int</span> max=<span style="color: #0000dd;">1000000</span>;
+<span style="color: #0000ff;">int</span> n,k,i;
+<span style="color: #0000ff;">struct</span> bignum
+<span style="color: #000000;">&#123;</span>
+    <span style="color: #0000ff;">int</span> v<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">400</span><span style="color: #000000;">&#93;</span>;
+    bignum<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>
+    <span style="color: #000000;">&#123;</span>
+        <span style="color: #0000dd;">memset</span><span style="color: #000000;">&#40;</span>v,<span style="color: #0000dd;">0</span>,<span style="color: #0000dd;">sizeof</span><span style="color: #000000;">&#40;</span>v<span style="color: #000000;">&#41;</span><span style="color: #000000;">&#41;</span>;
+        v<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">1</span>;
+    <span style="color: #000000;">&#125;</span>
+<span style="color: #000000;">&#125;</span>f<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">181</span><span style="color: #000000;">&#93;</span>;
+&nbsp;
+<span style="color: #0000ff;">void</span> plus<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>
+<span style="color: #000000;">&#123;</span>
+    bignum v1;
+    <span style="color: #0000ff;">int</span> len,j,k;
+    <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>f<span style="color: #000000;">&#91;</span>i<span style="color: #0000dd;">-1</span><span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span>&gt;f<span style="color: #000000;">&#91;</span>i<span style="color: #0000dd;">-2</span><span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span><span style="color: #000000;">&#41;</span>
+        len=f<span style="color: #000000;">&#91;</span>i<span style="color: #0000dd;">-1</span><span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span>;
+    <span style="color: #0000ff;">else</span>
+        len=f<span style="color: #000000;">&#91;</span>i<span style="color: #0000dd;">-2</span><span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span>;
+    <span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span>j=<span style="color: #0000dd;">1</span>;j&lt;=len;j++<span style="color: #000000;">&#41;</span>
+       v1.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>=f<span style="color: #000000;">&#91;</span>i<span style="color: #0000dd;">-1</span><span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>+f<span style="color: #000000;">&#91;</span>i<span style="color: #0000dd;">-2</span><span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>;
+    <span style="color: #0000ff;">int</span> tmp=<span style="color: #0000dd;">0</span>;
+    <span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span>j=<span style="color: #0000dd;">1</span>;j&lt;=len;j++<span style="color: #000000;">&#41;</span>
+    <span style="color: #000000;">&#123;</span>
+        v1.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span>j<span style="color: #0000dd;">+1</span><span style="color: #000000;">&#93;</span>+=<span style="color: #000000;">&#40;</span>v1.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>/max<span style="color: #000000;">&#41;</span>;
+        v1.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>=v1.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>%max;
+    <span style="color: #000000;">&#125;</span>
+    j-=<span style="color: #0000dd;">1</span>;
+    <span style="color: #0000ff;">while</span><span style="color: #000000;">&#40;</span>v1.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span>j<span style="color: #0000dd;">+1</span><span style="color: #000000;">&#93;</span>&gt;<span style="color: #0000dd;">0</span><span style="color: #000000;">&#41;</span>
+    <span style="color: #000000;">&#123;</span>
+        j+=<span style="color: #0000dd;">1</span>;
+        v1.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span>j<span style="color: #0000dd;">+1</span><span style="color: #000000;">&#93;</span>=v1.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>/max;
+        v1.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>=v1.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>%max;
+    <span style="color: #000000;">&#125;</span>
+    v1.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span>=j;
+    f<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>=v1;
+<span style="color: #000000;">&#125;</span>
+&nbsp;
+<span style="color: #0000ff;">void</span> mul<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>
+<span style="color: #000000;">&#123;</span>
+    bignum v1;
+    v1=f<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>;
+    <span style="color: #0000ff;">int</span> j;
+    <span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span>j=<span style="color: #0000dd;">1</span>;j&lt;=v1.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span>;j++<span style="color: #000000;">&#41;</span>
+        v1.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>*=k;
+    <span style="color: #0000ff;">int</span> tmp=<span style="color: #0000dd;">0</span>,len=v1.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span>;
+    <span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span>j=<span style="color: #0000dd;">1</span>;j&lt;=len;j++<span style="color: #000000;">&#41;</span>
+    <span style="color: #000000;">&#123;</span>
+        v1.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span>j<span style="color: #0000dd;">+1</span><span style="color: #000000;">&#93;</span>+=<span style="color: #000000;">&#40;</span>v1.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>/max<span style="color: #000000;">&#41;</span>;
+        v1.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>=v1.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>%max;
+    <span style="color: #000000;">&#125;</span>
+    j-=<span style="color: #0000dd;">1</span>;
+    <span style="color: #0000ff;">while</span><span style="color: #000000;">&#40;</span>v1.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span>j<span style="color: #0000dd;">+1</span><span style="color: #000000;">&#93;</span>&gt;<span style="color: #0000dd;">0</span><span style="color: #000000;">&#41;</span>
+    <span style="color: #000000;">&#123;</span>
+        j+=<span style="color: #0000dd;">1</span>;
+        v1.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span>j<span style="color: #0000dd;">+1</span><span style="color: #000000;">&#93;</span>=v1.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>/max;
+        v1.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>=v1.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>%max;
+    <span style="color: #000000;">&#125;</span>
+    v1.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span>=j;
+    f<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>=v1;
+<span style="color: #000000;">&#125;</span>
+&nbsp;
+<span style="color: #0000ff;">void</span> draw<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>
+<span style="color: #000000;">&#123;</span>
+    <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>f<span style="color: #000000;">&#91;</span>n<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>==<span style="color: #0000dd;">0</span><span style="color: #000000;">&#41;</span>
+    <span style="color: #000000;">&#123;</span>
+        <span style="color: #0000dd;">printf</span><span style="color: #000000;">&#40;</span><span style="color: #666666;">&quot;0000000&quot;</span><span style="color: #000000;">&#41;</span>;
+    <span style="color: #000000;">&#125;</span>
+    <span style="color: #0000ff;">else</span>
+    <span style="color: #000000;">&#123;</span>
+        <span style="color: #0000ff;">int</span> tmp=f<span style="color: #000000;">&#91;</span>n<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>;
+        <span style="color: #0000ff;">while</span><span style="color: #000000;">&#40;</span>tmp&lt;max/<span style="color: #0000dd;">10</span><span style="color: #000000;">&#41;</span>
+        <span style="color: #000000;">&#123;</span>
+            tmp*=<span style="color: #0000dd;">10</span>;
+            <span style="color: #0000dd;">printf</span><span style="color: #000000;">&#40;</span><span style="color: #666666;">&quot;0&quot;</span><span style="color: #000000;">&#41;</span>;
+        <span style="color: #000000;">&#125;</span>
+        <span style="color: #0000dd;">printf</span><span style="color: #000000;">&#40;</span><span style="color: #666666;">&quot;%d&quot;</span>,f<span style="color: #000000;">&#91;</span>n<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#41;</span>;
+    <span style="color: #000000;">&#125;</span>
+<span style="color: #000000;">&#125;</span>
+&nbsp;
+<span style="color: #0000ff;">int</span> main<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>
+<span style="color: #000000;">&#123;</span>
+    <span style="color: #0000dd;">scanf</span><span style="color: #000000;">&#40;</span><span style="color: #666666;">&quot;%d&quot;</span>,&amp;n<span style="color: #000000;">&#41;</span>;
+    <span style="color: #0000dd;">scanf</span><span style="color: #000000;">&#40;</span><span style="color: #666666;">&quot;%d&quot;</span>,&amp;k<span style="color: #000000;">&#41;</span>;
+    k-=<span style="color: #0000dd;">1</span>;
+    f<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">1</span><span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">1</span>;
+    f<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">1</span><span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">1</span><span style="color: #000000;">&#93;</span>=k;
+    <span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span>i=<span style="color: #0000dd;">2</span>;i&lt;=n;i++<span style="color: #000000;">&#41;</span>
+    <span style="color: #000000;">&#123;</span>
+        plus<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+        mul<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+    <span style="color: #000000;">&#125;</span>
+    <span style="color: #0000dd;">printf</span><span style="color: #000000;">&#40;</span><span style="color: #666666;">&quot;%d&quot;</span>,f<span style="color: #000000;">&#91;</span>n<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span>f<span style="color: #000000;">&#91;</span>n<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span><span style="color: #000000;">&#93;</span><span style="color: #000000;">&#41;</span>;
+    <span style="color: #0000ff;">int</span> len=f<span style="color: #000000;">&#91;</span>n<span style="color: #000000;">&#93;</span>.<span style="color: #00eeff;">v</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span><span style="color: #0000dd;">-1</span>;
+    <span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span>i=len;i&gt;<span style="color: #0000dd;">0</span>;i--<span style="color: #000000;">&#41;</span>
+        draw<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+    <span style="color: #0000ff;">return</span> <span style="color: #0000dd;">0</span>;
+<span style="color: #000000;">&#125;</span></pre>
+<p><br />
+</p>
+<pre class="java"><span style="color: #a1a100;">import java.io.*;</span>
+<span style="color: #a1a100;">import java.math.*;</span>
+<span style="color: #a1a100;">import java.text.*;</span>
+<span style="color: #a1a100;">import java.util.*;</span>
+<span style="color: #a1a100;">import java.lang.*;</span>
+<span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">class</span> Main <span style="color: #66cc66;">&#123;</span>
+&nbsp;
+    <span style="color: #808080; font-style: italic;">/**
+     * @param args the command line arguments
+     */</span>
+    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">static</span> <span style="color: #993333;">void</span> main<span style="color: #66cc66;">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3AString+java.sun.com&amp;bntI=I%27m%20Feeling%20Lucky"><span style="color: #aaaadd; font-weight: bold;">String</span></a><span style="color: #66cc66;">&#91;</span><span style="color: #66cc66;">&#93;</span> args<span style="color: #66cc66;">&#41;</span> <span style="color: #66cc66;">&#123;</span>
+        <span style="color: #808080; font-style: italic;">// TODO code application logic here</span>
+        Scanner cin = <span style="color: #000000; font-weight: bold;">new</span> Scanner<span style="color: #66cc66;">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3ASystem+java.sun.com&amp;bntI=I%27m%20Feeling%20Lucky"><span style="color: #aaaadd; font-weight: bold;">System</span></a>.<span style="color: #006600;">in</span><span style="color: #66cc66;">&#41;</span>;
+        <span style="color: #993333;">int</span> n , k;
+        <span style="color: #b1b100;">while</span><span style="color: #66cc66;">&#40;</span>cin.<span style="color: #006600;">hasNext</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#123;</span>
+            n = cin.<span style="color: #006600;">nextInt</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>;
+            k = cin.<span style="color: #006600;">nextInt</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>;
+            <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3ABigInteger+java.sun.com&amp;bntI=I%27m%20Feeling%20Lucky"><span style="color: #aaaadd; font-weight: bold;">BigInteger</span></a> <span style="color: #66cc66;">&#91;</span><span style="color: #66cc66;">&#93;</span>a = <span style="color: #000000; font-weight: bold;">new</span> <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3ABigInteger+java.sun.com&amp;bntI=I%27m%20Feeling%20Lucky"><span style="color: #aaaadd; font-weight: bold;">BigInteger</span></a><span style="color: #66cc66;">&#91;</span>n<span style="color: #cc66cc;">+2</span><span style="color: #66cc66;">&#93;</span>;
+            a<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span> = <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3ABigInteger+java.sun.com&amp;bntI=I%27m%20Feeling%20Lucky"><span style="color: #aaaadd; font-weight: bold;">BigInteger</span></a>.<span style="color: #006600;">ONE</span>;
+            a<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span> = <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3ABigInteger+java.sun.com&amp;bntI=I%27m%20Feeling%20Lucky"><span style="color: #aaaadd; font-weight: bold;">BigInteger</span></a>.<span style="color: #006600;">valueOf</span><span style="color: #66cc66;">&#40;</span>k<span style="color: #cc66cc;">-1</span><span style="color: #66cc66;">&#41;</span>;
+            <span style="color: #b1b100;">for</span><span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> i = <span style="color: #cc66cc;">2</span>&nbsp;; i &lt; n<span style="color: #cc66cc;">+2</span>&nbsp;; i++<span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#123;</span>
+                a<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span> = a<span style="color: #66cc66;">&#91;</span>i<span style="color: #cc66cc;">-1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #006600;">add</span><span style="color: #66cc66;">&#40;</span>a<span style="color: #66cc66;">&#91;</span>i<span style="color: #cc66cc;">-2</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+                a<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span> = a<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>.<span style="color: #006600;">multiply</span><span style="color: #66cc66;">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3ABigInteger+java.sun.com&amp;bntI=I%27m%20Feeling%20Lucky"><span style="color: #aaaadd; font-weight: bold;">BigInteger</span></a>.<span style="color: #006600;">valueOf</span><span style="color: #66cc66;">&#40;</span>k<span style="color: #cc66cc;">-1</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span>;
+            <span style="color: #66cc66;">&#125;</span>
+            <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3ASystem+java.sun.com&amp;bntI=I%27m%20Feeling%20Lucky"><span style="color: #aaaadd; font-weight: bold;">System</span></a>.<span style="color: #006600;">out</span>.<span style="color: #006600;">println</span><span style="color: #66cc66;">&#40;</span>a<span style="color: #66cc66;">&#91;</span>n<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+         <span style="color: #66cc66;">&#125;</span>
+    <span style="color: #66cc66;">&#125;</span>
+<span style="color: #66cc66;">&#125;</span></pre>
+<p><br />
+</p>
+<a name=".E5.92.8C1009.E4.B8.80.E6.A8.A1.E4.B8.80.E6.A0.B7.E7.9A.84.E9.A2.98.E7.9B.AE.2C.E9.A2.98.E8.A7.A3.E5.8F.AF.E5.8F.82.E7.85.A7.E9.82.A3.E9.81.93.E9.A2.98.2C.E5.8F.AA.E6.98.AF.E9.9C.80.E8.A6.81.E9.AB.98.E7.B2.BE.E5.BA.A6"></a><h2><span class="editsection">[<a href="/index.php?title=URAL/1013&amp;action=edit&amp;section=1" title="编辑段落: 和1009一模一样的题目,题解可参照那道题,只是需要高精度">编辑</a>]</span> <span class="mw-headline"> 和1009一模一样的题目,题解可参照那道题,只是需要高精度 </span></h2>
+<pre class="pascal"><span style="color: #000000; font-weight: bold;">program</span> cao;
+<span style="color: #993333;">const</span>
+  maxn=<span style="color: #cc66cc;">500</span>;
+&nbsp;
+<span style="color: #b1b100;">var</span>
+  a,b,c:<span style="color: #993333;">array</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span>..<span style="color: #202020;">maxn</span><span style="color: #cc66cc;">+1</span><span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">of</span> <span style="color: #993333;">longint</span>;
+  d,e,f,g,h,i,j,k,l,n,m,p,q:<span style="color: #993333;">longint</span>;
+  s:<span style="color: #993333;">string</span>;
+&nbsp;
+<span style="color: #b1b100;">begin</span>
+  <span style="">read</span><span style="color: #66cc66;">&#40;</span>n,k<span style="color: #66cc66;">&#41;</span>;
+  <span style="color: #b1b100;">if</span> n&lt;<span style="color: #cc66cc;">2</span> <span style="color: #b1b100;">then</span>
+  <span style="color: #b1b100;">begin</span>
+    <span style="color: #b1b100;">if</span> n=<span style="color: #cc66cc;">0</span> <span style="color: #b1b100;">then</span> <span style="">writeln</span><span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #b1b100;">if</span> n=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">then</span> <span style="">writeln</span><span style="color: #66cc66;">&#40;</span>k<span style="color: #cc66cc;">-1</span><span style="color: #66cc66;">&#41;</span>;
+    halt;
+  <span style="color: #b1b100;">end</span>;
+  a<span style="color: #66cc66;">&#91;</span>maxn<span style="color: #66cc66;">&#93;</span>:=<span style="color: #cc66cc;">1</span>;
+  b<span style="color: #66cc66;">&#91;</span>maxn<span style="color: #66cc66;">&#93;</span>:=k<span style="color: #cc66cc;">-1</span>;
+  <span style="color: #b1b100;">for</span> i:=<span style="color: #cc66cc;">2</span> <span style="color: #b1b100;">to</span> n <span style="color: #b1b100;">do</span>
+  <span style="color: #b1b100;">begin</span>
+    <span style="color: #b1b100;">for</span> j:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> maxn <span style="color: #b1b100;">do</span>
+      c<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span>:=<span style="color: #66cc66;">&#40;</span>a<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span>+b<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>*<span style="color: #66cc66;">&#40;</span>k<span style="color: #cc66cc;">-1</span><span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #b1b100;">for</span> j:=maxn <span style="color: #b1b100;">downto</span> <span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">do</span>
+    <span style="color: #b1b100;">begin</span>
+      c<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span>:=c<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span>+c<span style="color: #66cc66;">&#91;</span>j<span style="color: #cc66cc;">+1</span><span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">div</span> <span style="color: #cc66cc;">1000000</span>;
+      c<span style="color: #66cc66;">&#91;</span>j<span style="color: #cc66cc;">+1</span><span style="color: #66cc66;">&#93;</span>:=c<span style="color: #66cc66;">&#91;</span>j<span style="color: #cc66cc;">+1</span><span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">mod</span> <span style="color: #cc66cc;">1000000</span>;
+    <span style="color: #b1b100;">end</span>;
+    a:=b;
+    b:=c;
+  <span style="color: #b1b100;">end</span>;
+  <span style="color: #b1b100;">for</span> i:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> maxn <span style="color: #b1b100;">do</span>
+    <span style="color: #b1b100;">if</span> c<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>&lt;&gt;<span style="color: #cc66cc;">0</span> <span style="color: #b1b100;">then</span> <span style="color: #000000; font-weight: bold;">break</span>;
+  <span style="">write</span><span style="color: #66cc66;">&#40;</span>c<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+  <span style="color: #b1b100;">for</span> i:=i<span style="color: #cc66cc;">+1</span> <span style="color: #b1b100;">to</span> maxn <span style="color: #b1b100;">do</span>
+  <span style="color: #b1b100;">begin</span>
+    str<span style="color: #66cc66;">&#40;</span>c<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>,s<span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #b1b100;">while</span> length<span style="color: #66cc66;">&#40;</span>s<span style="color: #66cc66;">&#41;</span>&lt;<span style="color: #cc66cc;">6</span> <span style="color: #b1b100;">do</span> insert<span style="color: #66cc66;">&#40;</span>‘<span style="color: #cc66cc;">0</span>′,s,<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span>;
+    <span style="">write</span><span style="color: #66cc66;">&#40;</span>s<span style="color: #66cc66;">&#41;</span>;
+  <span style="color: #b1b100;">end</span>;
+  <span style="">writeln</span>;
+<span style="color: #b1b100;">end</span>.</pre>
+<a name=".E8.B4.A1.E7.8C.AE.E4.B8.80.E4.B8.AAC.2B.2B.E9.AB.98.E7.B2.BE.E5.BA.A6.E7.B1.BB"></a><h2><span class="editsection">[<a href="/index.php?title=URAL/1013&amp;action=edit&amp;section=2" title="编辑段落: 贡献一个C++高精度类">编辑</a>]</span> <span class="mw-headline">贡献一个C++高精度类</span></h2>
+<pre class="cpp"><span style="color: #339900;">#include &lt;iostream&gt;</span>
+<span style="color: #339900;">#include &lt;stdlib.h&gt;</span>
+&nbsp;
+<span style="color: #0000ff;">using</span> <span style="color: #0000ff;">namespace</span> std;
+&nbsp;
+<span style="color: #0000ff;">class</span> Bigint
+<span style="color: #000000;">&#123;</span>
+	<span style="color: #0000ff;">public</span>:
+	<span style="color: #0000ff;">static</span> <span style="color: #0000ff;">const</span> <span style="color: #0000ff;">int</span> sa = <span style="color: #0000dd;">2000</span>;
+	<span style="color: #0000ff;">int</span> * da;
+	~Bigint<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+	Bigint<span style="color: #000000;">&#40;</span><span style="color: #0000ff;">const</span> <span style="color: #0000ff;">int</span> n<span style="color: #000000;">&#41;</span>;
+	Bigint<span style="color: #000000;">&#40;</span><span style="color: #0000ff;">const</span> Bigint &amp;a<span style="color: #000000;">&#41;</span>;
+	Bigint operator=<span style="color: #000000;">&#40;</span><span style="color: #0000ff;">const</span> <span style="color: #0000ff;">int</span> n<span style="color: #000000;">&#41;</span>;
+	Bigint operator=<span style="color: #000000;">&#40;</span><span style="color: #0000ff;">const</span> Bigint &amp;a<span style="color: #000000;">&#41;</span>;
+	Bigint operator+<span style="color: #000000;">&#40;</span><span style="color: #0000ff;">const</span> Bigint &amp;b<span style="color: #000000;">&#41;</span>;
+	Bigint operator*<span style="color: #000000;">&#40;</span><span style="color: #0000ff;">const</span> <span style="color: #0000ff;">int</span> n<span style="color: #000000;">&#41;</span>;
+	<span style="color: #0000ff;">friend</span> ostream &amp;operator&lt;&lt;<span style="color: #000000;">&#40;</span>ostream &amp;s, Bigint &amp;a<span style="color: #000000;">&#41;</span>;
+	<span style="color: #0000ff;">friend</span> istream &amp;operator&gt;&gt;<span style="color: #000000;">&#40;</span>istream &amp;s, <span style="color: #0000ff;">const</span> Bigint &amp;a<span style="color: #000000;">&#41;</span>;
+<span style="color: #000000;">&#125;</span>;
+&nbsp;
+Bigint::~Bigint<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>
+<span style="color: #000000;">&#123;</span>
+	<span style="color: #0000dd;">delete</span> <span style="color: #000000;">&#91;</span><span style="color: #000000;">&#93;</span> da;
+<span style="color: #000000;">&#125;</span>
+&nbsp;
+Bigint::<span style="color: #00eeff;">Bigint</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">const</span> <span style="color: #0000ff;">int</span> n = <span style="color: #0000dd;">0</span><span style="color: #000000;">&#41;</span>
+<span style="color: #000000;">&#123;</span>
+	da = <span style="color: #0000dd;">new</span> <span style="color: #0000ff;">int</span><span style="color: #000000;">&#91;</span>sa<span style="color: #000000;">&#93;</span>;
+	<span style="color: #0000dd;">memset</span><span style="color: #000000;">&#40;</span>da, <span style="color: #0000dd;">0</span>, <span style="color: #0000dd;">sizeof</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span><span style="color: #000000;">&#41;</span> * sa<span style="color: #000000;">&#41;</span>;
+	da<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">1</span><span style="color: #000000;">&#93;</span> = n;
+	<span style="color: #0000ff;">int</span> i;
+	<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span>i = <span style="color: #0000dd;">1</span>&nbsp;; da<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>&nbsp;; i++<span style="color: #000000;">&#41;</span>
+	<span style="color: #000000;">&#123;</span>
+		da<span style="color: #000000;">&#91;</span>i + <span style="color: #0000dd;">1</span><span style="color: #000000;">&#93;</span> += da<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span> / <span style="color: #0000dd;">10</span>;
+		da<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span> %= <span style="color: #0000dd;">10</span>;
+	<span style="color: #000000;">&#125;</span>
+	da<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span> = i - <span style="color: #0000dd;">1</span>;
+<span style="color: #000000;">&#125;</span>
+&nbsp;
+Bigint::<span style="color: #00eeff;">Bigint</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">const</span> Bigint &amp;a<span style="color: #000000;">&#41;</span>
+<span style="color: #000000;">&#123;</span>
+	da = <span style="color: #0000dd;">new</span> <span style="color: #0000ff;">int</span><span style="color: #000000;">&#91;</span>sa<span style="color: #000000;">&#93;</span>;
+	<span style="color: #0000dd;">memcpy</span><span style="color: #000000;">&#40;</span>da, a.<span style="color: #00eeff;">da</span>, <span style="color: #0000dd;">sizeof</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span><span style="color: #000000;">&#41;</span> * sa<span style="color: #000000;">&#41;</span>;
+<span style="color: #000000;">&#125;</span>
+&nbsp;
+Bigint Bigint::<span style="color: #00eeff;">operator</span>=<span style="color: #000000;">&#40;</span><span style="color: #0000ff;">const</span> Bigint &amp;a<span style="color: #000000;">&#41;</span>
+<span style="color: #000000;">&#123;</span>
+	<span style="color: #0000dd;">memcpy</span><span style="color: #000000;">&#40;</span>da, a.<span style="color: #00eeff;">da</span>, <span style="color: #0000dd;">sizeof</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span><span style="color: #000000;">&#41;</span> * sa<span style="color: #000000;">&#41;</span>;
+	<span style="color: #0000ff;">return</span> *<span style="color: #0000dd;">this</span>;
+<span style="color: #000000;">&#125;</span>
+&nbsp;
+Bigint Bigint::<span style="color: #00eeff;">operator</span>=<span style="color: #000000;">&#40;</span><span style="color: #0000ff;">const</span> <span style="color: #0000ff;">int</span> n<span style="color: #000000;">&#41;</span>
+<span style="color: #000000;">&#123;</span>
+	Bigint c<span style="color: #000000;">&#40;</span>n<span style="color: #000000;">&#41;</span>;
+	*<span style="color: #0000dd;">this</span> = c;
+	<span style="color: #0000ff;">return</span> *<span style="color: #0000dd;">this</span>;
+<span style="color: #000000;">&#125;</span>
+&nbsp;
+Bigint Bigint::<span style="color: #00eeff;">operator</span>+<span style="color: #000000;">&#40;</span><span style="color: #0000ff;">const</span> Bigint &amp;b<span style="color: #000000;">&#41;</span>
+<span style="color: #000000;">&#123;</span>
+	Bigint &amp;a = *<span style="color: #0000dd;">this</span>;
+	Bigint c;
+	c.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span> = max<span style="color: #000000;">&#40;</span>a.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span>, b.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span><span style="color: #000000;">&#41;</span>;
+	<span style="color: #0000ff;">int</span> i;
+	<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span>i = <span style="color: #0000dd;">1</span>&nbsp;; i &lt;= c.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span>&nbsp;; i++<span style="color: #000000;">&#41;</span>
+	<span style="color: #000000;">&#123;</span>
+		c.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span> += a.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span> + b.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>;
+		c.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span>i + <span style="color: #0000dd;">1</span><span style="color: #000000;">&#93;</span> += c.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span> / <span style="color: #0000dd;">10</span>;
+		c.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span> %= <span style="color: #0000dd;">10</span>;
+	<span style="color: #000000;">&#125;</span>
+	<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span>; c.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>&nbsp;; i++<span style="color: #000000;">&#41;</span>
+	<span style="color: #000000;">&#123;</span>
+		c.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span>i + <span style="color: #0000dd;">1</span><span style="color: #000000;">&#93;</span> += c.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span> / <span style="color: #0000dd;">10</span>;
+		c.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span> %= <span style="color: #0000dd;">10</span>;
+	<span style="color: #000000;">&#125;</span>
+	c.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span> = i - <span style="color: #0000dd;">1</span>;
+	<span style="color: #0000ff;">while</span><span style="color: #000000;">&#40;</span>c.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span>c.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span><span style="color: #000000;">&#93;</span> == <span style="color: #0000dd;">0</span> &amp;&amp; c.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span> &gt; <span style="color: #0000dd;">1</span><span style="color: #000000;">&#41;</span> c.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span>--;
+	<span style="color: #0000ff;">return</span> c;
+<span style="color: #000000;">&#125;</span>
+&nbsp;
+Bigint Bigint::<span style="color: #00eeff;">operator*</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">const</span> <span style="color: #0000ff;">int</span> n<span style="color: #000000;">&#41;</span>
+<span style="color: #000000;">&#123;</span>
+	Bigint &amp;a = *<span style="color: #0000dd;">this</span>;
+	Bigint c;
+	<span style="color: #0000ff;">int</span> i;
+	<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span>i = <span style="color: #0000dd;">1</span>&nbsp;; i &lt;= a.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span>&nbsp;; i++<span style="color: #000000;">&#41;</span>
+	<span style="color: #000000;">&#123;</span>
+		c.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span> += a.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span> * n;
+		c.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span>i + <span style="color: #0000dd;">1</span><span style="color: #000000;">&#93;</span> += c.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span> / <span style="color: #0000dd;">10</span>;
+		c.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span> %= <span style="color: #0000dd;">10</span>;
+	<span style="color: #000000;">&#125;</span>
+	<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span>; c.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>&nbsp;; i++<span style="color: #000000;">&#41;</span>
+	<span style="color: #000000;">&#123;</span>
+		c.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span>i + <span style="color: #0000dd;">1</span><span style="color: #000000;">&#93;</span> += c.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span> / <span style="color: #0000dd;">10</span>;
+		c.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span> %= <span style="color: #0000dd;">10</span>;
+	<span style="color: #000000;">&#125;</span>
+	c.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span> = i - <span style="color: #0000dd;">1</span>;
+	<span style="color: #0000ff;">while</span><span style="color: #000000;">&#40;</span>c.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span>c.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span><span style="color: #000000;">&#93;</span> == <span style="color: #0000dd;">0</span> &amp;&amp; c.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span> &gt; <span style="color: #0000dd;">1</span><span style="color: #000000;">&#41;</span> c.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span>--;
+	<span style="color: #0000ff;">return</span> c;
+<span style="color: #000000;">&#125;</span>
+&nbsp;
+ostream &amp;operator&lt;&lt;<span style="color: #000000;">&#40;</span>ostream &amp;s, Bigint &amp;a<span style="color: #000000;">&#41;</span>
+<span style="color: #000000;">&#123;</span>
+	<span style="color: #0000ff;">int</span> i, l;
+	l = a.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span>;
+	<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span>i = l&nbsp;; i &gt;= <span style="color: #0000dd;">1</span>&nbsp;; i--<span style="color: #000000;">&#41;</span>
+		s &lt;&lt; a.<span style="color: #00eeff;">da</span><span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>;
+	<span style="color: #0000ff;">return</span> s;
+<span style="color: #000000;">&#125;</span>
+&nbsp;
+istream &amp;operator&gt;&gt;<span style="color: #000000;">&#40;</span>istream &amp;s, Bigint &amp;a<span style="color: #000000;">&#41;</span>
+<span style="color: #000000;">&#123;</span>
+	<span style="color: #0000ff;">int</span> k, i;
+	s &gt;&gt; k;
+	Bigint c<span style="color: #000000;">&#40;</span>k<span style="color: #000000;">&#41;</span>;
+	a = c;
+	<span style="color: #0000ff;">return</span> s;
+<span style="color: #000000;">&#125;</span>
+&nbsp;
+Bigint f<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">3</span><span style="color: #000000;">&#93;</span>;
+&nbsp;
+<span style="color: #0000ff;">void</span> work<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>
+<span style="color: #000000;">&#123;</span>
+	<span style="color: #0000ff;">int</span> n, k;
+	<span style="color: #0000dd;">cin</span> &gt;&gt; n &gt;&gt; k;
+	f<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span> = <span style="color: #0000dd;">1</span>;
+	f<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">1</span><span style="color: #000000;">&#93;</span> = k - <span style="color: #0000dd;">1</span>;
+	<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i = <span style="color: #0000dd;">2</span>&nbsp;; i &lt;= n&nbsp;; i++<span style="color: #000000;">&#41;</span>
+		f<span style="color: #000000;">&#91;</span>i % <span style="color: #0000dd;">3</span><span style="color: #000000;">&#93;</span> = <span style="color: #000000;">&#40;</span>f<span style="color: #000000;">&#91;</span><span style="color: #000000;">&#40;</span>i - <span style="color: #0000dd;">1</span><span style="color: #000000;">&#41;</span> % <span style="color: #0000dd;">3</span><span style="color: #000000;">&#93;</span> + f<span style="color: #000000;">&#91;</span><span style="color: #000000;">&#40;</span>i - <span style="color: #0000dd;">2</span><span style="color: #000000;">&#41;</span> % <span style="color: #0000dd;">3</span><span style="color: #000000;">&#93;</span><span style="color: #000000;">&#41;</span> * <span style="color: #000000;">&#40;</span>k - <span style="color: #0000dd;">1</span><span style="color: #000000;">&#41;</span>;
+	<span style="color: #0000dd;">cout</span> &lt;&lt; f<span style="color: #000000;">&#91;</span>n % <span style="color: #0000dd;">3</span><span style="color: #000000;">&#93;</span> &lt;&lt; endl;
+<span style="color: #000000;">&#125;</span>
+&nbsp;
+<span style="color: #0000ff;">int</span> main<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>
+<span style="color: #000000;">&#123;</span>
+	work<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+	<span style="color: #0000ff;">return</span> <span style="color: #0000dd;">0</span>;
+<span style="color: #000000;">&#125;</span></pre>
+
+<!-- Saved in parser cache with key nocow:pcache:idhash:2884-0!1!0!!zh-cn!2 and timestamp 20110414125601 -->
+<div class="printfooter">
+来自"<a href="http://www.nocow.cn/index.php/URAL/1013">http://www.nocow.cn/index.php/URAL/1013</a>"</div>
+						<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+						 <li id="ca-nstab-main" class="selected"><a href="/index.php/URAL/1013">条目</a></li>
+						 <li id="ca-talk" class="new"><a href="/index.php?title=Talk:URAL/1013&amp;action=edit">讨论</a></li>
+						 <li id="ca-edit"><a href="/index.php?title=URAL/1013&amp;action=edit">编辑</a></li>
+						 <li id="ca-history"><a href="/index.php?title=URAL/1013&amp;action=history">历史</a></li>
+				</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=Special:Userlogin&amp;returnto=URAL/1013">登录或创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5" title="首页"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/Special:Recentchanges">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/Special:Random">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/Help:%E5%B8%AE%E5%8A%A9">使用帮助</a></li>
+				<li id="n-sitesupport"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5">帮助我们</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php/Special:Search" id="searchform"><div>
+<input name="ref" type="hidden" value="URAL/1013">
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="进入" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="搜索" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/Special:Whatlinkshere/URAL/1013">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/Special:Recentchangeslinked/URAL/1013">链出更改</a></li>
+<li id="t-upload"><a href="/index.php/Special:Upload">上传文件</a></li>
+<li id="t-specialpages"><a href="/index.php/Special:Specialpages">特殊页面</a></li>
+				<li id="t-print"><a href="/index.php?title=URAL/1013&amp;printable=yes">可打印版</a></li>				<li id="t-permalink"><a href="/index.php?title=URAL/1013&amp;oldid=23847">永久链接</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt='GNU Free Documentation License 1.2' /></a></div>
+			<ul id="f-list">
+				<li id="viewcount">访问次数: 793次</li>
+				<li id="credits">此页由NOCOW匿名用户于2010年12月5日, 17:11最后更改. 在NOCOW用户<a href="/index.php/User:Zhujf553" title="User:Zhujf553">Zhujf553</a>的工作基础上.</li>
+				<li id="copyright">本站内容在<a href="http://www.gnu.org/copyleft/fdl.html" class="external " title="http://www.gnu.org/copyleft/fdl.html" rel="nofollow">GNU Free Documentation License 1.2</a>下发布</li>
+				<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E7%AD%96%E7%95%A5" title="NOCOW:隐私策略">隐私策略</a></li>
+				<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+				<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+				<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by bdezlinux in 1.997 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body></html>

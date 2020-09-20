@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (中文(简体))" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+		<title>NOCOW - 用户贡献</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins/monobook/main.css?42b"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print" href="/skins/common/commonPrint.css?42b" />
+		<link rel="stylesheet" type="text/css" media="handheld" href="/skins/monobook/handheld.css?42b" />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins/monobook/IE50Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins/monobook/IE55Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins/monobook/IE60Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins/monobook/IE70Fixes.css?42b";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?42b"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">/*<![CDATA[*/
+var skin = "monobook";
+var stylepath = "/skins";
+var wgArticlePath = "/index.php/$1";
+var wgScriptPath = "";
+var wgServer = "http://www.nocow.cn";
+var wgCanonicalNamespace = "Special";
+var wgCanonicalSpecialPageName = "Contributions";
+var wgNamespaceNumber = -1;
+var wgPageName = "Special:Contributions";
+var wgTitle = "Contributions";
+var wgArticleId = 0;
+var wgIsArticle = false;
+var wgUserName = null;
+var wgUserLanguage = "zh-cn";
+var wgContentLanguage = "zh-cn";
+var wgBreakFrames = false;
+var wgCurRevisionId = 0;
+/*]]>*/</script>
+                
+		<script type="text/javascript" src="/skins/common/wikibits.js?42b"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=-&action=raw&gen=css&maxage=18000";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+			</head>
+<body  class="mediawiki ns--1 ltr page-Special_Contributions">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+<div style="text-align:center;font-size:85%;font-weight:bold" id=headlinemessage>
+<div>如果发现广告等破坏行为，请尽量将条目恢复到较早的版本而不是把相应内容直接删除，谢谢合作。</div>
+<!--div>NOCOW近期对条目的命名进行了一些整理，一些链接可能失效，为此带来的不便请大家谅解。创建条目时也请遵循新的命名规范，谢谢合作。</div-->
+</div>
+		<a name="top" id="top"></a>
+				<h1 class="firstHeading">用户贡献</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">来自&quot;NOCOW&quot;</h3>
+			<div id="contentSub">218.77.114.11 (<a href="/index.php/User_talk:218.77.114.11" title="User talk:218.77.114.11">Talk</a> | <a href="/index.php?title=Special:Log&amp;type=block&amp;page=User:218.77.114.11" title="Special:Log">查封记录</a> | <a href="/index.php?title=Special:Log&amp;user=218.77.114.11" title="Special:Log">全部日志</a>)</div>
+									<div id="jump-to-nav">跳转到: <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>			<!-- start content -->
+			<form method='get' action="/index.php">
+	<input name="offset" type="hidden" value="" />
+	<input name="limit" type="hidden" value="50" />
+	<input name="target" type="hidden" value="218.77.114.11" />
+	<input name="title" type="hidden" value="Special:Contributions" />
+<p>名字空间: 
+<select id='namespace' name='namespace' class='namespaceselector'>
+	<option value="" selected="selected">全部</option>
+	<option value="0">(页面)</option>
+	<option value="1">Talk</option>
+	<option value="2">User</option>
+	<option value="3">User talk</option>
+	<option value="4">NOCOW</option>
+	<option value="5">NOCOW talk</option>
+	<option value="6">Image</option>
+	<option value="7">Image talk</option>
+	<option value="8">MediaWiki</option>
+	<option value="9">MediaWiki talk</option>
+	<option value="10">Template</option>
+	<option value="11">Template talk</option>
+	<option value="12">Help</option>
+	<option value="13">Help talk</option>
+	<option value="14">Category</option>
+	<option value="15">Category talk</option>
+	<option value="100">Tutorial</option>
+	<option value="101">Tutorial Talk</option>
+	<option value="102">Translate</option>
+	<option value="103">Translate Talk</option>
+	<option value="104">Code</option>
+	<option value="105">Code Talk</option>
+	<option value="106">Article</option>
+	<option value="107">Article Talk</option>
+	<option value="108">Portal</option>
+	<option value="109">Portal Talk</option>
+	<option value="110">News</option>
+	<option value="111">News Talk</option>
+	<option value="112">Graph</option>
+	<option value="113">Graph Talk</option>
+	<option value="114">Post</option>
+	<option value="115">Post Summary</option>
+	<option value="116">Thesis</option>
+	<option value="117">Thesis Talk</option>
+	<option value="118">Headline</option>
+	<option value="119">Headline Talk</option>
+	<option value="120">Problem</option>
+	<option value="121">Problem Talk</option>
+	<option value="122">Course</option>
+	<option value="123">Course Talk</option>
+	<option value="124">Suggest</option>
+	<option value="125">Suggest Talk</option>
+	<option value="126">恶搞</option>
+	<option value="127">恶搞 Talk</option>
+</select>
+<input type="submit" value="确定" /></p></form>
+<p>(最新 | <a href="/index.php?title=Special:Contributions&amp;go=first&amp;limit=50&amp;target=218.77.114.11">最早</a>) 查看 (较新) (<a href="/index.php?title=Special:Contributions&amp;offset=20120115110922&amp;limit=50&amp;target=218.77.114.11">较早</a>) (<a href="/index.php?title=Special:Contributions&amp;limit=20&amp;target=218.77.114.11">20</a> | <a href="/index.php?title=Special:Contributions&amp;limit=50&amp;target=218.77.114.11">50</a> | <a href="/index.php?title=Special:Contributions&amp;limit=100&amp;target=218.77.114.11">100</a> | <a href="/index.php?title=Special:Contributions&amp;limit=250&amp;target=218.77.114.11">250</a> | <a href="/index.php?title=Special:Contributions&amp;limit=500&amp;target=218.77.114.11">500</a>).</p>
+<ul>
+<li>21:10 2012年2月28日 (<a href="/index.php?title=Sgu/104&amp;action=history" title="Sgu/104">历史</a>) (<a href="/index.php?title=Sgu/104&amp;diff=prev&amp;oldid=29868" title="Sgu/104">差异</a>)  <a href="/index.php/Sgu/104" title="Sgu/104">Sgu/104</a>  <strong> (顶)</strong></li>
+<li>18:37 2012年2月28日 (<a href="/index.php?title=Sgu/103&amp;action=history" title="Sgu/103">历史</a>) (<a href="/index.php?title=Sgu/103&amp;diff=prev&amp;oldid=29859" title="Sgu/103">差异</a>)  <a href="/index.php/Sgu/103" title="Sgu/103">Sgu/103</a>  <strong> (顶)</strong></li>
+<li>13:11 2012年2月28日 (<a href="/index.php?title=Sgu/153&amp;action=history" title="Sgu/153">历史</a>) (<a href="/index.php?title=Sgu/153&amp;diff=prev&amp;oldid=29849" title="Sgu/153">差异</a>)  <a href="/index.php/Sgu/153" title="Sgu/153">Sgu/153</a>  <span class="comment">(新页面: 打表找规律 &lt;source lang=cpp&gt; #include&lt;cstdio&gt; #include&lt;cstdlib&gt; #include&lt;cstring&gt;  const int MAX=10000; const int N=10; int test,n,m; int p[N]; int f[MAX+10],time;  int main() {     ...)</span> <strong> (顶)</strong></li>
+<li>21:38 2012年2月27日 (<a href="/index.php?title=Sgu/154&amp;action=history" title="Sgu/154">历史</a>) (<a href="/index.php?title=Sgu/154&amp;diff=prev&amp;oldid=29831" title="Sgu/154">差异</a>)  <a href="/index.php/Sgu/154" title="Sgu/154">Sgu/154</a>  <strong> (顶)</strong></li>
+<li>21:37 2012年2月27日 (<a href="/index.php?title=Sgu/154&amp;action=history" title="Sgu/154">历史</a>) (<a href="/index.php?title=Sgu/154&amp;diff=prev&amp;oldid=29830" title="Sgu/154">差异</a>)  <a href="/index.php/Sgu/154" title="Sgu/154">Sgu/154</a>  </li>
+<li>20:39 2012年2月27日 (<a href="/index.php?title=Sgu/155&amp;action=history" title="Sgu/155">历史</a>) (<a href="/index.php?title=Sgu/155&amp;diff=prev&amp;oldid=29829" title="Sgu/155">差异</a>)  <a href="/index.php/Sgu/155" title="Sgu/155">Sgu/155</a>  <span class="comment">(新页面: 笛卡尔树 按第一个权值排序 接下来就只有笛卡尔树了 &lt;source lang=cpp&gt; //by hza #include&lt;cstdio&gt;  int n; const int MAX=50000+10;  struct node { 	int k,a,place; }; node ...)</span> <strong> (顶)</strong></li>
+<li>19:41 2012年2月27日 (<a href="/index.php?title=Sgu/152&amp;action=history" title="Sgu/152">历史</a>) (<a href="/index.php?title=Sgu/152&amp;diff=prev&amp;oldid=29827" title="Sgu/152">差异</a>)  <a href="/index.php/Sgu/152" title="Sgu/152">Sgu/152</a>  <span class="comment">(新页面: &lt;source lang=cpp&gt; #include&lt;cstdio&gt; #include&lt;cmath&gt;  const int MAX=10000+10; int n; int vote[MAX],sum; int ans[MAX],tot;  int main() {     freopen(&quot;152.in&quot;,&quot;r&quot;,stdin);freopen(&quot;152.out&quot;,&quot;w&quot;...)</span> <strong> (顶)</strong></li>
+<li>19:06 2012年2月27日 (<a href="/index.php?title=Sgu/151&amp;action=history" title="Sgu/151">历史</a>) (<a href="/index.php?title=Sgu/151&amp;diff=prev&amp;oldid=29826" title="Sgu/151">差异</a>)  <a href="/index.php/Sgu/151" title="Sgu/151">Sgu/151</a>  <span class="comment">(新页面: 大水题 &lt;source lang=cpp&gt; //by hza #include&lt;cstdio&gt; #include&lt;cmath&gt; #include&lt;cstdlib&gt;  const double EPS=1e-10; double c,b,m; double x,y;  void fail() { 	printf(&quot;Mission impossible\n&quot;); ...)</span> <strong> (顶)</strong></li>
+<li>18:25 2012年2月27日 (<a href="/index.php?title=Sgu/150&amp;action=history" title="Sgu/150">历史</a>) (<a href="/index.php?title=Sgu/150&amp;diff=prev&amp;oldid=29825" title="Sgu/150">差异</a>)  <a href="/index.php/Sgu/150" title="Sgu/150">Sgu/150</a>  <strong> (顶)</strong></li>
+<li>18:25 2012年2月27日 (<a href="/index.php?title=Sgu/150&amp;action=history" title="Sgu/150">历史</a>) (<a href="/index.php?title=Sgu/150&amp;diff=prev&amp;oldid=29824" title="Sgu/150">差异</a>)  <a href="/index.php/Sgu/150" title="Sgu/150">Sgu/150</a>  </li>
+<li>18:20 2012年2月27日 (<a href="/index.php?title=Sgu/150&amp;action=history" title="Sgu/150">历史</a>) (<a href="/index.php?title=Sgu/150&amp;diff=prev&amp;oldid=29823" title="Sgu/150">差异</a>)  <a href="/index.php/Sgu/150" title="Sgu/150">Sgu/150</a>  <span class="comment">(新页面: 代码题，暴力即可 &lt;source lang=cpp&gt; //by hza #include&lt;cstdio&gt; #include&lt;cmath&gt;  const int MAX=2000000; const double EPS=1e-10; double xs,xt,ys,yt; double x,y,k; double a,b,c; int n;...)</span> </li>
+<li>19:16 2012年2月26日 (<a href="/index.php?title=Sgu/149&amp;action=history" title="Sgu/149">历史</a>) (<a href="/index.php?title=Sgu/149&amp;diff=prev&amp;oldid=29806" title="Sgu/149">差异</a>)  <a href="/index.php/Sgu/149" title="Sgu/149">Sgu/149</a>  <strong> (顶)</strong></li>
+<li>19:16 2012年2月26日 (<a href="/index.php?title=Sgu/149&amp;action=history" title="Sgu/149">历史</a>) (<a href="/index.php?title=Sgu/149&amp;diff=prev&amp;oldid=29805" title="Sgu/149">差异</a>)  <a href="/index.php/Sgu/149" title="Sgu/149">Sgu/149</a>  <span class="comment">(新页面: 经典问题 简单的树形dp &lt;source lang=cpp&gt; #include&lt;cstdio&gt;  const int MAX=10000+20; int n; int fa[MAX],ca[MAX],t[MAX],c[MAX],begin[MAX],next[MAX],top; int dist[MAX],deep1[MAX],deep...)</span> </li>
+<li>18:17 2012年2月26日 (<a href="/index.php?title=Sgu/148&amp;action=history" title="Sgu/148">历史</a>) (<a href="/index.php?title=Sgu/148&amp;diff=prev&amp;oldid=29804" title="Sgu/148">差异</a>)  <a href="/index.php/Sgu/148" title="Sgu/148">Sgu/148</a>  <strong> (顶)</strong></li>
+<li>18:16 2012年2月26日 (<a href="/index.php?title=Sgu/148&amp;action=history" title="Sgu/148">历史</a>) (<a href="/index.php?title=Sgu/148&amp;diff=prev&amp;oldid=29803" title="Sgu/148">差异</a>)  <a href="/index.php/Sgu/148" title="Sgu/148">Sgu/148</a>  </li>
+<li>18:16 2012年2月26日 (<a href="/index.php?title=Sgu/148&amp;action=history" title="Sgu/148">历史</a>) (<a href="/index.php?title=Sgu/148&amp;diff=prev&amp;oldid=29802" title="Sgu/148">差异</a>)  <a href="/index.php/Sgu/148" title="Sgu/148">Sgu/148</a>  </li>
+<li>21:28 2012年2月25日 (<a href="/index.php?title=Sgu/147&amp;action=history" title="Sgu/147">历史</a>) (<a href="/index.php?title=Sgu/147&amp;diff=prev&amp;oldid=29778" title="Sgu/147">差异</a>)  <a href="/index.php/Sgu/147" title="Sgu/147">Sgu/147</a>  <span class="comment">(新页面: 弄了一晚，终于AC了 &lt;source lang=cpp&gt; //by hza #include&lt;cstdio&gt;  const int INF=1&lt;&lt;30; int answer=INF; int meetstep;  void swap(int&amp; a,int&amp; b) { 	int t=a;a=b;b=t; }  int abs(int a){...)</span> <strong> (顶)</strong></li>
+<li>17:03 2012年2月25日 (<a href="/index.php?title=Sgu/146&amp;action=history" title="Sgu/146">历史</a>) (<a href="/index.php?title=Sgu/146&amp;diff=prev&amp;oldid=29774" title="Sgu/146">差异</a>)  <a href="/index.php/Sgu/146" title="Sgu/146">Sgu/146</a>  <span class="comment">(新页面: 模拟题 注意四舍五入即可 &lt;source lang=cpp&gt; #include&lt;cstdio&gt; #include&lt;cmath&gt;  typedef long long LL;  const int E=10000; LL len,v,t,sum; double answer,l; int n;  int main() { 	fre...)</span> <strong> (顶)</strong></li>
+<li>16:53 2012年2月25日 (<a href="/index.php?title=Code:USACO/rectbarn/C%2B%2B&amp;action=history" title="Code:USACO/rectbarn/C++">历史</a>) (<a href="/index.php?title=Code:USACO/rectbarn/C%2B%2B&amp;diff=prev&amp;oldid=29773" title="Code:USACO/rectbarn/C++">差异</a>)  <a href="/index.php/Code:USACO/rectbarn/C%2B%2B" title="Code:USACO/rectbarn/C++">Code:USACO/rectbarn/C++</a>  <strong> (顶)</strong></li>
+<li>16:28 2012年2月25日 (<a href="/index.php?title=Sgu/145&amp;action=history" title="Sgu/145">历史</a>) (<a href="/index.php?title=Sgu/145&amp;diff=prev&amp;oldid=29772" title="Sgu/145">差异</a>)  <a href="/index.php/Sgu/145" title="Sgu/145">Sgu/145</a>  <span class="comment">(新页面: NPH问题 二分答案+搜索剪枝 &lt;source lang=cpp&gt; //by hza #include&lt;cstdio&gt;  const int MAX=100+10; const int MAXP=500+10; int n,m,S,T,K; int cost[MAX][MAX]; int hash[MAX];  int max,le...)</span> <strong> (顶)</strong></li>
+<li>21:18 2012年2月24日 (<a href="/index.php?title=USACO/betsy&amp;action=history" title="USACO/betsy">历史</a>) (<a href="/index.php?title=USACO/betsy&amp;diff=prev&amp;oldid=29754" title="USACO/betsy">差异</a>)  <a href="/index.php/USACO/betsy" title="USACO/betsy">USACO/betsy</a>  <span class="comment">(<span class="autocomment"><a href="/index.php/USACO/betsy#.E4.BC.98.E5.8C.962" title="USACO/betsy">→</a>优化2</span>)</span> <strong> (顶)</strong></li>
+<li>15:08 2012年2月11日 (<a href="/index.php?title=SAP&amp;action=history" title="SAP">历史</a>) (<a href="/index.php?title=SAP&amp;diff=prev&amp;oldid=29654" title="SAP">差异</a>)  <a href="/index.php/SAP" title="SAP">SAP</a>  <strong> (顶)</strong></li>
+<li>17:09 2012年2月7日 (<a href="/index.php?title=User_talk:218.77.114.11&amp;action=history" title="User talk:218.77.114.11">历史</a>) (<a href="/index.php?title=User_talk:218.77.114.11&amp;diff=prev&amp;oldid=29605" title="User talk:218.77.114.11">差异</a>)  <a href="/index.php/User_talk:218.77.114.11" title="User talk:218.77.114.11">User talk:218.77.114.11</a>  <span class="comment">(新页面: 呵呵 某NB中学的IP出口)</span> <strong> (顶)</strong></li>
+<li>16:27 2012年2月2日 (<a href="/index.php?title=USACO/money&amp;action=history" title="USACO/money">历史</a>) (<a href="/index.php?title=USACO/money&amp;diff=prev&amp;oldid=29516" title="USACO/money">差异</a>)  <a href="/index.php/USACO/money" title="USACO/money">USACO/money</a>  <span class="comment">(<span class="autocomment"><a href="/index.php/USACO/money#.E5.88.86.E6.9E.90" title="USACO/money">→</a>分析</span>)</span> <strong> (顶)</strong></li>
+<li>14:17 2012年2月1日 (<a href="/index.php?title=User:%E5%87%8C%E4%BA%91%E4%B8%83%E9%A3%8E&amp;action=history" title="User:凌云七风">历史</a>) (<a href="/index.php?title=User:%E5%87%8C%E4%BA%91%E4%B8%83%E9%A3%8E&amp;diff=prev&amp;oldid=29500" title="User:凌云七风">差异</a>)  <a href="/index.php/User:%E5%87%8C%E4%BA%91%E4%B8%83%E9%A3%8E" title="User:凌云七风">User:凌云七风</a>  <span class="comment">(新页面: 呵呵)</span> <strong> (顶)</strong></li>
+<li>21:42 2012年1月31日 (<a href="/index.php?title=Code:USACO/cowxor/C%2B%2B&amp;action=history" title="Code:USACO/cowxor/C++">历史</a>) (<a href="/index.php?title=Code:USACO/cowxor/C%2B%2B&amp;diff=prev&amp;oldid=29498" title="Code:USACO/cowxor/C++">差异</a>)  <a href="/index.php/Code:USACO/cowxor/C%2B%2B" title="Code:USACO/cowxor/C++">Code:USACO/cowxor/C++</a>  <strong> (顶)</strong></li>
+<li>21:10 2012年1月31日 (<a href="/index.php?title=USACO/cowxor&amp;action=history" title="USACO/cowxor">历史</a>) (<a href="/index.php?title=USACO/cowxor&amp;diff=prev&amp;oldid=29497" title="USACO/cowxor">差异</a>)  <a href="/index.php/USACO/cowxor" title="USACO/cowxor">USACO/cowxor</a>  <strong> (顶)</strong></li>
+<li>21:10 2012年1月31日 (<a href="/index.php?title=USACO/cowxor&amp;action=history" title="USACO/cowxor">历史</a>) (<a href="/index.php?title=USACO/cowxor&amp;diff=prev&amp;oldid=29496" title="USACO/cowxor">差异</a>)  <a href="/index.php/USACO/cowxor" title="USACO/cowxor">USACO/cowxor</a>  <span class="comment">(<span class="autocomment"><a href="/index.php/USACO/cowxor#.E9.97.AE.E9.A2.98.E5.88.86.E6.9E.90" title="USACO/cowxor">→</a>问题分析</span>)</span> </li>
+<li>20:42 2012年1月30日 (<a href="/index.php?title=Code:USACO/vans/C%2B%2B&amp;action=history" title="Code:USACO/vans/C++">历史</a>) (<a href="/index.php?title=Code:USACO/vans/C%2B%2B&amp;diff=prev&amp;oldid=29489" title="Code:USACO/vans/C++">差异</a>)  <a href="/index.php/Code:USACO/vans/C%2B%2B" title="Code:USACO/vans/C++">Code:USACO/vans/C++</a>  <strong> (顶)</strong></li>
+<li>08:48 2012年1月29日 (<a href="/index.php?title=Translate:USACO/hamming&amp;action=history" title="Translate:USACO/hamming">历史</a>) (<a href="/index.php?title=Translate:USACO/hamming&amp;diff=prev&amp;oldid=29482" title="Translate:USACO/hamming">差异</a>)  <a href="/index.php/Translate:USACO/hamming" title="Translate:USACO/hamming">Translate:USACO/hamming</a>  <span class="comment">(<span class="autocomment"><a href="/index.php/Translate:USACO/hamming#.E6.8F.90.E7.A4.BA" title="Translate:USACO/hamming">→</a>提示</span>)</span> <strong> (顶)</strong></li>
+<li>13:51 2012年1月20日 (<a href="/index.php?title=Code:USACO/calfflac/C%2B%2B&amp;action=history" title="Code:USACO/calfflac/C++">历史</a>) (<a href="/index.php?title=Code:USACO/calfflac/C%2B%2B&amp;diff=prev&amp;oldid=29379" title="Code:USACO/calfflac/C++">差异</a>)  <a href="/index.php/Code:USACO/calfflac/C%2B%2B" title="Code:USACO/calfflac/C++">Code:USACO/calfflac/C++</a>  <strong> (顶)</strong></li>
+<li>13:50 2012年1月20日 (<a href="/index.php?title=Code:USACO/calfflac/C%2B%2B&amp;action=history" title="Code:USACO/calfflac/C++">历史</a>) (<a href="/index.php?title=Code:USACO/calfflac/C%2B%2B&amp;diff=prev&amp;oldid=29378" title="Code:USACO/calfflac/C++">差异</a>)  <a href="/index.php/Code:USACO/calfflac/C%2B%2B" title="Code:USACO/calfflac/C++">Code:USACO/calfflac/C++</a>  </li>
+<li>08:05 2012年1月20日 (<a href="/index.php?title=Code:USACO/calfflac/C%2B%2B&amp;action=history" title="Code:USACO/calfflac/C++">历史</a>) (<a href="/index.php?title=Code:USACO/calfflac/C%2B%2B&amp;diff=prev&amp;oldid=29371" title="Code:USACO/calfflac/C++">差异</a>)  <a href="/index.php/Code:USACO/calfflac/C%2B%2B" title="Code:USACO/calfflac/C++">Code:USACO/calfflac/C++</a>  </li>
+<li>08:02 2012年1月20日 (<a href="/index.php?title=Code:USACO/calfflac/C%2B%2B&amp;action=history" title="Code:USACO/calfflac/C++">历史</a>) (<a href="/index.php?title=Code:USACO/calfflac/C%2B%2B&amp;diff=prev&amp;oldid=29370" title="Code:USACO/calfflac/C++">差异</a>)  <a href="/index.php/Code:USACO/calfflac/C%2B%2B" title="Code:USACO/calfflac/C++">Code:USACO/calfflac/C++</a>  </li>
+<li>17:20 2012年1月19日 (<a href="/index.php?title=Code:USACO/schlnet/C%2B%2B&amp;action=history" title="Code:USACO/schlnet/C++">历史</a>) (<a href="/index.php?title=Code:USACO/schlnet/C%2B%2B&amp;diff=prev&amp;oldid=29361" title="Code:USACO/schlnet/C++">差异</a>)  <a href="/index.php/Code:USACO/schlnet/C%2B%2B" title="Code:USACO/schlnet/C++">Code:USACO/schlnet/C++</a>  <strong> (顶)</strong></li>
+<li>16:02 2012年1月19日 (<a href="/index.php?title=Translate:USACO/schlnet&amp;action=history" title="Translate:USACO/schlnet">历史</a>) (<a href="/index.php?title=Translate:USACO/schlnet&amp;diff=prev&amp;oldid=29359" title="Translate:USACO/schlnet">差异</a>)  <a href="/index.php/Translate:USACO/schlnet" title="Translate:USACO/schlnet">Translate:USACO/schlnet</a>  <span class="comment">(<span class="autocomment"><a href="/index.php/Translate:USACO/schlnet#.E6.A0.BC.E5.BC.8F" title="Translate:USACO/schlnet">→</a>格式</span>)</span> <strong> (顶)</strong></li>
+<li>16:02 2012年1月19日 (<a href="/index.php?title=Translate:USACO/schlnet&amp;action=history" title="Translate:USACO/schlnet">历史</a>) (<a href="/index.php?title=Translate:USACO/schlnet&amp;diff=prev&amp;oldid=29358" title="Translate:USACO/schlnet">差异</a>)  <a href="/index.php/Translate:USACO/schlnet" title="Translate:USACO/schlnet">Translate:USACO/schlnet</a>  <span class="comment">(<span class="autocomment"><a href="/index.php/Translate:USACO/schlnet#.E6.A0.BC.E5.BC.8F" title="Translate:USACO/schlnet">→</a>格式</span>)</span> </li>
+<li>08:46 2012年1月16日 (<a href="/index.php?title=NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA&amp;action=history" title="NOCOW:新手试练场">历史</a>) (<a href="/index.php?title=NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA&amp;diff=prev&amp;oldid=29311" title="NOCOW:新手试练场">差异</a>)  <a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA" title="NOCOW:新手试练场">NOCOW:新手试练场</a>  </li>
+<li>08:43 2012年1月16日 (<a href="/index.php?title=NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA&amp;action=history" title="NOCOW:新手试练场">历史</a>) (<a href="/index.php?title=NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA&amp;diff=prev&amp;oldid=29310" title="NOCOW:新手试练场">差异</a>)  <a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA" title="NOCOW:新手试练场">NOCOW:新手试练场</a>  </li>
+<li>08:43 2012年1月16日 (<a href="/index.php?title=NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA&amp;action=history" title="NOCOW:新手试练场">历史</a>) (<a href="/index.php?title=NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA&amp;diff=prev&amp;oldid=29309" title="NOCOW:新手试练场">差异</a>)  <a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA" title="NOCOW:新手试练场">NOCOW:新手试练场</a>  </li>
+<li>08:42 2012年1月16日 (<a href="/index.php?title=NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA&amp;action=history" title="NOCOW:新手试练场">历史</a>) (<a href="/index.php?title=NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA&amp;diff=prev&amp;oldid=29308" title="NOCOW:新手试练场">差异</a>)  <a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA" title="NOCOW:新手试练场">NOCOW:新手试练场</a>  </li>
+<li>08:41 2012年1月16日 (<a href="/index.php?title=NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA&amp;action=history" title="NOCOW:新手试练场">历史</a>) (<a href="/index.php?title=NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA&amp;diff=prev&amp;oldid=29307" title="NOCOW:新手试练场">差异</a>)  <a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA" title="NOCOW:新手试练场">NOCOW:新手试练场</a>  </li>
+<li>08:38 2012年1月16日 (<a href="/index.php?title=Translate:USACO/window&amp;action=history" title="Translate:USACO/window">历史</a>) (<a href="/index.php?title=Translate:USACO/window&amp;diff=prev&amp;oldid=29306" title="Translate:USACO/window">差异</a>)  <a href="/index.php/Translate:USACO/window" title="Translate:USACO/window">Translate:USACO/window</a>  <span class="comment">(<span class="autocomment"><a href="/index.php/Translate:USACO/window#.27.27.27PROGRAM_NAME:_window.27.27.27" title="Translate:USACO/window">→</a>'''PROGRAM NAME: window'''</span>)</span> <strong> (顶)</strong></li>
+<li>08:38 2012年1月16日 (<a href="/index.php?title=Translate:USACO/window&amp;action=history" title="Translate:USACO/window">历史</a>) (<a href="/index.php?title=Translate:USACO/window&amp;diff=prev&amp;oldid=29305" title="Translate:USACO/window">差异</a>)  <a href="/index.php/Translate:USACO/window" title="Translate:USACO/window">Translate:USACO/window</a>  <span class="comment">(<span class="autocomment"><a href="/index.php/Translate:USACO/window#.E6.A0.BC.E5.BC.8F" title="Translate:USACO/window">→</a>格式</span>)</span> </li>
+<li>08:37 2012年1月16日 (<a href="/index.php?title=Translate:USACO/window&amp;action=history" title="Translate:USACO/window">历史</a>) (<a href="/index.php?title=Translate:USACO/window&amp;diff=prev&amp;oldid=29304" title="Translate:USACO/window">差异</a>)  <a href="/index.php/Translate:USACO/window" title="Translate:USACO/window">Translate:USACO/window</a>  <span class="comment">(<span class="autocomment"><a href="/index.php/Translate:USACO/window#.E6.A0.BC.E5.BC.8F" title="Translate:USACO/window">→</a>格式</span>)</span> </li>
+<li>08:37 2012年1月16日 (<a href="/index.php?title=Translate:USACO/window&amp;action=history" title="Translate:USACO/window">历史</a>) (<a href="/index.php?title=Translate:USACO/window&amp;diff=prev&amp;oldid=29303" title="Translate:USACO/window">差异</a>)  <a href="/index.php/Translate:USACO/window" title="Translate:USACO/window">Translate:USACO/window</a>  <span class="comment">(<span class="autocomment"><a href="/index.php/Translate:USACO/window#.E6.A0.BC.E5.BC.8F" title="Translate:USACO/window">→</a>格式</span>)</span> </li>
+<li>08:36 2012年1月16日 (<a href="/index.php?title=Translate:USACO/window&amp;action=history" title="Translate:USACO/window">历史</a>) (<a href="/index.php?title=Translate:USACO/window&amp;diff=prev&amp;oldid=29302" title="Translate:USACO/window">差异</a>)  <a href="/index.php/Translate:USACO/window" title="Translate:USACO/window">Translate:USACO/window</a>  <span class="comment">(<span class="autocomment"><a href="/index.php/Translate:USACO/window#.E6.8F.8F.E8.BF.B0" title="Translate:USACO/window">→</a>描述</span>)</span> </li>
+<li>08:35 2012年1月16日 (<a href="/index.php?title=Translate:USACO/window&amp;action=history" title="Translate:USACO/window">历史</a>) (<a href="/index.php?title=Translate:USACO/window&amp;diff=prev&amp;oldid=29301" title="Translate:USACO/window">差异</a>)  <a href="/index.php/Translate:USACO/window" title="Translate:USACO/window">Translate:USACO/window</a>  <span class="comment">(<span class="autocomment"><a href="/index.php/Translate:USACO/window#.E6.8F.8F.E8.BF.B0" title="Translate:USACO/window">→</a>描述</span>)</span> </li>
+<li>19:10 2012年1月15日 (<a href="/index.php?title=Translate:USACO/milk4&amp;action=history" title="Translate:USACO/milk4">历史</a>) (<a href="/index.php?title=Translate:USACO/milk4&amp;diff=prev&amp;oldid=29282" title="Translate:USACO/milk4">差异</a>)  <a href="/index.php/Translate:USACO/milk4" title="Translate:USACO/milk4">Translate:USACO/milk4</a>  <span class="comment">(<span class="autocomment"><a href="/index.php/Translate:USACO/milk4#SAMPLE_INPUT_.28file_milk4.in.29" title="Translate:USACO/milk4">→</a>SAMPLE INPUT (file milk4.in)</span>)</span> <strong> (顶)</strong></li>
+<li>19:09 2012年1月15日 (<a href="/index.php?title=Translate:USACO/milk4&amp;action=history" title="Translate:USACO/milk4">历史</a>) (<a href="/index.php?title=Translate:USACO/milk4&amp;diff=prev&amp;oldid=29280" title="Translate:USACO/milk4">差异</a>)  <a href="/index.php/Translate:USACO/milk4" title="Translate:USACO/milk4">Translate:USACO/milk4</a>  </li>
+</ul>
+<p>(最新 | <a href="/index.php?title=Special:Contributions&amp;go=first&amp;limit=50&amp;target=218.77.114.11">最早</a>) 查看 (较新) (<a href="/index.php?title=Special:Contributions&amp;offset=20120115110922&amp;limit=50&amp;target=218.77.114.11">较早</a>) (<a href="/index.php?title=Special:Contributions&amp;limit=20&amp;target=218.77.114.11">20</a> | <a href="/index.php?title=Special:Contributions&amp;limit=50&amp;target=218.77.114.11">50</a> | <a href="/index.php?title=Special:Contributions&amp;limit=100&amp;target=218.77.114.11">100</a> | <a href="/index.php?title=Special:Contributions&amp;limit=250&amp;target=218.77.114.11">250</a> | <a href="/index.php?title=Special:Contributions&amp;limit=500&amp;target=218.77.114.11">500</a>).</p>
+<div class="printfooter">
+来自"<a href="http://www.nocow.cn/index.php/Special:Contributions">http://www.nocow.cn/index.php/Special:Contributions</a>"</div>
+						<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+						 <li id="ca-nstab-special" class="selected"><a href="/index.php/Special:Contributions/218.77.114.11">特殊页面</a></li>
+				</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=Special:Userlogin&amp;returnto=Special:Contributions">登录或创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5" title="首页"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/Special:Recentchanges">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/Special:Random">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/Help:%E5%B8%AE%E5%8A%A9">使用帮助</a></li>
+				<li id="n-sitesupport"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5">帮助我们</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="进入" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="搜索" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+<li id="t-upload"><a href="/index.php/Special:Upload">上传文件</a></li>
+<li id="t-specialpages"><a href="/index.php/Special:Specialpages">特殊页面</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt='GNU Free Documentation License 1.2' /></a></div>
+			<ul id="f-list">
+				<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E7%AD%96%E7%95%A5" title="NOCOW:隐私策略">隐私策略</a></li>
+				<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+				<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+				<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by bdezlinux in 0.623 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body></html>

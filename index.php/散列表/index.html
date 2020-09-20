@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>散列表 - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=%E6%95%A3%E5%88%97%E8%A1%A8&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=%E6%95%A3%E5%88%97%E8%A1%A8&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "散列表", "wgTitle": "散列表", "wgCurRevisionId": 33750, "wgArticleId": 10, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["数据结构"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for pascal
+ * CSS class: source-pascal, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.pascal.source-pascal .de1, .pascal.source-pascal .de2 {}
+.pascal.source-pascal  {font-family:monospace;}
+.pascal.source-pascal .imp {font-weight: bold; color: red;}
+.pascal.source-pascal li, .pascal.source-pascal .li1 {font-weight: normal; vertical-align:top;}
+.pascal.source-pascal .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.pascal.source-pascal .li2 {font-weight: bold; vertical-align:top;}
+.pascal.source-pascal .kw1 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw2 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw3 {color: #000066;}
+.pascal.source-pascal .kw4 {color: #000066; font-weight: bold;}
+.pascal.source-pascal .co1 {color: #666666; font-style: italic;}
+.pascal.source-pascal .coMULTI {color: #666666; font-style: italic;}
+.pascal.source-pascal .es0 {color: #000099; font-weight: bold;}
+.pascal.source-pascal .es_h {color: #000099; font-weight: bold;}
+.pascal.source-pascal .br0 {color: #009900;}
+.pascal.source-pascal .sy0 {color: #339933;}
+.pascal.source-pascal .st0 {color: #ff0000;}
+.pascal.source-pascal .st_h {color: #ff0000;}
+.pascal.source-pascal .nu0 {color: #cc66cc;}
+.pascal.source-pascal .me1 {color: #0066ee;}
+.pascal.source-pascal .ln-xtra, .pascal.source-pascal li.ln-xtra, .pascal.source-pascal div.ln-xtra {background-color: #ffc;}
+.pascal.source-pascal span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-散列表 action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">散列表</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><p>本文在<a href="/index.php/GNU%E8%87%AA%E7%94%B1%E6%96%87%E6%A1%A3%E8%AE%B8%E5%8F%AF%E8%AF%81" title="GNU自由文档许可证" class="mw-redirect">GNU自由文档许可证</a>之条款下提供
+<b>散列表</b>(<b>Hash table</b>,也叫<b>哈希表</b>），是根据<a href="/index.php?title=%E5%85%B3%E9%94%AE%E7%A0%81%E5%80%BC&amp;action=edit&amp;redlink=1" class="new" title="关键码值（尚未撰写）">关键码值</a>(Key value)而直接进行访问的数据结构。也就是说，它通过把关键码值<a href="/index.php?title=%E6%98%A0%E5%B0%84&amp;action=edit&amp;redlink=1" class="new" title="映射（尚未撰写）">映射</a>到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做<a href="/index.php?title=%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B0&amp;action=edit&amp;redlink=1" class="new" title="散列函数（尚未撰写）">散列函数</a>，存放记录的数组叫做<b>散列表</b>。
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E5.9F.BA.E6.9C.AC.E6.A6.82.E5.BF.B5"><span class="tocnumber">1</span> <span class="toctext">基本概念</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#.E5.B8.B8.E7.94.A8.E7.9A.84.E6.9E.84.E9.80.A0.E6.95.A3.E5.88.97.E5.87.BD.E6.95.B0.E7.9A.84.E6.96.B9.E6.B3.95"><span class="tocnumber">2</span> <span class="toctext">常用的构造散列函数的方法</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#.E6.95.A3.E5.88.97.E8.A1.A8.E7.9A.84.E5.AE.9A.E4.B9.89"><span class="tocnumber">3</span> <span class="toctext">散列表的定义</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#.E5.A4.84.E7.90.86.E5.86.B2.E7.AA.81.E7.9A.84.E6.96.B9.E6.B3.95"><span class="tocnumber">4</span> <span class="toctext">处理冲突的方法</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#.E5.BB.BA.E7.AB.8B.E6.95.A3.E5.88.97.E8.A1.A8"><span class="tocnumber">5</span> <span class="toctext">建立散列表</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#.E6.8F.92.E5.85.A5.E5.85.83.E7.B4.A0"><span class="tocnumber">6</span> <span class="toctext">插入元素</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#.E6.95.A3.E5.88.97.E5.87.BD.E6.95.B0"><span class="tocnumber">7</span> <span class="toctext">散列函数</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#.E6.9F.A5.E6.89.BE.E5.85.83.E7.B4.A0"><span class="tocnumber">8</span> <span class="toctext">查找元素</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#.E5.88.A0.E9.99.A4.E5.85.83.E7.B4.A0"><span class="tocnumber">9</span> <span class="toctext">删除元素</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#.E6.8B.89.E9.93.BE.E6.B3.95_.EF.BC.88C.2B.2B.EF.BC.89"><span class="tocnumber">10</span> <span class="toctext">拉链法 （C++）</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#.E6.9F.A5.E6.89.BE.E7.9A.84.E6.80.A7.E8.83.BD.E5.88.86.E6.9E.90"><span class="tocnumber">11</span> <span class="toctext">查找的性能分析</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#.E5.8F.82.E8.A7.81.EF.BC.9A"><span class="tocnumber">12</span> <span class="toctext">参见：</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="/index.php?title=%E6%95%A3%E5%88%97%E8%A1%A8&amp;action=edit&amp;section=1" title="编辑段落：基本概念">编辑</a>]</span> <span class="mw-headline" id=".E5.9F.BA.E6.9C.AC.E6.A6.82.E5.BF.B5"> 基本概念 </span></h2>
+<ul><li> 若结构中存在关键字和<i>K</i>相等的记录，则必定在<i>f</i>(<i>K</i>)的存储位置上。由此，不需比较便可直接取得所查记录。称这个对应关系<i>f</i>为<a href="/index.php?title=%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B0&amp;action=edit&amp;redlink=1" class="new" title="散列函数（尚未撰写）">散列函数</a>(Hash function)，按这个思想建立的表为<b>散列表</b>。
+</li><li> 对不同的关键字可能得到同一散列地址，即<i>key</i>1≠<i>key</i>2，而<i>f</i>(<i>key</i>1)=<i>f</i>(<i>key</i>2)，这种现象称冲突。具有相同函数值的关键字对该散列函数来说称做同义词。综上所述，根据散列函数<i>H</i>(key)和处理冲突的方法将一组关键字映象到一个有限的连续的地址集（区间）上，并以关键字在地址集中的“象”作为记录在表中的存储位置，这种表便称为散列表，这一映象过程称为<a href="/index.php?title=%E6%95%A3%E5%88%97%E9%80%A0%E8%A1%A8&amp;action=edit&amp;redlink=1" class="new" title="散列造表（尚未撰写）">散列造表</a>或<a href="/index.php?title=%E6%95%A3%E5%88%97&amp;action=edit&amp;redlink=1" class="new" title="散列（尚未撰写）">散列</a>，所得的存储位置称<a href="/index.php?title=%E6%95%A3%E5%88%97%E5%9C%B0%E5%9D%80&amp;action=edit&amp;redlink=1" class="new" title="散列地址（尚未撰写）">散列地址</a>。
+</li><li> 若对于关键字集合中的任一个关键字，经散列函数映象到地址集合中任何一个地址的概率是相等的，则称此类散列函数为<a href="/index.php?title=%E5%9D%87%E5%8C%80%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B0&amp;action=edit&amp;redlink=1" class="new" title="均匀散列函数（尚未撰写）">均匀散列函数</a>(Uniform Hash function)，这就是使关键字经过散列函数得到一个“随机的地址”，从而减少冲突。
+</li></ul>
+<h2><span class="editsection">[<a href="/index.php?title=%E6%95%A3%E5%88%97%E8%A1%A8&amp;action=edit&amp;section=2" title="编辑段落：常用的构造散列函数的方法">编辑</a>]</span> <span class="mw-headline" id=".E5.B8.B8.E7.94.A8.E7.9A.84.E6.9E.84.E9.80.A0.E6.95.A3.E5.88.97.E5.87.BD.E6.95.B0.E7.9A.84.E6.96.B9.E6.B3.95"> 常用的构造散列函数的方法 </span></h2>
+<p>散列函数能使对一个数据序列的访问过程更加迅速有效，通过散列函数，数据元素将被更快地定位ǐ
+</p>
+<ol><li>直接定址法：取关键字或关键字的某个线性函数值为散列地址。即H(key)=key或H(key) = a•key + b，其中a和b为常数（这种散列函数叫做自身函数）
+</li><li><a href="/index.php/%E6%95%B0%E5%AD%97%E5%88%86%E6%9E%90%E6%B3%95" title="数字分析法">数字分析法</a>
+</li><li>平方取中法:计算关键值再取中间r位形成一个2^r位的表
+</li><li>折叠法:把所有字符的ASCII码加起来 (对于字符串)
+</li><li><a href="/index.php/%E9%9A%8F%E6%9C%BA%E6%95%B0%E6%B3%95" title="随机数法">随机数法</a>
+</li><li>除留余数法：取关键字被某个不大于散列表表长m的数p除后所得的余数为散列地址。即 H(key) = key MOD p, p&lt;=m。不仅可以对关键字直接取模，也可在折叠、平方取中等运算之后取模。对p的选择很重要，一般取素数或m，若p选的不好，容易产生同义词。
+</li><li>针对字符串的一些常用方法，比如<a href="/index.php/ELFHash" title="ELFHash">ELFHash</a>和<a href="/index.php/BKDRHash" title="BKDRHash">BKDRHash</a>（更易于编写，效率不错）
+</li></ol>
+<h2><span class="editsection">[<a href="/index.php?title=%E6%95%A3%E5%88%97%E8%A1%A8&amp;action=edit&amp;section=3" title="编辑段落：散列表的定义">编辑</a>]</span> <span class="mw-headline" id=".E6.95.A3.E5.88.97.E8.A1.A8.E7.9A.84.E5.AE.9A.E4.B9.89"> 散列表的定义 </span></h2>
+<p>C/C++:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"> <span class="co2">#define NIL -1 //空结点标记</span>
+ <span class="co2">#define M 997 //表长度，这个值依赖于实际需求，一般应取大素数</span>
+ <span class="kw4">typedef</span> <span class="kw4">struct</span><span class="br0">&#123;</span> <span class="co1">//散列表结点类型</span>
+   <span class="kw4">int</span> key<span class="sy4">;</span> <span class="co1">//存储的内容，类型不一定要int</span>
+   InfoType otherinfo<span class="sy4">;</span> <span class="co1">//此类依赖于应用</span>
+ <span class="br0">&#125;</span>NodeType<span class="sy4">;</span>
+ <span class="kw4">typedef</span> NodeType HashTable<span class="br0">&#91;</span>m<span class="br0">&#93;</span><span class="sy4">;</span> <span class="co1">//散列表类型</span></pre></div></div>
+<p>Pascal:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"> <span class="kw1">Const</span> null<span class="sy0">=-</span><span class="nu0">1</span> <span class="co1">//空结点标记</span>
+       m<span class="sy0">=</span><span class="nu0">997</span> <span class="co1">//表长度，这个值依赖于实际需求，一般应取大素数</span>
+ <span class="kw1">Type</span> NodeType<span class="sy0">=</span><span class="kw4">Record</span>
+             key<span class="sy0">:</span><span class="kw4">Integer</span>;
+             otherinfo<span class="sy0">:</span>InfoType;
+           <span class="kw1">End</span>;
+      HashTable<span class="sy0">=</span><span class="kw4">Array</span><span class="br0">&#91;</span><span class="nu0">1</span>..<span class="me1">m</span><span class="br0">&#93;</span><span class="kw1">Of</span> NodeType;
+ <span class="kw1">Var</span> h<span class="sy0">:</span>HashTable;</pre></div></div>
+<h2><span class="editsection">[<a href="/index.php?title=%E6%95%A3%E5%88%97%E8%A1%A8&amp;action=edit&amp;section=4" title="编辑段落：处理冲突的方法">编辑</a>]</span> <span class="mw-headline" id=".E5.A4.84.E7.90.86.E5.86.B2.E7.AA.81.E7.9A.84.E6.96.B9.E6.B3.95"> 处理冲突的方法 </span></h2>
+<ol><li>开放定址法；Hi=(H(key) + di) MOD m, i=1,2,…, k(k&lt;=m-1)，其中H(key)为散列函数，m为散列表长，di为增量序列，可有下列三种取法：
+<ol><li>di=1,2,3,…, m-1，称线性探测再散列；
+</li><li>di=1^2, -1^2, 2^2,-2^2, 3^2, …, ±k^2,(k&lt;=m/2)称二次探测再散列；
+</li><li>di=伪随机数序列，称伪随机探测再散列。  
+</li></ol>
+</li><li>再散列法：Hi=RHi(key), i=1,2,…,k  RHi均是不同的散列函数，即在同义词产生地址冲突时计算另一个散列函数地址，直到冲突不再发生，这种方法不易产生“聚集”，但增加了计算时间。
+</li><li>链地址法(拉链法)
+</li><li>建立一个公共溢出区
+</li></ol>
+<h2><span class="editsection">[<a href="/index.php?title=%E6%95%A3%E5%88%97%E8%A1%A8&amp;action=edit&amp;section=5" title="编辑段落：建立散列表">编辑</a>]</span> <span class="mw-headline" id=".E5.BB.BA.E7.AB.8B.E6.95.A3.E5.88.97.E8.A1.A8"> 建立散列表 </span></h2>
+<p>建表时首先要将表中各结点的关键字清空，使其地址为开放的；然后调用插入算法将给定的关键字序列依次插入表中。
+</p><p>C/C++：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"> <span class="kw4">void</span> CreateHashTable<span class="br0">&#40;</span>HashTable T,NodeType A<span class="br0">&#91;</span><span class="br0">&#93;</span>,<span class="kw4">int</span> n<span class="br0">&#41;</span> <span class="co1">//根据A[0..n-1]中结点建立散列表T[0..m-1]</span>
+ <span class="br0">&#123;</span>
+   <span class="kw4">int</span> i<span class="sy4">;</span>
+   <span class="kw1">if</span> <span class="br0">&#40;</span>n<span class="sy1">&gt;</span>m<span class="br0">&#41;</span> <span class="co1">//用开放定址法处理冲突时，装填因子α须不大于1</span>
+     Error<span class="br0">&#40;</span><span class="st0">&quot;Load factor&gt;1!&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+   <span class="kw1">for</span><span class="br0">&#40;</span>i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>i<span class="sy1">&lt;</span>m<span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span>
+     T<span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">key</span><span class="sy1">=</span>NIL； <span class="co1">//将各关键字清空，使地址i为开放地址</span>
+   <span class="kw1">for</span><span class="br0">&#40;</span>i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>i<span class="sy1">&lt;</span>n<span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span> <span class="co1">//依次将A[0..n-1]插入到散列表T[0..m-1]中</span>
+     Hashlnsert<span class="br0">&#40;</span>T，A<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span>；
+ <span class="br0">&#125;</span></pre></div></div>
+<p><br />
+Pascal：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"> <span class="kw1">Procedure</span> CreateHashTable<span class="br0">&#40;</span>T<span class="sy0">:</span>HashTable;A<span class="sy0">:</span><span class="kw4">Array</span><span class="br0">&#91;</span><span class="nu0">1</span>..<span class="me1">m</span><span class="br0">&#93;</span><span class="kw1">Of</span> NodeType<span class="sy0">,</span>n<span class="sy0">:</span><span class="kw4">LongInt</span><span class="br0">&#41;</span>; <span class="co1">//根据A[1..m]中结点建立散列表T[0..m-1]</span>
+ <span class="kw1">Var</span> i<span class="sy0">:</span><span class="kw4">LongInt</span>;
+ <span class="kw1">Begin</span>
+   <span class="kw1">If</span> <span class="br0">&#40;</span>n&gt;m<span class="br0">&#41;</span> <span class="co1">//用开放定址法处理冲突时，装填因子α须不大于1</span>
+   <span class="kw1">Then</span>
+   <span class="kw1">Begin</span>
+     <span class="kw3">Writeln</span><span class="br0">&#40;</span><span class="st0">&quot;Load factor&gt;1!&quot;</span><span class="br0">&#41;</span>;
+     Exit;
+   <span class="kw1">End</span>;
+   <span class="kw1">For</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">To</span> m <span class="kw1">DO</span>
+     T<span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">key</span><span class="sy0">:=</span>NULL; <span class="co1">//将各关键字清空，使地址i为开放地址</span>
+   <span class="kw1">For</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">To</span> m <span class="kw1">DO</span>
+     HashInsert<span class="br0">&#40;</span>T<span class="sy0">,</span>A<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span>; <span class="co1">//依次将A[1..m]插入到散列表T[1..m]中</span>
+ <span class="kw1">End</span>;</pre></div></div>
+<h2><span class="editsection">[<a href="/index.php?title=%E6%95%A3%E5%88%97%E8%A1%A8&amp;action=edit&amp;section=6" title="编辑段落：插入元素">编辑</a>]</span> <span class="mw-headline" id=".E6.8F.92.E5.85.A5.E5.85.83.E7.B4.A0"> 插入元素 </span></h2>
+<p>插入算法首先调用查找算法，若在表中找到待插入的关键字或表已满，则插入失败；若在表中找到一个开放地址，则将待插入的结点插入其中，即插入成功。
+</p><p>C/C++：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"> <span class="kw4">void</span> HashInsert<span class="br0">&#40;</span>HashTable T,NodeType <span class="kw3">new</span><span class="br0">&#41;</span> <span class="co1">//将新结点new插入散列表T[0..m-1]中</span>
+ <span class="br0">&#123;</span>
+   <span class="kw4">int</span> pos,sign<span class="sy4">;</span>
+   sign<span class="sy1">=</span>HashSearch<span class="br0">&#40;</span>T,<span class="kw3">new</span>.<span class="me1">key</span>,<span class="sy3">&amp;</span>pos<span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">//在表T中查找new的插入位置</span>
+   <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy3">!</span>sign<span class="br0">&#41;</span> <span class="co1">//找到一个开放的地址pos</span>
+     T<span class="br0">&#91;</span>pos<span class="br0">&#93;</span><span class="sy1">=</span><span class="kw3">new</span><span class="sy4">;</span> <span class="co1">//插入新结点new，插入成功</span>
+   <span class="kw1">else</span> <span class="co1">//插人失败</span>
+     <span class="kw1">if</span><span class="br0">&#40;</span>sign<span class="sy1">&gt;</span><span class="nu0">0</span><span class="br0">&#41;</span>
+       <span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;duplicate key!&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">//重复的关键字</span>
+     <span class="kw1">else</span> <span class="co1">//sign&lt;0</span>
+       Error<span class="br0">&#40;</span><span class="st0">&quot;hashtableoverflow!&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">//表满错误，终止程序执行</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p><br />
+Pascal：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"> <span class="kw1">Procedure</span> HashInsert<span class="br0">&#40;</span>T<span class="sy0">:</span>HashTable;<span class="kw3">new</span><span class="sy0">:</span>NodeType<span class="br0">&#41;</span>;
+ <span class="kw1">Var</span> pos<span class="sy0">,</span>sign<span class="sy0">:</span><span class="kw4">LongInt</span>;
+ <span class="kw1">Begin</span>
+   sign<span class="sy0">:=</span>HashSearch<span class="br0">&#40;</span>T<span class="sy0">,</span><span class="kw3">new</span>.<span class="me1">key</span><span class="sy0">,</span>pos<span class="br0">&#41;</span>;
+   <span class="kw1">if</span> <span class="br0">&#40;</span><span class="kw1">Not</span> <span class="br0">&#40;</span>sign<span class="br0">&#41;</span><span class="br0">&#41;</span>
+   <span class="kw1">Then</span>
+     T<span class="br0">&#91;</span>pos<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw3">new</span>
+   <span class="kw1">Else</span>
+     <span class="kw1">If</span> <span class="br0">&#40;</span>sign&gt;<span class="nu0">0</span><span class="br0">&#41;</span>
+     <span class="kw1">Then</span>
+       <span class="kw3">Writeln</span><span class="br0">&#40;</span><span class="st_h">'duplicate key!'</span><span class="br0">&#41;</span>
+     <span class="kw1">Else</span>
+     <span class="kw1">Begin</span>
+       <span class="kw3">Writeln</span><span class="br0">&#40;</span><span class="st_h">'hashtableoverflow!'</span><span class="br0">&#41;</span>;
+       Exit;
+     <span class="kw1">End</span>;
+ <span class="kw1">End</span>;</pre></div></div>
+<h2><span class="editsection">[<a href="/index.php?title=%E6%95%A3%E5%88%97%E8%A1%A8&amp;action=edit&amp;section=7" title="编辑段落：散列函数">编辑</a>]</span> <span class="mw-headline" id=".E6.95.A3.E5.88.97.E5.87.BD.E6.95.B0"> 散列函数 </span></h2>
+<p>C/C++：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"> <span class="kw4">int</span> Hash<span class="br0">&#40;</span><span class="kw4">int</span> k,<span class="kw4">int</span> i<span class="br0">&#41;</span> <span class="co1">//求在散列表T[0..m-1]中第i次探查的散列地址hi，0≤i≤m-1</span>
+ <span class="br0">&#123;</span> 
+   <span class="co1">//下面的h是散列函数。Increment是求增量序列的函数，它依赖于解决冲突的方法</span>
+   <span class="kw1">return</span> <span class="br0">&#40;</span>h<span class="br0">&#40;</span>k<span class="br0">&#41;</span><span class="sy2">+</span>Increment<span class="br0">&#40;</span>i<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy2">%</span>m<span class="sy4">;</span> <span class="co1">//Increment(i)相当于是d i</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>若散列函数用除余法构造，并假设使用线性探查的开放定址法处理冲突，则上述函数中的h(K)和Increment(i)可定义为：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"> <span class="kw4">int</span> h<span class="br0">&#40;</span><span class="kw4">int</span> K<span class="br0">&#41;</span> <span class="co1">//用除余法求K的散列地址</span>
+ <span class="br0">&#123;</span>
+   <span class="kw1">return</span> K<span class="sy2">%</span>m<span class="sy4">;</span>
+ <span class="br0">&#125;</span>
+ <span class="kw4">int</span> Increment<span class="br0">&#40;</span><span class="kw4">int</span> i<span class="br0">&#41;</span> <span class="co1">//用线性探查法求第i个增量d i</span>
+ <span class="br0">&#123;</span>
+   <span class="kw1">return</span> i<span class="sy4">;</span> <span class="co1">//若用二次探查法，则返回i*i</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Pascal:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"> <span class="kw1">function</span> Hash<span class="br0">&#40;</span>k<span class="sy0">,</span>i<span class="sy0">:</span><span class="kw4">integer</span><span class="br0">&#41;</span><span class="sy0">:</span><span class="kw4">integer</span>; <span class="co1">//求在散列表T[0..m-1]中第i次探查的散列地址hi，0≤i≤m-1</span>
+ <span class="kw1">begin</span> 
+   <span class="co1">//下面的h是散列函数。Increment是求增量序列的函数，它依赖于解决冲突的方法</span>
+   Hash<span class="sy0">:=</span> <span class="br0">&#40;</span>h<span class="br0">&#40;</span>k<span class="br0">&#41;</span><span class="sy0">+</span>Increment<span class="br0">&#40;</span>i<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="kw1">mod</span> m; <span class="co1">//Increment(i)相当于是d i</span>
+ <span class="kw1">end</span>;</pre></div></div>
+<p>若散列函数用除余法构造，并假设使用线性探查的开放定址法处理冲突，则上述函数中的h(K)和Increment(i)可定义为：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"> <span class="kw1">function</span> h<span class="br0">&#40;</span>K<span class="sy0">:</span><span class="kw4">integer</span><span class="br0">&#41;</span><span class="sy0">:</span><span class="kw4">integer</span>; <span class="co1">//用除余法求K的散列地址</span>
+ <span class="kw1">begin</span>
+   h<span class="sy0">:=</span> K <span class="kw1">mod</span> m;
+ <span class="kw1">end</span>;
+ <span class="kw1">function</span> Increment<span class="br0">&#40;</span>i<span class="sy0">:</span><span class="kw4">integer</span><span class="br0">&#41;</span><span class="sy0">:</span><span class="kw4">integer</span>; <span class="co1">//用线性探查法求第i个增量d i</span>
+ <span class="kw1">begin</span>
+   Increment<span class="sy0">:=</span> i; <span class="co1">//若用二次探查法，则返回i*i</span>
+ <span class="kw1">end</span>;</pre></div></div>
+<h2><span class="editsection">[<a href="/index.php?title=%E6%95%A3%E5%88%97%E8%A1%A8&amp;action=edit&amp;section=8" title="编辑段落：查找元素">编辑</a>]</span> <span class="mw-headline" id=".E6.9F.A5.E6.89.BE.E5.85.83.E7.B4.A0"> 查找元素 </span></h2>
+<p>C/C++：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"> <span class="kw4">int</span> HashSearch<span class="br0">&#40;</span>HashTable T，KeyType K，<span class="kw4">int</span> <span class="sy2">*</span>pos<span class="br0">&#41;</span> <span class="co1">//在散列表T[0..m-1]中查找K，成功时返回1。失败有两种情况：找到</span>
+                                                  <span class="co1">//一个开放地址时返回0，表满未找到时返回-1。 *pos记录找到K或 </span>
+                                                  <span class="co1">//找到空结点时表中的位置</span>
+ <span class="br0">&#123;</span>
+   <span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">0</span>； <span class="co1">//记录探查次数</span>
+   <span class="kw1">do</span>
+   <span class="br0">&#123;</span>
+     <span class="sy2">*</span>pos<span class="sy1">=</span>Hash<span class="br0">&#40;</span>K，i<span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">//求探查地址hi</span>
+     <span class="kw1">if</span><span class="br0">&#40;</span>T<span class="br0">&#91;</span><span class="sy2">*</span>pos<span class="br0">&#93;</span>.<span class="me1">key</span><span class="sy1">==</span>K<span class="br0">&#41;</span> <span class="kw1">return</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">//查找成功返回</span>
+     <span class="kw1">if</span><span class="br0">&#40;</span>T<span class="br0">&#91;</span><span class="sy2">*</span>pos<span class="br0">&#93;</span>.<span class="me1">key</span><span class="sy1">==</span>NIL<span class="br0">&#41;</span> <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span><span class="co1">//查找到空结点返回</span>
+   <span class="br0">&#125;</span>
+   <span class="kw1">while</span><span class="br0">&#40;</span><span class="sy2">++</span>i<span class="sy1">&lt;</span>m<span class="br0">&#41;</span> <span class="co1">//最多做m次探查</span>
+   <span class="kw1">return</span> <span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span> <span class="co1">//表满且未找到时，查找失败</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Pascal
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"> <span class="kw1">function</span> HashSearch<span class="br0">&#40;</span>T<span class="sy0">:</span>HashTable;K<span class="sy0">:</span>KeyType;<span class="kw1">var</span> pos<span class="sy0">:</span><span class="kw4">integer</span><span class="br0">&#41;</span><span class="sy0">:</span><span class="kw4">integer</span>; <span class="co1">//在散列表T[0..m-1]中查找K，成功时返回1。失败有两种情况：找到</span>
+                                                                     <span class="co1">//一个开放地址时返回0，表满未找到时返回-1。 *pos记录找到K或 </span>
+                                                                     <span class="co1">//找到空结点时表中的位置</span>
+ <span class="kw1">var</span> i<span class="sy0">:</span><span class="kw4">integer</span>;
+ <span class="kw1">begin</span>
+   i<span class="sy0">:=</span><span class="nu0">0</span>； <span class="co1">//记录探查次数</span>
+   <span class="kw1">repeat</span>
+     pos<span class="sy0">=</span>Hash<span class="br0">&#40;</span>K，i<span class="br0">&#41;</span>; <span class="co1">//求探查地址hi</span>
+     <span class="kw1">if</span><span class="br0">&#40;</span>T<span class="br0">&#91;</span>pos<span class="br0">&#93;</span>.<span class="me1">key</span><span class="sy0">=</span>K<span class="br0">&#41;</span> <span class="kw1">then</span> exit<span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>; <span class="co1">//查找成功返回</span>
+     <span class="kw1">if</span><span class="br0">&#40;</span>T<span class="br0">&#91;</span>pos<span class="br0">&#93;</span>.<span class="me1">key</span><span class="sy0">=</span><span class="kw2">NIL</span><span class="br0">&#41;</span> <span class="kw1">then</span> exit<span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>;<span class="co1">//查找到空结点返回</span>
+     inc<span class="br0">&#40;</span>i<span class="br0">&#41;</span>;
+   <span class="kw1">until</span> i&gt;<span class="sy0">=</span>m; <span class="co1">//最多做m次探查</span>
+   exit<span class="br0">&#40;</span><span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#41;</span>; <span class="co1">//表满且未找到时，查找失败</span>
+ <span class="kw1">end</span>;</pre></div></div>
+<h2><span class="editsection">[<a href="/index.php?title=%E6%95%A3%E5%88%97%E8%A1%A8&amp;action=edit&amp;section=9" title="编辑段落：删除元素">编辑</a>]</span> <span class="mw-headline" id=".E5.88.A0.E9.99.A4.E5.85.83.E7.B4.A0"> 删除元素 </span></h2>
+<p>　　基于开放定址法的散列表不宜执行散列表的删除操作。若必须在散列表中删除结点，则不能将被删结点的关键字置为NIL，而应该将其置为特定的标记DELETED。
+</p><p>　　因此须对查找操作做相应的修改，使之探查到此标记时继续探查下去。同时也要修改插人操作，使其探查到DELETED标记时，将相应的表单元视为一个空单元，将新结点插入其中。这样做无疑增加了时间开销，并且查找时间不再依赖于装填因子。
+</p><p>　　因此，当必须对散列表做删除结点的操作时，一般是用拉链法来解决冲突。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=%E6%95%A3%E5%88%97%E8%A1%A8&amp;action=edit&amp;section=10" title="编辑段落：拉链法 （C++）">编辑</a>]</span> <span class="mw-headline" id=".E6.8B.89.E9.93.BE.E6.B3.95_.EF.BC.88C.2B.2B.EF.BC.89"> 拉链法 （C++）</span></h2>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"> <span class="kw4">int</span> find<span class="br0">&#40;</span><span class="kw4">int</span> k<span class="br0">&#41;</span>
+ <span class="br0">&#123;</span>
+     Int h <span class="sy1">=</span> hash<span class="br0">&#40;</span>k<span class="br0">&#41;</span><span class="sy4">;</span>
+     Int p <span class="sy1">=</span> first<span class="br0">&#91;</span>h<span class="br0">&#93;</span><span class="sy4">;</span>
+     While  <span class="br0">&#40;</span>p<span class="br0">&#41;</span> 
+     <span class="br0">&#123;</span>
+    	    <span class="kw1">if</span><span class="br0">&#40;</span>key<span class="br0">&#91;</span>p<span class="br0">&#93;</span> <span class="sy1">==</span> k<span class="br0">&#41;</span> <span class="kw1">return</span> p<span class="sy4">;</span> 
+            p <span class="sy1">=</span> next <span class="br0">&#91;</span>p<span class="br0">&#93;</span><span class="sy4">;</span> 
+     <span class="br0">&#125;</span>
+     <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+ <span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> insert<span class="br0">&#40;</span><span class="kw4">int</span> x<span class="br0">&#41;</span>
+<span class="br0">&#123;</span> 
+     Int h <span class="sy1">=</span> hash<span class="br0">&#40;</span>key<span class="br0">&#91;</span>x<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy4">;</span> 
+     next<span class="br0">&#91;</span>x<span class="br0">&#93;</span> <span class="sy1">=</span> first<span class="br0">&#91;</span>h<span class="br0">&#93;</span><span class="sy4">;</span> 
+     first<span class="br0">&#91;</span>h<span class="br0">&#93;</span> <span class="sy1">=</span> x<span class="sy4">;</span> 
+<span class="br0">&#125;</span></pre></div></div>
+<h2><span class="editsection">[<a href="/index.php?title=%E6%95%A3%E5%88%97%E8%A1%A8&amp;action=edit&amp;section=11" title="编辑段落：查找的性能分析">编辑</a>]</span> <span class="mw-headline" id=".E6.9F.A5.E6.89.BE.E7.9A.84.E6.80.A7.E8.83.BD.E5.88.86.E6.9E.90">查找的性能分析</span></h2>
+<p>　　散列表的查找过程基本上和造表过程相同。一些关键码可通过散列函数转换的地址直接找到，另一些关键码在散列函数得到的地址上产生了冲突，需要按处理冲突的方法进行查找。在介绍的三种处理冲突的方法中，产生冲突后的查找仍然是给定值与关键码进行比较的过程。所以，对散列表查找效率的量度，依然用平均查找长度来衡量。
+</p><p>　　查找过程中，关键码的比较次数，取决于产生冲突的多少，产生的冲突少，查找效率就高，产生的冲突多，查找效率就低。因此，影响产生冲突多少的因素，也就是影响查找效率的因素。影响产生冲突多少有以下三个因素：
+</p>
+<ol><li>散列函数是否均匀；
+</li><li>处理冲突的方法；
+</li><li>散列表的装填因子。
+</li></ol>
+<p>　　散列表的装填因子定义为：α= 填入表中的元素个数 / 散列表的长度
+</p><p>　　α是散列表装满程度的标志因子。由于表长是定值，α与“填入表中的元素个数”成正比，所以，α越大，填入表中的元素较多，产生冲突的可能性就越大；α越小，填入表中的元素较少，产生冲突的可能性就越小。
+</p><p>　　实际上，散列表的平均查找长度是装填因子α的函数，只是不同处理冲突的方法有不同的函数。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=%E6%95%A3%E5%88%97%E8%A1%A8&amp;action=edit&amp;section=12" title="编辑段落：参见：">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E8.A7.81.EF.BC.9A"> 参见： </span></h2>
+<ul><li> <a href="/index.php/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" title="数据结构">数据结构</a>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 164/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:10-0!*!0!!zh-cn!*!* and timestamp 20170806103917 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=%E6%95%A3%E5%88%97%E8%A1%A8&amp;oldid=33750">http://www.nocow.cn/index.php?title=%E6%95%A3%E5%88%97%E8%A1%A8&amp;oldid=33750</a>”</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="特殊:页面分类">1个分类</a>: <ul><li><a href="/index.php/%E5%88%86%E7%B1%BB:%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" title="分类:数据结构">数据结构</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/%E6%95%A3%E5%88%97%E8%A1%A8" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:%E6%95%A3%E5%88%97%E8%A1%A8&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=%E6%95%A3%E5%88%97%E8%A1%A8&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=%E6%95%A3%E5%88%97%E8%A1%A8&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=%E6%95%A3%E5%88%97%E8%A1%A8" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/%E6%95%A3%E5%88%97%E8%A1%A8" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/%E6%95%A3%E5%88%97%E8%A1%A8" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=%E6%95%A3%E5%88%97%E8%A1%A8&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=%E6%95%A3%E5%88%97%E8%A1%A8&amp;oldid=33750" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过37,148次。</li>
+		<li id="credits">本页面由<a href="/index.php?title=%E7%94%A8%E6%88%B7:Chillancezen&amp;action=edit&amp;redlink=1" class="new" title="用户:Chillancezen（尚未撰写）">郑猫猫</a>于2013年11月8日 (星期五) 10:03做出最后修改。 在<a href="/index.php/%E7%94%A8%E6%88%B7:Cosechy_movingbot" title="用户:Cosechy movingbot">cosechy@gmail.com</a>和<a href="/index.php?title=%E7%94%A8%E6%88%B7:Hyy0591&amp;action=edit&amp;redlink=1" class="new" title="用户:Hyy0591（尚未撰写）">黄洋宇</a>、NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/125.35.93.126" title="特殊:用户贡献/125.35.93.126">125.35.93.126</a>和<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/219.129.251.203" title="特殊:用户贡献/219.129.251.203">219.129.251.203</a>和<a href="/index.php?title=%E6%95%A3%E5%88%97%E8%A1%A8&amp;action=credits" title="散列表">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.261 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

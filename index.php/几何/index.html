@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>几何 - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=%E5%87%A0%E4%BD%95&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=%E5%87%A0%E4%BD%95&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "几何", "wgTitle": "几何", "wgCurRevisionId": 13880, "wgArticleId": 3118, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-几何 action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">几何</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><p>计算几何资料
+一、引言
+</p><p>　　计算机的出现使得很多原本十分繁琐的工作得以大幅度简化，但是也有一些在人们直观看来很容易的问题却需要拿出一套并不简单的通用解决方案，比如几何问题。作为计算机科学的一个分支，计算几何主要研究解决几何问题的算法。在现代工程和数学领域，计算几何在图形学、机器人技术、超大规模集成电路设计和统计等诸多领域有着十分重要的应用。在本文中，我们将对计算几何常用的基本算法做一个全面的介绍，希望对您了解并应用计算几何的知识解决问题起到帮助。
+</p><p>二、目录
+</p><p>　　本文整理的计算几何基本概念和常用算法包括如下内容：
+</p><p>1. 矢量的概念
+</p><p>2. 矢量加减法
+</p><p>3. 矢量叉积
+</p><p>4. 折线段的拐向判断
+</p><p>5. 判断点是否在线段上
+</p><p>6. 判断两线段是否相交
+</p><p>7. 判断线段和直线是否相交
+</p><p>8. 判断矩形是否包含点
+</p><p>9. 判断线段、折线、多边形是否在矩形中
+</p><p>10. 判断矩形是否在矩形中
+</p><p>11. 判断圆是否在矩形中
+</p><p>12. 判断点是否在多边形中
+</p><p>13. 判断线段是否在多边形内
+</p><p>14. 判断折线是否在多边形内
+</p><p>15. 判断多边形是否在多边形内
+</p><p>16. 判断矩形是否在多边形内
+</p><p>17. 判断圆是否在多边形内
+</p><p>18. 判断点是否在圆内
+</p><p>19. 判断线段、折线、矩形、多边形是否在圆内
+</p><p>20. 判断圆是否在圆内
+</p><p>21. 计算点到线段的最近点
+</p><p>22. 计算点到折线、矩形、多边形的最近点
+</p><p>23. 计算点到圆的最近距离及交点坐标
+</p><p>24. 计算两条共线的线段的交点
+</p><p>25. 计算线段或直线与线段的交点
+</p><p>26. 求线段或直线与折线、矩形、多边形的交点
+</p><p>27. 求线段或直线与圆的交点
+</p><p>28. 凸包的概念
+</p><p>29. 凸包的求法
+三、算法介绍
+</p><p>1.　　矢量的概念：
+</p><p>　　如果一条线段的端点是有次序之分的，我们把这种线段成为有向线段(directed segment)。如果有向线段p1p2的起点p1在坐标原点，我们可以把它称为矢量(vector)p2。
+</p><p><br />
+2.　　矢量加减法：
+</p><p>　　设二维矢量P = ( x1, y1 )，Q = ( x2 , y2 )，则矢量加法定义为： P + Q = ( x1 + x2 , y1 + y2 )，同样的，矢量减法定义为： P - Q = ( x1 - x2 , y1 - y2 )。显然有性质 P + Q = Q + P，P - Q = - ( Q - P )。
+</p><p><br />
+3.　　矢量叉积：
+</p><p>　　计算矢量叉积是与直线和线段相关算法的核心部分。设矢量P = ( x1, y1 )，Q = ( x2, y2 )，则矢量叉积定义为由(0,0)、p1、p2和p1+p2所组成的平行四边形的带符号的面积，即：P × Q = x1*y2 - x2*y1，其结果是一个标量。显然有性质 P × Q = - ( Q × P ) 和 P × ( - Q ) = - ( P × Q )。一般在不加说明的情况下，本文下述算法中所有的点都看作矢量，两点的加减法就是矢量相加减，而点的乘法则看作矢量叉积。
+</p><p>　　叉积的一个非常重要性质是可以通过它的符号判断两矢量相互之间的顺逆时针关系：
+</p><p>　　若 P × Q &gt; 0 , 则P在Q的顺时针方向。
+　　若 P × Q &lt; 0 , 则P在Q的逆时针方向。
+　　若 P × Q = 0 , 则P与Q共线，但可能同向也可能反向。
+</p><p><br />
+4.　　折线段的拐向判断：
+</p><p>　　折线段的拐向判断方法可以直接由矢量叉积的性质推出。对于有公共端点的线段p0p1和p1p2，通过计算(p2 - p0) × (p1 - p0)的符号便可以确定折线段的拐向：
+</p><p>　　若(p2 - p0) × (p1 - p0) &gt; 0,则p0p1在p1点拐向右侧后得到p1p2。
+</p><p>　　若(p2 - p0) × (p1 - p0) &lt; 0,则p0p1在p1点拐向左侧后得到p1p2。
+</p><p>　　若(p2 - p0) × (p1 - p0) = 0,则p0、p1、p2三点共线。
+具体情况可参考下图：
+</p><p><br />
+5.　　判断点是否在线段上：
+</p><p>　　设点为Q，线段为P1P2 ，判断点Q在该线段上的依据是：( Q - P1 ) × ( P2 - P1 ) = 0 且 Q 在以 P1，P2为对角顶点的矩形内。前者保证Q点在直线P1P2上，后者是保证Q点不在线段P1P2的延长线或反向延长线上，对于这一步骤的判断可以用以下过程实现：
+</p><p>　　ON-SEGMENT(pi,pj,pk)
+</p><p>　　if min(xi,xj) &lt;= xk &lt;= max(xi,xj) and min(yi,yj) &lt;= yk &lt;= max(yi,yj)
+</p><p>　　then return true;
+</p><p>　　else return false;
+</p><p>　　特别要注意的是，由于需要考虑水平线段和垂直线段两种特殊情况，min(xi,xj)&lt;=xk&lt;=max(xi,xj)和min(yi,yj)&lt;=yk&lt;=max(yi,yj)两个条件必须同时满足才能返回真值。
+</p><p><br />
+6.　　判断两线段是否相交：
+</p><p>　　我们分两步确定两条线段是否相交：
+</p><p>　　(1)快速排斥试验
+</p><p>　　　　设以线段 P1P2 为对角线的矩形为R， 设以线段 Q1Q2 为对角线的矩形为T，如果R和T不相交，显然两线段不会相交。
+</p><p>　　(2)跨立试验
+</p><p>　　　　如果两线段相交，则两线段必然相互跨立对方。若P1P2跨立Q1Q2 ，则矢量 ( P1 - Q1 ) 和( P2 - Q1 )位于矢量( Q2 - Q1 ) 的两侧，即( P1 - Q1 ) × ( Q2 - Q1 ) * ( P2 - Q1 ) × ( Q2 - Q1 ) &lt; 0。上式可改写成( P1 - Q1 ) × ( Q2 - Q1 ) * ( Q2 - Q1 ) × ( P2 - Q1 ) &gt; 0。当 ( P1 - Q1 ) × ( Q2 - Q1 ) = 0 时，说明 ( P1 - Q1 ) 和 ( Q2 - Q1 )共线，但是因为已经通过快速排斥试验，所以 P1 一定在线段 Q1Q2上；同理，( Q2 - Q1 ) ×(P2 - Q1 ) = 0 说明 P2 一定在线段 Q1Q2上。所以判断P1P2跨立Q1Q2的依据是：( P1 - Q1 ) × ( Q2 - Q1 ) * ( Q2 - Q1 ) × ( P2 - Q1 ) &gt;= 0。同理判断Q1Q2跨立P1P2的依据是：( Q1 - P1 ) × ( P2 - P1 ) * ( P2 - P1 ) × ( Q2 - P1 ) &gt;= 0。具体情况如下图所示：
+</p><p><br />
+</p><p>　　在相同的原理下，对此算法的具体的实现细节可能会与此有所不同，除了这种过程外，大家也可以参考《算法导论》上的实现。
+</p><p><br />
+7.　　判断线段和直线是否相交：
+</p><p>　　有了上面的基础，这个算法就很容易了。如果线段P1P2和直线Q1Q2相交，则P1P2跨立Q1Q2，即：( P1 - Q1 ) × ( Q2 - Q1 ) * ( Q2 - Q1 ) × ( P2 - Q1 ) &gt;= 0。
+</p><p><br />
+8.　　判断矩形是否包含点：
+</p><p>　　只要判断该点的横坐标和纵坐标是否夹在矩形的左右边和上下边之间。
+</p><p><br />
+9.　　判断线段、折线、多边形是否在矩形中：
+</p><p>　　因为矩形是个凸集，所以只要判断所有端点是否都在矩形中就可以了。
+</p><p><br />
+10.　　判断矩形是否在矩形中：
+</p><p>　　只要比较左右边界和上下边界就可以了。
+11.　　判断圆是否在矩形中：
+</p><p>　　很容易证明，圆在矩形中的充要条件是：圆心在矩形中且圆的半径小于等于圆心到矩形四边的距离的最小值。
+</p><p><br />
+12.　　判断点是否在多边形中：
+</p><p>　　判断点P是否在多边形中是计算几何中一个非常基本但是十分重要的算法。以点P为端点，向左方作射线L，由于多边形是有界的，所以射线L的左端一定在多边形外，考虑沿着L从无穷远处开始自左向右移动，遇到和多边形的第一个交点的时候，进入到了多边形的内部，遇到第二个交点的时候，离开了多边形，……所以很容易看出当L和多边形的交点数目C是奇数的时候，P在多边形内，是偶数的话P在多边形外。
+</p><p>　　但是有些特殊情况要加以考虑。如图下图(a)(b)(c)(d)所示。在图(a)中，L和多边形的顶点相交，这时候交点只能计算一个；在图(b)中，L和多边形顶点的交点不应被计算；在图(c)和(d) 中，L和多边形的一条边重合，这条边应该被忽略不计。如果L和多边形的一条边重合，这条边应该被忽略不计。
+</p><p><br />
+</p><p>　　为了统一起见，我们在计算射线L和多边形的交点的时候，1。对于多边形的水平边不作考虑；2。对于多边形的顶点和L相交的情况，如果该顶点是其所属的边上纵坐标较大的顶点，则计数，否则忽略；3。对于P在多边形边上的情形，直接可判断P属于多边行。由此得出算法的伪代码如下：
+</p><p>count ← 0;
+以P为端点，作从右向左的射线L; 
+for 多边形的每条边s
+do if P在边s上 
+then return true;
+if s不是水平的
+then if s的一个端点在L上
+if 该端点是s两端点中纵坐标较大的端点
+then count ← count+1
+else if s和L相交
+then count ← count+1;
+if count mod 2 = 1 
+then return true;
+else return false;
+</p><p><br />
+　　其中做射线L的方法是：设P'的纵坐标和P相同，横坐标为正无穷大（很大的一个正数），则P和P'就确定了射线L。 
+</p><p>　　判断点是否在多边形中的这个算法的时间复杂度为O(n)。
+</p><p>　　另外还有一种算法是用带符号的三角形面积之和与多边形面积进行比较，这种算法由于使用浮点数运算所以会带来一定误差，不推荐大家使用。 
+</p><p><br />
+13.　　判断线段是否在多边形内： 
+</p><p>　　线段在多边形内的一个必要条件是线段的两个端点都在多边形内，但由于多边形可能为凹，所以这不能成为判断的充分条件。如果线段和多边形的某条边内交（两线段内交是指两线段相交且交点不在两线段的端点），因为多边形的边的左右两侧分属多边形内外不同部分，所以线段一定会有一部分在多边形外(见图a)。于是我们得到线段在多边形内的第二个必要条件：线段和多边形的所有边都不内交。 
+</p><p>　　线段和多边形交于线段的两端点并不会影响线段是否在多边形内；但是如果多边形的某个顶点和线段相交，还必须判断两相邻交点之间的线段是否包含于多边形内部（反例见图b)。 
+</p><p><br />
+</p><p>　　因此我们可以先求出所有和线段相交的多边形的顶点，然后按照X-Y坐标排序(X坐标小的排在前面，对于X坐标相同的点，Y坐标小的排在前面，这种排序准则也是为了保证水平和垂直情况的判断正确)，这样相邻的两个点就是在线段上相邻的两交点，如果任意相邻两点的中点也在多边形内，则该线段一定在多边形内。 
+</p><p>　　证明如下：
+　
+</p><p>　　命题1：
+　　　　如果线段和多边形的两相邻交点P1 ，P2的中点P' 也在多边形内，则P1, P2之间的所有点都在多边形内。
+</p><p><br />
+　　证明：
+　　　　假设P1,P2之间含有不在多边形内的点，不妨设该点为Q，在P1, P'之间，因为多边形是闭合曲线，所以其内外部之间有界，而P1属于多边行内部，Q属于多边性外部，P'属于多边性内部，P1-Q-P'完全连续，所以P1Q和QP'一定跨越多边形的边界，因此在P1,P'之间至少还有两个该线段和多边形的交点，这和P1P2是相邻两交点矛盾，故命题成立。证毕。 
+</p><p>　　由命题1直接可得出推论：
+　　推论2：
+　　　　设多边形和线段PQ的交点依次为P1,P2,……Pn，其中Pi和Pi+1是相邻两交点，线段PQ在多边形内的充要条件是：P，Q在多边形内且对于i =1, 2,……, n-1，Pi ,Pi+1的中点也在多边形内。
+</p><p>　　在实际编程中，没有必要计算所有的交点，首先应判断线段和多边形的边是否内交，倘若线段和多边形的某条边内交则线段一定在多边形外；如果线段和多边形的每一条边都不内交，则线段和多边形的交点一定是线段的端点或者多边形的顶点，只要判断点是否在线段上就可以了。
+</p><p>　　至此我们得出算法如下：
+</p><p>if 线端PQ的端点不都在多边形内 
+then return false;
+点集pointSet初始化为空;
+for 多边形的每条边s
+do if 线段的某个端点在s上
+then 将该端点加入pointSet;
+else if s的某个端点在线段PQ上
+then 将该端点加入pointSet;
+else if s和线段PQ相交 // 这时候已经可以肯定是内交了
+then return false;
+将pointSet中的点按照X-Y坐标排序;
+for pointSet中每两个相邻点 pointSet[ i ] , pointSet[ i+1]
+do if pointSet [ i] , pointSet[ i+1] 的中点不在多边形中
+then return false;
+return true;
+</p><p>　　这个过程中的排序因为交点数目肯定远小于多边形的顶点数目n，所以最多是常数级的复杂度，几乎可以忽略不计。因此算法的时间复杂度也是O(n)。 
+</p><p><br />
+14.　　判断折线是否在多边形内： 
+</p><p>　　只要判断折线的每条线段是否都在多边形内即可。设折线有m条线段，多边形有n个顶点，则该算法的时间复杂度为O(m*n)。 
+</p><p><br />
+15.　　判断多边形是否在多边形内： 
+</p><p>　　只要判断多边形的每条边是否都在多边形内即可。判断一个有m个顶点的多边形是否在一个有n个顶点的多边形内复杂度为O(m*n)。 
+16.　　判断矩形是否在多边形内： 
+</p><p>　　将矩形转化为多边形，然后再判断是否在多边形内。 
+</p><p><br />
+17　　判断圆是否在多边形内： 
+</p><p>　　只要计算圆心到多边形的每条边的最短距离，如果该距离大于等于圆半径则该圆在多边形内。计算圆心到多边形每条边最短距离的算法在后文阐述。 
+</p><p><br />
+18.　　判断点是否在圆内： 
+</p><p>　　计算圆心到该点的距离，如果小于等于半径则该点在圆内。 
+</p><p><br />
+19.　　判断线段、折线、矩形、多边形是否在圆内： 
+</p><p>　　因为圆是凸集，所以只要判断是否每个顶点都在圆内即可。 
+</p><p><br />
+20.　　判断圆是否在圆内： 
+</p><p>　　设两圆为O1,O2，半径分别为r1, r2，要判断O2是否在O1内。先比较r1，r2的大小，如果r1&lt;r2则O2不可能在O1内；否则如果两圆心的距离大于r1 - r2 ，则O2不在O1内；否则O2在O1内。 
+</p><p><br />
+21.　　计算点到线段的最近点： 
+</p><p>　　如果该线段平行于X轴（Y轴），则过点point作该线段所在直线的垂线，垂足很容易求得，然后计算出垂足，如果垂足在线段上则返回垂足，否则返回离垂足近的端点；如果该线段不平行于X轴也不平行于Y轴，则斜率存在且不为0。设线段的两端点为pt1和pt2，斜率为：k = ( pt2.y - pt1. y ) / (pt2.x - pt1.x );该直线方程为：y = k* ( x - pt1.x) + pt1.y。其垂线的斜率为 - 1 / k，垂线方程为：y = (-1/k) * (x - point.x) + point.y 。 
+</p><p>　　联立两直线方程解得：x = ( k^2 * pt1.x + k * (point.y - pt1.y ) + point.x ) / ( k^2 + 1) ，y = k * ( x - pt1.x) + pt1.y;然后再判断垂足是否在线段上，如果在线段上则返回垂足；如果不在则计算两端点到垂足的距离，选择距离垂足较近的端点返回。 
+</p><p><br />
+22.　　计算点到折线、矩形、多边形的最近点： 
+</p><p>　　只要分别计算点到每条线段的最近点，记录最近距离，取其中最近距离最小的点即可。 
+</p><p><br />
+23.　　计算点到圆的最近距离及交点坐标： 
+</p><p>　　如果该点在圆心，因为圆心到圆周任一点的距离相等，返回UNDEFINED。 
+</p><p>　　连接点P和圆心O，如果PO平行于X轴，则根据P在O的左边还是右边计算出最近点的横坐标为centerPoint.x - radius 或 centerPoint.x + radius。如果PO平行于Y轴，则根据P在O的上边还是下边计算出最近点的纵坐标为 centerPoint.y -+radius或 centerPoint.y - radius。如果PO不平行于X轴和Y轴，则PO的斜率存在且不为0，这时直线PO斜率为k = ( P.y - O.y )/ ( P.x - O.x )。直线PO的方程为：y = k * ( x - P.x) + P.y。设圆方程为(x - O.x ) ^2 + ( y - O.y ) ^2 = r ^2，联立两方程组可以解出直线PO和圆的交点，取其中离P点较近的交点即可。 
+</p><p><br />
+24.　　计算两条共线的线段的交点： 
+</p><p>　　对于两条共线的线段，它们之间的位置关系有下图所示的几种情况。图(a)中两条线段没有交点；图 (b) 和 (d) 中两条线段有无穷焦点；图 (c) 中两条线段有一个交点。设line1是两条线段中较长的一条，line2是较短的一条，如果line1包含了line2的两个端点，则是图(d)的情况，两线段有无穷交点；如果line1只包含line2的一个端点，那么如果line1的某个端点等于被line1包含的line2的那个端点，则是图(c)的情况，这时两线段只有一个交点，否则就是图(b)的情况，两线段也是有无穷的交点；如果line1不包含line2的任何端点，则是图(a)的情况，这时两线段没有交点。 
+</p><p><br />
+</p><p>25.　　计算线段或直线与线段的交点: 
+</p><p>　　设一条线段为L0 = P1P2，另一条线段或直线为L1 = Q1Q2 ，要计算的就是L0和L1的交点。
+</p><p>　1． 首先判断L0和L1是否相交（方法已在前文讨论过），如果不相交则没有交点，否则说明L0和L1一定有交点，下面就将L0和L1都看作直线来考虑。 
+</p><p>　2． 如果P1和P2横坐标相同，即L0平行于Y轴 
+</p><p>　　a) 若L1也平行于Y轴， 
+</p><p>　　　　i. 若P1的纵坐标和Q1的纵坐标相同，说明L0和L1共线，假如L1是直线的话他们有无穷的交点，假如L1是线段的话可用"计算两条共线线段的交点"的算法求他们的交点（该方法在前文已讨论过）；
+　　　　ii. 否则说明L0和L1平行，他们没有交点； 
+</p><p>　　b) 若L1不平行于Y轴，则交点横坐标为P1的横坐标，代入到L1的直线方程中可以计算出交点纵坐标； 
+</p><p>　3． 如果P1和P2横坐标不同，但是Q1和Q2横坐标相同，即L1平行于Y轴，则交点横坐标为Q1的横坐标，代入到L0的直线方程中可以计算出交点纵坐标； 
+</p><p>　4． 如果P1和P2纵坐标相同，即L0平行于X轴 
+</p><p>　　a) 若L1也平行于X轴， 
+</p><p>　　　　i. 若P1的横坐标和Q1的横坐标相同，说明L0和L1共线，假如L1是直线的话他们有无穷的交点，假如L1是线段的话可用"计算两条共线线段的交点"的算法求他们的交点（该方法在前文已讨论过）；
+　　　　ii. 否则说明L0和L1平行，他们没有交点； 
+</p><p>　　b) 若L1不平行于X轴，则交点纵坐标为P1的纵坐标，代入到L1的直线方程中可以计算出交点横坐标； 
+</p><p>　5． 如果P1和P2纵坐标不同，但是Q1和Q2纵坐标相同，即L1平行于X轴，则交点纵坐标为Q1的纵坐标，代入到L0的直线方程中可以计算出交点横坐标； 
+</p><p>　6． 剩下的情况就是L1和L0的斜率均存在且不为0的情况 
+</p><p>　　a) 计算出L0的斜率K0，L1的斜率K1 ； 
+</p><p>　　b) 如果K1 = K2 
+</p><p>　　　　i. 如果Q1在L0上，则说明L0和L1共线，假如L1是直线的话有无穷交点，假如L1是线段的话可用"计算两条共线线段的交点"的算法求他们的交点（该方法在前文已讨论过）；
+　　　　ii. 如果Q1不在L0上，则说明L0和L1平行，他们没有交点。
+</p><p>　　c) 联立两直线的方程组可以解出交点来
+</p><p>　　这个算法并不复杂，但是要分情况讨论清楚，尤其是当两条线段共线的情况需要单独考虑，所以在前文将求两条共线线段的算法单独写出来。另外，一开始就先利用矢量叉乘判断线段与线段（或直线）是否相交，如果结果是相交，那么在后面就可以将线段全部看作直线来考虑。需要注意的是，我们可以将直线或线段方程改写为ax+by+c=0的形式，这样一来上述过程的部分步骤可以合并，缩短了代码长度，但是由于先要求出参数，这种算法将花费更多的时间。 
+</p><p><br />
+26.　　求线段或直线与折线、矩形、多边形的交点： 
+</p><p>　　分别求与每条边的交点即可。 
+</p><p><br />
+27.　　求线段或直线与圆的交点: 
+</p><p>　　设圆心为O，圆半径为r，直线（或线段）L上的两点为P1,P2。 
+</p><p>　　1. 如果L是线段且P1，P2都包含在圆O内，则没有交点；否则进行下一步。 
+</p><p>　　2. 如果L平行于Y轴， 
+</p><p>　　　a) 计算圆心到L的距离dis；
+　　　b) 如果dis &gt; r 则L和圆没有交点；
+　　　c) 利用勾股定理，可以求出两交点坐标，但要注意考虑L和圆的相切情况。
+</p><p>　　3. 如果L平行于X轴，做法与L平行于Y轴的情况类似； 
+</p><p>　　4. 如果L既不平行X轴也不平行Y轴，可以求出L的斜率K，然后列出L的点斜式方程，和圆方程联立即可求解出L和圆的两个交点； 
+</p><p>　　5. 如果L是线段，对于2，3，4中求出的交点还要分别判断是否属于该线段的范围内。 
+</p><p><br />
+28.　　凸包的概念： 
+</p><p>　　点集Q的凸包(convex hull)是指一个最小凸多边形，满足Q中的点或者在多边形边上或者在其内。下图中由红色线段表示的多边形就是点集Q={p0,p1,...p12}的凸包。 
+</p><p><br />
+</p><p>29.　　凸包的求法： 
+</p><p>　　现在已经证明了凸包算法的时间复杂度下界是O(n*logn),但是当凸包的顶点数h也被考虑进去的话，Krikpatrick和Seidel的剪枝搜索算法可以达到O(n*logh)，在渐进意义下达到最优。最常用的凸包算法是Graham扫描法和Jarvis步进法。本文只简单介绍一下Graham扫描法，其正确性的证明和Jarvis步进法的过程大家可以参考《算法导论》。 
+</p><p>　　对于一个有三个或以上点的点集Q，Graham扫描法的过程如下： 
+</p><p>　　令p0为Q中Y-X坐标排序下最小的点 
+　　设&lt;p1,p2,...pm&gt;为对其余点按以p0为中心的极角逆时针排序所得的点集（如果有多个点有相同的极角，除了距p0最远的点外全部移除
+　　压p0进栈S
+　　压p1进栈S
+　　压p2进栈S
+for i ← 3 to m
+do while 由S的栈顶元素的下一个元素、S的栈顶元素以及pi构成的折线段不拐向左侧
+对S弹栈
+压pi进栈S
+return S;
+　
+</p><p>　　此过程执行后，栈S由底至顶的元素就是Q的凸包顶点按逆时针排列的点序列。需要注意的是，我们对点按极角逆时针排序时，并不需要真正求出极角，只需要求出任意两点的次序就可以了。而这个步骤可以用前述的矢量叉积性质实现。 
+</p><p><br />
+四、结语 
+</p><p>　　尽管人类对几何学的研究从古代起便没有中断过，但是具体到借助计算机来解决几何问题的研究，还只是停留在一个初级阶段，无论从应用领域还是发展前景来看，计算几何学都值得我们认真学习、加以运用，希望这篇文章能带你走进这个丰富多彩的世界。
+</p><p><br />
+</p><p><br />
+目录 
+</p><p><br />
+㈠ 点的基本运算 
+1. 平面上两点之间距离 1 
+2. 判断两点是否重合 1 
+3. 矢量叉乘 1 
+4. 矢量点乘 2 
+5. 判断点是否在线段上 2 
+6. 求一点饶某点旋转后的坐标 2 
+7. 求矢量夹角 2 
+</p><p>㈡ 线段及直线的基本运算 
+1. 点与线段的关系 3 
+2. 求点到线段所在直线垂线的垂足 4 
+3. 点到线段的最近点 4 
+4. 点到线段所在直线的距离 4 
+5. 点到折线集的最近距离 4 
+6. 判断圆是否在多边形内 5 
+7. 求矢量夹角余弦 5 
+8. 求线段之间的夹角 5 
+9. 判断线段是否相交 6 
+10.判断线段是否相交但不交在端点处 6 
+11.求线段所在直线的方程 6 
+12.求直线的斜率 7 
+13.求直线的倾斜角 7 
+14.求点关于某直线的对称点 7 
+15.判断两条直线是否相交及求直线交点 7 
+16.判断线段是否相交，如果相交返回交点 7 
+</p><p>㈢ 多边形常用算法模块 
+1. 判断多边形是否简单多边形 8 
+2. 检查多边形顶点的凸凹性 9 
+3. 判断多边形是否凸多边形 9 
+4. 求多边形面积 9 
+5. 判断多边形顶点的排列方向，方法一 10 
+6. 判断多边形顶点的排列方向，方法二 10 
+7. 射线法判断点是否在多边形内 10 
+8. 判断点是否在凸多边形内 11 
+9. 寻找点集的graham算法 12 
+10.寻找点集凸包的卷包裹法 13 
+11.判断线段是否在多边形内 14 
+12.求简单多边形的重心 15 
+13.求凸多边形的重心 17 
+14.求肯定在给定多边形内的一个点 17 
+15.求从多边形外一点出发到该多边形的切线 18 
+16.判断多边形的核是否存在 19 
+</p><p>㈣ 圆的基本运算 
+1 .点是否在圆内 20 
+2 .求不共线的三点所确定的圆 21 
+</p><p>㈤ 矩形的基本运算 
+1.已知矩形三点坐标，求第4点坐标 22 
+</p><p>㈥ 常用算法的描述 22 
+</p><p>㈦ 补充 
+1．两圆关系： 24 
+2．判断圆是否在矩形内： 24 
+3．点到平面的距离： 25 
+4．点是否在直线同侧： 25 
+5．镜面反射线： 25 
+6．矩形包含： 26 
+7．两圆交点： 27 
+8．两圆公共面积： 28 
+9. 圆和直线关系： 29 
+10. 内切圆： 30 
+11. 求切点： 31 
+12. 线段的左右旋： 31 
+13．公式： 32 
+</p><p><br />
+</p><p><br />
+</p><p>/* 需要包含的头文件 */ 
+</p>
+<ol><li>include &lt;cmath &gt; 
+</li></ol>
+<p>/* 常用的常量定义 */ 
+const double INF = 1E200 
+const double EP = 1E-10 
+const int MAXV = 300 
+const double PI = 3.14159265 
+</p><p>/* 基本几何结构 */ 
+struct POINT 
+{ 
+double x; 
+double y; POINT(double a=0, double b=0) { x=a; y=b;} //constructor 
+}; 
+struct LINESEG 
+{ 
+POINT s; 
+POINT e; LINESEG(POINT a, POINT b) { s=a; e=b;} 
+LINESEG() { } 
+}; 
+struct LINE // 直线的解析方程 a*x+b*y+c=0 为统一表示，约定 a &gt;= 0 
+{ 
+double a; 
+double b; 
+double c; LINE(double d1=1, double d2=-1, double d3=0) {a=d1; b=d2; c=d3;} 
+}; 
+</p><p>/********************\ 
+</p>
+<ul><li> * 
+</li><li> 点的基本运算 * 
+</li><li> * 
+</li></ul>
+<p>\********************/ 
+</p><p>double dist(POINT p1,POINT p2) // 返回两点之间欧氏距离 
+{ 
+return( sqrt( (p1.x-p2.x)*(p1.x-p2.x)+(p1.y-p2.y)*(p1.y-p2.y) ) ); 
+} 
+bool equal_point(POINT p1,POINT p2) // 判断两个点是否重合 
+{ 
+return ( (abs(p1.x-p2.x)&lt;EP)&amp;&amp;(abs(p1.y-p2.y)&lt;EP) ); 
+} 
+</p><p>/****************************************************************************** 
+r=multiply(sp,ep,op),得到(sp-op)*(ep-op)的叉积 
+r&gt;0:ep在矢量opsp的逆时针方向； 
+r=0：opspep三点共线； 
+r&lt;0:ep在矢量opsp的顺时针方向 
+</p>
+<ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li>/ 
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+<p>double multiply(POINT sp,POINT ep,POINT op) 
+{ 
+return((sp.x-op.x)*(ep.y-op.y)-(ep.x-op.x)*(sp.y-op.y)); 
+} 
+</p><p>/******************************************************************************* 
+r=dotmultiply(p1,p2,op),得到矢量(p1-op)和(p2-op)的点积，如果两个矢量都非零矢量 
+r&lt;0:两矢量夹角为锐角；r=0：两矢量夹角为直角；r&gt;0:两矢量夹角为钝角 
+</p>
+<ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li><ul><li>/ 
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+<p>double dotmultiply(POINT p1,POINT p2,POINT p0) 
+{ 
+return ((p1.x-p0.x)*(p2.x-p0.x)+(p1.y-p0.y)*(p2.y-p0.y)); 
+} 
+</p><p>/* 判断点p是否在线段l上，条件：(p在线段l所在的直线上)&amp;&amp; (点p在以线段l为对角线的矩形内) */ 
+bool online(LINESEG l,POINT p) 
+{ 
+return((multiply(l.e,p,l.s)==0) 
+&amp;&amp;( ( (p.x-l.s.x)*(p.x-l.e.x)&lt;=0 )&amp;&amp;( (p.y-l.s.y)*(p.y-l.e.y)&lt;=0 ) ) ); 
+} 
+</p><p>// 返回点p以点o为圆心逆时针旋转alpha(单位：弧度)后所在的位置 
+POINT rotate(POINT o,double alpha,POINT p) 
+{ 
+POINT tp; 
+p.x-=o.x; 
+p.y-=o.y; 
+tp.x=p.x*cos(alpha)-p.y*sin(alpha)+o.x; 
+tp.y=p.y*cos(alpha)+p.x*sin(alpha)+o.y; 
+return tp; 
+} 
+</p><p>/* 返回顶角在o点，起始边为os，终止边为oe的夹角(单位：弧度) 
+角度小于pi，返回正值 
+角度大于pi，返回负值 
+可以用于求线段之间的夹角 
+</p>
+<ul><li>/ 
+</li></ul>
+<p>double angle(POINT o,POINT s,POINT e) 
+{ 
+double cosfi,fi,norm; 
+double dsx = s.x - o.x; 
+double dsy = s.y - o.y; 
+double dex = e.x - o.x; 
+double dey = e.y - o.y; 
+</p><p>cosfi=dsx*dex+dsy*dey; 
+norm=(dsx*dsx+dey*dey)*(dex*dex+dey*dey); 
+cosfi /= sqrt( norm ); 
+</p><p>if (cosfi &gt;= 1.0 ) return 0; 
+if (cosfi &lt;= -1.0 ) return -3.1415926; 
+</p><p>fi=acos(cosfi); 
+if (dsx*dey-dsy*dex&gt;0) return fi; // 说明矢量os 在矢量 oe的顺时针方向 
+return -fi; 
+} 
+</p><p><br />
+</p><p><br />
+</p><p>/*****************************\ 
+</p>
+<ul><li> * 
+</li><li> 线段及直线的基本运算 * 
+</li><li> * 
+</li></ul>
+<p>\*****************************/ 
+</p><p>/* 判断点与线段的关系,用途很广泛 
+本函数是根据下面的公式写的，P是点C到线段AB所在直线的垂足 
+</p><p>AC dot AB 
+r = --------- 
+||AB||^2 
+(Cx-Ax)(Bx-Ax) + (Cy-Ay)(By-Ay) 
+= ------------------------------- 
+L^2 
+</p><p>r has the following meaning: 
+</p><p>r=0 P = A 
+r=1 P = B 
+r&lt;0 P is on the backward extension of AB 
+r&gt;1 P is on the forward extension of AB 
+0&lt;r&lt;1 P is interior to AB 
+</p>
+<ul><li>/ 
+</li></ul>
+<p>double relation(POINT p,LINESEG l) 
+{ 
+LINESEG tl; 
+tl.s=l.s; 
+tl.e=p; 
+return dotmultiply(tl.e,l.e,l.s)/(dist(l.s,l.e)*dist(l.s,l.e)); 
+} 
+</p><p>// 求点C到线段AB所在直线的垂足 P 
+POINT perpendicular(POINT p,LINESEG l) 
+{ 
+double r=relation(p,l); 
+POINT tp; 
+tp.x=l.s.x+r*(l.e.x-l.s.x); 
+tp.y=l.s.y+r*(l.e.y-l.s.y); 
+return tp; 
+} 
+/* 求点p到线段l的最短距离,并返回线段上距该点最近的点np 
+注意：np是线段l上到点p最近的点，不一定是垂足 */ 
+double ptolinesegdist(POINT p,LINESEG l,POINT &amp;np) 
+{ 
+double r=relation(p,l); 
+if(r&lt;0) 
+{ 
+np=l.s; 
+return dist(p,l.s); 
+} 
+if(r&gt;1) 
+{ 
+np=l.e; 
+return dist(p,l.e); 
+} 
+np=perpendicular(p,l); 
+return dist(p,np); 
+} 
+</p><p>// 求点p到线段l所在直线的距离,请注意本函数与上个函数的区别 
+double ptoldist(POINT p,LINESEG l) 
+{ 
+return abs(multiply(p,l.e,l.s))/dist(l.s,l.e); 
+} 
+</p><p>/* 计算点到折线集的最近距离,并返回最近点. 
+注意：调用的是ptolineseg()函数 */ 
+double ptopointset(int vcount,POINT pointset[],POINT p,POINT &amp;q) 
+{ 
+int i; 
+double cd=double(INF),td; 
+LINESEG l; 
+POINT tq,cq; 
+</p><p>for(i=0;i&lt;vcount-1;i++) 
+{ 
+l.s=pointset[ i ]; 
+l.e=pointset[i+1]; 
+td=ptolinesegdist(p,l,tq); 
+if(td&lt;cd) 
+{ 
+cd=td; 
+cq=tq; 
+} 
+} 
+q=cq; 
+return cd; 
+} 
+/* 判断圆是否在多边形内.ptolineseg()函数的应用2 */ 
+bool CircleInsidePolygon(int vcount,POINT center,double radius,POINT polygon[]) 
+{ 
+POINT q; 
+double d; 
+q.x=0; 
+q.y=0; 
+d=ptopointset(vcount,polygon,center,q); 
+if(d&lt;radius||fabs(d-radius)&lt;EP) 
+return true; 
+else 
+return false; 
+} 
+</p><p>/* 返回两个矢量l1和l2的夹角的余弦(-1 --- 1)注意：如果想从余弦求夹角的话，注意反余弦函数的定义域是从 0到pi */ 
+double cosine(LINESEG l1,LINESEG l2) 
+{ 
+return (((l1.e.x-l1.s.x)*(l2.e.x-l2.s.x) + 
+(l1.e.y-l1.s.y)*(l2.e.y-l2.s.y))/(dist(l1.e,l1.s)*dist(l2.e,l2.s))) ); 
+} 
+// 返回线段l1与l2之间的夹角 单位：弧度 范围(-pi，pi) 
+double lsangle(LINESEG l1,LINESEG l2) 
+{ 
+POINT o,s,e; 
+o.x=o.y=0; 
+s.x=l1.e.x-l1.s.x; 
+s.y=l1.e.y-l1.s.y; 
+e.x=l2.e.x-l2.s.x; 
+e.y=l2.e.y-l2.s.y; 
+return angle(o,s,e); 
+} 
+// 如果线段u和v相交(包括相交在端点处)时，返回true 
+bool intersect(LINESEG u,LINESEG v) 
+{ 
+return( (max(u.s.x,u.e.x)&gt;=min(v.s.x,v.e.x))&amp;&amp; //排斥实验 
+(max(v.s.x,v.e.x)&gt;=min(u.s.x,u.e.x))&amp;&amp; 
+(max(u.s.y,u.e.y)&gt;=min(v.s.y,v.e.y))&amp;&amp; 
+(max(v.s.y,v.e.y)&gt;=min(u.s.y,u.e.y))&amp;&amp; 
+(multiply(v.s,u.e,u.s)*multiply(u.e,v.e,u.s)&gt;=0)&amp;&amp; //跨立实验 
+(multiply(u.s,v.e,v.s)*multiply(v.e,u.e,v.s)&gt;=0)); 
+} 
+</p><p><br />
+// (线段u和v相交)&amp;&amp;(交点不是双方的端点) 时返回true 
+bool intersect_A(LINESEG u,LINESEG v) 
+{ 
+return((intersect(u,v))&amp;&amp; 
+(!online(u,v.s))&amp;&amp; 
+(!online(u,v.e))&amp;&amp; 
+(!online(v,u.e))&amp;&amp; 
+(!online(v,u.s))); 
+} 
+</p><p><br />
+// 线段v所在直线与线段u相交时返回true；方法：判断线段u是否跨立线段v 
+bool intersect_l(LINESEG u,LINESEG v) 
+{ 
+return multiply(u.s,v.e,v.s)*multiply(v.e,u.e,v.s)&gt;=0; 
+} 
+</p><p><br />
+// 根据已知两点坐标，求过这两点的直线解析方程： a*x+b*y+c = 0 (a &gt;= 0) 
+LINE makeline(POINT p1,POINT p2) 
+{ 
+LINE tl; 
+int sign = 1; 
+tl.a=p2.y-p1.y; 
+if(tl.a&lt;0) 
+{ 
+sign = -1; 
+tl.a=sign*tl.a; 
+} 
+tl.b=sign*(p1.x-p2.x); 
+tl.c=sign*(p1.y*p2.x-p1.x*p2.y); 
+return tl; 
+} 
+</p><p>// 根据直线解析方程返回直线的斜率k,水平线返回 0,竖直线返回 1e200 
+double slope(LINE l) 
+{ 
+if(abs(l.a) &lt; 1e-20)return 0; 
+if(abs(l.b) &lt; 1e-20)return INF; 
+return -(l.a/l.b); 
+} 
+</p><p>// 返回直线的倾斜角alpha ( 0 - pi) 
+double alpha(LINE l) 
+{ 
+if(abs(l.a)&lt; EP)return 0; 
+if(abs(l.b)&lt; EP)return PI/2; 
+double k=slope(l); 
+if(k&gt;0) 
+return atan(k); 
+else 
+return PI+atan(k); 
+} 
+</p><p>// 求点p关于直线l的对称点 
+POINT symmetry(LINE l,POINT p) 
+{ 
+POINT tp; 
+tp.x=((l.b*l.b-l.a*l.a)*p.x-2*l.a*l.b*p.y-2*l.a*l.c)/(l.a*l.a+l.b*l.b); 
+tp.y=((l.a*l.a-l.b*l.b)*p.y-2*l.a*l.b*p.x-2*l.b*l.c)/(l.a*l.a+l.b*l.b); 
+return tp; 
+} 
+</p><p>// 如果两条直线 l1(a1*x+b1*y+c1 = 0), l2(a2*x+b2*y+c2 = 0)相交，返回true，且返回交点p 
+bool lineintersect(LINE l1,LINE l2,POINT &amp;p) // 是 L1，L2 
+{ 
+double d=l1.a*l2.b-l2.a*l1.b; 
+if(abs(d)&lt;EP) // 不相交 
+return false; 
+p.x = (l2.c*l1.b-l1.c*l2.b)/d; 
+p.y = (l2.a*l1.c-l1.a*l2.c)/d; 
+return true; 
+} 
+</p><p>// 如果线段l1和l2相交，返回true且交点由(inter)返回，否则返回false 
+bool intersection(LINESEG l1,LINESEG l2,POINT &amp;inter) 
+{ 
+LINE ll1,ll2; 
+ll1=makeline(l1.s,l1.e); 
+ll2=makeline(l2.s,l2.e); 
+if(lineintersect(ll1,ll2,inter)) 
+{ 
+return online(l1,inter); 
+} 
+else 
+return false; 
+}
+可以应付大部分zoj上的几何题Sample TextSample Text
+zoj上的计算几何题
+Vol I 
+1010 by pandahyx 
+1032 by javaman 
+1037 by Vegetable Bird 
+1041 by javaman 
+1081 by Vegetable Bird 
+1090 by Vegetable Bird 
+</p><p>Vol II 
+1104 by javaman 
+1123 by javaman 
+1139 by Vegetable Bird 
+1165 by javaman 
+1199 by Vegetable Bird 
+</p><p>Vol V 
+1426 by Vegetable Bird 
+1439 by Vegetable Bird 
+1460 by Vegetable Bird 
+1472 by Vegetable Bird 
+</p><p>Vol VI 
+1597 by Vegetable Bird 
+</p><p>Vol VII 
+1608 by Vegetable Bird 
+1648 by Vegetable Bird 
+</p><p>Vol XII 
+2102 by pandahyx 
+2107 by pandahyx 
+2157 by pandahyx 
+</p><p>Vol XIII 
+2234 by pandahyx 
+</p><p>Vol XIV 
+2318 by ahyangyi 
+2394 by qherlyt 
+</p><p>Vol XV 
+2403 by Vegetable Bird
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 1/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:3118-0!*!*!*!*!*!* and timestamp 20170808221835 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=%E5%87%A0%E4%BD%95&amp;oldid=13880">http://www.nocow.cn/index.php?title=%E5%87%A0%E4%BD%95&amp;oldid=13880</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/%E5%87%A0%E4%BD%95" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:%E5%87%A0%E4%BD%95&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=%E5%87%A0%E4%BD%95&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=%E5%87%A0%E4%BD%95&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=%E5%87%A0%E4%BD%95" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/%E5%87%A0%E4%BD%95" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/%E5%87%A0%E4%BD%95" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=%E5%87%A0%E4%BD%95&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=%E5%87%A0%E4%BD%95&amp;oldid=13880" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过2,606次。</li>
+		<li id="credits">本页面由<a href="/index.php?title=%E7%94%A8%E6%88%B7:Chencch852&amp;action=edit&amp;redlink=1" class="new" title="用户:Chencch852（尚未撰写）">chencch852</a>于2009年1月27日 (星期二) 16:09做出最后修改。 </li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.233 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>Translate:USACO/Big Number - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=Translate:USACO/Big_Number&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=Translate:USACO/Big_Number&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "Translate", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 102, "wgPageName": "Translate:USACO/Big_Number", "wgTitle": "USACO/Big Number", "wgCurRevisionId": 28974, "wgArticleId": 5562, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-102 ns-subject page-Translate_USACO_Big_Number action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">Translate:USACO/Big Number</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="/index.php/Translate:USACO" title="Translate:USACO">Translate:USACO</a></span></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><p><i><b>高精度</b></i>
+</p><p><b>样例问题：阶乘（Factorial）</b>
+</p><p>给出 N (1 &lt;= N &lt;= 200)，计算出N!的值.
+</p><p><b>题目</b>
+</p><p>所有编程语言默认定义的整型变量都是有取值限制的，有时，问题会要求计算一个超出了所有可用的数据类型存储上限的数据。比如说，200!就有375个数位（十进制下），1246位（如果选择使用二进制来存储的话）的空间来存储它，显然是不可能用任何比赛环境下默认定义的数据类型来搞定的。所以，我们需要一个方法来储存和处理很大的数据。
+</p><p><b>结构</b>
+</p><p>首先一个方法事实上是很直接的：一个数字列表和一个指针。如果上限给出了的话可以用数组来储存它，如果没有给出也可以用链表。
+</p><p>另一个思路来考虑这个存储方案是用多进制的方式储存。（大概就这个意思，不好直译）
+</p><p>比方说采用b进制，那么a0, a1, ...就是被储存的每一位数字。那么，这个数字就被表示为（-1）^正负符号×（(a0+ b^1 a1+ b^2 a2+ ... + b^n an)）。需要留意的是，a0, a1, ...的取值必须在[0，b-1]里。
+</p><p>通常情况下，我们使用的是十进制，毕竟这样让数字的展示变得容易（不要忘记了前导零哦，亲）
+</p><p>注意在这种表达方式下存储的数字的顺序是a0，然后a1，之后a2，以此类推，刚好是我们通常的书写方式的逆序，对于链表，有时更值得去构建一个双端队列，以照顾部分倒序处理的算法。
+</p><p><b>数据处理</b>
+</p><p>对于这种数据结构，想法完成各种操作需要我们回想一下怎样手动完成这些操作。最主要的问题是溢出，一定切记检查确保所有的加法和乘法什么的不会造成算术上溢，否则整个操作只会得到错误的结果（Pascal中直接程序报错哦，亲）
+</p><p>方便起见，这里说明的算法都将基于数组进行说明，所以如果一个数字是a0, a 1, ..., ak，那么对于所有的i &gt; k, ai = 0。对于链表，相关的算法会比较复杂一点（译者是SB：别被吓到了，难不到哪里去）。附加说明一下，用于存储结果的数组每一项一般来说都应将被初始化为零。
+</p><p><b>数据的比较</b>
+</p><p>要比较两个数据a0, a1, ..., an和b0, b1, ..., bk以及它们的符号位（用于标记正数和负数）signA（SA）、signB（SB）的步骤如下： 
+</p>
+<pre> # 标注符号位
+ # sizeA = A的数位个数
+ # signA = A的符号
+ # (0 =&gt; 正, 1 =&gt; 负)
+  1   if (signA &lt; signB)
+  2     return A要小一些
+  3   else if (signA &gt; signB)
+  4     return A要大一些
+  5   else
+  6     for i = max(sizeA,sizeB) to 0
+  7       if (a(i) &gt; b(i))
+  8         if (signA = 0)
+  9           return A要大一些
+ 10        else
+ 11           return A要小一些
+ 12     return A = B
+</pre>
+<p><b>加法</b>
+</p><p>给出两个数a0, a1, ..., an和b0, b1, ..., bk，请计算它们的和并存储至数组C。为了让加法正常进行，2 x b必须要小于能最大的能被表达的数。
+</p><p>如果两个数符号不相同，那么：计算哪一个的绝对值更大，然后用大的减去小的，最后再加上和绝对值大的那个数一样的符号位；否则，直接从0加到max(n,k)，注意进位。
+</p><p>注意如果已经知道两个数都是正数，那就没必要写减法（absolute_subtract）的算法了。
+</p><p>下面是加法的伪代码。
+</p>
+<pre>  1 absolute_subtract(bignum A, bignum B,bignum C)
+  2   borrow = 0
+  3   for pos = 0 to max(sizeA, sizeB)
+  4     C(pos) = A(pos)-B(pos)-borrow
+  5     if (C(pos) &lt; 0)
+  6       C(pos) = C(pos) + base
+  7       borrow = 1
+  8     else
+  9       borrow = 0
+     #必须要这样做
+     #否则没法完成部分数据
+     #比如两个差不多的数相减
+     # (比如：7658493 - 7658492)
+ 10     if C(pos)&#160;!= 0
+ 11       sizeC = pos
+ 12   assert (borrow == 0,
+        "|B| &gt; |A|; can't handle this") 
+</pre>
+<pre> 13 absolute_add(bignum A,
+                   bignum B, bignum C)
+ 14   carry = 0
+ 15   for pos = 0 to max(sizeA,sizeB)
+ 16     C(pos) = A(pos)+B(pos)+carry
+ 17     carry = C(pos) / base
+ 18     C(pos) = C(pos) mod base
+ 19   if carry&#160;!= 0
+ 20     CHECK FOR OVERFLOW
+ 21     C(max(sizeA,sizeB)+1) = carry
+ 22     sizeC = max(sizeA,sizeB)+1
+ 23   else
+ 24     sizeC = max(sizeA, sizeB) 
+ 
+ 25 add (bignum A, bignum B, bignum C)
+ 26   if signA == signB
+ 27     absolution_add(A,B)
+ 28     signC = signA
+ 29   else
+ 30     if (Compare(A,B) = A is larger)
+        then
+ 31       absolute_subtract(A,B)
+ 32       signC = signA
+ 33     else
+ 34       absolute_subtract(B,A)
+ 35       signC = signB
+</pre>
+<p><b>减法</b>
+</p><p>有了刚才的加法做铺垫，减法就很简单了。要计算A - B, 反转B的符号位再加上A和B.
+</p><p><b>与普通正整数相乘</b>
+</p><p>确保在结果不超过最大表示范围的情况下进行和普通正整数的乘法，可以用和在纸上手动计算的类似方法。 
+</p>
+<pre>  1   if (s &lt; 0)
+  2     signB = 1 - signA
+  3     s = -s
+  4   else
+  5     signB = signA
+  6   carry = 0
+  7   for pos = 0 to sizeA（*pos是数位指针）
+  8     B(pos) = A(pos) * s + carry
+  9     carry = B(pos) / base
+ 10     B(pos) = B(pos) mod base
+ 11   pos = sizeA+1
+ 12   while carry&#160;!= 0
+ 13     CHECK OVERFLOW
+ 14     B(pos) = carry mod base
+ 15     carry = carry / base
+ 16     pos = pos + 1
+ 17    sizeB = pos - 1
+</pre>
+<p><b>高精度乘法</b>
+</p><p>高精度乘法就是多次普通乘法然后在正确的数位相加。
+</p><p>一般来说，用另一个数的各个数位来直接乘，然后加起来（在正确的数位）和我们手算乘法是差不多的方法 
+</p>
+<pre>  1 multiply_and_add(bignum A, int s,
+                 int offset, bignum C)
+  2   carry = 0
+  3   for pos = 0 to sizeA
+  4     C(pos+offset) = C(pos+offset) +
+                     A(pos) * s + carry
+  5     carry = C(pos+offset) / base
+  6     C(pos+offset) =
+               C(pos+offset) mod base
+  7   pos = sizeA + offset + 1
+  8   while carry&#160;!= 0
+  9     CHECK OVERFLOW
+ 10     C(pos) = C(pos) + carry
+ 11     carry = C(pos) / base
+ 12     C(pos) = C(pos) mod base
+ 13     pos = pos + 1
+ 14   if (sizeC &lt; pos - 1)
+ 15     sizeC = pos - 1 
+ 16 multiply(bignum A,
+             bignum B, bignum C)
+ 17   for pos = 0 to sizeB
+ 18     multiply_and_add(A,
+                     B(pos), pos, C)
+ 19   signC = (signA + signB) mod 2
+</pre>
+<p><b>大数据被小数据除</b>
+</p><p>和手算没两样。
+</p>
+<pre> 1 divide_by_scalar (bignum A,
+                 int s, bignum C)
+ 2   rem = 0
+ 3   sizeC = 0
+ 4   for pos = sizeA to 0
+ 5     rem = (rem * b) + A(pos)
+ 6     C(pos) = rem / s
+ 7     if C(pos) &gt; 0 and
+                pos &gt; sizeC then
+ 8       sizeC = pos
+ 9     rem = rem mod s
+ # 记得退位
+</pre>
+<p><b>高精度除法</b>
+</p><p>和手算也差不多。。。各种细心。。。注意如果b太大，这个算法会很耗时间
+</p>
+<pre>  1 divide_by_bignum (bignum A,
+               bignum B, bignum C)
+  2   bignum rem = 0
+  3   for pos = sizeA to 0
+  4     mult_by_scalar_in_place(rem, b)
+  5     add_scalar_in_place(rem,
+                                A(pos))
+  6     C(pos) = 0
+  7     while (greater(rem, B))
+  8       C(pos) = C(pos) + 1
+  9       subtract_in_place(rem, B)
+ 10     if C(pos) &gt; 0 and pos &gt; sizeC
+        then
+ 11       sizeC = pos
+</pre>
+<p><b>二分查找</b>
+</p><p>总体而言二分查找是很有用的，可是对于高精度运算来说，代价也很高。给出上下限，然后检查答案的取值范围是否在这个区间内，然后减小一般的区间再继续递归运行下去。
+</p><p>比如说，b大了，那么用刚才的方法直接做除法就会很慢，可是下面的二分查找就会快得多： 
+</p>
+<pre>  1 divide_by_bignum2 (bignum A,
+                 bignum B, bignum C)
+  2   bignum rem = 0
+  3   for pos = sizeA to 0
+  4     mult_by_scalar_in_place(rem, b)
+  5     add_scalar_in_place(rem,
+                            A(pos)) 
+ 
+  6     lower = 0
+  7     upper = s-1
+  8     while upper &gt; lower
+  9       mid = (upper + lower)/2 + 1
+ 10       mult_by_scalar(B, mid, D)
+ 11       subtract(rem, D, E)
+ 12       if signE = 0
+ 13         lower = mid
+ 14       else
+ 15         upper = mid - 1 
+ 
+ 16     C(pos) = lower
+ 17     mult_by_scalar(B, lower, D)
+ 18     subtract_in_place(rem, D) 
+ 
+ 19     if C(pos) &gt; 0 and
+                         pos &gt; sizeC
+ 20       sizeC = pos
+</pre>
+<!-- 
+NewPP limit report
+Preprocessor node count: 1/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:5562-0!*!*!*!*!*!* and timestamp 20170806224448 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Big_Number&amp;oldid=28974">http://www.nocow.cn/index.php?title=Translate:USACO/Big_Number&amp;oldid=28974</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-translate" class="selected"><a href="/index.php/Translate:USACO/Big_Number">翻译</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=Translate_Talk:USACO/Big_Number&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=Translate:USACO/Big_Number&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=Translate:USACO/Big_Number&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Translate%3AUSACO%2FBig+Number" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Translate:USACO/Big_Number" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Translate:USACO/Big_Number" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=Translate:USACO/Big_Number&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=Translate:USACO/Big_Number&amp;oldid=28974" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过4,281次。</li>
+		<li id="credits">本页面由<a href="/index.php/%E7%94%A8%E6%88%B7:H1111202" title="用户:H1111202">哈哈火</a>于2011年12月19日 (星期一) 12:46做出最后修改。 在<a href="/index.php/%E7%94%A8%E6%88%B7:Jetic" title="用户:Jetic">Jetic</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.173 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>完全背包 - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "完全背包", "wgTitle": "完全背包", "wgCurRevisionId": 35369, "wgArticleId": 1689, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for pascal
+ * CSS class: source-pascal, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.pascal.source-pascal .de1, .pascal.source-pascal .de2 {}
+.pascal.source-pascal  {font-family:monospace;}
+.pascal.source-pascal .imp {font-weight: bold; color: red;}
+.pascal.source-pascal li, .pascal.source-pascal .li1 {font-weight: normal; vertical-align:top;}
+.pascal.source-pascal .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.pascal.source-pascal .li2 {font-weight: bold; vertical-align:top;}
+.pascal.source-pascal .kw1 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw2 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw3 {color: #000066;}
+.pascal.source-pascal .kw4 {color: #000066; font-weight: bold;}
+.pascal.source-pascal .co1 {color: #666666; font-style: italic;}
+.pascal.source-pascal .coMULTI {color: #666666; font-style: italic;}
+.pascal.source-pascal .es0 {color: #000099; font-weight: bold;}
+.pascal.source-pascal .es_h {color: #000099; font-weight: bold;}
+.pascal.source-pascal .br0 {color: #009900;}
+.pascal.source-pascal .sy0 {color: #339933;}
+.pascal.source-pascal .st0 {color: #ff0000;}
+.pascal.source-pascal .st_h {color: #ff0000;}
+.pascal.source-pascal .nu0 {color: #cc66cc;}
+.pascal.source-pascal .me1 {color: #0066ee;}
+.pascal.source-pascal .ln-xtra, .pascal.source-pascal li.ln-xtra, .pascal.source-pascal div.ln-xtra {background-color: #ffc;}
+.pascal.source-pascal span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-完全背包 action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">完全背包</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E9.A2.98.E7.9B.AE"><span class="tocnumber">1</span> <span class="toctext">题目</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#.E5.9F.BA.E6.9C.AC.E6.80.9D.E8.B7.AF"><span class="tocnumber">1.1</span> <span class="toctext">基本思路</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#.E4.B8.80.E4.B8.AA.E7.AE.80.E5.8D.95.E6.9C.89.E6.95.88.E7.9A.84.E4.BC.98.E5.8C.96"><span class="tocnumber">1.2</span> <span class="toctext">一个简单有效的优化</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#.E8.BD.AC.E5.8C.96.E4.B8.BA01.E8.83.8C.E5.8C.85.E9.97.AE.E9.A2.98.E6.B1.82.E8.A7.A3"><span class="tocnumber">1.3</span> <span class="toctext">转化为01背包问题求解</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#O.28VN.29.E7.9A.84.E7.AE.97.E6.B3.95"><span class="tocnumber">1.4</span> <span class="toctext">O(VN)的算法</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#.E6.80.BB.E7.BB.93"><span class="tocnumber">1.5</span> <span class="toctext">总结</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="/index.php?title=%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85&amp;action=edit&amp;section=1" title="编辑段落：题目">编辑</a>]</span> <span class="mw-headline" id=".E9.A2.98.E7.9B.AE">题目</span></h2>
+<p>有N种物品和一个容量为V的背包，每种物品都有无限件可用。第i种物品的费用是c[i]，价值是w[i]。求解将哪些物品装入背包可使这些物品的费用总和不 超过背包容量，且价值总和最大。
+</p>
+<hr />
+<h3><span class="editsection">[<a href="/index.php?title=%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85&amp;action=edit&amp;section=2" title="编辑段落：基本思路">编辑</a>]</span> <span class="mw-headline" id=".E5.9F.BA.E6.9C.AC.E6.80.9D.E8.B7.AF">基本思路</span></h3>
+<p>这个问题非常类似于<a href="/index.php/01%E8%83%8C%E5%8C%85" title="01背包">01背包</a>问题，所不同的是每种物品有无限件。也就是从每种物品的角度考虑，与它相关的策略已并非取或不取两种，而是有取0件、取1件、取2件……等很多种。如果仍然按照解<a href="/index.php/01%E8%83%8C%E5%8C%85" title="01背包">01背包</a>时的思路，令f[i][v]表示前i种物品恰放入一个容量为v的背包的最大权值。仍然可以按照每种物品不同的策略写出状态转移方程，像这样：
+</p>
+<pre>   f[i][v]=max{f[i-1][v-k*c[i]]+k*w[i]|0&lt;=k*c[i]&lt;=v}
+</pre>
+<p>这跟<a href="/index.php/01%E8%83%8C%E5%8C%85" title="01背包">01背包</a>问题一样有<span class="texhtml" dir="ltr"><i>O</i>(<i>V</i><i>N</i>)</span>个状态需要求解，但求解每个状态的时间已经不是常数了，求解状态f[i][v]的时间是<span class="texhtml" dir="ltr"><i>O</i>(<i>v</i> / <i>c</i>[<i>i</i>])</span>，总的复杂度可以认为是O(V*Σ(V/c[i]))，是比较大的。
+</p><p>将<a href="/index.php/01%E8%83%8C%E5%8C%85" title="01背包">01背包</a>问题的基本思路加以改进，得到了这样一个清晰的方法。这说明<a href="/index.php/01%E8%83%8C%E5%8C%85" title="01背包">01背包</a>问题的方程的确是很重要，可以推及其它类型的背包问题。但我们还是试图改进这个复杂度。
+</p>
+<hr />
+<h3><span class="editsection">[<a href="/index.php?title=%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85&amp;action=edit&amp;section=3" title="编辑段落：一个简单有效的优化">编辑</a>]</span> <span class="mw-headline" id=".E4.B8.80.E4.B8.AA.E7.AE.80.E5.8D.95.E6.9C.89.E6.95.88.E7.9A.84.E4.BC.98.E5.8C.96">一个简单有效的优化</span></h3>
+<p>完全背包问题有一个很简单有效的优化，是这样的：若两件物品i、j满足c[i]&lt;=c[j]且w[i]&gt; =w[j]，则将物品j去掉，不用考虑。这个优化的正确性显然：任何情况下都可将价值小费用高得j换成物美价廉的i，得到至少不会更差的方案。对于随机生成的数据，这个方法往往会大大减少物品的件数，从而加快速度。然而这个并不能改善最坏情况的复杂度，因为有可能特别设计的数据可以一件物品也去不掉。
+</p><p>这个优化可以简单的O(N^2)地实现，一般都可以承受。另外，针对背包问题而言，比较不错的一种方法是：首先将费用大于V的物品去掉，然后使用类似计数排序的做法，计算出费用相同的物品中价值最高的是哪个，可以O(V+N)地完成这个优化。这个不太重要的过程就不给出伪代码了，希望你能独立思考写出伪代码或程序。
+</p>
+<hr />
+<h3><span class="editsection">[<a href="/index.php?title=%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85&amp;action=edit&amp;section=4" title="编辑段落：转化为01背包问题求解">编辑</a>]</span> <span class="mw-headline" id=".E8.BD.AC.E5.8C.96.E4.B8.BA01.E8.83.8C.E5.8C.85.E9.97.AE.E9.A2.98.E6.B1.82.E8.A7.A3">转化为<a href="/index.php/01%E8%83%8C%E5%8C%85" title="01背包">01背包</a>问题求解</span></h3>
+<p>既然<a href="/index.php/01%E8%83%8C%E5%8C%85" title="01背包">01背包</a>问题是最基本的背包问题，那么我们可以考虑把完全背包问题转化为<a href="/index.php/01%E8%83%8C%E5%8C%85" title="01背包">01背包</a>问题来解。最简单的想法是，考虑到第i种物品最多选V/c[i]件，于是可以把第i种物品转化为V/c[i]件费用及价值均不变的物品，然后求解这个<a href="/index.php/01%E8%83%8C%E5%8C%85" title="01背包">01背包</a>问题。这样完全没有改进基本思路的时间复杂度，但这毕竟给了我们将完全背包问题转化为<a href="/index.php/01%E8%83%8C%E5%8C%85" title="01背包">01背包</a>问题的思路：将一种物品拆成多件物品。
+</p><p>更高效的转化方法是：把<b>第i种物品拆成费用为c[i]*2^k、价值为w[i]*2^k的若干件物品</b>，其中k满足c[i]*2^k&lt;=V。这是二进制的思想，因为不管最优策略选几件第i种物品，总可以表示成若干个2^k件物品的和。这样把每种物品拆成O(log V/c[i])件物品，是一个很大的改进。
+</p>
+<hr />
+<h3><span class="editsection">[<a href="/index.php?title=%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85&amp;action=edit&amp;section=5" title="编辑段落：O(VN)的算法">编辑</a>]</span> <span class="mw-headline" id="O.28VN.29.E7.9A.84.E7.AE.97.E6.B3.95">O(VN)的算法</span></h3>
+<p>但我们有更优的O(VN)的算法。
+</p><p>这个算法使用一维数组，先看伪代码：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="kw1">for</span> i<span class="sy0">=</span><span class="nu0">1</span>..<span class="me1">N</span>
+    <span class="kw1">for</span> v<span class="sy0">=</span><span class="nu0">0</span>..<span class="me1">V</span>
+        f<span class="br0">&#91;</span>v<span class="br0">&#93;</span><span class="sy0">=</span>max<span class="coMULTI">{f[v],f[v-cost]+weight}</span></pre></div></div>
+<p>你会发现，这个伪代码与<a href="/index.php/01%E8%83%8C%E5%8C%85" title="01背包">01背包</a>的伪代码只有v的循环次序不同而已。为什么这样一改就可行呢？首先想想为什么<a href="/index.php/01%E8%83%8C%E5%8C%85" title="01背包">01背包</a>中要按照v=V..0的逆序来循环。这是因为要保证第i次循环中的状态f [i][v]是由状态f[i-1][v-c[i]]递推而来。换句话说，这正是为了保证每件物品只选一次，保证在考虑“选入第i件物品”这件策略时，依据的是一个绝无已经选入第i件物品的子结果f[i-1][v-c[i]]。而现在完全背包的特点恰是每种物品可选无限件，所以在考虑“加选一件第i种物品” 这种策略时，却正需要一个可能已选入第i种物品的子结果f[i][v-c[i]]，所以就可以并且必须采用v=0..V的顺序循环。这就是这个简单的程序为何成立的道理。
+</p><p>值得一提的是，上面的伪代码中两层for循环的次序可以颠倒。这个结论有可能会带来算法时间常数上的优化。
+</p><p>这个算法也可以以另外的思路得出。例如，将基本思路中求解f[i][v-c[i]]的状态转移方程显式地写出来，代入原方程中，会发现该方程可以等价地变形成这种形式：
+</p>
+<pre>   f[i][v]=max{f[i-1][v],f[i][v-c[i]]+w[i]}
+</pre>
+<p>将这个方程用一维数组实现，便得到了上面的伪代码。
+</p><p>最后抽象出处理一件完全背包类物品的过程伪代码：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="kw1">procedure</span> CompletePack<span class="br0">&#40;</span>cost<span class="sy0">,</span>weight<span class="br0">&#41;</span>
+    <span class="kw1">for</span> v<span class="sy0">=</span>cost..<span class="me1">V</span>
+        f<span class="br0">&#91;</span>v<span class="br0">&#93;</span><span class="sy0">=</span>max<span class="coMULTI">{f[v],f[v-c[i]]+w[i]}</span></pre></div></div>
+<h3><span class="editsection">[<a href="/index.php?title=%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85&amp;action=edit&amp;section=6" title="编辑段落：总结">编辑</a>]</span> <span class="mw-headline" id=".E6.80.BB.E7.BB.93">总结</span></h3>
+<p>完全背包问题也是一个相当基础的背包问题，它有两个状态转移方程，分别在“基本思路”以及“O(VN)的算法“的小节中给出。希望你能够对这两个状态转移方程都仔细地体会，不仅记住，也要弄明白它们是怎么得出来的，最好能够自己想一种得到这些方程的方法。事实上，对每一道动态规划题目都思考其方程的意义以及如何得来，是加深对动态规划的理解、提高动态规划功力的好方法。
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 58/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:1689-0!1!0!!zh-cn!*!* and timestamp 20150502092640 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85&amp;oldid=35369">http://www.nocow.cn/index.php?title=%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85&amp;oldid=35369</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85&amp;oldid=35369" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过6,671次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/204.236.235.245" title="特殊:用户贡献/204.236.235.245">204.236.235.245</a>于2014年10月19日 (星期日) 19:10做出最后修改。 在<a href="/index.php/%E7%94%A8%E6%88%B7:Fdyuelie" title="用户:Fdyuelie">Yuelie</a>和NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/125.71.109.5" title="特殊:用户贡献/125.71.109.5">125.71.109.5</a>和<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/221.6.179.66" title="特殊:用户贡献/221.6.179.66">221.6.179.66</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.232 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

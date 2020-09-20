@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>后缀数组 - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "后缀数组", "wgTitle": "后缀数组", "wgCurRevisionId": 34154, "wgArticleId": 3786, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-后缀数组 action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">后缀数组</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr">后缀数组是字符串处理的一个重要工具。它由原字符串的所有<a href="/index.php?title=%E5%90%8E%E7%BC%80&amp;action=edit&amp;redlink=1" class="new" title="后缀（尚未撰写）">后缀</a>的字典排序而得，具有较高的检索效率。<div class="thumb tright"><div class="thumbinner" style="width:247px;"><a href="/index.php/%E6%96%87%E4%BB%B6:20120630fc_suffix.png" class="image"><img alt="" src="/images/a/a2/20120630fc_suffix.png" width="245" height="172" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="/index.php/%E6%96%87%E4%BB%B6:20120630fc_suffix.png" class="internal" title="放大"><img src="/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>字符串aaabaaab的所有后缀</div></div></div>
+<p><br />
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E5.9F.BA.E6.9C.AC.E6.A6.82.E5.BF.B5"><span class="tocnumber">1</span> <span class="toctext">基本概念</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#.E5.80.8D.E5.A2.9E.E7.AE.97.E6.B3.95"><span class="tocnumber">2</span> <span class="toctext">倍增算法</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#.E7.BA.BF.E6.80.A7.E6.97.B6.E9.97.B4.E5.A4.8D.E6.9D.82.E5.BA.A6.E7.AE.97.E6.B3.95"><span class="tocnumber">3</span> <span class="toctext">线性时间复杂度算法</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#KS03"><span class="tocnumber">3.1</span> <span class="toctext">KS03</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#KA03"><span class="tocnumber">3.2</span> <span class="toctext">KA03</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#.E5.9F.BA.E6.9C.AC.E8.A7.82.E5.AF.9F"><span class="tocnumber">3.2.1</span> <span class="toctext">基本观察</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#.E7.AE.97.E6.B3.95"><span class="tocnumber">3.2.2</span> <span class="toctext">算法</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#.E5.AD.90.E9.97.AE.E9.A2.98.E5.AD.97.E7.AC.A6.E9.9B.86.E6.9E.84.E9.80.A0"><span class="tocnumber">3.2.3</span> <span class="toctext">子问题字符集构造</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#.E6.8E.92.E5.BA.8F.E5.AD.90.E9.97.AE.E9.A2.98.E5.AD.97.E7.AC.A6.E9.9B.86"><span class="tocnumber">3.2.4</span> <span class="toctext">排序子问题字符集</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#.E6.9C.80.E9.95.BF.E5.85.AC.E5.85.B1.E5.89.8D.E7.BC.80"><span class="tocnumber">4</span> <span class="toctext">最长公共前缀</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#.E6.9E.84.E9.80.A0.E5.90.8E.E7.BC.80.E6.A0.91"><span class="tocnumber">5</span> <span class="toctext">构造后缀树</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#.E5.90.8E.E7.BC.80.E6.95.B0.E7.BB.84.E7.9A.84.E5.BA.94.E7.94.A8"><span class="tocnumber">6</span> <span class="toctext">后缀数组的应用</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#.E4.BE.8B.E9.A2.98"><span class="tocnumber">7</span> <span class="toctext">例题</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#.E5.8F.82.E8.80.83.E8.B5.84.E6.96.99"><span class="tocnumber">8</span> <span class="toctext">参考资料</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="/index.php?title=%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84&amp;action=edit&amp;section=1" title="编辑段落：基本概念">编辑</a>]</span> <span class="mw-headline" id=".E5.9F.BA.E6.9C.AC.E6.A6.82.E5.BF.B5"> 基本概念 </span></h2>
+<p><big>一、</big><a href="/index.php?title=%E5%AD%97%E7%AC%A6%E4%B8%B2&amp;action=edit&amp;redlink=1" class="new" title="字符串（尚未撰写）">字符串</a>的大小比较： 关于字符串的大小比较，是指通常所说的 “ 字典顺序 ” 比较， 也就是对于两个字符串 u 、v ，令 i 从 1 开始顺次比较 u[i] 和 v[i] ，如果u[i]=v[i] 则令 i 加 1 ，否则若 u[i]&lt;v[i] 则认为 u&lt;v ，u[i]&gt;v[i] 则认为 u&gt;v，比较结束。如果 i&gt;len(u) 或者 i&gt;len(v) 仍比较不出结果，那么若 len(u)&lt;len(v)则认为 u&lt;v ， 若 len(u)=len(v) 则 认 为 u=v ，若 len(u)&gt;len(v) 则 u&gt;v 。
+</p>
+ <pre style="word-break: break-all; word-wrap:word-break;white-space: pre-wrap;"> 注：从字符串的大小比较的定义看，字符串s的所有后缀中任其中一对(u,v)不可能会相等，因为必要条件 len(u) ≠ len(v)不可能满足。所以任一字符串s中有len(s)个互不相同的后缀。我们可以将s的所有后缀排列，利用 后缀数组sa 与 名次数组rank 储存。 </pre>
+<p><big>二、</big>后缀数组sa：将s的n个后缀从小到大排序后将 排序后的后缀的<b>开头位置</b> 顺次放入sa中，则sa[i]储存的是排第i大的后缀的开头位置。简单的记忆就是“<b>排第几的是谁</b>”。
+</p><p><br />
+<big>三、</big>名次数组rank：rank[i]保存的是suffix(i)｛后缀｝在所有后缀中从小到大排列的名次。则 若 sa[i]=j，则 rank[j]=i。简单的记忆就是“<b>你排第几</b>”。
+</p><p><br />
+对于 后缀数组sa 与 名次数组rank ，有
+</p>
+<pre>rank[ sa[i] ]=i （这是很重要的一点，通过sa与rank的关系可以求出后缀数组）
+</pre>
+<div class="thumb tleft"><div class="thumbinner" style="width:402px;"><a href="/index.php/%E6%96%87%E4%BB%B6:20120630fc_sa%26rank.png" class="image"><img alt="" src="/images/thumb/4/44/20120630fc_sa%26rank.png/400px-20120630fc_sa%26rank.png" width="400" height="252" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="/index.php/%E6%96%87%E4%BB%B6:20120630fc_sa%26rank.png" class="internal" title="放大"><img src="/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>字符串aabaaaab的sa数组与rank数组</div></div></div>由此可看出，后缀数组sa 与名次数组rank的关系为互逆关系。
+<h2><span class="editsection">[<a href="/index.php?title=%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84&amp;action=edit&amp;section=2" title="编辑段落：倍增算法">编辑</a>]</span> <span class="mw-headline" id=".E5.80.8D.E5.A2.9E.E7.AE.97.E6.B3.95"> 倍增算法 </span></h2>
+<p><big>一、</big>主要思路：<a href="/index.php?title=%E5%80%8D%E5%A2%9E&amp;action=edit&amp;redlink=1" class="new" title="倍增（尚未撰写）">倍增</a>，s[<span class="texhtml" dir="ltr"><i>i</i>..<i>i</i> + 2<sup><i>k</i></sup> &#8722; 1</span>]的排名通过s[<span class="texhtml" dir="ltr"><i>i</i>..<i>i</i> + 2<sup><i>k</i> &#8722; 1</sup> &#8722; 1</span>]和s[<span class="texhtml" dir="ltr"><i>i</i> + 2<sup><i>k</i> &#8722; 1</sup>..<i>i</i> + 2<sup><i>k</i></sup> &#8722; 1</span>]的排名得到。
+</p><p><big>二、</big>简要过程：已知每个长度为<span class="texhtml" dir="ltr">2<sup><i>k</i> &#8722; 1</sup></span>的字符串的排名，则可作为每个长度为<span class="texhtml" dir="ltr">2<sup><i>k</i></sup></span>的字符串求排名的关键字xy，s[<span class="texhtml" dir="ltr"><i>i</i>..<i>i</i> + 2<sup><i>k</i></sup> &#8722; 1</span>]第一关键字x为s[<span class="texhtml" dir="ltr"><i>i</i>..<i>i</i> + 2<sup><i>k</i> &#8722; 1</sup> &#8722; 1</span>]的排名，第二关键字y为s[<span class="texhtml" dir="ltr"><i>i</i> + 2<sup><i>k</i> &#8722; 1</sup>..<i>i</i> + 2<sup><i>k</i></sup> &#8722; 1</span>]的排名。以字符串aabaaaab为例：
+</p>
+<dl><dd><dl><dd><dl><dd><dl><dd><ol><li>k=0,对每个字符开始的长度为<span class="texhtml" dir="ltr">2<sup>0</sup> = 1</span>的子串进行排序，得到rank[1..8]={1,1,2,1,1,1,1,2}
+</li><li>k=1,对每个字符开始的长度为<span class="texhtml" dir="ltr">2<sup>1</sup> = 2</span>的子串进行排序：由k=0的rank得关键字xy[1..8]={11,12,21,11,11,11,12,20}，得到rank[1..8]={1,2,4,1,1,1,2,3}
+</li><li>k=2,对每个字符开始的长度为<span class="texhtml" dir="ltr">2<sup>2</sup> = 4</span>的子串进行排序：由k=1的rank得关键字xy[1..8]={14,21,41,11,12,13,20,30}，得到rank[1..8]={4,6,8,1,2,3,5,7}
+</li><li>k=3,对每个字符开始的长度为<span class="texhtml" dir="ltr">2<sup>3</sup> = 8</span>的子串进行排序：由k=2的rank得关键字xy[1..8]={42,63,85,17,20,30,50,70}，得到rank[1..8]={4,6,8,1,2,3,5,7}
+</li></ol>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<p><b>注意：在排序过程中，rank[]可以有相同排名，但是sa[]排第几是没有相同的（就像Excel的排序，sa相当于编号，rank相当于排名）。这点可以从程序中体现。建议读者跟踪一下程序体会一下。</b>
+</p>
+<b>整个过程</b>如图：<div class="thumb tright"><div class="thumbinner" style="width:402px;"><a href="/index.php/%E6%96%87%E4%BB%B6:20120630fc_sort.png" class="image"><img alt="" src="/images/thumb/d/da/20120630fc_sort.png/400px-20120630fc_sort.png" width="400" height="320" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="/index.php/%E6%96%87%E4%BB%B6:20120630fc_sort.png" class="internal" title="放大"><img src="/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>倍增算法的计算过程</div></div></div>
+<p><br />
+<big>三、</big>时间复杂度分析：每一趟的计数排序的时间复杂度是O(n)，排序的次数共log n次，总的时间复杂度为O(n log n)。
+</p>
+<pre>算法代码如下：
+</pre>
+<p><br />
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"> <span class="kw4">void</span> sorting<span class="br0">&#40;</span><span class="kw4">int</span> j<span class="br0">&#41;</span><span class="co1">//基数排序</span>
+ <span class="br0">&#123;</span>
+ 	<span class="kw3">memset</span><span class="br0">&#40;</span>sum,<span class="nu0">0</span>,<span class="kw3">sizeof</span><span class="br0">&#40;</span>sum<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+ 	<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span> i<span class="sy1">&lt;=</span>s.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> sum<span class="br0">&#91;</span> rank<span class="br0">&#91;</span>i<span class="sy2">+</span>j<span class="br0">&#93;</span> <span class="br0">&#93;</span><span class="sy2">++</span><span class="sy4">;</span>
+ 	<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span> i<span class="sy1">&lt;=</span>maxlen<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> sum<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy2">+</span><span class="sy1">=</span>sum<span class="br0">&#91;</span>i<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy4">;</span>
+ 	<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span>s.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> i<span class="sy1">&gt;</span><span class="nu0">0</span><span class="sy4">;</span> i<span class="sy2">--</span><span class="br0">&#41;</span>
+             tsa<span class="br0">&#91;</span> sum<span class="br0">&#91;</span> rank<span class="br0">&#91;</span>i<span class="sy2">+</span>j<span class="br0">&#93;</span> <span class="br0">&#93;</span><span class="sy2">--</span> <span class="br0">&#93;</span><span class="sy1">=</span>i<span class="sy4">;</span>
+        <span class="co1">//对第二关键字计数排序，tsa代替sa为排名为i的后缀是tsa[i] </span>
+&#160;
+ 	<span class="kw3">memset</span><span class="br0">&#40;</span>sum,<span class="nu0">0</span>,<span class="kw3">sizeof</span><span class="br0">&#40;</span>sum<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+ 	<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span> i<span class="sy1">&lt;=</span>s.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> sum<span class="br0">&#91;</span> rank<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="br0">&#93;</span><span class="sy2">++</span><span class="sy4">;</span>
+ 	<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span> i<span class="sy1">&lt;=</span>maxlen<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> sum<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy2">+</span><span class="sy1">=</span>sum<span class="br0">&#91;</span>i<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy4">;</span>
+ 	<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span>s.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> i<span class="sy1">&gt;</span><span class="nu0">0</span><span class="sy4">;</span> i<span class="sy2">--</span><span class="br0">&#41;</span>
+             sa<span class="br0">&#91;</span> sum<span class="br0">&#91;</span> rank<span class="br0">&#91;</span> tsa<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="br0">&#93;</span> <span class="br0">&#93;</span><span class="sy2">--</span> <span class="br0">&#93;</span><span class="sy1">=</span> tsa<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy4">;</span> 
+        <span class="co1">//对第一关键字计数排序,构造互逆关系 </span>
+ <span class="br0">&#125;</span>
+&#160;
+ <span class="kw4">void</span> get_sa<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#123;</span>
+ 	<span class="kw4">int</span> p<span class="sy4">;</span>
+ 	<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> i<span class="sy1">&lt;</span>s.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> trank<span class="br0">&#91;</span>i<span class="sy2">+</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy1">=</span>s<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy4">;</span>
+ 	<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span> i<span class="sy1">&lt;=</span>s.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> sum<span class="br0">&#91;</span> trank<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="br0">&#93;</span><span class="sy2">++</span><span class="sy4">;</span>
+ 	<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span> i<span class="sy1">&lt;=</span>maxlen<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> sum<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy2">+</span><span class="sy1">=</span>sum<span class="br0">&#91;</span>i<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy4">;</span>
+ 	<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span>s.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> i<span class="sy1">&gt;</span><span class="nu0">0</span><span class="sy4">;</span> i<span class="sy2">--</span><span class="br0">&#41;</span> 
+ 		sa<span class="br0">&#91;</span> sum<span class="br0">&#91;</span> trank<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="br0">&#93;</span><span class="sy2">--</span> <span class="br0">&#93;</span><span class="sy1">=</span>i<span class="sy4">;</span>
+ 	rank<span class="br0">&#91;</span> sa<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="br0">&#93;</span><span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>
+ 	<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">2</span>,p<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span> i<span class="sy1">&lt;=</span>s.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span>
+ 	<span class="br0">&#123;</span>
+ 		<span class="kw1">if</span> <span class="br0">&#40;</span>trank<span class="br0">&#91;</span> sa<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="br0">&#93;</span><span class="sy3">!</span><span class="sy1">=</span>trank<span class="br0">&#91;</span> sa<span class="br0">&#91;</span>i<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="br0">&#93;</span><span class="br0">&#41;</span> p<span class="sy2">++</span><span class="sy4">;</span>
+ 		rank<span class="br0">&#91;</span> sa<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="br0">&#93;</span><span class="sy1">=</span>p<span class="sy4">;</span>
+ 	<span class="br0">&#125;</span><span class="co1">//第一次的sa与rank构造完成</span>
+ 	<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> j<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span> j<span class="sy1">&lt;=</span>s.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> j<span class="sy2">*</span><span class="sy1">=</span><span class="nu0">2</span><span class="br0">&#41;</span>
+ 	<span class="br0">&#123;</span>
+ 		sorting<span class="br0">&#40;</span>j<span class="br0">&#41;</span><span class="sy4">;</span>
+ 		trank<span class="br0">&#91;</span> sa<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="br0">&#93;</span><span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span> p<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span> <span class="co1">//用trank代替rank </span>
+ 		<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">2</span><span class="sy4">;</span> i<span class="sy1">&lt;=</span>s.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span>
+ 		<span class="br0">&#123;</span>
+ 			<span class="kw1">if</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>rank<span class="br0">&#91;</span> sa<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="br0">&#93;</span><span class="sy3">!</span><span class="sy1">=</span>rank<span class="br0">&#91;</span> sa<span class="br0">&#91;</span>i<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="sy3">||</span> <span class="br0">&#40;</span>rank<span class="br0">&#91;</span> sa<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy2">+</span>j <span class="br0">&#93;</span><span class="sy3">!</span><span class="sy1">=</span>rank<span class="br0">&#91;</span> sa<span class="br0">&#91;</span>i<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy2">+</span>j <span class="br0">&#93;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> p<span class="sy2">++</span><span class="sy4">;</span>
+ 			trank<span class="br0">&#91;</span> sa<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="br0">&#93;</span><span class="sy1">=</span>p<span class="sy4">;</span><span class="co1">//空间要开大一点，至少2倍</span>
+ 		<span class="br0">&#125;</span>
+ 		<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span> i<span class="sy1">&lt;=</span>s.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> rank<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy1">=</span>trank<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy4">;</span>
+ 	<span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<h2><span class="editsection">[<a href="/index.php?title=%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84&amp;action=edit&amp;section=3" title="编辑段落：线性时间复杂度算法">编辑</a>]</span> <span class="mw-headline" id=".E7.BA.BF.E6.80.A7.E6.97.B6.E9.97.B4.E5.A4.8D.E6.9D.82.E5.BA.A6.E7.AE.97.E6.B3.95"> 线性时间复杂度算法 </span></h2>
+<p>基本上有两个不同的线性算法，分别是Juha Karkkainen和Peter Sanders在2003年提出的[KS03]以及Pang Ko和Srinivas Aluru在2003年提出的[KA03]。Ge Nong、Sen Zhang和Wai Hong Chan后来在[NZC08]中对[KA03]提出了一种改进。
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84&amp;action=edit&amp;section=4" title="编辑段落：KS03">编辑</a>]</span> <span class="mw-headline" id="KS03"> KS03 </span></h3>
+<p>算法简述：先给字符串S末尾补3个$。再对字符串中在3i+1, 3i+2起始的连续三个字母构造一个新的字符集，并对该字符集进行<a href="/index.php/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F" title="基数排序">基数排序</a>（radix sort）。接着构造T = S[1:3]S[4:6]……$S[2:4]S[5:7]……$，对T递归算出后缀数组，就可以得到S[3i+1:]（suffix(3i+1)）和S[3i+2:]在后缀数组中的顺序了。
+</p><p>然后只要再将S[3i:]插入到正确的位置。由于S[3i:]可以看作S[3i]S[3i+1:]、所以S[3i:]跟S[3j+1:]的大小比较相当于(S[3i], S[3i+1:])跟(S[3j+1], S[3j+2]:)的比较。因此通过一次基数排序可以将S[3i:]与S[3i+1:]排序（S[3i+2:]与S[3i+1:]的相对顺序保持不变）。同理S[3i:]与S[3j+2:]的比较相当于(S[3i], S[3i+1:])与(S[3j+2], S[3(j+1):])的比较，再进行一次基数排序即可将S的所有后缀的顺序排好。
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84&amp;action=edit&amp;section=5" title="编辑段落：KA03">编辑</a>]</span> <span class="mw-headline" id="KA03"> KA03 </span></h3>
+<h4><span class="editsection">[<a href="/index.php?title=%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84&amp;action=edit&amp;section=6" title="编辑段落：基本观察">编辑</a>]</span> <span class="mw-headline" id=".E5.9F.BA.E6.9C.AC.E8.A7.82.E5.AF.9F"> 基本观察 </span></h4>
+<p>如果s[i:] &lt; s[i+1:]那么给i标记“小”，不然标记“大”；s[len:]也就是$，给它双重标记。计算标记只要将字符串倒着扫描一遍。（认为$是最小的字符）
+</p><p>对所有的后缀按照其首字母装入桶中。假设桶为n，容易发现，标记为“大”的后缀（大后缀）都是小于nnn…的，而标记为“小”的后缀（小后缀）都是大于nnn…的。因此在桶中，大后缀应该在小后缀的左边。另外，大后缀的下一个后缀在其左边，小后缀的下一个后缀在其右边。
+</p>
+<h4><span class="editsection">[<a href="/index.php?title=%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84&amp;action=edit&amp;section=7" title="编辑段落：算法">编辑</a>]</span> <span class="mw-headline" id=".E7.AE.97.E6.B3.95"> 算法 </span></h4>
+<p>大后缀的数目和小后缀的数目总有一个不超过|S| / 2的。不妨假设小后缀比较少。如果我们对所有小后缀递归地排序了，就可以通过下面的方法对所有后缀进行排序。
+</p><p>先将桶中的所有小后缀按照递归计算的结果排序。这一步是线性的。
+</p><p>顺序扫描所有桶。第一个桶是$，里面只有后缀$。对每个扫描到的后缀S[i:]，如果它前一个后缀（即S[i-1:]）是大后缀，就把它调整到它的桶的最前方，并固定它的位置（也就是桶的头后移一位，或者可以认为桶不再包括它了）。正确性是因为，我们读到的后缀都已经是顺序的了，而且根据读取过的东西立刻调整S[i-1:]的位置，每次调整一定会把被调整的东西放到正确的位置，这是因为一个桶内的后缀的从第二个字母开始排序的顺序跟整体的后缀顺序是一致的。由于大后缀一定会被之前的某个东西调整，所以能保证在读到接下来它的时候，它已经是被调整到正确的位置上了。
+</p><p>如果是大后缀多，算法只要修改为从后向前扫描桶，桶里也从后向前，然后对上一个后缀的调整是调整到桶的末尾。证明中略不同的是，最后一个桶假设是x，那么x就是最大的出现过的字符，可以证明桶x中的后缀都是大后缀。而大后缀已经排序好了，所以从后向前扫描时，是按照最终排序结果的倒序读取的。
+</p>
+<h4><span class="editsection">[<a href="/index.php?title=%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84&amp;action=edit&amp;section=8" title="编辑段落：子问题字符集构造">编辑</a>]</span> <span class="mw-headline" id=".E5.AD.90.E9.97.AE.E9.A2.98.E5.AD.97.E7.AC.A6.E9.9B.86.E6.9E.84.E9.80.A0"> 子问题字符集构造 </span></h4>
+<p>对所有小后缀排序就只能把这些小后缀相间的部分缩成字符集，但是变长字符集是个大问题，如果字符集中一个字符是另一个的前缀，就无法比较由这个字符集组成的字符串的大小了。
+</p><p>解决办法是substring定义为包含后面一个小后缀的首字母，即如果两个相邻的小后缀，分别在i和j位置开始，那么substring定义为S[i..j]。这样，如果一个substring是另一个的前缀，例如长的那个是“小大大大大大小”而短的是“小大大小”，根据前面提的大比小靠左的规则，短的要靠后，长的靠前，顺序就可以确定了。
+</p>
+<h4><span class="editsection">[<a href="/index.php?title=%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84&amp;action=edit&amp;section=9" title="编辑段落：排序子问题字符集">编辑</a>]</span> <span class="mw-headline" id=".E6.8E.92.E5.BA.8F.E5.AD.90.E9.97.AE.E9.A2.98.E5.AD.97.E7.AC.A6.E9.9B.86"> 排序子问题字符集 </span></h4>
+<p>原始方法：
+</p><p>把所有字母装桶（具体的桶），再根据它是substring的第几个字母分别挪到第几行，不同的桶内的字符划条竖线以示区别。根据第二行的分割，对第一行的桶进行细分（怎么做不用再说了吧），再根据第三行的分割对第一行进行细分，……字符集就做好了。其实这个桶的性质很好，都跟棵树一样了。那么，就只用把同一个桶中的如果有多个substring，对那个桶排序就可以了吧，但是比较可惜这里做不了太多优化，只能把原字符串中连续出现单字符桶缩成一个，递归完了之后，可以在当前的桶的基础上挪一挪。（不做这个优化就不用挪桶里的东西）
+</p><p>改进的方法（来自<a rel="nofollow" class="external text" href="http://yangzhe1990.wordpress.com/2012/09/14/suffix-array-suffix-tree/">yangzhe1990</a>）：
+</p><p>这个方法的来源是[NZC08]。做法是：对S的所有字符按照首字母装桶，对桶内再按照大后缀在前小后缀在后的规则排好。然后顺序扫描这个桶。对于每个扫描到的后缀S[i:]，如果它上一个后缀S[i-1:]是大后缀，就将它调整到它所在桶中的第一个，并固定它在桶中的位置；如果S[i-1:]是小后缀，就将它调整到它所在桶中的小后缀的第一个，并固定它的位置。
+</p><p>正确性证明懒得写了…详见<a rel="nofollow" class="external text" href="http://yangzhe1990.wordpress.com/2012/09/14/suffix-array-suffix-tree/">yangzhe1990</a>。谁有空来整理一下。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84&amp;action=edit&amp;section=10" title="编辑段落：最长公共前缀">编辑</a>]</span> <span class="mw-headline" id=".E6.9C.80.E9.95.BF.E5.85.AC.E5.85.B1.E5.89.8D.E7.BC.80"> 最长公共前缀 </span></h2>
+<p>求出了rank和sa数组还不够，通常我们需要由rank与sa数组计算出一个辅助工具height数组——最长公共前缀(LCP)。
+</p><p><br />
+<b>height 数组</b>： 定义height[i]=suffix(sa[i-1]) 和 suffix(sa[i]) 的最长公共前缀，也就是排名相邻的两个后缀的最长公共前缀。
+</p>
+<pre>由height数组可得，对于j和k ，不妨设rank[j]&lt;rank[k], 则有以下<b>性质</b>：suffix(j) 和 suffix(k) 的最长公共前缀为 height[rank[j]+1],height[rank[j]+2], height[rank[j]+3], … ,height[rank[k]] 中的最小值。
+</pre>
+以"aabaaaab"为例，求后缀"abaaaab"和后缀"aaab"的最长公共前缀，如图，可见其最长公共前缀等于1。<div class="thumb tright"><div class="thumbinner" style="width:402px;"><a href="/index.php/%E6%96%87%E4%BB%B6:20120630fc_height.png" class="image"><img alt="" src="/images/thumb/b/bc/20120630fc_height.png/400px-20120630fc_height.png" width="400" height="268" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="/index.php/%E6%96%87%E4%BB%B6:20120630fc_height.png" class="internal" title="放大"><img src="/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>计算后缀"abaaaab"和后缀"aaab"的最长公共前缀</div></div></div>
+<p>所以说，计算最长公共前缀是一个典型的<a href="/index.php/RMQ" title="RMQ">RMQ</a>问题。
+</p><p>如果直接按照sa的顺序一个一个求解，每一次比较最坏的时间复杂度是O(len(s))，一共要比较len(s)次，所以时间复杂度是<span class="texhtml" dir="ltr"><i>O</i>(<i>l</i><i>e</i><i>n</i>(<i>s</i>)<sup>2</sup>)</span>。这样求height数组是非常慢的，而且没有用到之前所说height数组的性质。
+</p><p>那么，如何<b>高效</b>地计算后缀间的最长公共前缀呢？
+</p><p>当然是使用之前所说的性质。定义h[i]为suffix(i)和前一名次后缀的最长公共前缀{sa[ rank[ i ]-1 ]}。由性质可得，
+</p>
+<pre><img class="tex" alt="h[i] \ge h[i-1]-1" src="/images/math/c/2/2/c2249a52c41bbd3d158679c4757e8c5d.png" />。
+</pre>
+ <pre style="word-break: break-all; word-wrap:word-break;white-space: pre-wrap;"> 简单的证明如下：设suffix(k)是排在suffix(i-1)前一位的后缀，则它们的最长公共前缀显然是h[i-1]。那么，suffix(k+1)显然将排在suffix(i)的前面。并且，suffix(k+1)&amp;suffix(i) 相对于 suffix(k)&amp;suffix(i-1)来说就是同时去掉了第一位，即少了一位的匹配数。所以suffix(i)和前一名次后缀的最长公共前缀至少是h[i-1]-1。</pre>
+<p>显然，我们可以按照h数组的顺序计算height。时间复杂度分析：求一次height后位数-1，一共有len(s)个后缀，所以只能退len(s)次，也就是说，求解的时间复杂度是O(len(s))。
+</p>
+<pre>算法代码如下：
+</pre>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"> <span class="kw4">void</span> get_height<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#123;</span>
+ 	<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">1</span>,j<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> i<span class="sy1">&lt;=</span>s.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span><span class="co1">//用j代替上面的h数组</span>
+ 	<span class="br0">&#123;</span>
+ 		<span class="kw1">if</span> <span class="br0">&#40;</span>rank<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy1">==</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="kw1">continue</span><span class="sy4">;</span>
+ 		<span class="kw1">for</span> <span class="br0">&#40;</span><span class="sy4">;</span> s<span class="br0">&#91;</span>i<span class="sy2">+</span>j<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy1">==</span>s<span class="br0">&#91;</span> sa<span class="br0">&#91;</span> rank<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy2">-</span><span class="nu0">1</span> <span class="br0">&#93;</span><span class="sy2">+</span>j<span class="sy2">-</span><span class="nu0">1</span> <span class="br0">&#93;</span><span class="sy4">;</span> <span class="br0">&#41;</span> j<span class="sy2">++</span><span class="sy4">;</span><span class="co1">//注意越界之类的问题 </span>
+ 		height<span class="br0">&#91;</span> rank<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="br0">&#93;</span><span class="sy1">=</span>j<span class="sy4">;</span>
+ 		<span class="kw1">if</span> <span class="br0">&#40;</span>j<span class="sy1">&gt;</span><span class="nu0">0</span><span class="br0">&#41;</span> j<span class="sy2">--</span><span class="sy4">;</span>
+ 	<span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<h2><span class="editsection">[<a href="/index.php?title=%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84&amp;action=edit&amp;section=11" title="编辑段落：构造后缀树">编辑</a>]</span> <span class="mw-headline" id=".E6.9E.84.E9.80.A0.E5.90.8E.E7.BC.80.E6.A0.91"> 构造后缀树 </span></h2>
+<p>利用最长公共前缀数组（lcp数组），使用一个栈就可以构造出相应的后缀树。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84&amp;action=edit&amp;section=12" title="编辑段落：后缀数组的应用">编辑</a>]</span> <span class="mw-headline" id=".E5.90.8E.E7.BC.80.E6.95.B0.E7.BB.84.E7.9A.84.E5.BA.94.E7.94.A8"> 后缀数组的应用 </span></h2>
+<p>先提出后缀数组的几种常用技巧：
+</p>
+<dl><dd><dl><dd><dl><dd><dl><dd><ol><li>建议多找找与height数组的关联。
+</li><li>将几个字符串贴在一起，用特殊符号间隔开：如aab与aaab，可合并成aab$aaab。
+</li><li>二分+分组（思想）的方法：枚举出答案后，就能将合法的情况划分到一个组判断。
+</li></ol>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<p>以下列举出几个后缀数组的应用供大家思考，也可在讨论页讨论。
+</p>
+<ol><li>求两个后缀的最长公共前缀
+</li><li>求字符串的可重叠的最长重复子串：如ababa可重叠的最长重复子串是aba
+</li><li>求字符串的不可重叠的最长重复子串：如ababa不可重叠的最长重复子串是ab [提示：想想建议3]
+</li><li>计算不相同子串的个数：如aaaa的不相同子串数是4
+</li><li>计算最长回文子串：如aabaaaab的最长回文子串是6(baaaab)。[提示：想想建议2]
+</li><li>求两个字符串的最长公共子串：如aaba与abac的最长公共子串是aba。
+</li></ol>
+<p><br />
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84&amp;action=edit&amp;section=13" title="编辑段落：例题">编辑</a>]</span> <span class="mw-headline" id=".E4.BE.8B.E9.A2.98"> 例题 </span></h2>
+<ol><li>[<a rel="nofollow" class="external text" href="http://poj.org/problem?id=3261">poj3261</a>]
+</li><li>[<a rel="nofollow" class="external text" href="http://poj.org/problem?id=2774">poj2774</a>]
+</li><li>[<a rel="nofollow" class="external text" href="http://poj.org/problem?id=1743">poj1743</a>]
+</li><li>[<a rel="nofollow" class="external text" href="http://poj.org/problem?id=3415">poj3415</a>]
+</li></ol>
+<p><br />
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84&amp;action=edit&amp;section=14" title="编辑段落：参考资料">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E8.80.83.E8.B5.84.E6.96.99"> 参考资料 </span></h2>
+<ul><li> 国家集训队2009论文《后缀数组——处理字符串的有力工具》    罗穗骞
+</li><li> 国家集训队2004论文《后缀数组》    许智磊
+</li><li> 《程序设计中实用的数据结构》    王建德 吴永辉
+</li><li> [KA03] Juha Karkkainen and Peter Sanders, Simple Linear Work Suffix Array Construction, Proceedings of the 30th International Colloquium on Automata, Languages and Programming, LNCS 2719, Springer, pp. 943-955, 2003.
+</li><li> [KS03] Pang Ko and Srinivas Aluru, Space-efficient linear time construction of suffix arrays, Proceedings of the 14th Annual Symposium on Combinatorial Pattern Matching, pp. 200-210, 2003.
+</li><li> [NZC08] Ge Nong, Sen Zhang and Wai Hong Chan, Two Efficient Algorithms for Linear Suffix Array Construction, 2008.
+</li><li> <a rel="nofollow" class="external free" href="http://yangzhe1990.wordpress.com/2012/09/14/suffix-array-suffix-tree/">http://yangzhe1990.wordpress.com/2012/09/14/suffix-array-suffix-tree/</a>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 217/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:3786-0!1!0!!zh-cn!2!* and timestamp 20151105060625 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84&amp;oldid=34154">http://www.nocow.cn/index.php?title=%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84&amp;oldid=34154</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84&amp;oldid=34154" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过16,099次。</li>
+		<li id="credits">本页面由<a href="/index.php?title=%E7%94%A8%E6%88%B7:Logic&amp;action=edit&amp;redlink=1" class="new" title="用户:Logic（尚未撰写）">Logic_zys</a>于2014年1月31日 (星期五) 20:00做出最后修改。 在NOCOW用户<a href="/index.php/%E7%94%A8%E6%88%B7:Yangzhe1990" title="用户:Yangzhe1990">Yangzhe1990</a>、NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/58.213.145.149" title="特殊:用户贡献/58.213.145.149">58.213.145.149</a>、<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/118.112.180.102" title="特殊:用户贡献/118.112.180.102">118.112.180.102</a>和<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/125.107.13.30" title="特殊:用户贡献/125.107.13.30">125.107.13.30</a>和<a href="/index.php?title=%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84&amp;action=credits" title="后缀数组">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.232 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

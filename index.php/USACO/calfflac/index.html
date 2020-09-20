@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>USACO/calfflac - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=USACO/calfflac&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=USACO/calfflac&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "USACO/calfflac", "wgTitle": "USACO/calfflac", "wgCurRevisionId": 34348, "wgArticleId": 239, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-USACO_calfflac action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">USACO/calfflac</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="/index.php/USACO" title="USACO">USACO</a></span></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><h2><span class="editsection">[<a href="/index.php?title=USACO/calfflac&amp;action=edit&amp;section=1" title="编辑段落：分析">编辑</a>]</span> <span class="mw-headline" id=".E5.88.86.E6.9E.90">分析</span></h2>
+<p>没什么好说的，硬搜，数据刚好不会超时。
+</p><p>枚举中间数（也就是认为它是回文数最中间的字母），然后左右扩展（忽略非字母）至出界和不相等。最后更新最大值。
+</p><p>要考虑回文是奇数和偶数两种情况。提示大家在开始扩展之前就判断（很巧妙，大家举几个例子就可以明白了）
+</p><p>输入中的换行符可以维持原样不变，PASCAL和C不会输出成乱码。
+</p><p>Usaco的数据有点弱了，提供一个样例：axazzaxazza，卡传统的DP。
+</p><p>想到了爆搜，从头开始枚举每一个点，然后再从这个点向后搜，找到每一个和它相同的点，判断是否是回文
+</p><p>结果此算法超时....
+(107229HR写:通过优化,这一题搞定了,但时间不少
+Executing...
+</p>
+<pre>  Test 1: TEST OK [0.000 secs, 3068 KB]
+  Test 2: TEST OK [0.000 secs, 3068 KB]
+  Test 3: TEST OK [0.000 secs, 3068 KB]
+  Test 4: TEST OK [0.000 secs, 3068 KB]
+  Test 5: TEST OK [0.000 secs, 3068 KB]
+  Test 6: TEST OK [0.054 secs, 3068 KB]
+  Test 7: TEST OK [0.027 secs, 3068 KB]
+  Test 8: TEST OK [0.594 secs, 3068 KB]
+</pre>
+<p>)
+给大家一个警示...
+——pollow
+</p>
+<hr />
+<p>Executing...
+</p>
+<pre>  Test 1: TEST OK [0.000 secs, 324 KB]
+  Test 2: TEST OK [0.000 secs, 324 KB]
+  Test 3: TEST OK [0.000 secs, 324 KB]
+  Test 4: TEST OK [0.000 secs, 324 KB]
+  Test 5: TEST OK [0.000 secs, 324 KB]
+  Test 6: TEST OK [0.011 secs, 324 KB]
+  Test 7: TEST OK [0.000 secs, 324 KB]
+  Test 8: TEST OK [0.205 secs, 324 KB]
+</pre>
+<p><br />
+枚举回文字串的中间值，左右拓展。对于这种弱弱的题目没有必要后缀数组啊dp啊什么的，此算法正确性高，空间复杂度完全可以接受，就是慢了点而已。（也就test 8慢了点，其他甚至比更优的算法要好
+</p>
+<hr />
+<p><br />
+Executing...
+</p>
+<pre>  Test 1: TEST OK [0.000 secs, 412 KB]
+  Test 2: TEST OK [0.000 secs, 412 KB]
+  Test 3: TEST OK [0.000 secs, 412 KB]
+  Test 4: TEST OK [0.000 secs, 412 KB]
+  Test 5: TEST OK [0.000 secs, 412 KB]
+  Test 6: TEST OK [0.000 secs, 412 KB]
+  Test 7: TEST OK [0.000 secs, 412 KB]
+  Test 8: TEST OK [0.081 secs, 412 KB]
+</pre>
+<p><br />
+直接枚举中间点吧。。。很快的  只要分奇偶两种情况讨论就行了
+</p>
+<hr />
+<p><b>下面和下面的下面的DP的方法是错误的 修正的DP方法在下面的下面的下面</b>
+</p><p>来说说一种O(n)的动态规划算法。
+方程f[i]=f[i-1]+2  如果(a[i]=a[i-f[i-1]-1])
+</p><p>或  f[i]=2         如果(a[i]=a[i-1])
+</p><p>或  f[i]=1
+</p><p>其中f[i]是以恰好第i个字符结尾的回文串最大长
+</p><p>速度巨快如雷电...
+</p><p>USER: Vegetable frogl1
+</p><p>TASK: calfflac
+</p><p>LANG: PASCAL
+</p><p>Compiling...
+</p><p>Compile: OK
+</p><p>Executing...
+</p>
+<pre>  Test 1: TEST OK [0.000 secs, 320 KB]
+  Test 2: TEST OK [0.000 secs, 324 KB]
+  Test 3: TEST OK [0.000 secs, 320 KB]
+  Test 4: TEST OK [0.000 secs, 320 KB]
+  Test 5: TEST OK [0.011 secs, 324 KB]
+  Test 6: TEST OK [0.000 secs, 324 KB]
+  Test 7: TEST OK [0.011 secs, 324 KB]
+  Test 8: TEST OK [0.000 secs, 324 KB]
+</pre>
+<p>All tests OK.
+</p>
+<hr />
+<p>貌似是错误的方法
+反例:aaa
+</p><p>如果序列是cbbabbab 那么倒数第二个字母的a，按照程序的话应该f[7]=1,但实际上是4
+</p><p>应该按回文串长度的奇偶性分别进行动规
+</p>
+<hr />
+<p>如楼上所言，楼上的楼上所说方法错误，axazzaxazza和aaa都得出错误答案，但usaco上能过。
+稍作改进就完全对了，应该分奇偶讨论，dp两次：
+奇数:
+</p>
+<pre> 初始化：dp1[1]=1;
+ dp1[i]=dp1[i-dp1[i-1]-1]+2；（若a[i]=a[i-dp1[i-1]-1]）
+ 否则 dp1[i]=1;    
+</pre>
+<p>偶数：
+</p>
+<pre>  初始化：dp2[1]=0;
+  dp2[i]=dp2[i-dp2[i-1]-1]+2；（若a[i]=a[i-dp2[i-1]-1]）
+  否则 dp2[i]=0;
+</pre>
+<p>两次dp需要各开一个数组：dp1[]，dp2[]
+取两次dp中的最大值，并判断该值是属于奇数偶数，
+判断有点费劲，我是这么做的：
+</p>
+<pre>    int tg=1,i,ans=1;
+   for(i=1;i&lt;=n;i++) ans=dp1[ans]&lt;dp1[i]?i:ans;
+   for(i=1;i&lt;=n;i++) if(dp1[ans]&lt;dp2[i]){ans=i;tg=2;break;}
+   for(i++;i&lt;=n;i++) if(dp2[ans]&lt;dp2[i]) ans=i;
+   if(tg==1) 是奇数，按dp1[]数组输出
+    else      是偶数，按dp2[]数组输出
+</pre>
+<hr />
+<p>修正：楼上几楼的都不对吧，
+对于楼楼楼上，如果是cbbabbab的话，如楼上所说错误，不多赘述
+对于楼楼上所举的楼楼楼上的反例，表示完全正确
+对于楼上，如果是abbaabba，那么dp2[]是0 0 2 4 0 0 2 4，而正确的是0 0 2 4 2 4 6 8
+而事实证明，楼上的算法基本正确，但如果再加上楼楼楼上的一条语句在dp2[]的赋值里就可以了
+正解应为：
+奇数:
+</p>
+<pre> 初始化：dp1[1]=1;
+ dp1[i]=dp1[i-dp1[i-1]-1]+2；（若a[i]=a[i-dp1[i-1]-1]）
+ 否则 dp1[i]=1;    
+</pre>
+<p>偶数：
+</p>
+<pre>  初始化：dp2[1]=0;
+  dp2[i]=dp2[i-dp2[i-1]-1]+2；（若a[i]=a[i-dp2[i-1]-1]）
+  dp2[i]=2       （若a[i]=a[i-1]）
+  否则 dp2[i]=0;
+</pre>
+<p>by SkipperHXY
+</p>
+<hr />
+<p>我有一个超快的思路~!
+DP..
+用:
+</p>
+<pre> f[i].max表示以i结尾的回文数最大的长度为多少..
+ f[i].start 表示以i结尾的回文数的开头在哪里..
+</pre>
+<p>则：
+</p>
+<pre> f[i] = f[i - 1] + 2     (如果以i结尾回文数的两头i - 1的两头加一的话.)
+ f[i] = 3                 (如果以i - 1为回文数的中心的话)
+ f[i] = 2                (如果是偶数会问的话)
+ f[i] = 1                 (否则)
+</pre>
+<p>USER: Qingyang Zhang [zqynux11]
+TASK: calfflac
+LANG: C
+</p><p>Compiling...
+Compile: OK
+</p><p>Executing...
+</p>
+<pre>  Test 1: TEST OK [0.011 secs, 1956 KB]
+  Test 2: TEST OK [0.000 secs, 1956 KB]
+  Test 3: TEST OK [0.000 secs, 1956 KB]
+  Test 4: TEST OK [0.000 secs, 1956 KB]
+  Test 5: TEST OK [0.000 secs, 1956 KB]
+  Test 6: TEST OK [0.000 secs, 1956 KB]
+  Test 7: TEST OK [0.000 secs, 1956 KB]
+  Test 8: TEST OK [0.000 secs, 1956 KB]
+</pre>
+<hr />
+<p>为了方便阐述，插在了楼上和楼下中间，则楼下所说的“上述”就是我的楼上所述。
+如楼下所讲，楼上的方法从本质上是错误的，即漏过了长回文串中的子回文串。但是，这并不影响我们求出正确答案。
+借用楼下的例子扩展：cabbaabba(a)bbaa
+先看最早的一个回文串abbaabba，那么下一个字符,被括号括起来的a,用楼上的算法应该是f[10]=2（与前面一个a形成回文串a(a)），但实际上这个a可以与前面的字符串形成回文串aabba(a)，即f[10]=6。
+这样看起来这个算法是错误的，但是这并不影响我们求出正确答案。我们来看这个做法的正确性：
+算法忽略掉了长回文串中的子回文串，但是子回文串长度&lt;=根回文串，就是说忽略这个子回文串没有关系。我们继续看，以这个(a)为中心，继续DP，可以得到串aabba(a)bbaa，长度为10，比原来的那个大。这从另一个方面说明，用DP来找回文串，关键在于定位中心。
+</p><p>其实有很多的DP算法是漏掉一部分状态的（好像有一个VIJOS的邮局题），不过这样没关系，只要能求出正解，时空复杂度低就是好的算法。
+/*by zqynux11*/
+</p>
+<hr />
+<pre>     这里再插一段话吧！（如果我对各位的叙述没有理解到位还请指出来）
+      同样为了方便叙述插在楼上和楼下的中间，还请见谅。
+      考虑这么一个序列：q[(xyxdxyx)dxyx]c.（括号是为了叙述方便，字符串不含括号）。如果用第一次提到的那个动规，
+</pre>
+<p>f[7]=7(就是小括号末尾的那个x，以它结尾的最长回文串长是7)，没有问题。继续算f[8]=1,f[9]=3,f[10]=5,f[11]=7,f[12]=1.
+可是实际上，最长回文子串是中括号括起来的部分，长为11.所以这个动规方法还是错误的。尽管某个回文串的回文子串长度不会超过它
+本身，却完全有可能再加上若干个字符以后变成更长的回文串。
+</p>
+<pre>      我表示同意楼下的观点，必须考虑到以某个字符结尾的所有回文串的长度。那个O(N)的方法只是凑巧算对了答案而已，测试数据太弱了。
+      结束！    
+        &lt;by TapTop&gt;             
+</pre>
+<hr />
+<pre> //by kuramaw1
+</pre>
+<p>上述DP算法,从本质上讲是错误的,并不是回文长度的奇偶性的问题,f[i]表示是恰好以第i个字符结尾的回文串最大长度,<br />
+当计算f[i]时,它只不比较a[i]与a[i-f[i-1]-1]是否相等,如果相等,则扩展回文串,即f[i]=f[i-1]+2,当比较不相等时,此时应该考考虑扩展恰好以i-1个字符结符结尾的次最长的回文串,直至以i-1个字符结尾的回文串长度为0,而上述DP算法只考虑扩展恰好以第i个字符结尾的最长的回文串和最短的回文串(即0,此时比较的是a[i],与a[i-f[i-1]-1],也就是a[i]与a[i-1]).上述DP算法,只要f[i]的回文串中出现恰好以i个字符结束的子回文就会发生错误.<br />
+例如:<br />
+cabbaabbaa,f[9]=8,此时的回文件串abbaabba,计算f[10]时,'a'!='c',然后就直接比较a[10]与a[9],得到f[10]=2,其实f[9],abbaabba存在一个回文子串abba,此时应该比较a[10]与a[9-4-1]='a',即可得到正确答案f[10]=6,相当于是扩展了abba.,<br />
+正解的话,必需求出以i结尾所有长度的回文子串,复杂度应是o(n*n)<br />
+下面有一个简单的算法实现流程<br />
+令b[i][j]表示是否存在恰好以i个字符尾长度为j的回文串(其中 0&lt;=j&lt;=i)<br />
+f[i]表示是恰好以第i个字符结尾的回文串最大长度<br />
+</p><p>//令b初始化为flase;
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">b<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy1">=</span><span class="kw2">true</span><span class="sy4">;</span>
+b<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy1">=</span><span class="kw2">true</span><span class="sy4">;</span>
+f<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy1">=</span><span class="nu0">1</span>
+<span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">2</span><span class="sy4">;</span>i<span class="sy1">&lt;</span>len<span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+   f<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy1">=</span><span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span>
+   b<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy1">=</span><span class="kw2">true</span><span class="sy4">;</span>
+   <span class="kw1">for</span><span class="br0">&#40;</span>j<span class="sy1">=</span>i<span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span>j<span class="sy1">&gt;=</span><span class="nu0">0</span><span class="sy4">;</span>j<span class="sy2">--</span><span class="br0">&#41;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span>b<span class="br0">&#91;</span>i<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        <span class="kw1">if</span><span class="br0">&#40;</span>i<span class="sy2">-</span>j<span class="sy2">-</span><span class="nu0">1</span><span class="sy1">&gt;</span><span class="nu0">0</span> <span class="sy3">&amp;&amp;</span> a<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy1">==</span>a<span class="br0">&#91;</span>i<span class="sy2">-</span>j<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+          b<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="sy2">+</span><span class="nu0">2</span><span class="br0">&#93;</span><span class="sy1">=</span><span class="kw2">true</span><span class="sy4">;</span>
+          <span class="kw1">if</span> <span class="br0">&#40;</span>j<span class="sy2">+</span><span class="nu0">2</span><span class="sy1">&gt;</span>f<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span>
+            f<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy1">=</span>j<span class="sy2">+</span><span class="nu0">2</span><span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+    <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<hr />
+<p><br />
+一个整体O(n)的算法（参考许智磊论文）
+</p><p>整体用后缀数组实现。
+</p><p>求以i为中心向两边扩展的最远值，等价于求Suffix(i)和Suffix(i')的最长公共前缀。
+其中i'=2n-i+2
+</p><p><a href="/index.php/%E6%96%87%E4%BB%B6:Suffixarray-calfflac.gif" class="image"><img alt="Suffixarray-calfflac.gif" src="/images/7/71/Suffixarray-calfflac.gif" width="444" height="141" /></a>
+</p><p>解法：
+1.初始化答案为0。S=T+'#'+Reverse(T)+$，得到串S （O(n)）
+2.求出后缀数组SA、名次数组Rank （倍增法：O(nlogn) Dc3算法：O(n)）
+3.计算height数组并进行标准RMQ方法预处理 （O(n)）
+4.枚举i，计算以i为对称中心的极长回文串并更新答案 （O(n)）
+</p><p>我的程序明显写得很~~，Dc3+RMQFast，9k多。
+我的程序的整体时间复杂度：O(2n)+O(3*(2n))+O(2n)+O(2n)=O(n)
+</p>
+<pre>  Test 1: TEST OK [0.022 secs, 14568 KB]
+  Test 2: TEST OK [0.032 secs, 14572 KB]
+  Test 3: TEST OK [0.032 secs, 14572 KB]
+  Test 4: TEST OK [0.022 secs, 14568 KB]
+  Test 5: TEST OK [0.032 secs, 14568 KB]
+  Test 6: TEST OK [0.022 secs, 14568 KB]
+  Test 7: TEST OK [0.022 secs, 14568 KB]
+  Test 8: TEST OK [0.043 secs, 14572 KB]
+</pre>
+<p>时间效率的确非常理想。
+</p>
+<hr />
+<p>//By Nettle99
+从头开始一个一个找也并非很慢
+</p>
+<pre>Test 1: TEST OK [0.000 secs, 3000 KB]
+Test 2: TEST OK [0.000 secs, 3000 KB]
+Test 3: TEST OK [0.011 secs, 2996 KB]
+Test 4: TEST OK [0.011 secs, 2996 KB]
+Test 5: TEST OK [0.000 secs, 2996 KB]
+Test 6: TEST OK [0.000 secs, 3000 KB]
+Test 7: TEST OK [0.011 secs, 2996 KB]
+Test 8: TEST OK [0.097 secs, 2996 KB]
+</pre>
+<p>总时间及内存都要短.也许也只是巧合...
+</p><p><br />
+</p>
+<hr />
+<p>另一种解法:扩展kmp+分治
+复杂度: O(nlogn)
+效率:
+</p>
+<pre>  Test 1: TEST OK [0.000 secs, 676 KB]
+  Test 2: TEST OK [0.000 secs, 672 KB]
+  Test 3: TEST OK [0.011 secs, 672 KB]
+  Test 4: TEST OK [0.000 secs, 672 KB]
+  Test 5: TEST OK [0.000 secs, 676 KB]
+  Test 6: TEST OK [0.011 secs, 676 KB]
+  Test 7: TEST OK [0.011 secs, 672 KB]
+  Test 8: TEST OK [0.065 secs, 672 KB]
+</pre>
+<p>详见何林的论文&lt;&lt;求最长回文子串与最长重复子串&gt;&gt;及代码3
+</p>
+<hr />
+<p>最后附一下从中间枚举的成绩，感觉程序不是很优秀，但是过没有问题。要是NOI提高组就难讲了。
+</p>
+<pre>  Test 1: TEST OK [0.000 secs, 260 KB]
+  Test 2: TEST OK [0.000 secs, 264 KB]
+  Test 3: TEST OK [0.000 secs, 260 KB]
+  Test 4: TEST OK [0.000 secs, 260 KB]
+  Test 5: TEST OK [0.000 secs, 264 KB]
+  Test 6: TEST OK [0.000 secs, 264 KB]
+  Test 7: TEST OK [0.011 secs, 264 KB]
+  Test 8: TEST OK [0.184 secs, 264 KB]
+</pre>
+<p>All tests OK.
+不管怎么说，空间复杂度最低。
+</p>
+<hr />
+<p>后缀数组和RMQ+-1
+Executing...
+</p>
+<pre>  Test 1: TEST OK [0.011 secs, 5432 KB]
+  Test 2: TEST OK [0.011 secs, 5432 KB]
+  Test 3: TEST OK [0.022 secs, 5432 KB]
+  Test 4: TEST OK [0.011 secs, 5432 KB]
+  Test 5: TEST OK [0.022 secs, 5432 KB]
+  Test 6: TEST OK [0.043 secs, 5432 KB]
+  Test 7: TEST OK [0.032 secs, 5432 KB]
+  Test 8: TEST OK [0.108 secs, 5688 KB]
+</pre>
+<p>All tests OK.
+</p><p><br />
+很慢的说。。。。
+</p><p>我也是从头开始枚举,但是就最后一个数据超时了,郁闷.据说写if句子的顺序很重要，对于数据规模大的题来说，要把最可能的写在前面，可以提高效率。真的是一个个枚举可以吗，是不是有小的技巧或优化？
+——
+直接暴力枚举的话也没有多么消耗时空
+Compiling...
+Compile: OK
+</p><p>Executing...
+</p>
+<pre>  Test 1: TEST OK [0.000 secs, 3052 KB]
+  Test 2: TEST OK [0.000 secs, 3052 KB]
+  Test 3: TEST OK [0.000 secs, 3052 KB]
+  Test 4: TEST OK [0.011 secs, 3056 KB]
+  Test 5: TEST OK [0.000 secs, 3052 KB]
+  Test 6: TEST OK [0.011 secs, 3056 KB]
+  Test 7: TEST OK [0.000 secs, 3060 KB]
+  Test 8: TEST OK [0.119 secs, 3056 KB]
+</pre>
+<p><br />
+</p>
+<hr />
+<p>从网上查来了一个叫做manacher的O(n)做出最长回文子串的算法,代码简短
+就是我看的这个算法的流程只能做出偶数的,所以需要abcba在输入时要处理成aabbccbbaa(即每个字符需要添加一个虚拟的字符)
+此算法就不在此赘述了
+</p>
+<pre>省去名字..
+</pre>
+<p>TASK: calfflac
+LANG: PASCAL
+</p><p>Compiling...
+Compile: OK
+</p><p>Executing...
+</p>
+<pre>  Test 1: TEST OK [0.000 secs, 824 KB]
+  Test 2: TEST OK [0.000 secs, 824 KB]
+  Test 3: TEST OK [0.000 secs, 824 KB]
+  Test 4: TEST OK [0.000 secs, 824 KB]
+  Test 5: TEST OK [0.000 secs, 824 KB]
+  Test 6: TEST OK [0.000 secs, 824 KB]
+  Test 7: TEST OK [0.000 secs, 824 KB]
+  Test 8: TEST OK [0.000 secs, 824 KB]
+</pre>
+<p>All tests OK.
+</p>
+<hr />
+<p>还有一种方法，直接用简单动规做枚举的限制条件，显然F[i]=F[i-1]+2（a[i]=a[i-f[i-1]-1])如果不能，则再从i-F[i-1] to i搜到相等的判断是否可以构成回文数。
+此方法速度极快，而且保证正确。
+TASK: calfflac
+LANG: PASCAL
+</p><p>Compiling...
+Compile: OK
+</p><p>Executing...
+</p>
+<pre>  Test 1: TEST OK [0.000 secs, 5432 KB]
+  Test 2: TEST OK [0.000 secs, 5432 KB]
+  Test 3: TEST OK [0.000 secs, 5432 KB]
+  Test 4: TEST OK [0.000 secs, 5432 KB]
+  Test 5: TEST OK [0.000 secs, 5432 KB]
+  Test 6: TEST OK [0.000 secs, 5432 KB]
+  Test 7: TEST OK [0.000 secs, 5432 KB]
+  Test 8: TEST OK [0.000 secs, 5432 KB]
+</pre>
+<p>All tests OK.
+</p>
+<hr />
+<p>我用的dp（和正常的dp不太一样，dp的思想吧）效率蛮高的 
+for i:=3 to pp do
+</p>
+<pre>  begin
+    if cha[i]=cha[i-1] then f[i]:=i-1;
+    if cha[i]=cha[f[i-1]-1] then f[i]:=f[i-1]-1;
+  end;
+</pre>
+<p>最长回文就是max{f[i]-i};
+</p><p>测试数据：
+</p><p>USER: fu zhongqing [fuzhong2]
+TASK: calfflac
+LANG: PASCAL
+</p><p>Compiling...
+Compile: OK
+</p><p>Executing...
+</p>
+<pre>  Test 1: TEST OK [0.000 secs, 468 KB]
+  Test 2: TEST OK [0.000 secs, 468 KB]
+  Test 3: TEST OK [0.000 secs, 468 KB]
+  Test 4: TEST OK [0.000 secs, 468 KB]
+  Test 5: TEST OK [0.000 secs, 468 KB]
+  Test 6: TEST OK [0.000 secs, 468 KB]
+  Test 7: TEST OK [0.000 secs, 468 KB]
+  Test 8: TEST OK [0.000 secs, 468 KB]
+</pre>
+<p>All tests OK.
+</p><p><br />
+</p>
+<hr />
+<p>yearwhk总是老老实实的遵循KISS原则。考虑到USACO数据一向暴弱，所以，采用枚举中间数的方法+比较危险的优化。即，当奇数回文串找不到时才找偶数回文串：
+if s=1 then find_even 8个点均秒杀。
+</p><p>Test 1: TEST OK [0.000 secs, 276 KB]
+</p>
+<pre>  Test 2: TEST OK [0.000 secs, 276 KB]
+  Test 3: TEST OK [0.000 secs, 276 KB]
+  Test 4: TEST OK [0.000 secs, 276 KB]
+  Test 5: TEST OK [0.000 secs, 276 KB]
+  Test 6: TEST OK [0.000 secs, 276 KB]
+  Test 7: TEST OK [0.000 secs, 276 KB]
+  Test 8: TEST OK [0.043 secs, 276 KB]  {可能这个算不上秒杀，但也充分体现了这一算法的GOOD。膜拜楼上}
+</pre>
+<p>All tests OK.
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/calfflac&amp;action=edit&amp;section=2" title="编辑段落：参考代码">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81">参考代码</span></h2>
+<p><a href="/index.php/Code:USACO/calfflac/C" title="Code:USACO/calfflac/C">C</a>
+</p><p><a href="/index.php/Code:USACO/calfflac/C%2B%2B" title="Code:USACO/calfflac/C++">C++</a>
+</p><p><a href="/index.php/Code:USACO/calfflac/Pascal" title="Code:USACO/calfflac/Pascal">Pascal</a>
+</p><p><a href="/index.php/Code:USACO/calfflac/Java" title="Code:USACO/calfflac/Java">Java</a>
+</p><p>后生插一句：对于回文的题，你们没想到堆栈吗
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/calfflac&amp;action=edit&amp;section=3" title="编辑段落：引用">编辑</a>]</span> <span class="mw-headline" id=".E5.BC.95.E7.94.A8">引用</span></h2>
+<p><a rel="nofollow" class="external autonumber" href="http://h.thec.cn/starforever/">[1]</a>
+</p><p><a rel="nofollow" class="external autonumber" href="http://train.usaco.org/">[2]</a>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 19/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:239-0!*!0!!*!2!* and timestamp 20170806224239 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=USACO/calfflac&amp;oldid=34348">http://www.nocow.cn/index.php?title=USACO/calfflac&amp;oldid=34348</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/USACO/calfflac" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk"><a href="/index.php/%E8%AE%A8%E8%AE%BA:USACO/calfflac" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=USACO/calfflac&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=USACO/calfflac&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=USACO%2Fcalfflac" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/USACO/calfflac" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/USACO/calfflac" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=USACO/calfflac&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=USACO/calfflac&amp;oldid=34348" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过38,954次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/54.173.35.129" title="特殊:用户贡献/54.173.35.129">54.173.35.129</a>于2014年3月19日 (星期三) 22:46做出最后修改。 在NOCOW用户<a href="/index.php?title=%E7%94%A8%E6%88%B7:Despair_Afternoons&amp;action=edit&amp;redlink=1" class="new" title="用户:Despair Afternoons（尚未撰写）">Despair Afternoons</a>、NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/112.255.142.149" title="特殊:用户贡献/112.255.142.149">112.255.142.149</a>、<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/221.0.237.252" title="特殊:用户贡献/221.0.237.252">221.0.237.252</a>和<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/60.168.5.125" title="特殊:用户贡献/60.168.5.125">60.168.5.125</a>和<a href="/index.php?title=USACO/calfflac&amp;action=credits" title="USACO/calfflac">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.701 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

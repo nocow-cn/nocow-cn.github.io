@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>SPFA算法 - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="canonical" href="/index.php/SPFA%E7%AE%97%E6%B3%95" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "SPFA算法", "wgTitle": "SPFA算法", "wgCurRevisionId": 34639, "wgArticleId": 124, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["图论"], "wgBreakFrames": false, "wgRestrictionEdit": ["autoconfirmed"], "wgRestrictionMove": ["autoconfirmed"]});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for pascal
+ * CSS class: source-pascal, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.pascal.source-pascal .de1, .pascal.source-pascal .de2 {}
+.pascal.source-pascal  {font-family:monospace;}
+.pascal.source-pascal .imp {font-weight: bold; color: red;}
+.pascal.source-pascal li, .pascal.source-pascal .li1 {font-weight: normal; vertical-align:top;}
+.pascal.source-pascal .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.pascal.source-pascal .li2 {font-weight: bold; vertical-align:top;}
+.pascal.source-pascal .kw1 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw2 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw3 {color: #000066;}
+.pascal.source-pascal .kw4 {color: #000066; font-weight: bold;}
+.pascal.source-pascal .co1 {color: #666666; font-style: italic;}
+.pascal.source-pascal .coMULTI {color: #666666; font-style: italic;}
+.pascal.source-pascal .es0 {color: #000099; font-weight: bold;}
+.pascal.source-pascal .es_h {color: #000099; font-weight: bold;}
+.pascal.source-pascal .br0 {color: #009900;}
+.pascal.source-pascal .sy0 {color: #339933;}
+.pascal.source-pascal .st0 {color: #ff0000;}
+.pascal.source-pascal .st_h {color: #ff0000;}
+.pascal.source-pascal .nu0 {color: #cc66cc;}
+.pascal.source-pascal .me1 {color: #0066ee;}
+.pascal.source-pascal .ln-xtra, .pascal.source-pascal li.ln-xtra, .pascal.source-pascal div.ln-xtra {background-color: #ffc;}
+.pascal.source-pascal span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-SPFA算法 action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">SPFA算法</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub">(跳转自<a href="/index.php?title=SPFA&amp;redirect=no" title="SPFA">SPFA</a>)</div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E5.A3.B0.E6.98.8E"><span class="tocnumber">1</span> <span class="toctext">声明</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#.E7.AE.97.E6.B3.95.E7.AE.80.E4.BB.8B"><span class="tocnumber">2</span> <span class="toctext">算法简介</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#.E7.AE.97.E6.B3.95.E6.B5.81.E7.A8.8B"><span class="tocnumber">3</span> <span class="toctext">算法流程</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#.E4.BC.AA.E4.BB.A3.E7.A0.81"><span class="tocnumber">4</span> <span class="toctext">伪代码</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#.E4.BB.A3.E7.A0.81"><span class="tocnumber">5</span> <span class="toctext">代码</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id=".E5.A3.B0.E6.98.8E">声明</span></h2>
+<p>看见这货被英文维基百科引用了，特此来说明一下。SPFA出自民科。一般流传的版本O(kE)复杂度中有常数就足以证明这一点。原始论文中k并非常数，不能当作常数对待，也就是说什么都没证明。nocow不拒绝人继续定义、使用和研究这种算法及其名称，但是请勿把原始论文当作可靠出处。也不要把论文中的分析方法当成正当分析方法。 --<a href="/index.php/%E7%94%A8%E6%88%B7:Cosechy" title="用户:Cosechy">Cosechy</a> 2014年5月21日 (三) 12:48 (CST)
+</p>
+<h2> <span class="mw-headline" id=".E7.AE.97.E6.B3.95.E7.AE.80.E4.BB.8B"> 算法简介 </span></h2>
+<p>SPFA(Shortest Path Faster Algorithm)是<a href="/index.php/Bellman-Ford%E7%AE%97%E6%B3%95" title="Bellman-Ford算法">Bellman-Ford算法</a>的一种<a href="/index.php/%E9%98%9F%E5%88%97" title="队列">队列</a>实现，减少了不必要的冗余计算。
+</p>
+<h2> <span class="mw-headline" id=".E7.AE.97.E6.B3.95.E6.B5.81.E7.A8.8B"> 算法流程 </span></h2>
+<p>算法大致流程是用一个队列来进行维护。
+初始时将源加入队列。
+每次从队列中取出一个元素，并对所有与他相邻的点进行<a href="/index.php/%E6%9D%BE%E5%BC%9B" title="松弛" class="mw-redirect">松弛</a>，若某个相邻的点松弛成功，则将其入队。
+直到队列为空时算法结束。
+</p><p>这个算法，简单的说就是队列优化的bellman-ford,利用了每个点不会更新次数太多的特点发明的此算法
+</p><p>SPFA——Shortest Path Faster Algorithm，它可以在O(kE)的时间复杂度内求出源点到其他所有点的最短路径，可以处理负边。SPFA的实现甚至比Dijkstra或者Bellman_Ford还要简单：
+</p><p>设Dist代表S到I点的当前最短距离，Fa代表S到I的当前最短路径中I点之前的一个点的编号。开始时Dist全部为+∞，只有Dist[S]=0，Fa全部为0。
+</p><p>维护一个队列，里面存放所有需要进行迭代的点。初始时队列中只有一个点S。用一个布尔数组记录每个点是否处在队列中。
+</p><p>每次迭代，取出队头的点v，依次枚举从v出发的边v-&gt;u，设边的长度为len，判断Dist[v]+len是否小于Dist[u]，若小于则改进Dist[u]，将Fa[u]记为v，并且由于S到u的最短距离变小了，有可能u可以改进其它的点，所以若u不在队列中，就将它放入队尾。这样一直迭代下去直到队列变空，也就是S到所有的最短距离都确定下来，结束算法。若一个点入队次数超过n，则有负权环。
+</p><p>SPFA 在形式上和宽度优先搜索非常类似，不同的是宽度优先搜索中一个点出了队列就不可能重新进入队列，但是SPFA中一个点可能在出队列之后再次被放入队列，也就是一个点改进过其它的点之后，过了一段时间可能本身被改进，于是再次用来改进其它的点，这样反复迭代下去。设一个点用来作为迭代点对其它点进行改进的平均次数为k，有办法证明对于通常的情况，k在2左右。
+</p><p>SPFA算法（Shortest Path Faster Algorithm），也是求解单源最短路径问题的一种算法，用来解决：给定一个加权有向图G和源点s，对于图G中的任意一点v，求从s到v的最短路径。 SPFA算法是Bellman-Ford算法的一种队列实现，减少了不必要的冗余计算，他的基本算法和Bellman-Ford一样，并且用如下的方法改进： 
+1、第二步，不是枚举所有节点，而是通过队列来进行优化 设立一个先进先出的队列用来保存待优化的结点，优化时每次取出队首结点u，并且用u点当前的最短路径估计值对离开u点所指向的结点v进行松弛操作，如果v点的最短路径估计值有所调整，且v点不在当前的队列中，就将v点放入队尾。这样不断从队列中取出结点来进行松弛操作，直至队列空为止。 
+2、同时除了通过判断队列是否为空来结束循环，还可以通过下面的方法： 判断有无负环：如果某个点进入队列的次数超过V次则存在负环（SPFA无法处理带负环的图）。
+</p><p>SPFA算法有两个优化算法 SLF 和 LLL： 
+SLF：Small Label First 策略，设要加入的节点是j，队首元素为i，若dist(j)&lt;dist(i)，则将j插入队首，否则插入队尾。 
+LLL：Large Label Last 策略，设队首元素为i，队列中所有dist值的平均值为x，若dist(i)&gt;x则将i插入到队尾，查找下一元素，直到找到某一i使得dist(i)&lt;=x，则将i出对进行松弛操作。 
+SLF 可使速度提高 15 ~ 20%；SLF + LLL 可提高约 50%。 在实际的应用中SPFA的算法时间效率不是很稳定，为了避免最坏情况的出现，通常使用效率更加稳定的Dijkstra算法。
+</p>
+<h2> <span class="mw-headline" id=".E4.BC.AA.E4.BB.A3.E7.A0.81"> 伪代码 </span></h2>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="kw1">Procedure</span> SPFA;
+&#160;
+<span class="kw1">Begin</span>
+  initialize<span class="sy0">-</span>single<span class="sy0">-</span>source<span class="br0">&#40;</span>G<span class="sy0">,</span>s<span class="br0">&#41;</span>;
+  initialize<span class="sy0">-</span>queue<span class="br0">&#40;</span>Q<span class="br0">&#41;</span>;
+  enqueue<span class="br0">&#40;</span>Q<span class="sy0">,</span>s<span class="br0">&#41;</span>;
+  <span class="kw1">while</span> <span class="kw1">not</span> empty<span class="br0">&#40;</span>Q<span class="br0">&#41;</span> <span class="kw1">do</span> 
+    <span class="kw1">begin</span>
+      u<span class="sy0">:=</span>dequeue<span class="br0">&#40;</span>Q<span class="br0">&#41;</span>;
+      <span class="kw1">for</span> each v∈adj<span class="br0">&#91;</span>u<span class="br0">&#93;</span> <span class="kw1">do</span> 
+        <span class="kw1">begin</span>
+          tmp<span class="sy0">:=</span>d<span class="br0">&#91;</span>v<span class="br0">&#93;</span>;
+          relax<span class="br0">&#40;</span>u<span class="sy0">,</span>v<span class="br0">&#41;</span>;
+          <span class="kw1">if</span> <span class="br0">&#40;</span>tmp&lt;&gt;d<span class="br0">&#91;</span>v<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="kw3">and</span> <span class="br0">&#40;</span><span class="kw1">not</span> v <span class="kw1">in</span> Q<span class="br0">&#41;</span> <span class="kw1">then</span>
+            enqueue<span class="br0">&#40;</span>Q<span class="sy0">,</span>v<span class="br0">&#41;</span>;
+        <span class="kw1">end</span>;
+    <span class="kw1">end</span>;
+<span class="kw1">End</span>;</pre></div></div>
+<h2> <span class="mw-headline" id=".E4.BB.A3.E7.A0.81"> 代码 </span></h2>
+<p>最基本的SPFA
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">bool</span>	Relax<span class="br0">&#40;</span><span class="kw4">long</span>	<span class="sy3">&amp;</span>w,<span class="kw4">long</span>	m<span class="br0">&#41;</span><span class="br0">&#123;</span><span class="kw1">return</span>	m<span class="sy1">&lt;</span>w<span class="sy4">?</span><span class="br0">&#40;</span>w<span class="sy1">=</span>m,<span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">:</span><span class="nu0">0</span><span class="sy4">;</span><span class="br0">&#125;</span><span class="co1">//&quot;松弛&quot;操作</span>
+<span class="kw4">const</span>	<span class="kw4">long</span>	maxV<span class="sy1">=</span><span class="nu0">1000</span>,maxE<span class="sy1">=</span><span class="nu0">999000</span><span class="sy4">;</span><span class="co1">//最大顶点数,最大边数</span>
+<span class="kw4">long</span>	m,H<span class="br0">&#91;</span>maxV<span class="br0">&#93;</span>,D<span class="br0">&#91;</span>maxV<span class="br0">&#93;</span><span class="sy4">;</span><span class="co1">//m为边数,初始化为0;H为链表头,初始化为-1;D为距离</span>
+<span class="kw4">struct</span>	Edge<span class="br0">&#123;</span><span class="kw4">long</span>	z,y,w<span class="sy4">;</span><span class="br0">&#125;</span>E<span class="br0">&#91;</span>maxE<span class="br0">&#93;</span><span class="sy4">;</span><span class="co1">//静态邻接表,w为权,y为边终点,z为静态指针</span>
+<span class="kw4">void</span>	addE<span class="br0">&#40;</span><span class="kw4">long</span>	x,<span class="kw4">long</span>	y,<span class="kw4">long</span>	w<span class="br0">&#41;</span><span class="br0">&#123;</span>E<span class="br0">&#91;</span>m<span class="br0">&#93;</span>.<span class="me1">y</span><span class="sy1">=</span>y,E<span class="br0">&#91;</span>m<span class="br0">&#93;</span>.<span class="me1">w</span><span class="sy1">=</span>w,E<span class="br0">&#91;</span>m<span class="br0">&#93;</span>.<span class="me1">z</span><span class="sy1">=</span>H<span class="br0">&#91;</span>x<span class="br0">&#93;</span>,H<span class="br0">&#91;</span>x<span class="br0">&#93;</span><span class="sy1">=</span>m<span class="sy2">++</span><span class="sy4">;</span><span class="br0">&#125;</span><span class="co1">//加一条从x指向y,权为w的边</span>
+<span class="co2">#include&lt;cstring&gt;</span>
+<span class="co2">#include&lt;queue&gt;</span>
+<span class="kw4">void</span>	SPFA<span class="br0">&#40;</span><span class="kw4">long</span>	x<span class="sy1">=</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="br0">&#123;</span><span class="co1">//默认计算从0点出发到达其他点的最短路</span>
+	<span class="kw4">bool</span>	F<span class="br0">&#91;</span>maxV<span class="br0">&#93;</span><span class="sy1">=</span><span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy4">;</span><span class="co1">//初始为0的bool数组表示在不在队内</span>
+	std<span class="sy4">::</span><span class="me2">queue</span><span class="sy1">&lt;</span><span class="kw4">long</span><span class="sy1">&gt;</span>Q<span class="sy4">;</span><span class="co1">//初始空队列</span>
+	<span class="kw1">for</span><span class="br0">&#40;</span><span class="kw3">memset</span><span class="br0">&#40;</span>D,<span class="nu12">0x3f</span>,<span class="kw3">sizeof</span><span class="br0">&#40;</span>D<span class="br0">&#41;</span><span class="br0">&#41;</span>,D<span class="br0">&#91;</span>x<span class="br0">&#93;</span><span class="sy1">=</span><span class="nu0">0</span>,F<span class="br0">&#91;</span>x<span class="br0">&#93;</span><span class="sy1">=</span><span class="nu0">1</span>,Q.<span class="me1">push</span><span class="br0">&#40;</span>x<span class="br0">&#41;</span><span class="sy4">;</span><span class="sy3">!</span>Q.<span class="me1">empty</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>F<span class="br0">&#91;</span>x<span class="br0">&#93;</span><span class="sy1">=</span><span class="nu0">0</span>,Q.<span class="me1">pop</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="co1">//迭代到队列再次变空</span>
+		<span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">long</span>	i<span class="sy1">=</span>H<span class="br0">&#91;</span>x<span class="sy1">=</span>Q.<span class="me1">front</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#93;</span>,y<span class="sy4">;</span>~i<span class="sy4">;</span>i<span class="sy1">=</span>E<span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">z</span><span class="br0">&#41;</span><span class="co1">//对于所有与x相邻的边</span>
+			<span class="kw1">if</span><span class="br0">&#40;</span>Relax<span class="br0">&#40;</span>D<span class="br0">&#91;</span>y<span class="sy1">=</span>E<span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">y</span><span class="br0">&#93;</span>,E<span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">w</span><span class="sy2">+</span>D<span class="br0">&#91;</span>x<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy3">&amp;&amp;!</span>F<span class="br0">&#91;</span>y<span class="br0">&#93;</span><span class="br0">&#41;</span>	F<span class="br0">&#91;</span>y<span class="br0">&#93;</span><span class="sy1">=</span><span class="nu0">1</span>,Q.<span class="me1">push</span><span class="br0">&#40;</span>y<span class="br0">&#41;</span><span class="sy4">;</span><span class="co1">//如果松弛成功,则要确保y已入队</span>
+<span class="br0">&#125;</span></pre></div></div>
+<hr />
+<p>SPFA(slf优化)
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">void</span> Spfa<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    d<span class="br0">&#91;</span>S<span class="br0">&#93;</span><span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>
+    v<span class="br0">&#91;</span>S<span class="br0">&#93;</span><span class="sy1">=</span><span class="kw2">true</span><span class="sy4">;</span>
+    deque <span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> q<span class="sy4">;</span>
+    <span class="kw1">for</span><span class="br0">&#40;</span>q.<span class="me1">push_back</span><span class="br0">&#40;</span>S<span class="br0">&#41;</span><span class="sy4">;</span><span class="sy3">!</span>q.<span class="me1">empty</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span><span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        <span class="kw4">int</span> x<span class="sy1">=</span>q.<span class="me1">front</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        q.<span class="me1">pop_front</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> k<span class="sy1">=</span>head<span class="br0">&#91;</span>x<span class="br0">&#93;</span><span class="sy4">;</span>k<span class="sy3">!</span><span class="sy1">=</span><span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span>k<span class="sy1">=</span>el<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">next</span><span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+            <span class="kw4">int</span> y<span class="sy1">=</span>el<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">y</span><span class="sy4">;</span>
+            <span class="kw1">if</span><span class="br0">&#40;</span>d<span class="br0">&#91;</span>y<span class="br0">&#93;</span><span class="sy1">&gt;</span>d<span class="br0">&#91;</span>x<span class="br0">&#93;</span><span class="sy2">+</span>el<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">c</span><span class="br0">&#41;</span>
+            <span class="br0">&#123;</span>
+                d<span class="br0">&#91;</span>y<span class="br0">&#93;</span><span class="sy1">=</span>d<span class="br0">&#91;</span>x<span class="br0">&#93;</span><span class="sy2">+</span>el<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">c</span><span class="sy4">;</span>
+                <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy3">!</span>v<span class="br0">&#91;</span>y<span class="br0">&#93;</span><span class="br0">&#41;</span>
+                <span class="br0">&#123;</span>
+                    v<span class="br0">&#91;</span>y<span class="br0">&#93;</span><span class="sy1">=</span><span class="kw2">true</span><span class="sy4">;</span>
+                    <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy3">!</span>q.<span class="me1">empty</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+                    <span class="br0">&#123;</span>
+                        <span class="kw1">if</span><span class="br0">&#40;</span>d<span class="br0">&#91;</span>y<span class="br0">&#93;</span><span class="sy1">&gt;</span>d<span class="br0">&#91;</span>q.<span class="me1">front</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+                            q.<span class="me1">push_back</span><span class="br0">&#40;</span>y<span class="br0">&#41;</span><span class="sy4">;</span>
+                        <span class="kw1">else</span>
+                            q.<span class="me1">push_front</span><span class="br0">&#40;</span>y<span class="br0">&#41;</span><span class="sy4">;</span>
+                    <span class="br0">&#125;</span>
+                    <span class="kw1">else</span>
+                        q.<span class="me1">push_back</span><span class="br0">&#40;</span>y<span class="br0">&#41;</span><span class="sy4">;</span>
+                <span class="br0">&#125;</span>
+            <span class="br0">&#125;</span>
+        <span class="br0">&#125;</span>
+        v<span class="br0">&#91;</span>x<span class="br0">&#93;</span><span class="sy1">=</span><span class="kw2">false</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw1">return</span> <span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<hr />
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="kw1">procedure</span> spfa;
+<span class="kw1">begin</span>
+  fillchar<span class="br0">&#40;</span>q<span class="sy0">,</span>sizeof<span class="br0">&#40;</span>q<span class="br0">&#41;</span><span class="sy0">,</span><span class="nu0">0</span><span class="br0">&#41;</span>; h<span class="sy0">:=</span><span class="nu0">0</span>; t<span class="sy0">:=</span><span class="nu0">0</span>;<span class="co1">//队列</span>
+  fillchar<span class="br0">&#40;</span>v<span class="sy0">,</span>sizeof<span class="br0">&#40;</span>v<span class="br0">&#41;</span><span class="sy0">,</span><span class="kw2">false</span><span class="br0">&#41;</span>;<span class="co1">//v[i]判断i是否在队列中</span>
+  <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n <span class="kw1">do</span> 
+    dist<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">:=</span>maxint;<span class="co1">//初始化最小值</span>
+&#160;
+  inc<span class="br0">&#40;</span>t<span class="br0">&#41;</span>;
+  q<span class="br0">&#91;</span>t<span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">1</span>;
+  v<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;
+  dist<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">0</span>;<span class="co1">//这里把1作为源点</span>
+&#160;
+  <span class="kw1">while</span> h&lt;&gt;t <span class="kw1">do</span>
+    <span class="kw1">begin</span>
+      h<span class="sy0">:=</span><span class="br0">&#40;</span>h <span class="kw1">mod</span> n<span class="br0">&#41;</span><span class="sy0">+</span><span class="nu0">1</span>;
+      x<span class="sy0">:=</span>q<span class="br0">&#91;</span>h<span class="br0">&#93;</span>;
+      v<span class="br0">&#91;</span>x<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>;
+      <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n <span class="kw1">do</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>cost<span class="br0">&#91;</span>x<span class="sy0">,</span>i<span class="br0">&#93;</span>&gt;<span class="nu0">0</span><span class="br0">&#41;</span> <span class="kw3">and</span> <span class="br0">&#40;</span>dist<span class="br0">&#91;</span>x<span class="br0">&#93;</span><span class="sy0">+</span>cost<span class="br0">&#91;</span>x<span class="sy0">,</span>i<span class="br0">&#93;</span>&lt;dist<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="kw1">then</span>
+          <span class="kw1">begin</span>
+            dist<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">:=</span>dist<span class="br0">&#91;</span>x<span class="br0">&#93;</span><span class="sy0">+</span>cost<span class="br0">&#91;</span>x<span class="sy0">,</span>i<span class="br0">&#93;</span>;
+            <span class="kw1">if</span> <span class="kw1">not</span><span class="br0">&#40;</span>v<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="kw1">then</span>
+              <span class="kw1">begin</span>
+                t<span class="sy0">:=</span><span class="br0">&#40;</span>t <span class="kw1">mod</span> n<span class="br0">&#41;</span><span class="sy0">+</span><span class="nu0">1</span>;
+                q<span class="br0">&#91;</span>t<span class="br0">&#93;</span><span class="sy0">:=</span>i;
+                v<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;
+              <span class="kw1">end</span>;
+          <span class="kw1">end</span>;
+    <span class="kw1">end</span>;
+<span class="kw1">end</span>;</pre></div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">void</span> SPFA<span class="br0">&#40;</span><span class="kw4">void</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="kw4">int</span> i<span class="sy4">;</span>
+ queue list<span class="sy4">;</span>
+ list.<span class="me1">insert</span><span class="br0">&#40;</span>s<span class="br0">&#41;</span><span class="sy4">;</span>
+ <span class="kw1">for</span><span class="br0">&#40;</span>i<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>i<span class="sy1">&lt;=</span>n<span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span>
+  <span class="br0">&#123;</span>
+   <span class="kw1">if</span><span class="br0">&#40;</span>s<span class="sy1">==</span>i<span class="br0">&#41;</span>
+    <span class="kw1">continue</span><span class="sy4">;</span>
+   dist<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy1">=</span>map<span class="br0">&#91;</span>s<span class="br0">&#93;</span><span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy4">;</span>
+   way<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy1">=</span>s<span class="sy4">;</span>
+   <span class="kw1">if</span><span class="br0">&#40;</span>dist<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span>
+   list.<span class="me1">insert</span><span class="br0">&#40;</span>i<span class="br0">&#41;</span><span class="sy4">;</span>
+  <span class="br0">&#125;</span>
+ <span class="kw4">int</span> p<span class="sy4">;</span>
+ <span class="kw1">while</span><span class="br0">&#40;</span><span class="sy3">!</span>list.<span class="me1">empty</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+ <span class="br0">&#123;</span>
+  p<span class="sy1">=</span>list.<span class="me1">fire</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+  <span class="kw1">for</span><span class="br0">&#40;</span>i<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>i<span class="sy1">&lt;=</span>n<span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span>
+   <span class="kw1">if</span><span class="br0">&#40;</span>map<span class="br0">&#91;</span>p<span class="br0">&#93;</span><span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy3">&amp;&amp;</span><span class="br0">&#40;</span>dist<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy1">&gt;</span>dist<span class="br0">&#91;</span>p<span class="br0">&#93;</span><span class="sy2">+</span>map<span class="br0">&#91;</span>p<span class="br0">&#93;</span><span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy3">||!</span>dist<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy3">&amp;&amp;</span>i<span class="sy3">!</span><span class="sy1">=</span>s<span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+     dist<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy1">=</span>dist<span class="br0">&#91;</span>p<span class="br0">&#93;</span><span class="sy2">+</span>map<span class="br0">&#91;</span>p<span class="br0">&#93;</span><span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy4">;</span>
+     way<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy1">=</span>p<span class="sy4">;</span>
+     <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy3">!</span>list.<span class="me1">in</span><span class="br0">&#40;</span>i<span class="br0">&#41;</span><span class="br0">&#41;</span>
+      list.<span class="me1">insert</span><span class="br0">&#40;</span>i<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<hr />
+<p>各种加上了注释
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="coMULTI">/*
+ * 单源最短路算法SPFA,时间复杂度O(kE),k在一般情况下不大于2,对于每个顶点使用可以在O(VE)的时间内算出每对节点之间的最短路
+ * 使用了队列,对于任意在队列中的点连着的点进行松弛,同时将不在队列中的连着的点入队,直到队空则算法结束,最短路求出
+ * SPFA是Bellman-Ford的优化版,可以处理有负权边的情况
+ * 对于负环,我们可以证明每个点入队次数不会超过V,所以我们可以记录每个点的入队次数,如果超过V则表示其出现负环,算法结束
+ * 由于要对点的每一条边进行枚举,故采用邻接表时时间复杂度为O(kE),采用矩阵时时间复杂度为O(kV^2)
+ */</span>
+<span class="co2">#include&lt;cstdio&gt;</span>
+<span class="co2">#include&lt;vector&gt;</span>
+<span class="co2">#include&lt;queue&gt;</span>
+<span class="co2">#define MAXV 10000</span>
+<span class="co2">#define INF 1000000000 //此处建议不要过大或过小,过大易导致运算时溢出,过小可能会被判定为真正的距离</span>
+&#160;
+<span class="kw2">using</span> std<span class="sy4">::</span><span class="me2">vector</span><span class="sy4">;</span>
+<span class="kw2">using</span> std<span class="sy4">::</span><span class="me2">queue</span><span class="sy4">;</span>
+&#160;
+<span class="kw4">struct</span> Edge<span class="br0">&#123;</span>
+	<span class="kw4">int</span> v<span class="sy4">;</span> <span class="co1">//边权</span>
+	<span class="kw4">int</span> to<span class="sy4">;</span> <span class="co1">//连接的点</span>
+<span class="br0">&#125;</span><span class="sy4">;</span>
+&#160;
+vector<span class="sy1">&lt;</span>Edge<span class="sy1">&gt;</span> e<span class="br0">&#91;</span>MAXV<span class="br0">&#93;</span><span class="sy4">;</span> <span class="co1">//由于一般情况下E&lt;&lt;V*V,故在此选用了vector动态数组存储,也可以使用链表存储</span>
+<span class="kw4">int</span> dist<span class="br0">&#91;</span>MAXV<span class="br0">&#93;</span><span class="sy4">;</span> <span class="co1">//存储到原点0的距离,可以开二维数组存储每对节点之间的距离</span>
+<span class="kw4">int</span> cnt<span class="br0">&#91;</span>MAXV<span class="br0">&#93;</span><span class="sy4">;</span> <span class="co1">//记录入队次数,超过V则退出</span>
+queue<span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> buff<span class="sy4">;</span> <span class="co1">//队列,用于存储在SPFA算法中的需要松弛的节点</span>
+<span class="kw4">bool</span> done<span class="br0">&#91;</span>MAXV<span class="br0">&#93;</span><span class="sy4">;</span> <span class="co1">//用于判断该节点是否已经在队列中</span>
+<span class="kw4">int</span> V<span class="sy4">;</span> <span class="co1">//节点数</span>
+<span class="kw4">int</span> E<span class="sy4">;</span> <span class="co1">//边数</span>
+&#160;
+<span class="kw4">bool</span> spfa<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">int</span> st<span class="br0">&#41;</span><span class="br0">&#123;</span> <span class="co1">//返回值:TRUE为找到最短路返回,FALSE表示出现负环退出</span>
+	<span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>i<span class="sy1">&lt;</span>V<span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span><span class="br0">&#123;</span> <span class="co1">//初始化:将除了原点st的距离外的所有点到st的距离均赋上一个极大值</span>
+		<span class="kw1">if</span><span class="br0">&#40;</span>i<span class="sy1">==</span>st<span class="br0">&#41;</span><span class="br0">&#123;</span>
+			dist<span class="br0">&#91;</span>st<span class="br0">&#93;</span><span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> <span class="co1">//原点距离为0;</span>
+			<span class="kw1">continue</span><span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+		dist<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy1">=</span>INF<span class="sy4">;</span> <span class="co1">//非原点距离无穷大</span>
+	<span class="br0">&#125;</span>
+	buff.<span class="me1">push</span><span class="br0">&#40;</span>st<span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">//原点入队</span>
+	done<span class="br0">&#91;</span>st<span class="br0">&#93;</span><span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span> <span class="co1">//标记原点已经入队</span>
+	cnt<span class="br0">&#91;</span>st<span class="br0">&#93;</span><span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span> <span class="co1">//修改入队次数为1</span>
+	<span class="kw1">while</span><span class="br0">&#40;</span><span class="sy3">!</span>buff.<span class="me1">empty</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#123;</span> <span class="co1">//队列非空,需要继续松弛</span>
+		<span class="kw4">int</span> tmp<span class="sy1">=</span>buff.<span class="me1">front</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">//取出队首元素</span>
+		<span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>i<span class="sy1">&lt;</span><span class="br0">&#40;</span><span class="kw4">int</span><span class="br0">&#41;</span>e<span class="br0">&#91;</span>tmp<span class="br0">&#93;</span>.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span><span class="br0">&#123;</span> <span class="co1">//枚举该边连接的每一条边</span>
+			Edge <span class="sy2">*</span>t<span class="sy1">=</span><span class="sy3">&amp;</span>e<span class="br0">&#91;</span>tmp<span class="br0">&#93;</span><span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy4">;</span> <span class="co1">//由于vector的寻址速度较慢,故在此进行一次优化</span>
+			<span class="kw1">if</span><span class="br0">&#40;</span>dist<span class="br0">&#91;</span>tmp<span class="br0">&#93;</span><span class="sy2">+</span><span class="br0">&#40;</span><span class="sy2">*</span>t<span class="br0">&#41;</span>.<span class="me1">v</span><span class="sy1">&lt;</span>dist<span class="br0">&#91;</span><span class="br0">&#40;</span><span class="sy2">*</span>t<span class="br0">&#41;</span>.<span class="me1">to</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="br0">&#123;</span> <span class="co1">//更改后距离更短,进行松弛操作</span>
+				dist<span class="br0">&#91;</span><span class="br0">&#40;</span><span class="sy2">*</span>t<span class="br0">&#41;</span>.<span class="me1">to</span><span class="br0">&#93;</span><span class="sy1">=</span>dist<span class="br0">&#91;</span>tmp<span class="br0">&#93;</span><span class="sy2">+</span><span class="br0">&#40;</span><span class="sy2">*</span>t<span class="br0">&#41;</span>.<span class="me1">v</span><span class="sy4">;</span> <span class="co1">//更改边权值</span>
+				<span class="kw1">if</span><span class="br0">&#40;</span><span class="sy3">!</span>done<span class="br0">&#91;</span><span class="br0">&#40;</span><span class="sy2">*</span>t<span class="br0">&#41;</span>.<span class="me1">to</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="br0">&#123;</span> <span class="co1">//没有入队,则将其入队</span>
+					buff.<span class="me1">push</span><span class="br0">&#40;</span><span class="br0">&#40;</span><span class="sy2">*</span>t<span class="br0">&#41;</span>.<span class="me1">to</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">//将节点压入队列</span>
+					done<span class="br0">&#91;</span><span class="br0">&#40;</span><span class="sy2">*</span>t<span class="br0">&#41;</span>.<span class="me1">to</span><span class="br0">&#93;</span><span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span> <span class="co1">//标记节点已经入队</span>
+					cnt<span class="br0">&#91;</span><span class="br0">&#40;</span><span class="sy2">*</span>t<span class="br0">&#41;</span>.<span class="me1">to</span><span class="br0">&#93;</span><span class="sy2">+</span><span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span> <span class="co1">//节点入队次数自增</span>
+					<span class="kw1">if</span><span class="br0">&#40;</span>cnt<span class="br0">&#91;</span><span class="br0">&#40;</span><span class="sy2">*</span>t<span class="br0">&#41;</span>.<span class="me1">to</span><span class="br0">&#93;</span><span class="sy1">&gt;</span>V<span class="br0">&#41;</span><span class="br0">&#123;</span> <span class="co1">//已经超过V次,出现负环</span>
+						<span class="kw1">while</span><span class="br0">&#40;</span><span class="sy3">!</span>buff.<span class="me1">empty</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>buff.<span class="me1">pop</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">//清空队列,释放内存</span>
+						<span class="kw1">return</span> <span class="kw2">false</span><span class="sy4">;</span> <span class="co1">//返回FALSE</span>
+					<span class="br0">&#125;</span>
+				<span class="br0">&#125;</span>
+			<span class="br0">&#125;</span>
+		<span class="br0">&#125;</span>
+		buff.<span class="me1">pop</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span><span class="co1">//弹出队首节点</span>
+		done<span class="br0">&#91;</span>tmp<span class="br0">&#93;</span><span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span><span class="co1">//将队首节点标记为未入队</span>
+	<span class="br0">&#125;</span>
+	<span class="kw1">return</span> <span class="kw2">true</span><span class="sy4">;</span> <span class="co1">//返回TRUE</span>
+<span class="br0">&#125;</span> <span class="co1">//算法结束</span>
+&#160;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span> <span class="co1">//主函数</span>
+	<span class="kw3">scanf</span><span class="br0">&#40;</span><span class="st0">&quot;%d%d&quot;</span>,<span class="sy3">&amp;</span>V,<span class="sy3">&amp;</span>E<span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">//读入点数和边数</span>
+	<span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">0</span>,x,y,l<span class="sy4">;</span>i<span class="sy1">&lt;</span>E<span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+		<span class="kw3">scanf</span><span class="br0">&#40;</span><span class="st0">&quot;%d%d%d&quot;</span>,<span class="sy3">&amp;</span>x,<span class="sy3">&amp;</span>y,<span class="sy3">&amp;</span>l<span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">//读入x,y,l表示从x-&gt;y有一条有向边长度为l</span>
+		Edge tmp<span class="sy4">;</span> <span class="co1">//设置一个临时变量,以便存入vector</span>
+		tmp.<span class="me1">v</span><span class="sy1">=</span>l<span class="sy4">;</span> <span class="co1">//设置边权</span>
+		tmp.<span class="me1">to</span><span class="sy1">=</span>y<span class="sy4">;</span> <span class="co1">//设置连接节点</span>
+		e<span class="br0">&#91;</span>x<span class="br0">&#93;</span>.<span class="me1">push_back</span><span class="br0">&#40;</span>tmp<span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">//将这条边压入x的表中</span>
+	<span class="br0">&#125;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span><span class="sy3">!</span>spfa<span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#123;</span> <span class="co1">//出现负环</span>
+		<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;出现负环,最短路不存在<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span><span class="kw1">else</span><span class="br0">&#123;</span> <span class="co1">//存在最短路</span>
+		<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;节点0到节点%d的最短距离为%d&quot;</span>,V<span class="sy2">-</span><span class="nu0">1</span>,dist<span class="br0">&#91;</span>V<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<div style="margin:15px auto 20px;border:1px solid #c3c3c3;background-color:#f5f5f5;-moz-border-radius:7px;padding:0px;"><div style="background:#c3c3c3;padding-left:10px;-moz-border-radius-topleft:5px;-moz-border-radius-topright:5px;display:block!important;display:block;display:inline-block!ie">
+<div style="float:right"><a rel="nofollow" class="external text" href="http://www.nocow.cn/index.php?title=%E6%A8%A1%E6%9D%BF:%E5%9B%BE%E8%AE%BA&amp;action=edit">[编辑]</a></div> <b><a href="/index.php/%E5%9B%BE%E8%AE%BA" title="图论">图论</a>及<a href="/index.php/%E5%9B%BE%E8%AE%BA" title="图论">图论算法</a></b></div>
+<div style="padding:5px 20px">
+<p><b><a href="/index.php/%E5%9B%BE" title="图">图</a></b> - <b><a href="/index.php/%E6%9C%89%E5%90%91%E5%9B%BE" title="有向图">有向图</a></b> - <b><a href="/index.php/%E6%97%A0%E5%90%91%E5%9B%BE" title="无向图">无向图</a></b> - <b><a href="/index.php/%E8%BF%9E%E9%80%9A%E5%9B%BE" title="连通图">连通图</a></b> - <b><a href="/index.php/%E5%BC%BA%E8%BF%9E%E9%80%9A%E5%9B%BE" title="强连通图">强连通图</a></b> - <b><a href="/index.php/%E5%AE%8C%E5%85%A8%E5%9B%BE" title="完全图">完全图</a></b> - <b><a href="/index.php/%E7%A8%80%E7%96%8F%E5%9B%BE" title="稀疏图">稀疏图</a></b> - <b><a href="/index.php/%E9%9B%B6%E5%9B%BE" title="零图">零图</a></b> - <b><a href="/index.php/%E6%A0%91" title="树">树</a></b> - <b><a href="/index.php/%E7%BD%91%E7%BB%9C%E6%B5%81" title="网络流">网络</a></b>
+</p><p><b>基本<a href="/index.php/%E9%81%8D%E5%8E%86" title="遍历">遍历</a>算法：</b><a href="/index.php/%E5%AE%BD%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2" title="宽度优先搜索" class="mw-redirect">宽度优先搜索</a> - <a href="/index.php/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2" title="深度优先搜索">深度优先搜索</a> - <a href="/index.php/A*" title="A*">A*</a> - <b><a href="/index.php/%E5%B9%B6%E6%9F%A5%E9%9B%86" title="并查集">并查集</a>求<a href="/index.php/%E8%BF%9E%E9%80%9A%E5%88%86%E6%94%AF" title="连通分支">连通分支</a></b> - <b><a href="/index.php/Flood_Fill" title="Flood Fill">Flood Fill</a></b>
+</p><p><b><a href="/index.php/%E6%9C%80%E7%9F%AD%E8%B7%AF" title="最短路" class="mw-redirect">最短路</a>：</b><a href="/index.php/Dijkstra%E7%AE%97%E6%B3%95" title="Dijkstra算法">Dijkstra</a> - <a href="/index.php/Bellman-Ford%E7%AE%97%E6%B3%95" title="Bellman-Ford算法">Bellman-Ford</a>（<a href="/index.php/SPFA" title="SPFA" class="mw-redirect">SPFA</a>） - <a href="/index.php/Floyd-Warshall%E7%AE%97%E6%B3%95" title="Floyd-Warshall算法">Floyd-Warshall</a> - <a href="/index.php/Johnson%E7%AE%97%E6%B3%95" title="Johnson算法">Johnson算法</a>
+</p><p><b><a href="/index.php/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91" title="最小生成树">最小生成树</a>：</b><a href="/index.php/Prim%E7%AE%97%E6%B3%95" title="Prim算法">Prim</a> - <a href="/index.php/Kruskal%E7%AE%97%E6%B3%95" title="Kruskal算法">Kruskal</a>
+</p><p><b><a href="/index.php/%E5%BC%BA%E8%BF%9E%E9%80%9A%E5%88%86%E6%94%AF" title="强连通分支">强连通分支</a>：</b><a href="/index.php/Kosaraju%E7%AE%97%E6%B3%95" title="Kosaraju算法">Kosaraju</a> - <a href="/index.php/Gabow%E7%AE%97%E6%B3%95" title="Gabow算法">Gabow</a> - <a href="/index.php/Tarjan%E7%AE%97%E6%B3%95" title="Tarjan算法">Tarjan</a>
+</p><p><b><a href="/index.php/%E7%BD%91%E7%BB%9C%E6%B5%81" title="网络流">网络流</a>：</b><a href="/index.php?title=%E5%A2%9E%E5%B9%BF%E8%B7%AF%E6%B3%95&amp;action=edit&amp;redlink=1" class="new" title="增广路法（尚未撰写）">增广路法</a>（<a href="/index.php/Ford-Fulkerson%E7%AE%97%E6%B3%95" title="Ford-Fulkerson算法" class="mw-redirect">Ford-Fulkerson</a>，<a href="/index.php/Edmonds-Karp%E7%AE%97%E6%B3%95" title="Edmonds-Karp算法">Edmonds-Karp</a>，<a href="/index.php/Dinic%E7%AE%97%E6%B3%95" title="Dinic算法">Dinic</a>） - <a href="/index.php/%E9%A2%84%E6%B5%81%E6%8E%A8%E8%BF%9B%E7%AE%97%E6%B3%95" title="预流推进算法">预流推进</a> - <a href="/index.php/Relabel-to-front" title="Relabel-to-front">Relabel-to-front</a>
+</p><p><b>图<a href="/index.php/%E5%8C%B9%E9%85%8D" title="匹配">匹配</a> - <a href="/index.php/%E4%BA%8C%E5%88%86%E5%9B%BE%E5%8C%B9%E9%85%8D" title="二分图匹配">二分图匹配</a>：</b><a href="/index.php/%E5%8C%88%E7%89%99%E5%88%A9%E7%AE%97%E6%B3%95" title="匈牙利算法">匈牙利算法</a> - <a href="/index.php/Kuhn-Munkres%E7%AE%97%E6%B3%95" title="Kuhn-Munkres算法">Kuhn-Munkres</a> - <a href="/index.php/Edmonds%27_Blossom-Contraction" title="Edmonds' Blossom-Contraction">Edmonds' Blossom-Contraction</a>
+</p>
+</div></div>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 53/1000000
+Post-expand include size: 1717/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:124-0!*!0!!zh-cn!*!* and timestamp 20170812130537 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=SPFA%E7%AE%97%E6%B3%95&amp;oldid=34639">http://www.nocow.cn/index.php?title=SPFA%E7%AE%97%E6%B3%95&amp;oldid=34639</a>”</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="特殊:页面分类">1个分类</a>: <ul><li><a href="/index.php/%E5%88%86%E7%B1%BB:%E5%9B%BE%E8%AE%BA" title="分类:图论">图论</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/SPFA%E7%AE%97%E6%B3%95" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk"><a href="/index.php/%E8%AE%A8%E8%AE%BA:SPFA%E7%AE%97%E6%B3%95" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-viewsource"><a href="/index.php?title=SPFA%E7%AE%97%E6%B3%95&amp;action=edit" title="本页面已被保护。你可以查看其源代码。 [e]" accesskey="e">查看源代码</a></li>
+				<li id="ca-history"><a href="/index.php?title=SPFA%E7%AE%97%E6%B3%95&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=SPFA" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/SPFA%E7%AE%97%E6%B3%95" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/SPFA%E7%AE%97%E6%B3%95" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=SPFA%E7%AE%97%E6%B3%95&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=SPFA%E7%AE%97%E6%B3%95&amp;oldid=34639" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过81,942次。</li>
+		<li id="credits">本页面由<a href="/index.php/%E7%94%A8%E6%88%B7:Cosechy" title="用户:Cosechy">yh</a>于2014年5月21日 (星期三) 12:49做出最后修改。 在<a href="/index.php/%E7%94%A8%E6%88%B7:Gnaggnoyil" title="用户:Gnaggnoyil">SuperBrother</a>、NOCOW用户<a href="/index.php?title=%E7%94%A8%E6%88%B7:South&amp;action=edit&amp;redlink=1" class="new" title="用户:South（尚未撰写）">South</a>、<a href="/index.php?title=%E7%94%A8%E6%88%B7:Rpk74m&amp;action=edit&amp;redlink=1" class="new" title="用户:Rpk74m（尚未撰写）">Rpk74m</a>和<a href="/index.php?title=%E7%94%A8%E6%88%B7:Jack950703&amp;action=edit&amp;redlink=1" class="new" title="用户:Jack950703（尚未撰写）">Jack950703</a>和<a href="/index.php?title=SPFA%E7%AE%97%E6%B3%95&amp;action=credits" title="SPFA算法">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.170 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

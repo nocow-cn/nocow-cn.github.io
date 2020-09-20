@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>动态规划 - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "动态规划", "wgTitle": "动态规划", "wgCurRevisionId": 33294, "wgArticleId": 31, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-动态规划 action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">动态规划</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><ul><li><b>动态规划</b>(Dynamic Programming)是运筹学的一个分支，是求解决策过程(decision process)最优化的数学方法。20世纪50年代初美国数学家R.E.Bellman等人在研究多阶段决策过程(multistep decision process)的优化问题时，提出了著名的最优化原理(principle of optimality)，把多阶段过程转化为一系列单阶段问题，逐个求解，创立了解决这类过程优化问题的新方法——动态规划。1957年出版了他的名著Dynamic Programming，这是该领域的第一本著作。
+</li><li>动态规划问世以来，在经济管理、生产调度、工程技术和最优控制等方面得到了广泛的应用。例如最短路线、库存管理、资源分配、设备更新、排序、装载等问题，用动态规划方法比用其它方法求解更为方便。
+</li><li>虽然动态规划主要用于求解以时间划分阶段的动态过程的优化问题，但是一些与时间无关的静态规划(如线性规划、非线性规划)，只要人为地引进时间因素，把它视为多阶段决策过程，也可以用动态规划方法方便地求解。
+</li><li>动态规划程序设计是对解最优化问题的一种途径、一种方法，而不是一种特殊算法。不象前面所述的那些搜索或数值计算那样，具有一个标准的数学表达式和明确清晰的解题方法。动态规划程序设计往往是针对一种最优化问题，由于各种问题的性质不同，确定最优解的条件也互不相同，因而动态规划的设计方法对不同的问题，有各具特色的解题方法，而不存在一种万能的动态规划，可以解决各类最优化问题。因此在学习时，除了要对基本概念和方法正确理解外，必须具体问题具体分析处理，以丰富的想象力去建立模型，用创造性的技巧去求解。
+</li></ul>
+<hr />
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E6.80.9D.E6.83.B3"><span class="tocnumber">1</span> <span class="toctext">思想</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#.E7.89.B9.E5.BE.81"><span class="tocnumber">2</span> <span class="toctext">特征</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#.E8.AE.BE.E8.AE.A1.E6.AD.A5.E9.AA.A4"><span class="tocnumber">3</span> <span class="toctext">设计步骤</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#.E5.B8.B8.E8.A7.81.E7.8A.B6.E6.80.81.E8.BD.AC.E7.A7.BB.E6.96.B9.E7.A8.8B"><span class="tocnumber">4</span> <span class="toctext">常见状态转移方程</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#.E5.B8.B8.E7.94.A8.E4.BC.98.E5.8C.96.E6.96.B9.E6.B3.95"><span class="tocnumber">5</span> <span class="toctext">常用优化方法</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#.E7.BB.8F.E5.85.B8.E7.BB.83.E4.B9.A0"><span class="tocnumber">6</span> <span class="toctext">经典练习</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#.E5.BC.95.E7.94.A8"><span class="tocnumber">7</span> <span class="toctext">引用</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#.E9.93.BE.E6.8E.A5"><span class="tocnumber">8</span> <span class="toctext">链接</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#.E5.8F.A6.E4.B8.80.E4.B8.AA.E6.84.8F.E4.B9.89"><span class="tocnumber">9</span> <span class="toctext">另一个意义</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="/index.php?title=%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92&amp;action=edit&amp;section=1" title="编辑段落：思想">编辑</a>]</span> <span class="mw-headline" id=".E6.80.9D.E6.83.B3">思想</span></h2>
+<p>动态规划通常用于求解具有某种最优性质的问题。在这类问题中，可能会有许多可行解。每一个解都对应于一个值，我们希望找到具有最优值的解。动态规划与分治法类似，其基本思想也是将待求解问题分解成若干个子问题，先求解子问题，然后从这些子问题的解得到原问题的解。与分治法不同的是，适合于用动态规划求解的问题，经分解得到子问题往往不是互相独立的。若用分治法来解这类问题，则分解得到的子问题数目太多，有些子问题被重复计算了很多次。如果我们能够保存已解决的子问题的答案，而在需要时再找出已求得的答案，这样就可以避免大量的重复计算，节省时间。我们可以记录所有已解的子问题的答案,不管该子问题以后是否被用到，只要它被计算过，就将其结果记录下，这就是动态规划法的基本思路。具体的动态规划多种多样，但它们具有相同的思想：<b>不做做过的事情</b>。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92&amp;action=edit&amp;section=2" title="编辑段落：特征">编辑</a>]</span> <span class="mw-headline" id=".E7.89.B9.E5.BE.81">特征</span></h2>
+<p>动态规划的有效性依赖于问题本身所具有的两个重要性质：子问题重叠性质和最优子结构性质。即：
+</p>
+<ul><li>在用递归算法自顶向下解问题时，每次产生的子问题并不总是新问题，有些子问题被反复计算多次。
+</li><li>当问题的最优解包含了其子问题的最优解时，称该问题具有最优子结构性质。
+</li></ul>
+<p>于是产生了使用动态规划的动机：
+</p>
+<ul><li>避免重叠子问题，将计算过的子问题答案记录下来。
+</li><li>利用最优子结构，把问题看作多阶段决策问题，将一个大问题分阶段化成多个小问题。
+</li></ul>
+<h2><span class="editsection">[<a href="/index.php?title=%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92&amp;action=edit&amp;section=3" title="编辑段落：设计步骤">编辑</a>]</span> <span class="mw-headline" id=".E8.AE.BE.E8.AE.A1.E6.AD.A5.E9.AA.A4">设计步骤</span></h2>
+<ol><li>分析问题结构，建立基本模型；
+</li><li>写出动态规划方程；
+</li><li>以自底向上的方式计算出最优值；
+</li><li>根据计算最优值时得到的信息，构造一个最优解。
+</li></ol>
+<p>注：步骤1-3是动态规划的基本步骤。在只需要求出最优值的情形，步骤4可以省略，步骤3中记录的信息也较少；若需要求出问题的一个最优解，则必须执行步骤4，步骤3中记录的信息必须足够多以便构造最优解。
+</p><p>而在设计动态规划时，须注意方案必须满足如下条件：
+</p>
+<ul><li>状态必须满足<b>最优化原理</b>；
+</li><li>状态必须满足<b>无后效性</b>。
+</li></ul>
+<p>即是：
+</p>
+<ul><li>无论过去的状态和决策如何，对前面的决策所形成的当前状态而言，余下的诸决策必须构成最优策略。可以通俗地理解为子问题的局部最优将导致整个问题的全局最优。
+</li><li>某阶段的状态一旦确定，则此后过程的演变不再受此前各状态及决策的影响。也就是说，“未来与过去无关”，当前的状态是此前历史的一个完整总结，此前的历史只能通过当前的状态去影响过程未来的演变。   　　
+</li></ul>
+<h2><span class="editsection">[<a href="/index.php?title=%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92&amp;action=edit&amp;section=4" title="编辑段落：常见状态转移方程">编辑</a>]</span> <span class="mw-headline" id=".E5.B8.B8.E8.A7.81.E7.8A.B6.E6.80.81.E8.BD.AC.E7.A7.BB.E6.96.B9.E7.A8.8B">常见状态转移方程</span></h2>
+<p>动态规划博大精深，方程千变万化，但对于一些典型问题，还是可以总结出一些简单规律。这里将介绍一些常用的状态转移方程，旨在帮助大家熟悉怎样设计出一个动态规划方案。通过这些简单的模型，大家可以感受对问题状态的划分和状态的转移。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92&amp;action=edit&amp;section=5" title="编辑段落：常用优化方法">编辑</a>]</span> <span class="mw-headline" id=".E5.B8.B8.E7.94.A8.E4.BC.98.E5.8C.96.E6.96.B9.E6.B3.95">常用优化方法</span></h2>
+<p>汪一宁《1D/1D动态规划优化初步》<a rel="nofollow" class="external free" href="http://wenku.baidu.com/view/681d161ca300a6c30c229f70.html">http://wenku.baidu.com/view/681d161ca300a6c30c229f70.html</a>
+包含四边形不等式，单调性优化，斜率优化
+</p><p>周源的这篇论文中的例二也包含来了一个斜率优化的方法。挺常见的。
+<a rel="nofollow" class="external free" href="http://wenku.baidu.com/view/df9e2e0d6c85ec3a87c2c5b5.html">http://wenku.baidu.com/view/df9e2e0d6c85ec3a87c2c5b5.html</a>
+</p><p>当你看完以上两篇之后，你应该意识到这一类动态规划优化的本质都是在维护单调性。因此任何维护方法都可以用上，不要仅仅拘泥于那几种方法。
+</p><p>二维四边形不等式的动归优化请见《算法艺术与信息学竞赛》中相应篇目。（个人认为写的不是很好，要想半天）
+</p><p>状态数的减少和转移数目的减少没有特定的方法。要自己想。
+如果真说有什么可以总结的方法，那就是多做预处理。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92&amp;action=edit&amp;section=6" title="编辑段落：经典练习">编辑</a>]</span> <span class="mw-headline" id=".E7.BB.8F.E5.85.B8.E7.BB.83.E4.B9.A0">经典练习</span></h2>
+<ul><li><a href="/index.php/01%E8%83%8C%E5%8C%85" title="01背包">01背包</a>
+</li><li>导弹拦截
+</li><li>城市交通
+</li></ul>
+<h2><span class="editsection">[<a href="/index.php?title=%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92&amp;action=edit&amp;section=7" title="编辑段落：引用">编辑</a>]</span> <span class="mw-headline" id=".E5.BC.95.E7.94.A8">引用</span></h2>
+<h2><span class="editsection">[<a href="/index.php?title=%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92&amp;action=edit&amp;section=8" title="编辑段落：链接">编辑</a>]</span> <span class="mw-headline" id=".E9.93.BE.E6.8E.A5">链接</span></h2>
+<p><a rel="nofollow" class="external text" href="http://www.comp.nus.edu.sg/~xujia/mirror/algorithm.myrice.com/algorithm/technique/dynamic_programming/index.htm">from Starfish</a>
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92&amp;action=edit&amp;section=9" title="编辑段落：另一个意义">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.A6.E4.B8.80.E4.B8.AA.E6.84.8F.E4.B9.89">另一个意义</span></h2>
+<p>DP还有“地爬”的意思，即“天翔”的反义词。
+</p><p><b>如“占地爬”（JOLLWISH大牛）。</b>
+如“陈天翔”（恒元祥大牛）。
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 35/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:31-0!*!0!!zh-cn!*!* and timestamp 20150502091458 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92&amp;oldid=33294">http://www.nocow.cn/index.php?title=%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92&amp;oldid=33294</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92&amp;oldid=33294" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过12,030次。</li>
+		<li id="credits">本页面由NOCOW用户<a href="/index.php?title=%E7%94%A8%E6%88%B7:Liumengyun&amp;action=edit&amp;redlink=1" class="new" title="用户:Liumengyun（尚未撰写）">Liumengyun</a>于2013年8月7日 (星期三) 01:30做出最后修改。 在<a href="/index.php/%E7%94%A8%E6%88%B7:Tangtong" title="用户:Tangtong">Cu</a>和<a href="/index.php/%E7%94%A8%E6%88%B7:Jollwish" title="用户:Jollwish">Jol</a>、NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/221.12.63.222" title="特殊:用户贡献/221.12.63.222">221.12.63.222</a>和<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/218.22.18.93" title="特殊:用户贡献/218.22.18.93">218.22.18.93</a>和<a href="/index.php?title=%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92&amp;action=credits" title="动态规划">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.194 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>USACO/shuttle - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=USACO/shuttle&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=USACO/shuttle&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "USACO/shuttle", "wgTitle": "USACO/shuttle", "wgCurRevisionId": 35737, "wgArticleId": 1173, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-USACO_shuttle action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">USACO/shuttle</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="/index.php/USACO" title="USACO">USACO</a></span></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E9.97.AE.E9.A2.98.E5.88.86.E6.9E.90"><span class="tocnumber">1</span> <span class="toctext">问题分析</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#.E6.9E.84.E9.80.A0.E6.B3.95"><span class="tocnumber">1.1</span> <span class="toctext">构造法</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#.E6.95.B0.E6.8D.AE.E5.88.86.E6.9E.90"><span class="tocnumber">1.2</span> <span class="toctext">数据分析</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#.E5.85.B6.E5.AE.9E.E8.BF.99.E9.81.93.E9.A2.98.E7.94.A8.E6.90.9C.E7.B4.A2.E4.B9.9F.E8.83.BD.E8.BF.87.EF.BC.8C.E8.AF.A6.E8.A7.81.E4.BB.A3.E7.A0.81.EF.BC.88.E6.9C.80.E5.90.8E.E4.B8.80.E4.B8.AA.EF.BC.89"><span class="tocnumber">1.3</span> <span class="toctext">其实这道题用搜索也能过，详见代码（最后一个）</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#.E6.90.9C.E7.B4.A2.E4.B9.9F.E5.8F.AF.E4.BB.A5"><span class="tocnumber">1.4</span> <span class="toctext">搜索也可以</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#DFS.E4.B9.9F.E8.83.BD.E8.BF.87"><span class="tocnumber">1.5</span> <span class="toctext">DFS也能过</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#IDA.2A.E5.A5.87.E6.80.AA.E5.9C.B0.E8.BF.87.E4.BA.86"><span class="tocnumber">1.6</span> <span class="toctext">IDA*奇怪地过了</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#.E9.80.92.E6.8E.A8"><span class="tocnumber">1.7</span> <span class="toctext">递推</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#.E8.8C.83.E4.BE.8B.E7.A8.8B.E5.BA.8F"><span class="tocnumber">2</span> <span class="toctext">范例程序</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/shuttle&amp;action=edit&amp;section=1" title="编辑段落：问题分析">编辑</a>]</span> <span class="mw-headline" id=".E9.97.AE.E9.A2.98.E5.88.86.E6.9E.90"> 问题分析 </span></h2>
+<h3><span class="editsection">[<a href="/index.php?title=USACO/shuttle&amp;action=edit&amp;section=2" title="编辑段落：构造法">编辑</a>]</span> <span class="mw-headline" id=".E6.9E.84.E9.80.A0.E6.B3.95">构造法</span></h3>
+根据答案寻找规律（可以证明正确性）:<p>
+
+3</p>
+3 5 6 4 2 1 3 5 7 6 4 2 3 5 4<p>
+2 1 -2 -2 -1 2 2 2 -1 -2 -2 1 2 -1</p><p>
+4</p>
+4 6 7 5 3 2 4 6 8 9 7 5 3 1 2 4 6 8 7 5 3 4 6 5<p>
+2 1 -2 -2 -1 2 2 2 1 -2 -2 -2 -2 1 2 2 2 -1 -2 -2 1 2 -1</p><p>
+5</p>
+5 7 8 6 4 3 5 7 9 10 8 6 4 2 1 3 5  7 9 11 10 8 6 4 2 3 5 7 9 8 6 4 5 7 6<p>
+2 1 -2 -2 -1 2 2 2 1 -2 -2 -2 -2 -1 2 2 2 2 2 -1 -2 -2 -2 -2 1 2 2 2 -1 -2 -2 1 2 -1</p><p>
+6</p>
+6 8 9 7 5 4 6 8 10 11 9 7 5 3 2 4 6 8 10 12 13 11 9 7 5 3 1 2 4 6 8 10 12 11 9 7 5 3 4 6 8 10 9 7 5 6 8 7<p>
+2 1 -2 -2 -1 2 2 2 1 -2 -2 -2 -2 -1 2 2 2 2 2 1 -2 -2 -2 -2 -2 -2 1 2 2 2 2 2 -1 -2 -2 -2 -2  1 2 2 2 -1 -2 -2 1 2 -1</p><p>
+<p><br />
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=USACO/shuttle&amp;action=edit&amp;section=3" title="编辑段落：数据分析">编辑</a>]</span> <span class="mw-headline" id=".E6.95.B0.E6.8D.AE.E5.88.86.E6.9E.90">数据分析</span></h3>
+Usaco在这题上并没有指明不可以用分析法，而且dfs肯定TLE，所以我们取巧。</p>
+<p>先观察样例数据，如果把还没移动的那一步也算上，那么空格的位置为</p>
+<p>4 3 5 6 4 2 1 3 5 7 6 4 2 3 5 4                       (n=3,样例)</p>
+<p>5 4 6 7 5 3 2 4 6 8 9 7 5 3 1 2 4 6 8 7 5 3 4 6 5  (n=4)</p>
+<p>我们凭借极其敏锐的眼光发现这组序列为</p>
+<p>４35 642 1357 642 35 4                                (n=3,样例)</p>
+<p>5 46 753 2468 97531 2468 753 46 5                  (n=4)</p>
+<p>即长度为1,2,3,4,...,n,n+1,n,...,4,3,2,1这样的2n+1组等差序列</p>
+<p>我们讨论第1~n+1组序列，这些序列满足</p>
+<p>　　*公差的绝对值为2</p>
+<p>　　*奇数组为降序列，偶数组为升序列</p>
+<p>　　*对于第i组(1&lt;=i&lt;=n+1),若为奇数组则首项为n+i，偶数组则首项为n-i+2</p>
+<p>对于第n+2~2n+1组，可以由对称性求出。</p>
+<p>输出时从第二组开始即可。</p>
+<p>把规律总结成这样后，代码应该很好写了吧</p>
+<hr />
+<p>这个太叉叉了，敢问楼上大牛，你是怎么发现这样的规律的
+</p>
+<hr />
+<p>蒟蒻表示这太拽了
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=USACO/shuttle&amp;action=edit&amp;section=4" title="编辑段落：其实这道题用搜索也能过，详见代码（最后一个）">编辑</a>]</span> <span class="mw-headline" id=".E5.85.B6.E5.AE.9E.E8.BF.99.E9.81.93.E9.A2.98.E7.94.A8.E6.90.9C.E7.B4.A2.E4.B9.9F.E8.83.BD.E8.BF.87.EF.BC.8C.E8.AF.A6.E8.A7.81.E4.BB.A3.E7.A0.81.EF.BC.88.E6.9C.80.E5.90.8E.E4.B8.80.E4.B8.AA.EF.BC.89">其实这道题用搜索也能过，详见代码（最后一个）</span></h3>
+<p>写了个暴力双向广搜。头都大了。太鄙视我自己了。。。
+</p><p>路人丁表示未发现本题双向广搜代码= = 只发现广搜能过。。
+</p><p>如果双向宽搜不加优化，可以过到层数为80这样，很明显，不能全过。
+一个宽搜只加一个W只往后移，B只往前移的优化，就可以全过了，0.1s以内。效率也还可以，最可贵的是：写法简单。
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=USACO/shuttle&amp;action=edit&amp;section=5" title="编辑段落：搜索也可以">编辑</a>]</span> <span class="mw-headline" id=".E6.90.9C.E7.B4.A2.E4.B9.9F.E5.8F.AF.E4.BB.A5">搜索也可以</span></h3>
+<p>其实搜索也很快的。。我的就是全0.000
+用0、1、2表示状态
+例如输入为3的时候初始状态就是： 1110222
+1、可以证明，移动步数最少时，1一定往右移，2一定往左移
+2、进一步观察发现，  若空格附近状态为   101时，则1不能往左移，否则下一步会出现1中所述的情况，除非在现有空位右边已经全部为1，  同理  202情况相同
+加入上述两个条件之后就能0.000  ac掉了
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=USACO/shuttle&amp;action=edit&amp;section=6" title="编辑段落：DFS也能过">编辑</a>]</span> <span class="mw-headline" id="DFS.E4.B9.9F.E8.83.BD.E8.BF.87"> DFS也能过 </span></h3>
+<p>设 p 为空格的位置，搜的时候 p-2, p-1, p+1, p+2 枚举这4个。</p>
+<p>减枝：设初始时左B右W，以空格左侧为例，从 p-1 向 0 遍历，若发现 WW 组合，且向再左还有 B，则可以回退了；右侧同理。因为规则里说“You may not back up”，也就是不能回退，若有WW组合，则会把左边的B塞死。</p>
+<p>可以全部 0.000s 过。</p>
+<h3><span class="editsection">[<a href="/index.php?title=USACO/shuttle&amp;action=edit&amp;section=7" title="编辑段落：IDA*奇怪地过了">编辑</a>]</span> <span class="mw-headline" id="IDA.2A.E5.A5.87.E6.80.AA.E5.9C.B0.E8.BF.87.E4.BA.86"> IDA*奇怪地过了 </span></h3>
+<p>没有加奇怪的剪枝（其实是自己没想到qwq），只是乱改了下h函数就过了（改过的h函数好像不太对……总之过了）
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=USACO/shuttle&amp;action=edit&amp;section=8" title="编辑段落：递推">编辑</a>]</span> <span class="mw-headline" id=".E9.80.92.E6.8E.A8"> 递推 </span></h3>
+<p>观察到可根据空格左右2格内状态判断下一次该移动哪个（因有最小解限制，故移法唯一）
+跑起来很快，不过写起来没有前面几位大神的方便。
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/shuttle&amp;action=edit&amp;section=9" title="编辑段落：范例程序">编辑</a>]</span> <span class="mw-headline" id=".E8.8C.83.E4.BE.8B.E7.A8.8B.E5.BA.8F"> 范例程序 </span></h2>
+<ul><li><a href="/index.php/Code:USACO/shuttle/Pascal" title="Code:USACO/shuttle/Pascal">Pascal</a>
+</li><li><a href="/index.php/Code:USACO/shuttle/C" title="Code:USACO/shuttle/C">C</a>
+</li><li><a href="/index.php/Code:USACO/shuttle/C%2B%2B" title="Code:USACO/shuttle/C++">C++</a>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 34/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:1173-0!*!0!!zh-cn!*!* and timestamp 20170806230158 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=USACO/shuttle&amp;oldid=35737">http://www.nocow.cn/index.php?title=USACO/shuttle&amp;oldid=35737</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/USACO/shuttle" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:USACO/shuttle&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=USACO/shuttle&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=USACO/shuttle&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=USACO%2Fshuttle" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/USACO/shuttle" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/USACO/shuttle" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=USACO/shuttle&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=USACO/shuttle&amp;oldid=35737" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过15,391次。</li>
+		<li id="credits">本页面由NOCOW用户<a href="/index.php/%E7%94%A8%E6%88%B7:Debug18" title="用户:Debug18">Debug18</a>于2015年5月14日 (星期四) 14:54做出最后修改。 在<a href="/index.php/%E7%94%A8%E6%88%B7:W4" title="用户:W4">Core</a>、NOCOW用户<a href="/index.php/%E7%94%A8%E6%88%B7:RXDoi" title="用户:RXDoi">RXDoi</a>、NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/123.138.44.83" title="特殊:用户贡献/123.138.44.83">123.138.44.83</a>和<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/58.211.218.74" title="特殊:用户贡献/58.211.218.74">58.211.218.74</a>和<a href="/index.php?title=USACO/shuttle&amp;action=credits" title="USACO/shuttle">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.188 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

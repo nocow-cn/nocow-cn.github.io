@@ -1,0 +1,599 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="keywords" content="Code:USACO/packrec/C" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (中文(简体))" />
+<link title="Creative Commons" type="application/rdf+xml" href="/index.php?title=Code:USACO/packrec/C&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+		<title>NOCOW - Code:USACO/packrec/C</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins/monobook/main.css?42b"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print" href="/skins/common/commonPrint.css?42b" />
+		<link rel="stylesheet" type="text/css" media="handheld" href="/skins/monobook/handheld.css?42b" />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins/monobook/IE50Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins/monobook/IE55Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins/monobook/IE60Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins/monobook/IE70Fixes.css?42b";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?42b"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">/*<![CDATA[*/
+var skin = "monobook";
+var stylepath = "/skins";
+var wgArticlePath = "/index.php/$1";
+var wgScriptPath = "";
+var wgServer = "http://www.nocow.cn";
+var wgCanonicalNamespace = "Code";
+var wgCanonicalSpecialPageName = false;
+var wgNamespaceNumber = 104;
+var wgPageName = "Code:USACO/packrec/C";
+var wgTitle = "USACO/packrec/C";
+var wgArticleId = "173";
+var wgIsArticle = true;
+var wgUserName = null;
+var wgUserLanguage = "zh-cn";
+var wgContentLanguage = "zh-cn";
+var wgBreakFrames = false;
+var wgCurRevisionId = "22316";
+/*]]>*/</script>
+                
+		<script type="text/javascript" src="/skins/common/wikibits.js?42b"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=-&action=raw&gen=css&maxage=18000";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+			</head>
+<body  class="mediawiki ns-104 ltr page-Code_USACO_packrec_C">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+<div style="text-align:center;font-size:85%;font-weight:bold" id=headlinemessage>
+<div>如果发现广告等破坏行为，请尽量将条目恢复到较早的版本而不是把相应内容直接删除，谢谢合作。</div>
+<!--div>NOCOW近期对条目的命名进行了一些整理，一些链接可能失效，为此带来的不便请大家谅解。创建条目时也请遵循新的命名规范，谢谢合作。</div-->
+</div>
+		<a name="top" id="top"></a>
+				<h1 class="firstHeading">Code:USACO/packrec/C</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">来自&quot;NOCOW&quot;</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">跳转到: <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>			<!-- start content -->
+			<pre class="c"><span style="color: #339933;">#include &lt;stdio.h&gt;</span>
+<span style="color: #339933;">#include &lt;stdlib.h&gt;</span>
+<span style="color: #339933;">#include &lt;string.h&gt;</span>
+<span style="color: #339933;">#include &lt;assert.h&gt;</span>
+&nbsp;
+<span style="color: #993333;">typedef</span> <span style="color: #993333;">struct</span> Rect Rect;
+<span style="color: #993333;">struct</span> Rect <span style="color: #66cc66;">&#123;</span>
+    <span style="color: #993333;">int</span> wid;
+    <span style="color: #993333;">int</span> ht;
+<span style="color: #66cc66;">&#125;</span>;
+&nbsp;
+Rect
+rotate<span style="color: #66cc66;">&#40;</span>Rect r<span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+    Rect nr;
+&nbsp;
+    nr.<span style="color: #202020;">wid</span> = r.<span style="color: #202020;">ht</span>;
+    nr.<span style="color: #202020;">ht</span> = r.<span style="color: #202020;">wid</span>;
+    <span style="color: #b1b100;">return</span> nr;
+<span style="color: #66cc66;">&#125;</span>
+&nbsp;
+<span style="color: #993333;">int</span>
+max<span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> a, <span style="color: #993333;">int</span> b<span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+    <span style="color: #b1b100;">return</span> a &gt; b&nbsp;? a&nbsp;: b;
+<span style="color: #66cc66;">&#125;</span>
+&nbsp;
+<span style="color: #993333;">int</span>
+min<span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> a, <span style="color: #993333;">int</span> b<span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+    <span style="color: #b1b100;">return</span> a &lt; b&nbsp;? a&nbsp;: b;
+<span style="color: #66cc66;">&#125;</span>
+&nbsp;
+<span style="color: #993333;">int</span> tot;
+<span style="color: #993333;">int</span> bestarea;
+<span style="color: #993333;">int</span> bestht<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">101</span><span style="color: #66cc66;">&#93;</span>;
+&nbsp;
+<span style="color: #993333;">void</span>
+record<span style="color: #66cc66;">&#40;</span>Rect r<span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+    <span style="color: #993333;">int</span> i;
+&nbsp;
+    <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>r.<span style="color: #202020;">wid*r</span>.<span style="color: #202020;">ht</span> &lt; tot<span style="color: #66cc66;">&#41;</span>
+        *<span style="color: #66cc66;">&#40;</span><span style="color: #993333;">long</span>*<span style="color: #66cc66;">&#41;</span><span style="color: #cc66cc;">0</span>=<span style="color: #cc66cc;">0</span>;
+&nbsp;
+    <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>r.<span style="color: #202020;">wid*r</span>.<span style="color: #202020;">ht</span> &lt; bestarea || bestarea == <span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#41;</span> <span style="color: #66cc66;">&#123;</span>
+        bestarea = r.<span style="color: #202020;">wid*r</span>.<span style="color: #202020;">ht</span>;
+        <span style="color: #b1b100;">for</span><span style="color: #66cc66;">&#40;</span>i=<span style="color: #cc66cc;">0</span>; i&lt;=<span style="color: #cc66cc;">100</span>; i++<span style="color: #66cc66;">&#41;</span>
+            bestht<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span> = <span style="color: #cc66cc;">0</span>;
+    <span style="color: #66cc66;">&#125;</span>
+    <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>r.<span style="color: #202020;">wid*r</span>.<span style="color: #202020;">ht</span> == bestarea<span style="color: #66cc66;">&#41;</span>
+        bestht<span style="color: #66cc66;">&#91;</span>min<span style="color: #66cc66;">&#40;</span>r.<span style="color: #202020;">wid</span>, r.<span style="color: #202020;">ht</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#93;</span> = <span style="color: #cc66cc;">1</span>;
+<span style="color: #66cc66;">&#125;</span>
+&nbsp;
+<span style="color: #993333;">void</span>
+check<span style="color: #66cc66;">&#40;</span>Rect *r<span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+    Rect big;
+    <span style="color: #993333;">int</span> i;
+&nbsp;
+    <span style="color: #808080; font-style: italic;">/* schema 1: all lined up next to each other */</span>
+    big.<span style="color: #202020;">wid</span> = <span style="color: #cc66cc;">0</span>;
+    big.<span style="color: #202020;">ht</span> = <span style="color: #cc66cc;">0</span>;
+    <span style="color: #b1b100;">for</span><span style="color: #66cc66;">&#40;</span>i=<span style="color: #cc66cc;">0</span>; i&lt;<span style="color: #cc66cc;">4</span>; i++<span style="color: #66cc66;">&#41;</span> <span style="color: #66cc66;">&#123;</span>
+        big.<span style="color: #202020;">wid</span> += r<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">wid</span>;
+        big.<span style="color: #202020;">ht</span> = max<span style="color: #66cc66;">&#40;</span>big.<span style="color: #202020;">ht</span>, r<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ht</span><span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #66cc66;">&#125;</span>
+    record<span style="color: #66cc66;">&#40;</span>big<span style="color: #66cc66;">&#41;</span>;
+&nbsp;
+    <span style="color: #808080; font-style: italic;">/* schema 2: first three lined up, fourth on bottom */</span>
+    big.<span style="color: #202020;">wid</span> = <span style="color: #cc66cc;">0</span>;
+    big.<span style="color: #202020;">ht</span> = <span style="color: #cc66cc;">0</span>;
+    <span style="color: #b1b100;">for</span><span style="color: #66cc66;">&#40;</span>i=<span style="color: #cc66cc;">0</span>; i&lt;<span style="color: #cc66cc;">3</span>; i++<span style="color: #66cc66;">&#41;</span> <span style="color: #66cc66;">&#123;</span>
+        big.<span style="color: #202020;">wid</span> += r<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">wid</span>;
+        big.<span style="color: #202020;">ht</span> = max<span style="color: #66cc66;">&#40;</span>big.<span style="color: #202020;">ht</span>, r<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ht</span><span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #66cc66;">&#125;</span>
+    big.<span style="color: #202020;">ht</span> += r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ht</span>;
+    big.<span style="color: #202020;">wid</span> = max<span style="color: #66cc66;">&#40;</span>big.<span style="color: #202020;">wid</span>, r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">wid</span><span style="color: #66cc66;">&#41;</span>;
+    record<span style="color: #66cc66;">&#40;</span>big<span style="color: #66cc66;">&#41;</span>;
+&nbsp;
+    <span style="color: #808080; font-style: italic;">/* schema 3: first two lined up, third under them, fourth to side */</span>
+    big.<span style="color: #202020;">wid</span> = r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">wid</span> + r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">wid</span>;
+    big.<span style="color: #202020;">ht</span> = max<span style="color: #66cc66;">&#40;</span>r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ht</span>, r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ht</span><span style="color: #66cc66;">&#41;</span>;
+    big.<span style="color: #202020;">ht</span> += r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ht</span>;
+    big.<span style="color: #202020;">wid</span> = max<span style="color: #66cc66;">&#40;</span>big.<span style="color: #202020;">wid</span>, r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">wid</span><span style="color: #66cc66;">&#41;</span>;
+    big.<span style="color: #202020;">wid</span> += r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">wid</span>;
+    big.<span style="color: #202020;">ht</span> = max<span style="color: #66cc66;">&#40;</span>big.<span style="color: #202020;">ht</span>, r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ht</span><span style="color: #66cc66;">&#41;</span>;
+    record<span style="color: #66cc66;">&#40;</span>big<span style="color: #66cc66;">&#41;</span>;
+&nbsp;
+    <span style="color: #808080; font-style: italic;">/* schema 4, 5: first two rectangles lined up, next two stacked */</span>
+    big.<span style="color: #202020;">wid</span> = r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">wid</span> + r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">wid</span>;
+    big.<span style="color: #202020;">ht</span> = max<span style="color: #66cc66;">&#40;</span>r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ht</span>, r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ht</span><span style="color: #66cc66;">&#41;</span>;
+    big.<span style="color: #202020;">wid</span> += max<span style="color: #66cc66;">&#40;</span>r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">wid</span>, r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">wid</span><span style="color: #66cc66;">&#41;</span>;
+    big.<span style="color: #202020;">ht</span> = max<span style="color: #66cc66;">&#40;</span>big.<span style="color: #202020;">ht</span>, r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ht</span>+r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ht</span><span style="color: #66cc66;">&#41;</span>;
+    record<span style="color: #66cc66;">&#40;</span>big<span style="color: #66cc66;">&#41;</span>;
+&nbsp;
+    <span style="color: #808080; font-style: italic;">/*
+     * schema 6: first two pressed next to each other, next two on top, like: 
+     * 2 3
+     * 0 1
+     */</span>
+    big.<span style="color: #202020;">ht</span> = max<span style="color: #66cc66;">&#40;</span>r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ht</span>+r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ht</span>, r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ht</span>+r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ht</span><span style="color: #66cc66;">&#41;</span>;
+    big.<span style="color: #202020;">wid</span> = r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">wid</span> + r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">wid</span>;
+&nbsp;
+    <span style="color: #808080; font-style: italic;">/* do 2 and 1 touch? */</span>
+    <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ht</span> &lt; r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ht</span><span style="color: #66cc66;">&#41;</span>
+        big.<span style="color: #202020;">wid</span> = max<span style="color: #66cc66;">&#40;</span>big.<span style="color: #202020;">wid</span>, r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">wid</span>+r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">wid</span><span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #808080; font-style: italic;">/* do 2 and 3 touch? */</span>
+    <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ht</span>+r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ht</span> &gt; r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ht</span><span style="color: #66cc66;">&#41;</span>
+        big.<span style="color: #202020;">wid</span> = max<span style="color: #66cc66;">&#40;</span>big.<span style="color: #202020;">wid</span>, r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">wid</span>+r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">wid</span><span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #808080; font-style: italic;">/* do 0 and 3 touch? */</span>
+    <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ht</span> &lt; r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ht</span><span style="color: #66cc66;">&#41;</span>
+        big.<span style="color: #202020;">wid</span> = max<span style="color: #66cc66;">&#40;</span>big.<span style="color: #202020;">wid</span>, r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">wid</span>+r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">wid</span><span style="color: #66cc66;">&#41;</span>;
+&nbsp;
+    <span style="color: #808080; font-style: italic;">/* maybe 2 or 3 sits by itself */</span>
+    big.<span style="color: #202020;">wid</span> = max<span style="color: #66cc66;">&#40;</span>big.<span style="color: #202020;">wid</span>, r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">wid</span><span style="color: #66cc66;">&#41;</span>;
+    big.<span style="color: #202020;">wid</span> = max<span style="color: #66cc66;">&#40;</span>big.<span style="color: #202020;">wid</span>, r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">wid</span><span style="color: #66cc66;">&#41;</span>;
+    record<span style="color: #66cc66;">&#40;</span>big<span style="color: #66cc66;">&#41;</span>;    
+<span style="color: #66cc66;">&#125;</span>
+&nbsp;
+<span style="color: #993333;">void</span>
+checkrotate<span style="color: #66cc66;">&#40;</span>Rect *r, <span style="color: #993333;">int</span> n<span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+    <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>n == <span style="color: #cc66cc;">4</span><span style="color: #66cc66;">&#41;</span> <span style="color: #66cc66;">&#123;</span>
+        check<span style="color: #66cc66;">&#40;</span>r<span style="color: #66cc66;">&#41;</span>;
+        <span style="color: #b1b100;">return</span>;
+    <span style="color: #66cc66;">&#125;</span>
+&nbsp;
+    checkrotate<span style="color: #66cc66;">&#40;</span>r, n<span style="color: #cc66cc;">+1</span><span style="color: #66cc66;">&#41;</span>;
+    r<span style="color: #66cc66;">&#91;</span>n<span style="color: #66cc66;">&#93;</span> = rotate<span style="color: #66cc66;">&#40;</span>r<span style="color: #66cc66;">&#91;</span>n<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+    checkrotate<span style="color: #66cc66;">&#40;</span>r, n<span style="color: #cc66cc;">+1</span><span style="color: #66cc66;">&#41;</span>;
+    r<span style="color: #66cc66;">&#91;</span>n<span style="color: #66cc66;">&#93;</span> = rotate<span style="color: #66cc66;">&#40;</span>r<span style="color: #66cc66;">&#91;</span>n<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+<span style="color: #66cc66;">&#125;</span>
+&nbsp;
+<span style="color: #993333;">void</span>
+checkpermute<span style="color: #66cc66;">&#40;</span>Rect *r, <span style="color: #993333;">int</span> n<span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+    Rect t;
+    <span style="color: #993333;">int</span> i;
+&nbsp;
+    <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>n == <span style="color: #cc66cc;">4</span><span style="color: #66cc66;">&#41;</span>
+        checkrotate<span style="color: #66cc66;">&#40;</span>r, <span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#41;</span>;
+&nbsp;
+    <span style="color: #b1b100;">for</span><span style="color: #66cc66;">&#40;</span>i=n; i&lt;<span style="color: #cc66cc;">4</span>; i++<span style="color: #66cc66;">&#41;</span> <span style="color: #66cc66;">&#123;</span>
+        t = r<span style="color: #66cc66;">&#91;</span>n<span style="color: #66cc66;">&#93;</span>, r<span style="color: #66cc66;">&#91;</span>n<span style="color: #66cc66;">&#93;</span> = r<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>, r<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span> = t;    <span style="color: #808080; font-style: italic;">/* swap r[i], r[n] */</span>
+        checkpermute<span style="color: #66cc66;">&#40;</span>r, n<span style="color: #cc66cc;">+1</span><span style="color: #66cc66;">&#41;</span>;
+        t = r<span style="color: #66cc66;">&#91;</span>n<span style="color: #66cc66;">&#93;</span>, r<span style="color: #66cc66;">&#91;</span>n<span style="color: #66cc66;">&#93;</span> = r<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>, r<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span> = t;    <span style="color: #808080; font-style: italic;">/* swap r[i], r[n] */</span>
+    <span style="color: #66cc66;">&#125;</span>
+<span style="color: #66cc66;">&#125;</span>
+&nbsp;
+<span style="color: #993333;">void</span>
+main<span style="color: #66cc66;">&#40;</span><span style="color: #993333;">void</span><span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+    FILE *fin, *fout;
+    Rect r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">4</span><span style="color: #66cc66;">&#93;</span>;
+    <span style="color: #993333;">int</span> i;
+&nbsp;
+    fin = fopen<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;packrec.in&quot;</span>, <span style="color: #ff0000;">&quot;r&quot;</span><span style="color: #66cc66;">&#41;</span>;
+    fout = fopen<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;packrec.out&quot;</span>, <span style="color: #ff0000;">&quot;w&quot;</span><span style="color: #66cc66;">&#41;</span>;
+    assert<span style="color: #66cc66;">&#40;</span>fin&nbsp;!= <span style="color: #000000; font-weight: bold;">NULL</span> &amp;&amp; fout&nbsp;!= <span style="color: #000000; font-weight: bold;">NULL</span><span style="color: #66cc66;">&#41;</span>;
+&nbsp;
+    <span style="color: #b1b100;">for</span><span style="color: #66cc66;">&#40;</span>i=<span style="color: #cc66cc;">0</span>; i&lt;<span style="color: #cc66cc;">4</span>; i++<span style="color: #66cc66;">&#41;</span>
+        fscanf<span style="color: #66cc66;">&#40;</span>fin, <span style="color: #ff0000;">&quot;%d %d&quot;</span>, &amp;r<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">wid</span>, &amp;r<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ht</span><span style="color: #66cc66;">&#41;</span>;
+&nbsp;
+    tot=<span style="color: #66cc66;">&#40;</span>r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">wid*r</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ht</span>+r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">wid*r</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ht</span>+r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">wid*r</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ht</span>+r<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">wid*r</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">ht</span><span style="color: #66cc66;">&#41;</span>;
+&nbsp;
+    checkpermute<span style="color: #66cc66;">&#40;</span>r, <span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#41;</span>;
+    fprintf<span style="color: #66cc66;">&#40;</span>fout, <span style="color: #ff0000;">&quot;%d<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span>, bestarea<span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #b1b100;">for</span><span style="color: #66cc66;">&#40;</span>i=<span style="color: #cc66cc;">0</span>; i&lt;=<span style="color: #cc66cc;">100</span>; i++<span style="color: #66cc66;">&#41;</span>
+        <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>bestht<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>
+            fprintf<span style="color: #66cc66;">&#40;</span>fout, <span style="color: #ff0000;">&quot;%d %d<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span>, i, bestarea/i<span style="color: #66cc66;">&#41;</span>;
+    exit<span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#41;</span>;
+<span style="color: #66cc66;">&#125;</span></pre>
+<a name=".E7.AC.AC.E4.BA.8C.E7.A8.AE.E8.A7.A3.2FThe_second_solution"></a><h2><span class="editsection">[<a href="/index.php?title=Code:USACO/packrec/C&amp;action=edit&amp;section=1" title="编辑段落: 第二種解/The second solution">编辑</a>]</span> <span class="mw-headline"> 第二種解/The second solution </span></h2>
+<pre class="c"><span style="color: #808080; font-style: italic;">/*
+ID:wangboj1
+LANG:C
+TASK:packrec
+*/</span>
+<span style="color: #339933;">#include&lt;stdio.h&gt;</span>
+<span style="color: #339933;">#include&lt;stdlib.h&gt;</span>
+<span style="color: #993333;">int</span> stack<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3000</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span>;
+<span style="color: #993333;">int</span> minsize=<span style="color: #cc66cc;">20000000</span>;
+<span style="color: #993333;">int</span> top=<span style="color: #cc66cc;">0</span>;
+<span style="color: #993333;">int</span> square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">4</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>;
+<span style="color: #993333;">void</span> deal<span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> maxl,<span style="color: #993333;">int</span> maxw<span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+    <span style="color: #993333;">int</span> k,size;
+    size=maxl*maxw;
+    <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>maxl&gt;maxw<span style="color: #66cc66;">&#41;</span>
+    <span style="color: #66cc66;">&#123;</span>
+        k=maxl;
+        maxl=maxw;
+        maxw=k;
+    <span style="color: #66cc66;">&#125;</span>
+    <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>size&lt;minsize<span style="color: #66cc66;">&#41;</span>
+    <span style="color: #66cc66;">&#123;</span>
+        stack<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>=size;
+        stack<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>=maxl;
+        stack<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>=maxw;
+        minsize=size;
+        top=<span style="color: #cc66cc;">1</span>;
+    <span style="color: #66cc66;">&#125;</span>
+    <span style="color: #b1b100;">else</span> <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>size==minsize<span style="color: #66cc66;">&#41;</span>
+    <span style="color: #66cc66;">&#123;</span>
+        stack<span style="color: #66cc66;">&#91;</span>top<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>=size;
+        stack<span style="color: #66cc66;">&#91;</span>top<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>=maxl;
+        stack<span style="color: #66cc66;">&#91;</span>top<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>=maxw;
+        top++;
+    <span style="color: #66cc66;">&#125;</span>
+<span style="color: #66cc66;">&#125;</span>
+<span style="color: #993333;">void</span> quicksort<span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> l,<span style="color: #993333;">int</span> r<span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+    <span style="color: #993333;">int</span> x,y,tp1,tp2;
+    <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>l&gt;=r<span style="color: #66cc66;">&#41;</span>
+    <span style="color: #b1b100;">return</span>&nbsp;;
+    x=l;
+    y=r;
+    tp1=stack<span style="color: #66cc66;">&#91;</span>l<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>;
+    tp2=stack<span style="color: #66cc66;">&#91;</span>l<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>;
+    <span style="color: #b1b100;">while</span><span style="color: #66cc66;">&#40;</span>x&lt;y<span style="color: #66cc66;">&#41;</span>
+    <span style="color: #66cc66;">&#123;</span>
+        <span style="color: #b1b100;">while</span><span style="color: #66cc66;">&#40;</span>x&lt;y&amp;&amp;stack<span style="color: #66cc66;">&#91;</span>y<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>&gt;=tp1<span style="color: #66cc66;">&#41;</span>
+        y--;
+        stack<span style="color: #66cc66;">&#91;</span>x<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>=stack<span style="color: #66cc66;">&#91;</span>y<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>;
+        stack<span style="color: #66cc66;">&#91;</span>x<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>=stack<span style="color: #66cc66;">&#91;</span>y<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>;
+        <span style="color: #b1b100;">while</span><span style="color: #66cc66;">&#40;</span>x&lt;y&amp;&amp;stack<span style="color: #66cc66;">&#91;</span>x<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>&lt;=tp1<span style="color: #66cc66;">&#41;</span>
+        x++;
+        stack<span style="color: #66cc66;">&#91;</span>y<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>=stack<span style="color: #66cc66;">&#91;</span>x<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>;
+        stack<span style="color: #66cc66;">&#91;</span>y<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>=stack<span style="color: #66cc66;">&#91;</span>x<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>;
+    <span style="color: #66cc66;">&#125;</span>
+    stack<span style="color: #66cc66;">&#91;</span>x<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>=tp1;
+    stack<span style="color: #66cc66;">&#91;</span>x<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>=tp2;
+    quicksort<span style="color: #66cc66;">&#40;</span>l,x<span style="color: #cc66cc;">-1</span><span style="color: #66cc66;">&#41;</span>;
+    quicksort<span style="color: #66cc66;">&#40;</span>x<span style="color: #cc66cc;">+1</span>,r<span style="color: #66cc66;">&#41;</span>;
+<span style="color: #66cc66;">&#125;</span>
+<span style="color: #993333;">void</span> cal<span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> p<span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+    <span style="color: #993333;">int</span> i,maxl,maxw;
+    <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>p==<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span>
+    <span style="color: #66cc66;">&#123;</span>
+        maxl=<span style="color: #cc66cc;">0</span>;
+        maxw=<span style="color: #cc66cc;">0</span>;
+        <span style="color: #b1b100;">for</span><span style="color: #66cc66;">&#40;</span>i=<span style="color: #cc66cc;">0</span>;i&lt;<span style="color: #cc66cc;">4</span>;i++<span style="color: #66cc66;">&#41;</span>
+        <span style="color: #66cc66;">&#123;</span>
+            <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>square<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>&gt;maxl<span style="color: #66cc66;">&#41;</span>
+            maxl=square<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>;
+            maxw+=square<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>;
+        <span style="color: #66cc66;">&#125;</span>
+        deal<span style="color: #66cc66;">&#40;</span>maxl,maxw<span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #66cc66;">&#125;</span>
+&nbsp;
+&nbsp;
+    <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>p==<span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#41;</span>
+    <span style="color: #66cc66;">&#123;</span>
+        maxl=<span style="color: #cc66cc;">0</span>;
+        maxw=<span style="color: #cc66cc;">0</span>;
+        <span style="color: #b1b100;">for</span><span style="color: #66cc66;">&#40;</span>i=<span style="color: #cc66cc;">0</span>;i&lt;<span style="color: #cc66cc;">3</span>;i++<span style="color: #66cc66;">&#41;</span>
+        <span style="color: #66cc66;">&#123;</span>
+            <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>square<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>&gt;maxl<span style="color: #66cc66;">&#41;</span>
+            maxl=square<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>;
+            maxw+=square<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>;
+        <span style="color: #66cc66;">&#125;</span>
+        maxl+=square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>;
+        <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>maxw&lt;square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>
+        maxw=square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>;
+        deal<span style="color: #66cc66;">&#40;</span>maxl,maxw<span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #66cc66;">&#125;</span>
+&nbsp;
+    <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>p==<span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#41;</span>
+    <span style="color: #66cc66;">&#123;</span>
+        maxl=<span style="color: #cc66cc;">0</span>;
+        maxw=<span style="color: #cc66cc;">0</span>;
+        <span style="color: #b1b100;">for</span><span style="color: #66cc66;">&#40;</span>i=<span style="color: #cc66cc;">0</span>;i&lt;<span style="color: #cc66cc;">2</span>;i++<span style="color: #66cc66;">&#41;</span>
+        <span style="color: #66cc66;">&#123;</span>
+            <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>square<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>&gt;maxl<span style="color: #66cc66;">&#41;</span>
+            maxl=square<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>;
+            maxw+=square<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>;
+        <span style="color: #66cc66;">&#125;</span>
+        maxl+=square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>;
+        <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>maxw&lt;square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>
+        maxw=square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>;
+        maxw+=square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>;
+        <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>maxl&lt;square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>
+        maxl=square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>;
+        deal<span style="color: #66cc66;">&#40;</span>maxl,maxw<span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #66cc66;">&#125;</span>
+&nbsp;
+    <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>p==<span style="color: #cc66cc;">4</span><span style="color: #66cc66;">&#41;</span>
+    <span style="color: #66cc66;">&#123;</span>
+        maxl=<span style="color: #cc66cc;">0</span>;
+        maxw=<span style="color: #cc66cc;">0</span>;
+        <span style="color: #b1b100;">for</span><span style="color: #66cc66;">&#40;</span>i=<span style="color: #cc66cc;">0</span>;i&lt;<span style="color: #cc66cc;">2</span>;i++<span style="color: #66cc66;">&#41;</span>
+        <span style="color: #66cc66;">&#123;</span>
+            <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>square<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>&gt;maxl<span style="color: #66cc66;">&#41;</span>
+            maxl=square<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>;
+            maxw+=square<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>;
+        <span style="color: #66cc66;">&#125;</span>
+        <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>&gt;square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>
+        maxw+=square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>;
+        <span style="color: #b1b100;">else</span>
+        maxw+=square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>;
+        <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>maxl&lt;square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>+square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>
+        maxl=square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>+square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>;
+        deal<span style="color: #66cc66;">&#40;</span>maxl,maxw<span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #66cc66;">&#125;</span>
+&nbsp;
+    <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>p==<span style="color: #cc66cc;">5</span><span style="color: #66cc66;">&#41;</span>
+    <span style="color: #66cc66;">&#123;</span>
+        <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>&lt;square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>
+        &amp;&amp;square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>&gt;square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>
+        <span style="color: #b1b100;">return</span>&nbsp;;
+        <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>&lt;square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>
+        &amp;&amp;square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>&gt;square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>
+        <span style="color: #b1b100;">return</span>&nbsp;;
+        <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>&lt;square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>
+        &amp;&amp;square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>&gt;square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>
+        <span style="color: #b1b100;">return</span>&nbsp;;
+        <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>&lt;square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>
+        &amp;&amp;square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>&lt;square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>
+        <span style="color: #b1b100;">return</span>&nbsp;;
+        <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>+square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>&gt;square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>+square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>
+        maxl=square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>+square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>;
+        <span style="color: #b1b100;">else</span>
+        maxl=square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>+square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>;
+        <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>+square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>&gt;square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>+square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>
+        maxw=square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>+square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>;
+        <span style="color: #b1b100;">else</span>
+        maxw=square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>+square<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>;
+        deal<span style="color: #66cc66;">&#40;</span>maxl,maxw<span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #66cc66;">&#125;</span>
+<span style="color: #66cc66;">&#125;</span>
+<span style="color: #993333;">void</span> order<span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> p<span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+    <span style="color: #993333;">int</span> i,j,k,temp0,temp1,temp3,temp4;
+    <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>p&gt;=<span style="color: #cc66cc;">4</span><span style="color: #66cc66;">&#41;</span>
+    <span style="color: #66cc66;">&#123;</span>
+        <span style="color: #b1b100;">return</span>;
+    <span style="color: #66cc66;">&#125;</span>
+    <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>p==<span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#41;</span>
+    <span style="color: #66cc66;">&#123;</span>
+        <span style="color: #b1b100;">for</span><span style="color: #66cc66;">&#40;</span>i=<span style="color: #cc66cc;">1</span>;i&lt;=<span style="color: #cc66cc;">5</span>;i++<span style="color: #66cc66;">&#41;</span>
+        cal<span style="color: #66cc66;">&#40;</span>i<span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #66cc66;">&#125;</span>
+    order<span style="color: #66cc66;">&#40;</span>p<span style="color: #cc66cc;">+1</span><span style="color: #66cc66;">&#41;</span>;
+    temp0=square<span style="color: #66cc66;">&#91;</span>p<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>;
+    temp1=square<span style="color: #66cc66;">&#91;</span>p<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>;
+    <span style="color: #b1b100;">for</span><span style="color: #66cc66;">&#40;</span>i=p<span style="color: #cc66cc;">+1</span>;i&lt;<span style="color: #cc66cc;">4</span>;i++<span style="color: #66cc66;">&#41;</span>
+    <span style="color: #66cc66;">&#123;</span>
+        square<span style="color: #66cc66;">&#91;</span>p<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>=square<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>;
+        square<span style="color: #66cc66;">&#91;</span>p<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>=square<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>;
+        square<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>=temp0;
+        square<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>=temp1;
+        order<span style="color: #66cc66;">&#40;</span>p<span style="color: #cc66cc;">+1</span><span style="color: #66cc66;">&#41;</span>;
+        temp3=square<span style="color: #66cc66;">&#91;</span>p<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>;
+        temp4=square<span style="color: #66cc66;">&#91;</span>p<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>;
+        square<span style="color: #66cc66;">&#91;</span>p<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>=square<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>;
+        square<span style="color: #66cc66;">&#91;</span>p<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>=square<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>;
+        square<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>=temp3;
+        square<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>=temp4;
+    <span style="color: #66cc66;">&#125;</span>
+<span style="color: #66cc66;">&#125;</span>
+<span style="color: #993333;">void</span> ss<span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> p<span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+    <span style="color: #993333;">int</span> i,j,k,temp;
+    <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>p==<span style="color: #cc66cc;">4</span><span style="color: #66cc66;">&#41;</span>
+    <span style="color: #66cc66;">&#123;</span>
+        order<span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#41;</span>;
+        <span style="color: #b1b100;">return</span>&nbsp;;
+    <span style="color: #66cc66;">&#125;</span>
+&nbsp;
+    ss<span style="color: #66cc66;">&#40;</span>p<span style="color: #cc66cc;">+1</span><span style="color: #66cc66;">&#41;</span>;
+    temp=square<span style="color: #66cc66;">&#91;</span>p<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>;
+    square<span style="color: #66cc66;">&#91;</span>p<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>=square<span style="color: #66cc66;">&#91;</span>p<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>;
+    square<span style="color: #66cc66;">&#91;</span>p<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>=temp;
+    ss<span style="color: #66cc66;">&#40;</span>p<span style="color: #cc66cc;">+1</span><span style="color: #66cc66;">&#41;</span>;
+    temp=square<span style="color: #66cc66;">&#91;</span>p<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>;
+    square<span style="color: #66cc66;">&#91;</span>p<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>=square<span style="color: #66cc66;">&#91;</span>p<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>;
+    square<span style="color: #66cc66;">&#91;</span>p<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>=temp;
+<span style="color: #66cc66;">&#125;</span>
+<span style="color: #993333;">int</span> main<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+    <span style="color: #993333;">int</span> i,j,k;
+    <span style="color: #993333;">int</span> l,w;
+    FILE *fp,*fq;
+    fp=fopen<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;packrec.in&quot;</span>,<span style="color: #ff0000;">&quot;r&quot;</span><span style="color: #66cc66;">&#41;</span>;
+    fq=fopen<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;packrec.out&quot;</span>,<span style="color: #ff0000;">&quot;w&quot;</span><span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #b1b100;">for</span><span style="color: #66cc66;">&#40;</span>i=<span style="color: #cc66cc;">0</span>;i&lt;<span style="color: #cc66cc;">4</span>;i++<span style="color: #66cc66;">&#41;</span>
+    fscanf<span style="color: #66cc66;">&#40;</span>fp,<span style="color: #ff0000;">&quot;%d%d&quot;</span>,&amp;square<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>,&amp;square<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+    ss<span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#41;</span>;
+    quicksort<span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">0</span>,top<span style="color: #cc66cc;">-1</span><span style="color: #66cc66;">&#41;</span>;
+    fprintf<span style="color: #66cc66;">&#40;</span>fq,<span style="color: #ff0000;">&quot;%d<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span>,minsize<span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #b1b100;">for</span><span style="color: #66cc66;">&#40;</span>i=<span style="color: #cc66cc;">0</span>;i&lt;top;i++<span style="color: #66cc66;">&#41;</span>
+    <span style="color: #66cc66;">&#123;</span>
+        fprintf<span style="color: #66cc66;">&#40;</span>fq,<span style="color: #ff0000;">&quot;%d %d<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span>,stack<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>,stack<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+        l=stack<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>;
+        <span style="color: #b1b100;">while</span><span style="color: #66cc66;">&#40;</span>stack<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>==l<span style="color: #66cc66;">&#41;</span>
+        <span style="color: #66cc66;">&#123;</span>
+            i++;
+        <span style="color: #66cc66;">&#125;</span>
+        i--;
+    <span style="color: #66cc66;">&#125;</span>
+    fclose<span style="color: #66cc66;">&#40;</span>fp<span style="color: #66cc66;">&#41;</span>;
+    fclose<span style="color: #66cc66;">&#40;</span>fq<span style="color: #66cc66;">&#41;</span>;
+&nbsp;
+    <span style="color: #b1b100;">return</span> <span style="color: #cc66cc;">0</span>;
+<span style="color: #66cc66;">&#125;</span>
+Compiling...
+<span style="color: #202020;">Compile</span>: OK
+&nbsp;
+Executing...
+   <span style="color: #202020;">Test</span> <span style="color: #cc66cc;">1</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.000</span> secs, <span style="color: #cc66cc;">1940</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">2</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.000</span> secs, <span style="color: #cc66cc;">1940</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">3</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.000</span> secs, <span style="color: #cc66cc;">1940</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">4</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.000</span> secs, <span style="color: #cc66cc;">1940</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">5</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.000</span> secs, <span style="color: #cc66cc;">1940</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">6</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.011</span> secs, <span style="color: #cc66cc;">1940</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">7</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.000</span> secs, <span style="color: #cc66cc;">1940</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">8</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.000</span> secs, <span style="color: #cc66cc;">1940</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">9</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.011</span> secs, <span style="color: #cc66cc;">1940</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">10</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.000</span> secs, <span style="color: #cc66cc;">1940</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">11</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.011</span> secs, <span style="color: #cc66cc;">1940</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">12</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.000</span> secs, <span style="color: #cc66cc;">1940</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">13</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.011</span> secs, <span style="color: #cc66cc;">1940</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">14</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.000</span> secs, <span style="color: #cc66cc;">1940</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">15</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.011</span> secs, <span style="color: #cc66cc;">1940</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">16</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.011</span> secs, <span style="color: #cc66cc;">1940</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">17</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.000</span> secs, <span style="color: #cc66cc;">1940</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">18</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.000</span> secs, <span style="color: #cc66cc;">1940</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">19</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.011</span> secs, <span style="color: #cc66cc;">1940</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">20</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.011</span> secs, <span style="color: #cc66cc;">1940</span> KB<span style="color: #66cc66;">&#93;</span>
+   Test <span style="color: #cc66cc;">21</span>: TEST OK <span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0.011</span> secs, <span style="color: #cc66cc;">1940</span> KB<span style="color: #66cc66;">&#93;</span>
+&nbsp;
+All tests OK.
+<span style="color: #202020;">Your</span> program <span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">'packrec'</span><span style="color: #66cc66;">&#41;</span> produced all correct answers!</pre>
+
+<!-- Saved in parser cache with key nocow:pcache:idhash:173-0!1!0!!zh-cn!2 and timestamp 20120202071324 -->
+<div class="printfooter">
+来自"<a href="http://www.nocow.cn/index.php/Code:USACO/packrec/C">http://www.nocow.cn/index.php/Code:USACO/packrec/C</a>"</div>
+						<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+						 <li id="ca-nstab-code" class="selected"><a href="/index.php/Code:USACO/packrec/C">代码</a></li>
+						 <li id="ca-talk" class="new"><a href="/index.php?title=Code_Talk:USACO/packrec/C&amp;action=edit">讨论</a></li>
+						 <li id="ca-edit"><a href="/index.php?title=Code:USACO/packrec/C&amp;action=edit">编辑</a></li>
+						 <li id="ca-history"><a href="/index.php?title=Code:USACO/packrec/C&amp;action=history">历史</a></li>
+				</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=Special:Userlogin&amp;returnto=Code:USACO/packrec/C">登录或创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5" title="首页"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/Special:Recentchanges">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/Special:Random">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/Help:%E5%B8%AE%E5%8A%A9">使用帮助</a></li>
+				<li id="n-sitesupport"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5">帮助我们</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php/Special:Search" id="searchform"><div>
+<input name="ref" type="hidden" value="Code:USACO/packrec/C">
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="进入" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="搜索" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/Special:Whatlinkshere/Code:USACO/packrec/C">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/Special:Recentchangeslinked/Code:USACO/packrec/C">链出更改</a></li>
+<li id="t-upload"><a href="/index.php/Special:Upload">上传文件</a></li>
+<li id="t-specialpages"><a href="/index.php/Special:Specialpages">特殊页面</a></li>
+				<li id="t-print"><a href="/index.php?title=Code:USACO/packrec/C&amp;printable=yes">可打印版</a></li>				<li id="t-permalink"><a href="/index.php?title=Code:USACO/packrec/C&amp;oldid=22316">永久链接</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt='GNU Free Documentation License 1.2' /></a></div>
+			<ul id="f-list">
+				<li id="viewcount">访问次数: 3,448次</li>
+				<li id="credits">此页由NOCOW注册用户<a href="/index.php?title=User:Wbo&amp;action=edit" class="new" title="User:Wbo">Wbo</a>于2010年8月14日, 10:26最后更改. 在<a href="/index.php?title=User:Cosechy_movingbot&amp;action=edit" class="new" title="User:Cosechy movingbot">cosechy@gmail.com</a> 和 <a href="/index.php/User:Ghost" title="User:Ghost">ghost</a>的工作基础上.</li>
+				<li id="copyright">本站内容在<a href="http://www.gnu.org/copyleft/fdl.html" class="external " title="http://www.gnu.org/copyleft/fdl.html" rel="nofollow">GNU Free Documentation License 1.2</a>下发布</li>
+				<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E7%AD%96%E7%95%A5" title="NOCOW:隐私策略">隐私策略</a></li>
+				<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+				<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+				<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by bdezlinux in 0.480 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body></html>

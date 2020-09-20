@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="keywords" content="User:Cosechy/垃圾场/一些想法" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (中文(简体))" />
+<link title="Creative Commons" type="application/rdf+xml" href="/index.php?title=User:Cosechy/%E5%9E%83%E5%9C%BE%E5%9C%BA/%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+		<title>NOCOW - User:Cosechy/垃圾场/一些想法</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins/monobook/main.css?42b"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print" href="/skins/common/commonPrint.css?42b" />
+		<link rel="stylesheet" type="text/css" media="handheld" href="/skins/monobook/handheld.css?42b" />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins/monobook/IE50Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins/monobook/IE55Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins/monobook/IE60Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins/monobook/IE70Fixes.css?42b";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?42b"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">/*<![CDATA[*/
+var skin = "monobook";
+var stylepath = "/skins";
+var wgArticlePath = "/index.php/$1";
+var wgScriptPath = "";
+var wgServer = "http://www.nocow.cn";
+var wgCanonicalNamespace = "User";
+var wgCanonicalSpecialPageName = false;
+var wgNamespaceNumber = 2;
+var wgPageName = "User:Cosechy/垃圾场/一些想法";
+var wgTitle = "Cosechy/垃圾场/一些想法";
+var wgArticleId = "645";
+var wgIsArticle = true;
+var wgUserName = null;
+var wgUserLanguage = "zh-cn";
+var wgContentLanguage = "zh-cn";
+var wgBreakFrames = false;
+var wgCurRevisionId = "2838";
+/*]]>*/</script>
+                
+		<script type="text/javascript" src="/skins/common/wikibits.js?42b"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=-&action=raw&gen=css&maxage=18000";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+			</head>
+<body  class="mediawiki ns-2 ltr page-User_Cosechy_垃圾场_一些想法">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+<div style="text-align:center;font-size:85%;font-weight:bold" id=headlinemessage>如果发现广告等破坏行为，请尽量将条目恢复到较早的版本而不是把相应内容直接删除，谢谢合作。</div>
+<!--div style="text-align:center;font-size:85%;font-weight:bold" id=headlinemessage>NOCOW近期对条目的命名进行了一些整理，一些链接可能失效，为此带来的不便请大家谅解。创建条目时也请遵循新的命名规范，谢谢合作。</div-->
+		<a name="top" id="top"></a>
+				<h1 class="firstHeading">User:Cosechy/垃圾场/一些想法</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">来自&quot;NOCOW&quot;</h3>
+			<div id="contentSub"><span class="subpages">&lt; <a href="/index.php/User:Cosechy" title="User:Cosechy">User:Cosechy</a></span></div>
+									<div id="jump-to-nav">跳转到: <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>			<!-- start content -->
+			<p>最好弄个比较强的脚本+排版语言，刚开始可以只有脚本，用html和css的思想，以UBB为基础，兼容一些mediawiki语法，用php写出来。
+</p><p>面向tag和流。tag包括对象和过程等（以及mediawiki这样的普通页面和模板页面，还有特殊页面）。
+</p><p>对象和过程之间可以独立存在，并一定不在一个线程中运行（不过引用也是可以的）。流是tag之间交换数据的媒介。
+</p>
+<ul><li>结构部分内容：
+</li></ul>
+<p>页面（或者说程序）只是tag的一种类型。上层tag可以对下层tag保护，使其不直接受外界影响，也可以使其没有对外界的访问权限。
+</p><p>对于未保护的tag，其他地方可以直接访问里面的内容。
+</p><p>一个tag可以往三个方向继承内容：父对象、引用来源（一直上溯到login session以及用户）、类。其中类也可能有很多个，也可以另外指定方向。其他三个也可能可以算成类的一种。
+</p><p>存储可以使用mysql或者文件。每个有子对象的类（或者文件夹）可以自己指定子对象的访问方法。这样也可以实现硬链接、软链接、多链接、映射文件系统（受保护失去访问外部的权限的除外）以及在子目录中加链接或者映射文件系统。
+</p><p>多链接可以用来实现继承（也可以用相反的说法）。最初的部分可以用php（或是其它语言）写，映射为system特殊文件系统。
+</p><p>继承也可以是有选择性的，但不能摆脱完全控制（可以阻止新的下属的私有内容出现，对于已经存在的无法访问的被保护内容可以强制删除以及重建）
+</p><p>每个元素皆为类（同时也是tag），即使是基本类，实现可以特殊处理（或者说属于system文件系统），但是别的类还是可以继承。由于基本类可以是受保护的，基本类之外也不能访问类的内部内容。
+</p><p>有权限的时候可以修改其他的类，包括定义过程函数。
+</p><p>每个类也可以指定可继承的部分、不可继承的部分，以及在特定的情况下可继承的部分，也就是通过函数（输入tag本身的内容）输出一个新类。
+</p><p>如果继承了父节点，也会自身包括。硬链接或者映射也可以加强制覆盖（但是可能没权限修改原来的内容，或者是原来的内容中的内部引用。但是原来的内容也可以设计成引用最外层被继承的内容，这个最外层是表示外层方向一种特定的类的内容，或者这种类型的最后一个内容，例如class，明确声明的类）
+</p><p>明确声明的类自身可以不包括部分存储空间，存储空间可以是仅包含内容（或者特殊初始化之后才有的内容）。
+</p><p>如果权限够，可以直接访问一个方向上的某一特定类型的tag，或者连续的特定类型的最后一个tag，或者其他外部tag提供支持了的内容。（例如明确声明类、页面）
+</p><p><br />
+</p>
+<ul><li>语法部分内容：
+</li></ul>
+<p>非常自由的语法，没有具体的结构。每一个scope（也就是上面的tag）的语法自行决定，包括自行决定结束位置。最开始可以用php实现简单语法。
+</p><p>一般语法，用,分隔的内容表示一个表（list），用分号表示算完前面的东西返回后面的东西，也就是c++逗号的功能。没有语句的概念，只有表达式，表达式的值就是返回的结果，函数也可以看成记录的一个域。for和while同样做成返回值的函数，也就是说大括号后面也不表示语句结束了。淘汰if，用&amp;&amp;，||和?:代替。增加一些实用的小操作符。
+</p><p>所有的内容都可以当作操作符，前面需要一个数的操作符是前面那个数的范围中的一个符号，自己判断结束位置（也就是说前面的是父对象）。只要后面一个数的操作符也可以作为全局的符号。全局的符号也可以设成不继承或是只继承。同时符号可以适用于任何对象，包括另一个符号之类的。
+</p><p>一种特殊的类型：stream，用]...[表示，类似字符串，不同的是只要写出来了就不能修改，这样有时可以加快速度。一般的对象可以有输入、输出、命令、状态、错误等很多个标准的stream，也可以另建stream，另外可以把一个输入stream和一个输出stream连接起来，另外也可以合并两个stream或者都导入到一个地方，不过不推荐。
+</p><p>结构式的语法，
+</p>
+<ul><li>权限
+</li></ul>
+<p>通过一个类处理权限。其他大部分内容都属于这个类。启动及部分启动需要的内容除外，但是启动后会在公开可见的位置删除（并不删除实际存储内容，但是也阻止访问“启动”这一操作，可以以需要权限的“重新启动”取而代之）。
+</p><p>更新：可以由父对象处理初步执行权限，由其本身处理其他权限。
+</p><p>一般的内容都继承自至少一个类，但是继承信息也可以被封闭。系统类可以被封闭同时标记为无意义，因为任何时候都不可见。
+</p><p>每个用户也以tag表示，这些tag和别的tag以同样的方法拥有对其他tag的权限。这些用户tag可以自主的做一些事情。（别的tag也可以用被封闭的方法自动运行，看起来和用户一样）
+</p><p>权限可以储存在一个子tag中。权限主要分读取（读取内部结构，不包括其中包含的其他tag的结构，需要另外的权限）、写入（也就是完全控制）、执行（或者说访问，以要访问的tag的方式处理，不必需有读取权限。访问的节点可以以一个新的身份访问其他的节点，并拥有一些额外的权限。所以有读取权限也不一定能访问。）、代表（就是拥有那个tag所拥有的权限，但是访问者还是自己。访问者也被代表的控制可以通过修改权限和执行实现）。权限的继承可以选择，例如只继承到正文部分而不继承到meta（例如tag的权限本身）。必须拥有权限子tag的修改权限才能修改权限的内容。如果权限子tag限制读权限，那么只能通过控制权限访问的上层tag得知其权限（同时也鼓励这种方法）。
+</p><p>还有一些特殊的权限，例如附加，只能加入新内容并取得控制权限，但是不能修改之前的内容列表，也不能删除自己的内容，但是可以清空。
+</p><p>另外有一些特殊的相应权限，例如自动保留历史的写入等。
+</p><p>通过执行权限可能可以获得任何其他的权限。包括代表权限，使自己获得其他的权限。但是执行权限也可以是被保护而不能赋予某种权限的。（这个可以通过在权限表上另加一个mask表实现）
+</p><p>这种meta子tag的父节点是这个tag，但是一般不列在这个tag的子节点列表中，而是作为这个tag的一些表面上的东西。可以在名字标识之前加一个点表示。
+</p>
+<ul><li>命名
+</li></ul>
+<p>目录，根据情况用/或者::表示，目录之内的内容属于目录之外的内容。
+</p><p>前面加一个点，不全是点的内容，表示meta信息，一般不包括在tag的子tag列表之中。通常这些内容是对外可见的。可以看作与上层tag并列，但是不独立成一个tag的内容。
+</p><p>前面加一个冒号，表示内部特殊信息。对外权限一般继承自这个tag，同样一般不包括在子tag列表之中。
+</p><p>一个非空字符串加一个冒号，表示分类，被分类的内容属于这个分类，但是其父对象是上一个目录。同时可以有多重分类，每个分类都属于上一个分类，但是父对象是这个目录。
+</p><p>这里可以解释成由目录赋予其一部分可以继承到分类中的tag的权限，而没有直接的从属关系。
+</p><p>只有一个点，表示class和相关说明（也就是使用class的参数），这些class也可以表示其在父对象中的身份。
+</p><p>只有一个冒号，表示这个目录本身的比较实际的内容，例如目录主页，目录本身的内容一般是子tag列表，可以通过class格式化。这个class也可以是:中的内容。
+</p><p>点和冒号也可以用于分类，冒号用于分类的时候可以把两个冒号全部省略，也就是用这个页面本身表示关于分类的内容。分类也可以同时是一个目录，其中的.和:可以表示关于这个分类的其它东西。目录里的.和:的父对象是这个内容本身，而分类后面的不是。
+</p><p>两个点，用来访问父对象，如果子tag没有访问..的权限，表示这个tag是对内封闭的。
+</p><p>/通常在login session中定义，指向可访问的根目录。login session之后的定义根据情况，可能是到当前文件夹的链接和根目录或者标准库的链接，或是没有到当前文件夹的链接（在某些情况下为了安全考虑，用另一个名称，例如点，表示当前目录）。这样对每一个user和tag来说，没有绝对的根目录，根目录是自己。这个也可以在普通tag中表示自己的作用范围（而不用每次都通过类找那一个特定的祖先对象）。
+</p><p>?和#有时是保留字符，分别表示引用时传递的参数以及对使用者的指引参数。
+</p><p>@表示后缀型分类。@之后的字符表示分类名称。这种情况下通常应该有个不包括@之后的内容的tag，被分类的内容属于这个tag，另外也可以选择性的继承这个后缀分类的信息，但是同样父对象是上一层目录。@之后的内容和:一样从左到右由大到小排序。@优先级比:低，先处理:再处理@。如果@的内容无法找到，一般直接得出没有@部分的内容以及一些附加信息。
+</p><p>@开头的就表示这个分类本身。
+</p><p>这是在一个tag中定义的目录。任何一个目录tag（或者普通tag）可以改变这个规则。（但是无法覆盖login session中/之类的内容的定义，因为不是存在这里的）
+</p><p>对于目录，是先搜索目录再找里面的内容的。这时候就要根据目录的规则确定是直接找那个位置上的内容还是找另外的东西。但是对于:和@分类是先找内容再找分类的，所以不能在分类中强行覆盖一个内容。
+</p><p>例如：/USACO/ride@Code:Pascal/.talk/post-1/:，/:Help:/:search@zh@cn/xxx/:page:2
+</p>
+<ul><li>优点
+<ol><li>完美。不存在一个特殊情况。所有的东西都可以重新定义，只要把原来的基本函数封闭到无法访问的低层并且在外面删除就可以了。另外基本函数也可以有好多个具体的实现。
+</li><li>既可以作为解释执行脚本（说不定也可以编译），也可以作为描述性语言，因为其本身不能处理限制的最外层之外的内容和最内层之内的工作方式。
+</li><li>保护的很强，如果基本的安全性能达到标准，可以用来做任何脚本语言可以做的事，比如网页上的程序，只要把破坏性的部分全部封闭就可以了。而且封闭了之后还会保留着有用的继承性。
+</li></ol>
+</li></ul>
+<ul><li>媒体
+</li></ul>
+<p>排版方面和程序方面都有用的功能，可以表示使用这些内容的具体情况，比如是否是被引用的，排版屏幕大小，屏幕输出还是打印，之类的，可以根据情况得出不同的结果。一种实现方法就是判断上层某一个特定的类型的tag。
+</p><p>通过这类功能，很多时候排版结果的大小都是可变的。同时还可以设置不同的长度单位，并由使用者改变其比例等。
+</p>
+<ul><li>终极目标：
+<ul><li>排版方面，实现这些排版以及图片格式能做到的所有功能：
+<ol><li>HTML、XHTML、CSS
+</li><li>TeX
+</li><li>Microsoft Word
+</li><li>pdf
+</li><li>ico，尽量让不同大小的图片共用内容。
+</li><li>autocad、几何画板
+</li><li>字体
+</li><li>乐谱，包括简谱和五线谱，这个是附加的功能，关键是弄完备的对齐方法。
+</li></ol>
+</li><li>程序方面，即实现上面的所有功能。
+</li></ul>
+</li></ul>
+<ul><li>哲学
+<ul><li>自然科学
+</li></ul>
+</li></ul>
+<p>宇宙边上可能第一宇宙速度超过光速，使人没办法了解之外的事。要打开一个特别小的粒子可能也会需要能构成黑洞的能量。本来就是很难想象宇宙是从哪来，粒子是怎么构成的。这些可以说就是宇宙中无法解释的特殊情况。另外宇宙中也不能找到一个具体的标准，包括时间长度和速度等基本参数。可能存在，而且很有可能是存在的，但是在宇宙之内无法测量，因为自然定律本身消灭了测量的方法。也无法知道外面有没有一个神，因为理论上宇宙是可以被保护起来的。除非神通过某些隐藏的东西破坏这个自然规律，不过神会破坏自己定下的完美的自然规律吗？
+</p><p>剩下的问题大概就是生命是从哪来的。我能感觉到自己的意识，并表现在物质上，真正说出或者写出我是有意识的，而物质是遵从自然规律的比较完美的东西，我说出写出这些东西也是因为物质的发展。那说明意识就是来自物质的，而且即使我是机器人，没有真正的意识，只要物质上的东西相同也会这么说，也不会感觉到是不是另外有一个意识操纵着自己。而生命确实是自然发展出来的东西，神或者大自然大概也不会为这弄一个特例。那就还有两种可能：万物本来就都有感觉，不过除了人脑的部分由于没有智能，感觉不到多少实质的东西，当然也可能感觉得到，人没发现可能也无法发现而已；另外一种就是意识存在于“信息”之上，不依赖于实体，只依赖于人的思考方式和记忆之类的东西，这样还可以有好多如果的宇宙中的如果的人们，虽然我们感觉不到，不存在于我们的物质上的如果的人们也是能感觉得到自己。信息大概是任何世界都存在的最完美的参数，然后才有了包括相对位置和速度等信息的，工作方式封闭的粒子和能量，以及力。需要的特殊参数就这么多，然后组成这个宇宙。也不知道意识究竟是封闭在哪的，不过应该会比较完美吧，神会弄这种特殊情况吗？。。。
+</p>
+<ul><li>调试后门
+</li></ul>
+<p>为了方便调试，可以考虑有一个特殊用户，拥有所有的权限。事实上按现在的模型，这个本来就是存在的，也就是根目录的那个tag。不过也许赋予这个特殊用户全部读写权限比较好。这样可以不用一般的用户的模式，直接弄一个超tag的管理方式，或者说，直接操作mysql或是其他的数据库就可以了。这也本来就是可以的。不过当然，这样因为没有身份，不能进行记录或者执行。不过需要的时候可以直接修改某一条记录的权限，让一个特殊用户去操作。本来我想弄成父tag只能删除而不一定能访问子tag的是因为想在不加密的情况下实现加密可以办到的效果。不过既然没加密，就可以用这之外的特殊方法改。。
+</p><p><b>！！！</b>
+</p>
+<ul><li>参见（排名不分后先。。。）
+<ul><li>缩写一下：SNUMCCH
+</li></ul>
+</li></ul>
+
+<!-- Saved in parser cache with key nocow:pcache:idhash:645-0!1!0!!zh-cn!2 and timestamp 20100109130929 -->
+<div class="printfooter">
+来自"<a href="http://www.nocow.cn/index.php/User:Cosechy/%E5%9E%83%E5%9C%BE%E5%9C%BA/%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95">http://www.nocow.cn/index.php/User:Cosechy/%E5%9E%83%E5%9C%BE%E5%9C%BA/%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95</a>"</div>
+						<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+						 <li id="ca-nstab-user" class="selected"><a href="/index.php/User:Cosechy/%E5%9E%83%E5%9C%BE%E5%9C%BA/%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95">个人</a></li>
+						 <li id="ca-talk" class="new"><a href="/index.php?title=User_talk:Cosechy/%E5%9E%83%E5%9C%BE%E5%9C%BA/%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95&amp;action=edit">讨论</a></li>
+						 <li id="ca-edit"><a href="/index.php?title=User:Cosechy/%E5%9E%83%E5%9C%BE%E5%9C%BA/%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95&amp;action=edit">编辑</a></li>
+						 <li id="ca-history"><a href="/index.php?title=User:Cosechy/%E5%9E%83%E5%9C%BE%E5%9C%BA/%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95&amp;action=history">历史</a></li>
+				</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=Special:Userlogin&amp;returnto=User:Cosechy/%E5%9E%83%E5%9C%BE%E5%9C%BA/%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95">登录或创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5" title="首页"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/Special:Recentchanges">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/Special:Random">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/Help:%E5%B8%AE%E5%8A%A9">使用帮助</a></li>
+				<li id="n-sitesupport"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5">帮助我们</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php/Special:Search" id="searchform"><div>
+<input name="ref" type="hidden" value="User:Cosechy/垃圾场/一些想法">
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="进入" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="搜索" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/Special:Whatlinkshere/User:Cosechy/%E5%9E%83%E5%9C%BE%E5%9C%BA/%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/Special:Recentchangeslinked/User:Cosechy/%E5%9E%83%E5%9C%BE%E5%9C%BA/%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95">链出更改</a></li>
+<li id="t-upload"><a href="/index.php/Special:Upload">上传文件</a></li>
+<li id="t-specialpages"><a href="/index.php/Special:Specialpages">特殊页面</a></li>
+				<li id="t-print"><a href="/index.php?title=User:Cosechy/%E5%9E%83%E5%9C%BE%E5%9C%BA/%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95&amp;printable=yes">可打印版</a></li>				<li id="t-permalink"><a href="/index.php?title=User:Cosechy/%E5%9E%83%E5%9C%BE%E5%9C%BA/%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95&amp;oldid=2838">永久链接</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt='GNU Free Documentation License 1.2' /></a></div>
+			<ul id="f-list">
+				<li id="viewcount">访问次数: 1,084次</li>
+				<li id="credits">此页由<a href="/index.php/User:Cosechy" title="User:Cosechy">yh</a>于2007年5月19日, 17:39最后更改. </li>
+				<li id="copyright">本站内容在<a href="http://www.gnu.org/copyleft/fdl.html" class="external " title="http://www.gnu.org/copyleft/fdl.html" rel="nofollow">GNU Free Documentation License 1.2</a>下发布</li>
+				<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E7%AD%96%E7%95%A5" title="NOCOW:隐私策略">隐私策略</a></li>
+				<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+				<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+				<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by bdezlinux in 0.294 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body></html>

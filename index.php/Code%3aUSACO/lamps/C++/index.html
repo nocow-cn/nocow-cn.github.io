@@ -1,0 +1,570 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="keywords" content="Code:USACO/lamps/C++" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (中文(简体))" />
+<link title="Creative Commons" type="application/rdf+xml" href="/index.php?title=Code:USACO/lamps/C%2B%2B&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+		<title>NOCOW - Code:USACO/lamps/C++</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins/monobook/main.css?42b"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print" href="/skins/common/commonPrint.css?42b" />
+		<link rel="stylesheet" type="text/css" media="handheld" href="/skins/monobook/handheld.css?42b" />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins/monobook/IE50Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins/monobook/IE55Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins/monobook/IE60Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins/monobook/IE70Fixes.css?42b";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?42b"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">/*<![CDATA[*/
+var skin = "monobook";
+var stylepath = "/skins";
+var wgArticlePath = "/index.php/$1";
+var wgScriptPath = "";
+var wgServer = "http://www.nocow.cn";
+var wgCanonicalNamespace = "Code";
+var wgCanonicalSpecialPageName = false;
+var wgNamespaceNumber = 104;
+var wgPageName = "Code:USACO/lamps/C++";
+var wgTitle = "USACO/lamps/C++";
+var wgArticleId = "3148";
+var wgIsArticle = true;
+var wgUserName = null;
+var wgUserLanguage = "zh-cn";
+var wgContentLanguage = "zh-cn";
+var wgBreakFrames = false;
+var wgCurRevisionId = "17809";
+/*]]>*/</script>
+                
+		<script type="text/javascript" src="/skins/common/wikibits.js?42b"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=-&action=raw&gen=css&maxage=18000";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+			</head>
+<body  class="mediawiki ns-104 ltr page-Code_USACO_lamps_C">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+<div style="text-align:center;font-size:85%;font-weight:bold" id=headlinemessage>如果发现广告等破坏行为，请尽量将条目恢复到较早的版本而不是把相应内容直接删除，谢谢合作。</div>
+<!--div style="text-align:center;font-size:85%;font-weight:bold" id=headlinemessage>NOCOW近期对条目的命名进行了一些整理，一些链接可能失效，为此带来的不便请大家谅解。创建条目时也请遵循新的命名规范，谢谢合作。</div-->
+		<a name="top" id="top"></a>
+				<h1 class="firstHeading">Code:USACO/lamps/C++</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">来自&quot;NOCOW&quot;</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">跳转到: <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>			<!-- start content -->
+			<pre class="c"><span style="color: #808080; font-style: italic;">/*
+ID:ybojan2
+LANG:C++
+TASK:lamps
+*/</span>
+&nbsp;
+<span style="color: #339933;">#include &lt;iostream&gt;</span>
+<span style="color: #339933;">#include &lt;fstream&gt;</span>
+&nbsp;
+using namespace std;
+&nbsp;
+<span style="color: #993333;">int</span> main<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+    ifstream fin<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;lamps.in&quot;</span><span style="color: #66cc66;">&#41;</span>;
+    ofstream fout<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;lamps.out&quot;</span><span style="color: #66cc66;">&#41;</span>;
+&nbsp;
+    <span style="color: #993333;">int</span> n,c,kai<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">101</span><span style="color: #66cc66;">&#93;</span>,guan<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">101</span><span style="color: #66cc66;">&#93;</span>,lk=<span style="color: #cc66cc;">0</span>,lg=<span style="color: #cc66cc;">0</span>,now<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">101</span><span style="color: #66cc66;">&#93;</span>,count=<span style="color: #cc66cc;">0</span>,res<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">17</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">101</span><span style="color: #66cc66;">&#93;</span>;
+    fin&gt;&gt;n&gt;&gt;c;
+    <span style="color: #993333;">int</span> x;
+    fin&gt;&gt;x;
+    <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span>;x!=<span style="color: #cc66cc;">-1</span>;<span style="color: #66cc66;">&#41;</span>
+    <span style="color: #66cc66;">&#123;</span>
+        lk++;
+        kai<span style="color: #66cc66;">&#91;</span>lk<span style="color: #66cc66;">&#93;</span>=x;
+        fin&gt;&gt;x;
+    <span style="color: #66cc66;">&#125;</span>
+    fin&gt;&gt;x;
+    <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span>;x!=<span style="color: #cc66cc;">-1</span>;<span style="color: #66cc66;">&#41;</span>
+    <span style="color: #66cc66;">&#123;</span>
+        lg++;
+        guan<span style="color: #66cc66;">&#91;</span>lg<span style="color: #66cc66;">&#93;</span>=x;
+        fin&gt;&gt;x;
+    <span style="color: #66cc66;">&#125;</span>
+    <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> i=<span style="color: #cc66cc;">1</span>;i&lt;=n;i++<span style="color: #66cc66;">&#41;</span>
+        now<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>=<span style="color: #cc66cc;">1</span>;
+    <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> i=<span style="color: #cc66cc;">1</span>;i&gt;=<span style="color: #cc66cc;">0</span>;i--<span style="color: #66cc66;">&#41;</span>
+    <span style="color: #66cc66;">&#123;</span>
+        <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> s=<span style="color: #cc66cc;">1</span>;s&lt;=n;s++<span style="color: #66cc66;">&#41;</span>
+            now<span style="color: #66cc66;">&#91;</span>s<span style="color: #66cc66;">&#93;</span>=<span style="color: #cc66cc;">1</span>-now<span style="color: #66cc66;">&#91;</span>s<span style="color: #66cc66;">&#93;</span>;
+        <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> j=<span style="color: #cc66cc;">1</span>;j&gt;=<span style="color: #cc66cc;">0</span>;j--<span style="color: #66cc66;">&#41;</span>
+        <span style="color: #66cc66;">&#123;</span>
+            <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> s=<span style="color: #cc66cc;">1</span>;s&lt;=n;s+=<span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#41;</span>
+                now<span style="color: #66cc66;">&#91;</span>s<span style="color: #66cc66;">&#93;</span>=<span style="color: #cc66cc;">1</span>-now<span style="color: #66cc66;">&#91;</span>s<span style="color: #66cc66;">&#93;</span>;
+            <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> k=<span style="color: #cc66cc;">1</span>;k&gt;=<span style="color: #cc66cc;">0</span>;k--<span style="color: #66cc66;">&#41;</span>
+            <span style="color: #66cc66;">&#123;</span>
+                <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> s=<span style="color: #cc66cc;">2</span>;s&lt;=n;s+=<span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#41;</span>
+                    now<span style="color: #66cc66;">&#91;</span>s<span style="color: #66cc66;">&#93;</span>=<span style="color: #cc66cc;">1</span>-now<span style="color: #66cc66;">&#91;</span>s<span style="color: #66cc66;">&#93;</span>;
+                <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> t=<span style="color: #cc66cc;">1</span>;t&gt;=<span style="color: #cc66cc;">0</span>;t--<span style="color: #66cc66;">&#41;</span>
+                <span style="color: #66cc66;">&#123;</span>
+                    <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> s=<span style="color: #cc66cc;">1</span>;s&lt;=n;s+=<span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#41;</span>
+                        now<span style="color: #66cc66;">&#91;</span>s<span style="color: #66cc66;">&#93;</span>=<span style="color: #cc66cc;">1</span>-now<span style="color: #66cc66;">&#91;</span>s<span style="color: #66cc66;">&#93;</span>;
+                    bool okay=<span style="color: #000000; font-weight: bold;">true</span>;
+                    <span style="color: #993333;">int</span> ss=i+j+k+t;
+                    <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#40;</span>ss&gt;c<span style="color: #66cc66;">&#41;</span>||<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#40;</span>ss%<span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#41;</span>!=<span style="color: #66cc66;">&#40;</span>c%<span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">continue</span>;
+                    <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> s=<span style="color: #cc66cc;">1</span>;s&lt;=lk;s++<span style="color: #66cc66;">&#41;</span>
+                        <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>now<span style="color: #66cc66;">&#91;</span>kai<span style="color: #66cc66;">&#91;</span>s<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span>==<span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#41;</span> 
+                        <span style="color: #66cc66;">&#123;</span>
+                                      okay=<span style="color: #000000; font-weight: bold;">false</span>;
+                                      <span style="color: #000000; font-weight: bold;">break</span>;
+                        <span style="color: #66cc66;">&#125;</span>
+                    <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> s=<span style="color: #cc66cc;">1</span>;s&lt;=lg;s++<span style="color: #66cc66;">&#41;</span>
+                        <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>now<span style="color: #66cc66;">&#91;</span>guan<span style="color: #66cc66;">&#91;</span>s<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#93;</span>==<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span>
+                        <span style="color: #66cc66;">&#123;</span>
+                                        okay=<span style="color: #000000; font-weight: bold;">false</span>;
+                                        <span style="color: #000000; font-weight: bold;">break</span>;
+                        <span style="color: #66cc66;">&#125;</span>
+                    <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>okay<span style="color: #66cc66;">&#41;</span>
+                    <span style="color: #66cc66;">&#123;</span> 
+                             count++;
+                             <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> s=<span style="color: #cc66cc;">1</span>;s&lt;=n;s++<span style="color: #66cc66;">&#41;</span>
+                                 res<span style="color: #66cc66;">&#91;</span>count<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span>s<span style="color: #66cc66;">&#93;</span>=now<span style="color: #66cc66;">&#91;</span>s<span style="color: #66cc66;">&#93;</span>;
+                    <span style="color: #66cc66;">&#125;</span>
+                <span style="color: #66cc66;">&#125;</span>
+            <span style="color: #66cc66;">&#125;</span>
+        <span style="color: #66cc66;">&#125;</span>
+    <span style="color: #66cc66;">&#125;</span>
+    <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> i=<span style="color: #cc66cc;">1</span>;i&lt;=count;i++<span style="color: #66cc66;">&#41;</span>
+    <span style="color: #66cc66;">&#123;</span>
+        <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> j=i<span style="color: #cc66cc;">+1</span>;j&lt;=count;j++<span style="color: #66cc66;">&#41;</span>
+        <span style="color: #66cc66;">&#123;</span>
+            bool big=<span style="color: #000000; font-weight: bold;">false</span>;
+            <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> k=<span style="color: #cc66cc;">1</span>;k&lt;=n;k++<span style="color: #66cc66;">&#41;</span>
+            <span style="color: #66cc66;">&#123;</span>
+                <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>res<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span>k<span style="color: #66cc66;">&#93;</span>!=res<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span>k<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>
+                <span style="color: #66cc66;">&#123;</span>
+                                         big=<span style="color: #66cc66;">&#40;</span>res<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span>k<span style="color: #66cc66;">&#93;</span>&gt;res<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span>k<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>?<span style="color: #000000; font-weight: bold;">true</span>:<span style="color: #000000; font-weight: bold;">false</span>;
+                                         <span style="color: #000000; font-weight: bold;">break</span>;
+                <span style="color: #66cc66;">&#125;</span>
+            <span style="color: #66cc66;">&#125;</span>
+            <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>big<span style="color: #66cc66;">&#41;</span>
+            <span style="color: #66cc66;">&#123;</span>
+                    <span style="color: #993333;">int</span> tmp;
+                    <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> k=<span style="color: #cc66cc;">1</span>;k&lt;=n;k++<span style="color: #66cc66;">&#41;</span>
+                    <span style="color: #66cc66;">&#123;</span>
+                        tmp=res<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span>k<span style="color: #66cc66;">&#93;</span>;
+                        res<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span>k<span style="color: #66cc66;">&#93;</span>=res<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span>k<span style="color: #66cc66;">&#93;</span>;
+                        res<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span>k<span style="color: #66cc66;">&#93;</span>=tmp;
+                    <span style="color: #66cc66;">&#125;</span>
+            <span style="color: #66cc66;">&#125;</span>
+        <span style="color: #66cc66;">&#125;</span>
+    <span style="color: #66cc66;">&#125;</span>
+    <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> i=<span style="color: #cc66cc;">1</span>;i&lt;=count;i++<span style="color: #66cc66;">&#41;</span>
+    <span style="color: #66cc66;">&#123;</span>
+        <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> j=<span style="color: #cc66cc;">1</span>;j&lt;=n;j++<span style="color: #66cc66;">&#41;</span>
+            fout&lt;&lt;res<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span>;
+        fout&lt;&lt;endl;
+    <span style="color: #66cc66;">&#125;</span>
+    <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>count==<span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#41;</span> fout&lt;&lt;<span style="color: #ff0000;">&quot;IMPOSSIBLE&quot;</span>&lt;&lt;endl;
+    <span style="color: #b1b100;">return</span> <span style="color: #cc66cc;">0</span>;
+<span style="color: #66cc66;">&#125;</span></pre>
+<pre class="c"><span style="color: #808080; font-style: italic;">/*
+ID:GeorgeG1
+PROB:lamps
+LANG:C++
+*/</span>
+<span style="color: #808080; font-style: italic;">/*
+&nbsp;
+操作具有周期性-&gt; 状态具有周期性-&gt; 周期为6 
+&nbsp;
+状态的记录，用位运算简化，用一个longint存储前6位的状态
+&nbsp;
+操作1：异或(111111)2=63 
+操作2：异或(010101)2=21 
+操作3：异或(101010)2=42 
+操作4：异或(001001)2=9 
+&nbsp;
+判断状态是否符合题意:
+先将题目给出的灯的状态映射到0～5之间，即(灯的编号-1)%6 
+生成一个6位二进制数isOn，其中题目给出是ON的灯的对应位为1，其余为0 
+生成一个6位二进制数isOff，其中题目给出是OFF的灯的对应位为0，其余为1 
+若当前状态state满足： 
+(state&amp;isOn)==isOn &amp;&amp; (state|isOff)==isOff
+则state满足题目要求。 
+&nbsp;
+&nbsp;
+另外，关于判断某一状态是否能有c次按键得到，如果某一状态能由x次按键得到，若c-x为偶数，则该状态进行c-x次操作1后状态不变。 
+每种操作做最多一次，两次等于没做 ，故DFS枚举深度x最大为4
+&nbsp;
+&nbsp;
+*/</span>
+<span style="color: #339933;">#include &lt;fstream&gt;</span>
+<span style="color: #339933;">#include &lt;cstdlib&gt;</span>
+<span style="color: #339933;">#include &lt;iostream&gt;</span>
+&nbsp;
+using namespace std;
+&nbsp;
+ifstream fin <span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;lamps.in&quot;</span><span style="color: #66cc66;">&#41;</span>;
+ofstream fout <span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;lamps.out&quot;</span><span style="color: #66cc66;">&#41;</span>;
+&nbsp;
+<span style="color: #993333;">long</span> operation<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">4</span><span style="color: #66cc66;">&#93;</span>=<span style="color: #66cc66;">&#123;</span><span style="color: #cc66cc;">63</span>,<span style="color: #cc66cc;">21</span>,<span style="color: #cc66cc;">42</span>,<span style="color: #cc66cc;">9</span><span style="color: #66cc66;">&#125;</span>;
+<span style="color: #993333;">long</span> isOn=<span style="color: #cc66cc;">0</span>,isOff=<span style="color: #cc66cc;">2147483647</span>;
+<span style="color: #993333;">long</span> n,c;
+<span style="color: #993333;">long</span> ans<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">300</span><span style="color: #66cc66;">&#93;</span>,top=<span style="color: #cc66cc;">-1</span>;    <span style="color: #808080; font-style: italic;">//二进制存储状态，每个longint存6位。因为每个状态中N个longint值一样，故压缩为一个longint存储 </span>
+&nbsp;
+<span style="color: #993333;">void</span> DFS<span style="color: #66cc66;">&#40;</span><span style="color: #993333;">long</span> state,<span style="color: #993333;">long</span> levelLeft<span style="color: #66cc66;">&#41;</span>;   <span style="color: #808080; font-style: italic;">//搜索 </span>
+<span style="color: #993333;">string</span> bOut<span style="color: #66cc66;">&#40;</span><span style="color: #993333;">long</span> output<span style="color: #66cc66;">&#41;</span>;                <span style="color: #808080; font-style: italic;">//二进制输出 </span>
+bool stateCmp<span style="color: #66cc66;">&#40;</span><span style="color: #993333;">long</span> state<span style="color: #66cc66;">&#41;</span>;             <span style="color: #808080; font-style: italic;">//比较当前状态与题目要求是否一致 </span>
+<span style="color: #993333;">void</span> push<span style="color: #66cc66;">&#40;</span><span style="color: #993333;">long</span> state<span style="color: #66cc66;">&#41;</span>;                 <span style="color: #808080; font-style: italic;">//若当前状态不在ans数组中，则将当前状态记录到ans数组</span>
+bool cmp<span style="color: #66cc66;">&#40;</span><span style="color: #993333;">long</span> a,<span style="color: #993333;">long</span> b<span style="color: #66cc66;">&#41;</span>;               <span style="color: #808080; font-style: italic;">//sort的比较函数，升序排列 </span>
+&nbsp;
+<span style="color: #993333;">int</span> main<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+    fin &gt;&gt;n &gt;&gt;c;
+    <span style="color: #993333;">long</span> i;
+    fin &gt;&gt;i;
+    <span style="color: #b1b100;">while</span> <span style="color: #66cc66;">&#40;</span>i!=<span style="color: #cc66cc;">-1</span><span style="color: #66cc66;">&#41;</span>      <span style="color: #808080; font-style: italic;">//input</span>
+    <span style="color: #66cc66;">&#123;</span>
+          i=<span style="color: #66cc66;">&#40;</span>i<span style="color: #cc66cc;">-1</span><span style="color: #66cc66;">&#41;</span>%<span style="color: #cc66cc;">6</span>;
+          <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>!<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#40;</span>isOn&gt;&gt;i<span style="color: #66cc66;">&#41;</span>&amp;<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span> isOn+=<span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">1</span>&lt;&lt;i<span style="color: #66cc66;">&#41;</span>;
+          fin &gt;&gt;i;
+    <span style="color: #66cc66;">&#125;</span>
+    fin &gt;&gt;i;
+    <span style="color: #b1b100;">while</span> <span style="color: #66cc66;">&#40;</span>i!=<span style="color: #cc66cc;">-1</span><span style="color: #66cc66;">&#41;</span>
+    <span style="color: #66cc66;">&#123;</span>
+          i=<span style="color: #66cc66;">&#40;</span>i<span style="color: #cc66cc;">-1</span><span style="color: #66cc66;">&#41;</span>%<span style="color: #cc66cc;">6</span>;
+          <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#40;</span>isOff&gt;&gt;i<span style="color: #66cc66;">&#41;</span>&amp;<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span> isOff-=<span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">1</span>&lt;&lt;i<span style="color: #66cc66;">&#41;</span>;
+          fin &gt;&gt;i;
+    <span style="color: #66cc66;">&#125;</span>
+    DFS<span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">63</span>,<span style="color: #66cc66;">&#40;</span>c&lt;<span style="color: #cc66cc;">4</span><span style="color: #66cc66;">&#41;</span>?c:<span style="color: #cc66cc;">4</span><span style="color: #66cc66;">&#41;</span>;       <span style="color: #808080; font-style: italic;">//DFS最大深度为(c&lt;4)?c:4 </span>
+    <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>top==<span style="color: #cc66cc;">-1</span><span style="color: #66cc66;">&#41;</span>
+    <span style="color: #66cc66;">&#123;</span>
+       fout &lt;&lt;<span style="color: #ff0000;">&quot;IMPOSSIBLE<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span>;
+       <span style="color: #b1b100;">return</span> <span style="color: #cc66cc;">0</span>;
+    <span style="color: #66cc66;">&#125;</span>
+    sort <span style="color: #66cc66;">&#40;</span>ans,ans+top<span style="color: #cc66cc;">+1</span>,cmp<span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">long</span> i=<span style="color: #cc66cc;">0</span>;i&lt;=top;i++<span style="color: #66cc66;">&#41;</span>
+    <span style="color: #66cc66;">&#123;</span>
+        fout &lt;&lt;bOut<span style="color: #66cc66;">&#40;</span>ans<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span> &lt;&lt;endl;
+    <span style="color: #66cc66;">&#125;</span>
+    <span style="color: #b1b100;">return</span> <span style="color: #cc66cc;">0</span>;
+<span style="color: #66cc66;">&#125;</span>
+&nbsp;
+<span style="color: #993333;">void</span> DFS<span style="color: #66cc66;">&#40;</span><span style="color: #993333;">long</span> state,<span style="color: #993333;">long</span> levelLeft<span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+     <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>stateCmp<span style="color: #66cc66;">&#40;</span>state<span style="color: #66cc66;">&#41;</span>==<span style="color: #000000; font-weight: bold;">true</span> &amp;&amp;&nbsp;!<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#40;</span>c-<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#40;</span>c&lt;<span style="color: #cc66cc;">4</span><span style="color: #66cc66;">&#41;</span>?c:<span style="color: #cc66cc;">4</span><span style="color: #66cc66;">&#41;</span>+levelLeft<span style="color: #66cc66;">&#41;</span>&amp;<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span> push<span style="color: #66cc66;">&#40;</span>state<span style="color: #66cc66;">&#41;</span>;
+     <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>levelLeft==<span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">return</span>;
+     levelLeft--;
+&nbsp;
+     state^=operation<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>;     <span style="color: #808080; font-style: italic;">//操作1</span>
+     DFS<span style="color: #66cc66;">&#40;</span>state,levelLeft<span style="color: #66cc66;">&#41;</span>;
+     state^=operation<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>;     <span style="color: #808080; font-style: italic;">//反操作1</span>
+&nbsp;
+     state^=operation<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>;     <span style="color: #808080; font-style: italic;">//操作2</span>
+     DFS<span style="color: #66cc66;">&#40;</span>state,levelLeft<span style="color: #66cc66;">&#41;</span>;
+     state^=operation<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>;     <span style="color: #808080; font-style: italic;">//反操作2</span>
+&nbsp;
+     state^=operation<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>;     <span style="color: #808080; font-style: italic;">//操作3</span>
+     DFS<span style="color: #66cc66;">&#40;</span>state,levelLeft<span style="color: #66cc66;">&#41;</span>;
+     state^=operation<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#93;</span>;     <span style="color: #808080; font-style: italic;">//反操作3</span>
+&nbsp;
+     state^=operation<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span>;     <span style="color: #808080; font-style: italic;">//操作4</span>
+     DFS<span style="color: #66cc66;">&#40;</span>state,levelLeft<span style="color: #66cc66;">&#41;</span>;
+     state^=operation<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#93;</span>;     <span style="color: #808080; font-style: italic;">//反操作4</span>
+&nbsp;
+     <span style="color: #b1b100;">return</span>;
+<span style="color: #66cc66;">&#125;</span>
+&nbsp;
+<span style="color: #993333;">long</span> rev<span style="color: #66cc66;">&#40;</span><span style="color: #993333;">long</span> num<span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+     <span style="color: #993333;">long</span> t=<span style="color: #cc66cc;">0</span>;
+     <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">long</span> i=<span style="color: #cc66cc;">0</span>;i&lt;<span style="color: #cc66cc;">6</span>;i++<span style="color: #66cc66;">&#41;</span>
+     <span style="color: #66cc66;">&#123;</span>
+         t+=<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#40;</span>num&gt;&gt;i<span style="color: #66cc66;">&#41;</span>&amp;<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span>&lt;&lt;<span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">6</span>-i<span style="color: #66cc66;">&#41;</span>;
+     <span style="color: #66cc66;">&#125;</span>
+     <span style="color: #b1b100;">return</span> t;
+<span style="color: #66cc66;">&#125;</span>
+&nbsp;
+bool cmp<span style="color: #66cc66;">&#40;</span><span style="color: #993333;">long</span> a,<span style="color: #993333;">long</span> b<span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+     a=rev<span style="color: #66cc66;">&#40;</span>a<span style="color: #66cc66;">&#41;</span>;           <span style="color: #808080; font-style: italic;">//由于状态存储方式和题目输出方式相反，比较时要将状态倒转 </span>
+      b=rev<span style="color: #66cc66;">&#40;</span>b<span style="color: #66cc66;">&#41;</span>;
+     <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>a==b<span style="color: #66cc66;">&#41;</span>
+     <span style="color: #66cc66;">&#123;</span>
+        <span style="color: #993333;">long</span> offset=<span style="color: #66cc66;">&#40;</span>c<span style="color: #cc66cc;">-1</span><span style="color: #66cc66;">&#41;</span>%<span style="color: #cc66cc;">6</span><span style="color: #cc66cc;">+1</span>;
+        a&gt;&gt;=offset;
+        b&gt;&gt;=offset;
+        <span style="color: #b1b100;">return</span> a&lt;b;
+     <span style="color: #66cc66;">&#125;</span><span style="color: #b1b100;">else</span> <span style="color: #b1b100;">return</span> a&lt;b;
+<span style="color: #66cc66;">&#125;</span>
+&nbsp;
+<span style="color: #993333;">void</span> push <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">long</span> state<span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+     <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">long</span> i=<span style="color: #cc66cc;">0</span>;i&lt;=top;i++<span style="color: #66cc66;">&#41;</span>
+         <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>ans<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>==state<span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">return</span>;
+     ans<span style="color: #66cc66;">&#91;</span>++top<span style="color: #66cc66;">&#93;</span>=state;
+     <span style="color: #b1b100;">return</span>;
+<span style="color: #66cc66;">&#125;</span>
+&nbsp;
+bool stateCmp<span style="color: #66cc66;">&#40;</span><span style="color: #993333;">long</span> state<span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+     <span style="color: #b1b100;">return</span> <span style="color: #66cc66;">&#40;</span>state&amp;isOn<span style="color: #66cc66;">&#41;</span>==isOn &amp;&amp; <span style="color: #66cc66;">&#40;</span>state|isOff<span style="color: #66cc66;">&#41;</span>==isOff;
+<span style="color: #66cc66;">&#125;</span>
+&nbsp;
+<span style="color: #993333;">string</span> bOut<span style="color: #66cc66;">&#40;</span><span style="color: #993333;">long</span> output<span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+     <span style="color: #993333;">string</span> tmp=<span style="color: #ff0000;">&quot;&quot;</span>;
+     <span style="color: #993333;">string</span> ans=<span style="color: #ff0000;">&quot;&quot;</span>;
+     <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">long</span> i=<span style="color: #cc66cc;">0</span>;i&lt;<span style="color: #cc66cc;">6</span>;i++<span style="color: #66cc66;">&#41;</span>
+     <span style="color: #66cc66;">&#123;</span>
+         tmp+=<span style="color: #ff0000;">'0'</span>+<span style="color: #66cc66;">&#40;</span>output&amp;<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span>;
+         output&gt;&gt;=<span style="color: #cc66cc;">1</span>;
+     <span style="color: #66cc66;">&#125;</span>
+     <span style="color: #b1b100;">for</span> <span style="color: #66cc66;">&#40;</span><span style="color: #993333;">long</span> i=<span style="color: #cc66cc;">0</span>;i&lt;n/<span style="color: #cc66cc;">6</span>;i++<span style="color: #66cc66;">&#41;</span>
+         ans+=tmp;
+     ans+=tmp.<span style="color: #202020;">substr</span><span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">0</span>,n%<span style="color: #cc66cc;">6</span><span style="color: #66cc66;">&#41;</span>;
+     <span style="color: #b1b100;">return</span> ans;
+<span style="color: #66cc66;">&#125;</span></pre>
+<pre class="c"><span style="color: #339933;">#include &lt;fstream&gt;</span>
+<span style="color: #339933;">#include&lt;bitset&gt;</span>
+using namespace std;
+ofstream fout <span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;lamps.out&quot;</span>,ios::<span style="color: #202020;">out</span><span style="color: #66cc66;">&#41;</span>;
+ifstream fin <span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;lamps.in&quot;</span>,ios::<span style="color: #202020;">in</span><span style="color: #66cc66;">&#41;</span>;
+<span style="color: #993333;">int</span> n,c,k,make<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">5</span><span style="color: #66cc66;">&#93;</span>=<span style="color: #66cc66;">&#123;</span><span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">63</span>,<span style="color: #cc66cc;">42</span>,<span style="color: #cc66cc;">21</span>,<span style="color: #cc66cc;">36</span><span style="color: #66cc66;">&#125;</span>;
+bool lon<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">7</span><span style="color: #66cc66;">&#93;</span>,loff<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">7</span><span style="color: #66cc66;">&#93;</span>,alln<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">65</span><span style="color: #66cc66;">&#93;</span>,ishave=<span style="color: #000000; font-weight: bold;">false</span>;
+<span style="color: #993333;">int</span> dfs<span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> lev,<span style="color: #993333;">int</span> sta,<span style="color: #993333;">int</span> tot<span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+	<span style="color: #993333;">int</span> zt=sta;
+	bool istrue=<span style="color: #000000; font-weight: bold;">true</span>;
+	<span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>lev&gt;<span style="color: #cc66cc;">5</span><span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">return</span> <span style="color: #cc66cc;">0</span>;
+	<span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>tot&lt;=c<span style="color: #66cc66;">&#41;</span>
+	<span style="color: #66cc66;">&#123;</span>
+		<span style="color: #b1b100;">for</span><span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> i=<span style="color: #cc66cc;">1</span>;i&lt;=<span style="color: #cc66cc;">6</span>;i++<span style="color: #66cc66;">&#41;</span>
+		<span style="color: #66cc66;">&#123;</span>
+			<span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>lon<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>!<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#40;</span>sta&gt;&gt;<span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">6</span>-i<span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span>&amp;<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span> <span style="color: #66cc66;">&#123;</span>istrue=<span style="color: #000000; font-weight: bold;">false</span>;break;<span style="color: #66cc66;">&#125;</span>
+			<span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>loff<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#40;</span>sta&gt;&gt;<span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">6</span>-i<span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span>&amp;<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span> <span style="color: #66cc66;">&#123;</span>istrue=<span style="color: #000000; font-weight: bold;">false</span>;break;<span style="color: #66cc66;">&#125;</span>
+		<span style="color: #66cc66;">&#125;</span>
+		<span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>istrue<span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#123;</span>
+						alln<span style="color: #66cc66;">&#91;</span>sta<span style="color: #66cc66;">&#93;</span>=<span style="color: #000000; font-weight: bold;">true</span>;
+						ishave=<span style="color: #000000; font-weight: bold;">true</span>;
+					<span style="color: #66cc66;">&#125;</span>
+	<span style="color: #66cc66;">&#125;</span>
+	sta^=make<span style="color: #66cc66;">&#91;</span>lev<span style="color: #66cc66;">&#93;</span>;
+	dfs<span style="color: #66cc66;">&#40;</span>lev<span style="color: #cc66cc;">+1</span>,sta,tot<span style="color: #cc66cc;">+1</span><span style="color: #66cc66;">&#41;</span>; <span style="color: #808080; font-style: italic;">//按</span>
+	dfs<span style="color: #66cc66;">&#40;</span>lev<span style="color: #cc66cc;">+1</span>,zt,tot<span style="color: #66cc66;">&#41;</span>; <span style="color: #808080; font-style: italic;">//不按</span>
+	<span style="color: #b1b100;">return</span> <span style="color: #cc66cc;">0</span>;
+<span style="color: #66cc66;">&#125;</span>
+<span style="color: #993333;">int</span> main<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+	fin&gt;&gt;n&gt;&gt;c;
+	fin&gt;&gt;k;
+	<span style="color: #b1b100;">while</span> <span style="color: #66cc66;">&#40;</span>k!=<span style="color: #cc66cc;">-1</span><span style="color: #66cc66;">&#41;</span>
+	<span style="color: #66cc66;">&#123;</span>
+		k%=<span style="color: #cc66cc;">6</span>;
+		<span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>k==<span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#41;</span> k=<span style="color: #cc66cc;">6</span>;
+		lon<span style="color: #66cc66;">&#91;</span>k<span style="color: #66cc66;">&#93;</span>=<span style="color: #000000; font-weight: bold;">true</span>;
+		fin&gt;&gt;k;
+	<span style="color: #66cc66;">&#125;</span>
+	fin&gt;&gt;k;
+	<span style="color: #b1b100;">while</span> <span style="color: #66cc66;">&#40;</span>k!=<span style="color: #cc66cc;">-1</span><span style="color: #66cc66;">&#41;</span>
+	<span style="color: #66cc66;">&#123;</span>
+		k%=<span style="color: #cc66cc;">6</span>;
+		<span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>k==<span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#41;</span> k=<span style="color: #cc66cc;">6</span>;
+                loff<span style="color: #66cc66;">&#91;</span>k<span style="color: #66cc66;">&#93;</span>=<span style="color: #000000; font-weight: bold;">true</span>;
+                fin&gt;&gt;k;
+         <span style="color: #66cc66;">&#125;</span>
+        dfs<span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">1</span>,<span style="color: #cc66cc;">63</span>,<span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#41;</span>;
+        <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>!ishave<span style="color: #66cc66;">&#41;</span> fout&lt;&lt;<span style="color: #ff0000;">&quot;IMPOSSIBLE&quot;</span>&lt;&lt;endl;
+        <span style="color: #b1b100;">else</span> <span style="color: #66cc66;">&#123;</span>	
+        <span style="color: #b1b100;">for</span><span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> i=<span style="color: #cc66cc;">0</span>;i&lt;=<span style="color: #cc66cc;">63</span>;i++<span style="color: #66cc66;">&#41;</span>
+        <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>alln<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>
+        <span style="color: #66cc66;">&#123;</span>
+          k=i;
+          <span style="color: #b1b100;">for</span><span style="color: #66cc66;">&#40;</span><span style="color: #993333;">int</span> j=<span style="color: #cc66cc;">1</span>;j&lt;=<span style="color: #66cc66;">&#40;</span>n/<span style="color: #cc66cc;">6</span><span style="color: #66cc66;">&#41;</span>;j++<span style="color: #66cc66;">&#41;</span>
+          fout&lt;&lt;bitset&lt;<span style="color: #cc66cc;">6</span>&gt;<span style="color: #66cc66;">&#40;</span>i<span style="color: #66cc66;">&#41;</span>; <span style="color: #808080; font-style: italic;">//bitset不可仪用变量</span>
+            <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>n%<span style="color: #cc66cc;">6</span>!=<span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#41;</span> <span style="color: #66cc66;">&#123;</span>
+                        k&gt;&gt;=<span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">6</span>-<span style="color: #66cc66;">&#40;</span>n%<span style="color: #cc66cc;">6</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span>;
+                        <span style="color: #b1b100;">switch</span> <span style="color: #66cc66;">&#40;</span>n%<span style="color: #cc66cc;">6</span><span style="color: #66cc66;">&#41;</span>
+                       <span style="color: #66cc66;">&#123;</span>
+                         <span style="color: #b1b100;">case</span><span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span>:fout&lt;&lt;bitset&lt;<span style="color: #cc66cc;">1</span>&gt;<span style="color: #66cc66;">&#40;</span>k<span style="color: #66cc66;">&#41;</span>&lt;&lt;endl;break;
+                         <span style="color: #b1b100;">case</span><span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#41;</span>:fout&lt;&lt;bitset&lt;<span style="color: #cc66cc;">2</span>&gt;<span style="color: #66cc66;">&#40;</span>k<span style="color: #66cc66;">&#41;</span>&lt;&lt;endl;break;
+                         <span style="color: #b1b100;">case</span><span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">3</span><span style="color: #66cc66;">&#41;</span>:fout&lt;&lt;bitset&lt;<span style="color: #cc66cc;">3</span>&gt;<span style="color: #66cc66;">&#40;</span>k<span style="color: #66cc66;">&#41;</span>&lt;&lt;endl;break;
+                         <span style="color: #b1b100;">case</span><span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">4</span><span style="color: #66cc66;">&#41;</span>:fout&lt;&lt;bitset&lt;<span style="color: #cc66cc;">4</span>&gt;<span style="color: #66cc66;">&#40;</span>k<span style="color: #66cc66;">&#41;</span>&lt;&lt;endl;break;
+                         <span style="color: #b1b100;">case</span><span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">5</span><span style="color: #66cc66;">&#41;</span>:fout&lt;&lt;bitset&lt;<span style="color: #cc66cc;">5</span>&gt;<span style="color: #66cc66;">&#40;</span>k<span style="color: #66cc66;">&#41;</span>&lt;&lt;endl;break;
+                        <span style="color: #66cc66;">&#125;</span>
+                       <span style="color: #66cc66;">&#125;</span>
+          <span style="color: #b1b100;">else</span> fout&lt;&lt;endl;
+        <span style="color: #66cc66;">&#125;</span>
+        <span style="color: #66cc66;">&#125;</span>
+   <span style="color: #b1b100;">return</span> <span style="color: #cc66cc;">0</span>;
+<span style="color: #66cc66;">&#125;</span></pre>
+<a name=".E5.B8.B8.E9.87.8F.E8.A1.A8.E7.9A.84.E8.A7.A3.E6.B3.95"></a><h2><span class="editsection">[<a href="/index.php?title=Code:USACO/lamps/C%2B%2B&amp;action=edit&amp;section=1" title="编辑段落: 常量表的解法">编辑</a>]</span> <span class="mw-headline">常量表的解法</span></h2>
+<pre class="c"><span style="color: #808080; font-style: italic;">/*
+ID:   talenth1
+PROG: lamps
+LANG: C++
+*/</span>
+<span style="color: #339933;">#include&lt;stdio.h&gt;</span>
+<span style="color: #339933;">#include&lt;stdlib.h&gt;</span>
+<span style="color: #339933;">#include&lt;math.h&gt;</span>
+<span style="color: #339933;">#include&lt;string.h&gt;</span>
+<span style="color: #993333;">int</span> n,c,light<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">10</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">10</span><span style="color: #66cc66;">&#93;</span>=<span style="color: #66cc66;">&#123;</span>
+                       <span style="color: #66cc66;">&#123;</span><span style="color: #66cc66;">&#125;</span>,
+                       <span style="color: #66cc66;">&#123;</span><span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#125;</span>,
+                       <span style="color: #66cc66;">&#123;</span><span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">1</span>,<span style="color: #cc66cc;">1</span>,<span style="color: #cc66cc;">1</span>,<span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#125;</span>,
+                       <span style="color: #66cc66;">&#123;</span><span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">1</span>,<span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">1</span>,<span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#125;</span>,
+                       <span style="color: #66cc66;">&#123;</span><span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">1</span>,<span style="color: #cc66cc;">1</span>,<span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">1</span>,<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#125;</span>,
+                       <span style="color: #66cc66;">&#123;</span><span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">1</span>,<span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">1</span>,<span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#125;</span>,
+                       <span style="color: #66cc66;">&#123;</span><span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">1</span>,<span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">1</span>,<span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">1</span>,<span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#125;</span>,
+                       <span style="color: #66cc66;">&#123;</span><span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">1</span>,<span style="color: #cc66cc;">1</span>,<span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#125;</span>,
+                       <span style="color: #66cc66;">&#123;</span><span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">1</span>,<span style="color: #cc66cc;">1</span>,<span style="color: #cc66cc;">1</span>,<span style="color: #cc66cc;">1</span>,<span style="color: #cc66cc;">1</span>,<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#125;</span>,
+                       <span style="color: #66cc66;">&#125;</span>;
+<span style="color: #993333;">int</span> minnum<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">50</span><span style="color: #66cc66;">&#93;</span>=<span style="color: #66cc66;">&#123;</span><span style="color: #cc66cc;">0</span>,<span style="color: #cc66cc;">1</span>,<span style="color: #cc66cc;">2</span>,<span style="color: #cc66cc;">1</span>,<span style="color: #cc66cc;">1</span>,<span style="color: #cc66cc;">2</span>,<span style="color: #cc66cc;">1</span>,<span style="color: #cc66cc;">2</span>,<span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#125;</span>;
+<span style="color: #993333;">int</span> in<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">101</span><span style="color: #66cc66;">&#93;</span>;
+<span style="color: #993333;">int</span> main<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span>
+<span style="color: #66cc66;">&#123;</span>
+      freopen<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;lamps.in&quot;</span>,<span style="color: #ff0000;">&quot;r&quot;</span>,stdin<span style="color: #66cc66;">&#41;</span>;
+      freopen<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;lamps.out&quot;</span>,<span style="color: #ff0000;">&quot;w&quot;</span>,stdout<span style="color: #66cc66;">&#41;</span>;
+      <span style="color: #993333;">int</span> i,j,k,t,p,q;
+      scanf<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;%d%d&quot;</span>,&amp;n,&amp;c<span style="color: #66cc66;">&#41;</span>;
+      <span style="color: #b1b100;">for</span><span style="color: #66cc66;">&#40;</span>i=<span style="color: #cc66cc;">1</span>;i&lt;=n;i++<span style="color: #66cc66;">&#41;</span>
+       in<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>=<span style="color: #cc66cc;">-1</span>;
+      <span style="color: #b1b100;">while</span><span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span>
+      <span style="color: #66cc66;">&#123;</span>
+        scanf<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;%d&quot;</span>,&amp;t<span style="color: #66cc66;">&#41;</span>;
+        <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>t!=<span style="color: #cc66cc;">-1</span><span style="color: #66cc66;">&#41;</span>in<span style="color: #66cc66;">&#91;</span>t<span style="color: #66cc66;">&#93;</span>=<span style="color: #cc66cc;">1</span>;
+        <span style="color: #b1b100;">else</span> <span style="color: #000000; font-weight: bold;">break</span>;
+      <span style="color: #66cc66;">&#125;</span>
+      <span style="color: #b1b100;">while</span><span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span>
+      <span style="color: #66cc66;">&#123;</span>
+        scanf<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;%d&quot;</span>,&amp;t<span style="color: #66cc66;">&#41;</span>;
+        <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>t!=<span style="color: #cc66cc;">-1</span><span style="color: #66cc66;">&#41;</span>in<span style="color: #66cc66;">&#91;</span>t<span style="color: #66cc66;">&#93;</span>=<span style="color: #cc66cc;">0</span>;
+        <span style="color: #b1b100;">else</span> <span style="color: #000000; font-weight: bold;">break</span>;
+      <span style="color: #66cc66;">&#125;</span>
+      q=<span style="color: #cc66cc;">0</span>;
+      <span style="color: #b1b100;">for</span><span style="color: #66cc66;">&#40;</span>k=<span style="color: #cc66cc;">1</span>;k&lt;=<span style="color: #cc66cc;">8</span>;k++<span style="color: #66cc66;">&#41;</span> 
+      <span style="color: #66cc66;">&#123;</span>
+        p=<span style="color: #cc66cc;">1</span>;
+        <span style="color: #b1b100;">for</span><span style="color: #66cc66;">&#40;</span>i=<span style="color: #cc66cc;">1</span>;i&lt;=n;i++<span style="color: #66cc66;">&#41;</span>
+        <span style="color: #66cc66;">&#123;</span>
+         <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>in<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>==<span style="color: #cc66cc;">-1</span><span style="color: #66cc66;">&#41;</span><span style="color: #b1b100;">continue</span>;
+         t=i%<span style="color: #cc66cc;">6</span>;
+         <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>t==<span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#41;</span>t=<span style="color: #cc66cc;">6</span>;
+         <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>in<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>!=light<span style="color: #66cc66;">&#91;</span>k<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span>t<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#123;</span>p=<span style="color: #cc66cc;">0</span>;break;<span style="color: #66cc66;">&#125;</span>
+        <span style="color: #66cc66;">&#125;</span> 
+        <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>p==<span style="color: #cc66cc;">1</span>&amp;&amp;c&gt;=minnum<span style="color: #66cc66;">&#91;</span>k<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#123;</span>
+                 q=<span style="color: #cc66cc;">1</span>;
+                 <span style="color: #b1b100;">for</span><span style="color: #66cc66;">&#40;</span>j=<span style="color: #cc66cc;">1</span>;j&lt;=n;j++<span style="color: #66cc66;">&#41;</span>
+                  <span style="color: #66cc66;">&#123;</span>
+                  t=j%<span style="color: #cc66cc;">6</span>;
+                  <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>t==<span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#41;</span>t=<span style="color: #cc66cc;">6</span>;
+                  <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span style="color: #000066;">printf</span></a><span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;%d&quot;</span>,light<span style="color: #66cc66;">&#91;</span>k<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#91;</span>t<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+                  <span style="color: #66cc66;">&#125;</span>
+                 <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span style="color: #000066;">printf</span></a><span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #66cc66;">&#41;</span>;
+               <span style="color: #66cc66;">&#125;</span>
+      <span style="color: #66cc66;">&#125;</span>
+      <span style="color: #b1b100;">if</span><span style="color: #66cc66;">&#40;</span>q==<span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#41;</span><a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span style="color: #000066;">printf</span></a><span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;IMPOSSIBLE<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #66cc66;">&#41;</span>;
+      <span style="color: #b1b100;">return</span> <span style="color: #cc66cc;">0</span>;      
+<span style="color: #66cc66;">&#125;</span></pre>
+
+<!-- Saved in parser cache with key nocow:pcache:idhash:3148-0!1!0!!zh-cn!2 and timestamp 20100729151826 -->
+<div class="printfooter">
+来自"<a href="http://www.nocow.cn/index.php/Code:USACO/lamps/C%2B%2B">http://www.nocow.cn/index.php/Code:USACO/lamps/C%2B%2B</a>"</div>
+						<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+						 <li id="ca-nstab-code" class="selected"><a href="/index.php/Code:USACO/lamps/C%2B%2B">代码</a></li>
+						 <li id="ca-talk" class="new"><a href="/index.php?title=Code_Talk:USACO/lamps/C%2B%2B&amp;action=edit">讨论</a></li>
+						 <li id="ca-edit"><a href="/index.php?title=Code:USACO/lamps/C%2B%2B&amp;action=edit">编辑</a></li>
+						 <li id="ca-history"><a href="/index.php?title=Code:USACO/lamps/C%2B%2B&amp;action=history">历史</a></li>
+				</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=Special:Userlogin&amp;returnto=Code:USACO/lamps/C%2B%2B">登录或创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5" title="首页"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/Special:Recentchanges">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/Special:Random">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/Help:%E5%B8%AE%E5%8A%A9">使用帮助</a></li>
+				<li id="n-sitesupport"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5">帮助我们</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php/Special:Search" id="searchform"><div>
+<input name="ref" type="hidden" value="Code:USACO/lamps/C++">
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="进入" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="搜索" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/Special:Whatlinkshere/Code:USACO/lamps/C%2B%2B">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/Special:Recentchangeslinked/Code:USACO/lamps/C%2B%2B">链出更改</a></li>
+<li id="t-upload"><a href="/index.php/Special:Upload">上传文件</a></li>
+<li id="t-specialpages"><a href="/index.php/Special:Specialpages">特殊页面</a></li>
+				<li id="t-print"><a href="/index.php?title=Code:USACO/lamps/C%2B%2B&amp;printable=yes">可打印版</a></li>				<li id="t-permalink"><a href="/index.php?title=Code:USACO/lamps/C%2B%2B&amp;oldid=17809">永久链接</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt='GNU Free Documentation License 1.2' /></a></div>
+			<ul id="f-list">
+				<li id="viewcount">访问次数: 877次</li>
+				<li id="credits">此页由<a href="/index.php?title=User:Talenth1&amp;action=edit" class="new" title="User:Talenth1">何雨滋</a>于2009年11月14日, 09:59最后更改. 在<a href="/index.php?title=User:George&amp;action=edit" class="new" title="User:George">George-Gate</a> 和 <a href="/index.php/User:Barty" title="User:Barty">杨博洋</a> 和 NOCOW用户<a href="/index.php/User:Adventop" title="User:Adventop">Adventop</a>的工作基础上.</li>
+				<li id="copyright">本站内容在<a href="http://www.gnu.org/copyleft/fdl.html" class="external " title="http://www.gnu.org/copyleft/fdl.html" rel="nofollow">GNU Free Documentation License 1.2</a>下发布</li>
+				<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E7%AD%96%E7%95%A5" title="NOCOW:隐私策略">隐私策略</a></li>
+				<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+				<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+				<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by bdezlinux in 0.879 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body></html>

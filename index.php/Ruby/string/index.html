@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>Ruby/字符串处理 - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="canonical" href="/index.php/Ruby/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=Ruby/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=Ruby/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Ruby/字符串处理", "wgTitle": "Ruby/字符串处理", "wgCurRevisionId": 32964, "wgArticleId": 953, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for ruby
+ * CSS class: source-ruby, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.ruby.source-ruby .de1, .ruby.source-ruby .de2 {}
+.ruby.source-ruby  {font-family:monospace;}
+.ruby.source-ruby .imp {font-weight: bold; color: red;}
+.ruby.source-ruby li, .ruby.source-ruby .li1 {font-weight: normal; vertical-align:top;}
+.ruby.source-ruby .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.ruby.source-ruby .li2 {font-weight: bold; vertical-align:top;}
+.ruby.source-ruby .kw1 {color:#9966CC; font-weight:bold;}
+.ruby.source-ruby .kw2 {color:#0000FF; font-weight:bold;}
+.ruby.source-ruby .kw3 {color:#CC0066; font-weight:bold;}
+.ruby.source-ruby .kw4 {color:#CC00FF; font-weight:bold;}
+.ruby.source-ruby .co1 {color:#008000; font-style:italic;}
+.ruby.source-ruby .co4 {color: #cc0000; font-style: italic;}
+.ruby.source-ruby .coMULTI {color:#000080; font-style:italic;}
+.ruby.source-ruby .es0 {color:#000099;}
+.ruby.source-ruby .br0 {color:#006600; font-weight:bold;}
+.ruby.source-ruby .sy0 {color:#006600; font-weight:bold;}
+.ruby.source-ruby .st0 {color:#996600;}
+.ruby.source-ruby .nu0 {color:#006666;}
+.ruby.source-ruby .me1 {color:#9900CC;}
+.ruby.source-ruby .re0 {color:#ff6633; font-weight:bold;}
+.ruby.source-ruby .re1 {color:#0066ff; font-weight:bold;}
+.ruby.source-ruby .re2 {color:#6666ff; font-weight:bold;}
+.ruby.source-ruby .re3 {color:#ff3333; font-weight:bold;}
+.ruby.source-ruby .ln-xtra, .ruby.source-ruby li.ln-xtra, .ruby.source-ruby div.ln-xtra {background-color: #ffc;}
+.ruby.source-ruby span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Ruby_字符串处理 action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">Ruby/字符串处理</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="/index.php/Ruby" title="Ruby">Ruby</a></span>(跳转自<a href="/index.php?title=Ruby/string&amp;redirect=no" title="Ruby/string">Ruby/string</a>)</div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E5.88.9B.E5.BB.BA.E5.AD.97.E7.AC.A6.E4.B8.B2"><span class="tocnumber">1</span> <span class="toctext">创建字符串</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#.E5.B1.9E.E6.80.A7"><span class="tocnumber">2</span> <span class="toctext">属性</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#.E9.95.BF.E5.BA.A6"><span class="tocnumber">2.1</span> <span class="toctext">长度</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#.E5.88.A0.E9.99.A4"><span class="tocnumber">2.2</span> <span class="toctext">删除</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#.E6.9F.A5.E6.89.BE"><span class="tocnumber">2.3</span> <span class="toctext">查找</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#.E6.AF.94.E8.BE.83"><span class="tocnumber">2.4</span> <span class="toctext">比较</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#.E8.BF.9E.E6.8E.A5.E5.AD.97.E7.AC.A6.E4.B8.B2"><span class="tocnumber">2.5</span> <span class="toctext">连接字符串</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#.E6.B1.82.E5.AD.97.E4.B8.B2"><span class="tocnumber">2.6</span> <span class="toctext">求字串</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#.E5.A4.A7.E5.B0.8F.E5.86.99.E8.BD.AC.E6.8D.A2"><span class="tocnumber">2.7</span> <span class="toctext">大小写转换</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#.E8.BD.AC.E6.8D.A2.E6.88.90.E6.95.B0.E5.AD.97"><span class="tocnumber">2.8</span> <span class="toctext">转换成数字</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#.E7.89.B9.E6.AE.8A.E5.AD.97.E7.AC.A6.E5.A4.84.E7.90.86"><span class="tocnumber">2.9</span> <span class="toctext">特殊字符处理</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="/index.php?title=Ruby/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86&amp;action=edit&amp;section=1" title="编辑段落：创建字符串">编辑</a>]</span> <span class="mw-headline" id=".E5.88.9B.E5.BB.BA.E5.AD.97.E7.AC.A6.E4.B8.B2">创建字符串</span></h2>
+<p>在Ruby中创建一个字符串有多种方式。可以有两种方式表示一个字符串：用一对单引号包围字符（'str')或用一对双引号包围字符（"str")
+</p><p>这两种形式的区别在于对于包围的字符串的处理，用双引号构造的字符串能处理更多的<a href="/index.php?title=%E8%BD%AC%E7%A7%BB%E5%AD%97%E7%AC%A6&amp;action=edit&amp;redlink=1" class="new" title="转移字符（尚未撰写）">转移字符</a>。
+</p><p>除了这两种方式，ruby还支持3种方式去构建字符串：%q、%Q和here documents。
+</p>
+<ul><li>%q后面用一对分界符包围的字符可以构造单引号字符串。
+</li><li>%Q后面用一对分界符包围的字符可以构造双引号字符串。
+</li></ul>
+<pre>PS：分界符可以是任何一个非字母数字的单字节字符，如() [] {} &lt;&gt; //。
+</pre>
+<ul><li>here documents
+</li></ul>
+<pre>str=&lt;&lt;END_OF_STRING
+  a string
+  END_OF_STRING
+</pre>
+<p>ruby中并不会去掉字符串开头的空格。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="ruby source-ruby"><pre class="de1"><span class="co1">#5种构建字符串hello world的方法对比</span>
+<span class="st0">'hello world'</span>
+&#160;
+<span class="st0">&quot;hello world&quot;</span>
+&#160;
+<span class="sy0">%</span>q<span class="sy0">/</span>hello world<span class="sy0">/</span>
+&#160;
+<span class="sy0">%</span>Q<span class="br0">&#123;</span>hello world<span class="br0">&#125;</span>
+&#160;
+str=<span class="sy0">&lt;&lt;</span>EOS
+  hello world
+  EOS</pre></div></div>
+<h2><span class="editsection">[<a href="/index.php?title=Ruby/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86&amp;action=edit&amp;section=2" title="编辑段落：属性">编辑</a>]</span> <span class="mw-headline" id=".E5.B1.9E.E6.80.A7">属性</span></h2>
+<h3><span class="editsection">[<a href="/index.php?title=Ruby/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86&amp;action=edit&amp;section=3" title="编辑段落：长度">编辑</a>]</span> <span class="mw-headline" id=".E9.95.BF.E5.BA.A6">长度</span></h3>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="ruby source-ruby"><pre class="de1">使用length函数
+例s:=<span class="st0">'abc123'</span>,其长度为<span class="nu0">6</span>
+输入i:=length<span class="br0">&#40;</span>s<span class="br0">&#41;</span>;
+则输出i:=<span class="nu0">6</span>;</pre></div></div>
+<p><strong class='error'>解析失败 (&quot;texvc&quot;执行文件遗失；请参照math/README进行配置。): 插入数学公式</strong>
+==常用操作==
+</p>
+<h3><span class="editsection">[<a href="/index.php?title=Ruby/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86&amp;action=edit&amp;section=4" title="编辑段落：删除">编辑</a>]</span> <span class="mw-headline" id=".E5.88.A0.E9.99.A4">删除</span></h3>
+<p>str.delete(str1,str2,...)
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="ruby source-ruby"><pre class="de1"><span class="co1">#删除参数交集出现的所有字符，返回一个新字符串,如：</span>
+<span class="st0">&quot;hello world&quot;</span>.<span class="me1">delete</span><span class="br0">&#40;</span><span class="st0">&quot;l&quot;</span><span class="br0">&#41;</span> <span class="co1">#返回&quot;heo word&quot;</span>
+<span class="st0">&quot;hello world&quot;</span>.<span class="me1">delete</span><span class="br0">&#40;</span><span class="st0">&quot;lo&quot;</span>,<span class="st0">&quot;o&quot;</span><span class="br0">&#41;</span> <span class="co1">#返回&quot;hell wrld&quot;</span></pre></div></div>
+<p>str.delete!(str1,str2,...)
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="ruby source-ruby"><pre class="de1"><span class="co1">#直接对str进行删除操作，同时返回str如：</span>
+str=<span class="st0">&quot;hello world&quot;</span>
+str2=str.<span class="me1">delete</span><span class="br0">&#40;</span><span class="st0">&quot;l&quot;</span><span class="br0">&#41;</span>  <span class="co1">#str为&quot;hello world&quot;,str2为&quot;heo word&quot;</span>
+str.<span class="me1">delete</span>!<span class="br0">&#40;</span><span class="st0">&quot;l&quot;</span><span class="br0">&#41;</span> <span class="co1">#str为&quot;heo word&quot;</span></pre></div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="ruby source-ruby"><pre class="de1"><span class="co1">#用正则,直接对str进行删除操作，同时返回str如：</span>
+str=<span class="st0">&quot;hello world&quot;</span>
+str2=str.<span class="kw3">gsub</span><span class="br0">&#40;</span><span class="sy0">/</span><span class="nu0">1</span><span class="sy0">/</span>,<span class="st0">&quot;&quot;</span><span class="br0">&#41;</span>  <span class="co1">#str为&quot;hello world&quot;,str2为&quot;heo word&quot;</span>
+str.<span class="kw3">gsub!</span><span class="br0">&#40;</span><span class="sy0">/</span><span class="nu0">1</span><span class="sy0">/</span>,<span class="st0">''</span><span class="br0">&#41;</span> <span class="co1">#str为&quot;heo word&quot;</span></pre></div></div>
+<h3><span class="editsection">[<a href="/index.php?title=Ruby/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86&amp;action=edit&amp;section=5" title="编辑段落：查找">编辑</a>]</span> <span class="mw-headline" id=".E6.9F.A5.E6.89.BE">查找</span></h3>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="ruby source-ruby"><pre class="de1">pos（s1,s2）
+函数，其功能是在s2串中查找是否有s1子串，如果有则返回s1在s2中的起始位置，否则返回值为<span class="nu0">0</span>。如y:=pos<span class="br0">&#40;</span>‘abc’,’123abacbcabcabcabc’<span class="br0">&#41;</span>；则整数变量y的值为<span class="nu0">10</span>，而y:=pos<span class="br0">&#40;</span>‘abc’,’qawsasd’<span class="br0">&#41;</span>；则y的值为<span class="nu0">0</span>。</pre></div></div>
+<h3><span class="editsection">[<a href="/index.php?title=Ruby/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86&amp;action=edit&amp;section=6" title="编辑段落：比较">编辑</a>]</span> <span class="mw-headline" id=".E6.AF.94.E8.BE.83">比较</span></h3>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="ruby source-ruby"><pre class="de1"> 字符串可以进行下列六种关系运算：<span class="sy0">&gt;</span>、<span class="sy0">&lt;</span>、=、<span class="sy0">&gt;</span>=、<span class="sy0">&lt;</span>=、<span class="sy0">&lt;&gt;</span>。
+在关系比较时，无论比较的两个字符串长度是否相同，从左到右按照它们的ASCII码值逐一进行比较。
+    当两个字符的ASCII值不等时，便可比较出大小。若短字符串和长字符串的左边字符都相等时，长串比短串值大。如：‘abcde’<span class="sy0">&gt;</span>‘abc’为<span class="kw2">true</span>；‘abcde’<span class="sy0">&lt;</span>‘aefgh’为<span class="kw2">true</span>。</pre></div></div>
+<h3><span class="editsection">[<a href="/index.php?title=Ruby/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86&amp;action=edit&amp;section=7" title="编辑段落：连接字符串">编辑</a>]</span> <span class="mw-headline" id=".E8.BF.9E.E6.8E.A5.E5.AD.97.E7.AC.A6.E4.B8.B2">连接字符串</span></h3>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="ruby source-ruby"><pre class="de1">concat<span class="br0">&#40;</span>s1,s2,……,sn<span class="br0">&#41;</span>
+函数，作用是把n个字符串按序连接起来构成一个新的字符串。如s:=concat<span class="br0">&#40;</span>‘abcd’,’efg’,’hijklmn’<span class="br0">&#41;</span>；则结果为’abcdefghijklmn’。</pre></div></div>
+<h3><span class="editsection">[<a href="/index.php?title=Ruby/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86&amp;action=edit&amp;section=8" title="编辑段落：求字串">编辑</a>]</span> <span class="mw-headline" id=".E6.B1.82.E5.AD.97.E4.B8.B2">求字串</span></h3>
+<h3><span class="editsection">[<a href="/index.php?title=Ruby/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86&amp;action=edit&amp;section=9" title="编辑段落：大小写转换">编辑</a>]</span> <span class="mw-headline" id=".E5.A4.A7.E5.B0.8F.E5.86.99.E8.BD.AC.E6.8D.A2">大小写转换</span></h3>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="ruby source-ruby"><pre class="de1">downcase<span class="br0">&#40;</span><span class="br0">&#41;</span>将传入的字符串全部转换为小写，并返回转换后的字符串，该函数的格式如下：
+  <span class="kw3">String</span> strtolower<span class="br0">&#40;</span>str <span class="re0">$str</span><span class="br0">&#41;</span>
+参数$str为要转换的字符串，将字符串中所有字符转换为小写。
+strtoupper<span class="br0">&#40;</span><span class="br0">&#41;</span>则是小写转换为大写，格式与上相同。</pre></div></div>
+<h3><span class="editsection">[<a href="/index.php?title=Ruby/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86&amp;action=edit&amp;section=10" title="编辑段落：转换成数字">编辑</a>]</span> <span class="mw-headline" id=".E8.BD.AC.E6.8D.A2.E6.88.90.E6.95.B0.E5.AD.97">转换成数字</span></h3>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="ruby source-ruby"><pre class="de1">将数value转化成数字串st。如果value是实数，则系统会先把value转换成浮点数形式，然后再转换成字符串给st。如str<span class="br0">&#40;</span><span class="nu0">123</span>,s<span class="br0">&#41;</span>，则s=‘<span class="nu0">123</span>’；如str<span class="br0">&#40;</span><span class="nu0">123.456</span>,s<span class="br0">&#41;</span>，则s=‘1.2345600000E<span class="sy0">+</span>02’。
+&#160;
+         val<span class="br0">&#40;</span>st,value,code<span class="br0">&#41;</span>
+过程，将数字串st转化为数value，code用来表示转换是否成功，转换成功则为<span class="nu0">0</span>，否则code返回检测出错的第一个字符位置，且value的值也为<span class="nu0">0</span>。如val<span class="br0">&#40;</span>‘123abc’,s,t<span class="br0">&#41;</span>；则t=<span class="nu0">4</span>，s=<span class="nu0">0</span>；如val<span class="br0">&#40;</span>‘<span class="nu0">123</span>’,s,t<span class="br0">&#41;</span>，则t=<span class="nu0">0</span>，s=<span class="nu0">123</span>。</pre></div></div>
+<h3><span class="editsection">[<a href="/index.php?title=Ruby/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86&amp;action=edit&amp;section=11" title="编辑段落：特殊字符处理">编辑</a>]</span> <span class="mw-headline" id=".E7.89.B9.E6.AE.8A.E5.AD.97.E7.AC.A6.E5.A4.84.E7.90.86">特殊字符处理</span></h3>
+<p>str.chop
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="ruby source-ruby"><pre class="de1"><span class="co1">#删除字符串str的最后一个字符，并返回新字符串</span>
+<span class="co1">#若字符串以\r\n结尾,则两个字符都删去</span>
+<span class="co1">#若字符串为空串，则返回空串</span>
+<span class="st0">&quot;string<span class="es0">\r</span><span class="es0">\n</span>&quot;</span>.<span class="kw3">chop</span>  <span class="co1">#返回&quot;string&quot;</span>
+<span class="st0">&quot;string<span class="es0">\n</span><span class="es0">\r</span>&quot;</span>.<span class="kw3">chop</span>  <span class="co1">#返回&quot;string\n&quot;</span>
+<span class="st0">&quot;string&quot;</span>.<span class="kw3">chop</span>      <span class="co1">#返回&quot;strin&quot;</span>
+<span class="st0">&quot;s&quot;</span>.<span class="kw3">chop</span>.<span class="kw3">chop</span>      <span class="co1">#返回&quot;&quot;</span></pre></div></div>
+<p>str.chop!
+</p>
+<hr />
+<p>str.chomp（endstr)
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="ruby source-ruby"><pre class="de1"><span class="co1">#删除str的后缀endstr</span>
+<span class="co1">#如果未指定endstr，则删除回车换行符(\r、\n和\r\n)</span>
+<span class="st0">&quot;hello<span class="es0">\r</span><span class="es0">\n</span>&quot;</span>.<span class="kw3">chomp</span>  <span class="co1">#返回&quot;hello&quot;</span>
+<span class="st0">&quot;hello&quot;</span>.<span class="kw3">chomp</span><span class="br0">&#40;</span><span class="st0">&quot;lo&quot;</span><span class="br0">&#41;</span><span class="co1">#返回&quot;hel&quot;</span>
+<span class="st0">&quot;hello&quot;</span>.<span class="kw3">chomp</span><span class="br0">&#40;</span><span class="st0">&quot;l&quot;</span><span class="br0">&#41;</span> <span class="co1">#返回&quot;hello&quot;</span></pre></div></div>
+<p>str.chomp!
+</p>
+<hr />
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 147/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:953-0!1!0!!zh-cn!*!* and timestamp 20130919061923 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=Ruby/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86&amp;oldid=32964">http://www.nocow.cn/index.php?title=Ruby/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86&amp;oldid=32964</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/Ruby/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:Ruby/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=Ruby/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=Ruby/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Ruby%2Fstring" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Ruby/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Ruby/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=Ruby/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=Ruby/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86&amp;oldid=32964" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过9,422次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/204.236.235.245" title="特殊:用户贡献/204.236.235.245">204.236.235.245</a>于2013年6月25日 (星期二) 23:32做出最后修改。 在NOCOW用户<a href="/index.php?title=%E7%94%A8%E6%88%B7:Magic-lucifer&amp;action=edit&amp;redlink=1" class="new" title="用户:Magic-lucifer（尚未撰写）">Magic-lucifer</a>和<a href="/index.php?title=%E7%94%A8%E6%88%B7:Sevk&amp;action=edit&amp;redlink=1" class="new" title="用户:Sevk（尚未撰写）">Sevk</a>、NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/221.193.217.140" title="特殊:用户贡献/221.193.217.140">221.193.217.140</a>和<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/58.246.211.40" title="特殊:用户贡献/58.246.211.40">58.246.211.40</a>和<a href="/index.php?title=Ruby/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86&amp;action=credits" title="Ruby/字符串处理">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.124 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

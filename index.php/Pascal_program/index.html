@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>Pascal program - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=Pascal_program&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=Pascal_program&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Pascal_program", "wgTitle": "Pascal program", "wgCurRevisionId": 271, "wgArticleId": 38, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Pascal_program action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">Pascal program</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><p>部分常见算法pascal标程 
+</p><p>基本算法
+</p>
+<ul><li>求两数的最大公约数
+</li></ul>
+<pre>    function gcd(a,b:integer):integer;
+    begin 
+    if b=0 then gcd:=a
+    else gcd:=gcd (b,a mod b);
+    end&#160;;
+    
+</pre>
+<ul><li>求两数的最小公倍数
+</li></ul>
+<pre>    function lcm(a,b:integer):integer;
+    begin
+    if a&lt; b then swap(a,b);
+    lcm:=a;
+    while lcm mod b &gt;0 do inc(lcm,a);
+    end;
+    
+</pre>
+<ul><li>素数的求法A.小范围内判断一个数是否为质数：
+</li></ul>
+<pre>    function prime (n: integer): Boolean;
+    var I: integer;
+    begin
+    for I:=2 to trunc(sqrt(n)) do
+    if n mod I=0 then begin 
+    prime:=false; exit;
+    end;
+    prime:=true;
+    end;
+    
+</pre>
+<p>B.判断longint范围内的数是否为素数（包含求50000以内的素数表）：
+</p>
+<pre>    procedure getprime;
+    var 
+    i,j:longint;
+    p:array[1..50000] of boolean;
+    begin
+    fillchar(p,sizeof(p),true);
+    p[1]:=false;
+    i:=2;
+    while i&lt; 50000 do begin
+    if p[i] then begin
+    j:=i*2;
+    while j&lt; 50000 do begin
+    p[j]:=false;
+    inc(j,i);
+    end;
+    end;
+    inc(i);
+    end;
+    l:=0;
+    for i:=1 to 50000 do
+    if p[i] then begin
+    inc(l);pr[l]:=i;
+    end;
+    end;{getprime}
+    
+    function prime(x:longint):integer;
+    var i:integer;
+    begin
+    prime:=false;
+    for i:=1 to l do
+    if pr[i] &gt;=x then break
+    else if x mod pr[i]=0 then exit;
+    prime:=true;
+    end;{prime}
+    
+</pre>
+<ul><li>求最小生成树
+</li></ul>
+<p>A.Prim算法：
+</p>
+<pre>    procedure prim(v0:integer);
+    var
+    lowcost,closest:array[1..maxn] of integer;
+    i,j,k,min:integer;
+    begin
+    for i:=1 to n do begin
+    lowcost[i]:=cost[v0,i];
+    closest[i]:=v0;
+    end;
+    for i:=1 to n-1 do begin
+    {寻找离生成树最近的未加入顶点k}
+    min:=maxlongint;
+    for j:=1 to n do
+    if (lowcost[j]&lt; min) and (lowcost[j]&lt; &gt;0) then begin
+    min:=lowcost[j];
+    k:=j;
+    end;
+    lowcost[k]:=0; {将顶点k加入生成树}
+    {生成树中增加一条新的边k到closest[k]}
+    {修正各点的lowcost和closest值}
+    for j:=1 to n do
+    if cost[k,j]&lt; lwocost[j] then begin
+    lowcost[j]:=cost[k,j];
+    closest[j]:=k;
+    end;
+    end;
+    end;{prim}
+    
+</pre>
+<p>B.Kruskal算法：(贪心)
+按权值递增顺序删去图中的边，若不形成回路则将此边加入最小生成树。
+</p>
+<pre>    function find(v:integer):integer; {返回顶点v所在的集合}
+    var i:integer;
+    begin
+    i:=1;
+    while (i&lt; =n) and (not v in vset[i]) do inc(i);
+    if i&lt; =n then find:=i else find:=0;
+    end;
+    
+    procedure kruskal;
+    var
+    tot,i,j:integer;
+    begin
+    for i:=1 to n do vset[i]:=[i];{初始化定义n个集合，第I个集合包含一个元素I}
+    p:=n-1; q:=1; tot:=0; {p为尚待加入的边数，q为边集指针}
+    sort;
+    {对所有边按权值递增排序，存于e[I]中，e[I].v1与e[I].v2为边I所连接的两个顶点的序号，e[I].len为第I条边的长度}
+    while p &gt;0 do begin
+    i:=find(e[q].v1);j:=find(e[q].v2);
+    if i&lt; &gt;j then begin
+    inc(tot,e[q].len);
+    vset[i]:=vset[i]+vset[j];vset[j]:=[];
+    dec(p);
+    end;
+    inc(q);
+    end;
+    writeln(tot);
+    end;
+    
+    
+</pre>
+<ul><li>最短路径
+</li></ul>
+<p>A.标号法求解单源点最短路径：
+</p>
+<pre>    var
+    a:array[1..maxn,1..maxn] of integer;
+    b:array[1..maxn] of integer; {b[i]指顶点i到源点的最短路径}
+    mark:array[1..maxn] of boolean;
+    
+    procedure bhf;
+    var
+    best,best_j:integer;
+    begin
+    fillchar(mark,sizeof(mark),false);
+    mark[1]:=true; b[1]:=0;{1为源点}
+    repeat
+    best:=0;
+    for i:=1 to n do
+    If mark[i] then {对每一个已计算出最短路径的点}
+    for j:=1 to n do
+    if (not mark[j]) and (a[i,j] &gt;0) then 
+    if (best=0) or (b[i]+a[i,j]&lt; best) then begin
+    best:=b[i]+a[i,j]; best_j:=j;
+    end;
+    if best &gt;0 then begin
+    b[best_j]:=best；mark[best_j]:=true;
+    end;
+    until best=0;
+    end;{bhf}
+    B.Floyed算法求解所有顶点对之间的最短路径：
+    procedure floyed;
+    begin
+    for I:=1 to n do
+    for j:=1 to n do
+    if a[I,j] &gt;0 then p[I,j]:=I else p[I,j]:=0; {p[I,j]表示I到j的最短路径上j的前驱结点}
+    for k:=1 to n do {枚举中间结点}
+    for i:=1 to n do
+    for j:=1 to n do
+    if a[i,k]+a[j,k]&lt; a[i,j] then begin
+    a[i,j]:=a[i,k]+a[k,j];
+    p[I,j]:=p[k,j];
+    end;
+    end;
+    
+</pre>
+<p>C. Dijkstra 算法：
+</p>
+<pre>    类似标号法，本质为贪心算法。
+    var
+    a:array[1..maxn,1..maxn] of integer;
+    b,pre:array[1..maxn] of integer; {pre[i]指最短路径上I的前驱结点}
+    mark:array[1..maxn] of boolean;
+    procedure dijkstra(v0:integer);
+    begin
+    fillchar(mark,sizeof(mark),false);
+    for i:=1 to n do begin
+    d[i]:=a[v0,i];
+    if d[i]&lt; &gt;0 then pre[i]:=v0 else pre[i]:=0;
+    end;
+    mark[v0]:=true;
+    repeat {每循环一次加入一个离1集合最近的结点并调整其他结点的参数}
+    min:=maxint; u:=0; {u记录离1集合最近的结点}
+    for i:=1 to n do
+    if (not mark[i]) and (d[i]&lt; min) then begin
+    u:=i; min:=d[i];
+    end;
+    if u&lt; &gt;0 then begin
+    mark[u]:=true; 
+    for i:=1 to n do
+    if (not mark[i]) and (a[u,i]+d[u]&lt; d[i]) then begin
+    d[i]:=a[u,i]+d[u];
+    pre[i]:=u;
+    end;
+    end;
+    until u=0;
+    end;
+    
+</pre>
+<p>D.计算图的传递闭包
+</p>
+<pre>    Procedure Longlink;
+    Var
+    T:array[1..maxn,1..maxn] of boolean;
+    Begin
+    Fillchar(t,sizeof(t),false);
+    For k:=1 to n do
+    For I:=1 to n do
+    For j:=1 to n do T[I,j]:=t[I,j] or (t[I,k] and t[k,j]);
+    End;
+    
+    
+</pre>
+<ul><li>0-1背包问题（部分背包问题可有贪心法求解：计算Pi/Wi)
+</li></ul>
+<pre>    数据结构：
+    w[i]:第i个背包的重量；
+    p[i]:第i个背包的价值；
+    (1)0-1背包： 每个背包只能使用一次或有限次(可转化为一次)：
+    A.求最多可放入的重量。
+    NOIP2001 装箱问题 
+    有一个箱子容量为v(正整数，o≤v≤20000)，同时有n个物品(o≤n≤30)，每个物品有一个体积 (正整数)。要求从 n 个物品中，任取若千个装入箱内，使箱子的剩余空间为最小。
+    l 搜索方法
+    procedure search(k,v:integer); {搜索第k个物品，剩余空间为v}
+    var i,j:integer;
+    begin
+    if v&lt; best then best:=v;
+    if v-(s[n]-s[k-1]) &gt;=best then exit; {s[n]为前n个物品的重量和}
+    if k&lt; =n then begin
+    if v &gt;w[k] then search(k+1,v-w[k]);
+    search(k+1,v);
+    end;
+    end;
+    
+    l DP
+    F[I,j]为前i个物品中选择若干个放入使其体积正好为j的标志，为布尔型。
+    实现:将最优化问题转化为判定性问题
+    F[I,j]=f[i-1,j-w[i]] (w[I]&lt; =j&lt; =v) 边界：f[0,0]:=true.
+    For I:=1 to n do
+    For j:=w[I] to v do F[I,j]:=f[I-1,j-w[I]];
+    优化：当前状态只与前一阶段状态有关，可降至一维。
+    F[0]:=true;
+    For I:=1 to n do begin
+    F1:=f;
+    For j:=w[I] to v do
+    If f[j-w[I]] then f1[j]:=true;
+    F:=f1;
+    End;
+    
+    B.求可以放入的最大价值。
+    F[I,j]=
+    
+    
+    C.求恰好装满的情况数。
+    
+    
+    
+    (2)每个背包可使用任意次：
+    A.求最多可放入的重量。
+    状态转移方程为
+    f[I,j]=max{f[i-w[j]
+    
+    
+    
+    
+    B.求可以放入的最大价值。
+    USACO 1.2 Score Inflation
+    进行一次竞赛，总时间T固定，有若干种可选择的题目，每种题目可选入的数量不限，每种题目有一个ti（解答此题所需的时间）和一个si（解答此题所得的分数），现要选择若干题目，使解这些题的总时间在T以内的前提下，所得的总分最大，求最大的得分。
+    易想到：
+    *f[i,j] = max { f [i- k*w[j], j-1] + k*v[j] } (0&lt; =k&lt; = i div w[j])
+    其中f[i,j]表示容量为i时取前j种背包所能达到的最大值。
+    *优化：
+    Begin
+    FillChar(problem,SizeOf(problem),0);
+    Assign(Input,'inflate.in');
+    Reset(Input);
+    Readln(M,N);
+    For i:=1 To N Do
+    With problem[i] Do
+    Readln(point,time);
+    Close(Input);
+    
+    FillChar(f,SizeOf(f),0);
+    For i:=1 To M Do
+    For j:=1 To N Do
+    If i-problem[j].time &gt;=0 Then
+    Begin
+    t:=problem[j].point+f[i-problem[j].time];
+    If t &gt;f[i] Then f[i]:=t;
+    End;
+    
+    Assign(Output,'inflate.out');
+    Rewrite(Output);
+    Writeln(f[M]);
+    Close(Output);
+    End.
+    C.求恰好装满的情况数。
+</pre>
+<p>Ahoi2001 Problem2
+</p>
+<pre>    求自然数n本质不同的质数和的表达式的数目。
+    思路一，生成每个质数的系数的排列，在一一测试，这是通法。
+    procedure try(dep:integer);
+    var i,j:integer;
+    begin
+    cal; {此过程计算当前系数的计算结果，now为结果}
+    if now &gt;n then exit; {剪枝}
+    if dep=l+1 then begin {生成所有系数}
+    cal;
+    if now=n then inc(tot);
+    exit;
+    end;
+    for i:=0 to n div pr[dep] do begin
+    xs[dep]:=i;
+    try(dep+1);
+    xs[dep]:=0;
+    end;
+    end;
+    
+    思路二，递归搜索效率较高
+    procedure try(dep,rest:integer);
+    var i,j,x:integer;
+    begin
+    if (rest&lt; =0) or (dep=l+1) then begin
+    if rest=0 then inc(tot);
+    exit;
+    end;
+    for i:=0 to rest div pr[dep] do
+    try(dep+1,rest-pr[dep]*i);
+    end;
+    
+    思路三：可使用动态规划求解
+    USACO1.2 money system
+    V个物品，背包容量为n，求放法总数。
+    转移方程：
+    
+    Procedure update;
+    var j,k:integer;
+    begin
+    c:=a;
+    for j:=0 to n do
+    if a[j] &gt;0 then
+    for k:=1 to n div now do
+    if j+now*k&lt; =n then inc(c[j+now*k],a[j]);
+    a:=c;
+    end;
+    {main}
+    begin 
+    read(now); {读入第一个物品的重量}
+    i:=0; {a[i]为背包容量为i时的放法总数}
+    while i&lt; =n do begin 
+    a[i]:=1; inc(i,now); end; {定义第一个物品重的整数倍的重量a值为1，作为初值}
+    for i:=2 to v do
+    begin
+    read(now);
+    update; {动态更新}
+    end;
+    writeln(a[n]);
+    
+</pre>
+<ul><li>排序算法
+</li></ul>
+<p>A.快速排序：
+</p>
+<pre>    procedure sort(l,r:integer);
+    var i,j,mid:integer;
+    begin
+    i:=l;j:=r; mid:=a[(l+r) div 2]; {将当前序列在中间位置的数定义为中间数}
+    repeat
+    while a[i]&lt; mid do inc(i); {在左半部分寻找比中间数大的数}
+    while mid&lt; a[j] do dec(j);{在右半部分寻找比中间数小的数}
+    if i&lt; =j then begin {若找到一组与排序目标不一致的数对则交换它们}
+    swap(a[i],a[j]);
+    inc(i);dec(j); {继续找}
+    end;
+    until i &gt;j;
+    if l&lt; j then sort(l,j); {若未到两个数的边界，则递归搜索左右区间}
+    if i&lt; r then sort(i,r);
+    end;{sort}
+    
+</pre>
+<p>B.插入排序：
+</p>
+<pre>    procedure insert_sort(k,m:word); {k为当前要插入的数，m为插入位置的指针}
+    var i:word; p:0..1;
+    begin
+    p:=0;
+    for i:=m downto 1 do
+    if k=a[i] then exit;
+    repeat
+    If k &gt;a[m] then begin
+    a[m+1]:=k; p:=1;
+    end
+    else begin
+    a[m+1]:=a[m]; dec(m);
+    end;
+    until p=1;
+    end;{insert_sort}
+</pre>
+<p>主程序中为：
+</p>
+<pre>    a[0]:=0;
+    for I:=1 to n do insert_sort(b[I],I-1);
+    
+</pre>
+<p>C.选择排序：
+</p>
+<pre>    procedure sort;
+    var i,j,k:integer;
+    begin
+    for i:=1 to n-1 do begin
+    k:=i;
+    for j:=i+1 to n do
+    if a[j]&lt; a[k] then k:=j; {找出a[I]..a[n]中最小的数与a[I]作交换}
+    if k&lt; &gt;i then begin
+    a[0]:=a[k];a[k]:=a[i];a[i]:=a[0];
+    end;
+    end;
+    end;
+    
+</pre>
+<p>D. 冒泡排序
+</p>
+<pre>    procedure sort;
+    var i,j,k:integer;
+    begin
+    for i:=n downto 1 do
+    for j:=1 to i-1 do
+    if a[j] &gt;a[i] then begin
+    a[0]:=a[i];a[i]:=a[j];a[j]:=a[0];
+    end;
+    end;
+    
+</pre>
+<p>E.堆排序：
+</p>
+<pre>    procedure sift(i,m:integer);{调整以i为根的子树成为堆,m为结点总数}
+    var k:integer;
+    begin
+    a[0]:=a[i]; k:=2*i;{在完全二叉树中结点i的左孩子为2*i,右孩子为2*i+1}
+    while k&lt; =m do begin
+    if (k&lt; m) and (a[k]&lt; a[k+1]) then inc(k);{找出a[k]与a[k+1]中较大值}
+    if a[0]&lt; a[k] then begin a[i]:=a[k];i:=k;k:=2*i; end
+    else k:=m+1;
+    end;
+    a[i]:=a[0]; {将根放在合适的位置}
+    end;
+    
+    procedure heapsort;
+    var
+    j:integer;
+    begin
+    for j:=n div 2 downto 1 do sift(j,n);
+    for j:=n downto 2 do begin
+    swap(a[1],a[j]);
+    sift(1,j-1);
+    end;
+    end;
+    
+</pre>
+<p>F. 归并排序
+</p>
+<pre>    {a为序列表，tmp为辅助数组}
+    procedure merge(var a:listtype; p,q,r:integer);
+    {将已排序好的子序列a[p..q]与a[q+1..r]合并为有序的tmp[p..r]}
+    var I,j,t:integer;
+    tmp:listtype;
+    begin
+    t:=p;i:=p;j:=q+1;{t为tmp指针，I,j分别为左右子序列的指针}
+    while (t&lt; =r) do begin
+    if (i&lt; =q){左序列有剩余} and ((j &gt;r) or (a[i]&lt; =a[j])) {满足取左边序列当前元素的要求}
+    then begin
+    tmp[t]:=a[i]; inc(i);
+    end
+    else begin
+    tmp[t]:=a[j];inc(j);
+    end;
+    inc(t);
+    end;
+    for i:=p to r do a[i]:=tmp[i];
+    end;{merge}
+    
+    procedure merge_sort(var a:listtype; p,r: integer); {合并排序a[p..r]}
+    var q:integer;
+    begin
+    if p&lt; &gt;r then begin
+    q:=(p+r-1) div 2;
+    merge_sort (a,p,q);
+    merge_sort (a,q+1,r);
+    merge (a,p,q,r);
+    end;
+    end;
+    {main}
+    begin
+    merge_sort(a,1,n);
+    end.
+    
+    
+</pre>
+<p>G.基数排序
+</p>
+<pre>    思想：对每个元素按从低位到高位对每一位进行一次排序
+    
+    
+    
+    
+</pre>
+<ul><li>树的遍历顺序转换
+</li></ul>
+<p>A. 已知前序中序求后序
+</p>
+<pre>    procedure Solve(pre,mid:string);
+    var i:integer;
+    begin
+    if (pre=<i>) or (mid=</i>) then exit;
+    i:=pos(pre[1],mid);
+    solve(copy(pre,2,i),copy(mid,1,i-1));
+    solve(copy(pre,i+1,length(pre)-i),copy(mid,i+1,length(mid)-i));
+    post:=post+pre[1]; {加上根，递归结束后post即为后序遍历}
+    end;
+    
+</pre>
+<p>B.已知中序后序求前序
+</p>
+<pre>    procedure Solve(mid,post:string);
+    var i:integer;
+    begin
+    if (mid=<i>) or (post=</i>) then exit;
+    i:=pos(post[length(post)],mid);
+    pre:=pre+post[length(post)]; {加上根，递归结束后pre即为前序遍历}
+    solve(copy(mid,1,I-1),copy(post,1,I-1));
+    solve(copy(mid,I+1,length(mid)-I),copy(post,I,length(post)-i));
+    end;
+    
+</pre>
+<p>C.已知前序后序求中序
+</p>
+<pre>    function ok(s1,s2:string):boolean;
+    var i,l:integer; p:boolean;
+    begin
+    ok:=true;
+    l:=length(s1);
+    for i:=1 to l do begin
+    p:=false;
+    for j:=1 to l do
+    if s1[i]=s2[j] then p:=true;
+    if not p then begin ok:=false;exit;end;
+    end;
+    end;
+    
+    procedure solve(pre,post:string);
+    var i:integer;
+    begin
+    if (pre=<i>) or (post=</i>) then exit;
+    i:=0;
+    repeat
+    inc(i);
+    until ok(copy(pre,2,i),copy(post,1,i));
+    solve(copy(pre,2,i),copy(post,1,i));
+    midstr:=midstr+pre[1];
+    solve(copy(pre,i+2,length(pre)-i-1),copy(post,i+1,length(post)-i-1));
+    end;
+    
+</pre>
+<ul><li>求图的弱连通子图(DFS)
+</li></ul>
+<pre>    procedure dfs ( now,color: integer);
+    begin
+    for i:=1 to n do
+    if a[now,i] and c[i]=0 then begin
+    c[i]:=color;
+    dfs(I,color);
+    end;
+    end;
+    
+    
+</pre>
+<p><br />     
+</p><p><br />     
+</p>
+<ul><li>进制转换
+</li></ul>
+<p>A.整数任意正整数进制间的互化
+</p>
+<pre>    NOIP1996数制转换
+    设字符串A$的结构为: A$='mp'
+    其中m为数字串(长度&lt; =20),而n,p均为1或2位的数字串(其中所表达的内容在2-10之间)
+    程序要求:从键盘上读入A$后(不用正确性检查),将A$中的数字串m(n进制)以p进制的形式输出.
+    例如:A$='48&lt; 10 &gt;8'
+    其意义为:将10进制数48,转换为8进制数输出.
+    输出结果:48&lt; 10 &gt;=60&lt; 8 &gt;
+    
+</pre>
+<p>B.实数任意正整数进制间的互化
+C.负数进制：
+</p>
+<pre>    NOIP2000 
+    设计一个程序，读入一个十进制数的基数和一个负进制数的基数，并将此十进制数转换为此负 进制下的数：-R∈{-2，-3，-4,....-20} 
+    
+    
+    
+    
+    
+</pre>
+<ul><li>全排列与组合的生成
+</li></ul>
+<pre>排列的生成：（1..n）
+    procedure solve(dep:integer);
+    var
+    i:integer;
+    begin
+    if dep=n+1 then begin writeln(s);exit; end;
+    for i:=1 to n do
+    if not used[i] then begin
+    s:=s+chr(i+ord('0'));used[i]:=true;
+    solve(dep+1);
+    s:=copy(s,1,length(s)-1); used[i]:=false;
+    end;
+    end; 组合的生成(1..n中选取k个数的所有方案)
+    procedure solve(dep,pre:integer);
+    var
+    i:integer;
+    begin
+    if dep=k+1 then begin writeln(s);exit; end;
+    for i:=1 to n do
+    if (not used[i]) and (i &gt;pre) then begin
+    s:=s+chr(i+ord('0'));used[i]:=true;
+    solve(dep+1,i);
+    s:=copy(s,1,length(s)-1); used[i]:=false;
+    end;
+    end;
+    
+    
+    
+</pre>
+<ul><li>递推关系
+</li></ul>
+<pre>计算字串序号模型
+    USACO1.2.5 StringSobits
+    长度为N (N&lt; =31)的01串中1的个数小于等于L的串组成的集合中找出按大小排序后的第I个01串。
+    数字划分模型
+    *NOIP2001数的划分
+    将整数n分成k份，且每份不能为空，任意两种分法不能相同(不考虑顺序)。
+    d[0,0]:=1; 
+    for p:=1 to n do 
+    for i:=p to n do 
+    for j:=k downto 1 do inc(d[i,j],d[i-p,j-1]); 
+    writeln(d[n,k]);
+变形1：考虑顺序
+    d[ i, j]&#160;: = d [ i-k, j-1] (k=1..i)
+变形2：若分解出来的每个数均有一个上限m
+    d[ i, j]&#160;: = d [ i-k, j-1] (k=1..m)
+    
+    
+</pre>
+<ul><li>算符优先法求解表达式求值问题
+</li></ul>
+<pre>    const maxn=50;
+    var
+    s1:array[1..maxn] of integer; {s1为数字栈}
+    s2:array[1..maxn] of char; {s2为算符栈}
+    t1,t2:integer; {栈顶指针}
+    
+    procedure calcu;
+    var
+    x1,x2,x:integer;
+    p:char;
+    begin
+    p:=s2[t2]; dec(t2);
+    x2:=s1[t1]; dec(t1);
+    x1:=s1[t1]; dec(t1);
+    case p of
+    '+':x:=x1+x2;
+    '-':x:=x1-x2;
+    '*':x:=x1*x2;
+    '/':x:=x1 div 2;
+    end;
+    inc(t1);s1[t1]:=x;
+    end;
+    
+    procedure work;
+    var c:char;v:integer;
+    begin
+    t1:=0;t2:=0;
+    read(c);
+    while c&lt; &gt;';' do
+    case c of
+    '+','-': begin
+    while (t2 &gt;0) and (s2[t2]&lt; &gt;'(') do calcu;
+    inc(t2);s2[t2]:=c;
+    read(c);
+    end&#160;;
+    '*','/':begin
+    if (t2 &gt;0) and ((s2[t2]='*') or (s2[t2]='/')) then calcu;
+    inc(t2);s2[t2]:=c;
+    read(c);
+    end;
+    '(':begin inc(t2); s2[t2]:=c; read(c); end;
+    ')':begin
+    while s2[t2]&lt; &gt;'(' do calcu;
+    dec(t2); read(c);
+    end;
+    '0'..'9':begin
+    v:=0;
+    repeat
+    v:=10*v+ord(c)-ord('0');
+    read(c);
+    until (c&lt; '0') or (c &gt;'9');
+    inc(t1); s1[t1]:=v;
+    end;
+    end;
+    while t2 &gt;0 do calcu;
+    writeln(s1[t1]);
+    end;
+    
+</pre>
+<ul><li>查找算法
+</li></ul>
+<pre>折半查找
+    function binsearch(k:keytype):integer;
+    var low,hig,mid:integer;
+    begin
+    low:=1;hig:=n;
+    mid:=(low+hig) div 2;
+    while (a[mid].key&lt; &gt;k) and (low&lt; =hig) do begin
+    if a[mid].key &gt;k then hig:=mid-1
+    else low:=mid+1;
+    mid:=(low+hig) div 2;
+    end;
+    if low &gt;hig then mid:=0;
+    binsearch:=mid;
+    end;
+    
+树形查找
+    二叉排序树：每个结点的值都大于其左子树任一结点的值而小于其右子树任一结点的值。
+ 查找
+    function treesrh(k:keytype):pointer;
+    var q:pointer;
+    begin
+    q:=root;
+    while (q&lt; &gt;nil) and (q^.key&lt; &gt;k) do
+    if k&lt; q^.key then q:=q^.left
+    else q:=q^.right;
+    treesrh:=q;
+    end;
+    
+    
+    
+    
+        
+ 
+</pre>
+<ul><li>求一序列中连续子序列的最大和
+</li></ul>
+<pre>    begin
+    maxsum:=-maxlongint;
+    sum:=0;
+    for i:=1 to n do begin
+    inc(sum,data[i]);
+    if sum &gt;maxsum then maxsum:=sum;
+    if sum&lt; 0 then sum:=0;
+    end;
+    writeln(maxsum);
+    end;
+</pre>
+<ul><li>链表的定位函数loc(I:integer):pointer; {寻找链表中的第I个结点的指针}
+</li></ul>
+<pre>    procedure loc(L:linklist; I:integer):pointer;
+    var p:pointer;
+    j:integer;
+    begin
+    p:=L.head; j:=0;
+    if (I &gt;=1) and (I&lt; =L.len) then 
+    while j&lt; I do begin p:=p^.next; inc(j); end;
+    loc:=p;
+    end;
+    
+</pre>
+<ul><li>单链表的插入操作
+</li></ul>
+<pre>    procedure insert(L:linklist; I:integer; x:datatype);
+    var p,q:pointer;
+    begin
+    p:=loc(L,I);
+    new(q);
+    q^.data:=x;
+    q^.next:=p^.next;
+    p^.next:=q;
+    inc(L.len);
+    end;
+    
+</pre>
+<ul><li>单链表的删除操作
+</li></ul>
+<pre>    procedure delete(L:linklist; I:integer);
+    var p,q:pointer;
+    begin
+    p:=loc(L,I-1);
+    q:=p^.next;
+    p^.next:=q^.next;
+    dispose(q);
+    dec(L.len);
+    end;
+</pre>
+<ul><li>双链表的插入操作（插入新结点q）
+</li></ul>
+<pre>    p:=loc(L,I);
+    new(q);
+    q^.data:=x;
+    q^.pre:=p;
+    q^.next:=p^.next;
+    p^.next:=q;
+    q^.next^.pre:=q;
+</pre>
+<ul><li>双链表的删除操作
+</li></ul>
+<pre>    p:=loc(L,I); {p为要删除的结点}
+    p^.pre^.next:=p^.next;
+    p^.next^.pre:=p^.pre;
+    dispose(p);
+</pre>
+<ul><li>以上内容摘自大榕树论坛 <a rel="nofollow" class="external free" href="http://www.mydrs.org/dv7/index.asp">http://www.mydrs.org/dv7/index.asp</a>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 1/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:38-0!*!*!*!*!*!* and timestamp 20150429004230 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=Pascal_program&amp;oldid=271">http://www.nocow.cn/index.php?title=Pascal_program&amp;oldid=271</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/Pascal_program" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk"><a href="/index.php/%E8%AE%A8%E8%AE%BA:Pascal_program" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=Pascal_program&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=Pascal_program&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Pascal+program" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Pascal_program" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Pascal_program" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=Pascal_program&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=Pascal_program&amp;oldid=271" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过3,411次。</li>
+		<li id="credits">本页面由<a href="/index.php/%E7%94%A8%E6%88%B7:Czyhd" title="用户:Czyhd">Czyhd</a>于2007年4月10日 (星期二) 21:36做出最后修改。 在<a href="/index.php/%E7%94%A8%E6%88%B7:Tangtong" title="用户:Tangtong">Cu</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.087 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

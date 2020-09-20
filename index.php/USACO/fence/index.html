@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>USACO/fence - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=USACO/fence&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=USACO/fence&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "USACO/fence", "wgTitle": "USACO/fence", "wgCurRevisionId": 35127, "wgArticleId": 405, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for pascal
+ * CSS class: source-pascal, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.pascal.source-pascal .de1, .pascal.source-pascal .de2 {}
+.pascal.source-pascal  {font-family:monospace;}
+.pascal.source-pascal .imp {font-weight: bold; color: red;}
+.pascal.source-pascal li, .pascal.source-pascal .li1 {font-weight: normal; vertical-align:top;}
+.pascal.source-pascal .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.pascal.source-pascal .li2 {font-weight: bold; vertical-align:top;}
+.pascal.source-pascal .kw1 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw2 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw3 {color: #000066;}
+.pascal.source-pascal .kw4 {color: #000066; font-weight: bold;}
+.pascal.source-pascal .co1 {color: #666666; font-style: italic;}
+.pascal.source-pascal .coMULTI {color: #666666; font-style: italic;}
+.pascal.source-pascal .es0 {color: #000099; font-weight: bold;}
+.pascal.source-pascal .es_h {color: #000099; font-weight: bold;}
+.pascal.source-pascal .br0 {color: #009900;}
+.pascal.source-pascal .sy0 {color: #339933;}
+.pascal.source-pascal .st0 {color: #ff0000;}
+.pascal.source-pascal .st_h {color: #ff0000;}
+.pascal.source-pascal .nu0 {color: #cc66cc;}
+.pascal.source-pascal .me1 {color: #0066ee;}
+.pascal.source-pascal .ln-xtra, .pascal.source-pascal li.ln-xtra, .pascal.source-pascal div.ln-xtra {background-color: #ffc;}
+.pascal.source-pascal span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-USACO_fence action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">USACO/fence</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="/index.php/USACO" title="USACO">USACO</a></span></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E5.88.86.E6.9E.90"><span class="tocnumber">1</span> <span class="toctext">分析</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#.E6.8F.90.E9.97.AE.E4.B8.8E.E8.A7.A3.E7.AD.94"><span class="tocnumber">2</span> <span class="toctext">提问与解答</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#.E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81"><span class="tocnumber">3</span> <span class="toctext">参考代码</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#.E5.BC.95.E7.94.A8"><span class="tocnumber">4</span> <span class="toctext">引用</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/fence&amp;action=edit&amp;section=1" title="编辑段落：分析">编辑</a>]</span> <span class="mw-headline" id=".E5.88.86.E6.9E.90">分析</span></h2>
+<p>　　这道题是要求我们求出一条欧拉路，所以我们要首先判断图中是否有欧拉路。对于一个无向图，如果它每个点的度都是偶数，那么它存在一条欧拉回路；如果有且仅有2个点的度为奇数，那么它存在一条欧拉路；如果超过2个点的度为奇数，那么它就不存在欧拉路了。
+</p><p>　　由于题目中说数据保证至少有1个解，所以一定存在欧拉路了。但是我们还要选一个点作为起点。如果没有点的度为奇数，那么任何一个点都能做起点。如果有2个奇点，那么就只能也这两个点之一为起点，另一个为终点。但是我们要注意，题目要求我们输出的是进行进制转换之后最小的（也就是输出第一个数较小的，如果还有多组解，输出第二个数较小的，等等），所以我们要以最小的点做起点。
+</p><p>　　找出欧拉路的方法就是采用深搜的方式，对于当前的点，把所有点从小到大的搜索，找到和它相连的，找到一个之后删除它们之间的连线，并去搜索新的那个点，如果没有找到点和它相连，那么就把这个点加入输出队列。
+</p><p>　　不过我们这么操作之后，顺序是反着的，输出时反着输出即可。
+</p><p><br />
+注意这道题的几个猥琐点…首先,没有跟你说点的序号一定是从1开始的… 例如这组数据:
+</p>
+<pre>  1
+  10　20
+</pre>
+<p>然后…两个点之间可能有不止一条道路…例如:
+</p>
+<pre>  78
+  1　2
+  2　1
+  1　2
+  2　1
+  …(省略N行)
+</pre>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/fence&amp;action=edit&amp;section=2" title="编辑段落：提问与解答">编辑</a>]</span> <span class="mw-headline" id=".E6.8F.90.E9.97.AE.E4.B8.8E.E8.A7.A3.E7.AD.94">提问与解答</span></h2>
+<p>为什么每次取最小的然后逆序就是对的呢，求解答。
+</p>
+<hr />
+<p>我在这里提个问题：为什么递归着直接顺序输出时结果 与 存储在输出队列中逆序输出不一样呢？　　
+（经过众牛的讨论认为这是由于爆栈的原因，本小菜弱弱的Orz一下：原来输出也会爆栈……）
+</p>
+<hr />
+<p>哦，想通了，是这样的：
+</p><p>这个程序每次总是随意挑一条能走的路，走过去。（我知道是按顺序，但是本质上是随意的）尝试考虑下面的图形：
+</p><p><a href="/index.php/%E6%96%87%E4%BB%B6:USACO-fence-onetwogoo-1.png" class="image"><img alt="USACO-fence-onetwogoo-1.png" src="/images/0/09/USACO-fence-onetwogoo-1.png" width="278" height="324" /></a>
+</p><p>如图，本来应该是E1-&gt;E2-&gt;E4-&gt;E5-&gt;E3。 但是由于算法随机选择，有可能走了E1-&gt;E2-&gt;E3。 中间缺了一个环，于是就要求我们最后把那个环补上。
+</p><p>如果是先输出，后找路的话，结果为V1-&gt;V2-&gt;V3-&gt;V4-&gt;V2-&gt;V3。这不就不对了嘛！
+</p><p>根本原因是由于程序随机找路，会犯错误，而只有后记录，反输出，才能够给程序一次改过自新的机会啊！
+</p><p><a href="/index.php/%E7%94%A8%E6%88%B7:Onetwogoo" title="用户:Onetwogoo">Mr.Phone</a> 16:43 2011年8月23日 (CST)
+</p>
+<hr />
+<p>我也有同样的问题，现在很迷茫。
+</p>
+<hr />
+<p>那么任何一个点都能做起点。
+</p><p>&lt;---No.Use vertex 1.
+</p><p>&lt;---I haven't install chinese shurufa,wawa!
+</p>
+<hr />
+<p>弱弱的问一下为什么递归着直接顺序输出会爆栈呢？？？？？
+</p>
+<hr />
+<p>我也遇到了这种情况
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="kw1">procedure</span> search <span class="br0">&#40;</span>s<span class="sy0">:</span><span class="kw4">word</span><span class="br0">&#41;</span>;
+<span class="kw1">var</span>
+  i<span class="sy0">:</span><span class="kw4">word</span>;
+<span class="kw1">begin</span>
+  <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> m <span class="kw1">do</span>
+    <span class="kw1">if</span> con<span class="br0">&#91;</span>s<span class="sy0">,</span>i<span class="br0">&#93;</span>&gt;<span class="nu0">0</span> <span class="kw1">then</span>
+    <span class="kw1">begin</span>
+      dec<span class="br0">&#40;</span>con<span class="br0">&#91;</span>s<span class="sy0">,</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+      dec<span class="br0">&#40;</span>con<span class="br0">&#91;</span>i<span class="sy0">,</span>s<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+      search<span class="br0">&#40;</span>i<span class="br0">&#41;</span>;
+    <span class="kw1">end</span>;
+  inc<span class="br0">&#40;</span>j<span class="br0">&#41;</span>;
+  path<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy0">:=</span>s;
+<span class="kw1">end</span>;</pre></div></div>
+<p>然后倒叙输出，这样写就对
+</p><p>但
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="kw1">procedure</span> search <span class="br0">&#40;</span>s<span class="sy0">:</span><span class="kw4">word</span><span class="br0">&#41;</span>;
+<span class="kw1">var</span>
+  i<span class="sy0">:</span><span class="kw4">word</span>;
+<span class="kw1">begin</span>
+  <span class="kw3">writeln</span><span class="br0">&#40;</span>s<span class="br0">&#41;</span>;
+  <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> m <span class="kw1">do</span>
+    <span class="kw1">if</span> con<span class="br0">&#91;</span>s<span class="sy0">,</span>i<span class="br0">&#93;</span>&gt;<span class="nu0">0</span> <span class="kw1">then</span>
+    <span class="kw1">begin</span>
+      dec<span class="br0">&#40;</span>con<span class="br0">&#91;</span>s<span class="sy0">,</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+      dec<span class="br0">&#40;</span>con<span class="br0">&#91;</span>i<span class="sy0">,</span>s<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+      search<span class="br0">&#40;</span>i<span class="br0">&#41;</span>;
+    <span class="kw1">end</span>;
+<span class="kw1">end</span>;</pre></div></div>
+<p>就悲剧了 求条明路  --------------dsqwwe
+</p>
+<hr />
+<p>我一开始也遇到了以上问题，经高人指点后有所明白
+</p>
+<pre>你可以想想最先执行
+</pre>
+<pre> inc(j);
+ path[j]:=s;
+</pre>
+<p>这段代码的必定是终点，而中间的环的顶点都会进入这个数组，所以没有遗漏，这是正解。
+</p>
+<hr />
+<p>有可能在深搜的过程中出现环，所以，可能是在后面的过程中找到当前的值。
+</p>
+<hr />
+<p>用弗罗莱（Fleury）算法,时间复杂度o(e*e)
+</p>
+<hr />
+<p>这个题最快时间复杂度是Θ(m*(lnm)/(ln2))毕竟这个题要求字典序，所以一定要排序，使每条边的点按顺序排好，排序方法有很多的。
+单论欧拉回路最快时间复杂度是Θ（m）.如果是随机图我们用向量存图的话效率最高，因为一般链表存图常数比向量存图大10倍。但是向量存图会退化成Θ(m*m)。如果不是随机图我们应该用双向链表（不能单向链表）来完成这个题，你也可以用map容器做，但是我只能说也很麻烦，时间估计也是Θ(m)，但是插入就比较慢了，而且关于反向边的部分操作可能很难做到Θ(1)。每次找到一条边去走的时候把这条边和他的反向边删了，这样就是Θ（m）了。
+</p><p>一些疑问：
+1.如果想时间复杂度达到Θ(m)为什么不能单向链表？
+答：单向链表只能删除这个点后面的元素，无法删除自己（也就是erase_after(it)），如果你存反向边的时候是存的是这个元素前面的那个迭代器的话，由于图比较随机。你这次的删除很可能会使下一次删除的这条边的反向边的前一个链表上的元素不存在，而且会使这些迭代器失效。
+2.为什么链表存图常数比向量存图做图时大10倍？
+答：具体原因我也不清楚，但是在大量平台测试的结果都是如此，估计是这种数据结构不利于cpu的计算。你做spfa时会有这种感触的。
+3.向量是不是一定比链表快？
+答：虽然做图向量很快，但是链表读入却很快，所以有时会表现出链表更快一些，因为读入很多时候也很耗时。
+4.考试若不开O1，O2，库容器不是很慢吗？
+答：首先你要明白库容器的效率就是按照O1的标准做的，你可别拿O0的表现来测试东西（O0连内联都不会展开的，再加上大量的无用的对象构造，所以固然很慢），O1以后就很快了。
+若真不开O1，O2,对于向量存图有很好的办法：
+就是对一个以后不会再插入或删除元素的vector,例如：
+std::vector&lt;int&gt; vecc(50，1);
+int *vec(&amp;vecc.front());//C++11标准规定这种操作在向量不为空时合法，实际上就是为空了也没问题。新标准规定vec.data()==&amp;vec.front()
+然后拿vec来当向量操作就行了，例如vec[2]=2就等价于vecc[2]=1.
+</p><p>具体可以看我的C++代码。
+</p><p>--<a href="/index.php?title=%E7%94%A8%E6%88%B7:Lgeecn&amp;action=edit&amp;redlink=1" class="new" title="用户:Lgeecn（尚未撰写）">Lgeecn</a> 2013年8月13日 (二) 20:52 (CST)
+</p>
+<hr />
+<p>我的思路：
+把此题分成两种情况讨论：
+欧拉通路：将图分成三个子图：一个存在欧拉回路的图和两个存在欧拉通路的图。从度为奇数的编号最小的点出发，如果走了“歧途”（走到了尽头却还没走完所有边），这个“歧途”则最后再走，于是将其压入栈底，从而一次就能遍历全部边，使算法复杂度为O(e)。
+欧拉回路：直接从编号最小的点出发即可一次遍历。
+存储：邻接矩阵就够了，记录两点之间几条边，删除边就正反两边数减一即可。
+此题如果和遍历点一样dfs则会超时（dfs编写调试了两天，代码100+，此算法参阅了nocow上的代码，仅仅编写调试了一小时，代码70……悲剧……orz大神）感觉我在炒冷饭……
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/fence&amp;action=edit&amp;section=3" title="编辑段落：参考代码">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81">参考代码</span></h2>
+<p><a href="/index.php/Code:USACO/fence/C" title="Code:USACO/fence/C">c</a>
+</p><p><a href="/index.php/Code:USACO/fence/C%2B%2B" title="Code:USACO/fence/C++">C++</a>
+</p><p><a href="/index.php/Code:USACO/fence/Pascal" title="Code:USACO/fence/Pascal">pascal</a>
+</p>
+<h2><span class="editsection">[<a href="/index.php?title=USACO/fence&amp;action=edit&amp;section=4" title="编辑段落：引用">编辑</a>]</span> <span class="mw-headline" id=".E5.BC.95.E7.94.A8">引用</span></h2>
+<p><a rel="nofollow" class="external autonumber" href="http://blog.sina.com.cn/u/45cf0392010009f6">[1]</a>
+</p><p><a rel="nofollow" class="external autonumber" href="http://h.thec.cn/starforever/">[2]</a>
+</p><p><a rel="nofollow" class="external autonumber" href="http://train.usaco.org/">[3]</a>
+</p><p><a rel="nofollow" class="external autonumber" href="http://hi.baidu.com/crboygirl/blog/item/7d9ec413d9a73bd3f7039e93.html">[4]</a>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 32/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:405-0!*!0!!zh-cn!2!* and timestamp 20170806224308 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=USACO/fence&amp;oldid=35127">http://www.nocow.cn/index.php?title=USACO/fence&amp;oldid=35127</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/USACO/fence" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:USACO/fence&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=USACO/fence&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=USACO/fence&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=USACO%2Ffence" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/USACO/fence" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/USACO/fence" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=USACO/fence&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=USACO/fence&amp;oldid=35127" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过19,967次。</li>
+		<li id="credits">本页面由NOCOW用户<a href="/index.php?title=%E7%94%A8%E6%88%B7:Wisatbff&amp;action=edit&amp;redlink=1" class="new" title="用户:Wisatbff（尚未撰写）">Wisatbff</a>于2014年8月7日 (星期四) 00:18做出最后修改。 在NOCOW用户<a href="/index.php?title=%E7%94%A8%E6%88%B7:Lgeecn&amp;action=edit&amp;redlink=1" class="new" title="用户:Lgeecn（尚未撰写）">Lgeecn</a>、<a href="/index.php?title=%E7%94%A8%E6%88%B7:Fanzhirui&amp;action=edit&amp;redlink=1" class="new" title="用户:Fanzhirui（尚未撰写）">Fanzhirui</a>和<a href="/index.php/%E7%94%A8%E6%88%B7:Fanzeyi" title="用户:Fanzeyi">Fanzeyi</a>、NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/183.46.39.205" title="特殊:用户贡献/183.46.39.205">183.46.39.205</a>和<a href="/index.php?title=USACO/fence&amp;action=credits" title="USACO/fence">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.232 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

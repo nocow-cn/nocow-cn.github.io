@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>数据结构 - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="/index.php?title=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84&amp;action=edit" />
+<link rel="edit" title="编辑" href="/index.php?title=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "数据结构", "wgTitle": "数据结构", "wgCurRevisionId": 4211, "wgArticleId": 7, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-数据结构 action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">数据结构</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><pre> 本文在<a href="/index.php/GNU%E8%87%AA%E7%94%B1%E6%96%87%E6%A1%A3%E8%AE%B8%E5%8F%AF%E8%AF%81" title="GNU自由文档许可证" class="mw-redirect">GNU自由文档许可证</a>之条款下提供
+</pre>
+<p><b>数据结构</b>是计算机存储、组织<a href="/index.php/%E6%95%B0%E6%8D%AE" title="数据">数据</a>的方式。通常情况下，精心选择的数据结构可以带来更高的运行或者存储效率的<a href="/index.php/%E7%AE%97%E6%B3%95" title="算法">算法</a>。数据结构往往同高效的<a href="/index.php?title=%E6%A3%80%E7%B4%A2%E7%AE%97%E6%B3%95&amp;action=edit&amp;redlink=1" class="new" title="检索算法（尚未撰写）">检索算法</a>和<a href="/index.php?title=%E7%B4%A2%E5%BC%95%E6%8A%80%E6%9C%AF&amp;action=edit&amp;redlink=1" class="new" title="索引技术（尚未撰写）">索引技术</a>有关。
+</p><p>在许多类型的程序的设计中，数据结构的选择是一个基本的设计考虑因素。许多大型系统的构造经验表明，系统实现的困难程度和
+</p><p>系统构造的质量都严重的依赖于是否选择了最优的数据结构。许多时候，确定了数据结构后，算法就容易得到了。有些时候事情也
+</p><p>会反过来，我们根据特定算法来选择数据结构与之适应。不论哪种情况，选择合适的数据结构都是非常重要的。
+</p><p>选择了数据结构，算法也随之确定，是数据而不是算法是系统构造的关键因素。这种洞见导致了许多种<a href="/index.php?title=%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95&amp;action=edit&amp;redlink=1" class="new" title="软件设计方法（尚未撰写）">软件设计方法</a>和<a href="/index.php?title=%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80&amp;action=edit&amp;redlink=1" class="new" title="程序设计语言（尚未撰写）">程序设计语言</a>的出现，<a href="/index.php?title=%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1&amp;action=edit&amp;redlink=1" class="new" title="面向对象的程序设计（尚未撰写）">面向对象的程序设计</a>语言就是其中之一。
+</p><p>在计算机科学中，<b>数据结构</b>是一门研究非数值计算的程序设计问题中计算机的操作对象（数据元素）以及它们之间的关系和
+</p><p>运算等的学科，而且确保经过这些运算后所得到的新结构仍然是原来的结构类型。
+</p><p>“数据结构”作为一门独立的课程在国外是从1968年才开始设立的。 1968年美国<a href="/index.php/%E9%AB%98%E5%BE%B7%E7%BA%B3" title="高德纳">高德纳</a>教授开创了数据结构的最初体系，他所
+</p><p>著的《<a href="/index.php?title=%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%89%BA%E6%9C%AF&amp;action=edit&amp;redlink=1" class="new" title="计算机程序设计艺术（尚未撰写）">计算机程序设计艺术</a>》第一卷《基本算法》是第一本较系统地阐述数据的逻辑结构和存储结构及其操作的著作。“数据
+</p><p>结构”在计算机科学中是一门综合性的专业基础课。数据结构是介于数学、计算机硬件和计算机软件三者之间的一门核心课程。数
+</p><p>据结构这一门课的内容不仅是一般程序设计（特别是非数值性程序设计）的基础，而且是设计和实现编译程序、操作系统、数据库
+</p><p>系统及其他系统程序的重要基础。
+</p><p>计算机是一门研究用计算机进行信息表示和处理的科学。这里面涉及到两个问题：
+</p>
+<ul><li>信息的表示
+</li><li>信息的处理
+</li></ul>
+<p>而信息的表示和组又直接关系到处理信息的程序的效率。随着计算机的普及，信息量的增加，信息范围的拓宽，使许多系统程序和
+</p><p>应用程序的规模很大，结构又相当复杂。因此，为了编写出一个“好”的程序，必须分析待处理的对象的特征及各对象之间存在的
+</p><p>关系，这就是数据结构这门课所要研究的问题。众所周知，计算机的程序是对信息进行加工处理。在大多数情况下，这些信息并不
+</p><p>是没有组织，信息（数据）之间往往具有重要的结构关系，这就是数据结构的内容。数据的结构，直接影响算法的选择和效率。
+</p><p>计算机解决一个具体问题时，大致需要经过下列几个步骤：首先要从具体问题中抽象出一个适当的数学模型，然后设计一个解此数
+</p><p>学模型的<b><a href="/index.php/%E7%AE%97%E6%B3%95" title="算法">算法</a></b>（Algorithm），最后编出程序、进行测试、调整直至得到最终解答。寻求数学模型的实质是分析问题，从
+</p><p>中提取操作的对象，并找出这些操作对象之间含有的关系，然后用数学的语言加以描述。计算机算法与数据的结构密切相关，算法
+</p><p>无不依附于具体的数据结构，数据结构直接关系到算法的选择和效率。运算是由计算机来完成，这就要设计相应的插入、删除和修
+</p><p>改的算法 。也就是说，数据结构还需要给出每种结构类型所定义的各种运算的算法。
+</p><p><b><a href="/index.php/%E6%95%B0%E6%8D%AE" title="数据">数据</a></b>是对客观事物的符号表示，在计算机科学中是指所有能输入到计算机中并由计算机程序处理的符号的总称。
+</p><p><b><a href="/index.php/%E6%95%B0%E6%8D%AE%E5%85%83%E7%B4%A0" title="数据元素">数据元素</a></b>是数据的基本单位，在计算机程序中通常作为一个整体考虑。一个数据元素由若干个数据项组成。数据项是数
+</p><p>据的不可分割的最小单位。有两类数据元素：一类是不可分割的原子型数据元素，如：整数"5"，字符 "N" 等；另一类是由多个款
+</p><p>项构成的数据元素，其中每个款项被称为一个<b><a href="/index.php/%E6%95%B0%E6%8D%AE%E9%A1%B9" title="数据项">数据项</a></b>。例如描述一个学生的信息的数据元素可由下列6个数据项组成。其中的
+</p><p>出身日期又可以由三个数据项："年"、"月"和"日"组成，则称"出身日期"为<b>组合项</b>，而其它不可分割的数据项为<b>原子</b>
+</p><p>项<b>。</b>
+</p><p><b>关键字</b>指的是能识别一个或多个数据元素的数据项。若能起唯一识别作用，则称之为 "主" 关键字，否则称为 "次" 关键字。
+</p><p><b><a href="/index.php/%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1" title="数据对象">数据对象</a></b>是性质相同的数据元素的集合，是数据的一个子集。数据对象可以是有限的，也可以是无限的。
+</p><p><b><a href="/index.php/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86" title="数据处理">数据处理</a></b>是指对数据进行查找、插入、删除、合并、排序、统计以及简单计算等的操作过程。在早期，计算机主要用于
+</p><p>科学和工程计算，进入八十年代以后，计算机主要用于数据处理。据有关统计资料表明，现在计算机用于数据处理的时间比例达到
+</p><p>80%以上，随着时间的推移和计算机应用的进一步普及，计算机用于数据处理的时间比例必将进一步增大。
+</p><p>数据结构是指同一数据元素类中各数据元素之间存在的关系。数据结构分别为<a href="/index.php?title=%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84&amp;action=edit&amp;redlink=1" class="new" title="逻辑结构（尚未撰写）">逻辑结构</a>、<a href="/index.php/%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84" title="存储结构">存储结构</a>（<a href="/index.php?title=%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84&amp;action=edit&amp;redlink=1" class="new" title="物理结构（尚未撰写）">物理结构</a>）和数
+</p><p>据的运算。数据的逻辑结构是对数据之间关系的描述，有时就把逻辑结构简称为数据结构。逻辑结构形式地定义为（K，R）（或（D，S）），其中，K是数据元素的有限集，R是K上的关系的有限集。
+</p><p>数据元素相互之间的关系称为<b>结构</b>。有四类基本结构：<a href="/index.php?title=%E9%9B%86%E5%90%88(%E8%A8%88%E7%AE%97%E6%A9%9F%E7%A7%91%E5%AD%B8)&amp;action=edit&amp;redlink=1" class="new" title="集合(計算機科學)（尚未撰写）">集合</a>、<a href="/index.php?title=%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84&amp;action=edit&amp;redlink=1" class="new" title="线性结构（尚未撰写）">线性结构</a>、<a href="/index.php?title=%E6%A0%91%E5%BD%A2%E7%BB%93%E6%9E%84&amp;action=edit&amp;redlink=1" class="new" title="树形结构（尚未撰写）">树形结构</a>、<a href="/index.php?title=%E5%9B%BE%E7%8A%B6%E7%BB%93%E6%9E%84&amp;action=edit&amp;redlink=1" class="new" title="图状结构（尚未撰写）">图状结构</a>（<a href="/index.php?title=%E7%BD%91%E7%8A%B6%E7%BB%93%E6%9E%84&amp;action=edit&amp;redlink=1" class="new" title="网状结构（尚未撰写）">网状结构</a>）。树形结构和图形结构全称为<a href="/index.php?title=%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84&amp;action=edit&amp;redlink=1" class="new" title="非线性结构（尚未撰写）">非线性结构</a>。集合结构中的数据元素除了同属于一种类型外，别无其它关系。线性结构中元素之间存在一对一关系，树形结构中元素之间存在一对多关系，图形结构中元素之间存在多对多关系。在图形结构中每个结点的前驱结点数和后续结点数可以任意多个。
+</p><p>数据结构在计算机中的表示（映像）称为数据的物理（存储）结构。它包括数据元素的表示和关系的表示。数据元素之间的关系有两种不同的表示方法：顺序映象和非顺序映象，并由此得到两种不同的存储结构：顺序存储结构和链式存储结构。顺序存储方法：
+</p><p>它是把逻辑上相邻的结点存储在物理位置相邻的存储单元里，结点间的逻辑关系由存储单元的邻接关系来体现，由此得到的存储表示称为顺序存储结构。顺序存储结构是一种最基本的存储表示方法，通常借助于程序设计语言中的数组来实现。链接存储方法：它不要求逻辑上相邻的结点在物理位置上亦相邻，结点间的逻辑关系是由附加的指针字段表示的。由此得到的存储表示称为链式存储结构，链式存储结构通常借助于程序设计语言中的指针类型来实现。索引存储方法：除建立存储结点信息外，还建立附加的索引表来标识结点的地址。散列存储方法：就是根据结点的关键字直接计算出该结点的存储地址。
+</p><p>数据结构中，逻辑上（逻辑结构：数据元素之间的逻辑关系）可以把数据结构分成线性结构和非线性结构。线性结构的顺序存储结构是一种随机存取的存储结构，线性表的链式存储结构是一种顺序存取的存储结构。线性表若采用链式存储表示时所有结点之间的存储单元地址可连续可不连续。逻辑结构与数据元素本身的形式、内容、相对位置、所含结点个数都无关。
+</p><p>算法的设计取决于数据（逻辑）结构，而算法的实现依赖于采用的存储结构。数据的运算是在数据的逻辑结构上定义的操作算法，如检索、插入、删除、更新的排序等。
+</p><p>数据结构的形式定义为：数据结构是一个二元组：
+</p>
+<pre>           Data-Structure=(D，S)
+</pre>
+<p>其中：D是数据元素的有限集，S是D上关系的有限集。
+</p><p>数据结构不同于数据类型，也不同于数据对象，它不仅要描述数据类型的数据对象，而且要描述数据对象各元素之间的相互关系。
+</p><p><b><a href="/index.php/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B" title="数据类型">数据类型</a></b>是一个值的集合和定义在这个值集上的一组操作的总称。数据类型可分为两类：原子类型、结构类型。一方面，在程序设计语言中，每一个数据都属于某种数据类型。类型明显或隐含地规定了数据的取值范围、存储方式以及允许进行的运算。可以认为，数据类型是在程序设计中已经实现了的数据结构。另一方面，在程序设计过程中，当需要引入某种新的数据结构时，总是借助编程语言所提供的数据类型来描述数据的存储结构。
+</p><p>计算机中表示数据的最小单位是二进制数的一位，叫做<b>位</b>。我们用一个由若干位组合起来形成的一个位串表示一个数据元素，通常称这个位串为元素或<b>结点</b>。当数据元素由若干数据项组成时，位串中对应于各个数据项的子位串称为<b>数据域</b>。
+</p><p>元素或结点可看成是数据元素在计算机中的映象。
+</p><p>一个软件系统框架应建立在数据之上，而不是建立在操作之上。一个含抽象数据类型的软件模块应包含定义、表示、实现三个部分。
+</p><p>对每一个数据结构而言，必定存在与它密切相关的一组操作。若操作的种类和数目不同，即使逻辑结构相同，数据结构能起的作用也不同。
+</p><p>不同的数据结构其操作集不同，但下列操作必不可缺：
+</p>
+<ol><li>结构的生成；
+</li><li>结构的销毁；
+</li><li>在结构中查找满足规定条件的数据元素；
+</li><li>在结构中插入新的数据元素；
+</li><li>删除结构中已经存在的数据元素；
+</li><li>遍历。
+</li></ol>
+<p><b><a href="/index.php?title=%E6%8A%BD%E8%B1%A1%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B&amp;action=edit&amp;redlink=1" class="new" title="抽象数据类型（尚未撰写）">抽象数据类型</a></b>：一个数学模型以及定义在该模型上的一组操作。抽象数据类型实际上就是对该数据结构的定义。因为它定义了一个数据的逻辑结构以及在此结构上的一组算法。抽象数据类型可用以下三元组表示：（D，S，P）。D是数据对象，S是D上的关系集，P是对D的基本操作集。ADT的定义为：
+</p>
+<pre>ADT 抽象数据类型名{
+ 数据对象：（数据元素集合）
+ 数据关系：（数据关系二元组结合）
+ 基本操作：（操作函数的罗列）
+} ADT 抽象数据类型名;
+</pre>
+<p>抽象数据类型有两个重要特性：
+</p>
+<ul><li>数据抽象 
+<ul><li>用ADT描述程序处理的实体时，强调的是其本质的特征、其所能完成的功能以及它和外部用户的接口（即外界使用它的方法）。
+</li></ul>
+</li><li>数据封装 
+<ul><li>将实体的外部特性和其内部实现细节分离，并且对外部用户隐藏其内部实现细节。
+</li></ul>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 1/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:7-0!*!0!*!*!*!* and timestamp 20170808221840 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84&amp;oldid=4211">http://www.nocow.cn/index.php?title=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84&amp;oldid=4211</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="/index.php/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="/index.php?title=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="/index.php?title=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="/index.php?title=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="/index.php?title=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84&amp;oldid=4211" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过9,610次。</li>
+		<li id="credits">本页面由<a href="/index.php/%E7%94%A8%E6%88%B7:Sky_wind" title="用户:Sky wind">武斌</a>于2007年6月20日 (星期三) 20:08做出最后修改。 在NOCOW用户<a href="/index.php/%E7%94%A8%E6%88%B7:Windywinter" title="用户:Windywinter">Windywinter</a>和NOCOW匿名用户<a href="/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/58.49.163.138" title="特殊:用户贡献/58.49.163.138">58.49.163.138</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.190 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

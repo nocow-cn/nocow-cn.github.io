@@ -1,0 +1,412 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="keywords" content="Code:contact pascal" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="NOCOW (中文(简体))" />
+<link title="Creative Commons" type="application/rdf+xml" href="/index.php?title=Code:contact_pascal&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+		<title>NOCOW - Code:contact pascal</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins/monobook/main.css?42b"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print" href="/skins/common/commonPrint.css?42b" />
+		<link rel="stylesheet" type="text/css" media="handheld" href="/skins/monobook/handheld.css?42b" />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins/monobook/IE50Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins/monobook/IE55Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins/monobook/IE60Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins/monobook/IE70Fixes.css?42b";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?42b"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">/*<![CDATA[*/
+var skin = "monobook";
+var stylepath = "/skins";
+var wgArticlePath = "/index.php/$1";
+var wgScriptPath = "";
+var wgServer = "http://www.nocow.cn";
+var wgCanonicalNamespace = "";
+var wgCanonicalSpecialPageName = false;
+var wgNamespaceNumber = 0;
+var wgPageName = "Code:contact_pascal";
+var wgTitle = "Code:contact pascal";
+var wgArticleId = "382";
+var wgIsArticle = true;
+var wgUserName = null;
+var wgUserLanguage = "zh-cn";
+var wgContentLanguage = "zh-cn";
+var wgBreakFrames = false;
+var wgCurRevisionId = "6424";
+/*]]>*/</script>
+                
+		<script type="text/javascript" src="/skins/common/wikibits.js?42b"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=-&action=raw&gen=css&maxage=18000";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+			</head>
+<body  class="mediawiki ns-0 ltr page-Code_contact_pascal">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 class="firstHeading">Code:contact pascal</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">来自&quot;NOCOW&quot;</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">跳转到: <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>			<!-- start content -->
+			<a name=".E4.BB.A3.E7.A0.811"></a><h2><span class="editsection">[<a href="/index.php?title=Code:contact_pascal&amp;action=edit&amp;section=1" title="编辑段落: 代码1">编辑</a>]</span> <span class="mw-headline">代码1</span></h2>
+<pre class="pascal"><span style="color: #808080; font-style: italic;">{
+ID: starfor1
+PROG: contact
+LANG: PASCAL
+}</span>
+<span style="color: #993333;">const</span>
+  sn=<span style="color: #cc66cc;">8190</span>;
+<span style="color: #993333;">type</span>
+  data=
+  <span style="color: #993333;">record</span>
+    bina:<span style="color: #993333;">string</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">12</span><span style="color: #66cc66;">&#93;</span>;
+    count:dword;
+  <span style="color: #b1b100;">end</span>;
+<span style="color: #b1b100;">var</span>
+  a,b,n,l,i,wd:<span style="color: #993333;">byte</span>;
+  ch:<span style="color: #993333;">char</span>;
+  s,d,u,v:<span style="color: #993333;">word</span>;
+  curr:dword;
+  slot:<span style="color: #993333;">array</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span>..<span style="color: #202020;">sn</span><span style="color: #66cc66;">&#93;</span><span style="color: #b1b100;">of</span> data;
+  x2:<span style="color: #993333;">array</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span>..<span style="color: #cc66cc;">13</span><span style="color: #66cc66;">&#93;</span><span style="color: #b1b100;">of</span> <span style="color: #993333;">word</span>;
+  bi:<span style="color: #993333;">string</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">12</span><span style="color: #66cc66;">&#93;</span>;
+  swap,mid:data;
+  stop:<span style="color: #993333;">boolean</span>;
+<span style="color: #808080; font-style: italic;">//</span>
+<span style="color: #000000; font-weight: bold;">function</span> more <span style="color: #66cc66;">&#40;</span>a,b:data<span style="color: #66cc66;">&#41;</span>:<span style="color: #993333;">boolean</span>;
+<span style="color: #b1b100;">begin</span>
+  <span style="color: #b1b100;">if</span> a.<span style="color: #202020;">count</span>&gt;b.<span style="color: #202020;">count</span> <span style="color: #b1b100;">then</span>
+    exit<span style="color: #66cc66;">&#40;</span><span style="color: #000000; font-weight: bold;">true</span><span style="color: #66cc66;">&#41;</span>;
+  <span style="color: #b1b100;">if</span> a.<span style="color: #202020;">count</span>&lt;b.<span style="color: #202020;">count</span> <span style="color: #b1b100;">then</span>
+    exit<span style="color: #66cc66;">&#40;</span><span style="color: #000000; font-weight: bold;">false</span><span style="color: #66cc66;">&#41;</span>;
+  <span style="color: #b1b100;">if</span> a.<span style="color: #202020;">bina</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>&lt;b.<span style="color: #202020;">bina</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">then</span>
+    exit<span style="color: #66cc66;">&#40;</span><span style="color: #000000; font-weight: bold;">true</span><span style="color: #66cc66;">&#41;</span>;
+  <span style="color: #b1b100;">if</span> a.<span style="color: #202020;">bina</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>&gt;b.<span style="color: #202020;">bina</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">then</span>
+    exit<span style="color: #66cc66;">&#40;</span><span style="color: #000000; font-weight: bold;">false</span><span style="color: #66cc66;">&#41;</span>;
+  <span style="color: #b1b100;">if</span> a.<span style="color: #202020;">bina</span>&lt;b.<span style="color: #202020;">bina</span> <span style="color: #b1b100;">then</span>
+    exit<span style="color: #66cc66;">&#40;</span><span style="color: #000000; font-weight: bold;">true</span><span style="color: #66cc66;">&#41;</span>;
+  <span style="color: #b1b100;">if</span> a.<span style="color: #202020;">bina</span>&gt;b.<span style="color: #202020;">bina</span> <span style="color: #b1b100;">then</span>
+    exit<span style="color: #66cc66;">&#40;</span><span style="color: #000000; font-weight: bold;">false</span><span style="color: #66cc66;">&#41;</span>;
+  exit<span style="color: #66cc66;">&#40;</span><span style="color: #000000; font-weight: bold;">false</span><span style="color: #66cc66;">&#41;</span>;
+<span style="color: #b1b100;">end</span>;
+<span style="color: #808080; font-style: italic;">//</span>
+<span style="color: #000000; font-weight: bold;">function</span> less <span style="color: #66cc66;">&#40;</span>a,b:data<span style="color: #66cc66;">&#41;</span>:<span style="color: #993333;">boolean</span>;
+<span style="color: #b1b100;">begin</span>
+  <span style="color: #b1b100;">if</span> a.<span style="color: #202020;">count</span>&lt;b.<span style="color: #202020;">count</span> <span style="color: #b1b100;">then</span>
+    exit<span style="color: #66cc66;">&#40;</span><span style="color: #000000; font-weight: bold;">true</span><span style="color: #66cc66;">&#41;</span>;
+  <span style="color: #b1b100;">if</span> a.<span style="color: #202020;">count</span>&gt;b.<span style="color: #202020;">count</span> <span style="color: #b1b100;">then</span>
+    exit<span style="color: #66cc66;">&#40;</span><span style="color: #000000; font-weight: bold;">false</span><span style="color: #66cc66;">&#41;</span>;
+  <span style="color: #b1b100;">if</span> a.<span style="color: #202020;">bina</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>&gt;b.<span style="color: #202020;">bina</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">then</span>
+    exit<span style="color: #66cc66;">&#40;</span><span style="color: #000000; font-weight: bold;">true</span><span style="color: #66cc66;">&#41;</span>;
+  <span style="color: #b1b100;">if</span> a.<span style="color: #202020;">bina</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span>&lt;b.<span style="color: #202020;">bina</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">then</span>
+    exit<span style="color: #66cc66;">&#40;</span><span style="color: #000000; font-weight: bold;">false</span><span style="color: #66cc66;">&#41;</span>;
+  <span style="color: #b1b100;">if</span> a.<span style="color: #202020;">bina</span>&gt;b.<span style="color: #202020;">bina</span> <span style="color: #b1b100;">then</span>
+    exit<span style="color: #66cc66;">&#40;</span><span style="color: #000000; font-weight: bold;">true</span><span style="color: #66cc66;">&#41;</span>;
+  <span style="color: #b1b100;">if</span> a.<span style="color: #202020;">bina</span>&lt;b.<span style="color: #202020;">bina</span> <span style="color: #b1b100;">then</span>
+    exit<span style="color: #66cc66;">&#40;</span><span style="color: #000000; font-weight: bold;">false</span><span style="color: #66cc66;">&#41;</span>;
+  exit<span style="color: #66cc66;">&#40;</span><span style="color: #000000; font-weight: bold;">false</span><span style="color: #66cc66;">&#41;</span>;
+<span style="color: #b1b100;">end</span>;
+<span style="color: #808080; font-style: italic;">//</span>
+<span style="color: #000000; font-weight: bold;">procedure</span> qsort <span style="color: #66cc66;">&#40;</span>f,e:<span style="color: #993333;">word</span><span style="color: #66cc66;">&#41;</span>;
+<span style="color: #b1b100;">var</span>
+  i,j:<span style="color: #993333;">word</span>;
+<span style="color: #b1b100;">begin</span>
+  mid:=slot<span style="color: #66cc66;">&#91;</span>random<span style="color: #66cc66;">&#40;</span>e-f<span style="color: #cc66cc;">+1</span><span style="color: #66cc66;">&#41;</span>+f<span style="color: #66cc66;">&#93;</span>;
+  i:=f;
+  j:=e;
+  <span style="color: #b1b100;">repeat</span>
+    <span style="color: #b1b100;">while</span> more<span style="color: #66cc66;">&#40;</span>slot<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>,mid<span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">do</span>
+      inc<span style="color: #66cc66;">&#40;</span>i<span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #b1b100;">while</span> less<span style="color: #66cc66;">&#40;</span>slot<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span>,mid<span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">do</span>
+      dec<span style="color: #66cc66;">&#40;</span>j<span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #b1b100;">if</span> i&lt;=j <span style="color: #b1b100;">then</span>
+    <span style="color: #b1b100;">begin</span>
+      swap:=slot<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>;
+      slot<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>:=slot<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span>;
+      slot<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span>:=swap;
+      inc<span style="color: #66cc66;">&#40;</span>i<span style="color: #66cc66;">&#41;</span>;
+      dec<span style="color: #66cc66;">&#40;</span>j<span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #b1b100;">end</span>;
+  <span style="color: #b1b100;">until</span> i&gt;j;
+  <span style="color: #b1b100;">if</span> i&lt;e <span style="color: #b1b100;">then</span>
+    qsort<span style="color: #66cc66;">&#40;</span>i,e<span style="color: #66cc66;">&#41;</span>;
+  <span style="color: #b1b100;">if</span> f&lt;j <span style="color: #b1b100;">then</span>
+    qsort<span style="color: #66cc66;">&#40;</span>f,j<span style="color: #66cc66;">&#41;</span>;
+<span style="color: #b1b100;">end</span>;
+<span style="color: #808080; font-style: italic;">//</span>
+<span style="color: #b1b100;">begin</span>
+  assign<span style="color: #66cc66;">&#40;</span>input,<span style="color: #ff0000;">'contact.in'</span><span style="color: #66cc66;">&#41;</span>;
+  assign<span style="color: #66cc66;">&#40;</span>output,<span style="color: #ff0000;">'contact.out'</span><span style="color: #66cc66;">&#41;</span>;
+  reset<span style="color: #66cc66;">&#40;</span>input<span style="color: #66cc66;">&#41;</span>;
+  rewrite<span style="color: #66cc66;">&#40;</span>output<span style="color: #66cc66;">&#41;</span>;
+  <span style="">readln</span><span style="color: #66cc66;">&#40;</span>a,b,n<span style="color: #66cc66;">&#41;</span>;
+  x2<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span>:=<span style="color: #cc66cc;">2</span>;
+  <span style="color: #b1b100;">for</span> i:=<span style="color: #cc66cc;">2</span> <span style="color: #b1b100;">to</span> <span style="color: #cc66cc;">13</span> <span style="color: #b1b100;">do</span>
+    x2<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>:=x2<span style="color: #66cc66;">&#91;</span>i<span style="color: #cc66cc;">-1</span><span style="color: #66cc66;">&#93;</span>*<span style="color: #cc66cc;">2</span>;
+  <span style="color: #b1b100;">for</span> l:=a <span style="color: #b1b100;">to</span> b <span style="color: #b1b100;">do</span>
+  <span style="color: #b1b100;">begin</span>
+    reset<span style="color: #66cc66;">&#40;</span>input<span style="color: #66cc66;">&#41;</span>;
+    <span style="">readln</span>;
+    s:=<span style="color: #cc66cc;">0</span>;
+    d:=x2<span style="color: #66cc66;">&#91;</span>l<span style="color: #66cc66;">&#93;</span><span style="color: #cc66cc;">-2</span>;
+    bi:=<span style="color: #ff0000;">''</span>;
+    stop:=<span style="color: #000000; font-weight: bold;">false</span>;
+    <span style="color: #b1b100;">for</span> i:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> l <span style="color: #b1b100;">do</span>
+    <span style="color: #b1b100;">begin</span>
+      <span style="">read</span><span style="color: #66cc66;">&#40;</span>ch<span style="color: #66cc66;">&#41;</span>;
+      bi:=bi+ch;
+      s:=s*<span style="color: #cc66cc;">2</span>;
+      <span style="color: #b1b100;">if</span> ch=<span style="color: #ff0000;">'1'</span> <span style="color: #b1b100;">then</span>
+        s:=s<span style="color: #cc66cc;">+1</span>;
+      <span style="color: #b1b100;">if</span> <span style="">eoln</span> <span style="">and</span> <span style="color: #66cc66;">&#40;</span>i&lt;l<span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">then</span>
+        stop:=<span style="color: #000000; font-weight: bold;">true</span>;
+    <span style="color: #b1b100;">end</span>;
+    <span style="color: #b1b100;">if</span> stop <span style="color: #b1b100;">then</span>
+    <span style="color: #b1b100;">begin</span>
+      b:=l<span style="color: #cc66cc;">-1</span>;
+      <span style="color: #000000; font-weight: bold;">break</span>;
+    <span style="color: #b1b100;">end</span>;
+    <span style="color: #b1b100;">if</span> slot<span style="color: #66cc66;">&#91;</span>s+d<span style="color: #cc66cc;">+1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">bina</span>=<span style="color: #ff0000;">''</span> <span style="color: #b1b100;">then</span>
+      slot<span style="color: #66cc66;">&#91;</span>s+d<span style="color: #cc66cc;">+1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">bina</span>:=bi;
+    inc<span style="color: #66cc66;">&#40;</span>slot<span style="color: #66cc66;">&#91;</span>s+d<span style="color: #cc66cc;">+1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">count</span><span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #b1b100;">if</span> <span style="">eoln</span> <span style="color: #b1b100;">then</span>
+      <span style="">readln</span>;
+    <span style="color: #b1b100;">while</span> <span style="color: #b1b100;">not</span> <span style="">eof</span> <span style="color: #b1b100;">do</span>
+    <span style="color: #b1b100;">begin</span>
+      <span style="">read</span><span style="color: #66cc66;">&#40;</span>ch<span style="color: #66cc66;">&#41;</span>;
+      delete<span style="color: #66cc66;">&#40;</span>bi,<span style="color: #cc66cc;">1</span>,<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span>;
+      bi:=bi+ch;
+      s:=s*<span style="color: #cc66cc;">2</span> <span style="color: #b1b100;">mod</span> x2<span style="color: #66cc66;">&#91;</span>l<span style="color: #66cc66;">&#93;</span>;
+      <span style="color: #b1b100;">if</span> ch=<span style="color: #ff0000;">'1'</span> <span style="color: #b1b100;">then</span>
+        s:=s<span style="color: #cc66cc;">+1</span>;
+      <span style="color: #b1b100;">if</span> slot<span style="color: #66cc66;">&#91;</span>s+d<span style="color: #cc66cc;">+1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">bina</span>=<span style="color: #ff0000;">''</span> <span style="color: #b1b100;">then</span>
+        slot<span style="color: #66cc66;">&#91;</span>s+d<span style="color: #cc66cc;">+1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">bina</span>:=bi;
+      inc<span style="color: #66cc66;">&#40;</span>slot<span style="color: #66cc66;">&#91;</span>s+d<span style="color: #cc66cc;">+1</span><span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">count</span><span style="color: #66cc66;">&#41;</span>;
+      <span style="color: #b1b100;">if</span> <span style="">eoln</span> <span style="color: #b1b100;">then</span>
+        <span style="">readln</span>;
+    <span style="color: #b1b100;">end</span>;
+  <span style="color: #b1b100;">end</span>;
+  randomize;
+  qsort<span style="color: #66cc66;">&#40;</span>x2<span style="color: #66cc66;">&#91;</span>a<span style="color: #66cc66;">&#93;</span><span style="color: #cc66cc;">-1</span>,x2<span style="color: #66cc66;">&#91;</span>b<span style="color: #cc66cc;">+1</span><span style="color: #66cc66;">&#93;</span><span style="color: #cc66cc;">-2</span><span style="color: #66cc66;">&#41;</span>;
+  curr:=maxlongint;
+  i:=<span style="color: #cc66cc;">0</span>;
+  u:=x2<span style="color: #66cc66;">&#91;</span>a<span style="color: #66cc66;">&#93;</span><span style="color: #cc66cc;">-1</span>;
+  <span style="color: #b1b100;">while</span> u&lt;=x2<span style="color: #66cc66;">&#91;</span>b<span style="color: #cc66cc;">+1</span><span style="color: #66cc66;">&#93;</span><span style="color: #cc66cc;">-2</span> <span style="color: #b1b100;">do</span>
+  <span style="color: #b1b100;">begin</span>
+    <span style="color: #b1b100;">if</span> slot<span style="color: #66cc66;">&#91;</span>u<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">count</span>&lt;curr <span style="color: #b1b100;">then</span>
+    <span style="color: #b1b100;">begin</span>
+      inc<span style="color: #66cc66;">&#40;</span>i<span style="color: #66cc66;">&#41;</span>;
+      <span style="color: #b1b100;">if</span> <span style="color: #66cc66;">&#40;</span>i&gt;n<span style="color: #66cc66;">&#41;</span> or <span style="color: #66cc66;">&#40;</span>slot<span style="color: #66cc66;">&#91;</span>u<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">count</span>=<span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">then</span>
+        <span style="color: #000000; font-weight: bold;">break</span>;
+      curr:=slot<span style="color: #66cc66;">&#91;</span>u<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">count</span>;
+      <span style="">writeln</span><span style="color: #66cc66;">&#40;</span>curr<span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #b1b100;">end</span>;
+    <span style="">write</span><span style="color: #66cc66;">&#40;</span>slot<span style="color: #66cc66;">&#91;</span>u<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">bina</span><span style="color: #66cc66;">&#41;</span>;
+    v:=u<span style="color: #cc66cc;">+1</span>;
+    wd:=<span style="color: #cc66cc;">1</span>;
+    <span style="color: #b1b100;">while</span> <span style="color: #66cc66;">&#40;</span>v&lt;=x2<span style="color: #66cc66;">&#91;</span>b<span style="color: #cc66cc;">+1</span><span style="color: #66cc66;">&#93;</span><span style="color: #cc66cc;">-2</span><span style="color: #66cc66;">&#41;</span> <span style="">and</span> <span style="color: #66cc66;">&#40;</span>slot<span style="color: #66cc66;">&#91;</span>v<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">count</span>=curr<span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">do</span>
+    <span style="color: #b1b100;">begin</span>
+      inc<span style="color: #66cc66;">&#40;</span>wd<span style="color: #66cc66;">&#41;</span>;
+      <span style="color: #b1b100;">if</span> wd&gt;<span style="color: #cc66cc;">6</span> <span style="color: #b1b100;">then</span>
+      <span style="color: #b1b100;">begin</span>
+        wd:=<span style="color: #cc66cc;">1</span>;
+        <span style="">writeln</span>;
+      <span style="color: #b1b100;">end</span>;
+      <span style="color: #b1b100;">if</span> wd&lt;&gt;<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">then</span>
+        <span style="">write</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">' '</span><span style="color: #66cc66;">&#41;</span>;
+      <span style="">write</span><span style="color: #66cc66;">&#40;</span>slot<span style="color: #66cc66;">&#91;</span>v<span style="color: #66cc66;">&#93;</span>.<span style="color: #202020;">bina</span><span style="color: #66cc66;">&#41;</span>;
+      inc<span style="color: #66cc66;">&#40;</span>v<span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #b1b100;">end</span>;
+    <span style="">writeln</span>;
+    u:=v;
+  <span style="color: #b1b100;">end</span>;
+  close<span style="color: #66cc66;">&#40;</span>output<span style="color: #66cc66;">&#41;</span>;
+<span style="color: #b1b100;">end</span>.</pre>
+<a name=".E4.BB.A3.E7.A0.812"></a><h2><span class="editsection">[<a href="/index.php?title=Code:contact_pascal&amp;action=edit&amp;section=2" title="编辑段落: 代码2">编辑</a>]</span> <span class="mw-headline">代码2</span></h2>
+<pre class="pascal"><span style="color: #808080; font-style: italic;">{
+ID:ronice.1
+PROG:contact
+LANG:PASCAL
+}</span>
+<span style="color: #b1b100;">var</span>
+  s,ns:<span style="color: #993333;">string</span>;
+  n,i,j,k,l:<span style="color: #993333;">integer</span>;
+  min,max,a,b:<span style="color: #993333;">integer</span>;
+  ans:<span style="color: #993333;">array</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span>..<span style="color: #cc66cc;">8191</span><span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">of</span> <span style="color: #993333;">longint</span>;
+  rank:<span style="color: #993333;">array</span><span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span>..<span style="color: #cc66cc;">50</span><span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">of</span> <span style="color: #993333;">longint</span>;
+&nbsp;
+<span style="color: #000000; font-weight: bold;">Function</span> s2n<span style="color: #66cc66;">&#40;</span>m:<span style="color: #993333;">string</span><span style="color: #66cc66;">&#41;</span>:<span style="color: #993333;">integer</span>;  <span style="color: #808080; font-style: italic;">//字符串转二进制数</span>
+<span style="color: #b1b100;">begin</span>
+  s2n:=<span style="color: #cc66cc;">1</span>;
+  <span style="color: #b1b100;">for</span> i:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> length<span style="color: #66cc66;">&#40;</span>m<span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">do</span>
+    s2n:=s2n*<span style="color: #cc66cc;">2</span>+<span style="">ord</span><span style="color: #66cc66;">&#40;</span>m<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span><span style="color: #cc66cc;">-48</span>;
+<span style="color: #b1b100;">end</span>;
+&nbsp;
+<span style="color: #000000; font-weight: bold;">Function</span> n2s<span style="color: #66cc66;">&#40;</span>m:<span style="color: #993333;">integer</span><span style="color: #66cc66;">&#41;</span>:<span style="color: #993333;">string</span>;  <span style="color: #808080; font-style: italic;">//二进制数转字符串</span>
+<span style="color: #b1b100;">begin</span>
+  n2s:=<span style="color: #ff0000;">''</span>;
+  <span style="color: #b1b100;">while</span> m&gt;<span style="color: #cc66cc;">0</span> <span style="color: #b1b100;">do</span> <span style="color: #b1b100;">begin</span>
+    <span style="color: #b1b100;">if</span> m <span style="">and</span> <span style="color: #cc66cc;">1</span>=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">then</span>
+      n2s:=<span style="color: #ff0000;">'1'</span>+n2s <span style="color: #b1b100;">else</span>
+      n2s:=<span style="color: #ff0000;">'0'</span>+n2s;
+    m:=m <span style="">shr</span> <span style="color: #cc66cc;">1</span>;
+  <span style="color: #b1b100;">end</span>;
+  delete<span style="color: #66cc66;">&#40;</span>n2s,<span style="color: #cc66cc;">1</span>,<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span>;
+<span style="color: #b1b100;">end</span>;
+&nbsp;
+<span style="color: #b1b100;">begin</span>
+  <span style="color: #808080; font-style: italic;">//处理输入数据</span>
+  Assign<span style="color: #66cc66;">&#40;</span>Input,<span style="color: #ff0000;">'contact.in'</span><span style="color: #66cc66;">&#41;</span>;
+  Reset<span style="color: #66cc66;">&#40;</span>Input<span style="color: #66cc66;">&#41;</span>;
+  <span style="">readln</span><span style="color: #66cc66;">&#40;</span>a,b,n<span style="color: #66cc66;">&#41;</span>;
+  s:=<span style="color: #ff0000;">''</span>;
+  <span style="color: #b1b100;">while</span> <span style="color: #b1b100;">not</span> <span style="">eof</span> <span style="color: #b1b100;">do</span> <span style="color: #b1b100;">begin</span>
+    <span style="">readln</span><span style="color: #66cc66;">&#40;</span>ns<span style="color: #66cc66;">&#41;</span>;
+    s:=s+ns;
+    <span style="color: #b1b100;">while</span> length<span style="color: #66cc66;">&#40;</span>s<span style="color: #66cc66;">&#41;</span>&gt;=b <span style="color: #b1b100;">do</span> <span style="color: #b1b100;">begin</span>
+      <span style="color: #b1b100;">for</span> i:=a <span style="color: #b1b100;">to</span> b <span style="color: #b1b100;">do</span>
+        inc<span style="color: #66cc66;">&#40;</span>ans<span style="color: #66cc66;">&#91;</span>s2n<span style="color: #66cc66;">&#40;</span>copy<span style="color: #66cc66;">&#40;</span>s,<span style="color: #cc66cc;">1</span>,i<span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+      delete<span style="color: #66cc66;">&#40;</span>s,<span style="color: #cc66cc;">1</span>,<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span>;
+    <span style="color: #b1b100;">end</span>;
+  <span style="color: #b1b100;">end</span>;
+  l:=length<span style="color: #66cc66;">&#40;</span>s<span style="color: #66cc66;">&#41;</span>;
+  <span style="color: #b1b100;">while</span> l&gt;=a <span style="color: #b1b100;">do</span> <span style="color: #b1b100;">begin</span>
+    <span style="color: #b1b100;">for</span> i:=a <span style="color: #b1b100;">to</span> l <span style="color: #b1b100;">do</span>
+      inc<span style="color: #66cc66;">&#40;</span>ans<span style="color: #66cc66;">&#91;</span>s2n<span style="color: #66cc66;">&#40;</span>copy<span style="color: #66cc66;">&#40;</span>s,<span style="color: #cc66cc;">1</span>,i<span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+    delete<span style="color: #66cc66;">&#40;</span>s,<span style="color: #cc66cc;">1</span>,<span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span>;
+    dec<span style="color: #66cc66;">&#40;</span>l<span style="color: #66cc66;">&#41;</span>;
+  <span style="color: #b1b100;">end</span>;
+  Close<span style="color: #66cc66;">&#40;</span>Input<span style="color: #66cc66;">&#41;</span>;    
+&nbsp;
+  Assign<span style="color: #66cc66;">&#40;</span>Output,<span style="color: #ff0000;">'contact.out'</span><span style="color: #66cc66;">&#41;</span>;
+  Rewrite<span style="color: #66cc66;">&#40;</span>Output<span style="color: #66cc66;">&#41;</span>;
+  fillchar<span style="color: #66cc66;">&#40;</span>rank,sizeof<span style="color: #66cc66;">&#40;</span>rank<span style="color: #66cc66;">&#41;</span>,<span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#41;</span>;
+  min:=<span style="color: #cc66cc;">1</span> shl a;
+  max:=<span style="color: #cc66cc;">1</span> shl <span style="color: #66cc66;">&#40;</span>b<span style="color: #cc66cc;">+1</span><span style="color: #66cc66;">&#41;</span><span style="color: #cc66cc;">-1</span>;
+  <span style="color: #808080; font-style: italic;">//排序</span>
+  <span style="color: #b1b100;">for</span> i:=min <span style="color: #b1b100;">to</span> max <span style="color: #b1b100;">do</span>
+    <span style="color: #b1b100;">if</span> ans<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>&gt;rank<span style="color: #66cc66;">&#91;</span>n<span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">then</span> <span style="color: #b1b100;">begin</span>
+      <span style="color: #b1b100;">for</span> j:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> n <span style="color: #b1b100;">do</span>
+        <span style="color: #b1b100;">if</span> ans<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>&gt;=rank<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">then</span> <span style="color: #000000; font-weight: bold;">break</span>;
+      <span style="color: #b1b100;">if</span> ans<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>&gt;rank<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">then</span> <span style="color: #b1b100;">begin</span>
+       <span style="color: #b1b100;">for</span> k:=n <span style="color: #b1b100;">downto</span> j<span style="color: #cc66cc;">+1</span> <span style="color: #b1b100;">do</span>
+         rank<span style="color: #66cc66;">&#91;</span>k<span style="color: #66cc66;">&#93;</span>:=rank<span style="color: #66cc66;">&#91;</span>k<span style="color: #cc66cc;">-1</span><span style="color: #66cc66;">&#93;</span>;
+       rank<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span>:=ans<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>;
+     <span style="color: #b1b100;">end</span>;
+   <span style="color: #b1b100;">end</span>;
+  <span style="color: #808080; font-style: italic;">//输出</span>
+ <span style="color: #b1b100;">for</span> i:=<span style="color: #cc66cc;">1</span> <span style="color: #b1b100;">to</span> n <span style="color: #b1b100;">do</span>
+   <span style="color: #b1b100;">if</span> rank<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span>&gt;<span style="color: #cc66cc;">0</span> <span style="color: #b1b100;">then</span> <span style="color: #b1b100;">begin</span>
+   <span style="">writeln</span><span style="color: #66cc66;">&#40;</span>rank<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">&#41;</span>;
+   j:=max;
+   l:=<span style="color: #cc66cc;">0</span>;
+   <span style="color: #b1b100;">while</span> ans<span style="color: #66cc66;">&#91;</span>j<span style="color: #66cc66;">&#93;</span>&lt;&gt;rank<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">do</span> dec<span style="color: #66cc66;">&#40;</span>j<span style="color: #66cc66;">&#41;</span>;
+   <span style="color: #b1b100;">for</span> k:=min <span style="color: #b1b100;">to</span> j<span style="color: #cc66cc;">-1</span> <span style="color: #b1b100;">do</span>
+     <span style="color: #b1b100;">if</span> ans<span style="color: #66cc66;">&#91;</span>k<span style="color: #66cc66;">&#93;</span>=rank<span style="color: #66cc66;">&#91;</span>i<span style="color: #66cc66;">&#93;</span> <span style="color: #b1b100;">then</span> <span style="color: #b1b100;">begin</span>
+       inc<span style="color: #66cc66;">&#40;</span>l<span style="color: #66cc66;">&#41;</span>;
+       <span style="color: #b1b100;">if</span> l <span style="color: #b1b100;">mod</span> <span style="color: #cc66cc;">6</span>=<span style="color: #cc66cc;">0</span> <span style="color: #b1b100;">then</span>
+         <span style="">writeln</span><span style="color: #66cc66;">&#40;</span>n2s<span style="color: #66cc66;">&#40;</span>k<span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span> <span style="color: #b1b100;">else</span>
+         <span style="">write</span><span style="color: #66cc66;">&#40;</span>n2s<span style="color: #66cc66;">&#40;</span>k<span style="color: #66cc66;">&#41;</span>,<span style="color: #ff0000;">' '</span><span style="color: #66cc66;">&#41;</span>;
+     <span style="color: #b1b100;">end</span>;
+   <span style="">writeln</span><span style="color: #66cc66;">&#40;</span>n2s<span style="color: #66cc66;">&#40;</span>j<span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span>;
+ <span style="color: #b1b100;">end</span>;
+ Close<span style="color: #66cc66;">&#40;</span>Output<span style="color: #66cc66;">&#41;</span>;
+<span style="color: #b1b100;">end</span>.</pre>
+
+<!-- Saved in parser cache with key nocow:pcache:idhash:382-0!1!0!!zh-cn!2 and timestamp 20080201132125 -->
+<div class="printfooter">
+来自"<a href="http://www.nocow.cn/index.php/Code:contact_pascal">http://www.nocow.cn/index.php/Code:contact_pascal</a>"</div>
+						<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+						 <li id="ca-nstab-main" class="selected"><a href="/index.php/Code:contact_pascal">条目</a></li>
+						 <li id="ca-talk" class="new"><a href="/index.php?title=Talk:Code:contact_pascal&amp;action=edit">讨论</a></li>
+						 <li id="ca-edit"><a href="/index.php?title=Code:contact_pascal&amp;action=edit">编辑</a></li>
+						 <li id="ca-history"><a href="/index.php?title=Code:contact_pascal&amp;action=history">历史</a></li>
+				</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=Special:Userlogin&amp;returnto=Code:contact_pascal">登录或创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/skins/common/images/wiki.png);" href="/index.php/%E9%A6%96%E9%A1%B5" title="首页"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/index.php/%E9%A6%96%E9%A1%B5">首页</a></li>
+				<li id="n-portal"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5">社区主页</a></li>
+				<li id="n-currentevents"><a href="/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/index.php/Special:Recentchanges">最近更改</a></li>
+				<li id="n-randompage"><a href="/index.php/Special:Random">随机页面</a></li>
+				<li id="n-help"><a href="/index.php/Help:%E5%B8%AE%E5%8A%A9">使用帮助</a></li>
+				<li id="n-sitesupport"><a href="/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5">资助本站</a></li>
+				<li id="n-sitemap-text"><a href="/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="进入" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="搜索" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/Special:Whatlinkshere/Code:contact_pascal">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/Special:Recentchangeslinked/Code:contact_pascal">链出更改</a></li>
+<li id="t-upload"><a href="/index.php/Special:Upload">上传文件</a></li>
+<li id="t-specialpages"><a href="/index.php/Special:Specialpages">特殊页面</a></li>
+				<li id="t-print"><a href="/index.php?title=Code:contact_pascal&amp;printable=yes">可打印版</a></li>				<li id="t-permalink"><a href="/index.php?title=Code:contact_pascal&amp;oldid=6424">永久链接</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a href="http://www.gnu.org/copyleft/fdl.html"><img src="/skins/common/images/gnu-fdl.png" alt='GNU Free Documentation License 1.2' /></a></div>
+			<ul id="f-list">
+				<li id="viewcount">访问次数: 474次</li>
+				<li id="credits">此页由<a href="/index.php/User:Ronice" title="User:Ronice">Ronice</a>于2007年9月4日, 13:56最后更改. 在<a href="/index.php/User:Ghost" title="User:Ghost">ghost</a>的工作基础上.</li>
+				<li id="copyright">本站内容在<a href="http://www.gnu.org/copyleft/fdl.html" class="external " title="http://www.gnu.org/copyleft/fdl.html" rel="nofollow">GNU Free Documentation License 1.2</a>下发布</li>
+				<li id="privacy"><a href="/index.php/NOCOW:%E9%9A%90%E7%A7%81%E7%AD%96%E7%95%A5" title="NOCOW:隐私策略">隐私策略</a></li>
+				<li id="about"><a href="/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+				<li id="disclaimer"><a href="/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by bdezlinux in 0.118 secs. --></body></html>
